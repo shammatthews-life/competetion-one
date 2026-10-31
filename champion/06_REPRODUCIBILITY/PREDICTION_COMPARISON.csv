@@ -1,0 +1,4 @@
+comparison,spearman,pearson,mae,rmse,mean_rank_displacement,max_rank_displacement,exact_rank_matches,total_rows
+Track 2 (Exact Recovery) vs Historical Champion,1.0000000000,1.0000000000,0.0000000000,0.0000000000,0.00,0,61500,61500
+Track 1 (Independent Rebuilt) vs Historical Champion,0.9999975816,0.9999975816,0.0003014174,0.0006348771,18.54,769,3093,61500
+Track 1 (Independent Rebuilt) vs Track 2 (Exact Recovery),0.9999975816,0.9999975816,0.0003014174,0.0006348771,18.54,769,3093,61500

@@ -1,0 +1,21 @@
+{
+  "experiment_name": "EXP85_Historical_Recovery_V5",
+  "target_champion": "v_20261027_optimal_macro_apex_v85.csv",
+  "target_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+  "leaderboard_score": 0.80134,
+  "probit_synthesis": {
+    "anchor74_weight": 0.85,
+    "suite_weight": 0.15,
+    "probit_clip_eps": 1e-06
+  },
+  "suite_weights": {
+    "v17_e1Aet": 0.2932,
+    "xgb10": 0.2596,
+    "v17_final": 0.2051,
+    "v55_cbprod": 0.0874,
+    "v17_e1et": 0.0489,
+    "v55_deep_et": 0.0442,
+    "v55_allfam": 0.0383,
+    "v55_v2_mono": 0.0233
+  }
+}

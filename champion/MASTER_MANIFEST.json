@@ -1,0 +1,40 @@
+{
+  "project_name": "GCI_World_2026_EXP85_Champion_Preservation",
+  "competition": {
+    "title": "In-class Competition: Home Credit Default Risk",
+    "cohort": "GCI Global 2026",
+    "platform": "Omnicampus",
+    "official_evaluation_metric": "ROC-AUC"
+  },
+  "champion_standing": {
+    "official_leaderboard_score": 0.80134,
+    "world_rank": 12,
+    "total_competitors": 2743,
+    "percentile_standing": "Top 0.44% worldwide"
+  },
+  "submissions": {
+    "submission_exp85_recovery_v5.csv": {
+      "track": "Track 2: Exact Historical Dependency Synthesis",
+      "leaderboard_score": 0.80134,
+      "spearman_correlation_vs_champion": 1.0,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "rows": 61500,
+      "exact_rank_matches": 61500
+    },
+    "submission_exp85_recovery_v5_rebuilt.csv": {
+      "track": "Track 1: Independent Upstream Source Rebuild",
+      "leaderboard_score": 0.80134,
+      "spearman_correlation_vs_champion": 0.9999975816,
+      "sha256": "e979a04a081512401f1aa938c46522c0926ec0058b73f848ceae07e3241df1c7",
+      "rows": 61500,
+      "max_rank_displacement": 769
+    }
+  },
+  "archive_metadata": {
+    "local_archive_root": "D:\\gci\\champion",
+    "github_repository": "https://github.com/shammatthews-life/competetion-one",
+    "target_branch": "main",
+    "total_files_archived": 129,
+    "competition_compliance_verdict": "CONFIRMED COMPLIANT (ELIGIBLE FOR TOP HONORS)"
+  }
+}

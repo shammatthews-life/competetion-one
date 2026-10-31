@@ -1,0 +1,58 @@
+{
+  "experiment_name": "EXP85_Independent_Rebuild",
+  "features": 550,
+  "folds": 5,
+  "skf_random_state": 42,
+  "hardware_acceleration": {
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_version": "13.1",
+    "cpu_threads": 4
+  },
+  "model_pillars": {
+    "lgb_cons": {
+      "learning_rate": 0.02,
+      "num_leaves": 31,
+      "max_depth": 6,
+      "feature_fraction": 0.6,
+      "bagging_fraction": 0.8,
+      "reg_alpha": 2.0,
+      "reg_lambda": 5.0
+    },
+    "lgb_et": {
+      "extra_trees": true,
+      "learning_rate": 0.02,
+      "num_leaves": 45,
+      "max_depth": 7,
+      "feature_fraction": 0.45,
+      "bagging_fraction": 0.7,
+      "reg_alpha": 5.0,
+      "reg_lambda": 10.0
+    },
+    "xgb": {
+      "tree_method": "hist",
+      "device": "cuda",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "subsample": 0.8,
+      "colsample_bytree": 0.6,
+      "reg_alpha": 3.0,
+      "reg_lambda": 8.0
+    },
+    "cat": {
+      "task_type": "GPU",
+      "iterations": 750,
+      "learning_rate": 0.04,
+      "depth": 6,
+      "l2_leaf_reg": 5.0
+    },
+    "lgb_deep": {
+      "learning_rate": 0.025,
+      "num_leaves": 127,
+      "max_depth": 8,
+      "subsample": 0.8,
+      "colsample_bytree": 0.65,
+      "reg_alpha": 10.0,
+      "reg_lambda": 30.0
+    }
+  }
+}

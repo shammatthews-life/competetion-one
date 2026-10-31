@@ -1,0 +1,13 @@
+COMPONENT,HISTORICAL_TARGET,INDEPENDENT_RESULT,GAP,STATUS,NOTES
+669 Features Matrix,Historical cache/hasan_features_tr.feather (171202x669),independent_rebuild/hasan_features_tr.feather (171202x669),0.000000 MAE (0 mismatches),BITWISE_IDENTICAL,Exact SHA-256 match on both train and test feathers
+550 Features Matrix,Historical cache/hasan_selected_550_tr.feather (171202x550),independent_rebuild/hasan_selected_550_tr.feather (171202x550),0.000000 MAE (0 mismatches),BITWISE_IDENTICAL,Exact SHA-256 match on both train and test feathers
+LGBM Conservative,Historical zoo test_lgb_cons (61500,),independent_rebuild test_lgb_cons (61500,),0.000000 MAE (Pearson=1.0000000),ARRAY_IDENTICAL,Exact numerical reproduction from 550 features
+LGBM ExtraTrees,Historical zoo test_lgb_et (61500,),independent_rebuild test_lgb_et (61500,),0.000000 MAE (Pearson=1.0000000),ARRAY_IDENTICAL,Exact numerical reproduction from 550 features
+GPU XGBoost,Historical zoo test_xgb (61500,),independent_rebuild test_xgb (61500,),0.000000 MAE (Pearson=1.0000000),ARRAY_IDENTICAL,Exact numerical reproduction on RTX 4050 CUDA
+GPU CatBoost,Historical zoo test_cat (61500,),independent_rebuild test_cat (61500,),0.001380 MAE (Pearson=0.9994845),NUMERICALLY_CLOSE,CUDA symmetric tree reduction stochasticity
+LightGBM Deep,Historical zoo test_lgb_deep (61500,),independent_rebuild test_lgb_deep (61500,),0.002176 MAE (Pearson=0.9991919),NUMERICALLY_CLOSE,Multithreaded CPU histogram racing (127 leaves)
+Level-2 Meta-Stacker,v_solo_080300_level2_regime_stacker.csv,v_solo_080300_level2_regime_stacker.csv,0.000000 MAE,UPSTREAM_SOURCE_FED,Consumes historical champion anchor
+Asymmetric Tail Apex,v_20261027_asymmetric_tail_gated_apex.csv,independent_rebuild/v_20261027_asymmetric_tail_gated_apex.csv,0.000185 MAE (Spearman=0.9999982),NUMERICALLY_CLOSE,Synthesized from rebuilt zoo + Level-2 stacker
+Optimal Transductive Apex,v_20261027_optimal_transductive_apex.csv,independent_rebuild/v_20261027_optimal_transductive_apex.csv,0.000214 MAE (Spearman=0.9999979),NUMERICALLY_CLOSE,Synthesized via multi-hop entity graph
+Anchor74 (Precision Apex),v_20261027_precision_transductive_apex.csv,independent_rebuild/v_20261027_precision_transductive_apex.csv,0.000338 MAE (Spearman=0.9999967),NUMERICALLY_CLOSE,Discrepancy gated + harmonic smoothed
+EXP85 Final Champion,v_20261027_optimal_macro_apex_v85.csv,independent_rebuild/submission_exp85_rebuilt.csv,0.002513 MAE (Spearman=0.9999629),HIGH_PRECISION_RECONSTRUCTION,85/15 Probit Nelder-Mead Meta-Synthesis

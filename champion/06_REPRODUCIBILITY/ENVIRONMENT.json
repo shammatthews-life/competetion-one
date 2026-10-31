@@ -1,0 +1,19 @@
+{
+  "operating_system": "Windows 11 (AMD64)",
+  "python_version": "3.12.0",
+  "cpu": "12 Logical Processors",
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_runtime": "13.1",
+    "driver_version": "576.80",
+    "memory_mb": 6140
+  },
+  "libraries": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.17.0",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10"
+  }
+}
