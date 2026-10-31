@@ -121,9 +121,13 @@ def build_feature_manifolds(df_train, df_test):
         df_core[f"FREQ_{c}"] = s.map(s.value_counts(normalize=True)).values.astype(np.float32)
         df_core[f"CODE_{c}"] = s.astype("category").cat.codes.values.astype(np.float32)
 
-    # One-Hot Demographics
-    df_oh = pd.get_dummies(df_all[CATS], prefix="OH", drop_first=True, dtype=np.float32)
+    # One-Hot Demographics with JSON-safe feature names
+    import re
+    prefixes = [f"OH_{c}" for c in CATS]
+    df_oh = pd.get_dummies(df_all[CATS], prefix=prefixes, drop_first=True, dtype=np.float32)
+    df_oh.columns = [re.sub(r'[^\w]', '_', str(c)) for c in df_oh.columns]
     df_all_comb = pd.concat([df_core, df_oh], axis=1)
+    df_all_comb.columns = [re.sub(r'[^\w]', '_', str(c)) for c in df_all_comb.columns]
 
     # Additional interaction features for v2 models
     q_ratio = (ann / (cred + 1e-5)).astype(np.float32)

@@ -49,9 +49,10 @@ All models, feature extraction routines, and post-processing calibration algorit
 The auditor noted three distinct feature stability figures across earlier reports (88.9%, 94.91%, and 97.8%). This section provides the exact mathematical definition, empirical measurement, and forensic reconciliation for all three metrics:
 
 ```
-  Metric 1: Strict 5-Fold Global Intersection  = 88.91% (489 / 550 features)
-  Metric 2: Mean Pairwise Fold Overlap         = 94.91% (Average Jaccard across 10 fold pairs)
-  Metric 3: Top-200 Core Predictive Stability  = 97.80% (195.6 / 200 primary risk drivers)
+  Metric 1: Strict 5-Fold Global Intersection     = 88.91% (489 / 550 features)
+  Metric 2A: Fixed-Denominator Overlap (/550)     = 94.91% (Average set intersection / 550 across 10 fold pairs)
+  Metric 2B: True Pairwise Jaccard Index          = 90.31% (Average J(Fi, Fj) = |Fi n Fj| / |Fi u Fj|)
+  Metric 3: Top-200 Core Predictive Stability     = 97.80% (195.6 / 200 primary risk drivers)
 ```
 
 ### Mathematical Definitions:
@@ -59,14 +60,18 @@ The auditor noted three distinct feature stability figures across earlier report
 1. **Metric 1: Strict 5-Fold Global Intersection ($\mathbf{88.91\%}$)**:
    $$\text{GlobalIntersection} = \frac{\left| \bigcap_{k=1}^5 \mathcal{F}_k \right|}{550} = \frac{489}{550} = 88.909\% \approx \mathbf{88.91\%}$$
    - **Definition**: 489 out of 550 features are selected by *every single fold split* without exception.
-   - **Interpretation**: Demonstrates that the feature screening routine is overwhelmingly dominated by a invariant core feature set that survives across 100% of fold partitions.
+   - **Interpretation**: Demonstrates that the feature screening routine is overwhelmingly dominated by an invariant core feature set that survives across 100% of fold partitions.
 
-2. **Metric 2: Mean Pairwise Fold Overlap ($\mathbf{94.91\%}$)**:
-   $$\text{PairwiseOverlap} = \frac{1}{\binom{5}{2}} \sum_{1 \le i < j \le 5} \frac{|\mathcal{F}_i \cap \mathcal{F}_j|}{550} = \frac{1}{10} \sum_{i < j} \frac{|\mathcal{F}_i \cap \mathcal{F}_j|}{550} = \mathbf{94.91\%}$$
-   - **Definition**: The average feature set overlap between any two randomly chosen cross-validation folds.
-   - **Interpretation**: Demonstrates that any two independent training splits agree on 522 out of 550 features (94.91%), confirming minimal variance across partition boundaries.
+2. **Metric 2A: Fixed-Denominator Pairwise Overlap ($\mathbf{94.91\%}$)**:
+   $$\text{FixedOverlap} = \frac{1}{\binom{5}{2}} \sum_{1 \le i < j \le 5} \frac{|\mathcal{F}_i \cap \mathcal{F}_j|}{550} = \frac{1}{10} \sum_{i < j} \frac{|\mathcal{F}_i \cap \mathcal{F}_j|}{550} = \mathbf{94.91\%}$$
+   - **Definition**: Average feature intersection size relative to the fixed 550-feature subset size across all 10 pairwise comparisons.
+   - **Interpretation**: Demonstrates that any two independent training splits share an average of 522 features out of 550.
 
-3. **Metric 3: Top-200 Core Predictive Backbone Stability ($\mathbf{97.80\%}$)**:
+3. **Metric 2B: True Pairwise Jaccard Similarity Index ($\mathbf{90.31\%}$)**:
+   $$J(\mathcal{F}_i, \mathcal{F}_j) = \frac{|\mathcal{F}_i \cap \mathcal{F}_j|}{|\mathcal{F}_i \cup \mathcal{F}_j|} = \frac{522}{550 + 550 - 522} = \frac{522}{578} \approx \mathbf{90.31\%}$$
+   - **Definition**: Standard mathematical Jaccard similarity index measuring set intersection over set union.
+
+4. **Metric 3: Top-200 Core Predictive Backbone Stability ($\mathbf{97.80\%}$)**:
    $$\text{CoreStability} = \frac{1}{\binom{5}{2}} \sum_{1 \le i < j \le 5} \frac{|\text{Top200}_i \cap \text{Top200}_j|}{200} = \mathbf{97.80\%}$$
    - **Definition**: Stability evaluated specifically on the 200 highest-gain core financial and demographic predictors (e.g., `EXT_SOURCE_1/2/3`, credit-to-annuity ratio, payment delay tallies).
    - **Interpretation**: The essential predictive drivers of default risk are 97.80% identical across all cross-validation folds, confirming that the screening signal is structural rather than sample-specific noise.
@@ -84,7 +89,7 @@ The auditor noted three distinct feature stability figures across earlier report
     - Nested Leak-Free OOF ROC-AUC: **`0.768869`**
     - Difference ($\Delta$): **`-0.000043`**
 - **Forensic Finding**:
-  In both evaluations, $|\Delta| < 0.0001$ (less than one-hundredth of a ROC-AUC point). This conclusively proves that performing feature screening on the training set introduces zero material validation leakage or optimistic bias.
+  In both evaluations, $|\Delta| < 0.0001$ (less than one-hundredth of a ROC-AUC point). No material screening-induced validation difference was observed under this benchmark on held-out folds, confirming that feature screening on training splits introduces negligible optimistic bias on out-of-fold validation.
 
 ---
 

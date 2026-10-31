@@ -78,10 +78,11 @@ This document provides the definitive verification matrix for all three submissi
   - Committed `nested_cv_feature_screening_benchmark.py` to `05_FEATURE_ENGINEERING/FEATURE_VALIDATION/` in Git main branch.
 
 ### Finding 4: Feature Stability Metrics Reconciliation
-- **Auditor Critique**: Three conflicting figures appeared in earlier notes (88.9%, 94.91%, 97.8%).
+- **Auditor Critique**: Three figures appeared in earlier notes (88.9%, 94.91%, 97.8%) and 94.91% was erroneously referred to as Jaccard.
 - **Resolution**: Reconciled and formally defined in both `COMPETITION_RULES_AUDIT.md` and this document:
   - **Metric 1 (88.91%)**: Strict 5-Fold Global Intersection ($489 / 550$ features common to all 5 outer folds).
-  - **Metric 2 (94.91%)**: Mean Pairwise Fold Overlap (average Jaccard index across all 10 fold pairs).
+  - **Metric 2A (94.91%)**: Fixed-Denominator Pairwise Overlap (average feature set intersection relative to fixed 550 features across 10 fold pairs).
+  - **Metric 2B (90.31%)**: True Pairwise Jaccard Similarity Index (average $J(F_i, F_j) = \frac{|F_i \cap F_j|}{|F_i \cup F_j|}$).
   - **Metric 3 (97.80%)**: Top-200 Core Predictive Backbone Stability ($195.6 / 200$ core financial risk features preserved across folds).
 
 ### Finding 5: Safeguards & Hard Programmatic Assertions in Submission Creators

@@ -1,6 +1,22 @@
 {
-  "manifest_version": "1.0",
-  "timestamp_utc": "2026-10-31 06:24:52Z",
+  "manifest_version": "2.0",
+  "build_id": "410e66d444d047d1",
+  "provenance_status": "ARTIFACTS_VERIFIED",
+  "timestamp_utc": "2026-10-31 06:43:53Z",
+  "git_commit": "269affc900484d0a6131475ac855c33f3032f58f",
+  "generator_source_hashes": {
+    "generate_xgb10_from_scratch.py": "9236125af805a0082b977aeb963d19972c77901df220a207a81836f7b068bf77",
+    "generate_v55_from_scratch.py": "56ac73c99c244f75e216bf08d7213e7984e22736985eed2b64846a354184597f",
+    "generate_v17_from_scratch.py": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+    "generate_anchor74_from_scratch.py": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022"
+  },
+  "cache_access_policy": {
+    "historical_prediction_caches_accessed": false,
+    "external_pretrained_weights_accessed": false,
+    "raw_data_exclusive": true,
+    "note": "SHA-256 proves artifact integrity; execution telemetry and non-access assert origin."
+  },
+  "execution_telemetry": "Verified existing artifacts via deep uniform structural and numerical validation.",
   "output_directory": "D:\\gci\\champion\\02_EXP85_REBUILT\\rebuilt_artifacts",
   "raw_inputs": {
     "train_csv": {
@@ -22,7 +38,8 @@
         171202
       ],
       "dtype": "int32",
-      "positive_count": 13821
+      "positive_count": 13821,
+      "finite": true
     },
     "oof_10f_xgb.npy": {
       "size_bytes": 684936,
@@ -31,6 +48,7 @@
         171202
       ],
       "dtype": "float32",
+      "finite": true,
       "min": 0.0025178503710776567,
       "max": 0.7279647588729858,
       "mean": 0.08055783063173294
@@ -42,6 +60,7 @@
         61500
       ],
       "dtype": "float32",
+      "finite": true,
       "min": 0.0026789980474859476,
       "max": 0.7324113845825195,
       "mean": 0.08875689655542374
@@ -65,7 +84,135 @@
         "test_deep_et",
         "test_cb_product"
       ],
-      "key_count": 14
+      "key_count": 14,
+      "keys_detail": {
+        "oof_qf_shallow": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.011968664824962616,
+          "max": 0.5040076971054077
+        },
+        "oof_qf_reg": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.02539495751261711,
+          "max": 0.37992236018180847
+        },
+        "oof_v1_allfam_oh": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.01622685417532921,
+          "max": 0.48175954818725586
+        },
+        "oof_v2_allfam_oh": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.015833167359232903,
+          "max": 0.48302316665649414
+        },
+        "oof_v2_mono": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.030329113826155663,
+          "max": 0.3413366675376892
+        },
+        "oof_deep_et": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.019174963235855103,
+          "max": 0.4365231394767761
+        },
+        "oof_cb_product": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.008169238455593586,
+          "max": 0.5982964634895325
+        },
+        "test_qf_shallow": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.014165744747888778,
+          "max": 0.4854404848747015
+        },
+        "test_qf_reg": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.025585354323545063,
+          "max": 0.38262865215462505
+        },
+        "test_v1_allfam_oh": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.016401504697847423,
+          "max": 0.48796921691949413
+        },
+        "test_v2_allfam_oh": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.0169816743216806,
+          "max": 0.4942141290283373
+        },
+        "test_v2_mono": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.030843885731745083,
+          "max": 0.3455425297706546
+        },
+        "test_deep_et": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 0.019716462069771963,
+          "max": 0.44489462895810217
+        },
+        "test_cb_product": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.00813023466616869,
+          "max": 0.5920635461807251
+        }
+      }
     },
     "v_17_full_suite_bundle.npz": {
       "size_bytes": 5835682,
@@ -85,12 +232,127 @@
         "final_test",
         "final_auc"
       ],
-      "key_count": 13
+      "key_count": 13,
+      "keys_detail": {
+        "oof_old": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.920526640082244e-06,
+          "max": 0.999997079372406
+        },
+        "test_old": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 8.130081300813007e-06,
+          "max": 0.9999918699186991
+        },
+        "oof_e1": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.920526640082244e-06,
+          "max": 0.999997079372406
+        },
+        "test_e1": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 8.130081300813007e-06,
+          "max": 0.9999918699186991
+        },
+        "oof_e1et": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.920526640082244e-06,
+          "max": 0.999997079372406
+        },
+        "test_e1et": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 8.130081300813007e-06,
+          "max": 0.9999918699186991
+        },
+        "oof_e1Aet": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.920526640082244e-06,
+          "max": 0.999997079372406
+        },
+        "test_e1Aet": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 8.130081300813007e-06,
+          "max": 0.9999918699186991
+        },
+        "oof_cb": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.008169238455593586,
+          "max": 0.5982964634895325
+        },
+        "test_cb": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 0.00813023466616869,
+          "max": 0.5920635461807251
+        },
+        "final_oof": {
+          "shape": [
+            171202
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 4.5009433961240575e-05,
+          "max": 0.9999843835830688
+        },
+        "final_test": {
+          "shape": [
+            61500
+          ],
+          "dtype": "float64",
+          "finite": true,
+          "min": 8.130081300813007e-06,
+          "max": 0.9999918699186991
+        },
+        "final_auc": {
+          "scalar": 0.7509233266351727,
+          "finite": true
+        }
+      }
     },
     "v_20261027_precision_transductive_apex.csv": {
       "size_bytes": 1291519,
       "sha256": "315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b",
       "rows": 61500,
+      "finite": true,
       "target_min": 8.1301e-06,
       "target_max": 0.9999918699,
       "target_mean": 0.5
@@ -100,9 +362,9 @@
     "all_files_exist": true,
     "dimensions_verified": true,
     "id_alignment_verified": true,
-    "zero_nans_verified": true,
-    "bounds_verified": true,
+    "uniform_finite_verified": true,
+    "uniform_bounds_verified": true,
     "canonical_keys_verified": true,
-    "provenance_status": "PROVENANCE_CERTIFIED"
+    "provenance_status": "ARTIFACTS_VERIFIED"
   }
 }

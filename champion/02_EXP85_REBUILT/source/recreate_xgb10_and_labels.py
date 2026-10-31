@@ -139,8 +139,8 @@ def build_xgb_features(df_train: pd.DataFrame, df_test: pd.DataFrame):
     # 5. Missingness Flags & Count Indicators
     feats["TOTAL_MISSING_COUNT"] = df_all.isna().sum(axis=1).values
     feats["EXT_MISSING_COUNT"] = np.isnan(ext_mat).sum(axis=1)
-    feats["HAS_CAR"] = (df_all["FLAG_OWN_CAR"].values == "Y").astype(np.float64)
-    feats["HAS_REALTY"] = (df_all["FLAG_OWN_REALTY"].values == "Y").astype(np.float64)
+    feats["HAS_CAR"] = ((df_all["FLAG_OWN_CAR"].values == "Y") if "FLAG_OWN_CAR" in df_all.columns else (~df_all["OWN_CAR_AGE"].isna().values)).astype(np.float64)
+    feats["HAS_REALTY"] = ((df_all["FLAG_OWN_REALTY"].values == "Y") if "FLAG_OWN_REALTY" in df_all.columns else np.zeros(len(df_all), dtype=np.float64)).astype(np.float64)
     feats["CAR_AGE_CLEAN"] = df_all["OWN_CAR_AGE"].fillna(-1.0).values.astype(np.float64)
     feats["DAYS_EMPLOYED_ANOMALY"] = (emp_raw == 365243.0).astype(np.float64)
 
