@@ -1,0 +1,106 @@
+{
+  "all_prediction_vectors_finite_and_correct_length": true,
+  "anchor_path": "D:\\gci\\gemini\\v_20261027_precision_transductive_apex.csv",
+  "cache_namespace": "D:\\gci\\gemini\\cache",
+  "candidate_file_persisted": false,
+  "classification": "CACHED_ARTIFACT_REPLAY_NOT_RAW_REBUILD",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\source\\verify_cached_v85_replay.py",
+    "--repository-root",
+    "D:\\gci\\_gci_push_tmp",
+    "--cache-dir",
+    "D:\\gci\\gemini\\cache",
+    "--anchor-csv",
+    "D:\\gci\\gemini\\v_20261027_precision_transductive_apex.csv",
+    "--raw-test-csv",
+    "D:\\gci\\inpuy\\test.csv",
+    "--report",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\reports\\HISTORICAL_V85_REPLAY_VERIFICATION.json"
+  ],
+  "completed_at_utc": "2026-10-31T19:32:53.359774+00:00",
+  "elapsed_seconds": 0.6284671000030357,
+  "exit_code": 0,
+  "formula": "Normalized fixed model weights in probit rank space; 0.85 * Anchor74 probit + 0.15 * suite probit; ordinal rank projection.",
+  "historical_manifest_verification": {
+    "anchor74": {
+      "actual_sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+      "expected_sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+      "manifest_key": "v_20261027_precision_transductive_apex.csv",
+      "matches": true
+    },
+    "v17": {
+      "actual_sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "expected_sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "manifest_key": "cache/v_17_full_suite_bundle.npz",
+      "matches": true
+    },
+    "v55": {
+      "actual_sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "expected_sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "manifest_key": "cache/v55_members.npz",
+      "matches": true
+    },
+    "xgb10_test": {
+      "actual_sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "expected_sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "manifest_key": "cache/test_10f_xgb.npy",
+      "matches": true
+    }
+  },
+  "ids_match_raw_test_exact_order": true,
+  "input_sha256": {
+    "anchor74": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+    "dependency_manifest": "414df79a6b402fc936a3fcea747f69809d0a8538d09a902b13fbd53a3b278a14",
+    "frozen_champion": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "historical_v85": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "raw_test": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "v17": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+    "v55": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+    "xgb10_test": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+  },
+  "method": "Recomputed the fixed v85 test blend from existing artifacts whose hashes match the tracked EXP85 dependency manifest; no weights were tuned.",
+  "official_competition_score_evaluated": false,
+  "prediction_array_order_assumed_from_historical_producer": true,
+  "prediction_arrays_have_id_sidecars": false,
+  "recomputed_candidate": {
+    "csv_bytes": 1291519,
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "target_max": 0.9999918699186991,
+    "target_min": 8.130081300813007e-06,
+    "unique_targets": 61500
+  },
+  "references": {
+    "frozen_champion": {
+      "candidate_bytes_equal": true,
+      "maximum_absolute_target_difference": 4.959355148770328e-11,
+      "path": "D:\\gci\\_gci_push_tmp\\gemini\\frozen_champion_0801340_reference.csv",
+      "pearson": 1.0,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "spearman": 0.9999999999999998,
+      "target_exact_matches": 500
+    },
+    "historical_v85": {
+      "candidate_bytes_equal": true,
+      "maximum_absolute_target_difference": 4.959355148770328e-11,
+      "path": "D:\\gci\\_gci_push_tmp\\gemini\\v_20261027_optimal_macro_apex_v85.csv",
+      "pearson": 1.0,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "spearman": 0.9999999999999998,
+      "target_exact_matches": 500
+    }
+  },
+  "started_at_utc": "2026-10-31T19:32:52.668047+00:00",
+  "test_rows": 61500,
+  "training_executed": false,
+  "weights": {
+    "v17_e1Aet": 0.2932,
+    "v17_e1et": 0.0489,
+    "v17_final": 0.2051,
+    "v55_allfam": 0.0383,
+    "v55_cbprod": 0.0874,
+    "v55_deep_et": 0.0442,
+    "v55_v2_mono": 0.0233,
+    "xgb10": 0.2596
+  }
+}

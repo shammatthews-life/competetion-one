@@ -1,0 +1,163 @@
+{
+  "champion/02_EXP85_REBUILT/source/generate_anchor74_from_scratch.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 31768,
+    "file_sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022"
+  },
+  "champion/02_EXP85_REBUILT/source/generate_v17_from_scratch.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 18440,
+    "file_sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c"
+  },
+  "champion/02_EXP85_REBUILT/source/generate_v55_from_scratch.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 15432,
+    "file_sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960"
+  },
+  "champion/02_EXP85_REBUILT/source/generate_xgb10_from_scratch.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 11487,
+    "file_sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb"
+  },
+  "champion/02_EXP85_REBUILT/source/run_all_recreations.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 21794,
+    "file_sha256": "d543821fd3d1ba9ee08a9f78fa1feffefb40a2827993ff11c49ee8a09ba92570"
+  },
+  "champion/exp85_solo.ipynb": {
+    "available": true,
+    "cell_count": 19,
+    "code_source_sha256": "fd5aa2c23918d29423e08ced59ae9ebe39573197cb68e9d4cd324bfe535f31c8",
+    "file_bytes": 36967,
+    "file_sha256": "d7d16d00599061b041e2b85619eb4dbc3f3607d437766c9c1e72d928a913f7b7"
+  },
+  "champion/exp85_solo.pre_independent_wiring_backup.ipynb": {
+    "available": true,
+    "cell_count": 13,
+    "code_source_sha256": "7696bc94e7d3ed915313a2eb30ff7cc8bf79129468aaf41680e532a15ebeb406",
+    "file_bytes": 140963,
+    "file_sha256": "1ccfab28ef8534fc176c757c79250547c03a041a922851d683c82d0df1241d23"
+  },
+  "champion/exp85_solo_backup_pre_fix.ipynb": {
+    "available": true,
+    "cell_count": 11,
+    "code_source_sha256": "bbf66380d8b73f8b0b2245c07d414bfd158830ef6e5a385f026ca33f90f3e400",
+    "file_bytes": 40022,
+    "file_sha256": "34b66ca02ca74f1c8ee80a24d80a519292f3d0d6f00e197e1900e16f94dfeb4b"
+  },
+  "champion/exp85_solo_runner.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 23561,
+    "file_sha256": "d6e7a398ec4f08b1ff605da4886889d476e14ab9169baa81f00c3f04fede8be9"
+  },
+  "gemini/EXP85_DEPENDENCY_MANIFEST.json": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 20631,
+    "file_sha256": "414df79a6b402fc936a3fcea747f69809d0a8538d09a902b13fbd53a3b278a14"
+  },
+  "gemini/EXP85_GENERATED_ARTIFACTS.json": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 2106,
+    "file_sha256": "bc14826f77dc0d02b90bb20ed49074963a2458eda97b70ba8362dd7236a26edd"
+  },
+  "gemini/EXP85_LEGITIMATE_RECONSTRUCTION.ipynb": {
+    "available": true,
+    "cell_count": 9,
+    "code_source_sha256": "1183327f7b365a4bcd3e63f1b27a540177a8ffab0c3dde1b6eecacbea04b5749",
+    "file_bytes": 47435,
+    "file_sha256": "05086c2a109209ce7cf1d2c37ec05982ce43988f43a825cd0aaa81a7db772686"
+  },
+  "gemini/EXP85_SHA256_MANIFEST.json": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 3046,
+    "file_sha256": "e51e3a4d9be377d7b064e748820130bcf4cd306584750000dc3ead0c5cd22b16"
+  },
+  "gemini/GCI_CHAMPION_0801340_CLEAN_ROOM.ipynb": {
+    "available": true,
+    "cell_count": 19,
+    "code_source_sha256": "97eaef3d8c575e5c74f10cf76d2ae2c213cf298b97576019b25039ed0c8ada56",
+    "file_bytes": 59988,
+    "file_sha256": "52f21f66bf3ed35bd47859136b33b3250c8ca7582b96151405ca17c38d047e34"
+  },
+  "gemini/GCI_CHAMPION_0801340_EXACT_REPRODUCIBLE.ipynb": {
+    "available": true,
+    "cell_count": 18,
+    "code_source_sha256": "5ce9109bbe977bdc66b3280d511e14bde47d461316fabc9b22fe73cee3d93f90",
+    "file_bytes": 211585,
+    "file_sha256": "d02b5e186774822636981b0a245a4810c0fb9b02cd6dec7201d08b9a11174368"
+  },
+  "gemini/GCI_CHAMPION_0801340_SELF_CONTAINED.ipynb": {
+    "available": true,
+    "cell_count": 19,
+    "code_source_sha256": "97eaef3d8c575e5c74f10cf76d2ae2c213cf298b97576019b25039ed0c8ada56",
+    "file_bytes": 59988,
+    "file_sha256": "52f21f66bf3ed35bd47859136b33b3250c8ca7582b96151405ca17c38d047e34"
+  },
+  "gemini/GCI_WORLD_2026_CHAMPION_080134_REPRODUCIBLE.ipynb": {
+    "available": true,
+    "cell_count": 7,
+    "code_source_sha256": "d01a376ea561bb47073ceb77462ccdba7f62f075d1d832741d646c42b529e01b",
+    "file_bytes": 204538,
+    "file_sha256": "51c97fea9d165c4bb14bd7fbed9bfbbf8b07cc01b0384c9b74d79aad5850dcd7"
+  },
+  "gemini/build_exp85_optimal_macro_apex.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 10406,
+    "file_sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555"
+  },
+  "gemini/build_grand_master_macro_stacker_apex.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 7034,
+    "file_sha256": "da4b04caab43a4e42c74fcecdc56956f96b3a00eda3c0a69a6f8e2d905ff44c8"
+  },
+  "gemini/build_v80250_power_apex.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 6498,
+    "file_sha256": "01b7690f0c9d4a304e398387e206fbd77e532cd112202705fb4a9cfcffb67fc4"
+  },
+  "gemini/champion/exp85_solo.ipynb": {
+    "available": true,
+    "cell_count": 10,
+    "code_source_sha256": "9a4e850e5f31864bf56c5cbcb501ac9bcf482a6794159cc2fca570523a0fda72",
+    "file_bytes": 28611,
+    "file_sha256": "2640eaa9b828c9b9485497f9ce35060bd4d89db179820a5a42bb153039862312"
+  },
+  "gemini/champion/exp85_solo_runner.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 22498,
+    "file_sha256": "6c8a301c569dba3e879ad4a968e3e1c393a35583baf841eec7013edcadc07d68"
+  },
+  "gemini/solo_grand_master_apex_080.py": {
+    "available": true,
+    "cell_count": null,
+    "code_source_sha256": null,
+    "file_bytes": 8124,
+    "file_sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756"
+  }
+}

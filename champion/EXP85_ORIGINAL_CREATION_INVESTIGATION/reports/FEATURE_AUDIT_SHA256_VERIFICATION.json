@@ -1,0 +1,314 @@
+{
+  "audit": "historical-lineage feature-audit manifest verification",
+  "created_utc": "2026-10-31T19:55:45.145714+00:00",
+  "root": "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge",
+  "manifest": "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge\\manifests\\SHA256_MANIFEST.csv",
+  "manifest_sha256": "54525cddbce3f34b59f57d865bc8910036cd396e13ca2d355ae8ea3780bfe5a8",
+  "manifest_entries": 29,
+  "checked_files": 29,
+  "sha256_matches": 29,
+  "size_matches": 29,
+  "issues": [],
+  "passed": true,
+  "elapsed_seconds": 1.327999999979511,
+  "files": [
+    {
+      "path": "logs/audit_execution.txt",
+      "expected_size_bytes": 1052,
+      "expected_sha256": "9d100acd7b186f0bf986b67a561a7d0bd3c3778003efcd2baf2d4d03a0cf4471",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 1052,
+      "actual_sha256": "9d100acd7b186f0bf986b67a561a7d0bd3c3778003efcd2baf2d4d03a0cf4471",
+      "sha256_matches": true
+    },
+    {
+      "path": "logs/feature_comparison_execution.txt",
+      "expected_size_bytes": 198389,
+      "expected_sha256": "7b2e9c234d2c33cb1d305328d43c7597d4fe22f4b5fa6ef614d6f4ebcee86922",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 198389,
+      "actual_sha256": "7b2e9c234d2c33cb1d305328d43c7597d4fe22f4b5fa6ef614d6f4ebcee86922",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/anchor_lineage_evidence.json",
+      "expected_size_bytes": 400621,
+      "expected_sha256": "be5ee03850b036c4870e1f8ac8b1698958497066acb403173deae500e54090df",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 400621,
+      "actual_sha256": "be5ee03850b036c4870e1f8ac8b1698958497066acb403173deae500e54090df",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/FEATURE_BY_FEATURE_LINEAGE.csv",
+      "expected_size_bytes": 823298,
+      "expected_sha256": "eeb86b11245daac50599d2afdc07a977850ef5b2a8d5547286853a8a465da480",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 823298,
+      "actual_sha256": "eeb86b11245daac50599d2afdc07a977850ef5b2a8d5547286853a8a465da480",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/FEATURE_MATRIX_PARITY_REPORT.md",
+      "expected_size_bytes": 1115,
+      "expected_sha256": "950d5658208e4f4856208fe42c263e2dcb69cb796f2c951bc07e726adaac99cd",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 1115,
+      "actual_sha256": "950d5658208e4f4856208fe42c263e2dcb69cb796f2c951bc07e726adaac99cd",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/FIRST_DIVERGENCE_REPORT.md",
+      "expected_size_bytes": 12166,
+      "expected_sha256": "50f9103759ef80e42549b54142f3fb0d4ebfa3837558566c2992f868f524a831",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 12166,
+      "actual_sha256": "50f9103759ef80e42549b54142f3fb0d4ebfa3837558566c2992f868f524a831",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/FIRST_TRANSFORMATION_DIVERGENCE.md",
+      "expected_size_bytes": 4157,
+      "expected_sha256": "3fa79e05401c3c3e994a8ccd16c1a93138be576a37b7aa105cad473814f8b226",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 4157,
+      "actual_sha256": "3fa79e05401c3c3e994a8ccd16c1a93138be576a37b7aa105cad473814f8b226",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/HISTORICAL_ANCHOR_DEPENDENCY_GRAPH.md",
+      "expected_size_bytes": 13791,
+      "expected_sha256": "1c18d99dbabe2c9e1dcf73bd327cbd759542eb59702517f1d9fa1aa3c8d15927",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 13791,
+      "actual_sha256": "1c18d99dbabe2c9e1dcf73bd327cbd759542eb59702517f1d9fa1aa3c8d15927",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/MISSING_DEPENDENCIES.csv",
+      "expected_size_bytes": 995,
+      "expected_sha256": "9934fb1dccf545614c8ece7aca51a5b107b68b3bb6f5f4df5849a6d0e99656c5",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 995,
+      "actual_sha256": "9934fb1dccf545614c8ece7aca51a5b107b68b3bb6f5f4df5849a6d0e99656c5",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/MODEL_CONFIGURATION_PARITY_REPORT.md",
+      "expected_size_bytes": 6644,
+      "expected_sha256": "18dc9ebb0997f9cf81e3f63fdd7463005c3a130bd1695669cc6cf49fed166623",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 6644,
+      "actual_sha256": "18dc9ebb0997f9cf81e3f63fdd7463005c3a130bd1695669cc6cf49fed166623",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/production_feature_cell_comparisons.csv",
+      "expected_size_bytes": 386838,
+      "expected_sha256": "78155288e857a6593859f257be4ea045363439a4269b9b966c7fe506e3367a40",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 386838,
+      "actual_sha256": "78155288e857a6593859f257be4ea045363439a4269b9b966c7fe506e3367a40",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/production_feature_comparison.json",
+      "expected_size_bytes": 199004,
+      "expected_sha256": "2cf80fe8d04d95097b851cc9bbb3e90f43608334ccb999908f0a6bb2a4ea8953",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 199004,
+      "actual_sha256": "2cf80fe8d04d95097b851cc9bbb3e90f43608334ccb999908f0a6bb2a4ea8953",
+      "sha256_matches": true
+    },
+    {
+      "path": "reports/PRODUCTION_FEATURE_MATRIX_CAPTURE_REPORT.md",
+      "expected_size_bytes": 5235,
+      "expected_sha256": "cea1fada568b969cf3595b7c38b6a1feb35639651fce6134b93aacc508f1d5fd",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 5235,
+      "actual_sha256": "cea1fada568b969cf3595b7c38b6a1feb35639651fce6134b93aacc508f1d5fd",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/anchor_comparison_metrics.csv",
+      "expected_size_bytes": 3385,
+      "expected_sha256": "a4aa86088c4385bd25f8cba45ca88f71089df4e17e5cf61533291bed43d70e0a",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 3385,
+      "actual_sha256": "a4aa86088c4385bd25f8cba45ca88f71089df4e17e5cf61533291bed43d70e0a",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/capture_execution.txt",
+      "expected_size_bytes": 5651,
+      "expected_sha256": "6ac233b383d144d65b981e705ffbd72ee66529b720348fb0aed9fb9302a7a48a",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 5651,
+      "actual_sha256": "6ac233b383d144d65b981e705ffbd72ee66529b720348fb0aed9fb9302a7a48a",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/capture_manifest.json",
+      "expected_size_bytes": 3993,
+      "expected_sha256": "dee5c92b6ce7c5b20912a1ac9d1c8155389ae5fc069ea997e574bfcdb569745c",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 3993,
+      "actual_sha256": "dee5c92b6ce7c5b20912a1ac9d1c8155389ae5fc069ea997e574bfcdb569745c",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/production_dtype_missing_report.csv",
+      "expected_size_bytes": 40199,
+      "expected_sha256": "f8613c14f5725c94d557a1bc869086321fd332232c839850ec90a88db34b1f69",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 40199,
+      "actual_sha256": "f8613c14f5725c94d557a1bc869086321fd332232c839850ec90a88db34b1f69",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/production_feature_names.csv",
+      "expected_size_bytes": 36466,
+      "expected_sha256": "5046ac50cd8caf9c2844417f7a019f450059d08df85461b36882ad687be1284c",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 36466,
+      "actual_sha256": "5046ac50cd8caf9c2844417f7a019f450059d08df85461b36882ad687be1284c",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/test_row_id_map.csv",
+      "expected_size_bytes": 849913,
+      "expected_sha256": "c9966b8ae86ede0a64b06aedc69a79ffaa63a91fe2d354f4150119d0e617887a",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 849913,
+      "actual_sha256": "c9966b8ae86ede0a64b06aedc69a79ffaa63a91fe2d354f4150119d0e617887a",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/train_row_id_map.csv",
+      "expected_size_bytes": 2345833,
+      "expected_sha256": "a1f6a58f8bb6816239990e48f2e8f3d7c31c022d6dbb4c970c83f47842f4bdc8",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 2345833,
+      "actual_sha256": "a1f6a58f8bb6816239990e48f2e8f3d7c31c022d6dbb4c970c83f47842f4bdc8",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/X_test_production.feather",
+      "expected_size_bytes": 158586586,
+      "expected_sha256": "0633297a3754bdd3e418f93d851ec254b17f5821f13940a5108b9cde40f0c2d5",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 158586586,
+      "actual_sha256": "0633297a3754bdd3e418f93d851ec254b17f5821f13940a5108b9cde40f0c2d5",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/production_feature_capture_20261031_192800/X_train_production.feather",
+      "expected_size_bytes": 440845146,
+      "expected_sha256": "8f1bcadf1f656f2e08ebca77b4e3e95e18d62950c82d5816a037838416d966d9",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 440845146,
+      "actual_sha256": "8f1bcadf1f656f2e08ebca77b4e3e95e18d62950c82d5816a037838416d966d9",
+      "sha256_matches": true
+    },
+    {
+      "path": "runs/v5_hybrid_formula_replay.csv",
+      "expected_size_bytes": 1291519,
+      "expected_sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 1291519,
+      "actual_sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482",
+      "sha256_matches": true
+    },
+    {
+      "path": "source/analyze_production_feature_capture.py",
+      "expected_size_bytes": 40493,
+      "expected_sha256": "b3bb917bbc35a817ea440f633991f891446a30fd4066baf34458f51e48533f6b",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 40493,
+      "actual_sha256": "b3bb917bbc35a817ea440f633991f891446a30fd4066baf34458f51e48533f6b",
+      "sha256_matches": true
+    },
+    {
+      "path": "source/audit_historical_lineage.py",
+      "expected_size_bytes": 34476,
+      "expected_sha256": "f3b71f5aba34f59052db9fdb9f56b67f8bea1aec0aca7a26496296316acea472",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 34476,
+      "actual_sha256": "f3b71f5aba34f59052db9fdb9f56b67f8bea1aec0aca7a26496296316acea472",
+      "sha256_matches": true
+    },
+    {
+      "path": "source/capture_production_anchor_features.py",
+      "expected_size_bytes": 8547,
+      "expected_sha256": "c85476cd68ceee7652ff0721687d8331b3bb9ecef80f855c755db3f5469d7f27",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 8547,
+      "actual_sha256": "c85476cd68ceee7652ff0721687d8331b3bb9ecef80f855c755db3f5469d7f27",
+      "sha256_matches": true
+    },
+    {
+      "path": "source/finalize_production_feature_audit.py",
+      "expected_size_bytes": 27547,
+      "expected_sha256": "4303bae2ad31c32116411816c59880c594466b3d77321c8bd8e8a68923c3e877",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 27547,
+      "actual_sha256": "4303bae2ad31c32116411816c59880c594466b3d77321c8bd8e8a68923c3e877",
+      "sha256_matches": true
+    },
+    {
+      "path": "tests/__pycache__/test_lineage_evidence.cpython-312.pyc",
+      "expected_size_bytes": 15302,
+      "expected_sha256": "49b625daa7cf01b0b3e396f77e51591cbcd220a6148b3ab45a2ba378b019a505",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 15302,
+      "actual_sha256": "49b625daa7cf01b0b3e396f77e51591cbcd220a6148b3ab45a2ba378b019a505",
+      "sha256_matches": true
+    },
+    {
+      "path": "tests/test_lineage_evidence.py",
+      "expected_size_bytes": 9512,
+      "expected_sha256": "6014f5d079b0538c7494b0fd9fdde487a8f711dd8dac030c54273f7c4bb6610a",
+      "exists": true,
+      "size_matches": true,
+      "actual_size_bytes": 9512,
+      "actual_sha256": "6014f5d079b0538c7494b0fd9fdde487a8f711dd8dac030c54273f7c4bb6610a",
+      "sha256_matches": true
+    }
+  ],
+  "command": [
+    "champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\source\\verify_feature_audit_manifest.py",
+    "--root",
+    "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge",
+    "--manifest",
+    "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge\\manifests\\SHA256_MANIFEST.csv"
+  ],
+  "exit_code": 0
+}

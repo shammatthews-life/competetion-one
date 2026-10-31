@@ -1,0 +1,74 @@
+{
+  "all_prediction_vectors_finite_and_correct_length": true,
+  "candidate_file_persisted": false,
+  "classification": "ALTERNATE_CACHE_NAMESPACE_DIAGNOSTIC_NOT_HISTORICAL_REPLAY",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\source\\verify_cached_v85_replay.py",
+    "--repository-root",
+    "D:\\gci\\_gci_push_tmp",
+    "--raw-test-csv",
+    "D:\\gci\\inpuy\\test.csv",
+    "--report",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\reports\\CACHED_V85_REPLAY_VERIFICATION.json"
+  ],
+  "completed_at_utc": "2026-10-31T19:30:13.929054+00:00",
+  "elapsed_seconds": 0.6660986000206321,
+  "exit_code": 0,
+  "formula": "Normalized fixed model weights in probit rank space; 0.85 * Anchor74 probit + 0.15 * suite probit; ordinal rank projection.",
+  "ids_match_raw_test_exact_order": true,
+  "input_sha256": {
+    "anchor74": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+    "frozen_champion": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "historical_v85": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "raw_test": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "v17": "e07d84e04ea7587a4ca3298387a590da2e1cc29dfd7d89208c162ab4969cdc49",
+    "v55": "40f3eee5f7f43d0b7b7ef2c24ecff22f9d3e8eae898ba9f61676fa8d408a31db",
+    "xgb10_test": "7ea2ffe8e8d5e3c3eb8d336841acb06cda6813b1b99ad988a354990a45445b2f"
+  },
+  "method": "Recomputed the fixed v85 test blend from existing Anchor74, V17, V55, and XGB10 prediction artifacts; no weights were tuned.",
+  "note": "This exploratory attempt used D:\\gci\\_gci_push_tmp\\gemini\\champion\\cache. The v85 builder and dependency manifest specify D:\\gci\\gemini\\cache. These files have different hashes and are not the historical input set.",
+  "official_competition_score_evaluated": false,
+  "prediction_array_order_assumed_from_historical_producer": true,
+  "prediction_arrays_have_id_sidecars": false,
+  "recomputed_candidate": {
+    "csv_bytes": 1291519,
+    "sha256": "269a9f41298926e8e7bd8bb57d6d3abf813df1e02a3df9619e0841f1cb171448",
+    "target_max": 0.9999918699186991,
+    "target_min": 8.130081300813007e-06,
+    "unique_targets": 61500
+  },
+  "references": {
+    "frozen_champion": {
+      "candidate_bytes_equal": false,
+      "maximum_absolute_target_difference": 0.13356097557398372,
+      "path": "D:\\gci\\_gci_push_tmp\\gemini\\frozen_champion_0801340_reference.csv",
+      "pearson": 0.9983247919954445,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "spearman": 0.9983247919954428,
+      "target_exact_matches": 1
+    },
+    "historical_v85": {
+      "candidate_bytes_equal": false,
+      "maximum_absolute_target_difference": 0.13356097557398372,
+      "path": "D:\\gci\\_gci_push_tmp\\gemini\\v_20261027_optimal_macro_apex_v85.csv",
+      "pearson": 0.9983247919954445,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "spearman": 0.9983247919954428,
+      "target_exact_matches": 1
+    }
+  },
+  "started_at_utc": "2026-10-31T19:30:13.204490+00:00",
+  "test_rows": 61500,
+  "training_executed": false,
+  "weights": {
+    "v17_e1Aet": 0.2932,
+    "v17_e1et": 0.0489,
+    "v17_final": 0.2051,
+    "v55_allfam": 0.0383,
+    "v55_cbprod": 0.0874,
+    "v55_deep_et": 0.0442,
+    "v55_v2_mono": 0.0233,
+    "xgb10": 0.2596
+  }
+}

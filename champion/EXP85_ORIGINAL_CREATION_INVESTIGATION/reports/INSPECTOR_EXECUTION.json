@@ -1,0 +1,19 @@
+﻿{
+    "command":  [
+                    "python",
+                    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\source\\inspect_notebooks.py",
+                    "--repository-root",
+                    "D:\\gci\\_gci_push_tmp",
+                    "--output-dir",
+                    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_ORIGINAL_CREATION_INVESTIGATION\\reports"
+                ],
+    "started_at_utc":  "2026-10-31T19:24:39.9865240Z",
+    "completed_at_utc":  "2026-10-31T19:24:42.1524048Z",
+    "exit_code":  0,
+    "elapsed_seconds":  1.6515045,
+    "output_sha256":  {
+                          "NOTEBOOK_CELL_DIFF.json":  "46dde7083eebc744dc9e373a608a9afcdf468f7335e828bf97fe264fee3d2257",
+                          "NOTEBOOK_CODE_HASHES.json":  "babf255a38066ca20a7648818300f3253604242dc18d8a50afbb4267f4b06130",
+                          "NOTEBOOK_LINEAGE_COMPARISON.md":  "a851a42fd61cb0af6e1acc9e31915401526ecd61e88ccf0ebc697668acc596e0"
+                      }
+}
