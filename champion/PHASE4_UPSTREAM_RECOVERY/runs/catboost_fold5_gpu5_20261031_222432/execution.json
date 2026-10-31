@@ -1,0 +1,1159 @@
+{
+  "classification": "single-fold CatBoost diagnostic, not raw-rebuild certification",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\source\\catboost_fold5_repeats.py",
+    "--run-dir",
+    "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432",
+    "--repeats",
+    "5",
+    "--fold-number",
+    "5",
+    "--include-cpu"
+  ],
+  "cpu_control": {
+    "best_iteration_zero_based": 749,
+    "candidate_oof_comparison": {
+      "count": 34240,
+      "exact_value_match": false,
+      "mae": 0.00805914471294336,
+      "maximum_absolute_difference": 0.35306108964913496,
+      "maximum_rank_displacement": 14496.0,
+      "mean_rank_displacement": 1147.970035046729,
+      "pearson": 0.9814123139080565,
+      "rmse": 0.014715403746572419,
+      "spearman": 0.9874635284958937
+    },
+    "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\cpu_control\\catboost_info",
+    "device_reported_by_model": "CPU",
+    "effective_parameters": {
+      "auto_class_weights": "None",
+      "bagging_temperature": 1,
+      "bayesian_matrix_reg": 0.10000000149011612,
+      "best_model_min_trees": 1,
+      "boost_from_average": false,
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bayesian",
+      "border_count": 254,
+      "class_names": [
+        0,
+        1
+      ],
+      "classes_count": 0,
+      "depth": 6,
+      "eval_fraction": 0,
+      "eval_metric": "Logloss",
+      "feature_border_type": "GreedyLogSum",
+      "force_unit_auto_pair_weights": false,
+      "grow_policy": "SymmetricTree",
+      "iterations": 750,
+      "l2_leaf_reg": 5,
+      "leaf_estimation_backtracking": "AnyImprovement",
+      "leaf_estimation_iterations": 10,
+      "leaf_estimation_method": "Newton",
+      "learning_rate": 0.03999999910593033,
+      "loss_function": "Logloss",
+      "max_leaves": 64,
+      "min_data_in_leaf": 1,
+      "model_shrink_mode": "Constant",
+      "model_shrink_rate": 0,
+      "model_size_reg": 0.5,
+      "nan_mode": "Min",
+      "od_pval": 0,
+      "od_type": "Iter",
+      "od_wait": 60,
+      "penalties_coefficient": 1,
+      "pool_metainfo_options": {
+        "tags": {}
+      },
+      "posterior_sampling": false,
+      "random_score_type": "NormalWithModelSizeDecrease",
+      "random_seed": 46,
+      "random_strength": 1,
+      "rsm": 1,
+      "sampling_frequency": "PerTree",
+      "score_function": "Cosine",
+      "sparse_features_conflict_fraction": 0,
+      "task_type": "CPU",
+      "use_best_model": true
+    },
+    "fit_elapsed_seconds": 125.60899999999674,
+    "gpu_repeat_01_comparison": {
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 0.008992850831207462,
+        "maximum_absolute_difference": 0.2901169913723045,
+        "maximum_rank_displacement": 29192.0,
+        "mean_rank_displacement": 1999.4429918699186,
+        "pearson": 0.9804441668374484,
+        "rmse": 0.016749404960472065,
+        "spearman": 0.9881360386602346
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.008085869220284541,
+        "maximum_absolute_difference": 0.3580309674790912,
+        "maximum_rank_displacement": 15600.0,
+        "mean_rank_displacement": 1151.19363317757,
+        "pearson": 0.9812035692599962,
+        "rmse": 0.014790077549844932,
+        "spearman": 0.9873858222155841
+      }
+    },
+    "historical_oof_comparison": {
+      "count": 34240,
+      "exact_value_match": false,
+      "mae": 0.008085835353628007,
+      "maximum_absolute_difference": 0.3580308781018385,
+      "maximum_rank_displacement": 15600.0,
+      "mean_rank_displacement": 1151.1891939252337,
+      "pearson": 0.9812036424413462,
+      "rmse": 0.014790038534929325,
+      "spearman": 0.9873858941814295
+    },
+    "model_file": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\cpu_control\\model.cbm",
+      "sha256": "bdb406215372ffe9735dfa695406585a1d99d3cc59a24eb884df576563099c25",
+      "size_bytes": 918368
+    },
+    "prediction_file": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\cpu_control\\predictions.npz",
+      "sha256": "641dbce011fa07bfc2f0758f40af6cea17c4f2c112616e1209b5965a6431a58d",
+      "size_bytes": 724237
+    },
+    "requested_parameters": {
+      "bagging_temperature": 1.0,
+      "bootstrap_type": "Bayesian",
+      "depth": 6,
+      "early_stopping_rounds": 60,
+      "eval_metric": "Logloss",
+      "iterations": 750,
+      "l2_leaf_reg": 5.0,
+      "learning_rate": 0.04,
+      "loss_function": "Logloss",
+      "random_seed": 46,
+      "random_strength": 1.0,
+      "task_type": "CPU"
+    },
+    "row_order_invariance": {
+      "count": 61500,
+      "exact_value_match": true,
+      "mae": 0.0,
+      "maximum_absolute_difference": 0.0,
+      "maximum_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "pearson": 1.0,
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "tree_count": 750,
+    "validation_auc": 0.7490953988052185
+  },
+  "elapsed_seconds": 230.60899999999674,
+  "environment": {
+    "catboost": "1.2.10",
+    "gpu_before": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 0 MiB, 6141 MiB, 0 %",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "scikit_learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "feature_matrix": {
+    "feature_count": 550,
+    "feature_order_sha256": "bfe1b359e4bbdaa6d4114571300fc75f494910c96d279c16e2ce5f84df483bd4",
+    "historical_and_current_test_exact": true,
+    "historical_and_current_train_exact": true,
+    "labels_match_raw_train": true,
+    "raw_id_order_matches_feature_maps": true,
+    "test_shape": [
+      61500,
+      550
+    ],
+    "train_shape": [
+      171202,
+      550
+    ]
+  },
+  "fold_definition": {
+    "class": "StratifiedKFold",
+    "model_seed": 46,
+    "n_splits": 5,
+    "random_state": 42,
+    "shuffle": true
+  },
+  "fold_number": 5,
+  "gpu_repeats": [
+    {
+      "best_iteration_zero_based": 749,
+      "candidate_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.0010874019787192166,
+        "maximum_absolute_difference": 0.0397332490254757,
+        "maximum_rank_displacement": 2690.0,
+        "mean_rank_displacement": 144.97219626168226,
+        "pearson": 0.9995428319884225,
+        "rmse": 0.0023175560813704188,
+        "spearman": 0.999751728571127
+      },
+      "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_01\\catboost_info",
+      "device_reported_by_model": "GPU",
+      "effective_parameters": {
+        "add_ridge_penalty_to_loss_function": false,
+        "auto_class_weights": "None",
+        "bagging_temperature": 1,
+        "bayesian_matrix_reg": 0.10000000149011612,
+        "best_model_min_trees": 1,
+        "boost_from_average": false,
+        "boosting_type": "Plain",
+        "bootstrap_type": "Bayesian",
+        "border_count": 128,
+        "class_names": [
+          0,
+          1
+        ],
+        "classes_count": 0,
+        "data_partition": "DocParallel",
+        "depth": 6,
+        "devices": "0",
+        "eval_fraction": 0,
+        "eval_metric": "Logloss",
+        "feature_border_type": "GreedyLogSum",
+        "fold_size_loss_normalization": false,
+        "force_unit_auto_pair_weights": false,
+        "gpu_cat_features_storage": "GpuRam",
+        "gpu_ram_part": 0.95,
+        "grow_policy": "SymmetricTree",
+        "iterations": 750,
+        "l2_leaf_reg": 5,
+        "leaf_estimation_backtracking": "AnyImprovement",
+        "leaf_estimation_iterations": 10,
+        "leaf_estimation_method": "Newton",
+        "learning_rate": 0.03999999910593033,
+        "loss_function": "Logloss",
+        "max_leaves": 64,
+        "meta_l2_exponent": 1,
+        "meta_l2_frequency": 0,
+        "min_data_in_leaf": 1,
+        "min_fold_size": 100,
+        "model_size_reg": 0.5,
+        "nan_mode": "Min",
+        "observations_to_bootstrap": "TestOnly",
+        "od_pval": 0,
+        "od_type": "Iter",
+        "od_wait": 60,
+        "penalties_coefficient": 1,
+        "pinned_memory_bytes": "104857600",
+        "pool_metainfo_options": {
+          "tags": {}
+        },
+        "random_score_type": "NormalWithModelSizeDecrease",
+        "random_seed": 46,
+        "random_strength": 1,
+        "rsm": 1,
+        "score_function": "Cosine",
+        "task_type": "GPU",
+        "use_best_model": true
+      },
+      "fit_elapsed_seconds": 19.25,
+      "gpu_after_fit": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 83 MiB, 6141 MiB, 0 %",
+      "historical_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 2.561044491466752e-07,
+        "maximum_absolute_difference": 0.00013215996361226612,
+        "maximum_rank_displacement": 8.0,
+        "mean_rank_displacement": 0.05192757009345794,
+        "pearson": 0.9999999996051876,
+        "rmse": 2.1535583165120077e-06,
+        "spearman": 0.9999999995701281
+      },
+      "model_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_01\\model.cbm",
+        "sha256": "209ada448a22a0330169a0b50b440c3494e626c7fef2fe24b6ac2ae776a2e452",
+        "size_bytes": 916120
+      },
+      "name": "gpu_repeat_01",
+      "prediction_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_01\\predictions.npz",
+        "sha256": "71d8f699f9495807d9917ad4a5cdc578ea6c1ad047d12a0f83f589933b241f1b",
+        "size_bytes": 724289
+      },
+      "requested_parameters": {
+        "bagging_temperature": 1.0,
+        "bootstrap_type": "Bayesian",
+        "depth": 6,
+        "devices": "0",
+        "early_stopping_rounds": 60,
+        "eval_metric": "Logloss",
+        "iterations": 750,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.04,
+        "loss_function": "Logloss",
+        "random_seed": 46,
+        "random_strength": 1.0,
+        "task_type": "GPU"
+      },
+      "row_order_invariance": {
+        "count": 61500,
+        "exact_value_match": true,
+        "mae": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "maximum_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "tree_count": 750,
+      "validation_auc": 0.7536403129097142
+    },
+    {
+      "best_iteration_zero_based": 749,
+      "candidate_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.0010874068278306456,
+        "maximum_absolute_difference": 0.03973361981589901,
+        "maximum_rank_displacement": 2690.0,
+        "mean_rank_displacement": 144.97207943925233,
+        "pearson": 0.9995428224689106,
+        "rmse": 0.002317580141680188,
+        "spearman": 0.9997517254896823
+      },
+      "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_02\\catboost_info",
+      "device_reported_by_model": "GPU",
+      "effective_parameters": {
+        "add_ridge_penalty_to_loss_function": false,
+        "auto_class_weights": "None",
+        "bagging_temperature": 1,
+        "bayesian_matrix_reg": 0.10000000149011612,
+        "best_model_min_trees": 1,
+        "boost_from_average": false,
+        "boosting_type": "Plain",
+        "bootstrap_type": "Bayesian",
+        "border_count": 128,
+        "class_names": [
+          0,
+          1
+        ],
+        "classes_count": 0,
+        "data_partition": "DocParallel",
+        "depth": 6,
+        "devices": "0",
+        "eval_fraction": 0,
+        "eval_metric": "Logloss",
+        "feature_border_type": "GreedyLogSum",
+        "fold_size_loss_normalization": false,
+        "force_unit_auto_pair_weights": false,
+        "gpu_cat_features_storage": "GpuRam",
+        "gpu_ram_part": 0.95,
+        "grow_policy": "SymmetricTree",
+        "iterations": 750,
+        "l2_leaf_reg": 5,
+        "leaf_estimation_backtracking": "AnyImprovement",
+        "leaf_estimation_iterations": 10,
+        "leaf_estimation_method": "Newton",
+        "learning_rate": 0.03999999910593033,
+        "loss_function": "Logloss",
+        "max_leaves": 64,
+        "meta_l2_exponent": 1,
+        "meta_l2_frequency": 0,
+        "min_data_in_leaf": 1,
+        "min_fold_size": 100,
+        "model_size_reg": 0.5,
+        "nan_mode": "Min",
+        "observations_to_bootstrap": "TestOnly",
+        "od_pval": 0,
+        "od_type": "Iter",
+        "od_wait": 60,
+        "penalties_coefficient": 1,
+        "pinned_memory_bytes": "104857600",
+        "pool_metainfo_options": {
+          "tags": {}
+        },
+        "random_score_type": "NormalWithModelSizeDecrease",
+        "random_seed": 46,
+        "random_strength": 1,
+        "rsm": 1,
+        "score_function": "Cosine",
+        "task_type": "GPU",
+        "use_best_model": true
+      },
+      "fit_elapsed_seconds": 17.578999999997905,
+      "gpu_after_fit": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 83 MiB, 6141 MiB, 0 %",
+      "historical_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 3.9210513365829337e-07,
+        "maximum_absolute_difference": 0.0003101572904651295,
+        "maximum_rank_displacement": 15.0,
+        "mean_rank_displacement": 0.07383177570093458,
+        "pearson": 0.9999999985140582,
+        "rmse": 4.177182277716927e-06,
+        "spearman": 0.9999999992027344
+      },
+      "model_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_02\\model.cbm",
+        "sha256": "9175562d7655aed5764444bdb65007308338f4e59d8352d8c759fa4775ff1140",
+        "size_bytes": 916064
+      },
+      "name": "gpu_repeat_02",
+      "prediction_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_02\\predictions.npz",
+        "sha256": "0e350f30eadf115db23bc871528012672615cdb5f9bc965b9adeae35ba42826e",
+        "size_bytes": 724191
+      },
+      "requested_parameters": {
+        "bagging_temperature": 1.0,
+        "bootstrap_type": "Bayesian",
+        "depth": 6,
+        "devices": "0",
+        "early_stopping_rounds": 60,
+        "eval_metric": "Logloss",
+        "iterations": 750,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.04,
+        "loss_function": "Logloss",
+        "random_seed": 46,
+        "random_strength": 1.0,
+        "task_type": "GPU"
+      },
+      "row_order_invariance": {
+        "count": 61500,
+        "exact_value_match": true,
+        "mae": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "maximum_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "tree_count": 750,
+      "validation_auc": 0.7536404393469841
+    },
+    {
+      "best_iteration_zero_based": 749,
+      "candidate_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.0010873868354566358,
+        "maximum_absolute_difference": 0.03973278132913616,
+        "maximum_rank_displacement": 2690.0,
+        "mean_rank_displacement": 144.9696261682243,
+        "pearson": 0.9995428417333767,
+        "rmse": 0.0023175318823101003,
+        "spearman": 0.9997517326022953
+      },
+      "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_03\\catboost_info",
+      "device_reported_by_model": "GPU",
+      "effective_parameters": {
+        "add_ridge_penalty_to_loss_function": false,
+        "auto_class_weights": "None",
+        "bagging_temperature": 1,
+        "bayesian_matrix_reg": 0.10000000149011612,
+        "best_model_min_trees": 1,
+        "boost_from_average": false,
+        "boosting_type": "Plain",
+        "bootstrap_type": "Bayesian",
+        "border_count": 128,
+        "class_names": [
+          0,
+          1
+        ],
+        "classes_count": 0,
+        "data_partition": "DocParallel",
+        "depth": 6,
+        "devices": "0",
+        "eval_fraction": 0,
+        "eval_metric": "Logloss",
+        "feature_border_type": "GreedyLogSum",
+        "fold_size_loss_normalization": false,
+        "force_unit_auto_pair_weights": false,
+        "gpu_cat_features_storage": "GpuRam",
+        "gpu_ram_part": 0.95,
+        "grow_policy": "SymmetricTree",
+        "iterations": 750,
+        "l2_leaf_reg": 5,
+        "leaf_estimation_backtracking": "AnyImprovement",
+        "leaf_estimation_iterations": 10,
+        "leaf_estimation_method": "Newton",
+        "learning_rate": 0.03999999910593033,
+        "loss_function": "Logloss",
+        "max_leaves": 64,
+        "meta_l2_exponent": 1,
+        "meta_l2_frequency": 0,
+        "min_data_in_leaf": 1,
+        "min_fold_size": 100,
+        "model_size_reg": 0.5,
+        "nan_mode": "Min",
+        "observations_to_bootstrap": "TestOnly",
+        "od_pval": 0,
+        "od_type": "Iter",
+        "od_wait": 60,
+        "penalties_coefficient": 1,
+        "pinned_memory_bytes": "104857600",
+        "pool_metainfo_options": {
+          "tags": {}
+        },
+        "random_score_type": "NormalWithModelSizeDecrease",
+        "random_seed": 46,
+        "random_strength": 1,
+        "rsm": 1,
+        "score_function": "Cosine",
+        "task_type": "GPU",
+        "use_best_model": true
+      },
+      "fit_elapsed_seconds": 17.96799999999348,
+      "gpu_after_fit": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 83 MiB, 6141 MiB, 0 %",
+      "historical_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 1.91352842779758e-07,
+        "maximum_absolute_difference": 7.001622912358729e-05,
+        "maximum_rank_displacement": 7.0,
+        "mean_rank_displacement": 0.04357476635514019,
+        "pearson": 0.99999999985692,
+        "rmse": 1.296424801060758e-06,
+        "spearman": 0.9999999996580158
+      },
+      "model_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_03\\model.cbm",
+        "sha256": "7b4f6396dd4f0a2834db2f8528e77ca66b818e75cbb5f0223036f40419b50a86",
+        "size_bytes": 916080
+      },
+      "name": "gpu_repeat_03",
+      "prediction_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_03\\predictions.npz",
+        "sha256": "5a321c8ba3a6fd3f5977d82e168681dc192fe63a3c3ba18ce0734118ab965958",
+        "size_bytes": 724216
+      },
+      "requested_parameters": {
+        "bagging_temperature": 1.0,
+        "bootstrap_type": "Bayesian",
+        "depth": 6,
+        "devices": "0",
+        "early_stopping_rounds": 60,
+        "eval_metric": "Logloss",
+        "iterations": 750,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.04,
+        "loss_function": "Logloss",
+        "random_seed": 46,
+        "random_strength": 1.0,
+        "task_type": "GPU"
+      },
+      "row_order_invariance": {
+        "count": 61500,
+        "exact_value_match": true,
+        "mae": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "maximum_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "tree_count": 750,
+      "validation_auc": 0.7536403014154169
+    },
+    {
+      "best_iteration_zero_based": 749,
+      "candidate_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.001087381474422933,
+        "maximum_absolute_difference": 0.0397318324904411,
+        "maximum_rank_displacement": 2690.0,
+        "mean_rank_displacement": 144.97056074766354,
+        "pearson": 0.9995428384002267,
+        "rmse": 0.0023175407912849845,
+        "spearman": 0.9997517183956033
+      },
+      "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_04\\catboost_info",
+      "device_reported_by_model": "GPU",
+      "effective_parameters": {
+        "add_ridge_penalty_to_loss_function": false,
+        "auto_class_weights": "None",
+        "bagging_temperature": 1,
+        "bayesian_matrix_reg": 0.10000000149011612,
+        "best_model_min_trees": 1,
+        "boost_from_average": false,
+        "boosting_type": "Plain",
+        "bootstrap_type": "Bayesian",
+        "border_count": 128,
+        "class_names": [
+          0,
+          1
+        ],
+        "classes_count": 0,
+        "data_partition": "DocParallel",
+        "depth": 6,
+        "devices": "0",
+        "eval_fraction": 0,
+        "eval_metric": "Logloss",
+        "feature_border_type": "GreedyLogSum",
+        "fold_size_loss_normalization": false,
+        "force_unit_auto_pair_weights": false,
+        "gpu_cat_features_storage": "GpuRam",
+        "gpu_ram_part": 0.95,
+        "grow_policy": "SymmetricTree",
+        "iterations": 750,
+        "l2_leaf_reg": 5,
+        "leaf_estimation_backtracking": "AnyImprovement",
+        "leaf_estimation_iterations": 10,
+        "leaf_estimation_method": "Newton",
+        "learning_rate": 0.03999999910593033,
+        "loss_function": "Logloss",
+        "max_leaves": 64,
+        "meta_l2_exponent": 1,
+        "meta_l2_frequency": 0,
+        "min_data_in_leaf": 1,
+        "min_fold_size": 100,
+        "model_size_reg": 0.5,
+        "nan_mode": "Min",
+        "observations_to_bootstrap": "TestOnly",
+        "od_pval": 0,
+        "od_type": "Iter",
+        "od_wait": 60,
+        "penalties_coefficient": 1,
+        "pinned_memory_bytes": "104857600",
+        "pool_metainfo_options": {
+          "tags": {}
+        },
+        "random_score_type": "NormalWithModelSizeDecrease",
+        "random_seed": 46,
+        "random_strength": 1,
+        "rsm": 1,
+        "score_function": "Cosine",
+        "task_type": "GPU",
+        "use_best_model": true
+      },
+      "fit_elapsed_seconds": 17.905999999988126,
+      "gpu_after_fit": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 83 MiB, 6141 MiB, 0 %",
+      "historical_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 4.773174716442178e-07,
+        "maximum_absolute_difference": 0.00018995326228665732,
+        "maximum_rank_displacement": 28.0,
+        "mean_rank_displacement": 0.10449766355140187,
+        "pearson": 0.999999998958734,
+        "rmse": 3.49656764424851e-06,
+        "spearman": 0.999999998070659
+      },
+      "model_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_04\\model.cbm",
+        "sha256": "f45a84f4c66ed213522b4abb0b4e3dca06b5e504b51562f45b41174c09e309d4",
+        "size_bytes": 916104
+      },
+      "name": "gpu_repeat_04",
+      "prediction_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_04\\predictions.npz",
+        "sha256": "e42fa0af988a1c2d4808f9a6db13a9d47b3ddb63dfb85d733288976620032b70",
+        "size_bytes": 724264
+      },
+      "requested_parameters": {
+        "bagging_temperature": 1.0,
+        "bootstrap_type": "Bayesian",
+        "depth": 6,
+        "devices": "0",
+        "early_stopping_rounds": 60,
+        "eval_metric": "Logloss",
+        "iterations": 750,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.04,
+        "loss_function": "Logloss",
+        "random_seed": 46,
+        "random_strength": 1.0,
+        "task_type": "GPU"
+      },
+      "row_order_invariance": {
+        "count": 61500,
+        "exact_value_match": true,
+        "mae": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "maximum_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "tree_count": 750,
+      "validation_auc": 0.7536404623355786
+    },
+    {
+      "best_iteration_zero_based": 749,
+      "candidate_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 0.0010873950529755145,
+        "maximum_absolute_difference": 0.03973240285430174,
+        "maximum_rank_displacement": 2690.0,
+        "mean_rank_displacement": 144.97073598130842,
+        "pearson": 0.9995428389689451,
+        "rmse": 0.002317539093411957,
+        "spearman": 0.9997517320770627
+      },
+      "catboost_info_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_05\\catboost_info",
+      "device_reported_by_model": "GPU",
+      "effective_parameters": {
+        "add_ridge_penalty_to_loss_function": false,
+        "auto_class_weights": "None",
+        "bagging_temperature": 1,
+        "bayesian_matrix_reg": 0.10000000149011612,
+        "best_model_min_trees": 1,
+        "boost_from_average": false,
+        "boosting_type": "Plain",
+        "bootstrap_type": "Bayesian",
+        "border_count": 128,
+        "class_names": [
+          0,
+          1
+        ],
+        "classes_count": 0,
+        "data_partition": "DocParallel",
+        "depth": 6,
+        "devices": "0",
+        "eval_fraction": 0,
+        "eval_metric": "Logloss",
+        "feature_border_type": "GreedyLogSum",
+        "fold_size_loss_normalization": false,
+        "force_unit_auto_pair_weights": false,
+        "gpu_cat_features_storage": "GpuRam",
+        "gpu_ram_part": 0.95,
+        "grow_policy": "SymmetricTree",
+        "iterations": 750,
+        "l2_leaf_reg": 5,
+        "leaf_estimation_backtracking": "AnyImprovement",
+        "leaf_estimation_iterations": 10,
+        "leaf_estimation_method": "Newton",
+        "learning_rate": 0.03999999910593033,
+        "loss_function": "Logloss",
+        "max_leaves": 64,
+        "meta_l2_exponent": 1,
+        "meta_l2_frequency": 0,
+        "min_data_in_leaf": 1,
+        "min_fold_size": 100,
+        "model_size_reg": 0.5,
+        "nan_mode": "Min",
+        "observations_to_bootstrap": "TestOnly",
+        "od_pval": 0,
+        "od_type": "Iter",
+        "od_wait": 60,
+        "penalties_coefficient": 1,
+        "pinned_memory_bytes": "104857600",
+        "pool_metainfo_options": {
+          "tags": {}
+        },
+        "random_score_type": "NormalWithModelSizeDecrease",
+        "random_seed": 46,
+        "random_strength": 1,
+        "rsm": 1,
+        "score_function": "Cosine",
+        "task_type": "GPU",
+        "use_best_model": true
+      },
+      "fit_elapsed_seconds": 17.905999999988126,
+      "gpu_after_fit": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, GPU-bd72c401-6e5c-728e-d054-57b916d3a7b5, 83 MiB, 6141 MiB, 0 %",
+      "historical_oof_comparison": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 1.60525548804022e-07,
+        "maximum_absolute_difference": 7.438523287883747e-05,
+        "maximum_rank_displacement": 9.0,
+        "mean_rank_displacement": 0.029439252336448597,
+        "pearson": 0.9999999997903665,
+        "rmse": 1.5691339248559772e-06,
+        "spearman": 0.9999999997408213
+      },
+      "model_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_05\\model.cbm",
+        "sha256": "afc4bf864bb0e20e937adc5bef979a617f7722f9d77c713b5cad41aec70a7d29",
+        "size_bytes": 916104
+      },
+      "name": "gpu_repeat_05",
+      "prediction_file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\gpu_repeat_05\\predictions.npz",
+        "sha256": "89471a55f96982846b04b776b9ba29b194af81b4b18ef902721b9e99e2ae7aaa",
+        "size_bytes": 724318
+      },
+      "requested_parameters": {
+        "bagging_temperature": 1.0,
+        "bootstrap_type": "Bayesian",
+        "depth": 6,
+        "devices": "0",
+        "early_stopping_rounds": 60,
+        "eval_metric": "Logloss",
+        "iterations": 750,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.04,
+        "loss_function": "Logloss",
+        "random_seed": 46,
+        "random_strength": 1.0,
+        "task_type": "GPU"
+      },
+      "row_order_invariance": {
+        "count": 61500,
+        "exact_value_match": true,
+        "mae": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "maximum_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 0.9999999999999999,
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "tree_count": 750,
+      "validation_auc": 0.7536403358983088
+    }
+  ],
+  "inputs": {
+    "candidate_zoo": {
+      "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\anchor74_historical_zoo_20261031_215500_retry1\\historical_anchor_zoo.npz",
+      "sha256": "23af1334e39828fb832c432e106d3477bc55eb3ffe1374d58990a18a8c802247",
+      "size_bytes": 8059520
+    },
+    "current_test_matrix": {
+      "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\selector_replay_20261031_202500\\hasan_selected_550_te.feather",
+      "sha256": "9c634232d3bdb8907f32a526ac2387bdeb23c5df8a2e21ab1d170f1c4903d563",
+      "size_bytes": 129090410
+    },
+    "current_train_matrix": {
+      "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\selector_replay_20261031_202500\\hasan_selected_550_tr.feather",
+      "sha256": "c9a78624fcdd4c9f95f3c1b3e748e95a36225c131de992b4fc2a5d7afebfa337",
+      "size_bytes": 358828042
+    },
+    "experiment_source": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\source\\catboost_fold5_repeats.py",
+      "sha256": "ad82796f8db0d9dd323f76a1083068969651e0917dced153b4de3a6bcc050789",
+      "size_bytes": 21741
+    },
+    "fold5_row_ids.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\fold5_row_ids.npz",
+      "sha256": "117baa849380a3b7b65bbd0410341d897b6f8e9b9b630df392817496a2def28e",
+      "size_bytes": 354288
+    },
+    "historical_test_matrix": {
+      "path": "D:\\gci\\gemini\\cache\\hasan_selected_550_te.feather",
+      "sha256": "7b3cf10ae3c18806f410181bc96a691d3b9868097bae99191c1e316a85d82482",
+      "size_bytes": 129090410
+    },
+    "historical_train_matrix": {
+      "path": "D:\\gci\\gemini\\cache\\hasan_selected_550_tr.feather",
+      "sha256": "bb18a3199b1d8a4a2837b94fbc4f6669139cf2479ed4df1db1d79d416c57eacd",
+      "size_bytes": 358828042
+    },
+    "historical_zoo": {
+      "path": "D:\\gci\\gemini\\cache\\hasan_expanded_zoo.npz",
+      "sha256": "73951fa46ea73403460d62c0427d4e3b696d935230ac74154600902e60c84df4",
+      "size_bytes": 8059317
+    },
+    "raw_test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "raw_train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    "test_row_id_map": {
+      "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\feature_parity_20261031_200506\\test_row_id_map.csv",
+      "sha256": "c9966b8ae86ede0a64b06aedc69a79ffaa63a91fe2d354f4150119d0e617887a",
+      "size_bytes": 849913
+    },
+    "train_row_id_map": {
+      "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\feature_parity_20261031_200506\\train_row_id_map.csv",
+      "sha256": "a1f6a58f8bb6816239990e48f2e8f3d7c31c022d6dbb4c970c83f47842f4bdc8",
+      "size_bytes": 2345833
+    }
+  },
+  "pairwise_gpu_comparisons": [
+    {
+      "left": "gpu_repeat_01",
+      "right": "gpu_repeat_02",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 2.916231985719373e-07,
+        "maximum_absolute_difference": 0.00018729311514364966,
+        "maximum_rank_displacement": 26.0,
+        "mean_rank_displacement": 0.09346341463414634,
+        "pearson": 0.9999999995910139,
+        "rmse": 2.433619108877277e-06,
+        "spearman": 0.9999999995007229
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 2.7717838236949785e-07,
+        "maximum_absolute_difference": 0.0001779973268528634,
+        "maximum_rank_displacement": 15.0,
+        "mean_rank_displacement": 0.0518107476635514,
+        "pearson": 0.9999999994188904,
+        "rmse": 2.611761179025089e-06,
+        "spearman": 0.9999999994305244
+      }
+    },
+    {
+      "left": "gpu_repeat_01",
+      "right": "gpu_repeat_03",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 1.3440125580694353e-07,
+        "maximum_absolute_difference": 0.00013843415896819256,
+        "maximum_rank_displacement": 18.0,
+        "mean_rank_displacement": 0.038211382113821135,
+        "pearson": 0.9999999998611295,
+        "rmse": 1.4182158391792936e-06,
+        "spearman": 0.9999999999015684
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 1.3421114958334777e-07,
+        "maximum_absolute_difference": 0.0001311451668531971,
+        "maximum_rank_displacement": 7.0,
+        "mean_rank_displacement": 0.022371495327102805,
+        "pearson": 0.999999999751011,
+        "rmse": 1.7102334577818987e-06,
+        "spearman": 0.9999999998529228
+      }
+    },
+    {
+      "left": "gpu_repeat_01",
+      "right": "gpu_repeat_04",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 6.049678227451798e-07,
+        "maximum_absolute_difference": 0.00023556614743933113,
+        "maximum_rank_displacement": 53.0,
+        "mean_rank_displacement": 0.22055284552845528,
+        "pearson": 0.9999999987360063,
+        "rmse": 4.278618384872767e-06,
+        "spearman": 0.9999999977228677
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 5.736617603786913e-07,
+        "maximum_absolute_difference": 0.00020783600758539356,
+        "maximum_rank_displacement": 32.0,
+        "mean_rank_displacement": 0.12389018691588785,
+        "pearson": 0.9999999986955435,
+        "rmse": 3.91393992067213e-06,
+        "spearman": 0.9999999976969876
+      }
+    },
+    {
+      "left": "gpu_repeat_01",
+      "right": "gpu_repeat_05",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 2.1836831177329325e-07,
+        "maximum_absolute_difference": 0.00013812586656170023,
+        "maximum_rank_displacement": 18.0,
+        "mean_rank_displacement": 0.07460162601626016,
+        "pearson": 0.9999999998122027,
+        "rmse": 1.6501405225649508e-06,
+        "spearman": 0.9999999997660445
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 2.1658178655043967e-07,
+        "maximum_absolute_difference": 0.00013252760782955786,
+        "maximum_rank_displacement": 7.0,
+        "mean_rank_displacement": 0.04246495327102804,
+        "pearson": 0.9999999996845633,
+        "rmse": 1.9255064625292444e-06,
+        "spearman": 0.9999999996693751
+      }
+    },
+    {
+      "left": "gpu_repeat_02",
+      "right": "gpu_repeat_03",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 3.330060435894004e-07,
+        "maximum_absolute_difference": 0.0003257272741118422,
+        "maximum_rank_displacement": 38.0,
+        "mean_rank_displacement": 0.10640650406504065,
+        "pearson": 0.999999999167202,
+        "rmse": 3.4725880516848634e-06,
+        "spearman": 0.9999999993779415
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 3.2682440284545444e-07,
+        "maximum_absolute_difference": 0.0003091424937060605,
+        "maximum_rank_displacement": 15.0,
+        "mean_rank_displacement": 0.05876168224299065,
+        "pearson": 0.9999999985881103,
+        "rmse": 4.071345431160136e-06,
+        "spearman": 0.9999999992966007
+      }
+    },
+    {
+      "left": "gpu_repeat_02",
+      "right": "gpu_repeat_04",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 5.443538797772493e-07,
+        "maximum_absolute_difference": 0.0003251292069083034,
+        "maximum_rank_displacement": 38.0,
+        "mean_rank_displacement": 0.18946341463414634,
+        "pearson": 0.9999999987880256,
+        "rmse": 4.189519685481166e-06,
+        "spearman": 0.9999999987102786
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 5.325554229708104e-07,
+        "maximum_absolute_difference": 0.00031077017981290256,
+        "maximum_rank_displacement": 22.0,
+        "mean_rank_displacement": 0.10981308411214953,
+        "pearson": 0.9999999981904855,
+        "rmse": 4.6096893872258425e-06,
+        "spearman": 0.9999999984784094
+      }
+    },
+    {
+      "left": "gpu_repeat_02",
+      "right": "gpu_repeat_05",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 4.0129063010661707e-07,
+        "maximum_absolute_difference": 0.0003254189817053499,
+        "maximum_rank_displacement": 38.0,
+        "mean_rank_displacement": 0.13082926829268293,
+        "pearson": 0.9999999991184111,
+        "rmse": 3.5732857916226268e-06,
+        "spearman": 0.9999999993722151
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 3.9239761261710677e-07,
+        "maximum_absolute_difference": 0.00031052493468242126,
+        "maximum_rank_displacement": 15.0,
+        "mean_rank_displacement": 0.07663551401869159,
+        "pearson": 0.9999999985267453,
+        "rmse": 4.159286575548288e-06,
+        "spearman": 0.9999999991767269
+      }
+    },
+    {
+      "left": "gpu_repeat_03",
+      "right": "gpu_repeat_04",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 5.869709637894869e-07,
+        "maximum_absolute_difference": 0.0002349275579920096,
+        "maximum_rank_displacement": 53.0,
+        "mean_rank_displacement": 0.22256910569105692,
+        "pearson": 0.999999998762808,
+        "rmse": 4.232733910155618e-06,
+        "spearman": 0.9999999976744258
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 5.434675392280445e-07,
+        "maximum_absolute_difference": 0.0002081422335131755,
+        "maximum_rank_displacement": 31.0,
+        "mean_rank_displacement": 0.12558411214953272,
+        "pearson": 0.999999998823009,
+        "rmse": 3.716961181680614e-06,
+        "spearman": 0.9999999976536418
+      }
+    },
+    {
+      "left": "gpu_repeat_03",
+      "right": "gpu_repeat_05",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 2.2209706394337873e-07,
+        "maximum_absolute_difference": 6.433136903688519e-05,
+        "maximum_rank_displacement": 15.0,
+        "mean_rank_displacement": 0.08484552845528455,
+        "pearson": 0.9999999998414695,
+        "rmse": 1.5156745898821554e-06,
+        "spearman": 0.9999999997101222
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 2.0657798718131936e-07,
+        "maximum_absolute_difference": 6.992417695345088e-05,
+        "maximum_rank_displacement": 7.0,
+        "mean_rank_displacement": 0.04900700934579439,
+        "pearson": 0.9999999998153963,
+        "rmse": 1.472096076823238e-06,
+        "spearman": 0.9999999996054028
+      }
+    },
+    {
+      "left": "gpu_repeat_04",
+      "right": "gpu_repeat_05",
+      "test": {
+        "count": 61500,
+        "exact_value_match": false,
+        "mae": 4.191654787750192e-07,
+        "maximum_absolute_difference": 0.00021493456939461475,
+        "maximum_rank_displacement": 45.0,
+        "mean_rank_displacement": 0.16334959349593495,
+        "pearson": 0.9999999991160712,
+        "rmse": 3.5776125415964577e-06,
+        "spearman": 0.9999999982835357
+      },
+      "validation": {
+        "count": 34240,
+        "exact_value_match": false,
+        "mae": 3.8675345810552245e-07,
+        "maximum_absolute_difference": 0.00018938348765359936,
+        "maximum_rank_displacement": 28.0,
+        "mean_rank_displacement": 0.09199766355140188,
+        "pearson": 0.9999999992039443,
+        "rmse": 3.056742903057008e-06,
+        "spearman": 0.9999999982410533
+      }
+    }
+  ],
+  "raw_rebuild_certified": false,
+  "repository_commit": "3481fa4744d269ffa103f4350c0b3a92b904f8f5",
+  "row_alignment": {
+    "file": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\catboost_fold5_gpu5_20261031_222432\\fold5_row_ids.npz",
+      "sha256": "117baa849380a3b7b65bbd0410341d897b6f8e9b9b630df392817496a2def28e",
+      "size_bytes": 354288
+    },
+    "test_id_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+    "test_rows": 61500,
+    "training_id_sha256": "b8cb02ab2bbcce46cc9db267fcff5b2cfb4807c667cad18b84d1090e4fe8c723",
+    "training_rows": 136962,
+    "validation_id_sha256": "14f457a4fb94b817ce953db69d714d8fac8573f1ee2e44967e8ba1fca88b9b5a",
+    "validation_rows": 34240
+  },
+  "schema_version": 1,
+  "status": "GPU_REPEATS_AND_CPU_CONTROL_COMPLETE",
+  "working_directory": "D:\\gci\\champion"
+}

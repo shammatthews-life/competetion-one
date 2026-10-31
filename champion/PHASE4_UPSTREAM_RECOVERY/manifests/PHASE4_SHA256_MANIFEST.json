@@ -1,0 +1,110 @@
+{
+  "files": {
+    "champion/02_EXP85_REBUILT/README.md": {
+      "sha256": "ed9139c960127233ac6386378a6b1bae9ac582d11f19a46c45e87b08443997f7",
+      "size_bytes": 2784
+    },
+    "champion/02_EXP85_REBUILT/rebuilt_artifacts/RECONSTRUCTION_PROVENANCE_MANIFEST.json": {
+      "sha256": "72390623f5e65832cfa0bb17f8eaced80506ef5304f62e34bd916d6826f0bce5",
+      "size_bytes": 10315
+    },
+    "champion/02_EXP85_REBUILT/source/provenance_contract.py": {
+      "sha256": "37d91b2494ec6dd3262552111996ddf3d21269186a6715ce52ab6b2388653fc8",
+      "size_bytes": 3699
+    },
+    "champion/02_EXP85_REBUILT/source/run_all_recreations.py": {
+      "sha256": "d543821fd3d1ba9ee08a9f78fa1feffefb40a2827993ff11c49ee8a09ba92570",
+      "size_bytes": 21794
+    },
+    "champion/CLEAN_ROOM_VERIFICATION_REPORT.md": {
+      "sha256": "819ec40fcef7379e6ffa3eb4f047bb035d2d79ab24f29c79cb4c20dd2c68a097",
+      "size_bytes": 5617
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/.gitignore": {
+      "sha256": "62d26609e82d8bb3dae8b9ef250060a98b2892d8b45454244f4fe1a66cb5f1f3",
+      "size_bytes": 202
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/CATBOOST_REPRODUCIBILITY_REPORT.md": {
+      "sha256": "306fe6857243ed971add5feee38d9622cb8fb242a09168c30d22ed04fd4b829f",
+      "size_bytes": 3449
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/CLEAN_ROOM_PROVENANCE_REPORT.md": {
+      "sha256": "3ecdcbb7d783cbb9786e4c22e84ac981203dcd1c87ef13dc6fdad869747c6710",
+      "size_bytes": 4092
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/MISSING_UPSTREAM_DEPENDENCIES.csv": {
+      "sha256": "a33b6ebb2d8bc6bd5941abca088fe4087d56c1933c8e001276c0edfed1632a5f",
+      "size_bytes": 5612
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/PHASE4_MASTER_REPORT.md": {
+      "sha256": "30f75650385c7972adce2ae15fb4c8edc66378cbd172d8c016f4947b7456376e",
+      "size_bytes": 4629
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/RAW_REBUILD_VERDICT.md": {
+      "sha256": "ff216b1a9c150cd9b0d1cf55929d6f67b6191e80f91470acb510e063c5da3b85",
+      "size_bytes": 1955
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/UPSTREAM_DEPENDENCY_GRAPH.md": {
+      "sha256": "11dac816693cb034d0c717df7fb9bd1fa29d03951fcfec3ee5e4a8fb6a4dc4e4",
+      "size_bytes": 2379
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/V20_V080041_LINEAGE_REPORT.md": {
+      "sha256": "a4add82e43e59836e66b31cce2e54224c540a29a6d89d0b4e0259cd54bc18953",
+      "size_bytes": 2150
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/reports/upstream_lineage_evidence.json": {
+      "sha256": "27e1b1607d586a52988cc8e96138b2651a2a15760102fdb9daccc20afac9d412",
+      "size_bytes": 7797
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/runs/catboost_fold5_gpu5_20261031_222432/execution.json": {
+      "sha256": "16bb83efbeb00ce04fd4942125ebe85b387b92d6a755eac99b11f24daedc06ce",
+      "size_bytes": 43398
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/runs/clean_room_smoke/execution.json": {
+      "sha256": "c28550b26996c8959e8a25f78ad2699a9b888e07e1192537f3984d812524905e",
+      "size_bytes": 5459
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/runs/clean_room_smoke_retry_20261031_230700/execution.json": {
+      "sha256": "dcff12312265c9ff9155392e8f4be9655c4faeef2d537fd14eec4414b66fd631",
+      "size_bytes": 9971
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/source/audit_upstream_lineage.py": {
+      "sha256": "7f1743787c013bc5d76c1d7f686869743320272993dfe572c3868ecff0ab01c8",
+      "size_bytes": 9379
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/source/catboost_fold5_repeats.py": {
+      "sha256": "ad82796f8db0d9dd323f76a1083068969651e0917dced153b4de3a6bcc050789",
+      "size_bytes": 21741
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/source/clean_room_smoke_runner.py": {
+      "sha256": "1bbe9ee96077ddeb0a37576afad490507dfc5dbfb1859836c597bfa8228944d4",
+      "size_bytes": 8650
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/source/create_sha256_manifest.py": {
+      "sha256": "db85ceedb31785ce5fea52af0df918719239504d63dd04b6f949c4175a344b61",
+      "size_bytes": 3017
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/tests/test_phase4_audit.py": {
+      "sha256": "29ccf26bd7aa87850b08d96e0f3a081cce84e74f4d7d99e12be760e59f085b5a",
+      "size_bytes": 1388
+    },
+    "champion/PHASE4_UPSTREAM_RECOVERY/tests/test_provenance_contract.py": {
+      "sha256": "eecd3a8f0b578c0f49b9b6c72d05d0fcb97ccc2140442c8f219f6c6e4d937f41",
+      "size_bytes": 3076
+    },
+    "champion/REPRODUCIBILITY_STATUS.md": {
+      "sha256": "841e58a1667e749de23f7049a421bf4cc0f7c89160a57eae9f65141dd92fb300",
+      "size_bytes": 10714
+    },
+    "champion/create_exp85_submissions.py": {
+      "sha256": "6913e4600905d231d27723adf7464daf7ffbe5aecfcab2277d6ac594263a15ce",
+      "size_bytes": 17224
+    },
+    "champion/create_submission_recovery_v5_rebuilt.py": {
+      "sha256": "4fb773adb7dde3687d575868349625871ad925ec75894bf04da7525912ecfef6",
+      "size_bytes": 10835
+    }
+  },
+  "schema_version": 1,
+  "scope": "Phase 4 source, tests, reports, run execution records, and directly modified provenance-gating files. The manifest does not hash itself or bulky local training/staging outputs."
+}

@@ -27,6 +27,10 @@ import numpy as np
 import pandas as pd
 from scipy.stats import rankdata, norm, spearmanr, pearsonr
 
+provenance_source_dir = Path(__file__).resolve().parent / "02_EXP85_REBUILT" / "source"
+sys.path.insert(0, str(provenance_source_dir))
+from provenance_contract import require_raw_rebuild_manifest
+
 # Windows console encoding safety
 if sys.platform == 'win32':
     try:
@@ -191,8 +195,7 @@ def main():
     assert manifest_path.is_file(), f"Track 1B requires certified manifest: missing {manifest_path}"
     with open(manifest_path, "r", encoding="utf-8") as f:
         manifest = json.load(f)
-    assert manifest.get("verification_summary", {}).get("provenance_status") == "PROVENANCE_CERTIFIED", \
-        f"Reconstruction manifest not certified: {manifest.get('verification_summary')}"
+    require_raw_rebuild_manifest(manifest)
 
     print(f"    Reconstruction Manifest : CERTIFIED ({manifest_path.name})")
 

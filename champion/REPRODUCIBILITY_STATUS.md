@@ -1,4 +1,15 @@
-# EXP85 Master Reproducibility & Forensic Audit Certification Matrix
+# EXP85 Master Reproducibility Status — Historical Matrix (Superseded)
+
+> **Current correction (Phase 4 audit):** The Track 1B CSV is a valid, ID-aligned
+> raw-trained candidate and its measured Spearman correlation to the frozen
+> champion is `0.9982094982`; this does not certify its artifact lineage. The
+> current manifest is `ARTIFACTS_VERIFIED`, not a clean-room execution record.
+> The claimed clean-room manifest path is absent from Git history, and the
+> full-scratch generator is now gated on explicit raw-execution telemetry.
+> Track 1A remains a historical-cache hybrid (`0.9999975816`), not an independent
+> raw rebuild. The matrix below is preserved as a record of prior claims, not a
+> current certification. See
+> [`PHASE4_MASTER_REPORT.md`](PHASE4_UPSTREAM_RECOVERY/reports/PHASE4_MASTER_REPORT.md).
 
 This document provides the definitive verification matrix for all three submission pipelines developed for the GCI World 2026 Home Credit Default Risk competition:
 

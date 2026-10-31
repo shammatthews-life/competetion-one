@@ -1,0 +1,246 @@
+{
+  "legacy_submission_inputs": {
+    "group_a_oof_10stream.npy": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        104,
+        269
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "group_a_test_10stream.npy": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        105,
+        270
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "matrix_226_features_buhlmann_tier2.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        386
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "meta.json": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        102,
+        267
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_buhlmann_tier2_v21_models.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        164,
+        454
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_cloud_burst_5seed.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        167
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_cloud_burst_zoo_v21_8seed.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        165
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_grand_synthesis_595.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        213,
+        298,
+        450
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_grand_synthesis_646.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        225,
+        297,
+        449
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_laptop_acer_zoo_10seed.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        166
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_lgbm_dae491.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        137,
+        292,
+        451
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_neural_grand_646.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        219,
+        296,
+        448
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_tabm32_463_dae.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        131,
+        452
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_tabm_32heads.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        148
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_tabular_neural_net.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        143
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "oof_and_test_v26_heterogeneous_zoo_9stream.npz": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        453
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "test_ids.npy": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        382
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    },
+    "y.npy": {
+      "consumer": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "consumer_lines": [
+        381
+      ],
+      "found_paths": [],
+      "status": "MISSING"
+    }
+  },
+  "raw_test": {
+    "path": "D:\\gci\\inpuy\\test.csv",
+    "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "size_bytes": 15818118
+  },
+  "scope": "Static source and local artifact audit; no model training executed.",
+  "search_roots": [
+    "D:\\gci\\gemini",
+    "D:\\gci\\_gci_push_tmp",
+    "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY",
+    "C:\\Users\\SHARON\\Downloads",
+    "C:\\Users\\SHARON\\Documents",
+    "C:\\Users\\User\\Documents\\Personal Stuffs\\GCI World\\output"
+  ],
+  "v080041": {
+    "artifact": "D:\\gci\\gemini\\v_solo_080041_pure_champion.csv",
+    "available": true,
+    "byte_identical_to_submission_final": true,
+    "path": "D:\\gci\\gemini\\v_solo_080041_pure_champion.csv",
+    "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+    "size_bytes": 1291519,
+    "source": "D:\\gci\\gemini\\solo_grand_master_apex_080.py",
+    "source_available": true,
+    "submission_final": "D:\\gci\\gemini\\scratch\\final_sub\\final_submission\\submission_final.csv",
+    "submission_final_record": {
+      "path": "D:\\gci\\gemini\\scratch\\final_sub\\final_submission\\submission_final.csv",
+      "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "size_bytes": 1291519
+    },
+    "submission_final_source": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+    "submission_final_source_available": true,
+    "submission_final_validation": {
+      "finite_targets": true,
+      "id_order_matches_raw_test": true,
+      "rows": 61500,
+      "target_max": 0.9999837401,
+      "target_min": 1.62599e-05,
+      "unique_ids": true
+    },
+    "submission_validation": {
+      "finite_targets": true,
+      "id_order_matches_raw_test": true,
+      "rows": 61500,
+      "target_max": 0.9999837401,
+      "target_min": 1.62599e-05,
+      "unique_ids": true
+    }
+  },
+  "v20": {
+    "artifact": "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv",
+    "available": true,
+    "path": "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv",
+    "sha256": "41c39e302e9bc25c520157e9d1fb22cc61c3cafcc3754a6629fcd1e29321f6c0",
+    "size_bytes": 1677103,
+    "source_mentions": [
+      {
+        "line": 27,
+        "path": "D:\\gci\\gemini\\build_v80250_power_apex.py",
+        "text": "sub_v20 = pd.read_csv('v_20_apex_grand_champion_submission.csv')['TARGET'].values"
+      },
+      {
+        "line": 9,
+        "path": "D:\\gci\\gemini\\eval_top_submissions.py",
+        "text": "v20 = pd.read_csv('d:/gci/gemini/v_20_apex_grand_champion_submission.csv')"
+      },
+      {
+        "line": 36,
+        "path": "D:\\gci\\gemini\\solo_grand_master_apex_080.py",
+        "text": "v20_path = 'v_20_apex_grand_champion_submission.csv'"
+      },
+      {
+        "line": 78,
+        "path": "D:\\gci\\gemini\\synthesize_and_submit.py",
+        "text": "df_apex = pd.read_csv('v_20_apex_grand_champion_submission.csv')"
+      }
+    ],
+    "submission_validation": {
+      "finite_targets": true,
+      "id_order_matches_raw_test": true,
+      "rows": 61500,
+      "target_max": 1.0,
+      "target_min": 0.0,
+      "unique_ids": true
+    }
+  }
+}

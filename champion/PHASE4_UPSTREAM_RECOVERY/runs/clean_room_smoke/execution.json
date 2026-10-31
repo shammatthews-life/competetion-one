@@ -1,0 +1,106 @@
+{
+  "executions": [
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_xgb10_from_scratch.py",
+        "--fast",
+        "--data_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\raw",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\artifacts"
+      ],
+      "elapsed_seconds": 15.60899999999674,
+      "exit_code": 0,
+      "log": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\logs\\01_generate_xgb10_from_scratch.txt",
+        "sha256": "08d368b791c793afc8b6a394b631b0e5415f40ba19c0b649c25c3cb3af0d75c3",
+        "size_bytes": 3519
+      },
+      "script": "generate_xgb10_from_scratch.py",
+      "step": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_v55_from_scratch.py",
+        "--fast",
+        "--data_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\raw",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\artifacts"
+      ],
+      "elapsed_seconds": 156.78099999998813,
+      "exit_code": 0,
+      "log": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\logs\\02_generate_v55_from_scratch.txt",
+        "sha256": "812357ff3aaf8f8815cc63aad629d11d8cda40b6690c908ff938f8814f262e19",
+        "size_bytes": 3085
+      },
+      "script": "generate_v55_from_scratch.py",
+      "step": 2
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_v17_from_scratch.py",
+        "--fast",
+        "--data_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\raw",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\artifacts"
+      ],
+      "elapsed_seconds": 58.780999999988126,
+      "exit_code": 0,
+      "log": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\logs\\03_generate_v17_from_scratch.txt",
+        "sha256": "0185314561d245092bc3a746b77ddfc51a355129ae23be723746c4122291d9cf",
+        "size_bytes": 2265
+      },
+      "script": "generate_v17_from_scratch.py",
+      "step": 3
+    }
+  ],
+  "interruption_note": "At audit time only steps 1-3 had successful records; no step-4 log or running generator process was present. A fresh isolated run was started separately.",
+  "outputs": {},
+  "provenance_status": "SMOKE_ONLY_NOT_CERTIFIED",
+  "raw_inputs": {
+    "test.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\raw\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\raw\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "raw_rebuild_certified": false,
+  "schema_version": 1,
+  "scope": "Isolated fast smoke test only: three-fold/short-iteration generator modes; not a full model rebuild and not historical parity evidence.",
+  "source_files": {
+    "generate_anchor74_from_scratch.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_anchor74_from_scratch.py",
+      "sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+      "size_bytes": 31768
+    },
+    "generate_v17_from_scratch.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_v17_from_scratch.py",
+      "sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+      "size_bytes": 18440
+    },
+    "generate_v55_from_scratch.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_v55_from_scratch.py",
+      "sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960",
+      "size_bytes": 15432
+    },
+    "generate_xgb10_from_scratch.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging\\source\\generate_xgb10_from_scratch.py",
+      "sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb",
+      "size_bytes": 11487
+    }
+  },
+  "staging_directory": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\runs\\clean_room_smoke\\staging",
+  "status": "INCOMPLETE_NOT_CERTIFIED"
+}

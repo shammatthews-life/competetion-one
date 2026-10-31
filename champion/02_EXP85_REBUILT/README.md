@@ -1,5 +1,18 @@
 # Experiment 02: Independent EXP85 Upstream Reconstruction
 
+> **Scope correction (Phase 4 audit):** The tracked generator
+> `source/generate_anchor74_from_scratch.py` constructs its own 143-feature
+> manifold directly from raw CSVs; it does not consume the 669-feature or
+> selected-550 matrices described below. This is a separate raw-trained
+> candidate pipeline, not proof of historical Anchor74 model parity. The
+> current provenance manifest reports `ARTIFACTS_VERIFIED`; it does not record
+> a fresh clean-room execution. See
+> [`PHASE4_MASTER_REPORT.md`](../PHASE4_UPSTREAM_RECOVERY/reports/PHASE4_MASTER_REPORT.md).
+>
+> The remaining metrics and lineage statements below are preserved from the
+> earlier experiment report. They are historical claims, not current
+> certification; use the Phase 4 report as the current evidence record.
+
 ## Overview
 This experiment independently regenerates the complete upstream EXP85 prediction pipeline from raw competition CSVs (`train.csv` and `test.csv`) without using historical final predictions or Anchor 74 caches as inputs.
 

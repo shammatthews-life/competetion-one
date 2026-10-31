@@ -1,0 +1,10 @@
+**/__pycache__/
+*.py[cod]
+runs/**/*.cbm
+runs/**/*.npz
+runs/**/*.npy
+runs/**/catboost_info/**
+runs/**/staging/raw/*.csv
+runs/**/staging/source/
+runs/**/staging/artifacts/
+runs/**/staging/logs/

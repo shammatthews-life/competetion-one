@@ -1,5 +1,18 @@
 # Clean-Room Execution & Provenance Verification Report
 
+> **Superseded provenance notice (Phase 4 audit):** The referenced
+> `02_EXP85_REBUILT/rebuilt_artifacts/clean_room_build/RECONSTRUCTION_PROVENANCE_MANIFEST.json`
+> is absent from the current tree and Git history. The only tracked reconstruction
+> manifest is under `rebuilt_artifacts/`; it records `ARTIFACTS_VERIFIED` and says
+> existing artifacts were verified, with no generator execution telemetry. The
+> `RAW_REBUILD_CERTIFIED` assertion below is therefore not independently verifiable
+> and must not be used as certification. See
+> [`PHASE4_MASTER_REPORT.md`](PHASE4_UPSTREAM_RECOVERY/reports/PHASE4_MASTER_REPORT.md).
+>
+> The execution details and certification claims in the body below are retained
+> as historical report content. They are superseded and are not independently
+> verified by the manifest currently present in the repository.
+
 ## 1. Executive Summary
 
 This report documents the authentic, end-to-end clean-room execution test of the EXP85 independent reconstruction pipeline, conducted in an empty, isolated build directory (`02_EXP85_REBUILT/rebuilt_artifacts/clean_room_build/`) strictly from the raw competition data (`inpuy/train.csv` and `inpuy/test.csv`).
@@ -49,7 +62,9 @@ assert arr.max() <= 1.0, "Values exceeding 1.0 detected"
 
 ## 4. Cryptographic Provenance Manifest
 
-The runner generated and committed [`RECONSTRUCTION_PROVENANCE_MANIFEST.json`](file:///D:/gci/champion/02_EXP85_REBUILT/rebuilt_artifacts/clean_room_build/RECONSTRUCTION_PROVENANCE_MANIFEST.json) recording:
+The historical report claimed that the runner generated and committed
+`02_EXP85_REBUILT/rebuilt_artifacts/clean_room_build/RECONSTRUCTION_PROVENANCE_MANIFEST.json`
+recording:
 - Input raw CSV hashes:
   * `train.csv` SHA-256: `b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1`
   * `test.csv`  SHA-256: `dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65`

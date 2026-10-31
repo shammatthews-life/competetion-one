@@ -3,8 +3,9 @@ run_all_recreations.py
 ================================================================================
 GCI World 2026 - Master Cache Recreator & Cryptographic Provenance Suite
 ================================================================================
-Rule Compliance: Strictly Independent (train.csv and test.csv ONLY)
-Zero Upstream Caches | Zero Pre-computed Feathers | Zero Serialized Pickles
+Generator intent: build prediction artifacts from raw train.csv and test.csv.
+This runner records source-review and execution evidence; it does not instrument
+OS-level file access or prove historical model parity.
 
 Generates and programmatically verifies all 6 cache dependencies needed by EXP_85:
   1. rebuilt_artifacts/v55_members.npz                    (generate_v55_from_scratch.py)
@@ -15,16 +16,17 @@ Generates and programmatically verifies all 6 cache dependencies needed by EXP_8
   6. rebuilt_artifacts/y_train.npy                        (generate_xgb10_from_scratch.py)
 
 Provenance Certification Logic:
-  - RAW_REBUILD_CERTIFIED : All 4 generators executed from raw CSVs in current build run.
+  - RAW_REBUILD_CERTIFIED : All 4 full-mode generators executed successfully into an empty output directory.
+  - SMOKE_TEST_ONLY       : Fast-mode generators completed; never authorizes full-scratch synthesis.
   - ARTIFACTS_VERIFIED    : Existing artifacts passed structural, key, finite, and bounds validation.
 
-Outputs cryptographic RECONSTRUCTION_PROVENANCE_MANIFEST.json certifying:
+Writes a provenance manifest recording:
   - Generator source code hashes & Git commit
   - Raw source CSV hashes
   - Exact command line executions, timestamps, and exit codes
   - Element-by-element test ID alignment against raw test.csv
   - Uniform array checks: np.isfinite, min >= 0.0, max <= 1.0 on every numeric array
-  - Explicit cache-access policy: zero access to historical prediction caches
+  - Cache-access assessment based on source review (not OS-level tracing)
 ================================================================================
 """
 
@@ -38,6 +40,7 @@ import argparse
 import subprocess
 import numpy as np
 import pandas as pd
+from provenance_contract import determine_provenance_status
 
 if sys.platform == 'win32':
     try:
@@ -79,7 +82,7 @@ def get_git_commit():
                 return res.stdout.strip()
         except Exception:
             pass
-    return "269affc900484d0a6131475ac855c33f3032f58f"
+    return None
 
 def find_script(candidate_names):
     """Finds script by searching candidate names in SCRIPT_DIR and adjacent lineage folders."""
@@ -128,7 +131,10 @@ def assert_uniform_array_validity(name, arr, expected_shape, min_val=0.0, max_va
         assert arr.min() >= min_val, f"Value below {min_val} in {name}: {arr.min()}"
         assert arr.max() <= max_val, f"Value above {max_val} in {name}: {arr.max()}"
 
-def verify_and_generate_manifest(output_dir, data_dir, execution_records=None, is_fresh_rebuild=False):
+def verify_and_generate_manifest(
+    output_dir, data_dir, execution_records=None, provenance_status="ARTIFACTS_VERIFIED",
+    execution_mode="verify_only", fast_mode=False
+):
     """Exhaustively verify all generated artifacts and write provenance manifest."""
     print("\n" + "=" * 85)
     print("  RUNNING DEEP FORENSIC VERIFICATION & UNIFORM ARRAY AUDIT")
@@ -158,8 +164,6 @@ def verify_and_generate_manifest(output_dir, data_dir, execution_records=None, i
     raw_train_targets = df_raw_train["TARGET"].values.astype(np.int32)
     assert len(raw_train_targets) == EXPECTED_N_TRAIN, f"Expected {EXPECTED_N_TRAIN} train rows, found {len(raw_train_targets)}"
 
-    # Determine provenance status
-    provenance_status = "RAW_REBUILD_CERTIFIED" if is_fresh_rebuild else "ARTIFACTS_VERIFIED"
     build_id = uuid.uuid4().hex[:16]
     git_commit = get_git_commit()
 
@@ -174,16 +178,19 @@ def verify_and_generate_manifest(output_dir, data_dir, execution_records=None, i
         "manifest_version": "2.0",
         "build_id": build_id,
         "provenance_status": provenance_status,
+        "execution_mode": execution_mode,
+        "fast_mode": fast_mode,
         "timestamp_utc": time.strftime("%Y-%m-%d %H:%M:%SZ", time.gmtime()),
         "git_commit": git_commit,
         "generator_source_hashes": generator_hashes,
         "cache_access_policy": {
-            "historical_prediction_caches_accessed": False,
-            "external_pretrained_weights_accessed": False,
-            "raw_data_exclusive": True,
-            "note": "SHA-256 proves artifact integrity; execution telemetry and non-access assert origin."
+            "historical_prediction_caches_accessed": "NOT_ASSESSED" if execution_mode == "verify_only" else "NO_CACHE_READS_FOUND_IN_GENERATOR_SOURCE",
+            "external_pretrained_weights_accessed": "NOT_ASSESSED" if execution_mode == "verify_only" else "NO_EXTERNAL_WEIGHT_LOADS_FOUND_IN_GENERATOR_SOURCE",
+            "raw_data_exclusive": execution_mode != "verify_only",
+            "os_file_access_tracing": False,
+            "note": "Source review and subprocess records are evidence; this runner does not perform OS-level file-access tracing."
         },
-        "execution_telemetry": execution_records if execution_records else "Verified existing artifacts via deep uniform structural and numerical validation.",
+        "execution_telemetry": execution_records if execution_records else "Existing artifacts were structurally verified; generator execution was not performed.",
         "output_directory": str(output_dir),
         "raw_inputs": {
             "train_csv": {"path": str(train_csv), "rows": EXPECTED_N_TRAIN, "sha256": train_sha},
@@ -305,7 +312,13 @@ def verify_and_generate_manifest(output_dir, data_dir, execution_records=None, i
     manifest["verification_summary"]["canonical_keys_verified"] = True
     manifest["verification_summary"]["provenance_status"] = provenance_status
 
-    manifest_path = output_dir / "RECONSTRUCTION_PROVENANCE_MANIFEST.json"
+    if provenance_status == "RAW_REBUILD_CERTIFIED":
+        manifest_name = "RECONSTRUCTION_PROVENANCE_MANIFEST.json"
+    elif provenance_status == "SMOKE_TEST_ONLY":
+        manifest_name = f"SMOKE_TEST_PROVENANCE_{build_id}.json"
+    else:
+        manifest_name = f"ARTIFACTS_VERIFICATION_{build_id}.json"
+    manifest_path = output_dir / manifest_name
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
 
@@ -335,9 +348,13 @@ def run_pipeline(fast=False, data_dir=None, output_dir=None, verify_only=False):
     print(f"[*] Target Output Directory: {out_path}")
 
     execution_records = []
-    is_fresh_rebuild = not verify_only
 
     if not verify_only:
+        if any(out_path.iterdir()):
+            raise FileExistsError(
+                f"Refusing to overwrite an existing output directory: {out_path}. "
+                "Choose a new, empty output_dir."
+            )
         resolved_scripts = []
         for desc, candidates in SCRIPT_CANDIDATES:
             p = find_script(candidates)
@@ -345,6 +362,10 @@ def run_pipeline(fast=False, data_dir=None, output_dir=None, verify_only=False):
                 print(f"[!] ERROR: Could not locate generator for {desc} (checked: {candidates})")
                 sys.exit(1)
             resolved_scripts.append((desc, p))
+
+        execution_id = uuid.uuid4().hex[:12]
+        log_dir = out_path / "execution_logs" / execution_id
+        log_dir.mkdir(parents=True, exist_ok=False)
 
         for idx, (desc, script_path) in enumerate(resolved_scripts, 1):
             print(f"\n[{idx}/4] Running {desc}...")
@@ -354,16 +375,35 @@ def run_pipeline(fast=False, data_dir=None, output_dir=None, verify_only=False):
                 cmd.append("--fast")
 
             t0 = time.time()
-            res = subprocess.run(cmd, cwd=str(script_path.parent), capture_output=True, text=True)
+            res = subprocess.run(
+                cmd, cwd=str(script_path.parent), capture_output=True, text=True,
+                encoding="utf-8", errors="replace"
+            )
             duration = time.time() - t0
+            stdout_path = log_dir / f"{idx:02d}_{script_path.stem}.stdout.txt"
+            stderr_path = log_dir / f"{idx:02d}_{script_path.stem}.stderr.txt"
+            stdout_path.write_text(res.stdout, encoding="utf-8")
+            stderr_path.write_text(res.stderr, encoding="utf-8")
             record = {
                 "step": idx,
                 "description": desc,
                 "script": script_path.name,
-                "command": " ".join(cmd),
+                "command": cmd,
+                "working_directory": str(script_path.parent),
+                "script_source_sha256": sha256_file(script_path),
                 "duration_seconds": round(duration, 2),
                 "exit_code": res.returncode,
-                "timestamp_utc": time.strftime("%Y-%m-%d %H:%M:%SZ", time.gmtime())
+                "timestamp_utc": time.strftime("%Y-%m-%d %H:%M:%SZ", time.gmtime()),
+                "stdout_log": {
+                    "path": str(stdout_path),
+                    "sha256": sha256_file(stdout_path),
+                    "size_bytes": stdout_path.stat().st_size
+                },
+                "stderr_log": {
+                    "path": str(stderr_path),
+                    "sha256": sha256_file(stderr_path),
+                    "size_bytes": stderr_path.stat().st_size
+                }
             }
             execution_records.append(record)
 
@@ -372,16 +412,24 @@ def run_pipeline(fast=False, data_dir=None, output_dir=None, verify_only=False):
                 sys.exit(res.returncode)
             print(f"      -> Completed in {duration:.1f}s (Exit code: 0)")
 
-    # Run complete verification and write manifest
+    execution_mode = (
+        "verify_only" if verify_only else ("fast_smoke" if fast else "full_rebuild")
+    )
+    provenance_status = determine_provenance_status(
+        verify_only=verify_only, fast=fast, execution_records=execution_records
+    )
+    # Run complete verification and write a non-destructive manifest.
     manifest = verify_and_generate_manifest(
         output_dir=out_path,
         data_dir=data_path,
         execution_records=execution_records if execution_records else None,
-        is_fresh_rebuild=is_fresh_rebuild
+        provenance_status=provenance_status,
+        execution_mode=execution_mode,
+        fast_mode=fast
     )
 
     print("\n" + "=" * 85)
-    status_label = "RAW_REBUILD_CERTIFIED" if is_fresh_rebuild else "ARTIFACTS_VERIFIED"
+    status_label = manifest["verification_summary"]["provenance_status"]
     print(f"  ALL 6 CACHE DEPENDENCIES VERIFIED [{status_label}] IN {time.time()-t_master:.1f}s!")
     print("=" * 85)
 
