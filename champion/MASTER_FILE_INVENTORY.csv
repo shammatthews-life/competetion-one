@@ -1,130 +1,151 @@
-file_path,filename,file_type,size_bytes,size_human,sha256,role,experiment,status
-D:\gci\champion\COMPETITION_RULES_AUDIT.md,COMPETITION_RULES_AUDIT.md,MD,2349,2.29 KB,bde40e6d2abe84ef9e1e0c148b76d86958316091bbc19081816b97f760040cf3,Documentation / Audit Report,Master Project Metadata,Verified Active
-D:\gci\champion\README.md,README.md,MD,3581,3.50 KB,ccffd2fa8429cdffcb932f06ce4e9937990dfb008d5a6c51ca3e5596dd70e878,Documentation / Audit Report,Master Project Metadata,Verified Active
-D:\gci\champion\REPRODUCIBILITY_STATUS.md,REPRODUCIBILITY_STATUS.md,MD,1377,1.34 KB,d818f15450a06f8294d3e42b5cd4dbbe1260efd26930e947055e134895135017,Documentation / Audit Report,Master Project Metadata,Verified Active
-D:\gci\champion\exp85_solo.ipynb,exp85_solo.ipynb,IPYNB,104041,101.60 KB,c7291a27a7d245b9431150fa57dc661c84540431182940dc77437aa748e88c3a,Jupyter Notebook,Master Project Metadata,Verified Active
-D:\gci\champion\exp85_solo.pre_independent_wiring_backup.ipynb,exp85_solo.pre_independent_wiring_backup.ipynb,IPYNB,140963,137.66 KB,1ccfab28ef8534fc176c757c79250547c03a041a922851d683c82d0df1241d23,Jupyter Notebook,Master Project Metadata,Verified Active
-D:\gci\champion\exp85_solo_backup_pre_fix.ipynb,exp85_solo_backup_pre_fix.ipynb,IPYNB,40022,39.08 KB,34b66ca02ca74f1c8ee80a24d80a519292f3d0d6f00e197e1900e16f94dfeb4b,Jupyter Notebook,Master Project Metadata,Verified Active
-D:\gci\champion\exp85_solo_runner.py,exp85_solo_runner.py,PY,23561,23.01 KB,d6e7a398ec4f08b1ff605da4886889d476e14ab9169baa81f00c3f04fede8be9,Source Script,Master Project Metadata,Verified Active
-D:\gci\champion\submission_exp85_solo_champion.csv,submission_exp85_solo_champion.csv,CSV,1291519,1.23 MB,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947,Submission File,Master Project Metadata,Verified Active
-D:\gci\champion\00_HISTORICAL_REFERENCE\EXP85_HISTORICAL_CHAMPION.csv,EXP85_HISTORICAL_CHAMPION.csv,CSV,1291519,1.23 MB,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947,Submission File,Historical Benchmark Reference,Verified Active
-D:\gci\champion\00_HISTORICAL_REFERENCE\HISTORICAL_LINEAGE.md,HISTORICAL_LINEAGE.md,MD,1511,1.48 KB,1bc29ab3aeba286cff83a31a80c74db396bbaf3b6a7cac04924b8c2e98080e4f,Documentation / Audit Report,Historical Benchmark Reference,Verified Active
-D:\gci\champion\00_HISTORICAL_REFERENCE\HISTORICAL_SCORE.md,HISTORICAL_SCORE.md,MD,1073,1.05 KB,91cd9546703406fe39baf476fd9c128a6380e28ca911709eaf98badd0cd119e1,Documentation / Audit Report,Historical Benchmark Reference,Verified Active
-D:\gci\champion\00_HISTORICAL_REFERENCE\HISTORICAL_SHA256.txt,HISTORICAL_SHA256.txt,TXT,207,207 B,eb8672f70c2c27e76c4a4a7703b11b703772dd2b3bf7b07c42a6a06ac06c24be,Documentation / Audit Report,Historical Benchmark Reference,Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\README.md,README.md,MD,955,955 B,bc70bde5135688361a4fd7d80908e18d8390ab9f276bee01630a1676e7fa59a5,Documentation / Audit Report,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\artifacts\v_20261027_optimal_transductive_apex.csv,v_20261027_optimal_transductive_apex.csv,CSV,1291519,1.23 MB,b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4,CSV Data / Telemetry Table,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\artifacts\v_20261027_precision_transductive_apex.csv,v_20261027_precision_transductive_apex.csv,CSV,1291519,1.23 MB,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484,CSV Data / Telemetry Table,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\cache\oof_10f_xgb.npy,oof_10f_xgb.npy,NPY,684936,668.88 KB,2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d,Model Predictions Cache,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\cache\test_10f_xgb.npy,test_10f_xgb.npy,NPY,246128,240.36 KB,5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195,Model Predictions Cache,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\cache\v55_members.npz,v55_members.npz,NPZ,7088141,6.76 MB,995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f,Model Predictions Cache,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\cache\v_17_full_suite_bundle.npz,v_17_full_suite_bundle.npz,NPZ,6866482,6.55 MB,c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223,Model Predictions Cache,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\cache\y_train.npy,y_train.npy,NPY,684936,668.88 KB,2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2,Model Predictions Cache,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\config\exp85_recovery_config.json,exp85_recovery_config.json,JSON,597,597 B,9b2c5c17665ffa3d873a2262d111c89e5c8a5e6585c2f042944fe6897efbb82d,Configuration / Metadata,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\notebooks\exp85_recovery_v5.ipynb,exp85_recovery_v5.ipynb,IPYNB,31636,30.89 KB,700bdafd3734cf73b754ebe3ac9ad2f4cb1cd067db6239e83a8fb4ab0f9714f2,Jupyter Notebook,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\reports\EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,MD,15566,15.20 KB,9ec0e6009dde07a8440888c929e83b2733dbffe52c818bc5fbcd2082f4f8fcfd,Documentation / Audit Report,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\reports\EXP85_ARTIFACT_EQUIVALENCE.csv,EXP85_ARTIFACT_EQUIVALENCE.csv,CSV,3661,3.58 KB,01d5c090aab9b18dc1bb8470e12fb17909b406362724b415036954407181a8ad,CSV Data / Telemetry Table,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\reports\EXP85_BRANCH_ABLATION.csv,EXP85_BRANCH_ABLATION.csv,CSV,915,915 B,34aae195624fbad8954b915106c62a08e322500e1bab86b51cfa60ba8d877851,CSV Data / Telemetry Table,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\reports\EXP85_EXACT_REPRODUCTION_REPORT.md,EXP85_EXACT_REPRODUCTION_REPORT.md,MD,8900,8.69 KB,9d0ee1a317711b6b194513eda907b6c64e5ac8cc6c458caed9810b82acd90593,Documentation / Audit Report,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\source\evaluate_reproductions.py,evaluate_reproductions.py,PY,7463,7.29 KB,878d1d8fddf9c32b49ed155e36f88cc23030a96432e31ef8443e41243ba60f91,Source Script,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\source\reproduce_anchor74.py,reproduce_anchor74.py,PY,8064,7.88 KB,08d7f5da963d2fb1b324dfd6884601e50b736ecc23313d2a25aa89a5a94ab79b,Source Script,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\source\reproduce_exact_synthesis.py,reproduce_exact_synthesis.py,PY,4683,4.57 KB,a1c6c8f9562a9e0c395a7b551742f6e1e3b755857cab11ca268274921cec6f4b,Source Script,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\01_EXP85_RECOVERY\submissions\submission_exp85_recovery_v5.csv,submission_exp85_recovery_v5.csv,CSV,1291519,1.23 MB,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947,Submission File,EXP85 Historical Recovery (Track 2),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\README.md,README.md,MD,1987,1.94 KB,ff6fa6ac1cc4f61d513fcdd52837eadfa55394c36bccb5b209db0701e9e016d8,Documentation / Audit Report,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\artifacts\v_20261027_asymmetric_tail_gated_apex.csv,v_20261027_asymmetric_tail_gated_apex.csv,CSV,1291519,1.23 MB,25b38876abc29b8cd0b4d21547d068b0257c7bc970bcf826e5c2373fe83e1b35,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\artifacts\v_20261027_optimal_transductive_apex.csv,v_20261027_optimal_transductive_apex.csv,CSV,1291519,1.23 MB,5c33df833c71af56a638ea792e62e30550a7c66195f7b4c3a6d80fa94db13c9a,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\artifacts\v_20261027_precision_transductive_apex.csv,v_20261027_precision_transductive_apex.csv,CSV,1291519,1.23 MB,315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\config\zoo_training_config.json,zoo_training_config.json,JSON,1352,1.32 KB,dcbba949ac5d5ebae65675024b62c875ccee8e8ecbbe41c60159e179ba37ca7e,Configuration / Metadata,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\features\FEATURE_HASH_VERIFICATION.md,FEATURE_HASH_VERIFICATION.md,MD,1002,1002 B,942c2e4fd0184ff8f00ce74fe613ebf9b2091cd8d8217d08248782cfd891f981,Documentation / Audit Report,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\features\hasan_feature_importance.csv,hasan_feature_importance.csv,CSV,33874,33.08 KB,a8d3487f6820d2935bebc9f86db186c84c2e2d01a6412efb36facf6498493a77,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\models\hasan_expanded_zoo.npz,hasan_expanded_zoo.npz,NPZ,8059267,7.69 MB,def4d9d10966af5d9a4dd50191fa93435f871c0c4fb602d93fd37b5f35463965,Model Predictions Cache,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\models\model_zoo_reconstruction_telemetry.csv,model_zoo_reconstruction_telemetry.csv,CSV,631,631 B,fcc833cae8ae95b230346c3860dfa5fbd1ef6f0bef2c22b14fc41f5cfaea187d,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\notebooks\exp85_recovery_v5.ipynb,exp85_recovery_v5.ipynb,IPYNB,31636,30.89 KB,700bdafd3734cf73b754ebe3ac9ad2f4cb1cd067db6239e83a8fb4ab0f9714f2,Jupyter Notebook,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\reports\DEPENDENCY_STATUS.csv,DEPENDENCY_STATUS.csv,CSV,2247,2.19 KB,1d65b61147701641dbdec29d91418d958dc88bcab6f990e54402e9f8a3113fb8,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\reports\MISMATCH_DIAGNOSIS.md,MISMATCH_DIAGNOSIS.md,MD,2768,2.70 KB,75f40c85824adcea875157e794e51104d98021095816e5aab6e64f6da1403ce3,Documentation / Audit Report,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\reports\PHASE3_MASTER_REPORT.md,PHASE3_MASTER_REPORT.md,MD,7216,7.05 KB,2d5dc0196369619f8f48dfdb1bc82f3962cd0991ba6dc277bc699abf51ac451f,Documentation / Audit Report,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\reports\RECONSTRUCTION_METRICS.csv,RECONSTRUCTION_METRICS.csv,CSV,2520,2.46 KB,8d261e0091332cd80d5b8a8fbfaec31520caccaa7c9b12553525094799a4e888,CSV Data / Telemetry Table,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\source\reconstruct_transductive_pyramid.py,reconstruct_transductive_pyramid.py,PY,17032,16.63 KB,bcd1536149241091b8dea26bfecdaae39edf9b6aad7bd7db5c24baa5cd4db70c,Source Script,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\source\run_hasan_600_builder.py,run_hasan_600_builder.py,PY,18055,17.63 KB,c48cef2ee03f67e9eb69dc46aa8c3ce49de85a72e933433cd0eb163b5fb01459,Source Script,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\source\run_workstream2_screening.py,run_workstream2_screening.py,PY,4729,4.62 KB,9db77087ac0f51eca9242a26beeffa25d444c5e59373675fd5115dff035ce6d9,Source Script,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\source\train_independent_zoo.py,train_independent_zoo.py,PY,11499,11.23 KB,3fffb32c96151eeeb28864e545154858262ff2ded4bcc5ffa562fc367410b92d,Source Script,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\02_EXP85_REBUILT\submissions\submission_exp85_recovery_v5_rebuilt.csv,submission_exp85_recovery_v5_rebuilt.csv,CSV,1291519,1.23 MB,91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482,Submission File,Independent Upstream Reconstruction (Track 1),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,MD,15566,15.20 KB,9ec0e6009dde07a8440888c929e83b2733dbffe52c818bc5fbcd2082f4f8fcfd,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_ARTIFACT_EQUIVALENCE.csv,EXP85_ARTIFACT_EQUIVALENCE.csv,CSV,3661,3.58 KB,01d5c090aab9b18dc1bb8470e12fb17909b406362724b415036954407181a8ad,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_BRANCH_ABLATION.csv,EXP85_BRANCH_ABLATION.csv,CSV,915,915 B,34aae195624fbad8954b915106c62a08e322500e1bab86b51cfa60ba8d877851,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_DEPENDENCY_AUDIT_SHA256.txt,EXP85_DEPENDENCY_AUDIT_SHA256.txt,TXT,1891,1.85 KB,dd510fb5d257088966e5e53b7d3576e307f1bd308e9caccc340e839344b1273e,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_DEPENDENCY_GRAPH.md,EXP85_DEPENDENCY_GRAPH.md,MD,6463,6.31 KB,edaf51be3c336779262de57386883a3ce2f1136d09250d597492c732416848d6,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_DEPENDENCY_INVENTORY.csv,EXP85_DEPENDENCY_INVENTORY.csv,CSV,377821,368.97 KB,e34a655790614cfaaddffd9b2a00ed91718c5320b66a11a857899dc3767d2987,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_EXACT_REPRODUCTION_REPORT.md,EXP85_EXACT_REPRODUCTION_REPORT.md,MD,8900,8.69 KB,9d0ee1a317711b6b194513eda907b6c64e5ac8cc6c458caed9810b82acd90593,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_MISMATCH_ROOT_CAUSES.md,EXP85_MISMATCH_ROOT_CAUSES.md,MD,9329,9.11 KB,e842d16e66628b50da9fece1a3080277e07c6e3865c9a948a5e3d88b746d7e09,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\EXP85_SOURCE_CODE_AUDIT.md,EXP85_SOURCE_CODE_AUDIT.md,MD,6020,5.88 KB,5ad66f412b090436aef2e204b51b5b2948de0752ecb07c9988f2a0250faf797f,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\audit_historical_artifacts.py,audit_historical_artifacts.py,PY,3442,3.36 KB,b62c41d9f563d5e2a5808925880e57742305eefcdef1f11dfcd28bb648800bd3,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\evaluate_reproductions.py,evaluate_reproductions.py,PY,7463,7.29 KB,878d1d8fddf9c32b49ed155e36f88cc23030a96432e31ef8443e41243ba60f91,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\inventory_scanner.py,inventory_scanner.py,PY,5739,5.60 KB,1fd5eaadbefbaa1f3393ca81bd9dd7671aa73f92c9e1f9c92e04f43107208d8c,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\reproduce_exact_synthesis.py,reproduce_exact_synthesis.py,PY,4683,4.57 KB,a1c6c8f9562a9e0c395a7b551742f6e1e3b755857cab11ca268274921cec6f4b,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\run_branch_ablation.py,run_branch_ablation.py,PY,6313,6.17 KB,578e7edc94aee744aff2419977af6f3afbd6328ff81da37ab6429445eaf35d8f,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_1\submission_exp85_dependency_reproduced.csv,submission_exp85_dependency_reproduced.csv,CSV,1291519,1.23 MB,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947,Submission File,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_2\reproduce_anchor74.py,reproduce_anchor74.py,PY,8064,7.88 KB,08d7f5da963d2fb1b324dfd6884601e50b736ecc23313d2a25aa89a5a94ab79b,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_2\v_20261027_asymmetric_tail_gated_apex_reproduced.csv,v_20261027_asymmetric_tail_gated_apex_reproduced.csv,CSV,1291519,1.23 MB,eb32a40623b7571be17ed7abbeb188b76444784c355bc65301a2ceb9940e5b77,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_2\v_20261027_optimal_transductive_apex_reproduced.csv,v_20261027_optimal_transductive_apex_reproduced.csv,CSV,1291519,1.23 MB,b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_2\v_20261027_precision_transductive_apex_reproduced.csv,v_20261027_precision_transductive_apex_reproduced.csv,CSV,1291519,1.23 MB,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\ARTIFACT_SHA256_MANIFEST.txt,ARTIFACT_SHA256_MANIFEST.txt,TXT,1690,1.65 KB,522cb464caecb8a63023ff180d4ea7015d6ebcd6ac63bd32c70b7765a8b3a8e3,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\DEPENDENCY_STATUS.csv,DEPENDENCY_STATUS.csv,CSV,2247,2.19 KB,1d65b61147701641dbdec29d91418d958dc88bcab6f990e54402e9f8a3113fb8,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\EXPERIMENT_LOG.csv,EXPERIMENT_LOG.csv,CSV,2011,1.96 KB,4bdcc67f540400663f8d1b3dfa4e089a3f4e1489ce4e019f98f6d1f381d9340f,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\MISMATCH_DIAGNOSIS.md,MISMATCH_DIAGNOSIS.md,MD,2768,2.70 KB,75f40c85824adcea875157e794e51104d98021095816e5aab6e64f6da1403ce3,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\PHASE3_MASTER_REPORT.md,PHASE3_MASTER_REPORT.md,MD,7216,7.05 KB,2d5dc0196369619f8f48dfdb1bc82f3962cd0991ba6dc277bc699abf51ac451f,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\RECONSTRUCTION_METRICS.csv,RECONSTRUCTION_METRICS.csv,CSV,2520,2.46 KB,8d261e0091332cd80d5b8a8fbfaec31520caccaa7c9b12553525094799a4e888,CSV Data / Telemetry Table,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\SOURCE_LINEAGE_GRAPH.md,SOURCE_LINEAGE_GRAPH.md,MD,2674,2.61 KB,b63fb9261d12dd30d6b78c9fb21b68c3cd68c8e7afa70da0fb396b06c4b98c04,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\create_builder.py,create_builder.py,PY,1112,1.09 KB,c2215454fc435037d61656a819a89eba10d1ad21b4f050f4c22b1e075ebbf6cb,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\reconstruct_hasan_features.py,reconstruct_hasan_features.py,PY,14991,14.64 KB,dc8c61c19aa61ad055f16f45724f03ca4b2d7157a7ca3ce12560015da8999ea0,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\reconstruct_transductive_pyramid.py,reconstruct_transductive_pyramid.py,PY,17032,16.63 KB,bcd1536149241091b8dea26bfecdaae39edf9b6aad7bd7db5c24baa5cd4db70c,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\run_hasan_600_builder.py,run_hasan_600_builder.py,PY,18055,17.63 KB,c48cef2ee03f67e9eb69dc46aa8c3ce49de85a72e933433cd0eb163b5fb01459,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\run_workstream2_screening.py,run_workstream2_screening.py,PY,4729,4.62 KB,9db77087ac0f51eca9242a26beeffa25d444c5e59373675fd5115dff035ce6d9,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_3\experiments\train_independent_zoo.py,train_independent_zoo.py,PY,11499,11.23 KB,3fffb32c96151eeeb28864e545154858262ff2ded4bcc5ffa562fc367410b92d,Source Script,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\03_PHASE_HISTORY\PHASE_4\PHASE4_ZERO_GAP_OPTIMIZATION_REPORT.md,PHASE4_ZERO_GAP_OPTIMIZATION_REPORT.md,MD,1770,1.73 KB,9497fd501c585c09ddc31d48459ded4b41f391d1d05b21da01a22720be035f87,Documentation / Audit Report,Phase History (Phases 1-4),Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\ANCHOR74\ANCHOR74_LINEAGE.md,ANCHOR74_LINEAGE.md,MD,1119,1.09 KB,e80aeb5e556f5b12dde7f1684ebebd24b81b6eec2f5af1341e93f8f869f754a7,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\EXP85_SYNTHESIS\EXP85_SYNTHESIS_MATHEMATICAL_PROOF.md,EXP85_SYNTHESIS_MATHEMATICAL_PROOF.md,MD,1027,1.00 KB,909296fa519e1fa9b199334081592f11d28778e42e5672d96d1ceee475b7a91b,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\FOUNDATION_MODELS\FOUNDATION_MODELS_ANALYSIS.md,FOUNDATION_MODELS_ANALYSIS.md,MD,982,982 B,806ee1a9179c278cc8a2739918e38a079b0c60867584f088a2e681dd317f8410,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\V17\V17_SUITE_LINEAGE.md,V17_SUITE_LINEAGE.md,MD,542,542 B,e9454b9eca8d9c30fcd1e0b3a7d3078a5bec63210d6a6d84454526988a89eb1d,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\V55\V55_SUITE_LINEAGE.md,V55_SUITE_LINEAGE.md,MD,668,668 B,7df3e2fa65a02e13b94dfe8a47e0a2cb5c11530d54739460b2395cea5aba094c,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\04_MODEL_LINEAGE\XGB10\XGB10_LINEAGE.md,XGB10_LINEAGE.md,MD,279,279 B,ec043f0b9c7cc668ff5e07c066975acab04cb4b9203460614d3c985a3bb74793,Documentation / Audit Report,Model Lineage,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURES_550\FEATURES_550_SCREENING_METHODOLOGY.md,FEATURES_550_SCREENING_METHODOLOGY.md,MD,564,564 B,8997f5dead08a1464092ce3fc4baca6fa47c31ca5b9df3f76319c4c41effa0f5,Documentation / Audit Report,Feature Engineering,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURES_550\hasan_feature_importance.csv,hasan_feature_importance.csv,CSV,33874,33.08 KB,a8d3487f6820d2935bebc9f86db186c84c2e2d01a6412efb36facf6498493a77,CSV Data / Telemetry Table,Feature Engineering,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURES_669\FEATURES_669_MATHEMATICAL_SPECIFICATION.md,FEATURES_669_MATHEMATICAL_SPECIFICATION.md,MD,1089,1.06 KB,918570247384a8eb409cbae49aec72ab94c16d87b06cb4638e1a762717fc0e62,Documentation / Audit Report,Feature Engineering,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURE_BUILDERS\build_hasan_600_features.py,build_hasan_600_features.py,PY,17482,17.07 KB,cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341,Source Script,Feature Engineering,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURE_BUILDERS\screen_and_select_features.py,screen_and_select_features.py,PY,3636,3.55 KB,0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7,Source Script,Feature Engineering,Verified Active
-D:\gci\champion\05_FEATURE_ENGINEERING\FEATURE_VALIDATION\FEATURE_MATRIX_PARITY_AUDIT.md,FEATURE_MATRIX_PARITY_AUDIT.md,MD,1249,1.22 KB,36800bb5818f68f1c8d824b746009eed9d3ad69b4878e51649ba75daed05e715,Documentation / Audit Report,Feature Engineering,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\DEPENDENCIES.txt,DEPENDENCIES.txt,TXT,171,171 B,f7adb78ab7e6df900e36bf8fffa835afd92cd4e9a829477a35a4b9cc48c0627d,Documentation / Audit Report,Reproducibility Protocols,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\ENVIRONMENT.json,ENVIRONMENT.json,JSON,443,443 B,1716a8691e402be40c148db2ba1007d3c146c269870a0f585e2ecd01426cb70d,Configuration / Metadata,Reproducibility Protocols,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\HASH_VALIDATION.csv,HASH_VALIDATION.csv,CSV,964,964 B,c8aa888ef137c53deae9a80ce36de0ba7bfaea68dd10a49fc5b3d976ffdfc858,CSV Data / Telemetry Table,Reproducibility Protocols,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\PREDICTION_COMPARISON.csv,PREDICTION_COMPARISON.csv,CSV,492,492 B,1089d0ffc9d8992ce2b0bcccc9634f2be1d05d5eb6094f3ac6bd39957b8685fd,CSV Data / Telemetry Table,Reproducibility Protocols,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\REBUILD_INSTRUCTIONS.md,REBUILD_INSTRUCTIONS.md,MD,1031,1.01 KB,b8f0181a561d3c2c8d2155b5ea1738c5439b3e8a964ef100d4aac23bfb13f950,Documentation / Audit Report,Reproducibility Protocols,Verified Active
-D:\gci\champion\06_REPRODUCIBILITY\REPRODUCTION_TESTS.md,REPRODUCTION_TESTS.md,MD,760,760 B,48db49085944b56bc5650998e27b9d5ce3e7da068ecda90185e50a9ef678e822,Documentation / Audit Report,Reproducibility Protocols,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\DATA_POLICY_AUDIT.md,DATA_POLICY_AUDIT.md,MD,546,546 B,7121db1d43e77b510bf40ecb65d93ac20b72709ad07807a02d8cbe8b9417f96b,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\FINAL_COMPLIANCE_VERDICT.md,FINAL_COMPLIANCE_VERDICT.md,MD,746,746 B,039978c07c98ec54095f6447b3f898e98fb0390156b971f7cafe6b062dcac0a5,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\MODEL_AND_EXTERNAL_DATA_AUDIT.md,MODEL_AND_EXTERNAL_DATA_AUDIT.md,MD,474,474 B,40af06d594f82aef504273b22b31179da4e291699c12862eeb6551f520c40303,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\OFFICIAL_RULES_SNAPSHOT.md,OFFICIAL_RULES_SNAPSHOT.md,MD,951,951 B,e366fd9180561a26698ba7928f153656428205b10fb9b0f23c46523ae7b0016e,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\POTENTIAL_VIOLATIONS.md,POTENTIAL_VIOLATIONS.md,MD,1419,1.39 KB,9d75f387112273cc494432d7fad44ee8473f48815cff5b67039add1619419c19,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\SUBMISSION_FORMAT_AUDIT.md,SUBMISSION_FORMAT_AUDIT.md,MD,649,649 B,0195a229deb98f968a3a7f35afd1e21f839ad1f087dc0bd5f024b5b7e01b4249,Submission File,Competition Compliance Audit,Verified Active
-D:\gci\champion\07_COMPETITION_COMPLIANCE\VALIDATION_POLICY_AUDIT.md,VALIDATION_POLICY_AUDIT.md,MD,611,611 B,57c0e4e036230d3fe8ccdb04a259f7dbd0230b84cbc7cba59e7f5f6bd04c91cf,Documentation / Audit Report,Competition Compliance Audit,Verified Active
-D:\gci\champion\08_SUBMISSIONS\SUBMISSION_HASHES.txt,SUBMISSION_HASHES.txt,TXT,305,305 B,c867ad7e86759b6f87e048bd54c289f5b1794b8a2203317e469c5d4b4137acbb,Submission File,Submissions,Verified Active
-D:\gci\champion\08_SUBMISSIONS\SUBMISSION_RESULTS.md,SUBMISSION_RESULTS.md,MD,1143,1.12 KB,7e257c21d74ea958247962f51e52cacb10695854ccef78cbff461efef730c908,Submission File,Submissions,Verified Active
-D:\gci\champion\08_SUBMISSIONS\submission_exp85_recovery_v5.csv,submission_exp85_recovery_v5.csv,CSV,1291519,1.23 MB,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947,Submission File,Submissions,Verified Active
-D:\gci\champion\08_SUBMISSIONS\submission_exp85_recovery_v5_rebuilt.csv,submission_exp85_recovery_v5_rebuilt.csv,CSV,1291519,1.23 MB,91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482,Submission File,Submissions,Verified Active
-D:\gci\champion\09_EVIDENCE\EXECUTION_LOGS\EXPERIMENT_RESULTS.csv,EXPERIMENT_RESULTS.csv,CSV,7520,7.34 KB,f2b333a97555be38e380d6706f07e88ef7f395c857a7b772729f4bdb30b1b6dd,CSV Data / Telemetry Table,Evidence & Telemetry,Verified Active
-D:\gci\champion\09_EVIDENCE\HISTORICAL_COMPARISONS\HISTORICAL_COMPARISON_TELEMETRY.md,HISTORICAL_COMPARISON_TELEMETRY.md,MD,823,823 B,ad80aadb571312688e08ab3a76ebc413eef72d995aedbe388198fdc5a8ca4936,Documentation / Audit Report,Evidence & Telemetry,Verified Active
-D:\gci\champion\09_EVIDENCE\LEADERBOARD_EVIDENCE\Competition_Log_Official.pdf,Competition_Log_Official.pdf,PDF,1415443,1.35 MB,7e4a7fd41499940d96c4749418447a430fc6e94555a62332a90c04e973e77ed3,Supporting Asset,Evidence & Telemetry,Verified Active
-D:\gci\champion\09_EVIDENCE\LEADERBOARD_EVIDENCE\competition_log_extracted.txt,competition_log_extracted.txt,TXT,107293,104.78 KB,09035786b5a6c2c9310825963fa1406904c8ebb01b69624174f1690c35aaafd8,Documentation / Audit Report,Evidence & Telemetry,Verified Active
-D:\gci\champion\09_EVIDENCE\LEADERBOARD_EVIDENCE\competition_log_extracted_full.txt,competition_log_extracted_full.txt,TXT,108350,105.81 KB,d2a146ede8dce975df8897403402b29b6524245b5f245f69273e6cb6e892d90e,Documentation / Audit Report,Evidence & Telemetry,Verified Active
-D:\gci\champion\09_EVIDENCE\SCREENSHOTS\EVIDENCE_INDEX.md,EVIDENCE_INDEX.md,MD,620,620 B,914caa9df834f7252ef69860698b560085041d67141837e289cc4fa5a72f233c,Documentation / Audit Report,Evidence & Telemetry,Verified Active
-D:\gci\champion\cache\oof_10f_xgb.npy,oof_10f_xgb.npy,NPY,684936,668.88 KB,2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d,Model Predictions Cache,Master Project Metadata,Verified Active
-D:\gci\champion\cache\test_10f_xgb.npy,test_10f_xgb.npy,NPY,246128,240.36 KB,5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195,Model Predictions Cache,Master Project Metadata,Verified Active
-D:\gci\champion\cache\v55_members.npz,v55_members.npz,NPZ,7088141,6.76 MB,995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f,Model Predictions Cache,Master Project Metadata,Verified Active
-D:\gci\champion\cache\v_17_full_suite_bundle.npz,v_17_full_suite_bundle.npz,NPZ,6866482,6.55 MB,c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223,Model Predictions Cache,Master Project Metadata,Verified Active
-D:\gci\champion\cache\v_20261027_precision_transductive_apex.csv,v_20261027_precision_transductive_apex.csv,CSV,1291519,1.23 MB,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484,CSV Data / Telemetry Table,Master Project Metadata,Verified Active
-D:\gci\champion\cache\y_train.npy,y_train.npy,NPY,684936,668.88 KB,2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2,Model Predictions Cache,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\catboost_training.json,catboost_training.json,JSON,46242,45.16 KB,09f02d5ac523b4562bbc7f23c8c63a776effa116357edb4dc575980c1d54610c,Configuration / Metadata,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\learn_error.tsv,learn_error.tsv,TSV,5811,5.67 KB,ac73ecf74ad9d438bccc204e444576bbbf4bc6591b4e517679a2cabb2c9a304d,Supporting Asset,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\test_error.tsv,test_error.tsv,TSV,10336,10.09 KB,cf550f20f99e0b283df1a13f1f3b69b860e828926964f8ce5db9a492e62dfbb0,Supporting Asset,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\time_left.tsv,time_left.tsv,TSV,4951,4.83 KB,33b4e7acba9d0f8055db9653921a710a06df7fbeed00190805fc45437a3dd4d2,Supporting Asset,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\learn\events.out.tfevents,events.out.tfevents,TFEVENTS,19120,18.67 KB,fb0f9ded657674397b91a2d53c9acc4cb1308ce55898e23bfb0de8cbc38368e5,Supporting Asset,Master Project Metadata,Verified Active
-D:\gci\champion\catboost_info\test\events.out.tfevents,events.out.tfevents,TFEVENTS,35440,34.61 KB,39edd765b5b9655d72197b2af5d6d9e2a8315829f715227b0519dff03add7aaf,Supporting Asset,Master Project Metadata,Verified Active
+relative_path,size_bytes,sha256
+ARCHIVAL_COMPLETION_REPORT.md,2225,473cdcbc3dc95d85770cfef9c668bf92c7efafa14407a3da10eb745a87b912b0
+COMPETITION_COMPLIANCE_FINAL_REPORT.md,1022,3830b48ae8fc9d92adf7a88744b2a74561b7185b577d5765b06af1badd4187e7
+COMPETITION_RULES_AUDIT.md,3681,67d31a9c9e90d79e01d20a6d412328c37c075856edf162be46fa3c8609b47db7
+FINAL_SHA256_VERIFICATION.csv,1526,475b2ffc69b7854a11ed36e00b55c77516cfa0327591ac18584016d8b2488077
+GITHUB_UPLOAD_REPORT.md,1078,ecdd94a557732ae3987bc8ff3e6ffd3cbfddf0dd0db316e0613c80bda4dfcb1b
+LOCAL_GITHUB_PARITY_REPORT.md,911,e79cdbdb12eec8f70a069d81631f7bdbdc681bc1994cccdeb0c4afd85d795dea
+MASTER_FILE_INVENTORY.csv,31773,b7eaed37edde28f44cd831c8f087af590a601dd14e47a14bcbcb9c030b2164de
+MASTER_MANIFEST.json,1490,c7522787269fe60e1e59d17d296cde4560ab17a4c396ba56e611c8335d69dddc
+README.md,3581,ccffd2fa8429cdffcb932f06ce4e9937990dfb008d5a6c51ca3e5596dd70e878
+REPRODUCIBILITY_STATUS.md,5989,987ab1e9f5bb814484b696a76b989efd799d18ba4ccec64cee7296d8e41eab6a
+SHA256SUMS.txt,15155,d9f5868108a9fb92433dc29f5054ca3e60402edad94bec53f1aa049a9b19c425
+SUBMISSION_CODE_DOCUMENTATION.md,2953,ded2c7bd02128efcecc6c73d30d90fb239f71ce3c7e17a4622556a65935262f5
+create_exp85_submissions.py,8207,03dd16fc4a0c394a2f9824d210d5a8703f54c803d53002216f6826fa15835d5d
+create_submission_recovery_v5.py,6259,1d654cf21fe0c9116b30c0fe2a1cd5f3e9742c6cc824b7225e8b606bae6f90ce
+create_submission_recovery_v5_rebuilt.py,6700,8b6c2cb74171efcfc0d6676b92eaa40768aaf43c36a99b79c8007234e300d8a6
+exp85_solo.ipynb,36967,d7d16d00599061b041e2b85619eb4dbc3f3607d437766c9c1e72d928a913f7b7
+exp85_solo.pre_independent_wiring_backup.ipynb,140963,1ccfab28ef8534fc176c757c79250547c03a041a922851d683c82d0df1241d23
+exp85_solo_backup_pre_fix.ipynb,40022,34b66ca02ca74f1c8ee80a24d80a519292f3d0d6f00e197e1900e16f94dfeb4b
+exp85_solo_runner.py,23561,d6e7a398ec4f08b1ff605da4886889d476e14ab9169baa81f00c3f04fede8be9
+submission_exp85_solo_champion.csv,1291519,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+00_HISTORICAL_REFERENCE/EXP85_HISTORICAL_CHAMPION.csv,1291519,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+00_HISTORICAL_REFERENCE/HISTORICAL_LINEAGE.md,1511,1bc29ab3aeba286cff83a31a80c74db396bbaf3b6a7cac04924b8c2e98080e4f
+00_HISTORICAL_REFERENCE/HISTORICAL_SCORE.md,1073,91cd9546703406fe39baf476fd9c128a6380e28ca911709eaf98badd0cd119e1
+00_HISTORICAL_REFERENCE/HISTORICAL_SHA256.txt,207,eb8672f70c2c27e76c4a4a7703b11b703772dd2b3bf7b07c42a6a06ac06c24be
+01_EXP85_RECOVERY/README.md,955,bc70bde5135688361a4fd7d80908e18d8390ab9f276bee01630a1676e7fa59a5
+01_EXP85_RECOVERY/artifacts/v_20261027_optimal_transductive_apex.csv,1291519,b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4
+01_EXP85_RECOVERY/artifacts/v_20261027_precision_transductive_apex.csv,1291519,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484
+01_EXP85_RECOVERY/cache/oof_10f_xgb.npy,684936,2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d
+01_EXP85_RECOVERY/cache/test_10f_xgb.npy,246128,5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195
+01_EXP85_RECOVERY/cache/v55_members.npz,7088141,995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f
+01_EXP85_RECOVERY/cache/v_17_full_suite_bundle.npz,6866482,c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223
+01_EXP85_RECOVERY/cache/y_train.npy,684936,2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2
+01_EXP85_RECOVERY/config/exp85_recovery_config.json,597,9b2c5c17665ffa3d873a2262d111c89e5c8a5e6585c2f042944fe6897efbb82d
+01_EXP85_RECOVERY/notebooks/exp85_recovery_v5.ipynb,36967,d7d16d00599061b041e2b85619eb4dbc3f3607d437766c9c1e72d928a913f7b7
+01_EXP85_RECOVERY/reports/EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,15566,9ec0e6009dde07a8440888c929e83b2733dbffe52c818bc5fbcd2082f4f8fcfd
+01_EXP85_RECOVERY/reports/EXP85_ARTIFACT_EQUIVALENCE.csv,3661,01d5c090aab9b18dc1bb8470e12fb17909b406362724b415036954407181a8ad
+01_EXP85_RECOVERY/reports/EXP85_BRANCH_ABLATION.csv,915,34aae195624fbad8954b915106c62a08e322500e1bab86b51cfa60ba8d877851
+01_EXP85_RECOVERY/reports/EXP85_EXACT_REPRODUCTION_REPORT.md,8900,9d0ee1a317711b6b194513eda907b6c64e5ac8cc6c458caed9810b82acd90593
+01_EXP85_RECOVERY/source/evaluate_reproductions.py,7463,878d1d8fddf9c32b49ed155e36f88cc23030a96432e31ef8443e41243ba60f91
+01_EXP85_RECOVERY/source/reproduce_anchor74.py,8064,08d7f5da963d2fb1b324dfd6884601e50b736ecc23313d2a25aa89a5a94ab79b
+01_EXP85_RECOVERY/source/reproduce_exact_synthesis.py,4683,a1c6c8f9562a9e0c395a7b551742f6e1e3b755857cab11ca268274921cec6f4b
+01_EXP85_RECOVERY/submissions/submission_exp85_recovery_v5.csv,1291519,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+02_EXP85_REBUILT/README.md,1987,ff6fa6ac1cc4f61d513fcdd52837eadfa55394c36bccb5b209db0701e9e016d8
+02_EXP85_REBUILT/artifacts/v_20261027_asymmetric_tail_gated_apex.csv,1291519,25b38876abc29b8cd0b4d21547d068b0257c7bc970bcf826e5c2373fe83e1b35
+02_EXP85_REBUILT/artifacts/v_20261027_optimal_transductive_apex.csv,1291519,5c33df833c71af56a638ea792e62e30550a7c66195f7b4c3a6d80fa94db13c9a
+02_EXP85_REBUILT/artifacts/v_20261027_precision_transductive_apex.csv,1291519,315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b
+02_EXP85_REBUILT/config/zoo_training_config.json,1352,dcbba949ac5d5ebae65675024b62c875ccee8e8ecbbe41c60159e179ba37ca7e
+02_EXP85_REBUILT/features/FEATURE_HASH_VERIFICATION.md,1002,942c2e4fd0184ff8f00ce74fe613ebf9b2091cd8d8217d08248782cfd891f981
+02_EXP85_REBUILT/features/hasan_feature_importance.csv,33874,a8d3487f6820d2935bebc9f86db186c84c2e2d01a6412efb36facf6498493a77
+02_EXP85_REBUILT/models/hasan_expanded_zoo.npz,8059267,def4d9d10966af5d9a4dd50191fa93435f871c0c4fb602d93fd37b5f35463965
+02_EXP85_REBUILT/models/model_zoo_reconstruction_telemetry.csv,631,fcc833cae8ae95b230346c3860dfa5fbd1ef6f0bef2c22b14fc41f5cfaea187d
+02_EXP85_REBUILT/notebooks/exp85_recovery_v5.ipynb,36967,d7d16d00599061b041e2b85619eb4dbc3f3607d437766c9c1e72d928a913f7b7
+02_EXP85_REBUILT/reports/DEPENDENCY_STATUS.csv,2247,1d65b61147701641dbdec29d91418d958dc88bcab6f990e54402e9f8a3113fb8
+02_EXP85_REBUILT/reports/MISMATCH_DIAGNOSIS.md,2768,75f40c85824adcea875157e794e51104d98021095816e5aab6e64f6da1403ce3
+02_EXP85_REBUILT/reports/PHASE3_MASTER_REPORT.md,7216,2d5dc0196369619f8f48dfdb1bc82f3962cd0991ba6dc277bc699abf51ac451f
+02_EXP85_REBUILT/reports/RECONSTRUCTION_METRICS.csv,2520,8d261e0091332cd80d5b8a8fbfaec31520caccaa7c9b12553525094799a4e888
+02_EXP85_REBUILT/source/reconstruct_transductive_pyramid.py,17103,a99bd2ba02ed673a6660eb67c39fb16e80d9d01d4560e02ef3ba3ae0fefbd0f4
+02_EXP85_REBUILT/source/recreate_precision_anchor.py,30355,ad38e92988428f04a59f66ab9a3746cbaf01b633c6295b61f5876c6e03fc7dff
+02_EXP85_REBUILT/source/recreate_v17_bundle.py,28820,f9c15e292161a4dd8c2d71419d1a95134a5ebba4b8d366e0a86885b79a7c65a6
+02_EXP85_REBUILT/source/recreate_v55_members.py,18116,3c2979bc8941c61d9f2ebbd0de725d15f09bca32245d9dcd46812bbb9e0cf290
+02_EXP85_REBUILT/source/recreate_xgb10_and_labels.py,10281,7fbeaa89fb7b4473aefa9dbdb2c83b6ee337389b1ffc783b442a1640f9c1c900
+02_EXP85_REBUILT/source/run_all_recreations.py,2740,7fd2dd427641c7d65b4daee7434b4306d3fa3ac813b6ff416880d6d99e471724
+02_EXP85_REBUILT/source/run_hasan_600_builder.py,18055,c48cef2ee03f67e9eb69dc46aa8c3ce49de85a72e933433cd0eb163b5fb01459
+02_EXP85_REBUILT/source/run_workstream2_screening.py,4729,9db77087ac0f51eca9242a26beeffa25d444c5e59373675fd5115dff035ce6d9
+02_EXP85_REBUILT/source/train_independent_zoo.py,11607,e520f3fc41788128738817cb2fdfc030131061d80ae9529086b8b077814f83bf
+02_EXP85_REBUILT/submissions/submission_exp85_recovery_v5_rebuilt.csv,1291519,91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482
+03_PHASE_HISTORY/PHASE_1/EXP85_ANCHOR74_RECONSTRUCTION_REPORT.md,15566,9ec0e6009dde07a8440888c929e83b2733dbffe52c818bc5fbcd2082f4f8fcfd
+03_PHASE_HISTORY/PHASE_1/EXP85_ARTIFACT_EQUIVALENCE.csv,3661,01d5c090aab9b18dc1bb8470e12fb17909b406362724b415036954407181a8ad
+03_PHASE_HISTORY/PHASE_1/EXP85_BRANCH_ABLATION.csv,915,34aae195624fbad8954b915106c62a08e322500e1bab86b51cfa60ba8d877851
+03_PHASE_HISTORY/PHASE_1/EXP85_DEPENDENCY_AUDIT_SHA256.txt,1891,dd510fb5d257088966e5e53b7d3576e307f1bd308e9caccc340e839344b1273e
+03_PHASE_HISTORY/PHASE_1/EXP85_DEPENDENCY_GRAPH.md,6463,edaf51be3c336779262de57386883a3ce2f1136d09250d597492c732416848d6
+03_PHASE_HISTORY/PHASE_1/EXP85_DEPENDENCY_INVENTORY.csv,377821,e34a655790614cfaaddffd9b2a00ed91718c5320b66a11a857899dc3767d2987
+03_PHASE_HISTORY/PHASE_1/EXP85_EXACT_REPRODUCTION_REPORT.md,8900,9d0ee1a317711b6b194513eda907b6c64e5ac8cc6c458caed9810b82acd90593
+03_PHASE_HISTORY/PHASE_1/EXP85_MISMATCH_ROOT_CAUSES.md,9329,e842d16e66628b50da9fece1a3080277e07c6e3865c9a948a5e3d88b746d7e09
+03_PHASE_HISTORY/PHASE_1/EXP85_SOURCE_CODE_AUDIT.md,6020,5ad66f412b090436aef2e204b51b5b2948de0752ecb07c9988f2a0250faf797f
+03_PHASE_HISTORY/PHASE_1/audit_historical_artifacts.py,3442,b62c41d9f563d5e2a5808925880e57742305eefcdef1f11dfcd28bb648800bd3
+03_PHASE_HISTORY/PHASE_1/evaluate_reproductions.py,7463,878d1d8fddf9c32b49ed155e36f88cc23030a96432e31ef8443e41243ba60f91
+03_PHASE_HISTORY/PHASE_1/inventory_scanner.py,5739,1fd5eaadbefbaa1f3393ca81bd9dd7671aa73f92c9e1f9c92e04f43107208d8c
+03_PHASE_HISTORY/PHASE_1/reproduce_exact_synthesis.py,4683,a1c6c8f9562a9e0c395a7b551742f6e1e3b755857cab11ca268274921cec6f4b
+03_PHASE_HISTORY/PHASE_1/run_branch_ablation.py,6313,578e7edc94aee744aff2419977af6f3afbd6328ff81da37ab6429445eaf35d8f
+03_PHASE_HISTORY/PHASE_1/submission_exp85_dependency_reproduced.csv,1291519,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+03_PHASE_HISTORY/PHASE_2/reproduce_anchor74.py,8064,08d7f5da963d2fb1b324dfd6884601e50b736ecc23313d2a25aa89a5a94ab79b
+03_PHASE_HISTORY/PHASE_2/v_20261027_asymmetric_tail_gated_apex_reproduced.csv,1291519,eb32a40623b7571be17ed7abbeb188b76444784c355bc65301a2ceb9940e5b77
+03_PHASE_HISTORY/PHASE_2/v_20261027_optimal_transductive_apex_reproduced.csv,1291519,b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4
+03_PHASE_HISTORY/PHASE_2/v_20261027_precision_transductive_apex_reproduced.csv,1291519,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484
+03_PHASE_HISTORY/PHASE_3/ARTIFACT_SHA256_MANIFEST.txt,1690,522cb464caecb8a63023ff180d4ea7015d6ebcd6ac63bd32c70b7765a8b3a8e3
+03_PHASE_HISTORY/PHASE_3/DEPENDENCY_STATUS.csv,2247,1d65b61147701641dbdec29d91418d958dc88bcab6f990e54402e9f8a3113fb8
+03_PHASE_HISTORY/PHASE_3/EXPERIMENT_LOG.csv,2011,4bdcc67f540400663f8d1b3dfa4e089a3f4e1489ce4e019f98f6d1f381d9340f
+03_PHASE_HISTORY/PHASE_3/MISMATCH_DIAGNOSIS.md,2768,75f40c85824adcea875157e794e51104d98021095816e5aab6e64f6da1403ce3
+03_PHASE_HISTORY/PHASE_3/PHASE3_MASTER_REPORT.md,7216,2d5dc0196369619f8f48dfdb1bc82f3962cd0991ba6dc277bc699abf51ac451f
+03_PHASE_HISTORY/PHASE_3/RECONSTRUCTION_METRICS.csv,2520,8d261e0091332cd80d5b8a8fbfaec31520caccaa7c9b12553525094799a4e888
+03_PHASE_HISTORY/PHASE_3/SOURCE_LINEAGE_GRAPH.md,2674,b63fb9261d12dd30d6b78c9fb21b68c3cd68c8e7afa70da0fb396b06c4b98c04
+03_PHASE_HISTORY/PHASE_3/experiments/create_builder.py,1112,c2215454fc435037d61656a819a89eba10d1ad21b4f050f4c22b1e075ebbf6cb
+03_PHASE_HISTORY/PHASE_3/experiments/reconstruct_hasan_features.py,14991,dc8c61c19aa61ad055f16f45724f03ca4b2d7157a7ca3ce12560015da8999ea0
+03_PHASE_HISTORY/PHASE_3/experiments/reconstruct_transductive_pyramid.py,17032,bcd1536149241091b8dea26bfecdaae39edf9b6aad7bd7db5c24baa5cd4db70c
+03_PHASE_HISTORY/PHASE_3/experiments/run_hasan_600_builder.py,18055,c48cef2ee03f67e9eb69dc46aa8c3ce49de85a72e933433cd0eb163b5fb01459
+03_PHASE_HISTORY/PHASE_3/experiments/run_workstream2_screening.py,4729,9db77087ac0f51eca9242a26beeffa25d444c5e59373675fd5115dff035ce6d9
+03_PHASE_HISTORY/PHASE_3/experiments/train_independent_zoo.py,11499,3fffb32c96151eeeb28864e545154858262ff2ded4bcc5ffa562fc367410b92d
+03_PHASE_HISTORY/PHASE_4/PHASE4_ZERO_GAP_OPTIMIZATION_REPORT.md,1770,9497fd501c585c09ddc31d48459ded4b41f391d1d05b21da01a22720be035f87
+04_MODEL_LINEAGE/ANCHOR74/ANCHOR74_LINEAGE.md,1119,e80aeb5e556f5b12dde7f1684ebebd24b81b6eec2f5af1341e93f8f869f754a7
+04_MODEL_LINEAGE/ANCHOR74/generate_anchor74_from_scratch.py,30355,ad38e92988428f04a59f66ab9a3746cbaf01b633c6295b61f5876c6e03fc7dff
+04_MODEL_LINEAGE/EXP85_SYNTHESIS/EXP85_SYNTHESIS_MATHEMATICAL_PROOF.md,1027,909296fa519e1fa9b199334081592f11d28778e42e5672d96d1ceee475b7a91b
+04_MODEL_LINEAGE/FOUNDATION_MODELS/FOUNDATION_MODELS_ANALYSIS.md,982,806ee1a9179c278cc8a2739918e38a079b0c60867584f088a2e681dd317f8410
+04_MODEL_LINEAGE/V17/V17_SUITE_LINEAGE.md,542,e9454b9eca8d9c30fcd1e0b3a7d3078a5bec63210d6a6d84454526988a89eb1d
+04_MODEL_LINEAGE/V17/generate_v17_from_scratch.py,28820,f9c15e292161a4dd8c2d71419d1a95134a5ebba4b8d366e0a86885b79a7c65a6
+04_MODEL_LINEAGE/V55/V55_SUITE_LINEAGE.md,668,7df3e2fa65a02e13b94dfe8a47e0a2cb5c11530d54739460b2395cea5aba094c
+04_MODEL_LINEAGE/V55/generate_v55_from_scratch.py,18116,3c2979bc8941c61d9f2ebbd0de725d15f09bca32245d9dcd46812bbb9e0cf290
+04_MODEL_LINEAGE/XGB10/XGB10_LINEAGE.md,279,ec043f0b9c7cc668ff5e07c066975acab04cb4b9203460614d3c985a3bb74793
+04_MODEL_LINEAGE/XGB10/generate_xgb10_from_scratch.py,10281,7fbeaa89fb7b4473aefa9dbdb2c83b6ee337389b1ffc783b442a1640f9c1c900
+05_FEATURE_ENGINEERING/FEATURES_550/FEATURES_550_SCREENING_METHODOLOGY.md,564,8997f5dead08a1464092ce3fc4baca6fa47c31ca5b9df3f76319c4c41effa0f5
+05_FEATURE_ENGINEERING/FEATURES_550/hasan_feature_importance.csv,33874,a8d3487f6820d2935bebc9f86db186c84c2e2d01a6412efb36facf6498493a77
+05_FEATURE_ENGINEERING/FEATURES_669/FEATURES_669_MATHEMATICAL_SPECIFICATION.md,1089,918570247384a8eb409cbae49aec72ab94c16d87b06cb4638e1a762717fc0e62
+05_FEATURE_ENGINEERING/FEATURE_BUILDERS/build_hasan_600_features.py,17482,cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341
+05_FEATURE_ENGINEERING/FEATURE_BUILDERS/screen_and_select_features.py,3636,0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7
+05_FEATURE_ENGINEERING/FEATURE_VALIDATION/FEATURE_MATRIX_PARITY_AUDIT.md,1249,36800bb5818f68f1c8d824b746009eed9d3ad69b4878e51649ba75daed05e715
+06_REPRODUCIBILITY/DEPENDENCIES.txt,171,f7adb78ab7e6df900e36bf8fffa835afd92cd4e9a829477a35a4b9cc48c0627d
+06_REPRODUCIBILITY/ENVIRONMENT.json,443,1716a8691e402be40c148db2ba1007d3c146c269870a0f585e2ecd01426cb70d
+06_REPRODUCIBILITY/HASH_VALIDATION.csv,964,c8aa888ef137c53deae9a80ce36de0ba7bfaea68dd10a49fc5b3d976ffdfc858
+06_REPRODUCIBILITY/PREDICTION_COMPARISON.csv,492,1089d0ffc9d8992ce2b0bcccc9634f2be1d05d5eb6094f3ac6bd39957b8685fd
+06_REPRODUCIBILITY/REBUILD_INSTRUCTIONS.md,1031,b8f0181a561d3c2c8d2155b5ea1738c5439b3e8a964ef100d4aac23bfb13f950
+06_REPRODUCIBILITY/REPRODUCTION_TESTS.md,760,48db49085944b56bc5650998e27b9d5ce3e7da068ecda90185e50a9ef678e822
+07_COMPETITION_COMPLIANCE/DATA_POLICY_AUDIT.md,546,7121db1d43e77b510bf40ecb65d93ac20b72709ad07807a02d8cbe8b9417f96b
+07_COMPETITION_COMPLIANCE/FINAL_COMPLIANCE_VERDICT.md,746,039978c07c98ec54095f6447b3f898e98fb0390156b971f7cafe6b062dcac0a5
+07_COMPETITION_COMPLIANCE/MODEL_AND_EXTERNAL_DATA_AUDIT.md,474,40af06d594f82aef504273b22b31179da4e291699c12862eeb6551f520c40303
+07_COMPETITION_COMPLIANCE/OFFICIAL_RULES_SNAPSHOT.md,951,e366fd9180561a26698ba7928f153656428205b10fb9b0f23c46523ae7b0016e
+07_COMPETITION_COMPLIANCE/POTENTIAL_VIOLATIONS.md,1419,9d75f387112273cc494432d7fad44ee8473f48815cff5b67039add1619419c19
+07_COMPETITION_COMPLIANCE/SUBMISSION_FORMAT_AUDIT.md,649,0195a229deb98f968a3a7f35afd1e21f839ad1f087dc0bd5f024b5b7e01b4249
+07_COMPETITION_COMPLIANCE/VALIDATION_POLICY_AUDIT.md,611,57c0e4e036230d3fe8ccdb04a259f7dbd0230b84cbc7cba59e7f5f6bd04c91cf
+08_SUBMISSIONS/SUBMISSION_HASHES.txt,305,c867ad7e86759b6f87e048bd54c289f5b1794b8a2203317e469c5d4b4137acbb
+08_SUBMISSIONS/SUBMISSION_RESULTS.md,1143,7e257c21d74ea958247962f51e52cacb10695854ccef78cbff461efef730c908
+08_SUBMISSIONS/submission_exp85_recovery_v5.csv,1291519,78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+08_SUBMISSIONS/submission_exp85_recovery_v5_rebuilt.csv,1291519,91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482
+09_EVIDENCE/EXECUTION_LOGS/EXPERIMENT_RESULTS.csv,7520,f2b333a97555be38e380d6706f07e88ef7f395c857a7b772729f4bdb30b1b6dd
+09_EVIDENCE/HISTORICAL_COMPARISONS/HISTORICAL_COMPARISON_TELEMETRY.md,823,ad80aadb571312688e08ab3a76ebc413eef72d995aedbe388198fdc5a8ca4936
+09_EVIDENCE/LEADERBOARD_EVIDENCE/Competition_Log_Official.pdf,1415443,7e4a7fd41499940d96c4749418447a430fc6e94555a62332a90c04e973e77ed3
+09_EVIDENCE/LEADERBOARD_EVIDENCE/competition_log_extracted.txt,107293,09035786b5a6c2c9310825963fa1406904c8ebb01b69624174f1690c35aaafd8
+09_EVIDENCE/LEADERBOARD_EVIDENCE/competition_log_extracted_full.txt,108350,d2a146ede8dce975df8897403402b29b6524245b5f245f69273e6cb6e892d90e
+09_EVIDENCE/SCREENSHOTS/EVIDENCE_INDEX.md,620,914caa9df834f7252ef69860698b560085041d67141837e289cc4fa5a72f233c
+cache/oof_10f_xgb.npy,684936,2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d
+cache/test_10f_xgb.npy,246128,5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195
+cache/v55_members.npz,7088141,995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f
+cache/v_17_full_suite_bundle.npz,6866482,c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223
+cache/v_20261027_precision_transductive_apex.csv,1291519,e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484
+cache/y_train.npy,684936,2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2
+catboost_info/catboost_training.json,46242,09f02d5ac523b4562bbc7f23c8c63a776effa116357edb4dc575980c1d54610c
+catboost_info/learn_error.tsv,5811,ac73ecf74ad9d438bccc204e444576bbbf4bc6591b4e517679a2cabb2c9a304d
+catboost_info/test_error.tsv,10336,cf550f20f99e0b283df1a13f1f3b69b860e828926964f8ce5db9a492e62dfbb0
+catboost_info/time_left.tsv,4951,33b4e7acba9d0f8055db9653921a710a06df7fbeed00190805fc45437a3dd4d2
+catboost_info/learn/events.out.tfevents,19120,fb0f9ded657674397b91a2d53c9acc4cb1308ce55898e23bfb0de8cbc38368e5
+catboost_info/test/events.out.tfevents,35440,39edd765b5b9655d72197b2af5d6d9e2a8315829f715227b0519dff03add7aaf

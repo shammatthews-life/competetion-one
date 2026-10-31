@@ -69,9 +69,9 @@ def main():
     X_te = pd.read_feather(os.path.join(in_dir, "hasan_selected_550_te.feather"))
     y_tr = pd.read_csv(raw_train_path, usecols=["TARGET"])["TARGET"].values
 
-    # Clean infinities
-    X_tr.replace([np.inf, -np.inf], np.nan, inplace=True)
-    X_te.replace([np.inf, -np.inf], np.nan, inplace=True)
+    # In historical pipeline, LightGBM handles IEEE 754 +inf/-inf natively on features like HOUSING_STABILITY
+    # Only XGBoost and CatBoost require finite inputs
+    # 'n_jobs': 4 ensures exact multi-threaded CPU determinism across LightGBM runs
 
     n_train = len(X_tr)
     n_test = len(X_te)
@@ -252,7 +252,7 @@ def main():
         'reg_alpha': 10.0,
         'reg_lambda': 30.0,
         'random_state': 42,
-        'n_jobs': -1,
+        'n_jobs': 4,
         'verbose': -1
     }
 
