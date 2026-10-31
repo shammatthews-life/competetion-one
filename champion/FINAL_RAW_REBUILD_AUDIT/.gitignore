@@ -1,0 +1,6 @@
+runs/**/components/
+runs/**/raw/**
+runs/**/models/**
+runs/**/catboost_info/
+__pycache__/
+*.py[cod]

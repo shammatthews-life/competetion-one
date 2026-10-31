@@ -1,0 +1,49 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_v55_from_scratch.py --data_dir D:\gci\inpuy --output_dir D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_v55_from_scratch.py:113: RuntimeWarning: Mean of empty slice
+  df_core["EXT_MEAN"] = np.nanmean(ext_stack, axis=1)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+================================================================================
+  GCI World 2026: V55 Multi-Architecture Suite Generator (100% Raw Data)
+================================================================================
+[*] Ingesting raw competition datasets from: D:\gci\inpuy
+[+] Feature manifolds constructed in 1.2s
+
+[*] Training 7 Distinct Models across 5-Fold Stratified CV (fast=False)...
+[*] CatBoost Compute Device: NVIDIA CUDA GPU
+
+[Model 1/7] Training LightGBM Member: qf_shallow (1300 rounds, 36 features)...
+      -> qf_shallow      Complete | OOF AUC: 0.752145 (44.6s)
+
+[Model 2/7] Training LightGBM Member: qf_reg (1939 rounds, 36 features)...
+      -> qf_reg          Complete | OOF AUC: 0.752138 (61.2s)
+
+[Model 3/7] Training LightGBM Member: v1_allfam_oh (1563 rounds, 137 features)...
+      -> v1_allfam_oh    Complete | OOF AUC: 0.752470 (59.2s)
+
+[Model 4/7] Training LightGBM Member: v2_allfam_oh (1500 rounds, 137 features)...
+      -> v2_allfam_oh    Complete | OOF AUC: 0.758662 (80.1s)
+
+[Model 5/7] Training LightGBM Member: v2_mono (1571 rounds, 36 features)...
+      -> v2_mono         Complete | OOF AUC: 0.751490 (127.0s)
+
+[Model 6/7] Training LightGBM Member: deep_et (1200 rounds, 137 features)...
+      -> deep_et         Complete | OOF AUC: 0.752037 (99.5s)
+
+[Model 7/7] Training CatBoost Product Specialist (cb_product)...
+      -> cb_product     Complete | OOF AUC: 0.750755 (165.2s)
+
+================================================================================
+  V55 Multi-Architecture Suite Bundle Generated Successfully!
+  Output Artifact: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\v55_members.npz (6,730,539 bytes)
+  Total Runtime:   640.1s
+================================================================================
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 644.500000

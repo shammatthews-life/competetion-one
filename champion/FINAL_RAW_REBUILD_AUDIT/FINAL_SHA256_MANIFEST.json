@@ -1,0 +1,563 @@
+{
+  "candidate_sha256": "2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe",
+  "classification": "RAW_COMPONENT_RUN; HISTORICAL_PARITY_NOT_ESTABLISHED",
+  "file_count": 68,
+  "files": [
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache\\oof_10f_xgb.npy",
+      "roles": [
+        "read-only historical prediction cache used for comparison only"
+      ],
+      "sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+      "size_bytes": 684936
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache\\test_10f_xgb.npy",
+      "roles": [
+        "read-only historical prediction cache used for comparison only"
+      ],
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "size_bytes": 246128
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache\\v55_members.npz",
+      "roles": [
+        "read-only historical prediction cache used for comparison only"
+      ],
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "size_bytes": 7088141
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache\\v_17_full_suite_bundle.npz",
+      "roles": [
+        "read-only historical prediction cache used for comparison only"
+      ],
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "size_bytes": 6866482
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache\\y_train.npy",
+      "roles": [
+        "read-only historical prediction cache used for comparison only"
+      ],
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "size_bytes": 684936
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py",
+      "roles": [
+        "executed raw generator source"
+      ],
+      "sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+      "size_bytes": 31768
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v17_from_scratch.py",
+      "roles": [
+        "executed raw generator source"
+      ],
+      "sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+      "size_bytes": 18440
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v55_from_scratch.py",
+      "roles": [
+        "executed raw generator source"
+      ],
+      "sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960",
+      "size_bytes": 15432
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_xgb10_from_scratch.py",
+      "roles": [
+        "executed raw generator source"
+      ],
+      "sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb",
+      "size_bytes": 11487
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\08_SUBMISSIONS\\submission_exp85_full_rebuilt.csv",
+      "roles": [
+        "read-only prior raw-candidate comparison reference"
+      ],
+      "sha256": "6bfc518b7abc208ff7e95c5dd8029b8d418d7ae3c1c94f9cdc6c4499598bc042",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\.gitignore",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "746d0814a31d0b2db2c5a597a074ecb7d819fcc72d43c0cb5c39a21a5e04f1bd",
+      "size_bytes": 105
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\FINAL_CODE_AUDIT.md",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "7c3903bc919e54d41e081316959d67b44eae908cef7b38ce49735eaceadcde2e",
+      "size_bytes": 11692
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\FINAL_SUBMISSION_VALIDATION.md",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "57405e4321ea5730e31ae99b5e5e5d9bb069d7b35bdb422c1188a596994e83b8",
+      "size_bytes": 4507
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\FULL_DEPENDENCY_GRAPH.md",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "ad992dd637c58d4ac1429632b5bc29186f68b846e7ceec2dcd811ad0db8da5f7",
+      "size_bytes": 4583
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\MISSING_DEPENDENCIES.csv",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "eb51685ca61d3b2660f34b67ba7e73d769afc8a8809272e0716a723cd385da14",
+      "size_bytes": 6719
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\MODEL_CONFIGURATION_PARITY_REPORT.md",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "635fafa94712a632df39951a4a465084b95bb41725e9e4cac4a7ec166e8443ba",
+      "size_bytes": 9667
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\RAW_REBUILD_EXECUTION_REPORT.md",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "d93b5953979b753814a41a287ca78332ef98d9f9bcdd6460d4fd93107892b03b",
+      "size_bytes": 5686
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+      "roles": [
+        "candidate CSV"
+      ],
+      "sha256": "2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\oof_10f_xgb.npy",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "6d1b4c862fa07acd96d719c1d040fd6eb9daf63cbb0b7f51febedc8d50c8e0d4",
+      "size_bytes": 684936
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\test_10f_xgb.npy",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "d44e4e741d92ea2fff17deaba50fd58f22dad8378be5f68454e6c1a574534303",
+      "size_bytes": 246128
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v55_members.npz",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "4e47c98870bd7aed9120976b174b76e46b81c260d8d1eb9f2d4cee228d3a9ca2",
+      "size_bytes": 6730539
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v_17_full_suite_bundle.npz",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "323672967636c675eaf3c586778db16f685355b033afae58ac6bb688a996b56f",
+      "size_bytes": 5743041
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v_20261027_precision_transductive_apex.csv",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "ab541d868d193eea6426abf8924472890480498d7599102103fd6bb7302bb9b6",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\y_train.npy",
+      "roles": [
+        "fresh generated component (not committed)"
+      ],
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "size_bytes": 684936
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\execution.json",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "719b9db43c9601758f2c6b8314d34d0ecb34c60f3b7b256b5b197457c1f882b9",
+      "size_bytes": 19397
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\00_gpu_preflight.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "e260142e1ae525df2c1a5289cda2e5afc0e60337b7bd36f5cde49fc4a5caffd1",
+      "size_bytes": 641
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\01_generate_xgb10_from_scratch.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "generator log: generate_xgb10_from_scratch.py"
+      ],
+      "sha256": "2ea3c315c35c9a3bec07d5383f8cdf759e3e59f219328cdb2e7611f1388766c8",
+      "size_bytes": 3502
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\02_generate_v55_from_scratch.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "generator log: generate_v55_from_scratch.py"
+      ],
+      "sha256": "3d753a4e6e58c089614e55e6a678e975388a5a727dc9925628d58f1c38403e40",
+      "size_bytes": 3069
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\03_generate_v17_from_scratch.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "generator log: generate_v17_from_scratch.py"
+      ],
+      "sha256": "a2120cfdc4c84d5ee9e21454762bab8e4e1776041ca2350247ffe9d6a83f4e4e",
+      "size_bytes": 2281
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\04_generate_anchor74_from_scratch.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "generator log: generate_anchor74_from_scratch.py"
+      ],
+      "sha256": "76e64fd490d13ab23ac2e9a57b32b4f987564ba6b06782659cc3dc0909191594",
+      "size_bytes": 4120
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\05_synthesize_candidate.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "9f59f0cfb7a5d446b0c7657e0b79994395ac5893461605f8ec1dbd65d4c1c8ac",
+      "size_bytes": 726
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\06_validate_candidate.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "b8fdc80d84c675cab2b919f2342bf4e9e6b0d866b613a6fa6dfc74c8cf723a33",
+      "size_bytes": 2977
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\compileall.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "927d4540bd5f8f4d3510dbeea46e879244f5f887f466bfdcce1819157b5626e5",
+      "size_bytes": 227
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\gpu_telemetry.csv",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "b76a12c85aebcd1e90b7df4f13b7aaa993f7ea7feffb096b77f9c2e3fb4fc565",
+      "size_bytes": 46033
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\lightgbm_gpu_preflight.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "cee8428d1779f9e658f9b2ca39a2987dcaea7f2ad800222b375b6985f047e3b5",
+      "size_bytes": 1612
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\strict_validation.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "b789b59f1e5cd4fbee4eea37e20e99df5f52a8b4bb3fabdbbc61ddd0309e4d69",
+      "size_bytes": 2144
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\unit_tests.txt",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "b71512493d0632389e45379c446a90e94372a4a078f1f8598c6589c815c27ef7",
+      "size_bytes": 1694
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation.json",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "initial wrapper validation report"
+      ],
+      "sha256": "a301204a9433d1c382b56cc5c79b6b5abec46a8eeb960ae090462485adf708f8",
+      "size_bytes": 2115
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation_strict.json",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "strict post-run candidate validation report"
+      ],
+      "sha256": "b789b59f1e5cd4fbee4eea37e20e99df5f52a8b4bb3fabdbbc61ddd0309e4d69",
+      "size_bytes": 2144
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\fold_assignments.json",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "42af4cd37090ca4f7cef472f940b70dc06098d8aad90984130fef8b7d3a536c2",
+      "size_bytes": 3583
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\historical_output_comparison.json",
+      "roles": [
+        "audit source, report, test, execution record, or log",
+        "read-only historical prediction comparison report"
+      ],
+      "sha256": "5cad93d68ca630bf7177c232ae603ed8c56a1cf0dd2bbe15cb80014c4f884b1e",
+      "size_bytes": 23008
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\lightgbm_gpu_preflight.json",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "47fbb4a945c3013e0a72e296024a316fd2524252787636334ed9878b3820b99d",
+      "size_bytes": 1818
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\post_run_checks.json",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "70fa422aefce214f696158820c6c1f527fa7258ac043910b04d7be5df8c819bc",
+      "size_bytes": 4737
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\post_run_component_validation.json",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "8b630df58f5e8cabc27582a424515f6dc51e78b5079f334bf4e9561baea53732",
+      "size_bytes": 3907
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\audit_fold_assignments.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "30a493e7a601aed603d10d4ce7d6f5f74b479cb2eabd2e1308560845d0595d6c",
+      "size_bytes": 5059
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\compare_historical_outputs.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "d96e5d958bea91789510727c6cac31d98ee9a9c5cb237aecb1cf50a2b7dae6a9",
+      "size_bytes": 10803
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\create_final_sha256_manifest.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "6853f1bf00bd140c0e5390061803c01f4ba65f6034e2e4f31e038c1704b85dd4",
+      "size_bytes": 9682
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\raw_candidate_formula.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "049a89207cfffc1e29265dd524dadf77cbb2213183f7076a468cfc4f0f5cc6f6",
+      "size_bytes": 4586
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\run_raw_candidate.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "38184dd51ae99ae8f3ec370e72f856d681f3f702f11a0a58affb67e3bf832f40",
+      "size_bytes": 21378
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\validate_raw_candidate.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "d8f52c6c874a4bd9173d21cac9eeaefaebe4d72cb037fbc3e34264d14298d4c6",
+      "size_bytes": 9627
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\tests\\test_candidate_formula.py",
+      "roles": [
+        "audit source, report, test, execution record, or log"
+      ],
+      "sha256": "2450dd2267950d7baae8920a066a8378fea909f04c4ab50d981cfecf03333bbb",
+      "size_bytes": 7913
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\reports\\CATBOOST_REPRODUCIBILITY_REPORT.md",
+      "roles": [
+        "prior CatBoost reproducibility evidence"
+      ],
+      "sha256": "306fe6857243ed971add5feee38d9622cb8fb242a09168c30d22ed04fd4b829f",
+      "size_bytes": 3449
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\reports\\MISSING_UPSTREAM_DEPENDENCIES.csv",
+      "roles": [
+        "previous V080041 missing-dependency inventory"
+      ],
+      "sha256": "a33b6ebb2d8bc6bd5941abca088fe4087d56c1933c8e001276c0edfed1632a5f",
+      "size_bytes": 5612
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\reports\\PHASE4_MASTER_REPORT.md",
+      "roles": [
+        "prior phase evidence"
+      ],
+      "sha256": "30f75650385c7972adce2ae15fb4c8edc66378cbd172d8c016f4947b7456376e",
+      "size_bytes": 4629
+    },
+    {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\PHASE4_UPSTREAM_RECOVERY\\reports\\V20_V080041_LINEAGE_REPORT.md",
+      "roles": [
+        "prior V20/V080041 lineage evidence"
+      ],
+      "sha256": "a4add82e43e59836e66b31cce2e54224c540a29a6d89d0b4e0259cd54bc18953",
+      "size_bytes": 2150
+    },
+    {
+      "path": "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge\\reports\\FIRST_DIVERGENCE_REPORT.md",
+      "roles": [
+        "separate 695-feature production lineage evidence"
+      ],
+      "sha256": "8935a3afac87382fdd72696c0027933a452cc95f2de7e2459785d922813f4fb1",
+      "size_bytes": 11228
+    },
+    {
+      "path": "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge\\reports\\FIRST_TRANSFORMATION_DIVERGENCE.md",
+      "roles": [
+        "separate current production transformation divergence evidence"
+      ],
+      "sha256": "3fa79e05401c3c3e994a8ccd16c1a93138be576a37b7aa105cad473814f8b226",
+      "size_bytes": 4157
+    },
+    {
+      "path": "D:\\gci\\champion\\EXP85_FINAL_RECONSTRUCTION\\historical_lineage_bridge\\reports\\PRODUCTION_FEATURE_MATRIX_CAPTURE_REPORT.md",
+      "roles": [
+        "separate 695-feature production matrix capture evidence"
+      ],
+      "sha256": "cea1fada568b969cf3595b7c38b6a1feb35639651fce6134b93aacc508f1d5fd",
+      "size_bytes": 5235
+    },
+    {
+      "path": "D:\\gci\\gemini\\build_exp85_optimal_macro_apex.py",
+      "roles": [
+        "historical EXP85 formula source"
+      ],
+      "sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+      "size_bytes": 10406
+    },
+    {
+      "path": "D:\\gci\\gemini\\final_submission\\reproduce_final_submission.py",
+      "roles": [
+        "V080041 stacker consumer source"
+      ],
+      "sha256": "8a90d233723639297b1a433ee474b37ea1d00879fdb518ac39ee75a0fe575662",
+      "size_bytes": 50722
+    },
+    {
+      "path": "D:\\gci\\gemini\\frozen_champion_0801340_reference.csv",
+      "roles": [
+        "read-only frozen champion reference"
+      ],
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\gemini\\v_20261027_optimal_macro_apex_v85.csv",
+      "roles": [
+        "read-only historical v85 formula output"
+      ],
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\gemini\\v_20261027_optimal_transductive_apex.csv",
+      "roles": [
+        "read-only historical Anchor74 comparison reference"
+      ],
+      "sha256": "b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv",
+      "roles": [
+        "V20 lineage-unknown historical prediction artifact"
+      ],
+      "sha256": "41c39e302e9bc25c520157e9d1fb22cc61c3cafcc3754a6629fcd1e29321f6c0",
+      "size_bytes": 1677103
+    },
+    {
+      "path": "D:\\gci\\gemini\\v_solo_080041_pure_champion.csv",
+      "roles": [
+        "V080041 historical prediction artifact"
+      ],
+      "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "size_bytes": 1291519
+    },
+    {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "roles": [
+        "raw input: test.csv"
+      ],
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "roles": [
+        "raw input: train.csv"
+      ],
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    {
+      "path": "D:\\gci\\pre info\\oct22\\meta.json",
+      "roles": [
+        "recovered V080041 metadata"
+      ],
+      "sha256": "cdb08890d4127492d89b4864fe1ef093d1c07e8d64747cb25d480a7a546e4100",
+      "size_bytes": 16012
+    }
+  ],
+  "manifest_sha256_self_excluded": true,
+  "official_leaderboard_score": null,
+  "raw_rebuild_certified": false,
+  "run_execution_sha256": "719b9db43c9601758f2c6b8314d34d0ecb34c60f3b7b256b5b197457c1f882b9",
+  "schema_version": 1
+}

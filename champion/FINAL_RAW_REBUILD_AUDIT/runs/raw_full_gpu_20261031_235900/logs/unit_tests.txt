@@ -1,0 +1,15 @@
+test_alignment_rejects_duplicate_ids_and_nonfinite_targets (test_candidate_formula.RawCandidateFormulaTests.test_alignment_rejects_duplicate_ids_and_nonfinite_targets) ... ok
+test_alignment_reorders_rows_by_id (test_candidate_formula.RawCandidateFormulaTests.test_alignment_reorders_rows_by_id) ... ok
+test_comparison_metrics_exact_identity (test_candidate_formula.RawCandidateFormulaTests.test_comparison_metrics_exact_identity) ... ok
+test_historical_array_comparison_reports_exactness_and_shape_mismatch (test_candidate_formula.RawCandidateFormulaTests.test_historical_array_comparison_reports_exactness_and_shape_mismatch) ... ok
+test_historical_array_comparison_separates_scale_from_rank (test_candidate_formula.RawCandidateFormulaTests.test_historical_array_comparison_separates_scale_from_rank) ... ok
+test_rank_uniform_is_monotone_and_in_range (test_candidate_formula.RawCandidateFormulaTests.test_rank_uniform_is_monotone_and_in_range) ... ok
+test_rank_uniform_rejects_nonfinite_and_empty_inputs (test_candidate_formula.RawCandidateFormulaTests.test_rank_uniform_rejects_nonfinite_and_empty_inputs) ... ok
+test_synthesis_matches_independent_recomputation (test_candidate_formula.RawCandidateFormulaTests.test_synthesis_matches_independent_recomputation) ... ok
+test_synthesis_rejects_duplicate_or_misaligned_ids (test_candidate_formula.RawCandidateFormulaTests.test_synthesis_rejects_duplicate_or_misaligned_ids) ... ok
+test_weight_mapping_is_complete_and_normalizes (test_candidate_formula.RawCandidateFormulaTests.test_weight_mapping_is_complete_and_normalizes) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.287s
+
+OK

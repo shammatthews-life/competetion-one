@@ -1,0 +1,42 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_v17_from_scratch.py --data_dir D:\gci\inpuy --output_dir D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+================================================================================
+  GCI World 2026: V17 Full Suite Bundle Generator (100% Raw Data)
+================================================================================
+[*] Ingesting raw competition datasets from: D:\gci\inpuy
+[+] Feature manifolds constructed in 1.5s
+
+[*] Training 5 Distinct V17 Foundation Model Streams (5-Fold Stratified CV, fast=False)...
+[*] CatBoost Compute Device: NVIDIA CUDA GPU
+
+[Stream 1/5] Training Base LightGBM GBDT Suite (old)...
+      -> oof_old Complete | OOF AUC: 0.760069
+
+[Stream 2/5] Training Enhanced E1 Residual Suite (e1)...
+      -> oof_e1 Complete | OOF AUC: 0.760494
+
+[Stream 3/5] Training ExtraTrees E1 Suite (e1et)...
+      -> oof_e1et Complete | OOF AUC: 0.754941
+
+[Stream 4/5] Training E1A ExtraTrees Specialist (e1Aet)...
+      -> oof_e1Aet Complete | OOF AUC: 0.754896
+
+[Stream 5/5] Training CatBoost Product Specialist (cb)...
+      -> oof_cb Complete | OOF AUC: 0.751225
+
+[Stream 6] Assembling Grand Fusion Ensemble...
+      -> Grand Fusion Complete | OOF AUC: 0.758336
+
+================================================================================
+  v_17_full_suite_bundle.npz Generated Successfully!
+  Path      : D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\v_17_full_suite_bundle.npz
+  Total Time: 525.1s
+================================================================================
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 530.578000

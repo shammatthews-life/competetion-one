@@ -1,0 +1,58 @@
+{
+  "candidate": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "finite_targets": true,
+    "id_set_equals_raw_test": true,
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+    "row_order_equals_raw_test": true,
+    "rows": 61500,
+    "sha256": "2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe",
+    "size_bytes": 1291519,
+    "target_max": 0.9999918699,
+    "target_min": 8.1301e-06,
+    "unique_ids": true,
+    "unique_targets": true
+  },
+  "classification": "RAW_COMPONENT_CANDIDATE; HISTORICAL_PARITY_NOT_ESTABLISHED",
+  "comparisons": {
+    "frozen_champion": {
+      "mae": 0.09991449005214635,
+      "maximum_absolute_difference": 0.8204552845,
+      "maximum_rank_displacement": 50458.0,
+      "mean_rank_displacement": 6144.741138211382,
+      "pearson": 0.8915697105305764,
+      "rmse": 0.13443107864922102,
+      "spearman": 0.8915697105304293
+    },
+    "previous_raw_candidate": {
+      "mae": 0.09504250009898861,
+      "maximum_absolute_difference": 0.7228455284,
+      "maximum_rank_displacement": 44455.0,
+      "mean_rank_displacement": 5845.113756097561,
+      "pearson": 0.9021439377262461,
+      "rmse": 0.1277080408900736,
+      "spearman": 0.9021439377260334
+    }
+  },
+  "formula_recomputation": {
+    "anchor_weight": 0.85,
+    "maximum_absolute_difference_after_csv_rounding": 4.959355148770328e-11,
+    "suite_weight": 0.15,
+    "weight_sum_before_normalization": 1.0,
+    "within_10_decimal_csv_precision": true
+  },
+  "frozen_champion": {
+    "path": "D:\\gci\\gemini\\frozen_champion_0801340_reference.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "official_leaderboard_score": null,
+  "raw_test": {
+    "path": "D:\\gci\\inpuy\\test.csv",
+    "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+  },
+  "schema_version": 1,
+  "score_note": "No competition submission was made; public/private leaderboard score cannot be inferred from local rank correlation."
+}

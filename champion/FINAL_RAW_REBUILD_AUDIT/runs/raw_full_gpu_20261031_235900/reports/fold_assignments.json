@@ -1,0 +1,128 @@
+{
+  "classification": "CURRENT_SOURCE_FOLD_ASSIGNMENTS_RECONSTRUCTED",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\audit_fold_assignments.py",
+    "--raw-dir",
+    "D:\\gci\\inpuy",
+    "--output",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\fold_assignments.json"
+  ],
+  "concatenated_train_test_id_sha256_little_endian_int64": "130a475e4570521d9be18c9947f98c42166650cc4ac277f92a7c092e228c487a",
+  "elapsed_seconds": 0.5620000000053551,
+  "exit_code": 0,
+  "fold_schemes": [
+    {
+      "fold_count": 10,
+      "fold_ids_sha256_little_endian_int16": "83c086add0341aa489dd921ea5c042727a8a78917acd8342871056533ed3cf5a",
+      "fold_row_counts": [
+        17121,
+        17121,
+        17120,
+        17120,
+        17120,
+        17120,
+        17120,
+        17120,
+        17120,
+        17120
+      ],
+      "name": "XGB10 StratifiedKFold",
+      "positive_label_counts_by_fold": [
+        1382,
+        1383,
+        1382,
+        1382,
+        1382,
+        1382,
+        1382,
+        1382,
+        1382,
+        1382
+      ],
+      "rows": 171202
+    },
+    {
+      "fold_count": 5,
+      "fold_ids_sha256_little_endian_int16": "833b6a22ff4014b7f064eb2e3df2d8ef03d0db9420e1ed6c09ef0de038ef1de5",
+      "fold_row_counts": [
+        34241,
+        34241,
+        34240,
+        34240,
+        34240
+      ],
+      "name": "V55 StratifiedKFold",
+      "positive_label_counts_by_fold": [
+        2764,
+        2765,
+        2764,
+        2764,
+        2764
+      ],
+      "rows": 171202
+    },
+    {
+      "fold_count": 5,
+      "fold_ids_sha256_little_endian_int16": "833b6a22ff4014b7f064eb2e3df2d8ef03d0db9420e1ed6c09ef0de038ef1de5",
+      "fold_row_counts": [
+        34241,
+        34241,
+        34240,
+        34240,
+        34240
+      ],
+      "name": "V17 StratifiedKFold",
+      "positive_label_counts_by_fold": [
+        2764,
+        2765,
+        2764,
+        2764,
+        2764
+      ],
+      "rows": 171202
+    },
+    {
+      "fold_count": 5,
+      "fold_ids_sha256_little_endian_int16": "833b6a22ff4014b7f064eb2e3df2d8ef03d0db9420e1ed6c09ef0de038ef1de5",
+      "fold_row_counts": [
+        34241,
+        34241,
+        34240,
+        34240,
+        34240
+      ],
+      "name": "Anchor74 StratifiedKFold",
+      "positive_label_counts_by_fold": [
+        2764,
+        2765,
+        2764,
+        2764,
+        2764
+      ],
+      "rows": 171202
+    },
+    {
+      "fold_count": 5,
+      "fold_ids_sha256_little_endian_int16": "f2154c7257c713ebc60af75c7e0429951dfa8bf6158df2e6c03f93455b0782c3",
+      "fold_row_counts": [
+        46541,
+        46541,
+        46540,
+        46540,
+        46540
+      ],
+      "name": "Anchor74 transductive Ridge-residual KFold",
+      "rows": 232702
+    }
+  ],
+  "historical_fold_assignments_verified": false,
+  "raw_target_sha256_little_endian_int32": "1c3adfec867e53b8fef7f5810b6a5d5c1ad709927365488ccdea89c5f3c874ec",
+  "raw_test_id_sha256_little_endian_int64": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+  "raw_test_rows": 61500,
+  "raw_train_id_sha256_little_endian_int64": "622cd56eda8cd01a351db0f8afac946cd992cf9dd78dbb62ac2c3274dd552c40",
+  "raw_train_rows": 171202,
+  "row_alignment": "raw train.csv row order",
+  "schema_version": 1,
+  "transductive_feature_rows": 232702
+}

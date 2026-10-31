@@ -1,0 +1,83 @@
+{
+  "classification": "POST_RUN_VALIDATION_AND_COMPARISON_COMMANDS",
+  "compileall": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\tests"
+    ],
+    "exit_code": 0,
+    "log": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\compileall.txt",
+    "log_sha256": "927d4540bd5f8f4d3510dbeea46e879244f5f887f466bfdcce1819157b5626e5"
+  },
+  "component_output_validation": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-c",
+      "from run_raw_candidate import validate_components; validate_components(output_dir, raw_dir)"
+    ],
+    "elapsed_seconds": 0.45300000000861473,
+    "exit_code": 0,
+    "report": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\post_run_component_validation.json",
+    "report_sha256": "8b630df58f5e8cabc27582a424515f6dc51e78b5079f334bf4e9561baea53732",
+    "source": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\run_raw_candidate.py",
+    "source_sha256": "38184dd51ae99ae8f3ec370e72f856d681f3f702f11a0a58affb67e3bf832f40"
+  },
+  "historical_prediction_comparison": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\compare_historical_outputs.py",
+      "--generated-dir",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components",
+      "--historical-dir",
+      "D:\\gci\\_gci_push_tmp\\champion\\01_EXP85_RECOVERY\\cache",
+      "--raw-dir",
+      "D:\\gci\\inpuy",
+      "--historical-anchor",
+      "D:\\gci\\gemini\\v_20261027_optimal_transductive_apex.csv",
+      "--output",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\historical_output_comparison.json"
+    ],
+    "elapsed_seconds": 4.64100000000326,
+    "exit_code": 0,
+    "report": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\historical_output_comparison.json",
+    "report_sha256": "5cad93d68ca630bf7177c232ae603ed8c56a1cf0dd2bbe15cb80014c4f884b1e",
+    "source": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\compare_historical_outputs.py",
+    "source_sha256": "d96e5d958bea91789510727c6cac31d98ee9a9c5cb237aecb1cf50a2b7dae6a9"
+  },
+  "schema_version": 1,
+  "strict_submission_validation": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\validate_raw_candidate.py",
+      "--candidate",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+      "--components-dir",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components",
+      "--raw-dir",
+      "D:\\gci\\inpuy",
+      "--frozen-champion",
+      "D:\\gci\\gemini\\frozen_champion_0801340_reference.csv",
+      "--previous-candidate",
+      "D:\\gci\\_gci_push_tmp\\champion\\08_SUBMISSIONS\\submission_exp85_full_rebuilt.csv",
+      "--output",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation_strict.json"
+    ],
+    "elapsed_seconds": 4.734000000025844,
+    "exit_code": 0,
+    "log": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\strict_validation.txt",
+    "log_sha256": "b789b59f1e5cd4fbee4eea37e20e99df5f52a8b4bb3fabdbbc61ddd0309e4d69",
+    "report": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation_strict.json",
+    "report_sha256": "b789b59f1e5cd4fbee4eea37e20e99df5f52a8b4bb3fabdbbc61ddd0309e4d69",
+    "source": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\validate_raw_candidate.py",
+    "source_sha256": "d8f52c6c874a4bd9173d21cac9eeaefaebe4d72cb037fbc3e34264d14298d4c6"
+  },
+  "unit_tests": {
+    "exit_code": 0,
+    "log": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\unit_tests.txt",
+    "log_sha256": "7232ecbfdf5d619ad4ebf86347ae5998721cbee24a5ad6909ee714880db6359e"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "classification": "POST_RUN_COMPONENT_OUTPUT_VALIDATION",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-c",
+    "from run_raw_candidate import validate_components; validate_components(output_dir, raw_dir)"
+  ],
+  "elapsed_seconds": 0.45300000000861473,
+  "exit_code": 0,
+  "schema_version": 1,
+  "validation": {
+    "anchor74": {
+      "finite_targets": true,
+      "ids_exact_raw_order": true,
+      "rows": 61500,
+      "sha256": "ab541d868d193eea6426abf8924472890480498d7599102103fd6bb7302bb9b6",
+      "target_max": 0.9999918699,
+      "target_min": 8.1301e-06
+    },
+    "archives": {
+      "v55_members.npz": {
+        "keys": [
+          "oof_cb_product",
+          "oof_deep_et",
+          "oof_qf_reg",
+          "oof_qf_shallow",
+          "oof_v1_allfam_oh",
+          "oof_v2_allfam_oh",
+          "oof_v2_mono",
+          "test_cb_product",
+          "test_deep_et",
+          "test_qf_reg",
+          "test_qf_shallow",
+          "test_v1_allfam_oh",
+          "test_v2_allfam_oh",
+          "test_v2_mono"
+        ],
+        "sha256": "4e47c98870bd7aed9120976b174b76e46b81c260d8d1eb9f2d4cee228d3a9ca2",
+        "shapes": {
+          "oof_cb_product": [
+            171202
+          ],
+          "oof_deep_et": [
+            171202
+          ],
+          "oof_qf_reg": [
+            171202
+          ],
+          "oof_qf_shallow": [
+            171202
+          ],
+          "oof_v1_allfam_oh": [
+            171202
+          ],
+          "oof_v2_allfam_oh": [
+            171202
+          ],
+          "oof_v2_mono": [
+            171202
+          ],
+          "test_cb_product": [
+            61500
+          ],
+          "test_deep_et": [
+            61500
+          ],
+          "test_qf_reg": [
+            61500
+          ],
+          "test_qf_shallow": [
+            61500
+          ],
+          "test_v1_allfam_oh": [
+            61500
+          ],
+          "test_v2_allfam_oh": [
+            61500
+          ],
+          "test_v2_mono": [
+            61500
+          ]
+        }
+      },
+      "v_17_full_suite_bundle.npz": {
+        "keys": [
+          "final_auc",
+          "final_oof",
+          "final_test",
+          "oof_cb",
+          "oof_e1",
+          "oof_e1Aet",
+          "oof_e1et",
+          "oof_old",
+          "test_cb",
+          "test_e1",
+          "test_e1Aet",
+          "test_e1et",
+          "test_old"
+        ],
+        "sha256": "323672967636c675eaf3c586778db16f685355b033afae58ac6bb688a996b56f",
+        "shapes": {
+          "final_auc": [],
+          "final_oof": [
+            171202
+          ],
+          "final_test": [
+            61500
+          ],
+          "oof_cb": [
+            171202
+          ],
+          "oof_e1": [
+            171202
+          ],
+          "oof_e1Aet": [
+            171202
+          ],
+          "oof_e1et": [
+            171202
+          ],
+          "oof_old": [
+            171202
+          ],
+          "test_cb": [
+            61500
+          ],
+          "test_e1": [
+            61500
+          ],
+          "test_e1Aet": [
+            61500
+          ],
+          "test_e1et": [
+            61500
+          ],
+          "test_old": [
+            61500
+          ]
+        }
+      }
+    },
+    "raw_test_ids_unique": true,
+    "raw_test_rows": 61500,
+    "raw_train_ids_unique": true,
+    "raw_train_rows": 171202,
+    "xgb_arrays_finite": true,
+    "xgb_oof_shape": [
+      171202
+    ],
+    "xgb_test_shape": [
+      61500
+    ],
+    "y_train_exact_raw_target_match": true
+  },
+  "validator_source": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\run_raw_candidate.py",
+  "validator_source_sha256": "38184dd51ae99ae8f3ec370e72f856d681f3f702f11a0a58affb67e3bf832f40"
+}

@@ -1,0 +1,2 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe -m compileall -q D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\source D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\tests
+EXIT_CODE: 0

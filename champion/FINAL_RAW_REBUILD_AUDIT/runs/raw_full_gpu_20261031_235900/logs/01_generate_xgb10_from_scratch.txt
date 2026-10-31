@@ -1,0 +1,50 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_xgb10_from_scratch.py --data_dir D:\gci\inpuy --output_dir D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_xgb10_from_scratch.py:102: RuntimeWarning: Mean of empty slice
+  feats["EXT_MEAN"] = np.nanmean(ext_mat, axis=1)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_xgb10_from_scratch.py:104: RuntimeWarning: All-NaN slice encountered
+  feats["EXT_MIN"] = np.nanmin(ext_mat, axis=1)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_xgb10_from_scratch.py:105: RuntimeWarning: All-NaN slice encountered
+  feats["EXT_MAX"] = np.nanmax(ext_mat, axis=1)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\xgboost\core.py:569: UserWarning: [23:37:05] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+================================================================================
+  GCI World 2026: 10-Fold XGBoost & Label Generator (100% Raw Data)
+================================================================================
+[*] Ingesting raw competition datasets from: D:\gci\inpuy
+    Train Shape: (171,202, 34) | Test Shape: (61,500, 33)
+[*] Target Output Directory: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components
+[+] Feature Manifold Constructed: Train (171202, 84), Test (61500, 84) (Time: 1.3s)
+[*] XGBoost Compute Device: NVIDIA CUDA GPU
+
+[*] Training 10-Fold Hist-XGBoost (n_estimators=450, device=cuda)...
+    Fold  1/10 AUC: 0.754542
+    Fold  2/10 AUC: 0.761782
+    Fold  3/10 AUC: 0.763606
+    Fold  4/10 AUC: 0.759183
+    Fold  5/10 AUC: 0.765825
+    Fold  6/10 AUC: 0.764723
+    Fold  7/10 AUC: 0.754481
+    Fold  8/10 AUC: 0.759494
+    Fold  9/10 AUC: 0.759340
+    Fold 10/10 AUC: 0.767453
+
+[+] 10-Fold XGBoost Complete: OOF AUC = 0.761020 (46.0s)
+================================================================================
+  Artifacts Generated Successfully!
+  - y_train.npy      : D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\y_train.npy
+  - oof_10f_xgb.npy  : D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\oof_10f_xgb.npy
+  - test_10f_xgb.npy : D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\test_10f_xgb.npy
+  Total Runtime: 46.0s
+================================================================================
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 49.953000

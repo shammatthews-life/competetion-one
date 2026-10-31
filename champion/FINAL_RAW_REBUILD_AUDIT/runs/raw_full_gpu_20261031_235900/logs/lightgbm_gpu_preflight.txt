@@ -1,0 +1,23 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe -c "import numpy as np, lightgbm as lgb; X=np.arange(60,dtype=np.float32).reshape(30,2); y=np.tile([0,1],15); lgb.LGBMClassifier(device='gpu',n_estimators=2,verbosity=-1).fit(X,y)"
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+[LightGBM] [Fatal] GPU Tree Learner was not enabled in this build.
+Please recompile with CMake option -DUSE_GPU=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightgbm\sklearn.py", line 1704, in fit
+    super().fit(
+  File "C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightgbm\sklearn.py", line 1171, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightgbm\engine.py", line 296, in train
+    booster = Booster(params=params, train_set=train_set)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightgbm\basic.py", line 3762, in __init__
+    _safe_call(
+  File "C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightgbm\basic.py", line 297, in _safe_call
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: GPU Tree Learner was not enabled in this build.
+Please recompile with CMake option -DUSE_GPU=1
+
+EXIT_CODE: 1
+ELAPSED_SECONDS: 5.125000

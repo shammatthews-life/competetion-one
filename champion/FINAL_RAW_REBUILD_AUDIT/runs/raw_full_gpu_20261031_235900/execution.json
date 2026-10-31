@@ -1,0 +1,482 @@
+{
+  "blend_execution": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\raw_candidate_formula.py",
+      "--raw-dir",
+      "D:\\gci\\inpuy",
+      "--components-dir",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components",
+      "--output",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv"
+    ],
+    "elapsed_seconds": 5.937999999994645,
+    "exit_code": 0,
+    "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\05_synthesize_candidate.txt",
+    "log_sha256": "9f59f0cfb7a5d446b0c7657e0b79994395ac5893461605f8ec1dbd65d4c1c8ac",
+    "log_size_bytes": 726,
+    "source_sha256": "049a89207cfffc1e29265dd524dadf77cbb2213183f7076a468cfc4f0f5cc6f6",
+    "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+  },
+  "candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+    "sha256": "2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe",
+    "size_bytes": 1291519
+  },
+  "classification": "RAW_COMPONENT_RUN; HISTORICAL_PARITY_NOT_ESTABLISHED",
+  "component_outputs": {
+    "oof_10f_xgb.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\oof_10f_xgb.npy",
+      "sha256": "6d1b4c862fa07acd96d719c1d040fd6eb9daf63cbb0b7f51febedc8d50c8e0d4",
+      "size_bytes": 684936
+    },
+    "test_10f_xgb.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\test_10f_xgb.npy",
+      "sha256": "d44e4e741d92ea2fff17deaba50fd58f22dad8378be5f68454e6c1a574534303",
+      "size_bytes": 246128
+    },
+    "v55_members.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v55_members.npz",
+      "sha256": "4e47c98870bd7aed9120976b174b76e46b81c260d8d1eb9f2d4cee228d3a9ca2",
+      "size_bytes": 6730539
+    },
+    "v_17_full_suite_bundle.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v_17_full_suite_bundle.npz",
+      "sha256": "323672967636c675eaf3c586778db16f685355b033afae58ac6bb688a996b56f",
+      "size_bytes": 5743041
+    },
+    "v_20261027_precision_transductive_apex.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\v_20261027_precision_transductive_apex.csv",
+      "sha256": "ab541d868d193eea6426abf8924472890480498d7599102103fd6bb7302bb9b6",
+      "size_bytes": 1291519
+    },
+    "y_train.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components\\y_train.npy",
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "size_bytes": 684936
+    }
+  },
+  "component_validation": {
+    "anchor74": {
+      "finite_targets": true,
+      "ids_exact_raw_order": true,
+      "rows": 61500,
+      "sha256": "ab541d868d193eea6426abf8924472890480498d7599102103fd6bb7302bb9b6",
+      "target_max": 0.9999918699,
+      "target_min": 8.1301e-06
+    },
+    "archives": {
+      "v55_members.npz": {
+        "keys": [
+          "oof_cb_product",
+          "oof_deep_et",
+          "oof_qf_reg",
+          "oof_qf_shallow",
+          "oof_v1_allfam_oh",
+          "oof_v2_allfam_oh",
+          "oof_v2_mono",
+          "test_cb_product",
+          "test_deep_et",
+          "test_qf_reg",
+          "test_qf_shallow",
+          "test_v1_allfam_oh",
+          "test_v2_allfam_oh",
+          "test_v2_mono"
+        ],
+        "sha256": "4e47c98870bd7aed9120976b174b76e46b81c260d8d1eb9f2d4cee228d3a9ca2",
+        "shapes": {
+          "oof_cb_product": [
+            171202
+          ],
+          "oof_deep_et": [
+            171202
+          ],
+          "oof_qf_reg": [
+            171202
+          ],
+          "oof_qf_shallow": [
+            171202
+          ],
+          "oof_v1_allfam_oh": [
+            171202
+          ],
+          "oof_v2_allfam_oh": [
+            171202
+          ],
+          "oof_v2_mono": [
+            171202
+          ],
+          "test_cb_product": [
+            61500
+          ],
+          "test_deep_et": [
+            61500
+          ],
+          "test_qf_reg": [
+            61500
+          ],
+          "test_qf_shallow": [
+            61500
+          ],
+          "test_v1_allfam_oh": [
+            61500
+          ],
+          "test_v2_allfam_oh": [
+            61500
+          ],
+          "test_v2_mono": [
+            61500
+          ]
+        }
+      },
+      "v_17_full_suite_bundle.npz": {
+        "keys": [
+          "final_auc",
+          "final_oof",
+          "final_test",
+          "oof_cb",
+          "oof_e1",
+          "oof_e1Aet",
+          "oof_e1et",
+          "oof_old",
+          "test_cb",
+          "test_e1",
+          "test_e1Aet",
+          "test_e1et",
+          "test_old"
+        ],
+        "sha256": "323672967636c675eaf3c586778db16f685355b033afae58ac6bb688a996b56f",
+        "shapes": {
+          "final_auc": [],
+          "final_oof": [
+            171202
+          ],
+          "final_test": [
+            61500
+          ],
+          "oof_cb": [
+            171202
+          ],
+          "oof_e1": [
+            171202
+          ],
+          "oof_e1Aet": [
+            171202
+          ],
+          "oof_e1et": [
+            171202
+          ],
+          "oof_old": [
+            171202
+          ],
+          "test_cb": [
+            61500
+          ],
+          "test_e1": [
+            61500
+          ],
+          "test_e1Aet": [
+            61500
+          ],
+          "test_e1et": [
+            61500
+          ],
+          "test_old": [
+            61500
+          ]
+        }
+      }
+    },
+    "raw_test_ids_unique": true,
+    "raw_test_rows": 61500,
+    "raw_train_ids_unique": true,
+    "raw_train_rows": 171202,
+    "xgb_arrays_finite": true,
+    "xgb_oof_shape": [
+      171202
+    ],
+    "xgb_test_shape": [
+      61500
+    ],
+    "y_train_exact_raw_target_match": true
+  },
+  "elapsed_seconds": 2894.7970000000205,
+  "environment": {
+    "executable": "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "gpu_after": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+    },
+    "gpu_after_preflight": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+    },
+    "gpu_before": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+    },
+    "packages": {
+      "catboost": "1.2.10",
+      "lightgbm": "4.7.0",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "fast_mode": false,
+  "full_mode": true,
+  "generator_executions": [
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_xgb10_from_scratch.py",
+        "--data_dir",
+        "D:\\gci\\inpuy",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components"
+      ],
+      "elapsed_seconds": 49.953000000008615,
+      "exit_code": 0,
+      "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\01_generate_xgb10_from_scratch.txt",
+      "log_sha256": "2ea3c315c35c9a3bec07d5383f8cdf759e3e59f219328cdb2e7611f1388766c8",
+      "log_size_bytes": 3502,
+      "mode": "full; --fast omitted",
+      "script": "generate_xgb10_from_scratch.py",
+      "source_sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb",
+      "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v55_from_scratch.py",
+        "--data_dir",
+        "D:\\gci\\inpuy",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components"
+      ],
+      "elapsed_seconds": 644.5,
+      "exit_code": 0,
+      "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\02_generate_v55_from_scratch.txt",
+      "log_sha256": "3d753a4e6e58c089614e55e6a678e975388a5a727dc9925628d58f1c38403e40",
+      "log_size_bytes": 3069,
+      "mode": "full; --fast omitted",
+      "script": "generate_v55_from_scratch.py",
+      "source_sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960",
+      "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v17_from_scratch.py",
+        "--data_dir",
+        "D:\\gci\\inpuy",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components"
+      ],
+      "elapsed_seconds": 530.5780000000086,
+      "exit_code": 0,
+      "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\03_generate_v17_from_scratch.txt",
+      "log_sha256": "a2120cfdc4c84d5ee9e21454762bab8e4e1776041ca2350247ffe9d6a83f4e4e",
+      "log_size_bytes": 2281,
+      "mode": "full; --fast omitted",
+      "script": "generate_v17_from_scratch.py",
+      "source_sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+      "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py",
+        "--data_dir",
+        "D:\\gci\\inpuy",
+        "--output_dir",
+        "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components"
+      ],
+      "elapsed_seconds": 1657.8440000000119,
+      "exit_code": 0,
+      "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\04_generate_anchor74_from_scratch.txt",
+      "log_sha256": "76e64fd490d13ab23ac2e9a57b32b4f987564ba6b06782659cc3dc0909191594",
+      "log_size_bytes": 4120,
+      "mode": "full; --fast omitted",
+      "script": "generate_anchor74_from_scratch.py",
+      "source_sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+      "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+    }
+  ],
+  "generator_source_audit": [
+    {
+      "forbidden_prediction_reads": [],
+      "pandas_csv_reads": [
+        {
+          "argument": "train_path",
+          "line": 178
+        },
+        {
+          "argument": "test_path",
+          "line": 179
+        }
+      ],
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_xgb10_from_scratch.py",
+      "relative_local_imports": [],
+      "sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb",
+      "size_bytes": 11487,
+      "static_raw_only_check_passed": true
+    },
+    {
+      "forbidden_prediction_reads": [],
+      "pandas_csv_reads": [
+        {
+          "argument": "data_path / \"train.csv\"",
+          "line": 170
+        },
+        {
+          "argument": "data_path / \"test.csv\"",
+          "line": 171
+        }
+      ],
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v55_from_scratch.py",
+      "relative_local_imports": [],
+      "sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960",
+      "size_bytes": 15432,
+      "static_raw_only_check_passed": true
+    },
+    {
+      "forbidden_prediction_reads": [],
+      "pandas_csv_reads": [
+        {
+          "argument": "data_path / \"train.csv\"",
+          "line": 216
+        },
+        {
+          "argument": "data_path / \"test.csv\"",
+          "line": 217
+        }
+      ],
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v17_from_scratch.py",
+      "relative_local_imports": [],
+      "sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+      "size_bytes": 18440,
+      "static_raw_only_check_passed": true
+    },
+    {
+      "forbidden_prediction_reads": [],
+      "pandas_csv_reads": [
+        {
+          "argument": "train_path",
+          "line": 103
+        },
+        {
+          "argument": "test_path",
+          "line": 104
+        }
+      ],
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py",
+      "relative_local_imports": [],
+      "sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+      "size_bytes": 31768,
+      "static_raw_only_check_passed": true
+    }
+  ],
+  "gpu_preflight": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-c",
+      "import numpy as np, xgboost as xgb; from catboost import CatBoostClassifier; X=np.arange(60,dtype=np.float32).reshape(30,2); y=np.tile([0,1],15); xgb.XGBClassifier(n_estimators=2,tree_method='hist',device='cuda',eval_metric='logloss').fit(X,y); CatBoostClassifier(iterations=2,task_type='GPU',verbose=False).fit(X,y); print('XGBoost CUDA and CatBoost GPU preflight passed')"
+    ],
+    "elapsed_seconds": 5.405999999988126,
+    "exit_code": 0,
+    "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\00_gpu_preflight.txt",
+    "log_sha256": "e260142e1ae525df2c1a5289cda2e5afc0e60337b7bd36f5cde49fc4a5caffd1",
+    "log_size_bytes": 641,
+    "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+  },
+  "historical_parity_verified": false,
+  "note": "This run regenerates the currently available raw-component candidate. It does not establish historical model parity or reproduce an official score.",
+  "official_leaderboard_score": null,
+  "raw_inputs": {
+    "test.csv": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train.csv": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "raw_rebuild_certified": false,
+  "repository_head": "48b66288dfb262b1a1572bace1e70e41da573ef6",
+  "schema_version": 1,
+  "source_hashes": {
+    "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py": {
+      "sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+      "size_bytes": 31768
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v17_from_scratch.py": {
+      "sha256": "5cdf77eadcd7afb33edb83ccc4228d474d722416ab92358fec574f575853bb2c",
+      "size_bytes": 18440
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_v55_from_scratch.py": {
+      "sha256": "4092e17adab2286c65b9635f03bbb3165ef433ec7899c173d70c08df5e022960",
+      "size_bytes": 15432
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_xgb10_from_scratch.py": {
+      "sha256": "50d964758f0445c0ef8dd5eaac7e1d6e0a47b9fd03382c60cd72baea5f0b9adb",
+      "size_bytes": 11487
+    }
+  },
+  "status": "FULL_RAW_CANDIDATE_COMPLETE; HISTORICAL_PARITY_NOT_ESTABLISHED",
+  "validation_execution": {
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\source\\validate_raw_candidate.py",
+      "--candidate",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+      "--components-dir",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\components",
+      "--raw-dir",
+      "D:\\gci\\inpuy",
+      "--frozen-champion",
+      "D:\\gci\\gemini\\frozen_champion_0801340_reference.csv",
+      "--output",
+      "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation.json",
+      "--previous-candidate",
+      "D:\\gci\\_gci_push_tmp\\champion\\08_SUBMISSIONS\\submission_exp85_full_rebuilt.csv"
+    ],
+    "elapsed_seconds": 5.98399999999674,
+    "exit_code": 0,
+    "log_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\logs\\06_validate_candidate.txt",
+    "log_sha256": "b8fdc80d84c675cab2b919f2342bf4e9e6b0d866b613a6fa6dfc74c8cf723a33",
+    "log_size_bytes": 2977,
+    "source_sha256": "3aa2eb265e45c379e29d44af849e736cba6a663d820ce13855532caa550653c4",
+    "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900"
+  },
+  "validation_report": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\reports\\final_validation.json",
+    "sha256": "a301204a9433d1c382b56cc5c79b6b5abec46a8eeb960ae090462485adf708f8",
+    "size_bytes": 2115
+  }
+}

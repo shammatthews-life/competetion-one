@@ -1,0 +1,65 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py --data_dir D:\gci\inpuy --output_dir D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:200: RuntimeWarning: Mean of empty slice
+  F["EXT_MEAN"] = np.nanmean(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:201: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MIN"] = np.nanmin(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:202: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MAX"] = np.nanmax(ext_stack, axis=1).astype(np.float32)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\xgboost\core.py:569: UserWarning: [00:09:50] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+[*] Ingesting raw train dataset: D:\gci\inpuy\train.csv
+[*] Ingesting raw test dataset : D:\gci\inpuy\test.csv
+[*] Engineering full 143-feature financial and transductive manifold from raw data...
+[+] Hasan 143-feature manifold built in 6.0s (695 features)
+
+[*] Training 5-Family Diverse Model Zoo (5-Fold CV, fast=False)...
+
+[Zoo 1/5] LightGBM Conservative (lgb_cons)...
+      -> lgb_cons Complete | AUC: 0.759729 (425.6s)
+
+[Zoo 2/5] LightGBM ExtraTrees (lgb_et)...
+      -> lgb_et Complete | AUC: 0.757360 (269.8s)
+
+[Zoo 3/5] Hist-XGBoost GPU (xgb)...
+      -> xgb Complete (cuda) | AUC: 0.758765 (125.1s)
+
+[Zoo 4/5] CatBoost Oblivious Trees (cat)...
+      -> cat Complete (GPU) | AUC: 0.756458 (82.4s)
+
+[Zoo 5/5] Deep LightGBM (lgb_deep)...
+      -> lgb_deep Complete | AUC: 0.758810 (724.8s)
+
+================================================================================
+  STAGE 1: BEDROCK OPTIMAL TRANSDUCTIVE APEX SYNTHESIS
+================================================================================
+
+================================================================================
+  STAGE 2: PRECISION TRANSDUCTIVE APEX ADJUSTMENT
+================================================================================
+
+================================================================================
+  v_20261027_precision_transductive_apex.csv Generated Successfully!
+  Path      : D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components\v_20261027_precision_transductive_apex.csv
+  Rows      : 61,500 (Expected: 61,500)
+  Nulls     : {'SK_ID_CURR': 0, 'TARGET': 0}
+  Range     : [0.00000813, 0.99999187]
+  SHA-256   : ab541d868d193eea6426abf8924472890480498d7599102103fd6bb7302bb9b6
+  Total Time: 1636.0s
+================================================================================
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 1657.844000

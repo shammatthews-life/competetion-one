@@ -1,0 +1,7 @@
+COMMAND: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\source\raw_candidate_formula.py --raw-dir D:\gci\inpuy --components-dir D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\components --output D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\candidate_submission.csv
+CWD: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900
+Candidate written: D:\gci\_gci_push_tmp\champion\FINAL_RAW_REBUILD_AUDIT\runs\raw_full_gpu_20261031_235900\candidate_submission.csv
+Rows: 61500; unique IDs: 61500
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 5.938000
