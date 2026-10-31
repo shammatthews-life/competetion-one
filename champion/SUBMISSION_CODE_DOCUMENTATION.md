@@ -18,11 +18,13 @@ This document catalogs the exact creation scripts located directly in `D:\gci\` 
 ## 2. Programmatic Safeguards Implemented Across All Creators
 
 To guarantee forensic data integrity and address auditor feedback, all submission creators programmatically enforce:
-1. **Monotonic Sequential ID Verification**: Asserts that `SK_ID_CURR` IDs strictly match $[171202 \dots 232701]$ and match raw `inpuy/test.csv` without ordering deviations.
+1. **Element-by-Element ID Alignment**: Asserts that `SK_ID_CURR` IDs strictly match $[171202 \dots 232701]$ and match raw `inpuy/test.csv` without ordering deviations on every single array.
 2. **Dimension Invariance**: Asserts that all 8 foundation and suite prediction arrays have length exactly $61,500$.
-3. **Range & Null Protection**: Programmatically asserts zero `NaN`, zero `inf`, and all prediction values strictly in $[0, 1]$ before and after synthesis.
-4. **Code Cleanliness**: Eliminated unused variables (`y_tr` loading removed where not evaluating OOF).
-5. **Exact Hash & Rank Logging**: Computes SHA-256 digests and computes rank agreements against the frozen historical champion.
+3. **Canonical Suite Member Key Checks**: Programmatically verifies all 8 canonical suite member keys exist in NPZ/NPY bundles prior to fusion (`test_e1Aet`, `xgb10`, `final_test`, `test_cb_product`, `test_e1et`, `test_deep_et`, `test_v2_allfam_oh`, `test_v2_mono`).
+4. **Cryptographic Manifest Verification**: Track 1B synthesis strictly validates that `RECONSTRUCTION_PROVENANCE_MANIFEST.json` exists, has status `PROVENANCE_CERTIFIED`, and that file SHA-256 hashes match the signed manifest before synthesis proceeds.
+5. **Output Structure & Range Verification**: Validates that output CSVs have exactly 61,501 lines with header, column names `['SK_ID_CURR', 'TARGET']`, zero NaNs, zero Infs, and all targets strictly in $(0.0, 1.0)$.
+6. **Hard SHA-256 Assertions**: Programmatically hard-asserts expected SHA-256 digests (`assert sha == expected_sha`).
+7. **Benchmark Alignment Validation**: Validates identical test ID ordering with frozen historical benchmark before computing Spearman and Pearson correlations.
 
 ---
 

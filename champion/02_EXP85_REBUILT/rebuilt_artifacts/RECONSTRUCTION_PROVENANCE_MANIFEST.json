@@ -1,0 +1,108 @@
+{
+  "manifest_version": "1.0",
+  "timestamp_utc": "2026-10-31 06:24:52Z",
+  "output_directory": "D:\\gci\\champion\\02_EXP85_REBUILT\\rebuilt_artifacts",
+  "raw_inputs": {
+    "train_csv": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "rows": 171202,
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    },
+    "test_csv": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "rows": 61500,
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    }
+  },
+  "artifacts": {
+    "y_train.npy": {
+      "size_bytes": 684936,
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "shape": [
+        171202
+      ],
+      "dtype": "int32",
+      "positive_count": 13821
+    },
+    "oof_10f_xgb.npy": {
+      "size_bytes": 684936,
+      "sha256": "73749fe4f3322a63014fb3c9dbfcba828f82cca9f062651245fde132e2cda4e8",
+      "shape": [
+        171202
+      ],
+      "dtype": "float32",
+      "min": 0.0025178503710776567,
+      "max": 0.7279647588729858,
+      "mean": 0.08055783063173294
+    },
+    "test_10f_xgb.npy": {
+      "size_bytes": 246128,
+      "sha256": "b05cfaf46c8718ff67446ab198ca0244da6bc2bfcdd348736cb3f1973884dd71",
+      "shape": [
+        61500
+      ],
+      "dtype": "float32",
+      "min": 0.0026789980474859476,
+      "max": 0.7324113845825195,
+      "mean": 0.08875689655542374
+    },
+    "v55_members.npz": {
+      "size_bytes": 7264899,
+      "sha256": "8c1dd5d3ba93a06e7ddf0df419775e13766c75de03f890fd90a4985dd2edd333",
+      "canonical_keys": [
+        "oof_qf_shallow",
+        "oof_qf_reg",
+        "oof_v1_allfam_oh",
+        "oof_v2_allfam_oh",
+        "oof_v2_mono",
+        "oof_deep_et",
+        "oof_cb_product",
+        "test_qf_shallow",
+        "test_qf_reg",
+        "test_v1_allfam_oh",
+        "test_v2_allfam_oh",
+        "test_v2_mono",
+        "test_deep_et",
+        "test_cb_product"
+      ],
+      "key_count": 14
+    },
+    "v_17_full_suite_bundle.npz": {
+      "size_bytes": 5835682,
+      "sha256": "d2a3d059c63e89ef821f72fd4ed8d05dd19bfd66ef5fb4237b4b9c74f7acb61c",
+      "canonical_keys": [
+        "oof_old",
+        "test_old",
+        "oof_e1",
+        "test_e1",
+        "oof_e1et",
+        "test_e1et",
+        "oof_e1Aet",
+        "test_e1Aet",
+        "oof_cb",
+        "test_cb",
+        "final_oof",
+        "final_test",
+        "final_auc"
+      ],
+      "key_count": 13
+    },
+    "v_20261027_precision_transductive_apex.csv": {
+      "size_bytes": 1291519,
+      "sha256": "315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b",
+      "rows": 61500,
+      "target_min": 8.1301e-06,
+      "target_max": 0.9999918699,
+      "target_mean": 0.5
+    }
+  },
+  "verification_summary": {
+    "all_files_exist": true,
+    "dimensions_verified": true,
+    "id_alignment_verified": true,
+    "zero_nans_verified": true,
+    "bounds_verified": true,
+    "canonical_keys_verified": true,
+    "provenance_status": "PROVENANCE_CERTIFIED"
+  }
+}

@@ -225,7 +225,11 @@ def train_v17_suite_from_scratch(fast=False, output_path=None, data_dir=None):
         output_path = out_dir / "v_17_full_suite_bundle.npz"
     else:
         output_path = Path(output_path)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
+        if output_path.is_dir() or output_path.suffix != ".npz":
+            output_path.mkdir(parents=True, exist_ok=True)
+            output_path = output_path / "v_17_full_suite_bundle.npz"
+        else:
+            output_path.parent.mkdir(parents=True, exist_ok=True)
 
     manifolds = build_v17_feature_manifolds(df_train, df_test)
 
@@ -406,9 +410,11 @@ def main():
     parser.add_argument("--fast", action="store_true", help="Fast smoke test mode")
     parser.add_argument("--data_dir", type=str, default=None, help="Explicit path to raw competition data ('inpuy')")
     parser.add_argument("--output", type=str, default=None, help="Output path for v_17_full_suite_bundle.npz")
+    parser.add_argument("--output_dir", type=str, default=None, help="Directory to save v_17_full_suite_bundle.npz")
     args = parser.parse_args()
 
-    train_v17_suite_from_scratch(fast=args.fast, output_path=args.output, data_dir=args.data_dir)
+    target_out = args.output_dir if args.output_dir is not None else args.output
+    train_v17_suite_from_scratch(fast=args.fast, output_path=target_out, data_dir=args.data_dir)
 
 if __name__ == "__main__":
     main()

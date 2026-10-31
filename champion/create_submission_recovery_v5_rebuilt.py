@@ -66,7 +66,9 @@ def create_rebuilt_submission(mode="hybrid"):
     t0 = time.time()
     ROOT_DIR = Path(r"D:\gci")
     CHAMP_DIR = ROOT_DIR / "champion"
-    REBUILD_DIR = ROOT_DIR / "gemini" / "champion" / "phase3_reconstruction" / "independent_rebuild"
+    REBUILD_DIR = CHAMP_DIR / "02_EXP85_REBUILT" / "rebuilt_artifacts"
+    if not REBUILD_DIR.exists():
+        REBUILD_DIR = ROOT_DIR / "gemini" / "champion" / "phase3_reconstruction" / "independent_rebuild"
     BENCH_PATH = ROOT_DIR / "gemini" / "v_20261027_optimal_macro_apex_v85.csv"
     RAW_TEST_PATH = ROOT_DIR / "inpuy" / "test.csv"
 
@@ -76,8 +78,6 @@ def create_rebuilt_submission(mode="hybrid"):
 
     # Rebuilt Anchor 74 path
     anchor74_reb_path = REBUILD_DIR / "v_20261027_precision_transductive_apex.csv"
-    if not anchor74_reb_path.exists():
-        anchor74_reb_path = CHAMP_DIR / "02_EXP85_REBUILT" / "cache" / "v_20261027_precision_transductive_apex.csv"
     assert anchor74_reb_path.exists(), f"Rebuilt Anchor 74 not found at {anchor74_reb_path}"
 
     print(f"[1] Ingesting & Validating Rebuilt Anchor74: {anchor74_reb_path.name}...")
@@ -102,12 +102,20 @@ def create_rebuilt_submission(mode="hybrid"):
 
     # Suite Resolution: Mode selection
     if mode == "full_scratch":
-        print("\n[2] Loading 100% From-Scratch Rebuilt 8-Engine Suite Artifacts...")
-        reb_cache = ROOT_DIR / "gemini" / "champion" / "cacherecreation"
-        v17_path = reb_cache / "v_17_full_suite_bundle.npz"
-        v55_path = reb_cache / "v55_members.npz"
-        xgb10_test_p = reb_cache / "test_10f_xgb.npy"
+        print("\n[2] Loading 100% From-Scratch Rebuilt 8-Engine Suite Artifacts (Manifest-Verified)...")
+        manifest_path = REBUILD_DIR / "RECONSTRUCTION_PROVENANCE_MANIFEST.json"
+        assert manifest_path.is_file(), f"Full scratch rebuild requires certified manifest: missing {manifest_path}"
+        import json
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+        assert manifest.get("verification_summary", {}).get("provenance_status") == "PROVENANCE_CERTIFIED", "Manifest not certified!"
+        print(f"    Reconstruction Manifest: CERTIFIED ({manifest_path.name})")
+
+        v17_path = REBUILD_DIR / "v_17_full_suite_bundle.npz"
+        v55_path = REBUILD_DIR / "v55_members.npz"
+        xgb10_test_p = REBUILD_DIR / "test_10f_xgb.npy"
         out_filename = "submission_exp85_full_rebuilt.csv"
+        expected_sha = "6bfc518b7abc208ff7e95c5dd8029b8d418d7ae3c1c94f9cdc6c4499598bc042"
     else:
         print("\n[2] Loading Foundation 8-Engine Meta-Suite Artifacts (Hybrid Benchmark)...")
         hist_cache = CHAMP_DIR / "01_EXP85_RECOVERY" / "cache"
@@ -117,6 +125,7 @@ def create_rebuilt_submission(mode="hybrid"):
         v55_path = hist_cache / "v55_members.npz"
         xgb10_test_p = hist_cache / "test_10f_xgb.npy"
         out_filename = "submission_exp85_recovery_v5_rebuilt.csv"
+        expected_sha = "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
 
     v17 = np.load(v17_path)
     v55 = np.load(v55_path)
@@ -172,7 +181,13 @@ def create_rebuilt_submission(mode="hybrid"):
     df_out = pd.DataFrame({"SK_ID_CURR": test_ids, "TARGET": target_reb})
     df_out.to_csv(out_file, index=False, float_format="%.10f")
 
+    # Line count and column structure check
+    with open(out_file, "r", encoding="utf-8") as f:
+        line_count = sum(1 for _ in f)
+    assert line_count == 61501, f"Line count mismatch in {out_file.name}: {line_count} vs 61,501"
+
     sha = compute_sha256(out_file)
+    assert sha == expected_sha, f"SHA-256 mismatch for {out_file.name}: expected {expected_sha}, got {sha}"
     print(f"    Exported File: {out_file}")
     print(f"    SHA-256 Hash : {sha}")
 
@@ -183,6 +198,7 @@ def create_rebuilt_submission(mode="hybrid"):
     # Benchmark verification
     if BENCH_PATH.exists():
         df_bench = pd.read_csv(BENCH_PATH)
+        assert np.array_equal(df_bench["SK_ID_CURR"].values, test_ids), "Benchmark SK_ID_CURR does not match test_ids!"
         bench_sha = compute_sha256(BENCH_PATH)
         sp = spearmanr(target_reb, df_bench["TARGET"].values)[0]
         pe = pearsonr(target_reb, df_bench["TARGET"].values)[0]

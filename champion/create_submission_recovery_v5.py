@@ -155,7 +155,13 @@ def main():
     df_out = pd.DataFrame({"SK_ID_CURR": test_ids, "TARGET": target})
     df_out.to_csv(out_file, index=False, float_format="%.10f")
 
+    # Line count and column structure check
+    with open(out_file, "r", encoding="utf-8") as f:
+        line_count = sum(1 for _ in f)
+    assert line_count == 61501, f"Line count mismatch in {out_file.name}: {line_count} vs 61,501"
+
     sha = compute_sha256(out_file)
+    assert sha == "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947", f"SHA-256 mismatch: {sha}"
     print(f"    Exported File: {out_file}")
     print(f"    SHA-256 Hash : {sha}")
 
@@ -166,11 +172,14 @@ def main():
     # Benchmark verification
     if BENCH_PATH.exists():
         df_bench = pd.read_csv(BENCH_PATH)
+        assert np.array_equal(df_bench["SK_ID_CURR"].values, test_ids), "Benchmark SK_ID_CURR does not match test_ids!"
         bench_sha = compute_sha256(BENCH_PATH)
         sp = spearmanr(target, df_bench["TARGET"].values)[0]
         pe = pearsonr(target, df_bench["TARGET"].values)[0]
         mae = np.mean(np.abs(target - df_bench["TARGET"].values))
-        exact_ranks = np.sum(rankdata(target) == rankdata(df_bench["TARGET"].values))
+        exact_ranks = int(np.sum(rankdata(target) == rankdata(df_bench["TARGET"].values)))
+        assert exact_ranks == n_test, f"Exact rank match mismatch: {exact_ranks} vs {n_test}"
+        assert np.isclose(sp, 1.0, atol=1e-12), f"Spearman mismatch: {sp}"
 
         print("\n[4] Forensic Parity Certification against Historical Champion:")
         print(f"    Historical Champion SHA-256 : {bench_sha}")

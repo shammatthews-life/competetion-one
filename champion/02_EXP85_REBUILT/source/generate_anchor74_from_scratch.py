@@ -395,6 +395,13 @@ def train_precision_anchor(fast: bool = False, output_path: Path = None, data_di
         out_dir = OUTPUT_DIR / "smoke_test" if fast else OUTPUT_DIR
         out_dir.mkdir(parents=True, exist_ok=True)
         output_path = out_dir / "v_20261027_precision_transductive_apex.csv"
+    else:
+        output_path = Path(output_path)
+        if output_path.is_dir() or output_path.suffix != ".csv":
+            output_path.mkdir(parents=True, exist_ok=True)
+            output_path = output_path / "v_20261027_precision_transductive_apex.csv"
+        else:
+            output_path.parent.mkdir(parents=True, exist_ok=True)
 
     X_tr, X_te, y_train, test_ids, df_all = build_full_hasan_features(df_train, df_test)
 
@@ -649,9 +656,11 @@ def main():
     parser.add_argument("--fast", action="store_true", help="Fast smoke test mode")
     parser.add_argument("--data_dir", type=str, default=None, help="Explicit path to raw competition data ('inpuy')")
     parser.add_argument("--output", type=str, default=None, help="Output CSV path")
+    parser.add_argument("--output_dir", type=str, default=None, help="Directory to save v_20261027_precision_transductive_apex.csv")
     args = parser.parse_args()
 
-    train_precision_anchor(fast=args.fast, output_path=args.output, data_dir=args.data_dir)
+    target_out = args.output_dir if args.output_dir is not None else args.output
+    train_precision_anchor(fast=args.fast, output_path=target_out, data_dir=args.data_dir)
 
 
 if __name__ == "__main__":
