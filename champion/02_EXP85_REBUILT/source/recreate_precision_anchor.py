@@ -55,9 +55,28 @@ if sys.platform == 'win32':
         pass
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-REPO_ROOT = SCRIPT_DIR.parents[2]
-DATA_DIR = REPO_ROOT / "inpuy"
 OUTPUT_DIR = SCRIPT_DIR
+
+def resolve_data_dir(cli_dir=None):
+    """Robustly resolve competition input directory."""
+    if cli_dir:
+        p = Path(cli_dir)
+        if p.is_dir() and (p / "train.csv").is_file():
+            return p
+    candidates = [
+        Path(r"D:\gci\inpuy"),
+        SCRIPT_DIR.parents[2] / "inpuy",
+        SCRIPT_DIR.parents[1] / "inpuy",
+        SCRIPT_DIR.parent / "inpuy",
+        Path.cwd() / "inpuy",
+        Path.cwd().parent / "inpuy",
+    ]
+    for c in candidates:
+        if c.is_dir() and (c / "train.csv").is_file():
+            return c
+    raise FileNotFoundError("Could not find competition 'inpuy' directory containing train.csv and test.csv")
+
+DATA_DIR = Path(r"D:\gci\inpuy")
 
 EXPECTED_N_TEST = 61500
 
@@ -71,12 +90,13 @@ def to_probit(u: np.ndarray, eps: float = 1e-6) -> np.ndarray:
     return norm.ppf(np.clip(u, eps, 1.0 - eps))
 
 
-def load_raw_data(data_dir=DATA_DIR):
+def load_raw_data(data_dir=None):
     """Load only competition train.csv and test.csv."""
-    train_path = data_dir / "train.csv"
-    test_path = data_dir / "test.csv"
+    d_dir = resolve_data_dir(data_dir)
+    train_path = d_dir / "train.csv"
+    test_path = d_dir / "test.csv"
     if not train_path.is_file() or not test_path.is_file():
-        raise FileNotFoundError(f"Required files {train_path} and {test_path} not found!")
+        raise FileNotFoundError(f"Required files {train_path} and {test_path} not found in {d_dir}!")
 
     print(f"[*] Ingesting raw train dataset: {train_path}")
     print(f"[*] Ingesting raw test dataset : {test_path}")
@@ -362,17 +382,19 @@ def build_entity_graph(df_all: pd.DataFrame, n_train: int, n_test: int, y_train:
     return test_to_train, test_to_test
 
 
-def train_precision_anchor(fast: bool = False, output_path: Path = None):
+def train_precision_anchor(fast: bool = False, output_path: Path = None, data_dir=None):
     """
     Main training & two-stage transductive synthesis pipeline strictly from raw data.
     """
     t_start = time.time()
-    df_train, df_test = load_raw_data()
+    df_train, df_test = load_raw_data(data_dir=data_dir)
     n_train = len(df_train)
     n_test = len(df_test)
 
     if output_path is None:
-        output_path = OUTPUT_DIR / "v_20261027_precision_transductive_apex.csv"
+        out_dir = OUTPUT_DIR / "smoke_test" if fast else OUTPUT_DIR
+        out_dir.mkdir(parents=True, exist_ok=True)
+        output_path = out_dir / "v_20261027_precision_transductive_apex.csv"
 
     X_tr, X_te, y_train, test_ids, df_all = build_full_hasan_features(df_train, df_test)
 
@@ -625,11 +647,11 @@ generate_precision_anchor_from_scratch = train_precision_anchor
 def main():
     parser = argparse.ArgumentParser(description="Generate v_20261027_precision_transductive_apex.csv strictly from raw data")
     parser.add_argument("--fast", action="store_true", help="Fast smoke test mode")
+    parser.add_argument("--data_dir", type=str, default=None, help="Explicit path to raw competition data ('inpuy')")
     parser.add_argument("--output", type=str, default=None, help="Output CSV path")
     args = parser.parse_args()
 
-    out_p = Path(args.output) if args.output else OUTPUT_DIR / "v_20261027_precision_transductive_apex.csv"
-    train_precision_anchor(fast=args.fast, output_path=out_p)
+    train_precision_anchor(fast=args.fast, output_path=args.output, data_dir=args.data_dir)
 
 
 if __name__ == "__main__":

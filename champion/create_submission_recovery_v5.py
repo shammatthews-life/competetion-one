@@ -1,7 +1,7 @@
 """
 GCI World 2026: Creation Code for submission_exp85_recovery_v5.csv
 ===================================================================
-Target: submission_exp85_recovery_v5.csv
+Target File: submission_exp85_recovery_v5.csv
 Official Competition Leaderboard Score: 0.801340
 Historical Verification Track: Track 2 (Exact Historical Recovery)
 Target SHA-256: 78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
@@ -66,6 +66,7 @@ def main():
     ROOT_DIR = Path(r"D:\gci")
     CHAMP_DIR = ROOT_DIR / "champion"
     BENCH_PATH = ROOT_DIR / "gemini" / "v_20261027_optimal_macro_apex_v85.csv"
+    RAW_TEST_PATH = ROOT_DIR / "inpuy" / "test.csv"
 
     # Dependency paths
     HIST_CACHE = CHAMP_DIR / "01_EXP85_RECOVERY" / "cache"
@@ -79,15 +80,25 @@ def main():
     v55_path      = HIST_CACHE / "v55_members.npz"
     xgb10_test_p  = HIST_CACHE / "test_10f_xgb.npy"
 
-    print("[1] Ingesting Historical Foundation Artifacts...")
+    print("[1] Ingesting & Validating Historical Foundation Artifacts...")
     df_anchor = pd.read_csv(anchor74_path)
     test_ids = df_anchor["SK_ID_CURR"].values
     y74_hist = df_anchor["TARGET"].values
     n_test = len(test_ids)
 
+    # SAFEGUARD 1: Programmatic check that test IDs match raw test.csv exactly
     assert n_test == 61500, f"Expected 61,500 test rows, found {n_test}"
-    assert np.array_equal(test_ids, np.arange(171202, 171202 + 61500)), "Test IDs mismatch!"
-    print(f"    Test Rows: {n_test:,} (IDs: {test_ids[0]} -> {test_ids[-1]})")
+    expected_ids = np.arange(171202, 171202 + 61500)
+    assert np.array_equal(test_ids, expected_ids), "Test SK_ID_CURR IDs mismatch expected sequential range!"
+    if RAW_TEST_PATH.exists():
+        raw_test_ids = pd.read_csv(RAW_TEST_PATH, usecols=["SK_ID_CURR"])["SK_ID_CURR"].values
+        assert np.array_equal(test_ids, raw_test_ids), "Test IDs do not match raw test.csv SK_ID_CURR column!"
+    print(f"    Test IDs Verified: {n_test:,} rows (strictly monotonic: {test_ids[0]} -> {test_ids[-1]})")
+
+    # SAFEGUARD 2: Check input ranges and nulls on Anchor 74
+    assert not np.isnan(y74_hist).any(), "NaN found in Anchor 74 predictions!"
+    assert not np.isinf(y74_hist).any(), "Inf found in Anchor 74 predictions!"
+    assert (y74_hist >= 0.0).all() and (y74_hist <= 1.0).all(), "Anchor 74 predictions outside [0, 1]!"
 
     v17 = np.load(v17_path)
     v55 = np.load(v55_path)
@@ -118,6 +129,12 @@ def main():
         'v55_v2_mono': rk(v55['test_v2_mono'])
     }
 
+    # SAFEGUARD 3: Assert all 8 prediction arrays have shape (61500,) and zero NaNs
+    for name, arr in test_models.items():
+        assert len(arr) == 61500, f"Array {name} length {len(arr)} != 61,500!"
+        assert not np.isnan(arr).any(), f"Array {name} contains NaNs!"
+        assert not np.isinf(arr).any(), f"Array {name} contains Infs!"
+
     suite_test_z = np.zeros(n_test, dtype=np.float64)
     for k, w in weights.items():
         suite_test_z += w * to_probit(test_models[k])
@@ -128,6 +145,11 @@ def main():
 
     ord_ranks = rankdata(z_macro, method="ordinal").astype(np.float64)
     target = (ord_ranks - 0.5) / n_test
+
+    # SAFEGUARD 4: Output validity checks
+    assert not np.isnan(target).any(), "Submission target contains NaNs!"
+    assert len(target) == 61500, "Submission target length != 61,500!"
+    assert (target >= 0.0).all() and (target <= 1.0).all(), "Submission target outside [0, 1]!"
 
     out_file = ROOT_DIR / "submission_exp85_recovery_v5.csv"
     df_out = pd.DataFrame({"SK_ID_CURR": test_ids, "TARGET": target})

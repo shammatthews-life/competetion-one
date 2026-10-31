@@ -1,22 +1,24 @@
 """
-recreate_v55_members.py
+generate_v55_from_scratch.py / recreate_v55_members.py
 ================================================================================
-GCI World 2026 - 100% Self-Contained V55 Multi-Architecture Generator
+GCI World 2026 - 100% Self-Contained V55 Multi-Architecture Suite Generator
 ================================================================================
-Target Artifact : cache/v55_members.npz
-Destination     : D:/gci/gemini/champion/cacherecreation/
 Rule Compliance : 100% Strictly Independent (train.csv and test.csv ONLY)
+Target Artifact : cache/v55_members.npz
 
-Architecture:
+Architecture & Member Role Specification:
   Trains all 7 distinct V55 multi-architecture models strictly from raw data:
-    1. qf_shallow   : LightGBM Shallow Reg (num_leaves=7, max_depth=3, lr=0.05, extra_trees=True)
+    1. qf_shallow   : LightGBM Shallow Reg (num_leaves=7, max_depth=3, extra_trees=True)
     2. qf_reg       : LightGBM Conservative Reg (num_leaves=11, min_child_samples=300, lambda_l2=40)
     3. v1_allfam_oh : LightGBM All-Family OH (num_leaves=15, feature_fraction=0.3, extra_trees=True)
-    4. v2_allfam_oh : LightGBM V2 Demographics OH (num_leaves=15, feature_fraction=0.3)
-    5. v2_mono      : LightGBM Monotone Shallow-Reg (genuine monotone_constraints on EXT features)
-    6. deep_et      : LightGBM Deep ExtraTrees (num_leaves=31, extra_trees=True)
-    7. cb_product   : CatBoost Oblivious Product Specialist (depth=6, l2=8.0, categorical features)
-  Includes dual-seed full-data retraining and uniform rank projection for test predictions.
+    4. v2_allfam_oh : LightGBM V2 Demographics OH (num_leaves=15, feature_fraction=0.3) [SUITE MEMBER: 3.83%]
+    5. v2_mono      : LightGBM Monotone Shallow-Reg (monotone_constraints on EXT)       [SUITE MEMBER: 2.33%]
+    6. deep_et      : LightGBM Deep ExtraTrees (num_leaves=31, extra_trees=True)        [SUITE MEMBER: 4.42%]
+    7. cb_product   : CatBoost Product Specialist (depth=6, l2=8.0, categorical trees)   [SUITE MEMBER: 8.74%]
+
+Validation & Symmetry Integrity:
+  - Standard test predictions are generated via fold-averaging across held-out folds,
+    preserving mathematical symmetry between OOF evaluation and test inference.
 ================================================================================
 """
 
@@ -39,153 +41,100 @@ if sys.platform == 'win32':
         pass
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-REPO_ROOT = SCRIPT_DIR.parents[2]
-DATA_DIR = REPO_ROOT / "inpuy"
 OUTPUT_DIR = SCRIPT_DIR
 
 rk = lambda v: (rankdata(v, method="average") - 0.5) / len(v)
 
+CATS = [
+    "NAME_CONTRACT_TYPE", "CODE_GENDER", "NAME_INCOME_TYPE", "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS", "NAME_HOUSING_TYPE", "OCCUPATION_TYPE", "ORGANIZATION_TYPE"
+]
 
-def load_raw_data(data_dir=DATA_DIR):
-    """Load only competition train.csv and test.csv."""
-    train_path = data_dir / "train.csv"
-    test_path = data_dir / "test.csv"
-    if not train_path.is_file() or not test_path.is_file():
-        raise FileNotFoundError(f"Required files {train_path} and {test_path} not found!")
+def resolve_data_dir(cli_dir=None):
+    """Robustly resolve competition input directory."""
+    if cli_dir:
+        p = Path(cli_dir)
+        if p.is_dir() and (p / "train.csv").is_file():
+            return p
+    candidates = [
+        Path(r"D:\gci\inpuy"),
+        SCRIPT_DIR.parents[2] / "inpuy",
+        SCRIPT_DIR.parents[1] / "inpuy",
+        SCRIPT_DIR.parent / "inpuy",
+        Path.cwd() / "inpuy",
+        Path.cwd().parent / "inpuy",
+    ]
+    for c in candidates:
+        if c.is_dir() and (c / "train.csv").is_file():
+            return c
+    raise FileNotFoundError("Could not find competition 'inpuy' directory containing train.csv and test.csv")
 
-    print(f"[*] Ingesting raw train dataset: {train_path}")
-    print(f"[*] Ingesting raw test dataset : {test_path}")
-    df_train = pd.read_csv(train_path)
-    df_test = pd.read_csv(test_path)
-    return df_train, df_test
-
-
-def build_feature_manifolds(df_train: pd.DataFrame, df_test: pd.DataFrame):
+def build_feature_manifolds(df_train, df_test):
     """
-    Constructs the 5 distinct feature manifolds strictly from raw train and test data:
-      - Xco: Core features + One-Hot encodings
-      - Xao: Core + Extended ratios + One-Hot encodings
-      - Xaok: Core + Extended + Demographic interaction terms
-      - Xck: Monotonic feature subset
-      - cb_tr / cb_te: CatBoost product-cell matrix
+    Constructs multi-architecture feature manifolds from raw train and test data.
     """
     t0 = time.time()
-    print("[*] Engineering multi-view feature manifolds directly in memory from raw data...")
-
     n_train = len(df_train)
     n_test = len(df_test)
     df_all = pd.concat([df_train.drop(columns=["TARGET"]), df_test], ignore_index=True)
 
-    CATS = [
-        "NAME_CONTRACT_TYPE", "CODE_GENDER", "NAME_INCOME_TYPE", "NAME_EDUCATION_TYPE",
-        "NAME_FAMILY_STATUS", "NAME_HOUSING_TYPE", "OCCUPATION_TYPE", "ORGANIZATION_TYPE"
-    ]
+    # Core Features
+    df_core = pd.DataFrame(index=df_all.index)
+    inc = df_all["AMT_INCOME_TOTAL"].values.astype(np.float32)
+    cred = df_all["AMT_CREDIT"].values.astype(np.float32)
+    ann = df_all["AMT_ANNUITY"].values.astype(np.float32)
+    goods = df_all["AMT_GOODS_PRICE"].fillna(df_all["AMT_CREDIT"]).values.astype(np.float32)
 
-    emp_raw = df_all["DAYS_EMPLOYED"].values.astype(np.float64)
+    df_core["AMT_INCOME_TOTAL"] = inc
+    df_core["AMT_CREDIT"] = cred
+    df_core["AMT_ANNUITY"] = ann
+    df_core["AMT_GOODS_PRICE"] = goods
+    df_core["CREDIT_INCOME_RATIO"] = cred / (inc + 1e-5)
+    df_core["ANNUITY_INCOME_RATIO"] = ann / (inc + 1e-5)
+    df_core["CREDIT_TERM"] = ann / (cred + 1e-5)
+    df_core["GOODS_PRICE_DIFF"] = goods - cred
+
+    emp_raw = df_all["DAYS_EMPLOYED"].values.astype(np.float32)
     days_emp = np.where(emp_raw == 365243.0, np.nan, emp_raw)
+    df_core["DAYS_BIRTH"] = df_all["DAYS_BIRTH"].values.astype(np.float32)
+    df_core["DAYS_EMPLOYED"] = days_emp
+    df_core["DAYS_EMPLOYED_PERC"] = days_emp / (df_core["DAYS_BIRTH"].values + 1e-5)
+    df_core["DAYS_REGISTRATION"] = df_all["DAYS_REGISTRATION"].values.astype(np.float32)
+    df_core["DAYS_ID_PUBLISH"] = df_all["DAYS_ID_PUBLISH"].values.astype(np.float32)
 
-    inc = df_all["AMT_INCOME_TOTAL"].values.astype(np.float64)
-    cred = df_all["AMT_CREDIT"].values.astype(np.float64)
-    ann = df_all["AMT_ANNUITY"].values.astype(np.float64)
-    goods = df_all["AMT_GOODS_PRICE"].fillna(df_all["AMT_CREDIT"]).values.astype(np.float64)
+    ext1 = df_all["EXT_SOURCE_1"].values.astype(np.float32)
+    ext2 = df_all["EXT_SOURCE_2"].values.astype(np.float32)
+    ext3 = df_all["EXT_SOURCE_3"].values.astype(np.float32)
+    df_core["EXT_SOURCE_1"] = ext1
+    df_core["EXT_SOURCE_2"] = ext2
+    df_core["EXT_SOURCE_3"] = ext3
 
-    birth = df_all["DAYS_BIRTH"].values.astype(np.float64)
-    reg = df_all["DAYS_REGISTRATION"].values.astype(np.float64)
-    id_pub = df_all["DAYS_ID_PUBLISH"].values.astype(np.float64)
-    phone = df_all["DAYS_LAST_PHONE_CHANGE"].values.astype(np.float64)
+    ext_stack = np.column_stack([ext1, ext2, ext3])
+    df_core["EXT_MEAN"] = np.nanmean(ext_stack, axis=1)
+    df_core["EXT_STD"] = np.nanstd(ext_stack, axis=1)
+    df_core["EXT_PROD"] = ext1 * ext2 * ext3
+    df_core["EXT_W"] = (np.nan_to_num(ext1) * 2.0 + np.nan_to_num(ext2) * 3.0 + np.nan_to_num(ext3) * 4.0) / 9.0
 
-    e1 = df_all["EXT_SOURCE_1"].values.astype(np.float64)
-    e2 = df_all["EXT_SOURCE_2"].values.astype(np.float64)
-    e3 = df_all["EXT_SOURCE_3"].values.astype(np.float64)
+    # Categorical Frequency & Codes
+    for c in CATS:
+        s = df_all[c].astype(str).fillna("MISSING")
+        df_core[f"FREQ_{c}"] = s.map(s.value_counts(normalize=True)).values.astype(np.float32)
+        df_core[f"CODE_{c}"] = s.astype("category").cat.codes.values.astype(np.float32)
 
-    # 1. Clean & Sentinels
-    F_core = {}
-    F_core["DAYS_EMPLOYED_CLEAN"] = days_emp.astype(np.float32)
-    F_core["IS_RETIRED"] = (emp_raw == 365243.0).astype(np.float32)
-    F_core["MISS_CNT"] = df_all.isna().sum(axis=1).values.astype(np.float32)
+    # One-Hot Demographics
+    df_oh = pd.get_dummies(df_all[CATS], prefix="OH", drop_first=True, dtype=np.float32)
+    df_all_comb = pd.concat([df_core, df_oh], axis=1)
 
-    # 2. Demographics & Relative Event Ages
-    F_core["AGE_YEARS"] = (-birth / 365.25).astype(np.float32)
-    F_core["EMPLOYED_YEARS"] = (-days_emp / 365.25).astype(np.float32)
-    F_core["EMP_TO_AGE"] = (days_emp / (birth + 1.0)).astype(np.float32)
-    F_core["REG_TO_AGE"] = (reg / (birth + 1.0)).astype(np.float32)
-    F_core["ID_TO_AGE"] = (id_pub / (birth + 1.0)).astype(np.float32)
-    F_core["PHONE_TO_AGE"] = (phone / (birth + 1.0)).astype(np.float32)
-
-    # 3. Financial Solvency & Banking Ratios
-    term = cred / (ann + 1.0)
-    F_core["CREDIT_TERM"] = term.astype(np.float32)
-    F_core["EAR"] = np.clip(24.0 * (ann * term - cred) / (cred * (term + 1.0) + 1.0), -1.0, 5.0).astype(np.float32)
-    surplus = inc - 12.0 * ann
-    F_core["SURPLUS"] = surplus.astype(np.float32)
-    F_core["SURPLUS_TO_INC"] = (surplus / (inc + 1.0)).astype(np.float32)
-    F_core["TRUE_COST"] = (ann * term - cred).astype(np.float32)
-    F_core["TRUE_COST_RATIO"] = ((ann * term - cred) / (cred + 1.0)).astype(np.float32)
-    F_core["LTV"] = np.clip(cred / (goods + 1.0), 0.0, 5.0).astype(np.float32)
-    F_core["DTI"] = np.clip(cred / (inc + 1.0), 0.0, 20.0).astype(np.float32)
-    F_core["DEBT_BURDEN"] = np.clip(ann / (inc / 12.0 + 1.0), 0.0, 5.0).astype(np.float32)
-    F_core["DSCR"] = np.clip(((inc / 12.0) * 0.65) / (ann + 1.0), 0.0, 20.0).astype(np.float32)
-    F_core["SOLVENCY"] = ((inc / 12.0) / (ann + 1.0)).astype(np.float32)
-    F_core["BUFFER_MONTHS"] = np.clip(surplus / (12.0 * ann + 1.0), -10.0, 50.0).astype(np.float32)
-    F_core["INC_PER_FAM"] = (inc / (df_all["CNT_FAM_MEMBERS"].fillna(1.0) + 1e-3)).values.astype(np.float32)
-
-    # Log transforms
-    F_core["LOG_INCOME"] = np.log1p(inc).astype(np.float32)
-    F_core["LOG_CREDIT"] = np.log1p(cred).astype(np.float32)
-    F_core["LOG_ANNUITY"] = np.log1p(ann).astype(np.float32)
-    F_core["LOG_GOODS"] = np.log1p(goods).astype(np.float32)
-
-    # 4. External Sources Triad
-    ext_stack = np.column_stack([e1, e2, e3])
-    F_core["EXT_MEAN"] = np.nanmean(ext_stack, axis=1).astype(np.float32)
-    F_core["EXT_MIN"] = np.nanmin(ext_stack, axis=1).astype(np.float32)
-    F_core["EXT_MAX"] = np.nanmax(ext_stack, axis=1).astype(np.float32)
-    F_core["EXT_STD"] = np.nan_to_num(np.nanstd(ext_stack, axis=1), nan=0.0).astype(np.float32)
-    F_core["EXT_W"] = (np.nan_to_num(0.2 * e1) + np.nan_to_num(0.4 * e2) + np.nan_to_num(0.4 * e3)).astype(np.float32)
-    F_core["EXT_DIFF_12"] = (e1 - e2).astype(np.float32)
-    F_core["EXT_DIFF_23"] = (e2 - e3).astype(np.float32)
-    F_core["EXT_DIFF_13"] = (e1 - e3).astype(np.float32)
-    F_core["EXT_PROD"] = (np.nan_to_num(e1, nan=0.5) * np.nan_to_num(e2, nan=0.5) * np.nan_to_num(e3, nan=0.5)).astype(np.float32)
-
-    # 5. Merton Structural Distance-to-Default
-    T_years = np.clip(term / 12.0, 0.1, 10.0)
-    disp_ratio = np.maximum(0.01, (inc / 12.0) / (ann + 1.0))
-    for mu, sigma, tag in [(0.02, 0.20, "20"), (0.03, 0.25, "25")]:
-        dd = (np.log(disp_ratio) + (mu - 0.5 * sigma**2) * T_years) / (sigma * np.sqrt(T_years))
-        F_core[f"MERTON_DD_{tag}"] = np.clip(dd, -10.0, 10.0).astype(np.float32)
-
-    # 6. Raw Numeric Features
-    raw_num = df_all.select_dtypes(include=[np.number]).drop(columns=["SK_ID_CURR"], errors="ignore")
-    for c in raw_num.columns:
-        if c not in F_core:
-            F_core[c] = raw_num[c].values.astype(np.float32)
-
-    df_core = pd.DataFrame(F_core)
-    df_oh = pd.get_dummies(df_all[CATS].astype("category"), dummy_na=True, dtype=np.float32)
-    df_oh.columns = [f"OH_{i}_{c}" for i, c in enumerate(df_oh.columns)]
-
-    # Manifold 1: Xco (Core OH)
-    Xco_all = pd.concat([df_core, df_oh], axis=1).replace([np.inf, -np.inf], np.nan)
-    Xco_all.columns = [c.replace(':', '_').replace('|', '_').replace(' ', '_').replace('-', '_') for c in Xco_all.columns]
-
-    # Manifold 2: Xao (All-Family OH with interaction terms)
-    F_ext = {}
-    for c in ["OCCUPATION_TYPE", "ORGANIZATION_TYPE", "NAME_EDUCATION_TYPE"]:
-        grp_inc = df_all.groupby(c)["AMT_INCOME_TOTAL"].transform("mean").values
-        F_ext[f"DEV_INC_{c[:4]}"] = (inc - grp_inc).astype(np.float32)
-        F_ext[f"RAT_INC_{c[:4]}"] = (inc / (grp_inc + 1.0)).astype(np.float32)
-    Xao_all = pd.concat([Xco_all, pd.DataFrame(F_ext)], axis=1)
-
-    # Manifold 3: Xaok (V2 OH with product schedule ratios)
+    # Additional interaction features for v2 models
     q_ratio = (ann / (cred + 1e-5)).astype(np.float32)
-    F_v2 = {"Q_RATIO": q_ratio, "Q_CRED_GOODS": (cred / (goods + 1e-5)).astype(np.float32)}
-    Xaok_all = pd.concat([Xao_all, pd.DataFrame(F_v2)], axis=1)
+    df_all_comb["Q_RATIO"] = q_ratio
+    df_all_comb["Q_CRED_GOODS"] = (cred / (goods + 1e-5)).astype(np.float32)
 
-    # Manifold 4: Xck (Monotone Feature Set)
+    # Monotone feature subset
     mono_cols = [c for c in df_core.columns if not c.startswith("OH_")]
-    Xck_all = df_core[mono_cols].copy()
+    df_mono = df_core[mono_cols].copy()
 
-    # Manifold 5: CatBoost Product-Cell Frame
+    # CatBoost frame
     cb_cols = [c for c in df_all.columns if c not in ("SK_ID_CURR", "TARGET")]
     cb_frame = df_all[cb_cols].copy()
     cb_cats = [c for c in CATS if c in cb_frame.columns]
@@ -193,34 +142,39 @@ def build_feature_manifolds(df_train: pd.DataFrame, df_test: pd.DataFrame):
         cb_frame[c] = cb_frame[c].fillna("MISSING").astype(str)
 
     manifolds = {
-        "Xco": Xco_all.iloc[:n_train].reset_index(drop=True),
-        "Xcot": Xco_all.iloc[n_train:].reset_index(drop=True),
-        "Xao": Xao_all.iloc[:n_train].reset_index(drop=True),
-        "Xaot": Xao_all.iloc[n_train:].reset_index(drop=True),
-        "Xaok": Xaok_all.iloc[:n_train].reset_index(drop=True),
-        "Xaokt": Xaok_all.iloc[n_train:].reset_index(drop=True),
-        "Xck": Xck_all.iloc[:n_train].reset_index(drop=True),
-        "Xckt": Xck_all.iloc[n_train:].reset_index(drop=True),
+        "X_core_tr": df_core.iloc[:n_train].reset_index(drop=True),
+        "X_core_te": df_core.iloc[n_train:].reset_index(drop=True),
+        "X_all_tr": df_all_comb.iloc[:n_train].reset_index(drop=True),
+        "X_all_te": df_all_comb.iloc[n_train:].reset_index(drop=True),
+        "X_mono_tr": df_mono.iloc[:n_train].reset_index(drop=True),
+        "X_mono_te": df_mono.iloc[n_train:].reset_index(drop=True),
         "cb_tr": cb_frame.iloc[:n_train].reset_index(drop=True),
         "cb_te": cb_frame.iloc[n_train:].reset_index(drop=True),
         "cb_cats": cb_cats,
     }
-    print(f"[+] Multi-manifold construction complete in {time.time()-t0:.1f}s")
+    print(f"[+] Feature manifolds constructed in {time.time()-t0:.1f}s")
     return manifolds
 
-
-def train_v55_suite_from_scratch(fast=False, output_path=None):
-    """
-    Train all 7 distinct V55 multi-architecture models strictly from raw data.
-    """
+def train_v55_suite_from_scratch(fast=False, output_dir=None, data_dir=None, use_full_retrain=False):
     t_start = time.time()
-    df_train, df_test = load_raw_data()
+    data_path = resolve_data_dir(data_dir)
+    print("=" * 80)
+    print("  GCI World 2026: V55 Multi-Architecture Suite Generator (100% Raw Data)")
+    print("=" * 80)
+    print(f"[*] Ingesting raw competition datasets from: {data_path}")
+
+    df_train = pd.read_csv(data_path / "train.csv")
+    df_test = pd.read_csv(data_path / "test.csv")
     y_train = df_train["TARGET"].values.astype(np.int32)
     n_train = len(df_train)
     n_test = len(df_test)
 
-    if output_path is None:
-        output_path = OUTPUT_DIR / "v55_members.npz"
+    # Determine safe output directory
+    if output_dir is None:
+        output_dir = OUTPUT_DIR / "smoke_test" if fast else OUTPUT_DIR
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out_file = output_dir / "v55_members.npz"
 
     manifolds = build_feature_manifolds(df_train, df_test)
     n_splits = 3 if fast else 5
@@ -229,7 +183,7 @@ def train_v55_suite_from_scratch(fast=False, output_path=None):
     print(f"\n[*] Training 7 Distinct Models across {n_splits}-Fold Stratified CV (fast={fast})...")
 
     ext_neg_names = {"EXT_SOURCE_1", "EXT_SOURCE_2", "EXT_SOURCE_3", "EXT_MEAN", "EXT_W", "EXT_PROD"}
-    mono_constraints = [-1 if c in ext_neg_names else 0 for c in manifolds["Xck"].columns]
+    mono_constraints = [-1 if c in ext_neg_names else 0 for c in manifolds["X_mono_tr"].columns]
 
     # Hardware acceleration check for CatBoost
     try:
@@ -242,41 +196,41 @@ def train_v55_suite_from_scratch(fast=False, output_path=None):
         print("[*] CatBoost Compute Device: CPU")
 
     models_spec = [
-        ("qf_shallow", manifolds["Xco"], manifolds["Xcot"],
+        ("qf_shallow", manifolds["X_core_tr"], manifolds["X_core_te"],
          {"objective": "binary", "learning_rate": 0.05, "num_leaves": 7, "max_depth": 3,
           "min_child_samples": 150, "feature_fraction": 0.5, "bagging_fraction": 0.8,
-          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 42},
+          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": 4, "verbose": -1, "seed": 42},
          400 if fast else 1300),
 
-        ("qf_reg", manifolds["Xco"], manifolds["Xcot"],
+        ("qf_reg", manifolds["X_core_tr"], manifolds["X_core_te"],
          {"objective": "binary", "learning_rate": 0.03, "num_leaves": 11,
           "min_child_samples": 300, "feature_fraction": 0.4, "bagging_fraction": 0.8,
-          "bagging_freq": 1, "lambda_l2": 40, "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 43},
+          "bagging_freq": 1, "lambda_l2": 40, "extra_trees": True, "n_jobs": 4, "verbose": -1, "seed": 43},
          500 if fast else 1939),
 
-        ("v1_allfam_oh", manifolds["Xao"], manifolds["Xaot"],
+        ("v1_allfam_oh", manifolds["X_all_tr"], manifolds["X_all_te"],
          {"objective": "binary", "learning_rate": 0.04, "num_leaves": 15,
           "min_child_samples": 150, "feature_fraction": 0.3, "bagging_fraction": 0.8,
-          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 44},
-         350 if fast else 881),
+          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": 4, "verbose": -1, "seed": 44},
+         450 if fast else 1563),
 
-        ("v2_allfam_oh", manifolds["Xaok"], manifolds["Xaokt"],
-         {"objective": "binary", "learning_rate": 0.04, "num_leaves": 15,
+        ("v2_allfam_oh", manifolds["X_all_tr"], manifolds["X_all_te"],
+         {"objective": "binary", "learning_rate": 0.03, "num_leaves": 15,
           "min_child_samples": 150, "feature_fraction": 0.3, "bagging_fraction": 0.8,
-          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 45},
-         350 if fast else 881),
+          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": False, "n_jobs": 4, "verbose": -1, "seed": 45},
+         450 if fast else 1500),
 
-        ("v2_mono", manifolds["Xck"], manifolds["Xckt"],
+        ("v2_mono", manifolds["X_mono_tr"], manifolds["X_mono_te"],
          {"objective": "binary", "learning_rate": 0.02, "num_leaves": 15,
           "min_child_samples": 150, "feature_fraction": 0.5, "bagging_fraction": 0.8,
           "bagging_freq": 1, "lambda_l2": 20, "monotone_constraints": mono_constraints,
-          "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 46},
+          "extra_trees": True, "n_jobs": 4, "verbose": -1, "seed": 46},
          450 if fast else 1571),
 
-        ("deep_et", manifolds["Xao"], manifolds["Xaot"],
+        ("deep_et", manifolds["X_all_tr"], manifolds["X_all_te"],
          {"objective": "binary", "learning_rate": 0.03, "num_leaves": 31,
           "min_child_samples": 80, "feature_fraction": 0.3, "bagging_fraction": 0.8,
-          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": -1, "verbose": -1, "seed": 47},
+          "bagging_freq": 1, "lambda_l2": 20, "extra_trees": True, "n_jobs": 4, "verbose": -1, "seed": 47},
          400 if fast else 1200),
     ]
 
@@ -301,14 +255,15 @@ def train_v55_suite_from_scratch(fast=False, output_path=None):
             oof_pred[val_idx] = model.predict(X_tr.iloc[val_idx])
             test_fold_pred += model.predict(X_te) / float(n_splits)
 
-        # Dual-seed full-data retraining
-        full_preds = []
-        for sd in [42, 7]:
-            m_full = lgb.train({**params, "seed": sd}, lgb.Dataset(X_tr, y_train), num_boost_round=int(rounds * 1.1))
-            full_preds.append(rk(m_full.predict(X_te)))
-
-        # 50/50 blend of fold-average and full-data models + uniform rank projection
-        final_test = rk(0.50 * rk(test_fold_pred) + 0.50 * np.mean(full_preds, axis=0))
+        if use_full_retrain:
+            full_preds = []
+            for sd in [42, 7]:
+                m_full = lgb.train({**params, "seed": sd}, lgb.Dataset(X_tr, y_train), num_boost_round=int(rounds * 1.1))
+                full_preds.append(rk(m_full.predict(X_te)))
+            final_test = rk(0.50 * rk(test_fold_pred) + 0.50 * np.mean(full_preds, axis=0))
+        else:
+            # Symmetric fold-averaged test prediction
+            final_test = rk(test_fold_pred)
 
         auc = roc_auc_score(y_train, oof_pred)
         oof_metrics[name] = auc
@@ -340,32 +295,27 @@ def train_v55_suite_from_scratch(fast=False, output_path=None):
 
     auc_cb = roc_auc_score(y_train, oof_cb)
     oof_metrics["cb_product"] = auc_cb
-    print(f"      -> {'cb_product':15s} Complete | OOF AUC: {auc_cb:.6f} ({time.time()-t_cb:.1f}s)")
+    print(f"      -> cb_product     Complete | OOF AUC: {auc_cb:.6f} ({time.time()-t_cb:.1f}s)")
     bundle_dict["oof_cb_product"] = oof_cb
-    bundle_dict["test_cb_product"] = test_cb
+    bundle_dict["test_cb_product"] = rk(test_cb).astype(np.float32)
 
-    keys_order = [
-        "oof_qf_shallow", "oof_qf_reg", "oof_v1_allfam_oh", "oof_v2_allfam_oh",
-        "oof_v2_mono", "oof_deep_et", "oof_cb_product",
-        "test_qf_shallow", "test_qf_reg", "test_v1_allfam_oh", "test_v2_allfam_oh",
-        "test_v2_mono", "test_deep_et", "test_cb_product"
-    ]
-    ordered_dict = {k: bundle_dict[k] for k in keys_order}
-    np.savez_compressed(output_path, **ordered_dict)
-    print(f"\n[+] Saved complete V55 bundle to: {output_path} ({Path(output_path).stat().st_size:,} bytes)")
-    print(f"    Total Runtime: {time.time()-t_start:.1f}s")
+    np.savez_compressed(out_file, **bundle_dict)
+    print("\n" + "=" * 80)
+    print(f"  V55 Multi-Architecture Suite Bundle Generated Successfully!")
+    print(f"  Output Artifact: {out_file} ({out_file.stat().st_size:,} bytes)")
+    print(f"  Total Runtime:   {time.time()-t_start:.1f}s")
+    print("=" * 80)
     return bundle_dict
 
-
 def main():
-    parser = argparse.ArgumentParser(description="Generate v55_members.npz strictly from raw data")
+    parser = argparse.ArgumentParser(description="Generate V55 Multi-Architecture Suite strictly from raw data")
     parser.add_argument("--fast", action="store_true", help="Fast smoke test mode")
-    parser.add_argument("--output", type=str, default=None, help="Output path for v55_members.npz")
+    parser.add_argument("--data_dir", type=str, default=None, help="Explicit path to raw competition data ('inpuy')")
+    parser.add_argument("--output_dir", type=str, default=None, help="Directory to save bundle")
+    parser.add_argument("--use_full_retrain", action="store_true", help="Enable dual full-data retraining for LightGBM test")
     args = parser.parse_args()
 
-    out_p = Path(args.output) if args.output else OUTPUT_DIR / "v55_members.npz"
-    train_v55_suite_from_scratch(fast=args.fast, output_path=out_p)
-
+    train_v55_suite_from_scratch(fast=args.fast, output_dir=args.output_dir, data_dir=args.data_dir, use_full_retrain=args.use_full_retrain)
 
 if __name__ == "__main__":
     main()
