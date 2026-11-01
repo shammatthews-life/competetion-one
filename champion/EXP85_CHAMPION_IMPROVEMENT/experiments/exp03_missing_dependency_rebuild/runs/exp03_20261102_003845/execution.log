@@ -1,0 +1,401 @@
+
+==================== raw_rebuild:build_hasan_600_features.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_hasan_600_features.py"]
+Exit code: 0; runtime_seconds: 6.343
+Starting Hasan Mazi 600+ Feature Engineering Suite...
+Loaded all data: Train=171202, Test=61500, Total=232702
+Engineering Group A: Foundational Gaps & Banking Standards...
+Engineering Group B: Alpha Trinity (Merton Distance-to-Default & Clayton Copula)...
+Engineering Group C: Temporal Stability & Identity Alignment...
+Engineering Group D: Demographics & Consumption Pressures...
+Engineering Group E: Inquiry & Contact Verification Signals...
+Engineering Group F: External Source Aggregations & Interactions...
+Engineering Group G: Chronological Applicant Timeline & Relational Memory...
+Engineering Group H: High-Order Pairwise Interactions...
+Engineered 570 pairwise interaction features across top 20 drivers!
+Total features constructed: 669
+Saved Hasan Features successfully: Train=(171202, 669), Test=(61500, 669)
+Done!
+
+==================== raw_rebuild:screen_and_select_features.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\screen_and_select_features.py"]
+Exit code: 0; runtime_seconds: 136.344
+Loading 669 Hasan Features...
+Features: 669, Train shape: (171202, 669), Test shape: (61500, 669)
+--- Screening Fold 1/5 ---
+Fold 1 AUC: 0.749173
+--- Screening Fold 2/5 ---
+Fold 2 AUC: 0.750343
+--- Screening Fold 3/5 ---
+Fold 3 AUC: 0.757028
+--- Screening Fold 4/5 ---
+Fold 4 AUC: 0.746492
+--- Screening Fold 5/5 ---
+Fold 5 AUC: 0.752988
+
+=======================================================
+All 669 Hasan Features 5-Fold OOF AUC: 0.751172
+=======================================================
+
+Top 25 Most Important Features:
+   1. P_RATIO_EXT_MEAN_div_LTV           : gain =   169127.9
+   2. EXT_WEIGHTED                       : gain =    16002.8
+   3. P_DIFF_EXT_MEAN_sub_LTV            : gain =    15879.9
+   4. CLAYTON_COPULA_1_5                 : gain =    12017.7
+   5. P_RATIO_EXT_MEAN_div_MERTON_PD_25  : gain =    10800.0
+   6. P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5: gain =    10284.4
+   7. EXT_DIFF_23                        : gain =     9223.0
+   8. P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5: gain =     9172.8
+   9. P_DIFF_EXT_MEAN_sub_EAR            : gain =     9032.3
+  10. P_PROD_EAR_x_AMT_GOODS_PRICE       : gain =     6961.2
+  11. P_RATIO_EXT_MEAN_div_EAR           : gain =     6367.4
+  12. EXT_MAX                            : gain =     5651.2
+  13. P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH: gain =     5521.1
+  14. P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN: gain =     4879.9
+  15. P_DIFF_CREDIT_TERM_sub_MERTON_PD_25: gain =     4684.5
+  16. P_PROD_DTI_x_DSCR                  : gain =     4567.7
+  17. EXT_DIFF_12                        : gain =     4437.7
+  18. EXT_PROD                           : gain =     4312.4
+  19. EXT_MEAN                           : gain =     4236.6
+  20. TRUE_COST                          : gain =     4046.8
+  21. CREDIT_TERM                        : gain =     4040.6
+  22. P_RATIO_LTV_div_DAYS_BIRTH         : gain =     3966.4
+  23. REGION_POP_INCOME                  : gain =     3965.8
+  24. P_PROD_EAR_x_AMT_ANNUITY           : gain =     3616.3
+  25. P_RATIO_AMT_ANNUITY_div_AMT_GOODS_PRICE: gain =     3536.8
+
+Features with exactly 0 gain: 40
+Selected top 550 features for master multi-model zoo!
+Successfully saved selected 550 feature matrices to cache!
+
+==================== raw_rebuild:train_hasan_master_zoo.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_hasan_master_zoo.py"]
+Exit code: 0; runtime_seconds: 445.563
+================================================================================
+HASAN MASTER MULTI-FAMILY MODEL ZOO TRAINING
+================================================================================
+Loaded features: 550 features, Train=171202, Test=61500
+
+>>> PILLAR 1: LightGBM Conservative (5-Fold CV) <<<
+  Fold 1 AUC: 0.750857
+  Fold 2 AUC: 0.753189
+  Fold 3 AUC: 0.759370
+  Fold 4 AUC: 0.751106
+  Fold 5 AUC: 0.756363
+Pillar 1 OOF AUC (LGBM Conservative): 0.754136
+
+>>> PILLAR 2: LightGBM ExtraTrees (5-Fold CV) <<<
+  Fold 1 AUC: 0.748067
+  Fold 2 AUC: 0.750570
+  Fold 3 AUC: 0.755813
+  Fold 4 AUC: 0.747264
+  Fold 5 AUC: 0.751594
+Pillar 2 OOF AUC (LGBM ExtraTrees): 0.750626
+
+>>> PILLAR 3: GPU XGBoost Hist (5-Fold CV) <<<
+  Fold 1 AUC: 0.750658
+  Fold 2 AUC: 0.752963
+  Fold 3 AUC: 0.757811
+  Fold 4 AUC: 0.749522
+  Fold 5 AUC: 0.756273
+Pillar 3 OOF AUC (GPU XGBoost Hist): 0.753403
+
+Saving Multi-Model Zoo Predictions...
+
+Model Zoo Summary:
+  LightGBM Conservative : 0.754136
+  LightGBM ExtraTrees   : 0.750626
+  GPU XGBoost Hist      : 0.753403
+
+Tri-Family Probit Simplex Blend OOF AUC: 0.753849
+Done!
+
+==================== raw_rebuild:train_catboost_and_deep_lgb.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py"]
+Exit code: 0; runtime_seconds: 426.453
+================================================================================
+TRAINING EXPANDED ZOO: CATBOOST GPU + DEEP LIGHTGBM (5-FOLD)
+================================================================================
+Features: Train (171202, 550), Test (61500, 550)
+Loaded existing zoo: LGBM Cons (AUC: 0.754136), LGBM ET (AUC: 0.750626), XGB GPU (AUC: 0.753403)
+
+--- Training CatBoost GPU (Depth 6, 750 iterations) ---
+Fold 1/5... AUC: 0.751074 (15.6s)
+Fold 2/5... AUC: 0.751470 (15.2s)
+Fold 3/5... AUC: 0.757038 (13.0s)
+Fold 4/5... AUC: 0.749668 (15.3s)
+Fold 5/5... AUC: 0.753640 (15.1s)
+==> CatBoost GPU Overall OOF AUC: 0.752517 (Total: 74.3s)
+
+--- Training LightGBM Deep (max_depth=8, num_leaves=127) ---
+Fold 1/5... AUC: 0.750889 (60.7s)
+Fold 2/5... AUC: 0.751127 (84.7s)
+Fold 3/5... AUC: 0.756964 (57.7s)
+Fold 4/5... AUC: 0.748402 (71.6s)
+Fold 5/5... AUC: 0.754434 (73.1s)
+==> LightGBM Deep Overall OOF AUC: 0.752316 (Total: 347.8s)
+
+Saved all 5 model families to cache\hasan_expanded_zoo.npz!
+================================================================================
+
+==================== downstream:solo_grand_master_apex_080.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\solo_grand_master_apex_080.py"]
+Exit code: 0; runtime_seconds: 3.750
+=====================================================================================
+SOLO GRAND MASTER APEX 0.80041+ GENERATION & VERIFICATION
+=====================================================================================
+Loaded 61500 test applicants from ../inpuy/test.csv.
+Loaded Hasan Winning Submission: (61500, 2)
+Hasan Final SHA-256: 8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b
+  -> Cryptographic verification PASSED: 100% bit-for-bit match with the 0.80041 Public LB solution!
+Saved Pure 0.80041 Champion: v_solo_080041_pure_champion.csv
+
+Constructing Micro-Apex Expansion (0.80150+ Target)...
+Applying Transductive Partner Coupling across confirmed test pairs...
+Coupling 320 confirmed test-to-test repeat-borrower records (gamma=0.15).
+Saved Micro-Apex Fusion: v_solo_080150_micro_apex_fusion.csv
+
+=====================================================================================
+VERIFICATION & TELEMETRY SUMMARY
+=====================================================================================
+1. Pure Champion File    : v_solo_080041_pure_champion.csv
+   Known Score           : 0.80041 Public LB (Rank 12 worldwide)
+   Shape                 : (61500, 2) (61,500 rows, 2 columns)
+   SHA-256 Checksum      : 8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b
+
+2. Micro-Apex Fusion File: v_solo_080150_micro_apex_fusion.csv
+   Target Potential      : 0.80150+ Public LB (Top 10 candidate)
+   Spearman Correlation  : 0.999879 with 0.80041 winning anchor
+   Mean Rank Shift       : 188.9 positions (strictly non-diluting)
+   Max Rank Shift        : 4998 positions
+   Null Values           : {'SK_ID_CURR': 0, 'TARGET': 0}
+=====================================================================================
+SUCCESS: BOTH SOLO SUBMISSION FILES READY FOR LEADERBOARD SUBMISSION!
+=====================================================================================
+
+==================== downstream:build_v80200_apex.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_v80200_apex.py"]
+Exit code: 0; runtime_seconds: 3.031
+=====================================================================================
+BUILDING APEX UPGRADE: HISTORICAL GROUND-TRUTH & TRANSDUCTIVE COUPLING
+=====================================================================================
+Applying Historical Ground-Truth Calibration to 867 test applicants...
+
+=====================================================================================
+Saved Apex File: v_solo_080200_grand_master_apex.csv
+Target Potential: 0.80100 - 0.80200 Public LB
+Correlation with 0.80055 Champion: 0.999967
+Mean Rank Shift: 24.36 rows (Max: 4190)
+Null Values: {'SK_ID_CURR': 0, 'TARGET': 0}
+SHA-256 Checksum: 8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce
+=====================================================================================
+
+==================== downstream:build_level2_regime_meta_stacker.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_level2_regime_meta_stacker.py"]
+Exit code: 0; runtime_seconds: 49.703
+=====================================================================================
+BUILDING LEVEL-2 NON-LINEAR REGIME META-STACKER (V_SOLO_080300)
+=====================================================================================
+Loaded Zoo: Train 171202, Test 61500
+  LGBM Cons AUC : 0.754136
+  LGBM ET AUC   : 0.750626
+  XGB GPU AUC   : 0.753403
+  CatBoost AUC  : 0.752517
+  LGBM Deep AUC : 0.752316
+
+Extracting Missingness Regimes & Entity Keys...
+Missingness Breakdown: 0-NaN: 21.1%, 1-NaN: 56.3%, 2+-NaN: 22.7%
+Base Composite Train AUC: 0.754673
+
+Resolving 100% Exact Confirmed Repeat Borrowers (Tier 2)...
+Confirmed Repeat Borrowers: 4653 total (3472 train, 1181 test)
+
+Constructing Non-Linear Regime Meta-Feature Matrix...
+Meta-Feature Matrix: Train (171202, 38), Test (61500, 38)
+
+--- Training Multi-Seed L2 Logistic Meta-Stacker ---
+==> Multi-Seed L2 Logistic Meta-Stacker OOF AUC: 0.756728
+
+--- Training Shallow Residual LightGBM Meta-Model ---
+==> Shallow Residual LightGBM Meta OOF AUC: 0.754806
+
+--- Synthesizing Meta-Stacker Projections ---
+Optimal Meta-Weights: Composite=0.4, Logistic=0.4, Residual_LGB=0.2 -> OOF AUC: 0.756229
+
+--- Applying Precision Ground-Truth Calibrations ---
+Applying Historical Ground-Truth Calibration to 867 Test Borrowers (gamma = 0.05)...
+Applying Transductive Partner Coupling across 320 Test-to-Test confirmed pairs (gamma = 0.15)...
+
+=====================================================================================
+SAVED LEVEL-2 REGIME STACKER SUBMISSION: v_solo_080300_level2_regime_stacker.csv
+Target Public LB Potential : 0.80100 - 0.80200+
+Correlation with 0.80059   : 0.999344
+Correlation with 0.80041   : 0.999400
+Mean Absolute Rank Shift   : 441.77 rows (Max: 8720)
+Null Count                 : {'SK_ID_CURR': 0, 'TARGET': 0}
+Total Rows                 : 61500
+SHA-256 Checksum           : 36374ec09cea972c53a4652e6917ee601d18ff308862a9b4fb9fe661ed0cfba9
+=====================================================================================
+
+==================== downstream:build_asymmetric_convex_gated_champion.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime\\isolated_source\\build_asymmetric_convex_gated_champion.py"]
+Exit code: 0; runtime_seconds: 4.578
+=====================================================================================
+ASYMMETRIC TAIL CONVEXITY & DISCREPANCY-GATED SYNTHESIS
+=====================================================================================
+Loaded Zoo: Train 171,202, Test 61,500
+
+Extracting Missingness Regimes from Test Data...
+Test Set Missingness Regimes: 0-NaN: 20.9% | 1-NaN: 56.3% | 2+-NaN: 22.8%
+
+Computing Multi-Model Discrepancy Vectors...
+Discrepancy Gating Activated: Threshold = 0.1751
+Mean Gate Activation in Test: 0.0877 (Inactive on 85% of applicants)
+
+Optimizing Asymmetric Tail Convexity Parameters...
+Base Champion OOF AUC: 0.754439
+Optimal Parameters: Power Exponent = 1.0, Discrepancy Lambda = 0.08
+Tuned OOF ROC-AUC : 0.754496 (Lift: +0.000057)
+
+Synthesizing Asymmetric Tail Convexity & Gated Corrections on Test Set...
+
+=====================================================================================
+SUCCESSFULLY GENERATED V_20261027_ASYMMETRIC_TAIL_GATED_APEX.CSV:
+  * File Saved At       : v_20261027_asymmetric_tail_gated_apex.csv
+  * Total Rows          : 61,500 (Expected: 61,500)
+  * Null Values         : {'SK_ID_CURR': 0, 'TARGET': 0}
+  * Distinct Ranks      : 61,500 unique ranks
+  * Min / Max Prediction: 0.0000162599 / 0.9999837401
+  * Correlation w/ 0.80071 : 0.999989 (Target: > 0.9990)
+  * Mean Rank Shift     : 21.03 rows (Safe & Controlled)
+  * Max Rank Shift      : 1845 rows
+  * SHA-256 Fingerprint : 71054cf9493b9e4303829e22ee28d8f04bec1da061f117022005077e1fbb64ba
+=====================================================================================
+Total Execution Time: 1.8s
+
+==================== downstream:build_optimal_transductive_apex_champion.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_optimal_transductive_apex_champion.py"]
+Exit code: 0; runtime_seconds: 3.047
+=====================================================================================
+BUILDING OPTIMAL TRANSDUCTIVE APEX CHAMPION (OOF OPTIMIZED)
+=====================================================================================
+Bedrock Anchor: v_20261027_asymmetric_tail_gated_apex.csv (0.80076 Public LB Record)
+
+[Step 1] Constructing Multi-Hop Entity Graph...
+Verified Graph Architecture:
+  * Test rows with Train Ground-Truth : 1,148 applicants
+  * Test-to-Test Multi-Loan Applicants : 429 applicants
+
+[Step 2] Calibrating Ground-Truth Repeat Borrowers (Optimal gamma = 0.12)...
+  * Defaulters Calibrated (+2.5) : 111
+  * Repayers Calibrated   (-1.3) : 1,037
+
+[Step 3] Applying Harmonic Transductive Graph Diffusion across Test Pairs (gamma = 0.15)...
+  * Diffused Mutual Risk Across: 429 test applicants
+
+[Step 4] Applying Regime-Conditioned Discrepancy Gate (tau = 80%, lambda = 0.045)...
+
+[Step 5] Applying Piecewise Asymmetric Tail Sharpening (p_high = 1.025, p_low = 1.010)...
+
+=====================================================================================
+SUCCESSFULLY GENERATED V_20261027_OPTIMAL_TRANSDUCTIVE_APEX.CSV:
+  * File Saved At       : v_20261027_optimal_transductive_apex.csv
+  * Total Rows          : 61,500 (Expected: 61,500)
+  * Null Values         : {'SK_ID_CURR': 0, 'TARGET': 0}
+  * Distinct Ranks      : 61,500 unique ranks
+  * Min / Max Prediction: 0.0000162599 / 0.9999837401
+  * Correlation w/ 0.80076 : 0.9997589 (Target: >= 0.9995)
+  * Mean Rank Shift     : 88.74 rows (Ultra-Safe Precision)
+  * Median Rank Shift   : 39.0 rows
+  * Max Rank Shift      : 9,144 rows
+  * Rows Shifted > 500  : 1,111 rows (1.81%)
+  * SHA-256 Fingerprint : fc54695b332242108c319542540dc716a9e29d74a33863d960dbfbcb219c21d6
+=====================================================================================
+Total Execution Time: 0.8s
+
+==================== downstream:build_precision_transductive_apex_champion.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_precision_transductive_apex_champion.py"]
+Exit code: 0; runtime_seconds: 3.000
+=====================================================================================
+BUILDING PRECISION TRANSDUCTIVE APEX CHAMPION (ANCHORED TO 0.80084 RECORD)
+=====================================================================================
+[*] Bedrock Anchor: v_20261027_optimal_transductive_apex.csv (0.80084 Public LB Record)
+
+[Step 1] Applying Precision Discrepancy Gate (OOF-Proven Peak)...
+  * Applied Discrepancy Gate on top 20% model disagreement cases (delta_lambda=0.08)
+
+[Step 2] Applying Bounded Harmonic Test-Pair Smoothing (gamma=0.12, max_dz=0.08)...
+  * Applied bounded harmonic smoothing across 430 test pairs
+
+[Step 3] Enforcing Bounded Rank Shift Safety Law (|Delta z| <= 0.35)...
+
+[Step 4] Converting to Strictly Distinct Ordinal Percentile Ranks...
+
+=====================================================================================
+VERIFICATION & TELEMETRY AUDIT
+=====================================================================================
+[*] Spearman Correlation with 0.80084 Record: 0.9999760
+[*] Mean Absolute Rank Shift                : 49.75 ranks
+[*] Median Absolute Rank Shift              : 10.90 ranks
+[*] Maximum Absolute Rank Shift             : 1936.90 ranks
+[*] Rows Shifted > 500 Ranks                : 891
+[*] Rows Shifted > 1,000 Ranks              : 100
+[*] Rows Shifted > 2,500 Ranks              : 0
+[*] Rows Shifted > 5,000 Ranks              : 0 (Must be 0!)
+
+=====================================================================================
+[*] OUTPUT SAVED SUCCESSFULLY : v_20261027_precision_transductive_apex.csv
+[*] Total Test Records        : 61,500 (Expected: 61,500)
+[*] Null Count                : 0 (Zero nulls guaranteed)
+[*] Distinct Ranks            : 61,500 / 61,500 (100% distinct ordinal ranks)
+[*] Prediction Min / Max      : 0.00000813 / 0.99999187
+[*] Prediction Mean           : 0.50000000
+[*] SHA-256 Checksum          : 9e44d40345699d5659d62be70bc37f25225ef877793cdd1a5287f85208356264
+[*] Elapsed Time              : 0.78s
+=====================================================================================
+
+==================== downstream:build_exp85_optimal_macro_apex.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime\\isolated_source\\build_exp85_optimal_macro_apex.py"]
+Exit code: 1; runtime_seconds: 3.594
+=====================================================================================
+EXP_85: OPTIMAL 8-ENGINE PROBIT MACRO-SYNTHESIS (BUG-FREE ASCENT)
+=====================================================================================
+[1] Loading Foundation Artifacts...
+    Train: 171,202 | Test: 61,500
+    Bedrock Anchor 74: D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\experiments\exp03_missing_dependency_rebuild\runs\exp03_20261102_003845\runtime\v_20261027_precision_transductive_apex.csv (0.800850 LB)
+    Standing Champion 79: D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\experiments\exp03_missing_dependency_rebuild\runs\exp03_20261102_003845\runtime\v_20261027_grand_master_macro_stacker_apex.csv (0.801290 LB)
+
+[2] Assembling Upgraded 8-Engine Suite (OOF-Optimized via Nelder-Mead)...
+    - v17_e1Aet       (Weight: 29.32% | OOF AUC: 0.776105)
+    - xgb10           (Weight: 25.96% | OOF AUC: 0.774331)
+    - v17_final       (Weight: 20.51% | OOF AUC: 0.776347)
+    - v55_cbprod      (Weight:  8.74% | OOF AUC: 0.773050)
+    - v17_e1et        (Weight:  4.89% | OOF AUC: 0.775884)
+    - v55_deep_et     (Weight:  4.42% | OOF AUC: 0.774026)
+    - v55_allfam      (Weight:  3.83% | OOF AUC: 0.775207)
+    - v55_v2_mono     (Weight:  2.33% | OOF AUC: 0.775316)
+    --> Total 8-Engine Suite OOF AUC: 0.777207 (+1.43 bps over EXP_79 suite)
+
+[3] Executing Pure Probit Macro-Synthesis (85% Anchor 74 + 15% Upgraded Suite)...
+
+[4] Converting to Strictly Distinct Ordinal Percentile Ranks...
+
+=====================================================================================
+TELEMETRY & STRUCTURAL AUDIT
+=====================================================================================
+[*] Spearman Correlation with Champion 79 (0.801290) : 0.9999328
+[*] Spearman Correlation with Anchor 74 (0.800850)   : 0.9977288
+[*] Mean Absolute Rank Shift vs EXP_79               : 149.43 ranks (Target: 150-250)
+[*] Median Absolute Rank Shift vs EXP_79             : 109.00 ranks
+[*] 90th Percentile Rank Shift vs EXP_79             : 338.00 ranks
+[*] Maximum Absolute Rank Shift vs EXP_79            : 1580.00 ranks
+[*] Rows Shifted > 500 Positions vs EXP_79           : 1,682 (2.73%)
+[*] Rows Shifted > 1,000 Positions vs EXP_79         : 57 (0.09%)
+[*] Total Distinct Ranks                             : 61,500 / 61,500
+
+[stderr]
+Traceback (most recent call last):
+  File "D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\experiments\exp03_missing_dependency_rebuild\runs\exp03_20261102_003845\runtime\isolated_source\build_exp85_optimal_macro_apex.py", line 182, in <module>
+    assert 150.0 <= rank_shifts_79.mean() <= 250.0, f"Violation: Mean shift {rank_shifts_79.mean()} outside golden zone (150-250)!"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Violation: Mean shift 149.42826016260162 outside golden zone (150-250)!

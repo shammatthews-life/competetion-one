@@ -1,0 +1,332 @@
+{
+  "classification": "UNRESOLVED",
+  "comparisons": {},
+  "component_classification": {
+    "downstream_chain": "NOT_RUN",
+    "expanded_zoo": "UNRESOLVED"
+  },
+  "execution_log": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\execution.log",
+  "execution_log_sha256": "91cffc90defec0e9d5fea13d09eca55a751108c81966c287bd01a3cd28fba340",
+  "experiment": "EXP03_missing_dependency_rebuild",
+  "failure": {
+    "message": "hasan_features_tr.feather contains 34 infinite values",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\source\\rebuild_expanded_zoo.py\", line 784, in execute\n    \"train\": validate_feature_frame(cache_dir / \"hasan_features_tr.feather\", rows, features),\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\source\\rebuild_expanded_zoo.py\", line 231, in validate_feature_frame\n    raise ValueError(f\"{path.name} contains {infinity_count} infinite values\")\nValueError: hasan_features_tr.feather contains 34 infinite values\n",
+    "type": "ValueError"
+  },
+  "finished_at_utc": "2026-11-01T19:25:45.050302+00:00",
+  "fold_indices": {
+    "feature_builder_uidy": "same StratifiedKFold seed/config according to pinned historical source",
+    "folds": [
+      {
+        "fold": 0,
+        "train_indices_sha256": "9a2ac7b2c53e238b748623522dcf02b1d1eb8f5738231759633dbaac0894f6b0",
+        "train_rows": 136961,
+        "validation_indices_sha256": "5e9772de9c8bb7807f885ec23b7d99c48e5672b8dd0bd19e9ab3fbc2bf4f70df",
+        "validation_rows": 34241
+      },
+      {
+        "fold": 1,
+        "train_indices_sha256": "caed45ab359958331e4c6be730f50cf7f4537597992f753475c75656286a3b9a",
+        "train_rows": 136961,
+        "validation_indices_sha256": "ce8d38be4cc3c226c7d40fe502cbe05f371d46b2f55af3957f525dd836323e8a",
+        "validation_rows": 34241
+      },
+      {
+        "fold": 2,
+        "train_indices_sha256": "38fa08083f646158506840eadcb7e70cde031751193b8bbf30cb9dda2cef9ab2",
+        "train_rows": 136962,
+        "validation_indices_sha256": "4add77c2c5a7ca206dd41f0912dcb7ee231a925cd6d7093f5b0f87b4f5705338",
+        "validation_rows": 34240
+      },
+      {
+        "fold": 3,
+        "train_indices_sha256": "38daa963c0c21e9b6888b027e8c533f0c2c3e3348bd1da62d1cf5dcf18d33294",
+        "train_rows": 136962,
+        "validation_indices_sha256": "7f9eb9be8143b5590d85faae01391a95d5a1a5211952ca594fab250a30da696b",
+        "validation_rows": 34240
+      },
+      {
+        "fold": 4,
+        "train_indices_sha256": "b756195e9a651dd01bff3f7efa67e07296bf18fd85d27e6c3744ee202e01d33d",
+        "train_rows": 136962,
+        "validation_indices_sha256": "002416c72b33f2c08d2a364ad1f04902d5ab57f4888ea1bd928e770f708594c2",
+        "validation_rows": 34240
+      }
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime\\fold_indices.npz",
+    "sha256": "ac1e169096b23a42caacc106d4181c53717da714b473005e1b0eeb3cb5402bc6",
+    "shared_by": [
+      "feature_selection",
+      "base_zoo",
+      "expanded_zoo"
+    ],
+    "splitter": {
+      "feature_selection": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "early_stopping_rounds": 30,
+        "feature_fraction": 0.8,
+        "learning_rate": 0.05,
+        "max_depth": -1,
+        "min_child_samples": 50,
+        "n_jobs": 4,
+        "num_leaves": 31,
+        "random_state": 42,
+        "rounds": 300
+      },
+      "n_splits": 5,
+      "random_state": 42,
+      "shuffle": true,
+      "splitter": "StratifiedKFold"
+    }
+  },
+  "generated_runtime_files": [
+    {
+      "bytes": 8059489,
+      "path": "cache\\hasan_expanded_zoo.npz",
+      "sha256": "0a619389f223a4cd93779f61b9d4bd7b600335d2fcf986afbcbf4eacf181e879"
+    },
+    {
+      "bytes": 33874,
+      "path": "cache\\hasan_feature_importance.csv",
+      "sha256": "a8d3487f6820d2935bebc9f86db186c84c2e2d01a6412efb36facf6498493a77"
+    },
+    {
+      "bytes": 152324178,
+      "path": "cache\\hasan_features_te.feather",
+      "sha256": "78cc0e57fddbd08492b10959b7590b65f19e9a797e8a6ab23837b351f3db70ed"
+    },
+    {
+      "bytes": 423417306,
+      "path": "cache\\hasan_features_tr.feather",
+      "sha256": "39878bd7c7c0fc796c32d5ad14273b3cfc3c65ef4c4b10092dcf22b4cffaa8eb"
+    },
+    {
+      "bytes": 129090410,
+      "path": "cache\\hasan_selected_550_te.feather",
+      "sha256": "9c634232d3bdb8907f32a526ac2387bdeb23c5df8a2e21ab1d170f1c4903d563"
+    },
+    {
+      "bytes": 358828042,
+      "path": "cache\\hasan_selected_550_tr.feather",
+      "sha256": "c9a78624fcdd4c9f95f3c1b3e748e95a36225c131de992b4fc2a5d7afebfa337"
+    },
+    {
+      "bytes": 4540216,
+      "path": "cache\\hasan_zoo_predictions.npz",
+      "sha256": "7610a8b6b681eb5ca034fad8d682c78def6e294a3cdd4dd6541a18f2057b2869"
+    },
+    {
+      "bytes": 1369744,
+      "path": "cache\\oof_hasan_lgb_raw669.npy",
+      "sha256": "72db4aa0fd9655752fc6a97172a12ef6aaa0cf2e96b00c008a10ba0287c1cb48"
+    },
+    {
+      "bytes": 1369744,
+      "path": "cache\\oof_lgb_cons.npy",
+      "sha256": "c95c240b3e9fe256663f72a6a10e4aee4b3565735a9d291883cbf5761359f17f"
+    },
+    {
+      "bytes": 1369744,
+      "path": "cache\\oof_lgb_et.npy",
+      "sha256": "e845bec4b9fd12329f5aabf2579bde196f0b8e3d36385509d8ef9969b4c342e1"
+    },
+    {
+      "bytes": 492128,
+      "path": "cache\\test_lgb_cons.npy",
+      "sha256": "5d91ddc8d0e75d41e972abec163de1d7e22bf1783248ba610feb5f1796506827"
+    },
+    {
+      "bytes": 492128,
+      "path": "cache\\test_lgb_et.npy",
+      "sha256": "dee1e3195e6005984362596764560cd81c334c2319c3877d4e19fb141533aed2"
+    },
+    {
+      "bytes": 1369744,
+      "path": "cache\\y_train.npy",
+      "sha256": "7432611a8b88bbac35db5a974c14d18a9a70c79e0fd13550b52cb10a8e9587a9"
+    },
+    {
+      "bytes": 89164,
+      "path": "catboost_info\\catboost_training.json",
+      "sha256": "08b428c37913657c83c6a3ffc2272e4355caa94c6a5b60037161561ffd10e0f1"
+    },
+    {
+      "bytes": 41120,
+      "path": "catboost_info\\learn\\events.out.tfevents",
+      "sha256": "5b81692c6271dae5d7ad4bf8659f3229c2695e112b32a174719e69d8d03fa82a"
+    },
+    {
+      "bytes": 12556,
+      "path": "catboost_info\\learn_error.tsv",
+      "sha256": "ad65abdb52ffc2fa2b3302829735f55acd01c09ff80cda0e2d4d4b2eccba5c91"
+    },
+    {
+      "bytes": 41120,
+      "path": "catboost_info\\test\\events.out.tfevents",
+      "sha256": "64865aff50ded91eb6669066af560fcd98fe4603e2a3383911a7e87a11fa773a"
+    },
+    {
+      "bytes": 12569,
+      "path": "catboost_info\\test_error.tsv",
+      "sha256": "639f050a92c53b85b621ddf720f442cf4c5d283a618b31ae8ca015150b6a2270"
+    },
+    {
+      "bytes": 10626,
+      "path": "catboost_info\\time_left.tsv",
+      "sha256": "a6761f6ffa08a17452c189a137112b4c9cb6ffafa1ecdd208292306e512966af"
+    },
+    {
+      "bytes": 1192892,
+      "path": "fold_indices.npz",
+      "sha256": "ac1e169096b23a42caacc106d4181c53717da714b473005e1b0eeb3cb5402bc6"
+    }
+  ],
+  "gpu": {
+    "preflight": {
+      "catboost_task_type": "GPU",
+      "catboost_version": "1.2.10",
+      "nvidia_smi": "2026/11/02 00:38:48.658, NVIDIA GeForce RTX 4050 Laptop GPU, 0, 0, 6141, 52, 6.76",
+      "xgboost_device": "cuda:0",
+      "xgboost_version": "3.4.1"
+    },
+    "telemetry_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\gpu_telemetry.csv",
+    "telemetry_samples": 474
+  },
+  "outputs": {
+    "expanded_zoo_sha256": "0a619389f223a4cd93779f61b9d4bd7b600335d2fcf986afbcbf4eacf181e879",
+    "y_train.npy": {
+      "dtype": "int64",
+      "origin": "raw train.csv TARGET column",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime\\cache\\y_train.npy",
+      "sha256": "7432611a8b88bbac35db5a974c14d18a9a70c79e0fd13550b52cb10a8e9587a9",
+      "shape": [
+        171202
+      ]
+    }
+  },
+  "packages": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "xgboost": "3.4.1"
+  },
+  "raw_inputs": {
+    "row_alignment": {
+      "labels_dtype": "int64",
+      "labels_sha256": "6a6c6914239517c0eaab01843f809f3715aba2aea91d63808d82639767c8f0f5",
+      "test_ids_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+      "test_ids_unique": true,
+      "test_rows": 61500,
+      "train_ids_unique": true,
+      "train_rows": 171202
+    },
+    "test.csv": {
+      "bytes": 15818118,
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "train.csv": {
+      "bytes": 44260698,
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    }
+  },
+  "run_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845",
+  "runner_sha256": "2e34557fc4d07b63719909dc3ed2b84a36d104d167e530e88b144c1c726064d1",
+  "runtime_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime",
+  "runtime_seconds": 1019.178,
+  "source_sha256": {
+    "build_asymmetric_convex_gated_champion.py": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+    "build_exp85_optimal_macro_apex.py": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+    "build_hasan_600_features.py": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+    "build_level2_regime_meta_stacker.py": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+    "build_optimal_transductive_apex_champion.py": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+    "build_precision_transductive_apex_champion.py": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+    "build_v80200_apex.py": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+    "screen_and_select_features.py": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+    "solo_grand_master_apex_080.py": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+    "train_catboost_and_deep_lgb.py": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+    "train_hasan_master_zoo.py": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009"
+  },
+  "stages": [
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_hasan_600_features.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_hasan_600_features.py",
+      "executed_script_sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "exit_code": 0,
+      "name": "raw_rebuild:build_hasan_600_features.py",
+      "runtime_seconds": 6.343,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_hasan_600_features.py",
+      "source_sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "started_at_utc": "2026-11-01T19:08:49.258514+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "Starting Hasan Mazi 600+ Feature Engineering Suite...\nLoaded all data: Train=171202, Test=61500, Total=232702\nEngineering Group A: Foundational Gaps & Banking Standards...\nEngineering Group B: Alpha Trinity (Merton Distance-to-Default & Clayton Copula)...\nEngineering Group C: Temporal Stability & Identity Alignment...\nEngineering Group D: Demographics & Consumption Pressures...\nEngineering Group E: Inquiry & Contact Verification Signals...\nEngineering Group F: External Source Aggregations & Interactions...\nEngineering Group G: Chronological Applicant Timeline & Relational Memory...\nEngineering Group H: High-Order Pairwise Interactions...\nEngineered 570 pairwise interaction features across top 20 drivers!\nTotal features constructed: 669\nSaved Hasan Features successfully: Train=(171202, 669), Test=(61500, 669)\nDone!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\screen_and_select_features.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\screen_and_select_features.py",
+      "executed_script_sha256": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+      "exit_code": 0,
+      "name": "raw_rebuild:screen_and_select_features.py",
+      "runtime_seconds": 136.344,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\screen_and_select_features.py",
+      "source_sha256": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+      "started_at_utc": "2026-11-01T19:08:55.605145+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "Loading 669 Hasan Features...\nFeatures: 669, Train shape: (171202, 669), Test shape: (61500, 669)\n--- Screening Fold 1/5 ---\nFold 1 AUC: 0.749173\n--- Screening Fold 2/5 ---\nFold 2 AUC: 0.750343\n--- Screening Fold 3/5 ---\nFold 3 AUC: 0.757028\n--- Screening Fold 4/5 ---\nFold 4 AUC: 0.746492\n--- Screening Fold 5/5 ---\nFold 5 AUC: 0.752988\n\n=======================================================\nAll 669 Hasan Features 5-Fold OOF AUC: 0.751172\n=======================================================\n\nTop 25 Most Important Features:\n   1. P_RATIO_EXT_MEAN_div_LTV           : gain =   169127.9\n   2. EXT_WEIGHTED                       : gain =    16002.8\n   3. P_DIFF_EXT_MEAN_sub_LTV            : gain =    15879.9\n   4. CLAYTON_COPULA_1_5                 : gain =    12017.7\n   5. P_RATIO_EXT_MEAN_div_MERTON_PD_25  : gain =    10800.0\n   6. P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5: gain =    10284.4\n   7. EXT_DIFF_23                        : gain =     9223.0\n   8. P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5: gain =     9172.8\n   9. P_DIFF_EXT_MEAN_sub_EAR            : gain =     9032.3\n  10. P_PROD_EAR_x_AMT_GOODS_PRICE       : gain =     6961.2\n  11. P_RATIO_EXT_MEAN_div_EAR           : gain =     6367.4\n  12. EXT_MAX                            : gain =     5651.2\n  13. P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH: gain =     5521.1\n  14. P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN: gain =     4879.9\n  15. P_DIFF_CREDIT_TERM_sub_MERTON_PD_25: gain =     4684.5\n  16. P_PROD_DTI_x_DSCR                  : gain =     4567.7\n  17. EXT_DIFF_12                        : gain =     4437.7\n  18. EXT_PROD                           : gain =     4312.4\n  19. EXT_MEAN                           : gain =     4236.6\n  20. TRUE_COST                          : gain =     4046.8\n  21. CREDIT_TERM                        : gain =     4040.6\n  22. P_RATIO_LTV_div_DAYS_BIRTH         : gain =     3966.4\n  23. REGION_POP_INCOME                  : gain =     3965.8\n  24. P_PROD_EAR_x_AMT_ANNUITY           : gain =     3616.3\n  25. P_RATIO_AMT_ANNUITY_div_AMT_GOODS_PRICE: gain =     3536.8\n\nFeatures with exactly 0 gain: 40\nSelected top 550 features for master multi-model zoo!\nSuccessfully saved selected 550 feature matrices to cache!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_hasan_master_zoo.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_hasan_master_zoo.py",
+      "executed_script_sha256": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009",
+      "exit_code": 0,
+      "name": "raw_rebuild:train_hasan_master_zoo.py",
+      "runtime_seconds": 445.563,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_hasan_master_zoo.py",
+      "source_sha256": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009",
+      "started_at_utc": "2026-11-01T19:11:11.948374+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "================================================================================\nHASAN MASTER MULTI-FAMILY MODEL ZOO TRAINING\n================================================================================\nLoaded features: 550 features, Train=171202, Test=61500\n\n>>> PILLAR 1: LightGBM Conservative (5-Fold CV) <<<\n  Fold 1 AUC: 0.750857\n  Fold 2 AUC: 0.753189\n  Fold 3 AUC: 0.759370\n  Fold 4 AUC: 0.751106\n  Fold 5 AUC: 0.756363\nPillar 1 OOF AUC (LGBM Conservative): 0.754136\n\n>>> PILLAR 2: LightGBM ExtraTrees (5-Fold CV) <<<\n  Fold 1 AUC: 0.748067\n  Fold 2 AUC: 0.750570\n  Fold 3 AUC: 0.755813\n  Fold 4 AUC: 0.747264\n  Fold 5 AUC: 0.751594\nPillar 2 OOF AUC (LGBM ExtraTrees): 0.750626\n\n>>> PILLAR 3: GPU XGBoost Hist (5-Fold CV) <<<\n  Fold 1 AUC: 0.750658\n  Fold 2 AUC: 0.752963\n  Fold 3 AUC: 0.757811\n  Fold 4 AUC: 0.749522\n  Fold 5 AUC: 0.756273\nPillar 3 OOF AUC (GPU XGBoost Hist): 0.753403\n\nSaving Multi-Model Zoo Predictions...\n\nModel Zoo Summary:\n  LightGBM Conservative : 0.754136\n  LightGBM ExtraTrees   : 0.750626\n  GPU XGBoost Hist      : 0.753403\n\nTri-Family Probit Simplex Blend OOF AUC: 0.753849\nDone!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py",
+      "executed_script_sha256": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+      "exit_code": 0,
+      "name": "raw_rebuild:train_catboost_and_deep_lgb.py",
+      "runtime_seconds": 426.453,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py",
+      "source_sha256": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+      "started_at_utc": "2026-11-01T19:18:37.525303+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "================================================================================\nTRAINING EXPANDED ZOO: CATBOOST GPU + DEEP LIGHTGBM (5-FOLD)\n================================================================================\nFeatures: Train (171202, 550), Test (61500, 550)\nLoaded existing zoo: LGBM Cons (AUC: 0.754136), LGBM ET (AUC: 0.750626), XGB GPU (AUC: 0.753403)\n\n--- Training CatBoost GPU (Depth 6, 750 iterations) ---\nFold 1/5... AUC: 0.751074 (15.6s)\nFold 2/5... AUC: 0.751470 (15.2s)\nFold 3/5... AUC: 0.757038 (13.0s)\nFold 4/5... AUC: 0.749668 (15.3s)\nFold 5/5... AUC: 0.753640 (15.1s)\n==> CatBoost GPU Overall OOF AUC: 0.752517 (Total: 74.3s)\n\n--- Training LightGBM Deep (max_depth=8, num_leaves=127) ---\nFold 1/5... AUC: 0.750889 (60.7s)\nFold 2/5... AUC: 0.751127 (84.7s)\nFold 3/5... AUC: 0.756964 (57.7s)\nFold 4/5... AUC: 0.748402 (71.6s)\nFold 5/5... AUC: 0.754434 (73.1s)\n==> LightGBM Deep Overall OOF AUC: 0.752316 (Total: 347.8s)\n\nSaved all 5 model families to cache\\hasan_expanded_zoo.npz!\n================================================================================\n"
+    }
+  ],
+  "started_at_utc": "2026-11-01T19:08:45.872171+00:00",
+  "status": "FAILED"
+}

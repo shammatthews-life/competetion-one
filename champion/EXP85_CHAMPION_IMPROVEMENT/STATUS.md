@@ -101,3 +101,79 @@ requires leakage-safe OOF predictions from the actual Anchor74 upstream stack
 and verified fold lineage for all historical suite OOF streams, or independent
 retraining of those historical producers. Until then, keep EXP02 diagnostic
 only and do not claim historical Anchor74 parity or an official score.
+
+## EXP03: historical expanded-zoo dependency rebuild
+
+- Dependency tracing found that the historical `hasan_expanded_zoo.npz` is
+  present (SHA-256
+  `73951fa46ea73403460d62c0427d4e3b696d935230ac74154600902e60c84df4`) but
+  lacks producer-run provenance. The direct EXP85 inputs were present; this
+  is an unverified artifact, not a missing file.
+- Added an isolated generator using the four hash-pinned historical feature,
+  feature-selection, and model-zoo scripts. It creates a new cache, extracts
+  labels directly from raw `train.csv`, and fails closed if any historical
+  base-model prediction cache is present before training.
+- Added expected feature/NPZ schemas, source and raw-input hash gates,
+  fold-index manifests, fixed split configuration, GPU preflights, telemetry,
+  array/feature parity metrics, downstream path isolation, and provenance
+  tests.
+- Six focused tests and Python compilation passed. XGBoost 3.4.1
+  (`cuda:0`) and CatBoost 1.2.10 (`GPU`) both passed preflight on the RTX 4050.
+- The raw-data rebuild completed in 1,019.2 seconds. Every stage exited 0.
+  The generated 11-key NPZ is valid, finite, has the expected 171,202/61,500
+  row vectors and matches raw label order. Its SHA-256 is
+  `0a619389f223a4cd93779f61b9d4bd7b600335d2fcf986afbcbf4eacf181e879`.
+- Generated 669-feature and selected-550 train/test matrices match the
+  historical references exactly in values, column order, dtypes, NaNs, and
+  infinity positions. The source intentionally emits 34 train / 16 test
+  infinities in `HOUSING_STABILITY`; validation now accepts them only because
+  the entire matrices match the historical references exactly.
+- Eight of ten model prediction streams match the old zoo byte-for-byte:
+  LightGBM Conservative, LightGBM ExtraTrees, XGBoost, and Deep LightGBM,
+  both OOF and test. CatBoost is not exact: OOF Spearman `0.9996243`, MAE
+  `0.0006702`, max difference `0.0984592`; test Spearman `0.9999277`, MAE
+  `0.0007278`, max difference `0.0294115`.
+- A second fixed-seed GPU run confirmed CatBoost is not bitwise reproducible:
+  fold 2 OOF AUC changed from `0.751470` to `0.751814`, while the Deep
+  LightGBM streams repeated exactly. The repeat happened to be much closer to
+  the historical CatBoost arrays (OOF MAE `4.45e-7`; test MAE `3.31e-7`) but
+  was still not exact. The repeat was retained as a reproducibility check, not
+  selected to tune parity; see `repeat_parity_report.json`.
+- The isolated GPU telemetry captured 474 samples on the RTX 4050: peak GPU
+  utilization 100%, peak memory 4,903 MiB, peak temperature 64 C. XGBoost
+  preflight selected `cuda:0`; CatBoost preflight reported `GPU`.
+- With the first independently rebuilt zoo, the original final 85:15 script
+  stopped at its unchanged mean-rank-shift guard: `149.4283`, just below the
+  required `[150, 250]`; it wrote no CSV. We did not alter the formula or
+  bypass the assertion.
+- A separate integration replay using the second raw zoo run passed all
+  seven original downstream stages, including the unchanged final guard
+  (`185.35` mean rank shift). It produced a 61,500-row CSV only inside the
+  ignored run runtime. This chain is **HYBRID_HISTORICAL_CACHE_RECONSTRUCTION**:
+  it starts from historical anchors and reuses V17/V55/XGB10/Grand Master 79.
+  The generated output hash is
+  `13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0`.
+  Against the frozen champion it has exact ID coverage, Spearman
+  `0.9999999872`, MAE `0.00003163`, max absolute difference `0.00063415`,
+  mean rank displacement `1.95`, max `39`; it is not exact and has no official
+  leaderboard score. It is not promoted as a submission.
+- No output score is represented as an official leaderboard result. The
+  frozen historical champion and Phase 2 release remain untouched.
+- A separate full raw-component audit already trained XGB10, V55, V17, and a
+  raw-data Anchor74 surrogate; its candidate hash is
+  `2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe`.
+  The candidate is classified `RAW_COMPONENT_CANDIDATE;
+  HISTORICAL_PARITY_NOT_ESTABLISHED`; against the frozen champion its
+  Spearman is `0.8915697`, MAE `0.0999145`, and RMSE `0.1344311`. These raw
+  rebuilds do not reproduce the historical architecture and should not be
+  repeated as a substitute for recovering the missing upstream lineage.
+
+### Next concrete action
+
+Recover the missing historical neural/ensemble model inputs or their original
+producer source, weights, configuration, and fold manifest. Workspace-wide
+search and all local Git branches contain no copies of the four arrays listed
+in `RECONSTRUCTION_STATUS.md`. Until the exact 080041 ancestry and every
+final-synthesis member can be reproduced from raw data, do not call either
+generated candidate an independent historical submission or claim the
+`0.801340` score.

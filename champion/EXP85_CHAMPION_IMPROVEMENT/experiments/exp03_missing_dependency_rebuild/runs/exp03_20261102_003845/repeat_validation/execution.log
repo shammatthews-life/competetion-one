@@ -1,0 +1,28 @@
+
+==================== repeat:train_catboost_and_deep_lgb.py ====================
+Command: ["C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "-u", "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py"]
+Exit code: 0; runtime_seconds: 434.110
+================================================================================
+TRAINING EXPANDED ZOO: CATBOOST GPU + DEEP LIGHTGBM (5-FOLD)
+================================================================================
+Features: Train (171202, 550), Test (61500, 550)
+Loaded existing zoo: LGBM Cons (AUC: 0.754136), LGBM ET (AUC: 0.750626), XGB GPU (AUC: 0.753403)
+
+--- Training CatBoost GPU (Depth 6, 750 iterations) ---
+Fold 1/5... AUC: 0.751074 (17.0s)
+Fold 2/5... AUC: 0.751814 (15.4s)
+Fold 3/5... AUC: 0.757038 (12.9s)
+Fold 4/5... AUC: 0.749668 (15.5s)
+Fold 5/5... AUC: 0.753640 (15.0s)
+==> CatBoost GPU Overall OOF AUC: 0.752590 (Total: 76.0s)
+
+--- Training LightGBM Deep (max_depth=8, num_leaves=127) ---
+Fold 1/5... AUC: 0.750889 (63.0s)
+Fold 2/5... AUC: 0.751127 (84.1s)
+Fold 3/5... AUC: 0.756964 (58.4s)
+Fold 4/5... AUC: 0.748402 (73.9s)
+Fold 5/5... AUC: 0.754434 (74.1s)
+==> LightGBM Deep Overall OOF AUC: 0.752316 (Total: 353.6s)
+
+Saved all 5 model families to cache\hasan_expanded_zoo.npz!
+================================================================================

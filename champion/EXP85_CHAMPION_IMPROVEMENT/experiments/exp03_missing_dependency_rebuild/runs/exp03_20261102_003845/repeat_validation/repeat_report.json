@@ -1,0 +1,417 @@
+{
+  "base_zoo_input_sha256": "7610a8b6b681eb5ca034fad8d682c78def6e294a3cdd4dd6541a18f2057b2869",
+  "classification": "REPEAT_USING_INDEPENDENT_RAW_REBUILT_INTERMEDIATES",
+  "continuation_report_sha256": "09b386ec46e22d0aec9dda376c573b284c92380b0b46514119580ac86875daa5",
+  "copied_input_sha256": {
+    "hasan_selected_550_te.feather": "9c634232d3bdb8907f32a526ac2387bdeb23c5df8a2e21ab1d170f1c4903d563",
+    "hasan_selected_550_tr.feather": "c9a78624fcdd4c9f95f3c1b3e748e95a36225c131de992b4fc2a5d7afebfa337",
+    "hasan_zoo_predictions.npz": "7610a8b6b681eb5ca034fad8d682c78def6e294a3cdd4dd6541a18f2057b2869"
+  },
+  "deterministic_exact_match": false,
+  "execution_log_sha256": "b3dd06b647536f7e2c075c25e829cfca461923df7ce092b6817452174373afe3",
+  "experiment": "EXP03_cuda_repeatability_check",
+  "finished_at_utc": "2026-11-01T19:44:24.539532+00:00",
+  "gpu": {
+    "preflight": {
+      "catboost_task_type": "GPU",
+      "catboost_version": "1.2.10",
+      "nvidia_smi": "2026/11/02 01:07:07.726, NVIDIA GeForce RTX 4050 Laptop GPU, 0, 0, 6141, 49, 8.27",
+      "xgboost_device": "cuda:0",
+      "xgboost_version": "3.4.1"
+    },
+    "telemetry_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\repeat_validation\\gpu_telemetry.csv",
+    "telemetry_samples": 197
+  },
+  "output_files": [
+    {
+      "bytes": 8059396,
+      "path": "cache\\hasan_expanded_zoo.npz",
+      "sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9"
+    },
+    {
+      "bytes": 129090410,
+      "path": "cache\\hasan_selected_550_te.feather",
+      "sha256": "9c634232d3bdb8907f32a526ac2387bdeb23c5df8a2e21ab1d170f1c4903d563"
+    },
+    {
+      "bytes": 358828042,
+      "path": "cache\\hasan_selected_550_tr.feather",
+      "sha256": "c9a78624fcdd4c9f95f3c1b3e748e95a36225c131de992b4fc2a5d7afebfa337"
+    },
+    {
+      "bytes": 4540216,
+      "path": "cache\\hasan_zoo_predictions.npz",
+      "sha256": "7610a8b6b681eb5ca034fad8d682c78def6e294a3cdd4dd6541a18f2057b2869"
+    },
+    {
+      "bytes": 89192,
+      "path": "catboost_info\\catboost_training.json",
+      "sha256": "cbf79eb3aa91db44a1d55d6ed2f621982b23d2241ef59bdd2f44fb4ba3571662"
+    },
+    {
+      "bytes": 41120,
+      "path": "catboost_info\\learn\\events.out.tfevents",
+      "sha256": "270cce4adeb86ca20003baefa952a3eaae4536424acb48435c4413f3485ea6ad"
+    },
+    {
+      "bytes": 12578,
+      "path": "catboost_info\\learn_error.tsv",
+      "sha256": "3156ed347ba095f08e3aca5b35776ff23e9d49b4ec0c6b565c75d7d8ad8efd8b"
+    },
+    {
+      "bytes": 41120,
+      "path": "catboost_info\\test\\events.out.tfevents",
+      "sha256": "9ad3e0bf8752a2f6d125e47fbd9daac7fe3686f99279068a46fa6a9f160f62f0"
+    },
+    {
+      "bytes": 12569,
+      "path": "catboost_info\\test_error.tsv",
+      "sha256": "bf36d46b601a5e16d4f7e747179e151f20141f90fb53b14a567ab53d91fbf80a"
+    },
+    {
+      "bytes": 10622,
+      "path": "catboost_info\\time_left.tsv",
+      "sha256": "d4dc25b3e2541fe265fa46f42b8aa714a513bb97c12ed5eb25fc78375d7ad30a"
+    }
+  ],
+  "output_schema": {
+    "arrays": {
+      "oof_cat": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8882943960700593,
+        "minimum": 0.0013317397527618624,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_cons": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8085792476834986,
+        "minimum": 0.003136180011062608,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_deep": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.6880462326763683,
+        "minimum": 0.00441309402413303,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_et": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.7335184185762995,
+        "minimum": 0.003731739918037461,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_xgb": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8753049373626709,
+        "minimum": 0.0020685349591076374,
+        "shape": [
+          171202
+        ]
+      },
+      "test_cat": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.9234800130420637,
+        "minimum": 0.0037470171805416798,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_cons": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8515478059554046,
+        "minimum": 0.0044019766863141714,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_deep": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.708204767299347,
+        "minimum": 0.0057211888434146084,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_et": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.7584548639306918,
+        "minimum": 0.005312119203772867,
+        "shape": [
+          61500
+        ]
+      },
+      "test_xgb": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8697594702243805,
+        "minimum": 0.003823160077445209,
+        "shape": [
+          61500
+        ]
+      },
+      "y_true": {
+        "dtype": "int64",
+        "finite": true,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "shape": [
+          171202
+        ]
+      }
+    },
+    "bytes": 8059396,
+    "keys_in_order": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\repeat_validation\\runtime\\cache\\hasan_expanded_zoo.npz",
+    "sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9"
+  },
+  "prediction_comparisons": {
+    "alignment": "positional raw train/test row order; neither historical NPZ stores SK_ID_CURR",
+    "arrays": {
+      "oof_cat": {
+        "exact_values": false,
+        "generated_dtype": "float64",
+        "mae": 0.0006702406794293733,
+        "max_abs_difference": 0.09846433376200248,
+        "max_rank_displacement": 32159.0,
+        "mean_rank_displacement": 434.32452891905467,
+        "pearson": 0.9992048620680698,
+        "reference_dtype": "float64",
+        "rmse": 0.0030444589759711493,
+        "spearman": 0.9996243027428771,
+        "status": "NUMERICAL_DIFFERENCE"
+      },
+      "oof_lgb_cons": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_lgb_deep": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_lgb_et": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_xgb": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "test_cat": {
+        "exact_values": false,
+        "generated_dtype": "float64",
+        "mae": 0.0007278572478641137,
+        "max_abs_difference": 0.029411614322977286,
+        "max_rank_displacement": 2711.0,
+        "mean_rank_displacement": 148.00448780487804,
+        "pearson": 0.9998449126561562,
+        "reference_dtype": "float64",
+        "rmse": 0.0014732736426955547,
+        "spearman": 0.9999277285769249,
+        "status": "NUMERICAL_DIFFERENCE"
+      },
+      "test_lgb_cons": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_lgb_deep": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 0.9999999999999998,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_lgb_et": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 0.9999999999999998,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_xgb": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      }
+    },
+    "generated_keys": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "generated_sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9",
+    "reference_keys": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "reference_sha256": "0a619389f223a4cd93779f61b9d4bd7b600335d2fcf986afbcbf4eacf181e879"
+  },
+  "raw_inputs": {
+    "row_alignment": {
+      "labels_dtype": "int64",
+      "labels_sha256": "6a6c6914239517c0eaab01843f809f3715aba2aea91d63808d82639767c8f0f5",
+      "test_ids_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+      "test_ids_unique": true,
+      "test_rows": 61500,
+      "train_ids_unique": true,
+      "train_rows": 171202
+    },
+    "test.csv": {
+      "bytes": 15818118,
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "train.csv": {
+      "bytes": 44260698,
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    }
+  },
+  "reference_run_report_sha256": "93bf1828141a0c0ea95f4b05d3da7f0f079c2edfd4b7e6a7e3aea28c3f85861b",
+  "repeat_runner_sha256": "ae9682de6acfaac4ca83721df8cdab8fc757e36788cc1c7207726aa1aeebb4ca",
+  "source_sha256": {
+    "build_asymmetric_convex_gated_champion.py": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+    "build_exp85_optimal_macro_apex.py": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+    "build_hasan_600_features.py": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+    "build_level2_regime_meta_stacker.py": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+    "build_optimal_transductive_apex_champion.py": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+    "build_precision_transductive_apex_champion.py": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+    "build_v80200_apex.py": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+    "screen_and_select_features.py": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+    "solo_grand_master_apex_080.py": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+    "train_catboost_and_deep_lgb.py": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+    "train_hasan_master_zoo.py": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009"
+  },
+  "stages": [
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\repeat_validation\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py",
+      "executed_script_sha256": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+      "exit_code": 0,
+      "name": "repeat:train_catboost_and_deep_lgb.py",
+      "runtime_seconds": 434.11,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py",
+      "source_sha256": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+      "started_at_utc": "2026-11-01T19:37:09.136493+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "================================================================================\nTRAINING EXPANDED ZOO: CATBOOST GPU + DEEP LIGHTGBM (5-FOLD)\n================================================================================\nFeatures: Train (171202, 550), Test (61500, 550)\nLoaded existing zoo: LGBM Cons (AUC: 0.754136), LGBM ET (AUC: 0.750626), XGB GPU (AUC: 0.753403)\n\n--- Training CatBoost GPU (Depth 6, 750 iterations) ---\nFold 1/5... AUC: 0.751074 (17.0s)\nFold 2/5... AUC: 0.751814 (15.4s)\nFold 3/5... AUC: 0.757038 (12.9s)\nFold 4/5... AUC: 0.749668 (15.5s)\nFold 5/5... AUC: 0.753640 (15.0s)\n==> CatBoost GPU Overall OOF AUC: 0.752590 (Total: 76.0s)\n\n--- Training LightGBM Deep (max_depth=8, num_leaves=127) ---\nFold 1/5... AUC: 0.750889 (63.0s)\nFold 2/5... AUC: 0.751127 (84.1s)\nFold 3/5... AUC: 0.756964 (58.4s)\nFold 4/5... AUC: 0.748402 (73.9s)\nFold 5/5... AUC: 0.754434 (74.1s)\n==> LightGBM Deep Overall OOF AUC: 0.752316 (Total: 353.6s)\n\nSaved all 5 model families to cache\\hasan_expanded_zoo.npz!\n================================================================================\n"
+    }
+  ],
+  "started_at_utc": "2026-11-01T19:37:03.116024+00:00",
+  "status": "COMPLETED"
+}

@@ -1,0 +1,1119 @@
+{
+  "classification": "HYBRID_HISTORICAL_CACHE_RECONSTRUCTION",
+  "downstream": {
+    "historical_input_sha256": {
+      "D:\\gci\\gemini\\cache\\oof_10f_xgb.npy": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+      "D:\\gci\\gemini\\cache\\test_10f_xgb.npy": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "D:\\gci\\gemini\\cache\\v55_members.npz": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "D:\\gci\\gemini\\cache\\v_17_full_suite_bundle.npz": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "D:\\gci\\gemini\\scratch\\final_sub\\final_submission\\submission_final.csv": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "D:\\gci\\gemini\\v_20261027_grand_master_macro_stacker_apex.csv": "483c911bb02f0dba229f83d12e63cd2c4a0d4cc7f6d93908aa278d662a01ab04",
+      "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv": "41c39e302e9bc25c520157e9d1fb22cc61c3cafcc3754a6629fcd1e29321f6c0",
+      "D:\\gci\\gemini\\v_gold_grand_master_apex.csv": "27332e214110980dd1b9bc8e498c99d2e2eb0ff449b0ca34b523cc16625a666e"
+    },
+    "prediction_comparisons": {
+      "v_20261027_asymmetric_tail_gated_apex.csv": {
+        "exact_values": false,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "b9ef88310c54cf78d5f5be9e093d12e8c5a6b3b20602e23bd47dc0bc4e3d6fad",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 2.1974393268292555e-05,
+        "max_abs_difference": 0.0005528364999999869,
+        "max_rank_displacement": 34.0,
+        "mean_rank_displacement": 1.3514471544715447,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999935307057,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "eb32a40623b7571be17ed7abbeb188b76444784c355bc65301a2ceb9940e5b77",
+        "rmse": 3.283566114630486e-05,
+        "spearman": 0.9999999935307058
+      },
+      "v_20261027_optimal_macro_apex_v85.csv": {
+        "exact_values": false,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          8.1301e-06,
+          0.9999918699
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 3.162879251056904e-05,
+        "max_abs_difference": 0.0006341463999999797,
+        "max_rank_displacement": 39.0,
+        "mean_rank_displacement": 1.945170731707317,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999872382068,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          8.1301e-06,
+          0.9999918699
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+        "rmse": 4.611903696651534e-05,
+        "spearman": 0.9999999872382067
+      },
+      "v_20261027_optimal_transductive_apex.csv": {
+        "exact_values": false,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "3f65bcb3440202635f701a74ee4da3940e730cab331a568bd177cce2e6d1eb35",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 2.612265004227646e-05,
+        "max_abs_difference": 0.0007154355999999806,
+        "max_rank_displacement": 44.0,
+        "mean_rank_displacement": 1.606569105691057,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.999999991008011,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4",
+        "rmse": 3.871196347011106e-05,
+        "spearman": 0.9999999910080106
+      },
+      "v_20261027_precision_transductive_apex.csv": {
+        "exact_values": false,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          8.1301e-06,
+          0.9999918699
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "b2d21e0fdbe8f0b4bf63bcd0bed848fdd1c2eb2cacbe27009e8f7ed0444e78ca",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 3.068385249105691e-05,
+        "max_abs_difference": 0.0006666667000000404,
+        "max_rank_displacement": 41.0,
+        "mean_rank_displacement": 1.8870569105691057,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999878738847,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          8.1301e-06,
+          0.9999918699
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+        "rmse": 4.495574774735708e-05,
+        "spearman": 0.9999999878738844
+      },
+      "v_solo_080041_pure_champion.csv": {
+        "exact_values": true,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999999999998,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "v_solo_080150_micro_apex_fusion.csv": {
+        "exact_values": true,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999999999999,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "v_solo_080200_grand_master_apex.csv": {
+        "exact_values": true,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "missing_or_extra_ids": 0,
+        "pearson": 1.0,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998
+      },
+      "v_solo_080300_level2_regime_stacker.csv": {
+        "exact_values": false,
+        "generated_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "generated_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "generated_rows": 61500,
+        "generated_sha256": "41291c076df2938c1e4b18f625c2306c897d1322d238ea08a227cd8e55e2577f",
+        "id_coverage_exact": true,
+        "id_order_exact": true,
+        "mae": 1.8837158253658434e-05,
+        "max_abs_difference": 0.0006341360000000074,
+        "max_rank_displacement": 39.0,
+        "mean_rank_displacement": 1.1585040650406504,
+        "missing_or_extra_ids": 0,
+        "pearson": 0.9999999952534641,
+        "reference_columns": [
+          "SK_ID_CURR",
+          "TARGET"
+        ],
+        "reference_range": [
+          1.62599e-05,
+          0.9999837401
+        ],
+        "reference_rows": 61500,
+        "reference_sha256": "082fb50ae93a5102c6af204d7a03e35d8560ba95954800e83f0569b479d7b40c",
+        "rmse": 2.8125852758057628e-05,
+        "spearman": 0.9999999952534641
+      }
+    }
+  },
+  "execution_log_sha256": "99e6ce03b27d9498096e505eb81577730f2b00a20a6ec1886d68d6435e94552f",
+  "experiment": "EXP03_repeat_zoo_downstream_integration",
+  "finished_at_utc": "2026-11-01T19:50:02.436351+00:00",
+  "generated_runtime_files": [
+    {
+      "bytes": 8059396,
+      "path": "cache\\hasan_expanded_zoo.npz",
+      "sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9"
+    },
+    {
+      "bytes": 684936,
+      "path": "cache\\oof_10f_xgb.npy",
+      "sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d"
+    },
+    {
+      "bytes": 246128,
+      "path": "cache\\test_10f_xgb.npy",
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+    },
+    {
+      "bytes": 7088141,
+      "path": "cache\\v55_members.npz",
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f"
+    },
+    {
+      "bytes": 6866482,
+      "path": "cache\\v_17_full_suite_bundle.npz",
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223"
+    },
+    {
+      "bytes": 1369744,
+      "path": "cache\\y_train.npy",
+      "sha256": "7432611a8b88bbac35db5a974c14d18a9a70c79e0fd13550b52cb10a8e9587a9"
+    },
+    {
+      "bytes": 1398,
+      "path": "experminetbygeminioct22.csv",
+      "sha256": "8297ff467f9d3c58ea991292869c6cbb5a18df2b8945fb5a16fa7009e2ff6c5d"
+    },
+    {
+      "bytes": 9361,
+      "path": "isolated_source\\build_asymmetric_convex_gated_champion.py",
+      "sha256": "7ad712e962799bf39d3a6c38f6193c2f807bc52edce62f6a7fd7d84d6872f07b"
+    },
+    {
+      "bytes": 12004,
+      "path": "isolated_source\\build_exp85_optimal_macro_apex.py",
+      "sha256": "20fe0e021a6f16e704363f1ec1bfe7ad3c447b7ddbf1ac13fd726e8ae4884535"
+    },
+    {
+      "bytes": 1291519,
+      "path": "scratch\\final_sub\\final_submission\\submission_final.csv",
+      "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_20261027_asymmetric_tail_gated_apex.csv",
+      "sha256": "b9ef88310c54cf78d5f5be9e093d12e8c5a6b3b20602e23bd47dc0bc4e3d6fad"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_20261027_grand_master_macro_stacker_apex.csv",
+      "sha256": "483c911bb02f0dba229f83d12e63cd2c4a0d4cc7f6d93908aa278d662a01ab04"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_20261027_optimal_macro_apex_v85.csv",
+      "sha256": "13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_20261027_optimal_transductive_apex.csv",
+      "sha256": "3f65bcb3440202635f701a74ee4da3940e730cab331a568bd177cce2e6d1eb35"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_20261027_precision_transductive_apex.csv",
+      "sha256": "b2d21e0fdbe8f0b4bf63bcd0bed848fdd1c2eb2cacbe27009e8f7ed0444e78ca"
+    },
+    {
+      "bytes": 1677103,
+      "path": "v_20_apex_grand_champion_submission.csv",
+      "sha256": "41c39e302e9bc25c520157e9d1fb22cc61c3cafcc3754a6629fcd1e29321f6c0"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_gold_grand_master_apex.csv",
+      "sha256": "27332e214110980dd1b9bc8e498c99d2e2eb0ff449b0ca34b523cc16625a666e"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_solo_080041_pure_champion.csv",
+      "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_solo_080150_micro_apex_fusion.csv",
+      "sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_solo_080200_grand_master_apex.csv",
+      "sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce"
+    },
+    {
+      "bytes": 1291519,
+      "path": "v_solo_080300_level2_regime_stacker.csv",
+      "sha256": "41291c076df2938c1e4b18f625c2306c897d1322d238ea08a227cd8e55e2577f"
+    }
+  ],
+  "gpu": "No model training occurs in these downstream scripts.",
+  "historical_input_sha256": {
+    "D:\\gci\\gemini\\cache\\oof_10f_xgb.npy": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+    "D:\\gci\\gemini\\cache\\test_10f_xgb.npy": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+    "D:\\gci\\gemini\\cache\\v55_members.npz": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+    "D:\\gci\\gemini\\cache\\v_17_full_suite_bundle.npz": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+    "D:\\gci\\gemini\\scratch\\final_sub\\final_submission\\submission_final.csv": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+    "D:\\gci\\gemini\\v_20261027_grand_master_macro_stacker_apex.csv": "483c911bb02f0dba229f83d12e63cd2c4a0d4cc7f6d93908aa278d662a01ab04",
+    "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv": "41c39e302e9bc25c520157e9d1fb22cc61c3cafcc3754a6629fcd1e29321f6c0",
+    "D:\\gci\\gemini\\v_gold_grand_master_apex.csv": "27332e214110980dd1b9bc8e498c99d2e2eb0ff449b0ca34b523cc16625a666e"
+  },
+  "historical_zoo_parity": {
+    "alignment": "positional raw train/test row order; neither historical NPZ stores SK_ID_CURR",
+    "arrays": {
+      "oof_cat": {
+        "exact_values": false,
+        "generated_dtype": "float64",
+        "mae": 4.4476354527295146e-07,
+        "max_abs_difference": 0.0003069450070900537,
+        "max_rank_displacement": 119.0,
+        "mean_rank_displacement": 0.6169203630798705,
+        "pearson": 0.999999999028884,
+        "reference_dtype": "float64",
+        "rmse": 3.3636009912284496e-06,
+        "spearman": 0.9999999986424087,
+        "status": "NUMERICAL_DIFFERENCE"
+      },
+      "oof_lgb_cons": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_lgb_deep": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_lgb_et": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "oof_xgb": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      },
+      "test_cat": {
+        "exact_values": false,
+        "generated_dtype": "float64",
+        "mae": 3.312148739146587e-07,
+        "max_abs_difference": 6.147718345339559e-05,
+        "max_rank_displacement": 12.0,
+        "mean_rank_displacement": 0.16107317073170732,
+        "pearson": 0.999999999854509,
+        "reference_dtype": "float64",
+        "rmse": 1.4271241120185499e-06,
+        "spearman": 0.9999999995352875,
+        "status": "NUMERICAL_DIFFERENCE"
+      },
+      "test_lgb_cons": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_lgb_deep": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 0.9999999999999998,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_lgb_et": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 0.9999999999999998,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 0.9999999999999998,
+        "status": "EXACT"
+      },
+      "test_xgb": {
+        "exact_values": true,
+        "generated_dtype": "float64",
+        "mae": 0.0,
+        "max_abs_difference": 0.0,
+        "max_rank_displacement": 0.0,
+        "mean_rank_displacement": 0.0,
+        "pearson": 1.0,
+        "reference_dtype": "float64",
+        "rmse": 0.0,
+        "spearman": 1.0,
+        "status": "EXACT"
+      }
+    },
+    "generated_keys": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "generated_sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9",
+    "reference_keys": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "reference_sha256": "73951fa46ea73403460d62c0427d4e3b696d935230ac74154600902e60c84df4"
+  },
+  "integration_runner_sha256": "09843143133aa5581bc4024754a327e1afab68f1fb4f0605e7022c125cd64482",
+  "prediction_comparisons": {
+    "v_20261027_asymmetric_tail_gated_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "b9ef88310c54cf78d5f5be9e093d12e8c5a6b3b20602e23bd47dc0bc4e3d6fad",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 2.1974393268292555e-05,
+      "max_abs_difference": 0.0005528364999999869,
+      "max_rank_displacement": 34.0,
+      "mean_rank_displacement": 1.3514471544715447,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999935307057,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "eb32a40623b7571be17ed7abbeb188b76444784c355bc65301a2ceb9940e5b77",
+      "rmse": 3.283566114630486e-05,
+      "spearman": 0.9999999935307058
+    },
+    "v_20261027_optimal_macro_apex_v85.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 3.162879251056904e-05,
+      "max_abs_difference": 0.0006341463999999797,
+      "max_rank_displacement": 39.0,
+      "mean_rank_displacement": 1.945170731707317,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999872382068,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "rmse": 4.611903696651534e-05,
+      "spearman": 0.9999999872382067
+    },
+    "v_20261027_optimal_transductive_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "3f65bcb3440202635f701a74ee4da3940e730cab331a568bd177cce2e6d1eb35",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 2.612265004227646e-05,
+      "max_abs_difference": 0.0007154355999999806,
+      "max_rank_displacement": 44.0,
+      "mean_rank_displacement": 1.606569105691057,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.999999991008011,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4",
+      "rmse": 3.871196347011106e-05,
+      "spearman": 0.9999999910080106
+    },
+    "v_20261027_precision_transductive_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "b2d21e0fdbe8f0b4bf63bcd0bed848fdd1c2eb2cacbe27009e8f7ed0444e78ca",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 3.068385249105691e-05,
+      "max_abs_difference": 0.0006666667000000404,
+      "max_rank_displacement": 41.0,
+      "mean_rank_displacement": 1.8870569105691057,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999878738847,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+      "rmse": 4.495574774735708e-05,
+      "spearman": 0.9999999878738844
+    },
+    "v_solo_080041_pure_champion.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999999999998,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080150_micro_apex_fusion.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999999999999,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080200_grand_master_apex.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 1.0,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080300_level2_regime_stacker.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "41291c076df2938c1e4b18f625c2306c897d1322d238ea08a227cd8e55e2577f",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 1.8837158253658434e-05,
+      "max_abs_difference": 0.0006341360000000074,
+      "max_rank_displacement": 39.0,
+      "mean_rank_displacement": 1.1585040650406504,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999952534641,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "082fb50ae93a5102c6af204d7a03e35d8560ba95954800e83f0569b479d7b40c",
+      "rmse": 2.8125852758057628e-05,
+      "spearman": 0.9999999952534641
+    }
+  },
+  "raw_inputs": {
+    "row_alignment": {
+      "labels_dtype": "int64",
+      "labels_sha256": "6a6c6914239517c0eaab01843f809f3715aba2aea91d63808d82639767c8f0f5",
+      "test_ids_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+      "test_ids_unique": true,
+      "test_rows": 61500,
+      "train_ids_unique": true,
+      "train_rows": 171202
+    },
+    "test.csv": {
+      "bytes": 15818118,
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "train.csv": {
+      "bytes": 44260698,
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    }
+  },
+  "repeat_report_sha256": "55691509250f4a4f7b9ee9e86a314f345e71ffa1985ecfd20fe9ef870c42f971",
+  "repeat_zoo_schema": {
+    "arrays": {
+      "oof_cat": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8882943960700593,
+        "minimum": 0.0013317397527618624,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_cons": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8085792476834986,
+        "minimum": 0.003136180011062608,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_deep": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.6880462326763683,
+        "minimum": 0.00441309402413303,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_lgb_et": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.7335184185762995,
+        "minimum": 0.003731739918037461,
+        "shape": [
+          171202
+        ]
+      },
+      "oof_xgb": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8753049373626709,
+        "minimum": 0.0020685349591076374,
+        "shape": [
+          171202
+        ]
+      },
+      "test_cat": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.9234800130420637,
+        "minimum": 0.0037470171805416798,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_cons": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8515478059554046,
+        "minimum": 0.0044019766863141714,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_deep": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.708204767299347,
+        "minimum": 0.0057211888434146084,
+        "shape": [
+          61500
+        ]
+      },
+      "test_lgb_et": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.7584548639306918,
+        "minimum": 0.005312119203772867,
+        "shape": [
+          61500
+        ]
+      },
+      "test_xgb": {
+        "dtype": "float64",
+        "finite": true,
+        "maximum": 0.8697594702243805,
+        "minimum": 0.003823160077445209,
+        "shape": [
+          61500
+        ]
+      },
+      "y_true": {
+        "dtype": "int64",
+        "finite": true,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "shape": [
+          171202
+        ]
+      }
+    },
+    "bytes": 8059396,
+    "keys_in_order": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\repeat_validation\\runtime\\cache\\hasan_expanded_zoo.npz",
+    "sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9"
+  },
+  "repeat_zoo_sha256": "696cacc735fdb5abe4853a255e2ba202ead5bc10690263cf40dfeb99151352e9",
+  "run_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat",
+  "runtime_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+  "source_sha256": {
+    "build_asymmetric_convex_gated_champion.py": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+    "build_exp85_optimal_macro_apex.py": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+    "build_hasan_600_features.py": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+    "build_level2_regime_meta_stacker.py": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+    "build_optimal_transductive_apex_champion.py": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+    "build_precision_transductive_apex_champion.py": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+    "build_v80200_apex.py": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+    "screen_and_select_features.py": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+    "solo_grand_master_apex_080.py": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+    "train_catboost_and_deep_lgb.py": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+    "train_hasan_master_zoo.py": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009"
+  },
+  "stages": [
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\solo_grand_master_apex_080.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\solo_grand_master_apex_080.py",
+      "executed_script_sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+      "exit_code": 0,
+      "name": "downstream:solo_grand_master_apex_080.py",
+      "runtime_seconds": 3.343,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\solo_grand_master_apex_080.py",
+      "source_sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+      "started_at_utc": "2026-11-01T19:48:49.498916+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nSOLO GRAND MASTER APEX 0.80041+ GENERATION & VERIFICATION\n=====================================================================================\nLoaded 61500 test applicants from ../inpuy/test.csv.\nLoaded Hasan Winning Submission: (61500, 2)\nHasan Final SHA-256: 8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b\n  -> Cryptographic verification PASSED: 100% bit-for-bit match with the 0.80041 Public LB solution!\nSaved Pure 0.80041 Champion: v_solo_080041_pure_champion.csv\n\nConstructing Micro-Apex Expansion (0.80150+ Target)...\nApplying Transductive Partner Coupling across confirmed test pairs...\nCoupling 320 confirmed test-to-test repeat-borrower records (gamma=0.15).\nSaved Micro-Apex Fusion: v_solo_080150_micro_apex_fusion.csv\n\n=====================================================================================\nVERIFICATION & TELEMETRY SUMMARY\n=====================================================================================\n1. Pure Champion File    : v_solo_080041_pure_champion.csv\n   Known Score           : 0.80041 Public LB (Rank 12 worldwide)\n   Shape                 : (61500, 2) (61,500 rows, 2 columns)\n   SHA-256 Checksum      : 8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b\n\n2. Micro-Apex Fusion File: v_solo_080150_micro_apex_fusion.csv\n   Target Potential      : 0.80150+ Public LB (Top 10 candidate)\n   Spearman Correlation  : 0.999879 with 0.80041 winning anchor\n   Mean Rank Shift       : 188.9 positions (strictly non-diluting)\n   Max Rank Shift        : 4998 positions\n   Null Values           : {'SK_ID_CURR': 0, 'TARGET': 0}\n=====================================================================================\nSUCCESS: BOTH SOLO SUBMISSION FILES READY FOR LEADERBOARD SUBMISSION!\n=====================================================================================\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_v80200_apex.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_v80200_apex.py",
+      "executed_script_sha256": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+      "exit_code": 0,
+      "name": "downstream:build_v80200_apex.py",
+      "runtime_seconds": 2.938,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_v80200_apex.py",
+      "source_sha256": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+      "started_at_utc": "2026-11-01T19:48:52.843553+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nBUILDING APEX UPGRADE: HISTORICAL GROUND-TRUTH & TRANSDUCTIVE COUPLING\n=====================================================================================\nApplying Historical Ground-Truth Calibration to 867 test applicants...\n\n=====================================================================================\nSaved Apex File: v_solo_080200_grand_master_apex.csv\nTarget Potential: 0.80100 - 0.80200 Public LB\nCorrelation with 0.80055 Champion: 0.999967\nMean Rank Shift: 24.36 rows (Max: 4190)\nNull Values: {'SK_ID_CURR': 0, 'TARGET': 0}\nSHA-256 Checksum: 8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce\n=====================================================================================\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_level2_regime_meta_stacker.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_level2_regime_meta_stacker.py",
+      "executed_script_sha256": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+      "exit_code": 0,
+      "name": "downstream:build_level2_regime_meta_stacker.py",
+      "runtime_seconds": 51.172,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_level2_regime_meta_stacker.py",
+      "source_sha256": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+      "started_at_utc": "2026-11-01T19:48:55.784401+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nBUILDING LEVEL-2 NON-LINEAR REGIME META-STACKER (V_SOLO_080300)\n=====================================================================================\nLoaded Zoo: Train 171202, Test 61500\n  LGBM Cons AUC : 0.754136\n  LGBM ET AUC   : 0.750626\n  XGB GPU AUC   : 0.753403\n  CatBoost AUC  : 0.752590\n  LGBM Deep AUC : 0.752316\n\nExtracting Missingness Regimes & Entity Keys...\nMissingness Breakdown: 0-NaN: 21.1%, 1-NaN: 56.3%, 2+-NaN: 22.7%\nBase Composite Train AUC: 0.754685\n\nResolving 100% Exact Confirmed Repeat Borrowers (Tier 2)...\nConfirmed Repeat Borrowers: 4653 total (3472 train, 1181 test)\n\nConstructing Non-Linear Regime Meta-Feature Matrix...\nMeta-Feature Matrix: Train (171202, 38), Test (61500, 38)\n\n--- Training Multi-Seed L2 Logistic Meta-Stacker ---\n==> Multi-Seed L2 Logistic Meta-Stacker OOF AUC: 0.756755\n\n--- Training Shallow Residual LightGBM Meta-Model ---\n==> Shallow Residual LightGBM Meta OOF AUC: 0.754832\n\n--- Synthesizing Meta-Stacker Projections ---\nOptimal Meta-Weights: Composite=0.4, Logistic=0.4, Residual_LGB=0.2 -> OOF AUC: 0.756250\n\n--- Applying Precision Ground-Truth Calibrations ---\nApplying Historical Ground-Truth Calibration to 867 Test Borrowers (gamma = 0.05)...\nApplying Transductive Partner Coupling across 320 Test-to-Test confirmed pairs (gamma = 0.15)...\n\n=====================================================================================\nSAVED LEVEL-2 REGIME STACKER SUBMISSION: v_solo_080300_level2_regime_stacker.csv\nTarget Public LB Potential : 0.80100 - 0.80200+\nCorrelation with 0.80059   : 0.999527\nCorrelation with 0.80041   : 0.999497\nMean Absolute Rank Shift   : 355.65 rows (Max: 9378)\nNull Count                 : {'SK_ID_CURR': 0, 'TARGET': 0}\nTotal Rows                 : 61500\nSHA-256 Checksum           : 41291c076df2938c1e4b18f625c2306c897d1322d238ea08a227cd8e55e2577f\n=====================================================================================\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\isolated_source\\build_asymmetric_convex_gated_champion.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\isolated_source\\build_asymmetric_convex_gated_champion.py",
+      "executed_script_sha256": "7ad712e962799bf39d3a6c38f6193c2f807bc52edce62f6a7fd7d84d6872f07b",
+      "exit_code": 0,
+      "name": "downstream:build_asymmetric_convex_gated_champion.py",
+      "runtime_seconds": 4.687,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_asymmetric_convex_gated_champion.py",
+      "source_sha256": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+      "started_at_utc": "2026-11-01T19:49:46.983115+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nASYMMETRIC TAIL CONVEXITY & DISCREPANCY-GATED SYNTHESIS\n=====================================================================================\nLoaded Zoo: Train 171,202, Test 61,500\n\nExtracting Missingness Regimes from Test Data...\nTest Set Missingness Regimes: 0-NaN: 20.9% | 1-NaN: 56.3% | 2+-NaN: 22.8%\n\nComputing Multi-Model Discrepancy Vectors...\nDiscrepancy Gating Activated: Threshold = 0.1751\nMean Gate Activation in Test: 0.0874 (Inactive on 85% of applicants)\n\nOptimizing Asymmetric Tail Convexity Parameters...\nBase Champion OOF AUC: 0.754452\nOptimal Parameters: Power Exponent = 1.0, Discrepancy Lambda = 0.08\nTuned OOF ROC-AUC : 0.754510 (Lift: +0.000058)\n\nSynthesizing Asymmetric Tail Convexity & Gated Corrections on Test Set...\n\n=====================================================================================\nSUCCESSFULLY GENERATED V_20261027_ASYMMETRIC_TAIL_GATED_APEX.CSV:\n  * File Saved At       : v_20261027_asymmetric_tail_gated_apex.csv\n  * Total Rows          : 61,500 (Expected: 61,500)\n  * Null Values         : {'SK_ID_CURR': 0, 'TARGET': 0}\n  * Distinct Ranks      : 61,500 unique ranks\n  * Min / Max Prediction: 0.0000162599 / 0.9999837401\n  * Correlation w/ 0.80071 : 0.999989 (Target: > 0.9990)\n  * Mean Rank Shift     : 20.95 rows (Safe & Controlled)\n  * Max Rank Shift      : 1844 rows\n  * SHA-256 Fingerprint : b9ef88310c54cf78d5f5be9e093d12e8c5a6b3b20602e23bd47dc0bc4e3d6fad\n=====================================================================================\nTotal Execution Time: 1.9s\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_optimal_transductive_apex_champion.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_optimal_transductive_apex_champion.py",
+      "executed_script_sha256": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+      "exit_code": 0,
+      "name": "downstream:build_optimal_transductive_apex_champion.py",
+      "runtime_seconds": 3.047,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_optimal_transductive_apex_champion.py",
+      "source_sha256": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+      "started_at_utc": "2026-11-01T19:49:51.669957+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nBUILDING OPTIMAL TRANSDUCTIVE APEX CHAMPION (OOF OPTIMIZED)\n=====================================================================================\nBedrock Anchor: v_20261027_asymmetric_tail_gated_apex.csv (0.80076 Public LB Record)\n\n[Step 1] Constructing Multi-Hop Entity Graph...\nVerified Graph Architecture:\n  * Test rows with Train Ground-Truth : 1,148 applicants\n  * Test-to-Test Multi-Loan Applicants : 429 applicants\n\n[Step 2] Calibrating Ground-Truth Repeat Borrowers (Optimal gamma = 0.12)...\n  * Defaulters Calibrated (+2.5) : 111\n  * Repayers Calibrated   (-1.3) : 1,037\n\n[Step 3] Applying Harmonic Transductive Graph Diffusion across Test Pairs (gamma = 0.15)...\n  * Diffused Mutual Risk Across: 429 test applicants\n\n[Step 4] Applying Regime-Conditioned Discrepancy Gate (tau = 80%, lambda = 0.045)...\n\n[Step 5] Applying Piecewise Asymmetric Tail Sharpening (p_high = 1.025, p_low = 1.010)...\n\n=====================================================================================\nSUCCESSFULLY GENERATED V_20261027_OPTIMAL_TRANSDUCTIVE_APEX.CSV:\n  * File Saved At       : v_20261027_optimal_transductive_apex.csv\n  * Total Rows          : 61,500 (Expected: 61,500)\n  * Null Values         : {'SK_ID_CURR': 0, 'TARGET': 0}\n  * Distinct Ranks      : 61,500 unique ranks\n  * Min / Max Prediction: 0.0000162599 / 0.9999837401\n  * Correlation w/ 0.80076 : 0.9997587 (Target: >= 0.9995)\n  * Mean Rank Shift     : 88.78 rows (Ultra-Safe Precision)\n  * Median Rank Shift   : 39.0 rows\n  * Max Rank Shift      : 9,118 rows\n  * Rows Shifted > 500  : 1,115 rows (1.81%)\n  * SHA-256 Fingerprint : 3f65bcb3440202635f701a74ee4da3940e730cab331a568bd177cce2e6d1eb35\n=====================================================================================\nTotal Execution Time: 0.8s\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_precision_transductive_apex_champion.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_precision_transductive_apex_champion.py",
+      "executed_script_sha256": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+      "exit_code": 0,
+      "name": "downstream:build_precision_transductive_apex_champion.py",
+      "runtime_seconds": 3.063,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_precision_transductive_apex_champion.py",
+      "source_sha256": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+      "started_at_utc": "2026-11-01T19:49:54.725532+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "=====================================================================================\nBUILDING PRECISION TRANSDUCTIVE APEX CHAMPION (ANCHORED TO 0.80084 RECORD)\n=====================================================================================\n[*] Bedrock Anchor: v_20261027_optimal_transductive_apex.csv (0.80084 Public LB Record)\n\n[Step 1] Applying Precision Discrepancy Gate (OOF-Proven Peak)...\n  * Applied Discrepancy Gate on top 20% model disagreement cases (delta_lambda=0.08)\n\n[Step 2] Applying Bounded Harmonic Test-Pair Smoothing (gamma=0.12, max_dz=0.08)...\n  * Applied bounded harmonic smoothing across 430 test pairs\n\n[Step 3] Enforcing Bounded Rank Shift Safety Law (|Delta z| <= 0.35)...\n\n[Step 4] Converting to Strictly Distinct Ordinal Percentile Ranks...\n\n=====================================================================================\nVERIFICATION & TELEMETRY AUDIT\n=====================================================================================\n[*] Spearman Correlation with 0.80084 Record: 0.9999760\n[*] Mean Absolute Rank Shift                : 49.68 ranks\n[*] Median Absolute Rank Shift              : 11.03 ranks\n[*] Maximum Absolute Rank Shift             : 1939.90 ranks\n[*] Rows Shifted > 500 Ranks                : 891\n[*] Rows Shifted > 1,000 Ranks              : 98\n[*] Rows Shifted > 2,500 Ranks              : 0\n[*] Rows Shifted > 5,000 Ranks              : 0 (Must be 0!)\n\n=====================================================================================\n[*] OUTPUT SAVED SUCCESSFULLY : v_20261027_precision_transductive_apex.csv\n[*] Total Test Records        : 61,500 (Expected: 61,500)\n[*] Null Count                : 0 (Zero nulls guaranteed)\n[*] Distinct Ranks            : 61,500 / 61,500 (100% distinct ordinal ranks)\n[*] Prediction Min / Max      : 0.00000813 / 0.99999187\n[*] Prediction Mean           : 0.50000000\n[*] SHA-256 Checksum          : b2d21e0fdbe8f0b4bf63bcd0bed848fdd1c2eb2cacbe27009e8f7ed0444e78ca\n[*] Elapsed Time              : 0.75s\n=====================================================================================\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-u",
+        "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\isolated_source\\build_exp85_optimal_macro_apex.py"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime",
+      "executed_script": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\isolated_source\\build_exp85_optimal_macro_apex.py",
+      "executed_script_sha256": "20fe0e021a6f16e704363f1ec1bfe7ad3c447b7ddbf1ac13fd726e8ae4884535",
+      "exit_code": 0,
+      "name": "downstream:build_exp85_optimal_macro_apex.py",
+      "runtime_seconds": 3.844,
+      "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_exp85_optimal_macro_apex.py",
+      "source_sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+      "started_at_utc": "2026-11-01T19:49:57.799802+00:00",
+      "stderr_tail": "",
+      "stdout_tail": "periments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\v_20261027_precision_transductive_apex.csv (0.800850 LB)\n    Standing Champion 79: D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\v_20261027_grand_master_macro_stacker_apex.csv (0.801290 LB)\n\n[2] Assembling Upgraded 8-Engine Suite (OOF-Optimized via Nelder-Mead)...\n    - v17_e1Aet       (Weight: 29.32% | OOF AUC: 0.776105)\n    - xgb10           (Weight: 25.96% | OOF AUC: 0.774331)\n    - v17_final       (Weight: 20.51% | OOF AUC: 0.776347)\n    - v55_cbprod      (Weight:  8.74% | OOF AUC: 0.773050)\n    - v17_e1et        (Weight:  4.89% | OOF AUC: 0.775884)\n    - v55_deep_et     (Weight:  4.42% | OOF AUC: 0.774026)\n    - v55_allfam      (Weight:  3.83% | OOF AUC: 0.775207)\n    - v55_v2_mono     (Weight:  2.33% | OOF AUC: 0.775316)\n    --> Total 8-Engine Suite OOF AUC: 0.777207 (+1.43 bps over EXP_79 suite)\n\n[3] Executing Pure Probit Macro-Synthesis (85% Anchor 74 + 15% Upgraded Suite)...\n\n[4] Converting to Strictly Distinct Ordinal Percentile Ranks...\n\n=====================================================================================\nTELEMETRY & STRUCTURAL AUDIT\n=====================================================================================\n[*] Spearman Correlation with Champion 79 (0.801290) : 0.9998986\n[*] Spearman Correlation with Anchor 74 (0.800850)   : 0.9977790\n[*] Mean Absolute Rank Shift vs EXP_79               : 185.35 ranks (Target: 150-250)\n[*] Median Absolute Rank Shift vs EXP_79             : 137.00 ranks\n[*] 90th Percentile Rank Shift vs EXP_79             : 417.00 ranks\n[*] Maximum Absolute Rank Shift vs EXP_79            : 2285.00 ranks\n[*] Rows Shifted > 500 Positions vs EXP_79           : 3,560 (5.79%)\n[*] Rows Shifted > 1,000 Positions vs EXP_79         : 120 (0.20%)\n[*] Total Distinct Ranks                             : 61,500 / 61,500\n\n=====================================================================================\n[*] OUTPUT SAVED SUCCESSFULLY : D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\v_20261027_optimal_macro_apex_v85.csv\n[*] Total Rows Exported       : 61,500 (Expected: 61,500)\n[*] Null Count                : 0 (Zero nulls guaranteed)\n[*] Distinct Ranks            : 61,500 / 61,500 (100% distinct)\n[*] Min / Max / Mean Target   : 0.00000813 / 0.99999187 / 0.50000000\n[*] SHA-256 Checksum          : 13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0\n[*] Execution Time            : 0.96s\n=====================================================================================\n[*] Successfully logged EXP_85 to D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\integration_repeat\\runtime\\experminetbygeminioct22.csv\n"
+    }
+  ],
+  "started_at_utc": "2026-11-01T19:48:47.458374+00:00",
+  "status": "COMPLETED"
+}

@@ -88,3 +88,44 @@ or independent retraining of those historical producers.
 
 In the checked `D:\gci\gemini\.venv`, PyTorch is CPU-only
 (`2.14.1+cpu`, CUDA unavailable); no GPU neural experiment was run.
+
+## EXP03: reconstruct the five-family zoo dependency
+
+The historical zoo file exists but has no verified producer manifest, so it
+is treated as a parity reference only. EXP03 runs the hash-verified historical
+669-feature builder, 550-feature LightGBM selector, three-family trainer, and
+CatBoost/deep-LightGBM expansion from raw competition inputs in a fresh cache.
+The runner records split indices, exact input/source/output hashes, CUDA
+preflight and telemetry, schemas, fixed seeds, and per-array parity metrics.
+It must not load the historical predictions into its training runtime.
+
+The follow-on Anchor74-to-EXP85 execution is explicitly hybrid: it uses the
+rebuilt zoo but begins from available historical 080041/080150 inputs and
+reuses the existing V17, V55, XGB10, and Grand Master 79 artifacts. This
+integration can test whether the original downstream code executes and can
+measure parity; it cannot establish complete raw-to-final lineage while the
+remote neural/synthesis artifacts referenced by `reproduce_final_submission.py`
+remain unavailable.
+
+### EXP03 result
+
+The raw rebuild completed in 1,019.2 seconds; all four historical source
+stages exited successfully. Generated 669-feature and selected-550 matrices
+were exact against their historical references, including the original
+`HOUSING_STABILITY` infinities. Eight of ten zoo prediction streams were
+exact. CatBoost GPU was not bitwise reproducible under a fixed seed: fold 2
+OOF AUC changed from `0.751470` to `0.751814`; Deep LightGBM repeated exactly.
+The second CatBoost run was very close to the historical cache but not exact,
+and was retained as a repeatability result rather than selected to tune parity.
+
+The isolated downstream pipeline reproduced 080041/080150/080200 exactly and
+generated all later Anchor74 artifacts with complete IDs, high but non-exact
+correlation. The first run stopped at the original final guard (mean shift
+149.4283; required 150–250). A separate integration replay on the second raw
+zoo passed all seven downstream scripts with the source assertion/formula
+unchanged and wrote its 85:15 output only under the ignored run runtime.
+That output has 61,500 aligned IDs, hash
+`13b24617a8fd5eafd51eefe6f1a33b290b4efc5be157125cdb15648d3f1763c0`,
+Spearman `0.9999999872` and MAE `0.00003163` against the frozen champion.
+It is a hybrid replay using historical anchors and suite bundles, not an
+independent submission, and has not been evaluated on the official leaderboard.

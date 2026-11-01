@@ -1,0 +1,301 @@
+{
+  "classification": "HYBRID_HISTORICAL_CACHE_RECONSTRUCTION",
+  "continuation_report": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\continuation_report.json",
+  "continuation_report_sha256": "ef6379d31ef0488986ea199131eeca95d1da79c517fe6dc7df8afebd8e743c66",
+  "downstream_stage_results": [
+    {
+      "executed_script_sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+      "exit_code": 0,
+      "name": "downstream:solo_grand_master_apex_080.py",
+      "runtime_seconds": 3.75,
+      "source_sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756"
+    },
+    {
+      "executed_script_sha256": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+      "exit_code": 0,
+      "name": "downstream:build_v80200_apex.py",
+      "runtime_seconds": 3.031,
+      "source_sha256": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28"
+    },
+    {
+      "executed_script_sha256": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+      "exit_code": 0,
+      "name": "downstream:build_level2_regime_meta_stacker.py",
+      "runtime_seconds": 49.703,
+      "source_sha256": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490"
+    },
+    {
+      "executed_script_sha256": "7ad712e962799bf39d3a6c38f6193c2f807bc52edce62f6a7fd7d84d6872f07b",
+      "exit_code": 0,
+      "name": "downstream:build_asymmetric_convex_gated_champion.py",
+      "runtime_seconds": 4.578,
+      "source_sha256": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64"
+    },
+    {
+      "executed_script_sha256": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+      "exit_code": 0,
+      "name": "downstream:build_optimal_transductive_apex_champion.py",
+      "runtime_seconds": 3.047,
+      "source_sha256": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011"
+    },
+    {
+      "executed_script_sha256": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+      "exit_code": 0,
+      "name": "downstream:build_precision_transductive_apex_champion.py",
+      "runtime_seconds": 3.0,
+      "source_sha256": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc"
+    },
+    {
+      "executed_script_sha256": "9281a9a4e60f390bec4b7b92e80b4f259ac2cdbfa55086a6a7f5c65eb0827cf8",
+      "exit_code": 1,
+      "name": "downstream:build_exp85_optimal_macro_apex.py",
+      "runtime_seconds": 3.594,
+      "source_sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555"
+    }
+  ],
+  "experiment": "EXP03_downstream_hybrid_parity",
+  "final_synthesis_failure": {
+    "message": "Stage downstream:build_exp85_optimal_macro_apex.py failed with exit code 1; see D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\execution.log",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\source\\rebuild_expanded_zoo.py\", line 855, in continue_existing_run\n    report[\"downstream\"] = run_downstream(\n                           ^^^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\source\\rebuild_expanded_zoo.py\", line 702, in run_downstream\n    run_stage(\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\source\\rebuild_expanded_zoo.py\", line 442, in run_stage\n    raise RuntimeError(f\"Stage {name} failed with exit code {result.returncode}; see {log_path}\")\nRuntimeError: Stage downstream:build_exp85_optimal_macro_apex.py failed with exit code 1; see D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\execution.log\n",
+    "type": "RuntimeError"
+  },
+  "initial_rebuild_report": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp03_missing_dependency_rebuild\\runs\\exp03_20261102_003845\\run_report.json",
+  "prediction_comparisons": {
+    "v_20261027_asymmetric_tail_gated_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "71054cf9493b9e4303829e22ee28d8f04bec1da061f117022005077e1fbb64ba",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.001607785609099187,
+      "max_abs_difference": 0.017186712400000026,
+      "max_rank_displacement": 1057.0,
+      "mean_rank_displacement": 98.88042276422765,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999681672865073,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "eb32a40623b7571be17ed7abbeb188b76444784c355bc65301a2ceb9940e5b77",
+      "rmse": 0.0023033192823735753,
+      "spearman": 0.9999681672865046
+    },
+    "v_20261027_optimal_macro_apex_v85.csv": {
+      "generated_exists": false,
+      "reference_exists": true,
+      "status": "NOT_GENERATED_OR_REFERENCE_MISSING"
+    },
+    "v_20261027_optimal_transductive_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "fc54695b332242108c319542540dc716a9e29d74a33863d960dbfbcb219c21d6",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0016072383249203252,
+      "max_abs_difference": 0.016975333699999928,
+      "max_rank_displacement": 1044.0,
+      "mean_rank_displacement": 98.84676422764228,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999682896899942,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "b799e2c78daaccc45eb28e76e53f6102438f9a151c2f20f90c10faf24b66a3e4",
+      "rmse": 0.002298886643319782,
+      "spearman": 0.999968289689991
+    },
+    "v_20261027_precision_transductive_apex.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "9e44d40345699d5659d62be70bc37f25225ef877793cdd1a5287f85208356264",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0016183552122601623,
+      "max_abs_difference": 0.017089430900000036,
+      "max_rank_displacement": 1051.0,
+      "mean_rank_displacement": 99.52884552845528,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999678570404581,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        8.1301e-06,
+        0.9999918699
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+      "rmse": 0.0023145539359154016,
+      "spearman": 0.9999678570404611
+    },
+    "v_solo_080041_pure_champion.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999999999998,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080150_micro_apex_fusion.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999999999999999,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "ee0428e280e0d67dd9062e04c909969721f8510ebb99d85b138d44a44b0e5fc4",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080200_grand_master_apex.csv": {
+      "exact_values": true,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0,
+      "max_abs_difference": 0.0,
+      "max_rank_displacement": 0.0,
+      "mean_rank_displacement": 0.0,
+      "missing_or_extra_ids": 0,
+      "pearson": 1.0,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "8540d964ad43ac8c88401bfa3d075a18eee8acae5d383b7143bf743c7cc91fce",
+      "rmse": 0.0,
+      "spearman": 0.9999999999999998
+    },
+    "v_solo_080300_level2_regime_stacker.csv": {
+      "exact_values": false,
+      "generated_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "generated_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "generated_rows": 61500,
+      "generated_sha256": "36374ec09cea972c53a4652e6917ee601d18ff308862a9b4fb9fe661ed0cfba9",
+      "id_coverage_exact": true,
+      "id_order_exact": true,
+      "mae": 0.0016047768668390244,
+      "max_abs_difference": 0.017186712400000026,
+      "max_rank_displacement": 1057.0,
+      "mean_rank_displacement": 98.69538211382114,
+      "missing_or_extra_ids": 0,
+      "pearson": 0.9999682826290888,
+      "reference_columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "reference_range": [
+        1.62599e-05,
+        0.9999837401
+      ],
+      "reference_rows": 61500,
+      "reference_sha256": "082fb50ae93a5102c6af204d7a03e35d8560ba95954800e83f0569b479d7b40c",
+      "rmse": 0.002299142574562821,
+      "spearman": 0.9999682826290757
+    }
+  }
+}

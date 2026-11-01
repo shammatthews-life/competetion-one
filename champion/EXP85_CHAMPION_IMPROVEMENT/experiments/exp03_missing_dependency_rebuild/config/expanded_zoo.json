@@ -1,0 +1,148 @@
+{
+  "artifact": {
+    "filename": "hasan_expanded_zoo.npz",
+    "keys_in_order": [
+      "oof_lgb_cons",
+      "test_lgb_cons",
+      "oof_lgb_et",
+      "test_lgb_et",
+      "oof_xgb",
+      "test_xgb",
+      "oof_cat",
+      "test_cat",
+      "oof_lgb_deep",
+      "test_lgb_deep",
+      "y_true"
+    ],
+    "train_rows": 171202,
+    "test_rows": 61500,
+    "feature_rows": 669,
+    "selected_features": 550,
+    "prediction_dtype": "float64",
+    "label_dtype": "int64",
+    "prediction_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "raw_inputs": {
+    "train.csv": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+    "test.csv": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+  },
+  "source_sha256": {
+    "build_hasan_600_features.py": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+    "screen_and_select_features.py": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+    "train_hasan_master_zoo.py": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009",
+    "train_catboost_and_deep_lgb.py": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+    "solo_grand_master_apex_080.py": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+    "build_v80200_apex.py": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+    "build_level2_regime_meta_stacker.py": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+    "build_asymmetric_convex_gated_champion.py": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+    "build_optimal_transductive_apex_champion.py": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+    "build_precision_transductive_apex_champion.py": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+    "build_exp85_optimal_macro_apex.py": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555"
+  },
+  "folds": {
+    "splitter": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42,
+    "feature_selection": {
+      "rounds": 300,
+      "early_stopping_rounds": 30,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "min_child_samples": 50,
+      "n_jobs": 4,
+      "random_state": 42
+    }
+  },
+  "models": {
+    "lgb_cons": {
+      "engine": "LightGBM",
+      "rounds": 800,
+      "early_stopping_rounds": 50,
+      "learning_rate": 0.02,
+      "num_leaves": 31,
+      "max_depth": 6,
+      "feature_fraction": 0.6,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "min_child_samples": 80,
+      "reg_alpha": 2.0,
+      "reg_lambda": 5.0,
+      "random_state": 42,
+      "threads": 4
+    },
+    "lgb_et": {
+      "engine": "LightGBM",
+      "extra_trees": true,
+      "rounds": 800,
+      "early_stopping_rounds": 50,
+      "learning_rate": 0.02,
+      "num_leaves": 45,
+      "max_depth": 7,
+      "feature_fraction": 0.45,
+      "bagging_fraction": 0.7,
+      "bagging_freq": 1,
+      "min_child_samples": 60,
+      "reg_alpha": 5.0,
+      "reg_lambda": 10.0,
+      "random_state": 2026,
+      "threads": 4
+    },
+    "xgb": {
+      "engine": "XGBoost",
+      "rounds": 800,
+      "early_stopping_rounds": 50,
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "subsample": 0.8,
+      "colsample_bytree": 0.6,
+      "reg_alpha": 3.0,
+      "reg_lambda": 8.0,
+      "random_state": 42,
+      "tree_method": "hist",
+      "device": "cuda"
+    },
+    "cat": {
+      "engine": "CatBoost",
+      "iterations": 750,
+      "early_stopping_rounds": 60,
+      "learning_rate": 0.04,
+      "depth": 6,
+      "l2_leaf_reg": 5.0,
+      "eval_metric": "Logloss",
+      "task_type": "GPU",
+      "random_seed": "42 + zero-based fold"
+    },
+    "lgb_deep": {
+      "engine": "LightGBM",
+      "rounds": 800,
+      "early_stopping_rounds": 50,
+      "learning_rate": 0.025,
+      "num_leaves": 127,
+      "max_depth": 8,
+      "min_child_samples": 80,
+      "subsample": 0.8,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.65,
+      "reg_alpha": 10.0,
+      "reg_lambda": 30.0,
+      "random_state": 42,
+      "threads": -1
+    }
+  },
+  "provenance": {
+    "uses_raw_train_and_test_only_for_rebuild": true,
+    "uses_historical_prediction_arrays_for_training": false,
+    "reference_cache_read_after_generation_only": true,
+    "uidy_feature_generation_is_nested_inside_zoo_folds": false,
+    "cuda_required_for_xgboost_and_catboost": true,
+    "lightgbm_backend": "CPU"
+  }
+}
