@@ -1,0 +1,272 @@
+{
+  "manifest_version": 1,
+  "created_by": "source/validate_experiment_artifacts.py",
+  "classification": "INDEPENDENT_RAW_DATA_EXPERIMENT; NOT A HISTORICAL EXP85 REBUILD",
+  "raw_inputs": {
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    }
+  },
+  "folds": {
+    "splits": 5,
+    "seed": 42,
+    "phase02_and_phase03_match_expected": true
+  },
+  "models": {
+    "lightgbm": {
+      "device": "CPU",
+      "objective": "binary",
+      "metric": "auc",
+      "boosting_type": "gbdt",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 80,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l1": 0.1,
+      "lambda_l2": 5.0,
+      "max_bin": 127,
+      "num_threads": 8,
+      "verbosity": -1,
+      "num_boost_round": 3000,
+      "early_stopping_rounds": 150
+    },
+    "catboost": {
+      "device": "GPU:0",
+      "iterations": 2500,
+      "depth": 7,
+      "learning_rate": 0.045,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "l2_leaf_reg": 5.0,
+      "random_strength": 0.5,
+      "bootstrap_type": "Bernoulli",
+      "subsample": 0.8,
+      "border_count": 128,
+      "task_type": "GPU",
+      "devices": "0",
+      "early_stopping_rounds": 150
+    },
+    "xgboost": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "tree_method": "hist",
+      "device": "cuda",
+      "eta": 0.03,
+      "max_depth": 5,
+      "min_child_weight": 20,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "lambda": 8.0,
+      "alpha": 0.1,
+      "max_bin": 256,
+      "nthread": 8,
+      "verbosity": 0,
+      "num_boost_round": 2500,
+      "early_stopping_rounds": 150
+    }
+  },
+  "device_evidence": {
+    "lightgbm": "CPU",
+    "catboost": "GPU:0",
+    "xgboost_devices": [
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0"
+    ],
+    "xgboost_updaters": [
+      "grow_gpu_hist",
+      "grow_gpu_hist",
+      "grow_gpu_hist",
+      "grow_gpu_hist",
+      "grow_gpu_hist"
+    ],
+    "gpu_before": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+    },
+    "gpu_after": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 283 MiB, 0 %"
+    }
+  },
+  "phases": [
+    {
+      "run_id": "raw_baseline_20261101_154924",
+      "lineage": "INDEPENDENT_RAW_ONLY_BASELINE",
+      "source_files": [
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+          "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe"
+        }
+      ],
+      "historical_prediction_inputs": [],
+      "candidate_outputs": {
+        "oof_fixed_50_50_probability_blend.npy": {
+          "sha256": "36bdf6442ecbb8a652fb3cb3b264d748bd0a8b59b7bdacdd20865872ba03afe9",
+          "size_bytes": 1369744
+        },
+        "test_fixed_50_50_probability_blend.npy": {
+          "sha256": "10a9d77f7f9ed0dc10a83cfec8c200afc4f12b9fe1bef22bffc7c2b62341160e",
+          "size_bytes": 492128
+        },
+        "submission_independent_baseline.csv": {
+          "sha256": "2ba6f3d0677851417e55265f74b707f9f25d2233cdad772559e67f27b78ba2fc",
+          "size_bytes": 1291519
+        }
+      },
+      "run_manifest_sha256": "e97be5acecbf69e50ad24ebcf59cb268b4674924eb46ca9941e20c0256944f58",
+      "runtime_seconds": 736.717401700007,
+      "official_competition_score": "NOT_EVALUATED"
+    },
+    {
+      "run_id": "phase01_fee_product_20261101_171500",
+      "lineage": "INDEPENDENT_RAW_ONLY_WITH_LABEL_FREE_FEE_AND_PRODUCT_FEATURES",
+      "source_files": [
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+          "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+          "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe"
+        }
+      ],
+      "historical_prediction_inputs": [],
+      "candidate_outputs": {
+        "oof_fee_fixed_50_50_blend.npy": {
+          "sha256": "ad32bbfd859e19b48d113cc3e7b557fdd2de11a9dd7c209000cb93d53d49f63b",
+          "size_bytes": 1369744
+        },
+        "test_fee_fixed_50_50_blend.npy": {
+          "sha256": "26a5dce3993d694f2b057bb345d19f6113181825d41fea1541d37b9a58deb9d3",
+          "size_bytes": 492128
+        },
+        "submission_fee_features.csv": {
+          "sha256": "abfd601e59fd7460c814a3ddfbf5cbb37e9a719708afa0b13849d3065297d798",
+          "size_bytes": 1291519
+        }
+      },
+      "run_manifest_sha256": "aad77a9f2cd086ce773712d596a1ce7b4cd4aa59bee840b5a22d1ecc7bb67828",
+      "runtime_seconds": 403.7842140000139,
+      "official_competition_score": "NOT_EVALUATED"
+    },
+    {
+      "run_id": "phase02_key_te_20261101_181500",
+      "lineage": "INDEPENDENT_RAW_ONLY_WITH_NESTED_FOLD_SAFE_TARGET_ENCODINGS",
+      "source_files": [
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+          "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+          "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+          "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe"
+        }
+      ],
+      "historical_prediction_inputs": [],
+      "candidate_outputs": {
+        "oof_50_50_blend.npy": {
+          "sha256": "f9a8ffd7f42c1ee93b53a560d0f0f7acc255a286b8297c5cacfeae4ccabe0466",
+          "size_bytes": 1369744
+        },
+        "test_50_50_blend.npy": {
+          "sha256": "9b73c8612183da00fbd325d04f993b7a7f3be2c56841b2a4672f6fc029d5c3fe",
+          "size_bytes": 492128
+        },
+        "submission_key_target_encoding.csv": {
+          "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa",
+          "size_bytes": 1291519
+        }
+      },
+      "run_manifest_sha256": "6df044932d2405fd942f78ced7a963b22f851bd0a49f17eaf5cd59cb29ef6e21",
+      "runtime_seconds": 331.0032427999831,
+      "official_competition_score": "NOT_EVALUATED"
+    },
+    {
+      "run_id": "phase03_xgb_cuda_20261101_190000",
+      "lineage": "INDEPENDENT_RAW_ONLY_WITH_NESTED_TARGET_ENCODINGS_AND_XGBOOST_CUDA",
+      "source_files": [
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_03_xgboost_cuda\\run_experiment.py",
+          "sha256": "2dd57470e1eedace4c95b05f34ca8a8f16f80bae09443ce24fbcc0539794d579"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+          "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+          "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b"
+        },
+        {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+          "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe"
+        }
+      ],
+      "historical_prediction_inputs": [],
+      "candidate_outputs": {
+        "oof_xgboost.npy": {
+          "sha256": "a1736e6f9b651f3ede580c9fe8e62bd247f49727bb4c5b8ef825312826d242f4",
+          "size_bytes": 684936
+        },
+        "test_xgboost.npy": {
+          "sha256": "620543e6452e3b2dbfd87058f0afb866bec3743d2e45ba16169a788219dcbb58",
+          "size_bytes": 246128
+        },
+        "oof_equal_3_model_blend.npy": {
+          "sha256": "5dd31de3e0deb7904c93c97364ae72ccae46357917c1f4dcba3e29365b852213",
+          "size_bytes": 1369744
+        },
+        "test_equal_3_model_blend.npy": {
+          "sha256": "d754c4f9fb9f2cd36df581f0eb765c9fb93e385b7bc8919293b25237d1971449",
+          "size_bytes": 492128
+        },
+        "submission_equal_3_model.csv": {
+          "sha256": "2583cb03d3a524e0be690a8b6b8e473bf82fb802433f723d3213323fa37178b4",
+          "size_bytes": 1291519
+        }
+      },
+      "run_manifest_sha256": "2d3e2cc2af541999cec74f0d00497481bffada56a7ab85b31e48f81dfd839626",
+      "runtime_seconds": 67.00820720000775,
+      "official_competition_score": "NOT_EVALUATED"
+    }
+  ],
+  "selected_candidate": {
+    "phase": "phase02",
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\submission_key_target_encoding.csv",
+    "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa",
+    "oof_auc": 0.7715614423106346,
+    "prediction_dependencies": [
+      "Five-fold LightGBM trained from raw-derived features",
+      "Five-fold CatBoost trained from raw-derived features"
+    ],
+    "historical_prediction_dependencies": []
+  },
+  "phase03_dependency_correction": {
+    "run_summary_field": "comparison_only_prediction_inputs",
+    "field_is_mislabeled_for_candidate_blend": true,
+    "actual_use": "Phase 2 LightGBM/CatBoost OOF and test predictions are averaged with XGBoost predictions to create the Phase 3 three-model candidate. They are raw-only Phase 2 outputs, not historical caches."
+  },
+  "official_competition_score": "NOT_EVALUATED"
+}

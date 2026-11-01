@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "description": "Raw data are external, read-only inputs. These hashes are expected by the frozen validation record; no raw datasets are included in this release.",
+  "inputs": {
+    "train.csv": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "role": "raw training input",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    },
+    "test.csv": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "role": "raw test rows and candidate ID order",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "sample_submission.csv": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "role": "submission schema and ID order",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    }
+  },
+  "source_candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\submission_key_target_encoding.csv",
+    "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa"
+  }
+}

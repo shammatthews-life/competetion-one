@@ -1,0 +1,61 @@
+{
+  "experiment_fingerprint": "3466d3ef635df40edec11c507bf78e82cae7a3944be06774aa91a1b95c268f40",
+  "raw_inputs": {
+    "D:\\gci\\inpuy\\train.csv": {
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698,
+      "role": "raw competition input"
+    },
+    "D:\\gci\\inpuy\\test.csv": {
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118,
+      "role": "raw competition input"
+    },
+    "D:\\gci\\inpuy\\sample_submission.csv": {
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518,
+      "role": "raw competition input"
+    }
+  },
+  "source": {
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py": {
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "role": "experiment implementation"
+    }
+  },
+  "historical_prediction_inputs": [],
+  "generated_outputs": {
+    "oof_lightgbm.npy": {
+      "sha256": "c13679a3bc9649e03453895af2102526827d6a10b3892231895f4b330311dd33",
+      "size_bytes": 684936
+    },
+    "test_lightgbm.npy": {
+      "sha256": "83fc04ea38eaea24f25e9ac188716cc33e36efc6d2236249932c0bd196abc4fc",
+      "size_bytes": 246128
+    },
+    "oof_catboost.npy": {
+      "sha256": "ffe1474844051e3ac8a9988042ae61b7157f8c94c8fcde0a012407beb9085178",
+      "size_bytes": 684936
+    },
+    "test_catboost.npy": {
+      "sha256": "31ccba952e97717209c215c6e3ced44a3bdd094097c396f8d3b76e2982d83fca",
+      "size_bytes": 246128
+    },
+    "oof_fixed_50_50_probability_blend.npy": {
+      "sha256": "36bdf6442ecbb8a652fb3cb3b264d748bd0a8b59b7bdacdd20865872ba03afe9",
+      "size_bytes": 1369744
+    },
+    "test_fixed_50_50_probability_blend.npy": {
+      "sha256": "10a9d77f7f9ed0dc10a83cfec8c200afc4f12b9fe1bef22bffc7c2b62341160e",
+      "size_bytes": 492128
+    },
+    "submission_independent_baseline.csv": {
+      "sha256": "2ba6f3d0677851417e55265f74b707f9f25d2233cdad772559e67f27b78ba2fc",
+      "size_bytes": 1291519
+    },
+    "metrics.json": {
+      "sha256": "a97d939e68c2f790509ebaaae6ba49f7f52c5b27aef43045a907d036b33952fd",
+      "size_bytes": 5208
+    }
+  }
+}
