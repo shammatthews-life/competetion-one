@@ -1,0 +1,172 @@
+{
+  "experiment_id": "20261101T142000Z_core_category_te",
+  "status": "COMPLETED_DIAGNOSTIC_VALIDATION",
+  "started_at_utc": "2026-11-01T14:21:19.167866+00:00",
+  "completed_at_utc": "2026-11-01T14:24:41.460739+00:00",
+  "elapsed_seconds": 202.2935871000227,
+  "feature_definition": {
+    "new_target_encoding_keys": [
+      {
+        "name": "ORG_TYPE",
+        "source_column": "ORGANIZATION_TYPE",
+        "smoothing": 100.0
+      },
+      {
+        "name": "OCC_TYPE",
+        "source_column": "OCCUPATION_TYPE",
+        "smoothing": 50.0
+      },
+      {
+        "name": "INCOME_TYPE",
+        "source_column": "NAME_INCOME_TYPE",
+        "smoothing": 30.0
+      },
+      {
+        "name": "EDUCATION_TYPE",
+        "source_column": "NAME_EDUCATION_TYPE",
+        "smoothing": 30.0
+      }
+    ],
+    "nested_training_encodings": true,
+    "own_target_excluded_from_training_encoding": true,
+    "validation_and_test_labels_used": false,
+    "training_and_validation_folds": 5,
+    "inner_seed": 7,
+    "outer_seed": 42
+  },
+  "validation": {
+    "same_exact_folds_as_frozen_phase2": true,
+    "phase2_reference_full_oof_auc": 0.7715614423106346,
+    "category_te_full_oof_auc": 0.7709211320775984,
+    "full_oof_auc_delta": -0.0006403102330362342,
+    "mean_fold_auc_delta": -0.0006503944539664408,
+    "std_fold_auc_delta": 0.00086498791930396,
+    "positive_folds": 1,
+    "per_fold": [
+      {
+        "fold": 1,
+        "phase2_reference_auc": 0.7682728118806064,
+        "category_te_auc": 0.7680400540086076,
+        "paired_auc_delta": -0.00023275787199872333,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 2,
+        "phase2_reference_auc": 0.7741273870479004,
+        "category_te_auc": 0.7732104393898553,
+        "paired_auc_delta": -0.0009169476580450642,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 3,
+        "phase2_reference_auc": 0.7761637619657933,
+        "category_te_auc": 0.7767194192841941,
+        "paired_auc_delta": 0.0005556573184007929,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 4,
+        "phase2_reference_auc": 0.7695607652001966,
+        "category_te_auc": 0.7678005974827674,
+        "paired_auc_delta": -0.0017601677174291508,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 5,
+        "phase2_reference_auc": 0.7700138646512473,
+        "category_te_auc": 0.7691161083104873,
+        "paired_auc_delta": -0.0008977563407600586,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      }
+    ]
+  },
+  "integrity": {
+    "candidate_sha256": "0e28cd837b516d60811ffe3abcb2fd9972bca0a67b68b3f76edad18f9f046f99",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "unique_ids": true,
+    "matches_raw_test_order": true,
+    "matches_sample_order": true,
+    "probability_min": 0.003791469,
+    "probability_max": 0.740318805,
+    "gpu_samples": 40,
+    "gpu_max_utilization_percent": 58,
+    "gpu_max_vram_used_mib": 4903,
+    "model_devices": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "best_iteration": 374,
+          "auc": 0.7663354061796989
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "best_iteration": 323,
+          "auc": 0.772466257479794
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "best_iteration": 554,
+          "auc": 0.7752311319271301
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "best_iteration": 245,
+          "auc": 0.7656436351294414
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "best_iteration": 302,
+          "auc": 0.7669398355377557
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "best_iteration": 373,
+          "auc": 0.7673856412375066
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "best_iteration": 378,
+          "auc": 0.7720612185477519
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "best_iteration": 706,
+          "auc": 0.7754980639925232
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "best_iteration": 470,
+          "auc": 0.7679681383597067
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "best_iteration": 436,
+          "auc": 0.7691992350683101
+        }
+      ]
+    },
+    "official_competition_score": "NOT_EVALUATED"
+  },
+  "decision": "REJECT_ON_SCREENING"
+}

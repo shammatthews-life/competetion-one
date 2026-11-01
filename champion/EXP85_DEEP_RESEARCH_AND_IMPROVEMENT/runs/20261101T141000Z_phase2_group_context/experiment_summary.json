@@ -1,0 +1,372 @@
+{
+  "experiment_id": "20261101T141000Z_phase2_group_context",
+  "status": "COMPLETED",
+  "lineage": "INDEPENDENT_RAW_ONLY_WITH_NESTED_FOLD_SAFE_TARGET_ENCODINGS",
+  "historical_prediction_inputs": [],
+  "comparison_only_prediction_inputs": [
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\runs\\raw_baseline_20261101_154924\\oof_lightgbm.npy",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\runs\\raw_baseline_20261101_154924\\oof_catboost.npy",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\runs\\phase01_fee_product_20261101_171500\\oof_fee_fixed_50_50_blend.npy"
+  ],
+  "target_encoding_fit_rule": "For each outer fold, inner five-fold OOF encodings with seed 7 for outer-training rows; outer validation and test keys encoded from outer-training labels only.",
+  "target_encoding_keys": [
+    {
+      "name": "FEE_Q3",
+      "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "smoothing": 100.0
+    },
+    {
+      "name": "FEE_Q4",
+      "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "smoothing": 30.0
+    },
+    {
+      "name": "FEE_Q5",
+      "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "smoothing": 30.0
+    },
+    {
+      "name": "PRODUCT_K",
+      "source_feature": "PRODUCT_KEY_K",
+      "smoothing": 50.0
+    }
+  ],
+  "folds": {
+    "outer_splits": 5,
+    "outer_seed": 42,
+    "inner_splits": 5,
+    "inner_seed": 7,
+    "same_outer_folds_as_baseline": true
+  },
+  "baseline_run": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\runs\\raw_baseline_20261101_154924",
+  "phase_01_run": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\runs\\phase01_fee_product_20261101_171500",
+  "auc_comparison": {
+    "lightgbm": {
+      "fee_feature_mean_fold_auc": 0.7632859654176583,
+      "fee_plus_te_mean_fold_auc": 0.7691654371642432,
+      "mean_fold_delta_vs_fee_features": 0.005879471746585052,
+      "std_fold_delta_vs_fee_features": 0.0017504653859465246,
+      "positive_folds_vs_fee_features": 5,
+      "full_oof_auc_raw_baseline": 0.7614474490086683,
+      "full_oof_auc_fee_features": 0.7632287425735542,
+      "full_oof_auc_fee_plus_nested_te": 0.7690389865213588
+    },
+    "catboost": {
+      "fee_feature_mean_fold_auc": 0.7628614132657332,
+      "fee_plus_te_mean_fold_auc": 0.7683462930169476,
+      "mean_fold_delta_vs_fee_features": 0.005484879751214344,
+      "std_fold_delta_vs_fee_features": 0.00205128441106027,
+      "positive_folds_vs_fee_features": 5,
+      "full_oof_auc_raw_baseline": 0.7601360676266915,
+      "full_oof_auc_fee_features": 0.7628132525239889,
+      "full_oof_auc_fee_plus_nested_te": 0.7683028705859152
+    },
+    "blend": {
+      "fee_feature_mean_fold_auc": 0.7648746393026372,
+      "fee_plus_te_mean_fold_auc": 0.7700081865662562,
+      "mean_fold_delta_vs_fee_features": 0.005133547263618943,
+      "std_fold_delta_vs_fee_features": 0.0017191393006996368,
+      "positive_folds_vs_fee_features": 5,
+      "full_oof_auc_raw_baseline": 0.7625457907047022,
+      "full_oof_auc_fee_features": 0.7648301137437482,
+      "full_oof_auc_fee_plus_nested_te": 0.7699312061745762
+    }
+  },
+  "paired_cv_by_fold": [
+    {
+      "fold": 1,
+      "auc": {
+        "raw_baseline": {
+          "lightgbm": 0.7577269165407658,
+          "catboost": 0.7581796050565394,
+          "blend": 0.759881816171843
+        },
+        "fee_features": {
+          "lightgbm": 0.7600526849664472,
+          "catboost": 0.7614232386709943,
+          "blend": 0.7621840277836843
+        },
+        "fee_plus_nested_te": {
+          "lightgbm": 0.7666668279648472,
+          "catboost": 0.7661701521709255,
+          "blend": 0.7676005892617157
+        }
+      },
+      "delta_vs_fee_features": {
+        "lightgbm": 0.006614142998400019,
+        "catboost": 0.004746913499931282,
+        "blend": 0.005416561478031379
+      },
+      "delta_vs_raw_baseline": {
+        "lightgbm": 0.008939911424081348,
+        "catboost": 0.007990547114386182,
+        "blend": 0.007718773089872677
+      }
+    },
+    {
+      "fold": 2,
+      "auc": {
+        "raw_baseline": {
+          "lightgbm": 0.7623158216702665,
+          "catboost": 0.7603560403781912,
+          "blend": 0.7630289342412382
+        },
+        "fee_features": {
+          "lightgbm": 0.7640766971454125,
+          "catboost": 0.7630659152574584,
+          "blend": 0.7654630859712972
+        },
+        "fee_plus_nested_te": {
+          "lightgbm": 0.7717455958867137,
+          "catboost": 0.7708941764982051,
+          "blend": 0.7725825836591363
+        }
+      },
+      "delta_vs_fee_features": {
+        "lightgbm": 0.007668898741301167,
+        "catboost": 0.007828261240746759,
+        "blend": 0.007119497687839149
+      },
+      "delta_vs_raw_baseline": {
+        "lightgbm": 0.009429774216447195,
+        "catboost": 0.010538136120013974,
+        "blend": 0.009553649417898158
+      }
+    },
+    {
+      "fold": 3,
+      "auc": {
+        "raw_baseline": {
+          "lightgbm": 0.7681525701064778,
+          "catboost": 0.7645012399128346,
+          "blend": 0.7683050821897428
+        },
+        "fee_features": {
+          "lightgbm": 0.7690107803174964,
+          "catboost": 0.7674364868811447,
+          "blend": 0.7701446697541269
+        },
+        "fee_plus_nested_te": {
+          "lightgbm": 0.7731694572981339,
+          "catboost": 0.7706515740106765,
+          "blend": 0.7732056528402225
+        }
+      },
+      "delta_vs_fee_features": {
+        "lightgbm": 0.004158676980637543,
+        "catboost": 0.0032150871295317796,
+        "blend": 0.0030609830860955922
+      },
+      "delta_vs_raw_baseline": {
+        "lightgbm": 0.005016887191656161,
+        "catboost": 0.006150334097841936,
+        "blend": 0.004900570650479663
+      }
+    },
+    {
+      "fold": 4,
+      "auc": {
+        "raw_baseline": {
+          "lightgbm": 0.7572926775901112,
+          "catboost": 0.7556448896170449,
+          "blend": 0.7579722951573697
+        },
+        "fee_features": {
+          "lightgbm": 0.759797221745592,
+          "catboost": 0.7590510407028699,
+          "blend": 0.7614722397088798
+        },
+        "fee_plus_nested_te": {
+          "lightgbm": 0.7668922836299689,
+          "catboost": 0.7665146787233569,
+          "blend": 0.7678272182752338
+        }
+      },
+      "delta_vs_fee_features": {
+        "lightgbm": 0.007095061884376808,
+        "catboost": 0.007463638020486996,
+        "blend": 0.00635497856635403
+      },
+      "delta_vs_raw_baseline": {
+        "lightgbm": 0.009599606039857655,
+        "catboost": 0.010869789106311978,
+        "blend": 0.009854923117864067
+      }
+    },
+    {
+      "fold": 5,
+      "auc": {
+        "raw_baseline": {
+          "lightgbm": 0.7619597243501997,
+          "catboost": 0.7621219318732083,
+          "blend": 0.7636765585669387
+        },
+        "fee_features": {
+          "lightgbm": 0.7634924429133427,
+          "catboost": 0.7633303848161989,
+          "blend": 0.7651091732951981
+        },
+        "fee_plus_nested_te": {
+          "lightgbm": 0.7673530210415525,
+          "catboost": 0.7675008836815738,
+          "blend": 0.7688248887949727
+        }
+      },
+      "delta_vs_fee_features": {
+        "lightgbm": 0.003860578128209724,
+        "catboost": 0.004170498865374905,
+        "blend": 0.0037157154997745634
+      },
+      "delta_vs_raw_baseline": {
+        "lightgbm": 0.0053932966913528,
+        "catboost": 0.005378951808365451,
+        "blend": 0.005148330228033959
+      }
+    }
+  ],
+  "model_folds": {
+    "lightgbm": [
+      {
+        "fold": 1,
+        "device": "CPU",
+        "best_iteration": 313,
+        "auc": 0.766666822217881
+      },
+      {
+        "fold": 2,
+        "device": "CPU",
+        "best_iteration": 372,
+        "auc": 0.7717456073768538
+      },
+      {
+        "fold": 3,
+        "device": "CPU",
+        "best_iteration": 387,
+        "auc": 0.7731694572981341
+      },
+      {
+        "fold": 4,
+        "device": "CPU",
+        "best_iteration": 420,
+        "auc": 0.7668922721356716
+      },
+      {
+        "fold": 5,
+        "device": "CPU",
+        "best_iteration": 613,
+        "auc": 0.7673530095472552
+      }
+    ],
+    "catboost": [
+      {
+        "fold": 1,
+        "device": "GPU:0",
+        "best_iteration": 276,
+        "auc": 0.7661701579178917
+      },
+      {
+        "fold": 2,
+        "device": "GPU:0",
+        "best_iteration": 440,
+        "auc": 0.770894176498205
+      },
+      {
+        "fold": 3,
+        "device": "GPU:0",
+        "best_iteration": 349,
+        "auc": 0.7706515855049738
+      },
+      {
+        "fold": 4,
+        "device": "GPU:0",
+        "best_iteration": 463,
+        "auc": 0.7665146729762083
+      },
+      {
+        "fold": 5,
+        "device": "GPU:0",
+        "best_iteration": 629,
+        "auc": 0.767500895175871
+      }
+    ]
+  },
+  "fold_execution": [
+    {
+      "fold": 1,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "nested_encoding_rows": 136961,
+      "fit_valid_indices_disjoint": true,
+      "seconds": 61.295286700013094
+    },
+    {
+      "fold": 2,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "nested_encoding_rows": 136961,
+      "fit_valid_indices_disjoint": true,
+      "seconds": 71.80800290001207
+    },
+    {
+      "fold": 3,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "nested_encoding_rows": 136962,
+      "fit_valid_indices_disjoint": true,
+      "seconds": 65.64200730001903
+    },
+    {
+      "fold": 4,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "nested_encoding_rows": 136962,
+      "fit_valid_indices_disjoint": true,
+      "seconds": 71.82518580000033
+    },
+    {
+      "fold": 5,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "nested_encoding_rows": 136962,
+      "fit_valid_indices_disjoint": true,
+      "seconds": 63.49647549999645
+    }
+  ],
+  "feature_diagnostics": {
+    "fee_amount": 129.5,
+    "product_rate": 0.0132,
+    "fee_decoded_rows": 158042,
+    "fee_decoded_cash_loan_fraction": 0.7497888814035354,
+    "product_key_valid_rows": 135609,
+    "product_key_valid_fraction_of_cash_loans": 0.6433613875947661,
+    "feature_names": [
+      "FEE_DECODED",
+      "FEE_RAW_RATIO_COUNT",
+      "FEE_ADJUSTED_RATIO_COUNT",
+      "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "ANNUITY_CREDIT_RATIO_DECODED",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "CREDIT_GOODS_RATIO",
+      "PRODUCT_KEY_VALID",
+      "PRODUCT_KEY_K",
+      "PRODUCT_KEY_DISTANCE"
+    ],
+    "frequency_counts_use_train_and_test_covariates": true,
+    "frequency_counts_use_target": false
+  },
+  "gpu_before": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+  },
+  "gpu_after": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 83 MiB, 0 %"
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\runs\\20261101T141000Z_phase2_group_context\\submission_key_target_encoding.csv",
+  "candidate_sha256": "9c80b3a277927c68b98756fccbb9095b79aa6698cff4c8a4146eef966013ad0a",
+  "elapsed_seconds_total": 336.37569820001954,
+  "experiment_fingerprint": "886be2f64b791220e0a380017fb26a5a21477334db66deddc0e14f9663b62f33"
+}

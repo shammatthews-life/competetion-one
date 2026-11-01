@@ -17,12 +17,15 @@ The reported `0.9999975816` V5/champion correlation is reproducible, but that V5
 
 Phase 2 is the strongest validated independent raw-data candidate found so far: five-fold OOF AUC `0.7715614423` on seed 42, independently confirmed on seed 20261101, and preserved immutably. This is not an official score or a reconstruction of historical EXP85.
 
-The first execution in this workspace is a **read-only, ID-aligned prediction-gap diagnostic**. It uses unlabeled test covariates only to describe where candidate/reference predictions differ. It does not train, tune, or select a model from historical test predictions. The corrected run and its metrics are documented in `CORRELATION_GAP_ANALYSIS.md`.
+The first execution in this workspace was a **read-only, ID-aligned prediction-gap diagnostic**. Two fixed five-fold feature screens (category-peer aggregates and nested core-category encodings) have since completed on the exact saved seed-42 folds; both were rejected for lower OOF AUC than frozen Phase 2. Candidate predictions were regenerated from raw train/test data; historical predictions were not used for feature generation or model selection. See `EXPERIMENT_REGISTER.md`; no model is promoted without a positive screen and an independent-seed replication.
 
 ## Layout
 
 - `HISTORICAL_PROJECT_INVENTORY.md`, `HISTORICAL_ARCHITECTURE.md`, `MODEL_LINEAGE.md`, `FEATURE_LINEAGE.md`: source-backed archaeology.
 - `CORRELATION_GAP_ANALYSIS.md`: candidate comparisons and grouped residual diagnostics.
+- `ROOT_CAUSE_AND_GAP_REPORT.md`: source-backed explanation of historical component divergence and notebook audit limitations.
+- `CURRENT_STATE.md`, `RESEARCH_FINDINGS.md`, `OPPORTUNITY_RANKING.md`: verified position and prioritized methods.
+- `EXPERIMENT_REGISTER.md`, `BEST_MODEL_REPORT.md`, `NEGATIVE_FINDINGS.md`, `NEXT_ACTIONS.md`: experiments, decisions and limits.
 - `RESEARCH_REFERENCES.md`, `OPPORTUNITY_MATRIX.md`, `EXPERIMENT_ROADMAP.md`: external research and controlled next steps.
 - `source/`: read-only inventory and diagnostic tools.
 - `research/`: technique notes.
@@ -33,4 +36,4 @@ The first execution in this workspace is a **read-only, ID-aligned prediction-ga
 - `tests/`: synthetic unit tests.
 - `hashes/`: generated internal SHA-256 manifest.
 
-See `STATUS.md` for completed work, blockers, and the explicit no-training decision for this first stage.
+See `STATUS.md` for completed work, active runs, blockers, and the distinction between historical fidelity and independent model development.

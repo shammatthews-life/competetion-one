@@ -1,0 +1,177 @@
+{
+  "experiment_id": "20261101T141000Z_phase2_group_context",
+  "status": "COMPLETED_DIAGNOSTIC_VALIDATION",
+  "started_at_utc": "2026-11-01T14:09:51.774513+00:00",
+  "completed_at_utc": "2026-11-01T14:15:28.718903+00:00",
+  "elapsed_seconds": 336.9374135999824,
+  "hypothesis": "Training-fold-only category peer means and within-group deviations add useful context beyond Phase 2 rowwise features and product-key target encodings.",
+  "feature_definition": {
+    "group_columns": [
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "numeric_columns": [
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "AGE_YEARS",
+      "EMPLOYED_YEARS"
+    ],
+    "aggregate_features": [
+      "log group row count",
+      "peer mean for each numeric field",
+      "row value minus peer mean"
+    ],
+    "feature_count": 76,
+    "group_statistics_fit_on": "outer-fold training rows only",
+    "training_row_own_measurement_excluded": true,
+    "validation_and_test_covariates_in_fit": false,
+    "target_used_in_feature_engineering": false,
+    "ID_used_in_feature_engineering": false
+  },
+  "validation": {
+    "folds": 5,
+    "seed": 42,
+    "same_exact_folds_as_frozen_phase2": true,
+    "phase2_oof_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\original_runs\\phase_02\\oof_50_50_blend.npy",
+    "phase2_oof_sha256": "f9a8ffd7f42c1ee93b53a560d0f0f7acc255a286b8297c5cacfeae4ccabe0466",
+    "phase2_reference_full_oof_auc": 0.7715614423106346,
+    "group_context_full_oof_auc": 0.7699312061745762,
+    "full_oof_auc_delta": -0.001630236136058394,
+    "mean_fold_auc_delta": -0.001619531582892586,
+    "std_fold_auc_delta": 0.0008504625426774371,
+    "positive_folds": 0,
+    "per_fold": [
+      {
+        "fold": 1,
+        "phase2_reference_auc": 0.7682728118806064,
+        "group_context_auc": 0.7676005892617157,
+        "paired_auc_delta": -0.000672222618890661,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 2,
+        "phase2_reference_auc": 0.7741273870479004,
+        "group_context_auc": 0.7725825836591363,
+        "paired_auc_delta": -0.00154480338876406,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 3,
+        "phase2_reference_auc": 0.7761637619657933,
+        "group_context_auc": 0.7732056528402225,
+        "paired_auc_delta": -0.002958109125570818,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 4,
+        "phase2_reference_auc": 0.7695607652001966,
+        "group_context_auc": 0.7678272182752338,
+        "paired_auc_delta": -0.0017335469249627478,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 5,
+        "phase2_reference_auc": 0.7700138646512473,
+        "group_context_auc": 0.7688248887949727,
+        "paired_auc_delta": -0.0011889758562746433,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      }
+    ]
+  },
+  "integrity": {
+    "candidate_sha256": "9c80b3a277927c68b98756fccbb9095b79aa6698cff4c8a4146eef966013ad0a",
+    "test_rows": 61500,
+    "test_id_order_matches_raw_test": true,
+    "test_id_order_matches_sample": true,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "finite_probability_range": [
+      0.0038473594,
+      0.7001968026
+    ],
+    "gpu_samples": 67,
+    "gpu_samples_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\runs\\20261101T141000Z_phase2_group_context\\gpu_samples.csv",
+    "model_devices": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "best_iteration": 313,
+          "auc": 0.766666822217881
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "best_iteration": 372,
+          "auc": 0.7717456073768538
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "best_iteration": 387,
+          "auc": 0.7731694572981341
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "best_iteration": 420,
+          "auc": 0.7668922721356716
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "best_iteration": 613,
+          "auc": 0.7673530095472552
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "best_iteration": 276,
+          "auc": 0.7661701579178917
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "best_iteration": 440,
+          "auc": 0.770894176498205
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "best_iteration": 349,
+          "auc": 0.7706515855049738
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "best_iteration": 463,
+          "auc": 0.7665146729762083
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "best_iteration": 629,
+          "auc": 0.767500895175871
+        }
+      ]
+    },
+    "official_competition_score": "NOT_EVALUATED"
+  },
+  "decision": "REJECT_ON_SCREENING"
+}
