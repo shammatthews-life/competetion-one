@@ -1,0 +1,279 @@
+{
+  "experiment_id": "phase01_fee_product_20261101_171500",
+  "status": "COMPLETED",
+  "lineage": "INDEPENDENT_RAW_ONLY_WITH_LABEL_FREE_FEE_AND_PRODUCT_FEATURES",
+  "historical_prediction_inputs": [],
+  "transductive_covariates": [
+    "Pooled train/test unlabeled ratio-frequency counts for the fee decoder"
+  ],
+  "target_used_in_feature_construction": false,
+  "folds": {
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 42,
+    "same_as_frozen_baseline": true
+  },
+  "baseline_run": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_154924",
+  "baseline_oof_auc": {
+    "lightgbm": 0.7614474490086683,
+    "catboost": 0.7601360676266915,
+    "blend": 0.7625457907047022
+  },
+  "fee_feature_oof_auc": {
+    "lightgbm": 0.7632287425735542,
+    "catboost": 0.7628132525239889,
+    "blend": 0.7648301137437482
+  },
+  "paired_cv_comparison": {
+    "lightgbm": {
+      "fold_deltas": [
+        0.0023257684256813294,
+        0.0017608754751460287,
+        0.0008582102110186174,
+        0.002504544155480848,
+        0.0015327185631430762
+      ],
+      "mean_fold_delta": 0.00179642336609398,
+      "std_fold_delta": 0.0006581582341044789,
+      "positive_folds": 5,
+      "baseline_mean_fold_auc": 0.7614895420515643,
+      "fee_feature_mean_fold_auc": 0.7632859654176583,
+      "baseline_full_oof_auc": 0.7614474490086683,
+      "fee_feature_full_oof_auc": 0.7632287425735542
+    },
+    "catboost": {
+      "fold_deltas": [
+        0.0032436336144548994,
+        0.0027098748792672156,
+        0.0029352469683101567,
+        0.003406151085824982,
+        0.0012084529429905455
+      ],
+      "mean_fold_delta": 0.00270067189816956,
+      "std_fold_delta": 0.0008766892092062293,
+      "positive_folds": 5,
+      "baseline_mean_fold_auc": 0.7601607413675637,
+      "fee_feature_mean_fold_auc": 0.7628614132657332,
+      "baseline_full_oof_auc": 0.7601360676266915,
+      "fee_feature_full_oof_auc": 0.7628132525239889
+    },
+    "blend": {
+      "fold_deltas": [
+        0.0023022116118412983,
+        0.0024341517300590088,
+        0.001839587564384071,
+        0.003499944551510037,
+        0.001432614728259396
+      ],
+      "mean_fold_delta": 0.0023017020372107623,
+      "std_fold_delta": 0.0007781694610514417,
+      "positive_folds": 5,
+      "baseline_mean_fold_auc": 0.7625729372654265,
+      "fee_feature_mean_fold_auc": 0.7648746393026372,
+      "baseline_full_oof_auc": 0.7625457907047022,
+      "fee_feature_full_oof_auc": 0.7648301137437482
+    }
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "baseline": {
+        "lightgbm": 0.7577269165407658,
+        "catboost": 0.7581796050565394,
+        "blend": 0.759881816171843
+      },
+      "fee_features": {
+        "lightgbm": 0.7600526849664472,
+        "catboost": 0.7614232386709943,
+        "blend": 0.7621840277836843
+      },
+      "paired_delta": {
+        "lightgbm": 0.0023257684256813294,
+        "catboost": 0.0032436336144548994,
+        "blend": 0.0023022116118412983
+      }
+    },
+    {
+      "fold": 2,
+      "baseline": {
+        "lightgbm": 0.7623158216702665,
+        "catboost": 0.7603560403781912,
+        "blend": 0.7630289342412382
+      },
+      "fee_features": {
+        "lightgbm": 0.7640766971454125,
+        "catboost": 0.7630659152574584,
+        "blend": 0.7654630859712972
+      },
+      "paired_delta": {
+        "lightgbm": 0.0017608754751460287,
+        "catboost": 0.0027098748792672156,
+        "blend": 0.0024341517300590088
+      }
+    },
+    {
+      "fold": 3,
+      "baseline": {
+        "lightgbm": 0.7681525701064778,
+        "catboost": 0.7645012399128346,
+        "blend": 0.7683050821897428
+      },
+      "fee_features": {
+        "lightgbm": 0.7690107803174964,
+        "catboost": 0.7674364868811447,
+        "blend": 0.7701446697541269
+      },
+      "paired_delta": {
+        "lightgbm": 0.0008582102110186174,
+        "catboost": 0.0029352469683101567,
+        "blend": 0.001839587564384071
+      }
+    },
+    {
+      "fold": 4,
+      "baseline": {
+        "lightgbm": 0.7572926775901112,
+        "catboost": 0.7556448896170449,
+        "blend": 0.7579722951573697
+      },
+      "fee_features": {
+        "lightgbm": 0.759797221745592,
+        "catboost": 0.7590510407028699,
+        "blend": 0.7614722397088798
+      },
+      "paired_delta": {
+        "lightgbm": 0.002504544155480848,
+        "catboost": 0.003406151085824982,
+        "blend": 0.003499944551510037
+      }
+    },
+    {
+      "fold": 5,
+      "baseline": {
+        "lightgbm": 0.7619597243501997,
+        "catboost": 0.7621219318732083,
+        "blend": 0.7636765585669387
+      },
+      "fee_features": {
+        "lightgbm": 0.7634924429133427,
+        "catboost": 0.7633303848161989,
+        "blend": 0.7651091732951981
+      },
+      "paired_delta": {
+        "lightgbm": 0.0015327185631430762,
+        "catboost": 0.0012084529429905455,
+        "blend": 0.001432614728259396
+      }
+    }
+  ],
+  "feature_diagnostics": {
+    "fee_amount": 129.5,
+    "product_rate": 0.0132,
+    "fee_decoded_rows": 158042,
+    "fee_decoded_cash_loan_fraction": 0.7497888814035354,
+    "product_key_valid_rows": 135609,
+    "product_key_valid_fraction_of_cash_loans": 0.6433613875947661,
+    "feature_names": [
+      "FEE_DECODED",
+      "FEE_RAW_RATIO_COUNT",
+      "FEE_ADJUSTED_RATIO_COUNT",
+      "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "ANNUITY_CREDIT_RATIO_DECODED",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "CREDIT_GOODS_RATIO",
+      "PRODUCT_KEY_VALID",
+      "PRODUCT_KEY_K",
+      "PRODUCT_KEY_DISTANCE"
+    ],
+    "frequency_counts_use_train_and_test_covariates": true,
+    "frequency_counts_use_target": false
+  },
+  "model_folds": {
+    "lightgbm": [
+      {
+        "fold": 1,
+        "status": "TRAINED",
+        "best_iteration": 461,
+        "auc": 0.7600526849664471,
+        "elapsed_seconds": 12.982841399993049
+      },
+      {
+        "fold": 2,
+        "status": "TRAINED",
+        "best_iteration": 658,
+        "auc": 0.7640766971454126,
+        "elapsed_seconds": 16.102234200021485
+      },
+      {
+        "fold": 3,
+        "status": "TRAINED",
+        "best_iteration": 624,
+        "auc": 0.7690107975589423,
+        "elapsed_seconds": 16.298808699997608
+      },
+      {
+        "fold": 4,
+        "status": "TRAINED",
+        "best_iteration": 855,
+        "auc": 0.7597972102512947,
+        "elapsed_seconds": 20.75391880000825
+      },
+      {
+        "fold": 5,
+        "status": "TRAINED",
+        "best_iteration": 562,
+        "auc": 0.7634924429133427,
+        "elapsed_seconds": 14.442451500013703
+      }
+    ],
+    "catboost": [
+      {
+        "fold": 1,
+        "status": "TRAINED",
+        "best_iteration": 720,
+        "auc": 0.7614232559118924,
+        "elapsed_seconds": 64.8001510000031
+      },
+      {
+        "fold": 2,
+        "status": "TRAINED",
+        "best_iteration": 820,
+        "auc": 0.7630659210025285,
+        "elapsed_seconds": 70.46306030001142
+      },
+      {
+        "fold": 3,
+        "status": "TRAINED",
+        "best_iteration": 738,
+        "auc": 0.7674364811339961,
+        "elapsed_seconds": 64.51509699999588
+      },
+      {
+        "fold": 4,
+        "status": "TRAINED",
+        "best_iteration": 466,
+        "auc": 0.7590510464500186,
+        "elapsed_seconds": 44.68353040001239
+      },
+      {
+        "fold": 5,
+        "status": "TRAINED",
+        "best_iteration": 905,
+        "auc": 0.7633303733219016,
+        "elapsed_seconds": 75.79039709997596
+      }
+    ]
+  },
+  "training_seconds": {
+    "lightgbm": 80.5802546000341,
+    "catboost": 320.25223579999874
+  },
+  "elapsed_seconds_total": 403.7842140000139,
+  "official_competition_score": "NOT_EVALUATED",
+  "candidate_sha256": "abfd601e59fd7460c814a3ddfbf5cbb37e9a719708afa0b13849d3065297d798",
+  "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase01_fee_product_20261101_171500\\submission_fee_features.csv",
+  "fold_assignment_sha256": "bbdc042c9190db46841cb758ddb597b6ee4a23a966b84e832811b15056c5f0e5",
+  "experiment_fingerprint": "433be7419bdc8583081841f6fc435f5640105d6a96500d3d888d33495c7d2c32"
+}

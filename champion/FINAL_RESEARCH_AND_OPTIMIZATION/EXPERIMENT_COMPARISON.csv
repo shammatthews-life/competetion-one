@@ -1,0 +1,6 @@
+experiment,OOF_AUC,mean_fold_AUC,mean_delta_vs_baseline,positive_folds_vs_baseline,model_family,feature_stack,candidate_selected,official_score
+raw_baseline,0.7625457907047022,0.7625729373,0,0,"LightGBM + CatBoost (50/50)","102 rowwise features",false,NOT_EVALUATED
+phase01_fee_product,0.7648301137437482,0.7648746393,0.0023017020,5,"LightGBM + CatBoost (50/50)","Rowwise + 12 label-free fee/product features",false,NOT_EVALUATED
+phase02_nested_target_encoding,0.7715614423106346,0.7716277181,0.0090547809,5,"LightGBM + CatBoost (50/50)","Rowwise + fee/product + nested smoothed key encodings",true,NOT_EVALUATED
+phase03_xgboost_only,0.7704971412850122,0.7705579146,0.0079849773,5,"XGBoost CUDA","Rowwise + fee/product + nested smoothed key encodings",false,NOT_EVALUATED
+phase03_equal_three_model_blend,0.7716955766383575,0.7717630132,0.0091900759,5,"LightGBM + CatBoost + XGBoost (1/3 each)","Rowwise + fee/product + nested smoothed key encodings",false,NOT_EVALUATED

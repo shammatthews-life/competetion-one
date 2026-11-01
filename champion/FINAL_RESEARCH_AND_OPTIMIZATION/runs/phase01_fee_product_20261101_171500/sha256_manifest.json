@@ -1,0 +1,112 @@
+{
+  "experiment_id": "phase01_fee_product_20261101_171500",
+  "created_at_utc": "2026-11-01T11:31:40.423319+00:00",
+  "inputs": {
+    "train": {
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    "test": {
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "sample": {
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    }
+  },
+  "outputs": {
+    "catboost_feature_importance.csv": {
+      "sha256": "8955507174971a8888736a966c0780f885bcde7a7c46d9052f8f557464b4ceed",
+      "size_bytes": 21357
+    },
+    "checkpoints/catboost/fold_1.npz": {
+      "sha256": "ec898b6d944cfb4f623830c135ab12fc4290998ef3ffe015215df71253faa870",
+      "size_bytes": 396679
+    },
+    "checkpoints/catboost/fold_2.npz": {
+      "sha256": "dbd502ba0ba6c873a63d354e6f3ba60e7e27a980cb3a58a84a9b901bfd69302d",
+      "size_bytes": 396849
+    },
+    "checkpoints/catboost/fold_3.npz": {
+      "sha256": "ad4247460bcf58602215aa973bda216df58fecce22c33c460d2cd1d889e32086",
+      "size_bytes": 396789
+    },
+    "checkpoints/catboost/fold_4.npz": {
+      "sha256": "e47a702b7e542f8d1e350221cb2ff15f0f0d17f5454de21d38466ca4ef6911aa",
+      "size_bytes": 396518
+    },
+    "checkpoints/catboost/fold_5.npz": {
+      "sha256": "c5884b6c762ce40ab4c6fd71d7ea5ac67c57e098a58d38e17b75248aa50e0253",
+      "size_bytes": 397046
+    },
+    "checkpoints/lightgbm/fold_1.npz": {
+      "sha256": "0666405ee0ef1b2233bf9b0b5a9b4a1e465b7e7e5c514286998e023423549985",
+      "size_bytes": 397312
+    },
+    "checkpoints/lightgbm/fold_2.npz": {
+      "sha256": "c376b8942e966bccf897d6ae6a3e91cf3ab26b02ad72c04a46ad48b3fd093859",
+      "size_bytes": 397660
+    },
+    "checkpoints/lightgbm/fold_3.npz": {
+      "sha256": "d9970c6d0c3959c63e384f19be61ab20ed3b18f23899467d3ab577717140152a",
+      "size_bytes": 397799
+    },
+    "checkpoints/lightgbm/fold_4.npz": {
+      "sha256": "ded37af35259c6fc787b524054aae409295cb58039197bf1685ac2781abdc487",
+      "size_bytes": 398173
+    },
+    "checkpoints/lightgbm/fold_5.npz": {
+      "sha256": "08dd4a106f053f98fa53f847a900548a472bc0fe2ce1edac10cf991e5b9e18e5",
+      "size_bytes": 397554
+    },
+    "experiment_summary.json": {
+      "sha256": "4d1fc634b7fd23c4f863a53b04a7eac5b17fb475dc9a70a0bf205d0462a430ae",
+      "size_bytes": 8506
+    },
+    "fold_assignments.npz": {
+      "sha256": "bbdc042c9190db46841cb758ddb597b6ee4a23a966b84e832811b15056c5f0e5",
+      "size_bytes": 243061
+    },
+    "lightgbm_feature_importance.csv": {
+      "sha256": "b92748b6bda9d8a073319720d48a7e8e74e665c003f1f10348e8ff6b6b10698e",
+      "size_bytes": 43589
+    },
+    "oof_catboost.npy": {
+      "sha256": "920957dfc7deb816ac4323900dd2fa202095fb25c6ac80af39bd4e0b1f00d0e8",
+      "size_bytes": 684936
+    },
+    "oof_fee_catboost.npy": {
+      "sha256": "920957dfc7deb816ac4323900dd2fa202095fb25c6ac80af39bd4e0b1f00d0e8",
+      "size_bytes": 684936
+    },
+    "oof_fee_fixed_50_50_blend.npy": {
+      "sha256": "ad32bbfd859e19b48d113cc3e7b557fdd2de11a9dd7c209000cb93d53d49f63b",
+      "size_bytes": 1369744
+    },
+    "oof_fee_lightgbm.npy": {
+      "sha256": "e70bdb007e9a12fabb7d97b4e29fa0dc671abcb1b374134cc7e7d10cb0129596",
+      "size_bytes": 684936
+    },
+    "oof_lightgbm.npy": {
+      "sha256": "e70bdb007e9a12fabb7d97b4e29fa0dc671abcb1b374134cc7e7d10cb0129596",
+      "size_bytes": 684936
+    },
+    "submission_fee_features.csv": {
+      "sha256": "abfd601e59fd7460c814a3ddfbf5cbb37e9a719708afa0b13849d3065297d798",
+      "size_bytes": 1291519
+    },
+    "test_catboost.npy": {
+      "sha256": "a6653646db0548e6e3d694a2ba762de3315a45ac9816a9872b888676250ee6bb",
+      "size_bytes": 246128
+    },
+    "test_fee_fixed_50_50_blend.npy": {
+      "sha256": "26a5dce3993d694f2b057bb345d19f6113181825d41fea1541d37b9a58deb9d3",
+      "size_bytes": 492128
+    },
+    "test_lightgbm.npy": {
+      "sha256": "8201d706e63668df5e679b64890265e6b37c6d4d8d52b2df11528bae054f69e7",
+      "size_bytes": 246128
+    }
+  }
+}

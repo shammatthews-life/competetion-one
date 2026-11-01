@@ -1,0 +1,670 @@
+{
+  "experiment_id": "phase03_xgb_cuda_20261101_190000",
+  "status": "COMPLETED",
+  "lineage": "INDEPENDENT_RAW_ONLY_WITH_NESTED_TARGET_ENCODINGS_AND_XGBOOST_CUDA",
+  "historical_prediction_inputs": [],
+  "comparison_only_prediction_inputs": [
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\oof_lightgbm.npy",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\oof_catboost.npy",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\test_lightgbm.npy",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\test_catboost.npy"
+  ],
+  "xgboost_version": "3.4.1",
+  "xgboost_configuration": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "tree_method": "hist",
+    "device": "cuda",
+    "eta": 0.03,
+    "max_depth": 5,
+    "min_child_weight": 20,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "lambda": 8.0,
+    "alpha": 0.1,
+    "max_bin": 256,
+    "nthread": 8,
+    "verbosity": 0,
+    "num_boost_round": 2500,
+    "early_stopping_rounds": 150
+  },
+  "folds": {
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 42,
+    "same_as_previous_experiments": true
+  },
+  "xgboost_oof_auc": 0.7704971412850122,
+  "two_model_oof_auc": 0.7715614423106346,
+  "fixed_equal_three_model_oof_auc": 0.7716955766383575,
+  "oof_prediction_correlations": {
+    "xgboost_lightgbm_pearson": 0.988113101991607,
+    "xgboost_catboost_pearson": 0.9740177091670762
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "xgboost_auc": 0.7678637485841199,
+      "nested_te_two_model_auc": 0.7682728118806064,
+      "fixed_equal_three_model_auc": 0.7685723667390065,
+      "three_model_delta_vs_two_model": 0.00029955485840016394
+    },
+    {
+      "fold": 2,
+      "xgboost_auc": 0.7723918932924467,
+      "nested_te_two_model_auc": 0.7741273870479004,
+      "fixed_equal_three_model_auc": 0.7740814609575377,
+      "three_model_delta_vs_two_model": -4.592609036269124e-05
+    },
+    {
+      "fold": 3,
+      "xgboost_auc": 0.7758516113349587,
+      "nested_te_two_model_auc": 0.7761637619657933,
+      "fixed_equal_three_model_auc": 0.7766620857294346,
+      "three_model_delta_vs_two_model": 0.0004983237636413396
+    },
+    {
+      "fold": 4,
+      "xgboost_auc": 0.7673094346663224,
+      "nested_te_two_model_auc": 0.7695607652001966,
+      "fixed_equal_three_model_auc": 0.7692385225763629,
+      "three_model_delta_vs_two_model": -0.000322242623833624
+    },
+    {
+      "fold": 5,
+      "xgboost_auc": 0.7693728851642462,
+      "nested_te_two_model_auc": 0.7700138646512473,
+      "fixed_equal_three_model_auc": 0.7702606299720881,
+      "three_model_delta_vs_two_model": 0.0002467653208407805
+    }
+  ],
+  "fold_models": [
+    {
+      "fold": 1,
+      "device": "CUDA (explicit XGBoost device=cuda)",
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "best_iteration": 494,
+      "auc": 0.7678637485841199,
+      "elapsed_seconds": 12.54099189999397,
+      "booster_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cuda:0",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "8",
+            "nthread": "8",
+            "random_state": "43",
+            "rng_state": "68c8811e 176634a1 de8df95b 36cee917 20dbfc2b 2981e374 8af10572 ffc2d2f8 4c91221 f1997d5 dde328ff 4908b2f9 20f6c778 f530973 7f5b0d11 589cd8a6 fec03998 7c69a99b 7a3ba854 4edfc9f1 da60552e 9b381cb 82c28900 b7aaed4a 6deefb2 89f9d506 6ec7c812 b0f831fc 5303ce0b bd4e5d5e 6e8a4631 8ef7c03e 803851e 2c542bd6 8931bbc2 4cdf2b7e 28ddd395 aa1d0253 9dfa3bff fe2af3ac e4603b7a 7cfea1db c52a6e21 84611fa6 e6ec0bfc 8e950b79 94e9ed32 8698a3d2 9f6f45d5 8b3e86a1 29aab29f 582bfb49 ea56458a 52beef76 f3f9642e 3e262ea8 b7b0c6d2 930c6cd0 3eba3c77 79da8d84 6ed04d3e 80135d4c 90daf5c6 4be71931 67899861 809a1041 6ed362c2 1b4ce02f f943acfa d7398c86 c927d153 df12767b 5d7e65f0 fd104a0d 54996ba 9a02faea bf9ad768 5109ccc b9726d93 24a7c3b1 2ac92447 d17a0d0e 3bd954fd 91347074 363316c1 4c294992 6c647b9b cdaa3447 63cb30c4 9c48cfdc 5c39710f 64fee3de 9f2e93fc ba3f6635 1bbcaaab 647bdbed 78fd0533 9cc3474f eba7c661 a358fa57 6604de49 743ff0a5 c57e68e 2fd63218 833c3c7 a728ac2a d78a187c b1ed7a7c 3d299102 86183752 d24654c7 5fffd11b 60535534 2efa7536 c51ac960 62fc212e d953fc5f c753e874 950bf0fd fb104c0 ad525bde 341538fc 338e77b9 65a31525 304957c7 8e75f8a7 ab39e6be b95f858a c85cc39d e34f741 307e16af 7142f101 22db5a7 9600bec1 d86ebe56 a443a6ed 6a7e7060 6eec34df 2ed23d08 600cb0e2 db84edfd 2e170906 522f7039 232c23cc 1021b6ae c11b787b d8957936 a19f1fcd 6e1f7bf5 ae1af58f 827deff6 f0accc7b 148c58eb cde720e a80a871c 2182f61a e6fd31d4 ec658089 a1edc4c9 d5a6a6c2 eb015baa aad3e53d 46b8c819 1bbcf327 a84b8ef0 7515cf81 81a0cbdc e958da2f fb0853a4 9c7175a3 7f0c4553 b4c6f507 abd6a299 e803e12c 398c867a a9b8f38d 4743b3c8 844f8e65 10130d43 16ea0f71 adc74af4 7d330e60 a1cb0933 73f43b55 f01a9b6e 3156aa12 b0e8f9b3 db1a5e63 93ef875 c13b6a93 add22e64 432d1845 6a3e1901 b9059ee8 575801eb 9ed0a771 35552d73 1becddfd b74339ef fb7323ce b5e34b4b 57895fec b600887c cab67f1c 1cbef9f6 cb5f1577 c4a08a48 e00b8933 8adce0ac 1b81f2ce f20793c6 4183f57b e6c87eaf 880bccfa de1ada88 d7c7dfc0 7dcc6754 2eb4088b d6bf83dd ca15ba62 c84dcf67 483023df 37cf67fa 84205d8b 3eaea9fd e9ef2aff 9930216 9f4a3b5b 70953351 7b9970b0 c118f8ca bbd21e6a 4534fbd1 3021ecfc 4ae9d733 e8345516 312d5bf2 72a7fded b55d5657 1bbeec01 33d2b710 afd17800 433a3e59 3e447b4d f591fac4 fb8d8c7a 58028135 8468a397 bcef8677 ed722530 b9bd8966 f3f9ec5e bc10f42d b0580fd0 3b6dda46 904a8b70 5f3d16b5 2f790c30 99df559f 436699ed 864e7c56 a63e77d2 20d91986 af4620f6 25b798ca 73da27ca d8f593cd 2470ed15 ad61cb57 e1cfb6d2 3a8046ec d69604a0 dd04c414 40e6b1e9 21612701 c2b467bc 407e74c 297fdc3c 461871e3 2fd0fa6 4fcd8115 1e06f722 84875575 4ff7e142 17ce4806 b72a8946 1dcdacb4 629daf3d b7a643cd f399342c 5d4b0550 61142130 4d1e3ef1 66921e71 c49ca2d5 25ff5386 984f2896 4b89f122 d0ac40e0 e2ea33c6 97414787 ba597d2d bb6e8ca0 55030324 3b5256ef dd8e6a43 ac2b1223 3659a42c 296b5cde 2792be4b b3511db2 2e901f1a e0d72389 3b2c9731 9a8e58cc 82395871 cef2fcd2 9d730285 475f5f83 b980213c 911b3c13 4a800e7a 2d852b55 ca5fb57e 9f974f02 69453327 7c626d79 410d2fde dd04698 cc72e32 bde1d760 272ccdd8 b51a1107 12c9ae5c 80607370 814c6649 67956e43 99a4b5a6 13d8e62b 79e76438 6418fe4c 1dea2fff cbf55405 8d49a17a 170b4d9a c2e03997 88243760 d49bc3e0 6c9762bc 3d46fb53 5d40a9e0 dc66ed8 18cf0757 5cb851c3 84aa2aeb 2b339ef8 2569d60e afe5172a 74414ae0 518f8fed 28b0c33b 3f286863 558dbab 394b4bee c0352696 441bcb1c e502229e fb0424f2 e879e444 fd77f978 d2184318 da46a429 c320d181 128bbf41 4159dc3a 7e852d35 bed1946a f0acd51b 4110bb35 dc1720c0 b2e32ae5 6bf96101 6efa1e1d c5f886e5 8162716 1c767da f84adcaa 9c218de 922c2a9e a6f5fa02 4e7a7d83 ca80ada1 e43b40b1 49126b45 ad7bb357 3ed4b680 a12f060 93bdaad3 8d678af1 5be3f204 ced4ff03 1a959caa 6405ead7 ee0655b4 da4a6d15 6e9e847f 667630ea b7d196eb 93f4bcc0 35b90e97 d7dcf377 125bf5e8 466616a5 8dbcca31 c1daceba b33b0d0 863d2d0d 8065fe61 fae0e32b e0ddd37d ab1564ab 80276153 7a6617bd 7d26e068 918acc54 3e4dc7d6 51a91736 9901d10f 55b7e83a 905b64de 2b47337e cb978130 2306de9c 1eb7eac0 1a96dd62 675cf140 3af9a88 1faa4480 d44866a8 1f165dc af038e46 1c79ca8 63b81e9e 4438f8e9 88f5c294 c0ba2ac6 5edd1c86 d9a5e2bb 9e65ec04 460547b0 e28a806 9a1ce59b 5ed23d09 eba9b38c b167047d fbe462b9 78c17fb2 f52a2b3d e1c875cb 1d9accc6 b456e7de af254588 55dc014d 18b2cfa1 e446d1de 1931cc61 6bc994dd 1a951c84 e8df869 c5e19b48 f4c8c910 ce1e33f0 b61d26a5 93e90067 8edc4199 c37ec717 d2f7141e 2badb024 ae85df3a 1df7bd38 ea21c637 a5b8fbcd 429b7755 73806365 8a7d3be3 8dff428f 3d248b12 2016f24c 8138ff85 ca712c46 4969de75 ae0f03d9 6dc73477 89502b06 e9f634e4 a41f43a3 f1f3954b ae168dc3 d7a79fef 9e037219 ac9a5f2e df733424 c507c84d 3d05eaf2 bef6b637 41ec0408 a2381de8 5db9e62a 6dfbb9c 5a8d43c8 9f7e8acf 206ed5ce efb6ee4d b260e80d f8447d0b c7422112 2a98614d f996b831 3922e55b 4bfc0439 84a35a3a 16cdddd3 cf52b956 cb35f745 5cd42835 1493b4f1 c330cd63 9e84abb 9f01a9cb 2490dc6f eae815d6 774f2aa7 c83361b7 108d7661 259a91d1 aa260a29 a2602800 4aa15ae0 94f6a536 c091b728 ddaf4eef bac03db5 7b8739ce ec96bdd8 960705ac d3d190d9 91443282 a44b1b13 c1019667 65e0b047 1511e1fa fa106123 e6763350 26b7e70d 1b70dad3 d340a219 a4f120c0 ffe6a264 5c212cc3 6b2b211a 21eaf86a c83e228 6153b989 48988cdc 815d52c9 7cb15831 f4d27dc1 ab97da5b 8e7b56aa 46e890bc be863cf3 1a171f3f bc798103 85240ba0 c3a8d183 39fe3cd8 7b6c1beb 8e5f81ff af0435d7 d898ccb2 1463811d 87468b6c 9ee0b7d6 58d589a7 8003869 24bcb706 a2a38cf e705305d c54f4276 9bc187b9 8cf4a23a 4086bea8 558d2ddd 3149380c 7eddf52e 5531151a 3ca0e874 8c117274 bdbab476 febf5466 1a452193 f7142147 d61a1370 d69045e8 737ff803 1107aa15 544ec461 287e904c 3776df5e af75c150 cdfadcad 829bcbb9 2e1e6453 4c7fde18 36ad8240 94560e68 23ddff8e 287f9044 121ba952 51c81287 b0196100 40d25c2d 2ddf3586 7e76b0ef",
+            "seed": "43",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "dart_train_param": {
+              "normalize_type": "tree",
+              "one_drop": "0",
+              "rate_drop": "0",
+              "sample_type": "uniform",
+              "skip_drop": "0"
+            },
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "495"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "hist",
+              "updater": "grow_gpu_hist",
+              "updater_seq": "grow_gpu_hist"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0.100000001",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "0.800000012",
+              "eta": "0.0299999993",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "8",
+              "learning_rate": "0.0299999993",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "5",
+              "max_leaves": "0",
+              "min_child_weight": "20",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0.100000001",
+              "reg_lambda": "8",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "0.800000012"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_gpu_hist"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[8.073101E-2]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "221",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [
+            {
+              "name": "auc"
+            }
+          ],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "fold": 2,
+      "device": "CUDA (explicit XGBoost device=cuda)",
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "best_iteration": 547,
+      "auc": 0.7723918932924467,
+      "elapsed_seconds": 12.615904000005685,
+      "booster_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cuda:0",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "8",
+            "nthread": "8",
+            "random_state": "44",
+            "rng_state": "da8827e9 f34edb8f be7be9a7 14e1d9f0 41e79975 588e7e0f 6c3f8a50 d388e234 f2043c32 36a33808 2a98caf7 20a8bfc aace090c e1be3171 6ea94ef8 363c1d54 d72db2e1 41ab7d42 9a692750 963020c3 3b7c5d69 84a5dd33 f2565c2c 95951b68 8168428e 5f22bbc9 75deb64c f7039d98 92e4dc5 819bdadd 64f53068 7b810c96 1aef167d 4795f45b e800411f bb2d1fe5 c855916a aae73cc6 1ef26a65 8ffddd3d 772d5fda 9ca12223 afab1fd0 9ae8bb50 f6a537ed 7d71eada 90b978b0 944124bc a0b6b4c9 daba03d2 d5192641 c2a9ffa1 637f5a3d 445230e1 7e26e37f 924eedbb bd81c024 4c105a6b 2c3b01f3 9ae386a7 a1eed5b0 e76991af abe8b6c2 c7f69c4c 767c0880 65a6ce6a 5789d4bc 2207e750 17c0ea93 eb5a87bf a6e8c50e 5bd84e61 2d985739 5d7a722b e4380de2 625942a 34b13b4d 9f7c807a b30d3f3d 196562c0 48e87a41 f1895c2e f7f5118c 14aa5100 e616023a 5f671928 75c5383 6fbd78c2 f33fbe08 ab6f0dcb c57f3a87 856ff532 d3698a57 9963066d bd5c4ba0 46dc02a7 b17deae8 82295450 7b037d1 e7e35d51 c3cfdd1a 7e0daebc c4d0ace2 19cd1394 50ef2445 d4e62bea 7491a34d b5ad3c02 b63f3a01 7d89de5b 3fe32cd1 59547012 81764a51 d19985b6 893ad5b8 74976a57 19ff892b 323aca2e 2dbe7cef 462c7f3 27b582fc d4344224 8fdff73 ea6e9313 7794ec96 1600e17d 8c5c2475 d4286693 eeaf6eb1 ebe06ec6 2f58349a 6f568274 3a516fdb 73784eed 5b8627ac a6b54b43 2f607f73 63950f93 bbd80205 acde4a20 1b1102ba 1aeb2446 16f3835c 72248b18 2f9b2d3e 9d51a7b2 e7abee49 6d221c1e e8d6a7be 8ba5cbba 15340ca4 a66977f8 f90daf7c 4ce31c5a 8ce9eda4 9f213ad c27d1b8b 98506399 29c5b1a7 875ee09a 9ee3c69a 24343d67 13a01381 a9bd7759 484f3bd0 a41ad223 fb910732 e6fd23f9 a321e4af 14616e85 8dc97eb5 d2912eb4 6f24f7dc 7597140e 4a70a024 9ae21f4b 326aa620 35580e4e 27985495 5071896 1da2143b 2c09d548 a61a830f f17e6e86 a0c64a06 8a024c65 befe3e91 c1a642cd 6ab49d5a 61140b3f a7a9aef5 5818335d 6d54e07f 34f5fde9 bf72c6fb 98f4d8b9 5af9be78 214fc907 dca24c29 c8b27aa c08a6c8a e8ee07e9 bbd509e1 7487255c f3f423fb e1d56250 1573737a 3378b866 ea34f11c d1ccb21e 36a4d878 1a1c7337 e08bc53d e7ae7168 b793bc6a bcab3055 66b75ae cd862c79 c959e50e 8b834ca7 bdfea4a1 c29e96d8 b58bb4b5 145b17c3 f18bee00 dfbfc4d1 6a302e13 69f4edce 70145706 63561fcc ec312c62 ea70296f b7d83e1b b92199b1 4441c3ca d43addea 5d41df97 aa14476d 46f91fe3 10c40924 df2348ad 251ad4a4 b9523927 4df3db1b 9ad5f4a2 7600648e cebf257f dd2bed3d e4a81aec deb04c9f 9f7ef098 c4ab7b1c 73c2d023 80e2204c 3e945922 b20f4620 edb9e8b3 98efbf6c f285a113 4b1f4cb 58b4737a 7483ae76 4657ea68 79796902 e22155a1 62b15a7 7066cd99 ecc7b98a 98923e6a 9deda43b 43803722 cc84f79d 8f1afb81 9ab3c6a8 4d90b8dd fa0f8565 89093dac a306307 4a6b3221 ecfdb295 96888e08 2b8eacbd 5403b4c1 ef44cf75 686aa505 6a94426a 14153ad3 b70096b3 1b00d9e1 d86b21c2 34db6be1 e4493d43 e405ebcc 4058646 372ac9fc 4b7d8cda f6c1093 547e5b57 be54ba38 f7be0f28 466437bc 72f73e62 40347fca 62bebb0d a22f6358 4df68513 66843ad9 95120ee3 b436ccfb 28f05bbc cba04a0a 98e3b3a1 4c4eab83 8ba50b40 46163bda 4c1a8d01 b94f4aab 1d61430 19684cde 7be3284a 4d4eaed6 a2fa24ed 16cfc7d3 370ec916 8ebfdcba 561b0c2 37786133 27c2c7dd 4d9fb0ec fea46316 c81341dd b1552090 f7d57bfe 53259c7d da4c224b 3f8b9819 ffa8e073 30b8f5a7 c89b1d90 fc917ee0 e3737188 8c7dc054 b80ff312 9f52c1dc b9147417 ec97f8d3 b4b2c9a2 b4f817e7 1e0cd348 e47f66e4 fddb2768 66416835 6f7c7276 b6a8ff60 dfc3210b cad59f12 206617d1 b92abf79 5be836d5 b2d4e82d 97f605e9 c58ba368 18a2f5e1 b0a08a5b 98b6f7e0 f70f4183 ba91dd19 12b5f3cb fef1a591 609bc713 45608fbe 21cbf4ff 10d4bdd0 a43a5f17 61be0732 fceab215 a7ae33e f95c91d8 2c189d11 4a49c502 f99347db a9bd7805 60903555 76a238c1 ea55d8f5 7bd8862c 5970088f cb27b577 9ba7215b 22db2008 1fc9f5e7 7de4e044 73bab88 d1301463 1c5c305a ed367d16 ac45bb6a bbbfaaed bcb14f80 eecc11c9 5eb21272 f6adc0c9 237cd97b 1cfc1459 5dc92596 621436ac fefcc1ea 200ea5a3 49b4bdd1 ce4df1e9 3393306f 99c4b8b3 3d12deb3 a711e653 487c0d2a fed5aca7 4263ce21 f1d5f73d b9f82e14 c550c9f3 82f2d5d 24c0230f 7c8d194d 49b832b3 ec1b07d8 a95355 1c9624c7 b2d68e9d d4928705 1a7cb5a3 2efb0f6d fc053084 6f2eac12 843ae330 21d137fa e3816630 126e5422 965a6de8 b5e82907 66cb4e88 f90e464e 162720f0 86258385 ae14108c 8f426459 24899f26 ce647d3 be2221c 9b0df509 a5acb5a7 130ee60f ed4a1643 88f3615c facdc443 d4ddd196 b51b387c 92f3568e 1e3add5b b4c91180 9fff05fa 545556bc b595d91c d10d877 4207d946 9cd36b2c e1dedaff 194b5b03 39b746e0 c3df9e47 a421a00d fd18be98 6ec25727 f91045d9 e4891570 915f8d44 2a4f0d67 a3e0c9ab 674acc52 bbfbe35a b4fd6db1 7c24fad9 6d750da1 f6fd8c6f de21fa9f 4d2199fc 15703757 ee6f2a5a 5a4835ce c099b7ab fe0991e3 bfb08494 f4887135 8766d6f7 32523c64 41449600 f6c9ea7f d2ac6e4d 259c675c faec1942 dda39e92 5876d4d8 49c1c281 8bfac125 7f661873 98077ef6 a469ee49 533596c6 f7d46097 904b2749 fcb32bc0 b685758c d0e053fe c8d86eb 698b8ad9 c5f686b8 ea3f3644 ee0804a6 8c10ce65 7429f5ff b10f4a82 beb27861 6ddc7108 89491487 8d9232ba f33c4344 b9238c6e a131d0c1 746875f7 fa082be7 5524bf90 511911ea c8f5a373 ff6be006 ed144606 cca10d66 14c20c57 6a3ee7da 16892aa5 e0822be a6acb772 15b5dbb6 e45e6abf 77eafd45 82f295e7 7cf4efa2 e1b33c14 b6b2ce80 b3051909 884178de cf25bca3 9314347a 6db207d3 5db39d8e 5387f2a0 708064fa 353d64a0 d3cb71b9 ea0b5159 5bb6ac61 fb51a22 f9bab3cf 9c3eb5b2 85dbc994 98949f42 4d07ddb5 bc3a2bd3 b5867f65 51d4b33f b5718afd dc13c598 999a1184 c8099530 270e6255 c2b4123f d5bf31f2 bcb10cb 1c02e22f 3547f6cf dafe283c 94cf01a8 56bf7bd4 86d4c83d 99335d98 13b0bff3 6b3bdc28 81d74e93 76ca9de0 fd694a56 5c5d8dde 203e5cc7 2462024b e283099f 808d31f7 40167063 639f914b fd53d17e 733bcf51 6c46db8c ea6c456d 7b3f8673 361b0c60 f3f0fb6a f5ebeda3 4649fd00 6d118078 97e9efeb fa2fe5a0 5a3729f6 45634c18 b376b946 a0042be2 570ba5b1 9d947f5d 148ff1 6afff320 13d30d73 f2ba9b6 233a7b 4faa559d f00e3b86 cab26a0a c1be9f8e b5461933 18091841",
+            "seed": "44",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "dart_train_param": {
+              "normalize_type": "tree",
+              "one_drop": "0",
+              "rate_drop": "0",
+              "sample_type": "uniform",
+              "skip_drop": "0"
+            },
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "548"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "hist",
+              "updater": "grow_gpu_hist",
+              "updater_seq": "grow_gpu_hist"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0.100000001",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "0.800000012",
+              "eta": "0.0299999993",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "8",
+              "learning_rate": "0.0299999993",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "5",
+              "max_leaves": "0",
+              "min_child_weight": "20",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0.100000001",
+              "reg_lambda": "8",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "0.800000012"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_gpu_hist"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[8.072371E-2]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "221",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [
+            {
+              "name": "auc"
+            }
+          ],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "fold": 3,
+      "device": "CUDA (explicit XGBoost device=cuda)",
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "best_iteration": 717,
+      "auc": 0.7758516113349587,
+      "elapsed_seconds": 14.2476711999916,
+      "booster_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cuda:0",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "8",
+            "nthread": "8",
+            "random_state": "45",
+            "rng_state": "f8a250f4 afad9b55 26711b14 a7789625 bd1f6b87 a4ce8a89 2de2957c 85333cb6 25d8b563 f5e4066 89f4ea6b 26b91f11 2f17e07 f614fa1f 431954e8 6b31768f fb0cdf6d affad370 fda021ed d06d43b0 74a3e24f bd07772d 8e12706e 2e937c6d 880e41ce 18590b6b 3bf87cb 291f3f52 a95758ac 4449f569 8e921d00 6d9ad155 6aabfbc3 38fa2fe5 bd6ccfa ac412f08 911a676e ee78f199 cc2c899 92e81660 89e3cc85 6869c18 fcb5766 88e9d0b2 efd1dbbc e7a2f598 c24b065 69242584 c864112f d532f08a 415cdd8a deeb90d0 2c77b7e4 a31eb04d de821f0 be9371b c8a37b70 d3b85242 9b6b32f0 6ed4161c b8ef38b0 38e54178 17d37a1 bd21653b 3e347f41 37248149 d2829725 d60f876a 6b4ff763 c5aabf53 67fb1633 40c00487 3a5600f9 ef81a200 ed6add82 180781e9 576288ae 93620402 c61d269b 37a2d909 afd1afd5 afe54488 6eeed907 37a34aa3 ce657fb6 8673fd72 529bd59c e13487ef f7c0340b b33ab973 8151fbfb b264e239 3629acb6 e6c68487 9dbbfe7f 7cf3562d 7712cd50 a6da1004 d9f888fa c34811fc edc140a1 dfdc2239 fbce3612 59ceee5b 8fa4eabf 5c6c9062 a4afbea1 9e8563fe 6b540c50 3a9bcb0f 414089ca 132bb9ab 7d8ea82b ee0dfa8f e5770d9b 15937898 536bc253 e3c711e4 65743eca 5fcdf005 dba6f45e bef0cf0c d5b85745 6c805255 567b7099 b19bb0e3 8aa65f2a ebdd2850 7573204f d5868b44 3125d93b 918c4d8e 4b2e945b d2505ee0 42ecec33 392fdf27 31e47d62 c377a4fe 8b97094a 66df679a 89e91898 be256f40 b143104c 751ab96f 15377b54 482bfd7b e89fec23 89baeb02 4a4509b8 72cb140c a7740873 2afbdd18 e3b630e5 8184a012 81f351e6 f66fb9e2 53639493 8f5f3f90 7d7e1c9c 999e76f 45ad5697 ae89748a 33e93ae3 fedfedd0 e547273a c8e35df4 e589e7e3 75d48fa1 4454e0be 7b4da5dd d9504363 63a5f201 ef88fee7 aa762910 1c056879 eb218e20 557a62b4 109df471 64b5f082 f929d09d a3cdba3f 5dfa311c abf4f31c 3a059354 f453298a ad11071f 62210535 915c67a8 5e70ec05 b1b362f5 4e9683c1 e180820a 51c8e41b dcaaac10 924353bb 1295d634 bcec4f1d 311a9117 6f796963 f0b62514 2d8b2d4b 7dab82ea 1d5e566 3c17f8f8 b1c90b5c e056471e f77881d1 69b7241b df5c761c 77c7068a a0351267 6862144 50a3e309 e068b748 cb1bfc73 c4560d2c 608d5bd9 f2da5cc9 7614f3a0 2b2bd725 bf5c8748 dff04ed2 ed3233ee ba40b6fe 4ae56280 2198f4ca 66816c0a 1c33950a d6a64117 d042eb65 1505a3e8 50ccbbb9 f5d56287 69c021f8 fe9da202 1e52753f a172f394 3c6371d2 48303b09 7f4942 72bd3e45 95582281 94138d6e 6e4f6d4 a53e2630 45d8c5f7 90482698 700a1352 ec9273b a93cdbfb c7483eac 30c36297 e3de9183 83ec5c4f 3ac96c4e 711ff790 df78e393 8dcf2f16 391b3d4a 262c4fc3 9f4ee309 c77aef1 b1f0ffe4 2816584d 7f7a7da6 bcea625e 88ab143e d834b8cb f3153cc3 b8242794 b60d6b8f be0f6cff 3ee223fb bcd8ba31 1c709ae df4c3f8e 9339073f c6f513db 73406909 770e5d5b 10e68127 71a5af 1317c411 e70cd008 91162df2 e94c5b4b 1a3551c0 a37f3c0f 8c74c9b0 f0d983af 875ae0f6 efc3a37b e46b4988 b3882456 553332c3 2d112be6 bb862abe fb0d7d57 827349b2 aa41173e 1061373e 69917814 47ef0889 7d9f57c4 70cd16ef 134d410b 7cb89041 a2dfeeb8 a7d37a3 e838c3ff 9165faee 7e3ae211 ead77b45 67567d67 968e7016 fd322394 fbc771de 5c7c9058 49f8d64d 5b52ae05 b766b689 9c0e7356 eb718348 2cd13d12 2592efa1 bdb0b57e 25bbe602 c2c2c336 583a4232 28bc0a54 a2df5254 54a82c6c 6882e5de abee23a1 8d5302e8 ce049496 6202f1fb 9d8efec9 2c77850d 9f4d0209 813247a9 52c47946 18b06ac0 e3589a58 112e9f01 b4e3fca6 def01b38 11a5a135 43143666 f2929cc5 427166c5 fbd7b739 62ebfcb2 a491b77 28c1610f 5c74f67d bf513fe4 bff0cccb 752125b0 5d4b690b 45e47b9b 8b577c81 13fd1742 d8aa556e 17bb8b23 453ec886 cfb31afc d4700008 467ff8c8 b983501f 374bb6b2 8bce743a ba4d2b56 a438167e e6bf554f f0b4322b 999f46fd a63e5ccc 4ef8afeb 6ec73c62 c0680f62 d3554891 6e586de3 b0fa86aa de9879da c4310d5c d41465b1 a384610a 9cd1da4d dedfb555 99ddc8c2 114351fa c1a4de19 41fb3473 947bec2f ccc0cb1c 301f25ac 1cb15e09 7695d576 e900cb3f bc50da22 f978922 a7357b2c d822a817 24176b9f e8eee442 30ae9607 5626aa1 5d608fdd 9aeaf390 29b0011c 369d886c b8ea8ccf 6c244717 f9791079 c06ade2e 91c86c8b 16f6ce3a f1f291d0 f8e2c304 516dcdc 7b288f29 29ca4a2f 5851496a 3341deae bfc4a77 beb1179b 2d0b9ae7 7c2a937e 9eaea16f d9a5c58c c2839645 26002810 147aeea1 68f97d07 e1e569b1 dfc0fa8d 52e053fd 303390eb f75ec4a4 d2111d11 6f1c084e 1c4e3af6 194f52f7 e84b474f 13ceec4c 28a5f852 c126e15b 37b7662f 83a1af4 4bac74a3 b515e21 4662cb80 8e4a303a 4ac2a799 245b969b fa97a629 7f22f65e bda80f4f 7ff67bc8 b6649abc ae75bf2c c87eadd6 6138bdf2 542cbc75 81d4f11c 6ade39a0 26002af6 3852edb6 3f777d7c 21a726df 5d8e9d0c bbbf4e57 d9baae6b d58df46d 966b2920 18c1e03d f91341ec dc1127fb 5af5917 4224b426 7dcfc5ca a98e0b3 981c541 ae663b64 b1691fb4 f2d36bec 1e4f67c2 502c7e8c f478ee14 815fe13b fbb0ffe1 465557d6 6f7c1146 de1b280b e7ee8a30 4686e149 f9133ae4 95aadcbf 7bef22aa f425e758 a6859414 eb898b23 a44253a 22dd8b96 973447d3 da36c811 17bd4c2 2dbc0f67 11706f31 c1cfb706 27c3346a c01a569b f391aa63 b671bd7 18f04ca7 e463b5ae dd95db44 95332f2f 39d66d95 10a6f1e8 e3e75366 b3505151 f4cc478a b3ffd710 f1a6873b 32916137 e2000b1e 41c18ca5 1763be1f 5bb3f60d 629ec15c e699d2a7 3c6d84ab e130e99a 51291d4f 3f009b13 fd663485 7b3cd969 6f3ce9bf 2e36033b 18eb562e 975a931e e07210c6 90d5fd9d 6a056a99 eca598d7 818f0865 e91c339e 5d21de75 583af284 38a6aa8b ad6f1945 efdd3a26 ebfcf025 4f68657a 6fe6caa fbf29f37 91b4ec9d 1f5e60de ab1349b7 93d6ff01 41887eac 97a883b9 bf99805a 82dd1fb7 4b3a1a01 859eaa13 93d28994 613ad844 f3805a19 fdd66cd5 1cadbf94 3a937bb5 97a88cb5 9aaab4fd ca552c8c 757a8614 44b97978 61648eb4 816adbe5 2054c571 77580a2c 7d3cd2e5 802dc63e 5d575e49 8457eff 7bf28509 aec6fdc3 c26867ec 7fd65318 79f28b90 4665604b 1746f8b3 2b2c5e60 2a00f22c 9754c166 4b87e372 51135889 76313249 f6b1bc66 7c534ee 3f79f1f8 6bfc12fc 66581808 244d2ee0 73aefc41 75289cda 5f0f0e19 536af91 237086a9 320a6864 951acec4 b8e4443 c929ef86 7bfc1812 ea567e92 551e55fc 91d6f6b e3454dcd eb25f675 6c2908e9 992aa585 4c4e0dd6",
+            "seed": "45",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "dart_train_param": {
+              "normalize_type": "tree",
+              "one_drop": "0",
+              "rate_drop": "0",
+              "sample_type": "uniform",
+              "skip_drop": "0"
+            },
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "718"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "hist",
+              "updater": "grow_gpu_hist",
+              "updater_seq": "grow_gpu_hist"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0.100000001",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "0.800000012",
+              "eta": "0.0299999993",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "8",
+              "learning_rate": "0.0299999993",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "5",
+              "max_leaves": "0",
+              "min_child_weight": "20",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0.100000001",
+              "reg_lambda": "8",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "0.800000012"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_gpu_hist"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[8.073042E-2]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "221",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [
+            {
+              "name": "auc"
+            }
+          ],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "fold": 4,
+      "device": "CUDA (explicit XGBoost device=cuda)",
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "best_iteration": 425,
+      "auc": 0.7673094346663224,
+      "elapsed_seconds": 11.172679200011771,
+      "booster_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cuda:0",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "8",
+            "nthread": "8",
+            "random_state": "46",
+            "rng_state": "62b4377c 7fd2b706 533fa89 250a47b8 9480aae1 c0f188f9 c5676995 13cbb052 ffa9206c 2274af98 eba47f74 3d5c216 b1af45e3 17f01bfc d6515cf5 ce158d07 e2a526ae 9c65837d ddfdb13 76fde08c a25af7ba 84d61ecb 86bbc853 4ad096f6 48522eab b5a77f42 3472c5f7 2809bacd 5dd17114 ebbf7375 c493110b 2f1fdba1 f9e295ad 3b0e1098 73d3e7b3 4e407088 cbc66e 132197c4 46635f98 dc583443 eaaebc07 3753ce71 ccb4542 70caece2 4379a94a 26a5e915 1e5e67e1 a0080db5 46ddc9dd 21ecd399 76269a0e 2a0dfbeb 1eba6d45 4b544bec 3a53a23e fcc4c206 d351f72 cd1cbc03 4c0356fe 8ae74ea 85b54682 a36bf75d 706293f3 37256c07 9de6ed0b fd2b13c 27d3810e e83afca3 9b94df9 d22def0e b927a539 36aa2392 52ccdc21 42e3247b 281c0f2d b8f2538 da58b06c a4fe920e bc58a8ae 9dee9435 cdb34b23 9524389 71cddb45 18c1817a 2788f706 2c2d411f e5aa06a0 ef7cce3e 38b4c04 561d651a c938959 196ab078 4ebf052d ea1a1162 120194a9 efe8390c e5b53e48 eb3c0a3 159da38d a47b853e 736072d5 ef9ad256 b88d72cf e0db234a 1312b69b a5c44406 88a04770 2dd4aed3 bb27f6c0 1dd0d204 822e7425 64a944a 28c5fb1e 7f699f53 262f3345 d924d39b 6e3f14e7 dc3cddec fcee423 f127bff8 76174ca4 b90a1f80 e3beccef bec02f24 3cbbd999 a0fc5306 447dc2e1 ae6c7354 158a5c96 ffba9092 4b3040a3 503aa49b 5d19096a e0a9d600 d70c33a9 ba143e69 2c3c8c69 a8d8b9da 9a122068 c0e91a5f 896fcf29 a5601709 301b3105 2dc536ea 3ff0cb9d 8b53c93c ba208b4a 7f924233 9b991237 9fd9d2f5 c82ffb25 a5a920fe 73d96a7b 2cd1211a dd51787e 3fd52aa4 4251cae8 55cf4a43 2dc86700 3d272608 c3fa90a6 38657af8 74085a82 72a75926 122a251 1b0c4123 4a797220 c6c3c776 9d87b8e3 2d604cc6 7b595106 c7340afd 956ee877 67cbec41 8c79749b 1b4f1c24 92e73cd5 15c787fe c0663c92 862d59d2 120d9191 2e7622b9 2b823b6a fdbc8626 b630622e 9688ef2b 1f50ea54 bb178813 9e55dfd9 547b2414 7b3245 4b854e67 8746cc1c 8575547d f36c4e51 64f239fd 886ebb6f e459c400 e6ffdafa 62d53cd4 16732dfa 4e9a3a13 31f84d42 516afbda 254ce83f bc2b0764 8b41ae1 63d3908 2422a792 d97de47d de4ef672 64a10412 204c54bd dc70e896 d41e20e1 1e2c2929 de14fe06 14528dc7 18a028b2 ddf0ece8 3786bc36 77b59bc6 7f3d8f06 7bca6bd7 bf3f8ef7 6b5fd2f8 bda0c0f0 b6f3e0b3 7e8cd348 dbc4dfdc 45484783 83080fd3 a2943e86 544aa781 557151a9 808900fb 15fffbf e5c9679d d288728b 70087e75 ade1278b 660e234c e07b6d66 8655f03f 9b8d15b2 2a699053 42ab91d8 f8b2bfee 260c6384 7a58ed8d 294548eb 10c1325b 9667fe72 5c548e2c bf0be037 e2642739 b5378836 286bca10 d2ee30a0 3b1e3ec0 8b0595ad 4304f8ed 7dbbb35 2479a8cf 4fbcf171 1afb7a1c 8e9398db a1ed8ef2 9002182b edf0bee1 7a12042c 9db0131a 752f4580 6f673c38 7c15298 73ec8eb4 de37e2de 25877fa6 950b29c8 493a10 bb953eaa 9903245c cea2af34 908aa859 4413c258 672a4051 7642538a eff8c164 a29bf43a 702c8281 c34ea296 a3b66505 78bdc3bb 501adebb fbce9080 70320e9b 94f21aa9 1e24234b 3c5ea98 95ab0bd4 7451ac27 14474632 453d7ab8 d0904389 1d2f46af 5ad44e27 8d391104 99879152 a470e36b c0c47056 19535ba2 c19de2ae 8071017d 60fcd97e 2f7b757a c13862f8 5dedbf9c 3340c20e ec840ca1 68618f36 828c085b b5618c0b 614cff2e f2044818 bc44ab6e ac324db3 da948cc9 77ca44bb 3b690b2e d42474ce 5dec6506 6c94d054 d9213193 1fcc2b8e 73fa298c ba9a2e2c 897b6d38 de7b32f5 341cd3e6 3bf06cb3 fc64f033 1ddda5ca d82f2fd2 df69bb 1933d9d6 8a39d31f 3bbbfef0 2f5f2ca8 4db61f91 5af6acd 62cf6fcb 29e17f8b 1418c6ba 2f58e1fb d2b3480d 51d41486 fe3251e8 8413226b 4283751e 8fb3fe8f 9fbb85da 347c8639 152e6ac6 80c9cbe0 fc1bc9f6 a417497a 8dda07ce 5cce89b6 503fc5ea bab34f4c 61955ae8 3cbed597 10a56c9c 1d670b0a f23e06e4 c4326dd8 aa057a7f 21c727a0 cccd3caf 4f7cda21 24d7688a f9f24028 db4084ee a659ac98 51813d60 82cf02fe 183ea6fb d8dbe45f 26c6e862 673970ec bd2d33e7 baff8d23 87ac9ea2 bc2c5dcb 52427cf1 74956cc7 8d5a3b79 5317bc48 503ef1d9 299b6ee6 42603e49 cbb21a3a 7b1983e8 c989000 59baea46 26792d76 ef747ab0 dc504432 de3f1a49 3cf8889b 57297d4f d6ed449f 39eca831 660ffbc8 4255e709 b200ab1a 7fe942c7 d5ca02f8 f5b39c7a 53cef54b 8115ee2e a74c4fcf cd037bad b81cb108 d8c80547 676fb7 345a8538 9b65d51f 65498774 a684c4f3 6db23401 8cffe4ad bf067475 81e35457 a23e0c6b 373074cb 4e43009d 5c3f0a95 d7927242 c084bbf1 2117a865 52d9e4fb 9d7914d3 92ecae78 f75943a6 9ede3db7 2f7ced69 b27a7eca 168d5283 f41e8f9b e7c401b6 24e0a534 5bd7ce5a eba5c7a7 4dd2179f 484bd6f2 f1a3e7d7 151362e8 456dffd6 c66d7103 a5a66e87 792ec454 f46edcd6 bac47896 bf3591b0 6eae0eaa 456229a6 694922ee 74fc79c6 9b77e564 2672b3bd 22b4cb91 fe52723 6df297ad 74326bb2 278b3649 464aee95 db586661 c5a1370e b5f0b1cc 106684ee 220ef29f 5439d06 c48177 1a3f6b4f a222942a bed01804 bee2ad27 a034c121 62d4a924 5100aa5c fb7d1160 30d0b962 c335f91c 6af6948f 548e0530 67118cce 105200af 479cc68c bee90e26 527023e3 79548e18 760387bd a7ac4dd9 e0665193 d298d607 320e3dc3 74392c74 625592b3 e98dbd64 3e6f1c00 33d7236a afc5af5f faf7058a e57ab869 e7fd0ad4 5e618eda 9d51b3fe dc640c3c 85f41391 5f740680 5eb96c00 201360ae f7658011 d3ed4ca2 545f8f9b f1841955 eafe4698 115ba733 761a2b56 1db83c37 1156440b ac15ab8c 9011c504 7632fd89 a16982ae 1a6427f1 ac71a5ef e04525d7 f901581b decb96f a1d8eadb 454db786 a794b18f ba251224 3120014d afc8f0d1 9a464912 5624fcf6 f55a658f 28d78cd7 77f0a1d 2a1cd396 5a160c4 647126ad a0f45301 d179a744 3a4b35e6 896ffdc1 d81c45b 55b0cd5a c9f96a1 4ba64d4f d1511372 12136cbb 4b4ad6bf 3d677301 5ebf6dee bff8699d f3669fcd 9a3aa21a cf22102 1e93e95c 4142feb9 e71c5afb b480b245 983c5c63 642b462e 5d61de10 502d2d49 e51cfd77 9f3808f4 88d9fcd5 3d7a95ff def330d3 105d420f 5c7625b5 68dc35c6 1c992f7f 8e92ad0b e13eb37 5e6a032f 831261a9 70774b2d a6685197 31cbb0ca 75b2af5f e257b147 83dfe7fc 48f21baf 3424787c 9805fd8c c050725d b92eb9a8 42ba6aca 31b7ff5a fb32491d 333ad193 644e4e57 cd76c092 74f14586 6aed51b0 2d5ccbd6 509f56d0 d7ea8d1c ac31ed1a c806cace e7c9fba2 76c8382c 4287e103 aa29fc51 56e8f79c a5974a8e bc0020c7",
+            "seed": "46",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "dart_train_param": {
+              "normalize_type": "tree",
+              "one_drop": "0",
+              "rate_drop": "0",
+              "sample_type": "uniform",
+              "skip_drop": "0"
+            },
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "426"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "hist",
+              "updater": "grow_gpu_hist",
+              "updater_seq": "grow_gpu_hist"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0.100000001",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "0.800000012",
+              "eta": "0.0299999993",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "8",
+              "learning_rate": "0.0299999993",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "5",
+              "max_leaves": "0",
+              "min_child_weight": "20",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0.100000001",
+              "reg_lambda": "8",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "0.800000012"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_gpu_hist"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[8.073042E-2]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "221",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [
+            {
+              "name": "auc"
+            }
+          ],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "fold": 5,
+      "device": "CUDA (explicit XGBoost device=cuda)",
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "best_iteration": 509,
+      "auc": 0.7693728851642462,
+      "elapsed_seconds": 11.89824900001986,
+      "booster_config": {
+        "learner": {
+          "generic_param": {
+            "device": "cuda:0",
+            "fail_on_invalid_gpu_id": "0",
+            "n_jobs": "8",
+            "nthread": "8",
+            "random_state": "47",
+            "rng_state": "c0e1dac6 639fa5b 35721418 7d637077 d6ccbb2 8005df8 6eea4aca 85488091 d52197bd 9e4085fc 1883b4ad d8e58808 24f93349 99222eed 9d56c09c 62144f44 19ba298 1582f888 c0c5058c 50910721 b0f0d793 e0136fc7 755147ad a5f7be11 f6d948cf e27569d4 9f67c224 b4de14f7 59ce076f 522f9818 c01308bc 76eabd54 596ebb29 9f1db365 343d4f05 d5394ecd 6803458 b0ed3401 bdf5474b 5d20963e 3836a9e1 8f7cdc68 521522d7 bcd45ba 842998e4 532aa237 78889781 d6fd10 51241173 1d9616b8 37bf7877 833238ee 357d81c5 d2a4aa66 63684126 17919153 8a9e2f6f 242fddd9 f7beca5 615dd6f5 4486d837 c9c19a53 b5f8d276 e40ab366 45a24a36 7160303 a6555520 6f4cff22 11e3412 35c530d5 e4f7d3e 85a99342 eb30c529 ca22f9bc 2a853c7 154c902b d84bd68b eb209781 ce4337f f35b0480 f8192b04 4473a0af a828dfdb 3b00f176 f827a1ca efcb7e8e 7f9118ad d686e231 52cd7b0e 5e013f2a d9065e74 2ca87b7c fdabb91b 38781743 2e21d75 d0a7af94 d2ae18e3 4aff268b ef8108b3 d9fa08f8 d56a9bc0 2feac836 de6d033 e6ecd098 5f2c2528 e774a22a 4a036dce 5cd4f26b 442d97b6 6c766182 ed8a2d3 974075da f8f792a6 ddc8101a 9ef40239 d3574e70 3826ce34 5ac03505 465b2110 e0e539b6 a0f47671 c164fdf9 e4b44009 93553013 4c9a0b2b b847acae 878d09c4 2e802bd8 a525e2e9 e9a93e12 7ecf9696 1c4a6817 21c8b7bc cf5b9c52 907ee43b a69a309d b946cb95 ce0773e7 86d6f240 e2504a85 ef70e78f e126631e 1fdbac3f 51bc5f25 6ca2a893 ec6d3b85 6fd53e78 c15fcf3c 67028eb e8dd292d 77ec084f a541f132 3e5ae99 d85ead5c 268531c5 3b2e17d7 f9511f72 1eaabcc2 aca92914 f70be8c3 1fda57b3 27971205 cb4d9705 67a6b5e5 50eb14f5 e18ba24b ee191520 a656da41 67739ae 8ae77918 90a8f880 e2bbae74 f50fa8d 73fee840 5bc06eb6 c1a4427f afc88e5b ffe595a0 672cb49d 8e56008 48a3a06a 975baf90 11d08049 edbbdece 49335d51 27a89f8f c5546db6 b80188a3 5292f13c 6a683372 a902f87b 630e37a0 cb9861e3 df69d463 798f5a6c 57682674 3e3ed988 725718a6 26244db0 ca69c339 56721cbc 80cda5ed d037bbb0 e18f9494 19c1959f 7a6713ab 7c9a254f 826fe614 7dd569cf 3d4d3fbe ae19636f 4a2f9f95 cfa98d5b 27537326 4b5c01d9 4d73b788 3a0c0c9d 8219f9be ff7ebbc0 b466514f d303987 5dae9288 e485af4e 897234a3 cd054471 663b3b61 c15c36f9 51611dd 575bf4cd 5bc2bf1e a60c50a8 d57fdeae a6bec85e 388109e8 3b30246f 6ced631 81c7d315 ca758a4b d970f737 f44a3b2b 4d8d3068 c75657ef 15485098 1fb883d1 fa246587 e5084606 9bf69822 c99b014 dfa3d9e9 fd8601fe 90541429 4b7bfa5d c1a6e41c 144d60ed c4240162 3a2a7a11 b0b0e590 5fe71dac 96f5905e 4111157f 3460dbc4 691e4658 dec251f0 8ea196fe 5aedd2ab 83b72c70 7d45d720 4ac52f90 5638f41d 3a825f62 efe4f5e9 ca4c00d5 3fc1dd3a 6290bc34 deef5cae 5cbd41b1 3378bd3e cd6a2f43 4b2cd916 8b932c55 74facd90 597fff39 91fd908d 36cc2442 cb7b3bbd 43820418 bde4b22d 4ba2498d b4d6876b 4973cc90 dfa06dc7 3da6a1c2 a147364c 56643670 bd7e2069 e298dafe 897a50b8 8ea4941b bea660f9 7ea5737b f1709b83 c111fc18 de57c582 45b8cdf1 833ed6a0 2e95fce8 72618888 62bea229 716f3edc c3c71667 49d9db78 ac33eae3 8efb22ba 6bdf634d 620d5ea0 40e48186 4e1b413 a4015ff0 c9cb24a6 6c6f906c 999872e9 56debc11 94407ff3 25c919db 5d84b84d 9e28a88a 243c88f 46610d00 fd7bb0d7 2a548a65 bbe36a14 9f780781 334da9e0 13fe8d12 10889849 55033406 c6f5d053 af7121de 81edc376 f1bf9a50 90b036ad 833b9beb a1b48a77 e979538e 1e76896d ea583031 5222d193 c848bfed 7f10fca b1ef0fac fac5c5eb 2b698723 ba7cea56 9a0d4790 bedfbb6b dd9f7d15 aa05954a 1ef397b3 9fc6e641 43bbcfd7 8d1b177f f1ec7b61 224e6727 bcf62efa b36504a7 f6ab4960 62fae55 659b7e0 c5a24506 cfdfa9b c780e8fd d3b5377 76e8980c 2fcec439 38ad13e6 4b531b4 628163cb 97ede4ec f5aeca1d 5cb92fab 67597eb0 b554944d 11fc5eb8 89e3ee4b 25fe4609 188d3404 b91a7f31 3cd445b2 7f7bbcdb c026c7c6 a0e9ff04 2ccf2096 140199fd 3d3042db 41e8c670 3c919524 f97ab9e4 d5a6f283 9bc07bdb 24112a99 76fb51b2 56f4e67c dfd90977 d66757b6 e8d66cbb 5e22bef7 cbed373c 132835e7 6fb2750d 5644deee da25641e 6f1033e8 33f93131 7e7d90bc 32d03e65 82355fee 3e99cf70 ac52f0ec e548b7ce 11094a89 ac65587e d75403ee d2fbba9 6d7cae45 71370e46 e0bc3a62 bf82f359 bdc609ee d7dac7f8 2ff37222 59593765 fffe00b7 c9ad2f7c 674148af f7778dc3 7e16fc86 ce7a679a 30eb6ea6 c8a75534 733657fe 5fab164 e0047bb f7edf66e 476df8c6 81b81671 9005d488 71b95899 11a3dd5a eec5f236 ab6ab223 7faef299 9c9d01d6 4fe13622 75dc9041 a6fe5174 ead9f48a bd0eddbe 30ecfc2a 5575b297 e45809ff 121b62a1 35f8ec86 f8afb4d3 1c7b5a0 533f2f39 adc00fef 1a28f93 dd909111 b47d9f3a d842f04c cf08bc51 74d36310 a9b93fb7 327aa527 52180d5 ea8b3230 a0e79b90 e604ad95 ea2d1f51 6ce3db32 7f72387 ffafb694 51bf0bf5 c32d13e5 36ede9f4 95c343e4 faca6829 4d31e729 d2c6b4b1 32f2cfae f31ff4f9 1b050cf2 63f2f268 7ca1f6a8 c9e7df75 46fae7ac 63fc4d36 7cfaf441 422a089e e54303e9 c7ec19aa 804f3a26 d50671d 3ecd29ba 1976cb7a 8876f930 dce457ca aa124f97 2fbc63bc b472afe5 df4c899f be23429d 1a1a6cc9 6a7a8f7d 4caec30c 4d4f2339 645d973c d0af4a55 3b80afd6 8af5c791 8deff701 5bc9e96 1015d48b acdfe041 b592eccd b2b1c56 ac916d63 eb4665a9 7b06bab9 ccd4c165 be62783c ab89355a 96fdf05e df38ed22 b7adf1ef eee6917 341c6134 a31117fd 23985a43 2bc3373e e7f0876d 273ee43b daa32f84 47230505 d46cf865 e253b6ff fe9fb986 7fa85662 330d3d26 dc4ca120 56592b59 9393fedc 32f41ffa 30ad7af7 94102c8c a01c7a4d da7d4043 c019f9cb 444220b4 41292860 f0e3c9dd 197c3b6 a9811654 3b04466a 7ce162c0 7562697f 28add39e 847cc788 d8f7dfca 5d93ea1b 1d0fd5ba ca927b86 14dc82cb ce45c3bb 54f13dcb de5bc8b 28bfc500 7c2c95c9 67c1ea4 8926bf73 bd490214 5c388b47 b42eaefb a6f12d11 456ca4ec 907bbfe4 1f6d6aa1 2e01173c ecccf15c c58d425d 8988c1dc c1e766dd 49afe645 8a91bc30 4fe6d025 d14925b4 1d82ff77 4ed40fc 96804975 d9a349c8 4ef74335 a051bab9 dd8b8ac5 53540b56 e5912bca 1d241e84 44c5dc2e 97e0a6b7 71cab098 2a0424cb 2561037e 3b3a6371 45a1077f f7a16c36 f7bfa712 402f1f46 857f36d6 9695b1d6 4f0156d1 781ce2e5 e62572e1 32713539 e5a2f718 990a5487",
+            "seed": "47",
+            "seed_per_iteration": "0",
+            "validate_parameters": "1"
+          },
+          "gradient_booster": {
+            "dart_train_param": {
+              "normalize_type": "tree",
+              "one_drop": "0",
+              "rate_drop": "0",
+              "sample_type": "uniform",
+              "skip_drop": "0"
+            },
+            "gbtree_model_param": {
+              "num_parallel_tree": "1",
+              "num_trees": "510"
+            },
+            "gbtree_train_param": {
+              "process_type": "default",
+              "tree_method": "hist",
+              "updater": "grow_gpu_hist",
+              "updater_seq": "grow_gpu_hist"
+            },
+            "name": "gbtree",
+            "specified_updater": false,
+            "tree_train_param": {
+              "alpha": "0.100000001",
+              "colsample_bylevel": "1",
+              "colsample_bynode": "1",
+              "colsample_bytree": "0.800000012",
+              "eta": "0.0299999993",
+              "gamma": "0",
+              "grow_policy": "depthwise",
+              "interaction_constraints": "",
+              "lambda": "8",
+              "learning_rate": "0.0299999993",
+              "max_bin": "256",
+              "max_cat_threshold": "64",
+              "max_cat_to_onehot": "4",
+              "max_delta_step": "0",
+              "max_depth": "5",
+              "max_leaves": "0",
+              "min_child_weight": "20",
+              "min_split_loss": "0",
+              "monotone_constraints": "()",
+              "refresh_leaf": "1",
+              "reg_alpha": "0.100000001",
+              "reg_lambda": "8",
+              "sampling_method": "uniform",
+              "sparse_threshold": "0.20000000000000001",
+              "subsample": "0.800000012"
+            },
+            "updater": [
+              {
+                "hist_train_param": {
+                  "debug_synchronize": "0",
+                  "max_cached_hist_node": "18446744073709551615"
+                },
+                "name": "grow_gpu_hist"
+              }
+            ]
+          },
+          "learner_model_param": {
+            "base_score": "[8.073042E-2]",
+            "boost_from_average": "1",
+            "num_class": "0",
+            "num_feature": "221",
+            "num_target": "1"
+          },
+          "learner_train_param": {
+            "booster": "gbtree",
+            "disable_default_eval_metric": "0",
+            "multi_strategy": "one_output_per_tree",
+            "objective": "binary:logistic"
+          },
+          "metrics": [
+            {
+              "name": "auc"
+            }
+          ],
+          "objective": {
+            "name": "binary:logistic",
+            "reg_loss_param": {
+              "scale_pos_weight": "1"
+            }
+          }
+        },
+        "version": [
+          3,
+          4,
+          1
+        ]
+      }
+    }
+  ],
+  "feature_diagnostics": {
+    "fee_amount": 129.5,
+    "product_rate": 0.0132,
+    "fee_decoded_rows": 158042,
+    "fee_decoded_cash_loan_fraction": 0.7497888814035354,
+    "product_key_valid_rows": 135609,
+    "product_key_valid_fraction_of_cash_loans": 0.6433613875947661,
+    "feature_names": [
+      "FEE_DECODED",
+      "FEE_RAW_RATIO_COUNT",
+      "FEE_ADJUSTED_RATIO_COUNT",
+      "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "ANNUITY_CREDIT_RATIO_DECODED",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "CREDIT_GOODS_RATIO",
+      "PRODUCT_KEY_VALID",
+      "PRODUCT_KEY_K",
+      "PRODUCT_KEY_DISTANCE"
+    ],
+    "frequency_counts_use_train_and_test_covariates": true,
+    "frequency_counts_use_target": false
+  },
+  "gpu_before": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+  },
+  "gpu_after": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 283 MiB, 0 %"
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase03_xgb_cuda_20261101_190000\\submission_equal_3_model.csv",
+  "candidate_sha256": "2583cb03d3a524e0be690a8b6b8e473bf82fb802433f723d3213323fa37178b4",
+  "elapsed_seconds_total": 67.00820720000775,
+  "experiment_fingerprint": "03372b70e2711d5b26581431d4b9bf3639d841ed59f2be3fb1bcdbb2b3f8d014"
+}
