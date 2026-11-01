@@ -2,14 +2,18 @@
 
 ## Overall
 
-**Full independent raw reconstruction: BLOCKED by unrecovered historical
-upstream model inputs.** Phase 0 verifier passed after correcting the feature
-evidence records and one dependency-graph edge. Its final run reported no
-verification errors; all five focused tests and JSON validation passed.
+**User-set target: official public ROC-AUC 0.80314. Not achieved or verified.**
+The full independent raw reconstruction remains blocked by unrecovered
+historical upstream model inputs. Phase 0 verifier passed after correcting the
+feature evidence records and one dependency-graph edge; it reported no
+verification errors, and all five focused tests and JSON validation passed.
 
 The frozen champion and separate Phase 2 release remain untouched. No local
-candidate is claimed to have the official `0.801340` score; no official
-leaderboard evaluation record is available in this evidence set.
+candidate is claimed to have the official `0.80314` score. Keep the scores
+distinct: the EXP85 source/report describes `0.801340`, while the original
+competition log records `0.80041` for the earlier V080041 submission and
+`0.802330` as local OOF AUC. Neither is evidence for an official `0.80314`
+evaluation.
 
 ## Stage status
 
@@ -39,6 +43,7 @@ manifests/logs.
 | `feature_parity_20261031_200506` | AST-isolated historical 669-feature statements on raw CSVs; feature-by-feature comparison | Exit 0; 27.796 s; exact four-matrix value parity |
 | `selector_replay_20261031_202500` | Five-fold LightGBM feature-selection replay | Exit 0; 238.485 s; 550/550 selected names and order match |
 | `anchor74_historical_zoo_20261031_215500_retry1` | Five-family five-fold zoo training using regenerated selected features | Exit 0; 1,283.656 s; manifest records raw inputs, folds, parameters, versions, GPU preflight, telemetry, and predictions |
+| `catboost_fold5_replay_20261031_213645` | Two same-seed, identical-parameter GPU fits of the first substantially divergent fold | Exit 0; 51.437 s; one fit closely matches the raw candidate and one closely matches historical OOF; GPU fit variability is the leading explanation, not proof of historical runtime |
 | `raw_full_gpu_20261031_235900` | Raw XGB10, V55, V17, Anchor74-style candidate, blend, and validation | Exit 0; 2,894.797 s; candidate SHA-256 `2a5d2dfc2504f86a6d6c6d42bfc63fff7f62a10ea66135b1fee44982f9a348fe`; Spearman `0.891570` vs frozen champion |
 | `bedrock_chain_rebuild_20261101` | Level-2/asymmetric/optimal stages with raw-trained zoo and recovered historical base anchors | Stage commands exited 0; output is hybrid by construction; optimal-apex candidate SHA-256 `4c5b02ac972297822e33e39e44e5631c1cebad80bd014a02955e70ff0875df34` |
 | `bedrock_chain_historical_zoo_replay_20261101` | Historical Level-2/asymmetric/optimal formula replay using cached zoo and recovered anchors | Stage outputs match their historical files exactly; this is a historical-cache replay, not an independent rebuild |
@@ -77,9 +82,13 @@ The saved VGold CSV therefore does not certify its full raw training lineage.
 
 ### 4. CatBoost parity metadata
 
-The raw-trained CatBoost candidate is close but not exact. The historical
-cache has no per-fold checkpoints, package lock, driver/runtime record, or
-GPU telemetry with which to reproduce its numerical environment exactly.
+Feature matrices, labels, and five-fold assignments match exactly. Folds 1-4
+are extremely close; fold 5 accounts for nearly all material OOF divergence.
+Two identical-seed/configuration GPU repeats on CatBoost 1.2.10/RTX 4050
+reproduced both the candidate-like and historical-like fold-5 vectors. This
+points to GPU fit variability, but the historical cache has no per-fold
+checkpoints, package lock, driver/runtime record, or GPU telemetry to prove
+the cause or select the original vector.
 
 ### Recovery routes already attempted
 
@@ -88,6 +97,18 @@ GPU telemetry with which to reproduce its numerical environment exactly.
   (including environment files).
 - The supplied final-submission archive was inventoried; it contains the
   saved final CSV and replay code, not the 15 missing learned artifacts.
+- A further exact-filename scan covered 17,081 files across `D:\gci\codex`,
+  `D:\gci\champion`, Downloads, and Documents and inspected four ZIP/WHL
+  archives; none contained any of the 15 missing V080041 inputs. The
+  `gci_cache_final` ZIP was inspected by member name and does not contain
+  those expected bundles.
+- The available `GCI_CHAMPION_0801340_EXACT_REPRODUCIBLE.ipynb` embeds
+  compressed `uint16` champion ranks and blends them with a trained suite.
+  It claims the frozen output hash, but the embedded anchor makes it a
+  historical-cache replay, not an independent raw reconstruction; it is
+  excluded from the final rebuild path.
+- `git ls-remote` found only the already-known `main` branch. GitHub MCP
+  searches could not run because the server returned an invalid-session error.
 - Historical consumer and producer scripts, V17/V55/XGB10 recreation scripts,
   feature builders, selector, zoo trainers, apex builders, run manifests, and
   prior reconstruction reports were inspected.
@@ -101,11 +122,11 @@ GPU telemetry with which to reproduce its numerical environment exactly.
 
 Recover the original V20 producer/model configuration and the 15 missing
 V080041 prediction/feature inputs together with their producers/configurations.
-For exact CatBoost prediction parity, recover its historical runtime/device
-metadata or fitted fold models. Without these dependencies, there is no
-permitted independent route to the original V080150/V080200 bedrock values;
-substituting saved predictions would make the result hybrid. Official
-leaderboard evaluation is separately required before claiming score `0.801340`.
+For CatBoost parity, recover its historical runtime/device metadata or fitted
+fold models. Without these dependencies, there is no permitted independent
+route to the original V080150/V080200 bedrock values; substituting saved
+predictions would make the result hybrid. Official leaderboard evaluation is
+separately required to establish the requested `0.80314` target.
 
 ## Result categories
 
