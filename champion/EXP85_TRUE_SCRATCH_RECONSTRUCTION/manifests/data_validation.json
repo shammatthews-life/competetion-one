@@ -1,0 +1,433 @@
+{
+  "fresh_raw_candidate": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RAW_REBUILD_AUDIT\\runs\\raw_full_gpu_20261031_235900\\candidate_submission.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999918699,
+    "target_minimum": 8.1301e-06,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_asymmetric_apex": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_20261027_asymmetric_tail_gated_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_champion": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999918699,
+    "target_minimum": 8.1301e-06,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_level2_stacker": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_solo_080300_level2_regime_stacker.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_optimal_transductive_apex": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_20261027_optimal_transductive_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_precision_apex": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_20261027_precision_transductive_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999918699,
+    "target_minimum": 8.1301e-06,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v080041": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_solo_080041_pure_champion.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v080150": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_solo_080150_micro_apex_fusion.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v080200": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_solo_080200_grand_master_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v20": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_20_apex_grand_champion_submission.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 1.0,
+    "target_minimum": 0.0,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v85": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_20261027_optimal_macro_apex_v85.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999918699,
+    "target_minimum": 8.1301e-06,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "historical_v_gold": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\gemini\\v_gold_grand_master_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "raw_bedrock_candidate": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\bedrock_chain_rebuild_20261101\\optimal\\v_20261027_optimal_transductive_apex.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999837401,
+    "target_minimum": 1.62599e-05,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "raw_feature_parity_evidence": {
+    "comparisons_exact": true,
+    "report_path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\feature_parity_20261031_200506\\parity_report.json",
+    "report_sha256": "636ba1f46ecbf7ef8c8b7aceb5b9a07ce009c91e4406c770589f0dc9d3d3154c",
+    "selector_manifest_path": "D:\\gci\\champion\\EXP85_MASTER_RECOVERY\\runs\\selector_replay_20261031_202500\\selector_manifest.json",
+    "selector_manifest_sha256": "712ee5095064df60013e3fad80bbe7d002f4a1d781dc0a4d7ce906ad36214c4c",
+    "selector_manifest_status": "INSPECTED",
+    "selector_order_exact": true,
+    "status": "INSPECTED"
+  },
+  "raw_label_array": {
+    "exact_raw_label_order_match": true,
+    "path": "D:\\gci\\champion\\cache\\y_train.npy",
+    "same_length_as_raw_train": true
+  },
+  "raw_test": {
+    "columns": [
+      "SK_ID_CURR",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "OCCUPATION_TYPE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "ORGANIZATION_TYPE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "path": "D:\\gci\\inpuy\\test.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "unique_ids": true
+  },
+  "raw_train": {
+    "columns": [
+      "SK_ID_CURR",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "OCCUPATION_TYPE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "ORGANIZATION_TYPE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\inpuy\\train.csv",
+    "rows": 171202,
+    "status": "INSPECTED",
+    "target_values": [
+      0,
+      1
+    ]
+  },
+  "sample_submission": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\inpuy\\sample_submission.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.5,
+    "target_minimum": 0.5,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  },
+  "v5_candidate": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\champion\\08_SUBMISSIONS\\submission_exp85_recovery_v5_rebuilt.csv",
+    "rows": 61500,
+    "status": "INSPECTED",
+    "target_finite": true,
+    "target_in_unit_interval": true,
+    "target_maximum": 0.9999918699,
+    "target_minimum": 8.1301e-06,
+    "test_id_order": {
+      "actual_rows": 61500,
+      "actual_unique": true,
+      "expected_rows": 61500,
+      "expected_unique": true,
+      "same_count": true,
+      "same_order": true
+    },
+    "unique_ids": true
+  }
+}

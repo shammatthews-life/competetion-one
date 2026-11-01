@@ -1,0 +1,207 @@
+{
+  "audit_id": "exp85_phase0_forensic_audit",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 0.037792,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "a77b9ba113f1260250b436d1d756fdb83b1b1f9f\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "rev-parse",
+        "--is-shallow-repository"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 0.033948,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "false\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 0.047955,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "## main...origin/main\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/BEST_MODEL_REPORT.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/EXPERIMENT_REGISTER.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEGATIVE_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEXT_ACTIONS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/OPPORTUNITY_RANKING.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/RESEARCH_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/STATUS.md\n M champion/EXP85_PHASE2_COMPLETE_SUBMISSION/EXP85_PHASE2_COMPLETE_SUBMISSION.ipynb\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144300Z_raw_xgb_diversity_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144500Z_raw_xgb_diversity_seed20261101/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T145000Z_epoly_interactions_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_diversity.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_seed_replication.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_raw_xgb_diversity.py\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_01_fee_product_features/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_02_fold_safe_key_encodings/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/source/__pycache__/\n?? champion/EXP85_TRUE_SCRATCH_RECONSTRUCTION/\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "log",
+        "--all",
+        "--oneline",
+        "-S",
+        "v_17_full_suite_bundle.npz",
+        "--",
+        "champion"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 1.330374,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "79da8eb1 Complete historical EXP85 V5 cache reconstruction\n7ba27a45 Add EXP85 deep research workspace\n0e1bcbea Preserve EXP85 correlation replication evidence\n2d035109 Add isolated raw-only baseline audit\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "log",
+        "--all",
+        "--oneline",
+        "-S",
+        "v55_members.npz",
+        "--",
+        "champion"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 1.36225,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "79da8eb1 Complete historical EXP85 V5 cache reconstruction\n7ba27a45 Add EXP85 deep research workspace\n0e1bcbea Preserve EXP85 correlation replication evidence\n2d035109 Add isolated raw-only baseline audit\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "log",
+        "--all",
+        "--oneline",
+        "-S",
+        "oof_10f_xgb.npy",
+        "--",
+        "champion"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 1.363998,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "0e1bcbea Preserve EXP85 correlation replication evidence\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "D:\\gci\\_gci_push_tmp",
+        "log",
+        "--all",
+        "--oneline",
+        "-S",
+        "v_20_apex_grand_champion_submission.csv",
+        "--",
+        "champion"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp",
+      "elapsed_seconds": 1.333284,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_phase0_audit.py",
+        "-v"
+      ],
+      "cwd": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_TRUE_SCRATCH_RECONSTRUCTION",
+      "elapsed_seconds": 0.291482,
+      "exit_code": 0,
+      "stderr": "test_compares_exact_id_order_and_duplicates (test_phase0_audit.Phase0AuditTests.test_compares_exact_id_order_and_duplicates) ... ok\ntest_feature_parity_requires_exact_values_and_schema (test_phase0_audit.Phase0AuditTests.test_feature_parity_requires_exact_values_and_schema) ... ok\ntest_graph_edges_and_producer_inventory_are_well_formed (test_phase0_audit.Phase0AuditTests.test_graph_edges_and_producer_inventory_are_well_formed) ... ok\ntest_hashes_file_contents (test_phase0_audit.Phase0AuditTests.test_hashes_file_contents) ... ok\ntest_inspects_npy_and_npz_without_pickle (test_phase0_audit.Phase0AuditTests.test_inspects_npy_and_npz_without_pickle) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.019s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "completed_at_utc": "2026-11-01T17:31:56.687981+00:00",
+  "data_validation_file": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_TRUE_SCRATCH_RECONSTRUCTION\\manifests\\data_validation.json",
+  "elapsed_seconds": 9.906078,
+  "environment": {
+    "audit_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_TRUE_SCRATCH_RECONSTRUCTION",
+    "numpy": "2.5.4",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "repository_root": "D:\\gci\\_gci_push_tmp",
+    "working_directory": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_TRUE_SCRATCH_RECONSTRUCTION"
+  },
+  "git_evidence": {
+    "head": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "a77b9ba113f1260250b436d1d756fdb83b1b1f9f"
+    },
+    "history_search:oof_10f_xgb.npy": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "0e1bcbea Preserve EXP85 correlation replication evidence\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive"
+    },
+    "history_search:v55_members.npz": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "79da8eb1 Complete historical EXP85 V5 cache reconstruction\n7ba27a45 Add EXP85 deep research workspace\n0e1bcbea Preserve EXP85 correlation replication evidence\n2d035109 Add isolated raw-only baseline audit\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive"
+    },
+    "history_search:v_17_full_suite_bundle.npz": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "79da8eb1 Complete historical EXP85 V5 cache reconstruction\n7ba27a45 Add EXP85 deep research workspace\n0e1bcbea Preserve EXP85 correlation replication evidence\n2d035109 Add isolated raw-only baseline audit\n7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\n3481fa47 fix(audit): certify raw rebuild execution, uniform array checks, correct Jaccard terminology, and clean-room acceptance test\n269affc9 fix(audit): add provenance manifest, nested-CV benchmark source, reconcile stability metrics, and enforce strict programmatic safeguards\n4ff335ef fix(audit): resolve all 11 forensic audit items, reconcile lineage docs, add nested CV execution log and 3-tier submission creators\nb6a8ae40 fix(audit): resolve all 4 audit defects, publish scratch creation code in root and full suite generators\n35ca73cb fix(notebook): deploy audited 9-stage master pipeline resolving all 5 audit issues\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive"
+    },
+    "history_search:v_20_apex_grand_champion_submission.csv": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "7edc262e Audit EXP85 source lineage and integrity\n9d38fea8 Add EXP85 full raw rebuild audit\n48b66288 Audit EXP85 Phase 4 recovery provenance\nc59b01f8 feat(champion): preserve complete EXP85 historical recovery and autonomous reconstruction archive"
+    },
+    "shallow": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "false"
+    },
+    "status": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "## main...origin/main\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/BEST_MODEL_REPORT.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/EXPERIMENT_REGISTER.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEGATIVE_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEXT_ACTIONS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/OPPORTUNITY_RANKING.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/RESEARCH_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/STATUS.md\n M champion/EXP85_PHASE2_COMPLETE_SUBMISSION/EXP85_PHASE2_COMPLETE_SUBMISSION.ipynb\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144300Z_raw_xgb_diversity_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144500Z_raw_xgb_diversity_seed20261101/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T145000Z_epoly_interactions_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_diversity.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_seed_replication.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_raw_xgb_diversity.py\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_01_fee_product_features/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_02_fold_safe_key_encodings/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/source/__pycache__/\n?? champion/EXP85_TRUE_SCRATCH_RECONSTRUCTION/"
+    }
+  },
+  "historical_artifacts_modified": false,
+  "inventory_counts": {
+    "array_members": 63,
+    "artifact_files": 39,
+    "dependency_edges": 56,
+    "dependency_nodes": 43,
+    "source_files": 37
+  },
+  "invocation": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_TRUE_SCRATCH_RECONSTRUCTION\\source\\run_phase0_audit.py"
+  ],
+  "script_exit_code": 0,
+  "started_at_utc": "2026-11-01T17:31:46.782244+00:00",
+  "training_or_model_inference_performed": false,
+  "verdict": "PHASE_0_CHECKS_PASS_FULL_RAW_RECONSTRUCTION_BLOCKED",
+  "verification_errors": []
+}
