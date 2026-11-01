@@ -40,6 +40,10 @@ testing isolated, leakage-aware improvements toward a public ROC-AUC of
   independently tied to the frozen CSV hash by an official upload receipt.
 - The checked research virtual environment has CPU-only PyTorch; no GPU neural
   experiment was executed.
+- Prior raw-XGBoost screens were reviewed rather than repeated: standalone OOF
+  AUCs were `0.7613696` and `0.7602661`; their fixed 80:20 diagnostic blend
+  lifts over Phase 2 were only `0.0001020` and `0.0000251`, inconsistent and
+  not promoted. No extra seed or weight sweep was run.
 
 ## Next action
 
