@@ -1,0 +1,50 @@
+{
+  "id_column": "SK_ID_CURR",
+  "target_column": "TARGET",
+  "categorical_columns": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "OCCUPATION_TYPE",
+    "ORGANIZATION_TYPE"
+  ],
+  "fee_decoder": {
+    "fee_amount": 129.5,
+    "product_rate": 0.0132,
+    "frequency_counts_use_train_and_test_covariates": true,
+    "target_used": false
+  },
+  "target_encoding": {
+    "missing_key": "__MISSING_KEY__",
+    "keys": [
+      {
+        "name": "FEE_Q3",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+        "round_digits": 3,
+        "smoothing": 100.0
+      },
+      {
+        "name": "FEE_Q4",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+        "round_digits": 4,
+        "smoothing": 30.0
+      },
+      {
+        "name": "FEE_Q5",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+        "round_digits": 5,
+        "smoothing": 30.0
+      },
+      {
+        "name": "PRODUCT_K",
+        "source_feature": "PRODUCT_KEY_K",
+        "round_digits": 0,
+        "smoothing": 50.0
+      }
+    ],
+    "formula": "(key_target_sum + smoothing * fit_prior) / (key_count + smoothing)"
+  }
+}

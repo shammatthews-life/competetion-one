@@ -1,0 +1,2880 @@
+{
+  "run_id": "phase2_complete_raw_20261101T211310",
+  "status": "PASS",
+  "mode": "full",
+  "classification": "INDEPENDENT_RAW_DATA_PHASE2_PIPELINE",
+  "started_at_utc": "2026-11-01T15:43:12.852244+00:00",
+  "completed_at_utc": "2026-11-01T15:46:39.513350+00:00",
+  "elapsed_seconds": 206.66180739999982,
+  "input_validation": {
+    "train_rows": 171202,
+    "test_rows": 61500,
+    "sample_rows": 61500,
+    "train_columns": [
+      "SK_ID_CURR",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "OCCUPATION_TYPE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "ORGANIZATION_TYPE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "TARGET"
+    ],
+    "test_columns": [
+      "SK_ID_CURR",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "OCCUPATION_TYPE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "ORGANIZATION_TYPE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "sample_columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "feature_columns": [
+      "SK_ID_CURR",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "OCCUPATION_TYPE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "ORGANIZATION_TYPE",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "class_counts": {
+      "0": 157381,
+      "1": 13821
+    },
+    "ids_unique": true,
+    "test_ids_equal_sample_order": true,
+    "train_test_predictor_schema_equal": true,
+    "input_hashes": {
+      "train.csv": {
+        "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+        "size_bytes": 44260698
+      },
+      "test.csv": {
+        "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+        "size_bytes": 15818118
+      },
+      "sample_submission.csv": {
+        "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+        "size_bytes": 676518
+      }
+    }
+  },
+  "feature_diagnostics": {
+    "fee_amount": 129.5,
+    "product_rate": 0.0132,
+    "fee_decoded_rows": 158042,
+    "fee_decoded_cash_loan_fraction": 0.7497888814035354,
+    "product_key_valid_rows": 135609,
+    "product_key_valid_fraction_of_cash_loans": 0.6433613875947661,
+    "feature_names": [
+      "FEE_DECODED",
+      "FEE_RAW_RATIO_COUNT",
+      "FEE_ADJUSTED_RATIO_COUNT",
+      "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "ANNUITY_CREDIT_RATIO_DECODED",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "CREDIT_GOODS_RATIO",
+      "PRODUCT_KEY_VALID",
+      "PRODUCT_KEY_K",
+      "PRODUCT_KEY_DISTANCE"
+    ],
+    "frequency_counts_use_train_and_test_covariates": true,
+    "frequency_counts_use_target": false
+  },
+  "feature_schema": {
+    "catboost_features": [
+      {
+        "name": "CNT_CHILDREN",
+        "dtype": "int64"
+      },
+      {
+        "name": "AMT_INCOME_TOTAL",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_CREDIT",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_ANNUITY",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_GOODS_PRICE",
+        "dtype": "float64"
+      },
+      {
+        "name": "REGION_POPULATION_RELATIVE",
+        "dtype": "float64"
+      },
+      {
+        "name": "DAYS_BIRTH",
+        "dtype": "int64"
+      },
+      {
+        "name": "DAYS_EMPLOYED",
+        "dtype": "int64"
+      },
+      {
+        "name": "DAYS_REGISTRATION",
+        "dtype": "float64"
+      },
+      {
+        "name": "DAYS_ID_PUBLISH",
+        "dtype": "int64"
+      },
+      {
+        "name": "OWN_CAR_AGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "FLAG_MOBIL",
+        "dtype": "int64"
+      },
+      {
+        "name": "FLAG_EMP_PHONE",
+        "dtype": "int64"
+      },
+      {
+        "name": "FLAG_WORK_PHONE",
+        "dtype": "int64"
+      },
+      {
+        "name": "CNT_FAM_MEMBERS",
+        "dtype": "float64"
+      },
+      {
+        "name": "REGION_RATING_CLIENT",
+        "dtype": "int64"
+      },
+      {
+        "name": "EXT_SOURCE_1",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_SOURCE_2",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_SOURCE_3",
+        "dtype": "float64"
+      },
+      {
+        "name": "DAYS_LAST_PHONE_CHANGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_HOUR",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_MON",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_QRT",
+        "dtype": "float64"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_YEAR",
+        "dtype": "float64"
+      },
+      {
+        "name": "NA_CNT_CHILDREN",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_INCOME_TOTAL",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_CREDIT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_ANNUITY",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_GOODS_PRICE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_REGION_POPULATION_RELATIVE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_BIRTH",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_EMPLOYED",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_REGISTRATION",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_ID_PUBLISH",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_OWN_CAR_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_MOBIL",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_EMP_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_WORK_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_CNT_FAM_MEMBERS",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_REGION_RATING_CLIENT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_LAST_PHONE_CHANGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_MON",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+        "dtype": "float32"
+      },
+      {
+        "name": "RAW_MISSING_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_EMPLOYED_CLEAN",
+        "dtype": "float64"
+      },
+      {
+        "name": "DAYS_EMPLOYED_SENTINEL",
+        "dtype": "float32"
+      },
+      {
+        "name": "AGE_YEARS",
+        "dtype": "float64"
+      },
+      {
+        "name": "EMPLOYED_YEARS",
+        "dtype": "float64"
+      },
+      {
+        "name": "EMPLOYED_TO_AGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "REGISTRATION_TO_AGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "ID_PUBLISH_TO_AGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "PHONE_CHANGE_YEARS",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_TO_INCOME",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_TO_INCOME",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_TO_GOODS",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_TO_CREDIT",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_TERM",
+        "dtype": "float64"
+      },
+      {
+        "name": "INCOME_PER_FAMILY",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_PER_FAMILY",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_PER_FAMILY",
+        "dtype": "float64"
+      },
+      {
+        "name": "DISPOSABLE_INCOME",
+        "dtype": "float64"
+      },
+      {
+        "name": "DISPOSABLE_INCOME_TO_INCOME",
+        "dtype": "float64"
+      },
+      {
+        "name": "DEBT_SERVICE_COVERAGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_TERM_ROUND_1",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_TO_GOODS_ROUND_2",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_MEAN",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_MIN",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_MAX",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_STD",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_RANGE",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_PRODUCT",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_DIFF_01",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_PRODUCT_01",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_RATIO_01",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_DIFF_02",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_PRODUCT_02",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_RATIO_02",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_DIFF_12",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_PRODUCT_12",
+        "dtype": "float64"
+      },
+      {
+        "name": "EXT_RATIO_12",
+        "dtype": "float64"
+      },
+      {
+        "name": "MERTON_DISTANCE_20",
+        "dtype": "float64"
+      },
+      {
+        "name": "MERTON_PD_20",
+        "dtype": "float64"
+      },
+      {
+        "name": "MERTON_DISTANCE_25",
+        "dtype": "float64"
+      },
+      {
+        "name": "MERTON_PD_25",
+        "dtype": "float64"
+      },
+      {
+        "name": "BUREAU_INQUIRY_SUM",
+        "dtype": "float64"
+      },
+      {
+        "name": "INCOME_LOG1P",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_LOG1P",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_LOG1P",
+        "dtype": "float64"
+      },
+      {
+        "name": "NAME_CONTRACT_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "CODE_GENDER",
+        "dtype": "str"
+      },
+      {
+        "name": "NAME_INCOME_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "NAME_EDUCATION_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "NAME_FAMILY_STATUS",
+        "dtype": "str"
+      },
+      {
+        "name": "NAME_HOUSING_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "OCCUPATION_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "ORGANIZATION_TYPE",
+        "dtype": "str"
+      },
+      {
+        "name": "FEE_DECODED",
+        "dtype": "float32"
+      },
+      {
+        "name": "FEE_RAW_RATIO_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "FEE_ADJUSTED_RATIO_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+        "dtype": "float64"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+        "dtype": "float64"
+      },
+      {
+        "name": "CREDIT_GOODS_RATIO",
+        "dtype": "float64"
+      },
+      {
+        "name": "PRODUCT_KEY_VALID",
+        "dtype": "float32"
+      },
+      {
+        "name": "PRODUCT_KEY_K",
+        "dtype": "float64"
+      },
+      {
+        "name": "PRODUCT_KEY_DISTANCE",
+        "dtype": "float64"
+      },
+      {
+        "name": "TE_FEE_Q3",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q3",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_FEE_Q4",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q4",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_FEE_Q5",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q5",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_PRODUCT_K",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_PRODUCT_K",
+        "dtype": "float32"
+      }
+    ],
+    "lightgbm_features": [
+      {
+        "name": "CNT_CHILDREN",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_INCOME_TOTAL",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_CREDIT",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_ANNUITY",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_GOODS_PRICE",
+        "dtype": "float32"
+      },
+      {
+        "name": "REGION_POPULATION_RELATIVE",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_BIRTH",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_EMPLOYED",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_REGISTRATION",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_ID_PUBLISH",
+        "dtype": "float32"
+      },
+      {
+        "name": "OWN_CAR_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "FLAG_MOBIL",
+        "dtype": "float32"
+      },
+      {
+        "name": "FLAG_EMP_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "FLAG_WORK_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "CNT_FAM_MEMBERS",
+        "dtype": "float32"
+      },
+      {
+        "name": "REGION_RATING_CLIENT",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_SOURCE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_SOURCE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_SOURCE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_LAST_PHONE_CHANGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_HOUR",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_MON",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_QRT",
+        "dtype": "float32"
+      },
+      {
+        "name": "AMT_REQ_CREDIT_BUREAU_YEAR",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_CNT_CHILDREN",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_INCOME_TOTAL",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_CREDIT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_ANNUITY",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_GOODS_PRICE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_REGION_POPULATION_RELATIVE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_BIRTH",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_EMPLOYED",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_REGISTRATION",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_ID_PUBLISH",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_OWN_CAR_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_MOBIL",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_EMP_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_FLAG_WORK_PHONE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_CNT_FAM_MEMBERS",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_REGION_RATING_CLIENT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_EXT_SOURCE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_DAYS_LAST_PHONE_CHANGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_MON",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+        "dtype": "float32"
+      },
+      {
+        "name": "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+        "dtype": "float32"
+      },
+      {
+        "name": "RAW_MISSING_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_EMPLOYED_CLEAN",
+        "dtype": "float32"
+      },
+      {
+        "name": "DAYS_EMPLOYED_SENTINEL",
+        "dtype": "float32"
+      },
+      {
+        "name": "AGE_YEARS",
+        "dtype": "float32"
+      },
+      {
+        "name": "EMPLOYED_YEARS",
+        "dtype": "float32"
+      },
+      {
+        "name": "EMPLOYED_TO_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "REGISTRATION_TO_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "ID_PUBLISH_TO_AGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "PHONE_CHANGE_YEARS",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_TO_INCOME",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_TO_INCOME",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_TO_GOODS",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_TO_CREDIT",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_TERM",
+        "dtype": "float32"
+      },
+      {
+        "name": "INCOME_PER_FAMILY",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_PER_FAMILY",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_PER_FAMILY",
+        "dtype": "float32"
+      },
+      {
+        "name": "DISPOSABLE_INCOME",
+        "dtype": "float32"
+      },
+      {
+        "name": "DISPOSABLE_INCOME_TO_INCOME",
+        "dtype": "float32"
+      },
+      {
+        "name": "DEBT_SERVICE_COVERAGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_TERM_ROUND_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_TO_GOODS_ROUND_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_MEAN",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_MIN",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_MAX",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_STD",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_RANGE",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_PRODUCT",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_DIFF_01",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_PRODUCT_01",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_RATIO_01",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_DIFF_02",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_PRODUCT_02",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_RATIO_02",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_DIFF_12",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_PRODUCT_12",
+        "dtype": "float32"
+      },
+      {
+        "name": "EXT_RATIO_12",
+        "dtype": "float32"
+      },
+      {
+        "name": "MERTON_DISTANCE_20",
+        "dtype": "float32"
+      },
+      {
+        "name": "MERTON_PD_20",
+        "dtype": "float32"
+      },
+      {
+        "name": "MERTON_DISTANCE_25",
+        "dtype": "float32"
+      },
+      {
+        "name": "MERTON_PD_25",
+        "dtype": "float32"
+      },
+      {
+        "name": "BUREAU_INQUIRY_SUM",
+        "dtype": "float32"
+      },
+      {
+        "name": "INCOME_LOG1P",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_LOG1P",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_LOG1P",
+        "dtype": "float32"
+      },
+      {
+        "name": "FEE_DECODED",
+        "dtype": "float32"
+      },
+      {
+        "name": "FEE_RAW_RATIO_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "FEE_ADJUSTED_RATIO_COUNT",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CREDIT_GOODS_RATIO",
+        "dtype": "float32"
+      },
+      {
+        "name": "PRODUCT_KEY_VALID",
+        "dtype": "float32"
+      },
+      {
+        "name": "PRODUCT_KEY_K",
+        "dtype": "float32"
+      },
+      {
+        "name": "PRODUCT_KEY_DISTANCE",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_FEE_Q3",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q3",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_FEE_Q4",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q4",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_FEE_Q5",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_FEE_Q5",
+        "dtype": "float32"
+      },
+      {
+        "name": "TE_PRODUCT_K",
+        "dtype": "float32"
+      },
+      {
+        "name": "LOG_COUNT_PRODUCT_K",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_CONTRACT_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_CONTRACT_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_CODE_GENDER_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_CODE_GENDER_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_CODE_GENDER_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_6",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_INCOME_TYPE_7",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_EDUCATION_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_EDUCATION_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_EDUCATION_TYPE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_EDUCATION_TYPE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_EDUCATION_TYPE_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_FAMILY_STATUS_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_NAME_HOUSING_TYPE_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_6",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_7",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_8",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_9",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_10",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_11",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_12",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_13",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_14",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_15",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_16",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_17",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_OCCUPATION_TYPE_18",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_0",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_1",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_2",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_3",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_4",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_5",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_6",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_7",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_8",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_9",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_10",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_11",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_12",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_13",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_14",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_15",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_16",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_17",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_18",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_19",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_20",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_21",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_22",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_23",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_24",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_25",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_26",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_27",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_28",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_29",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_30",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_31",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_32",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_33",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_34",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_35",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_36",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_37",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_38",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_39",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_40",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_41",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_42",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_43",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_44",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_45",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_46",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_47",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_48",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_49",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_50",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_51",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_52",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_53",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_54",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_55",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_56",
+        "dtype": "float32"
+      },
+      {
+        "name": "CAT_ORGANIZATION_TYPE_57",
+        "dtype": "float32"
+      }
+    ]
+  },
+  "target_encoding": {
+    "key_specs": [
+      {
+        "name": "FEE_Q3",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+        "smoothing": 100.0
+      },
+      {
+        "name": "FEE_Q4",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+        "smoothing": 30.0
+      },
+      {
+        "name": "FEE_Q5",
+        "source_feature": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+        "smoothing": 30.0
+      },
+      {
+        "name": "PRODUCT_K",
+        "source_feature": "PRODUCT_KEY_K",
+        "smoothing": 50.0
+      }
+    ],
+    "smoothing_formula": "(sum(target) + smoothing * fit_prior) / (count + smoothing)",
+    "inner_folds": 5,
+    "inner_seed": 7,
+    "training_rows_inner_oof": true,
+    "outer_validation_encoded_from_outer_fit_only": true,
+    "test_encoded_from_outer_fit_only": true,
+    "validation_labels_excluded_from_all_fold_encodings": true,
+    "self_target_excluded_by_disjoint_fit_apply_indices": true
+  },
+  "folds": {
+    "outer_count": 5,
+    "outer_seed": 42,
+    "fold_assignments_match_frozen": true,
+    "fold_records": [
+      {
+        "fold": 1,
+        "fit_rows": 136961,
+        "valid_rows": 34241,
+        "fit_validation_disjoint": true,
+        "nested_te_rows": 136961,
+        "lightgbm": {
+          "auc": 0.7665621239903787,
+          "best_iteration": 310,
+          "device": "CPU"
+        },
+        "catboost": {
+          "auc": 0.7678191923563329,
+          "best_iteration": 342,
+          "device": "GPU:0",
+          "gpu_telemetry": {
+            "samples": [
+              {
+                "query": "2026/11/01 21:13:24.446, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:25.504, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:26.561, NVIDIA GeForce RTX 4050 Laptop GPU, 59 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:27.631, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:28.721, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:29.791, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:30.850, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:31.920, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:32.980, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:34.043, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:35.120, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:36.249, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:37.308, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:38.367, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:39.427, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:40.516, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:41.577, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:42.652, NVIDIA GeForce RTX 4050 Laptop GPU, 31 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:43.711, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:44.769, NVIDIA GeForce RTX 4050 Laptop GPU, 26 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:45.839, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:46.916, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:46.961, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 185 MiB"
+              }
+            ],
+            "sample_count": 23,
+            "errors": []
+          }
+        },
+        "elapsed_seconds": 32.36043089997838
+      },
+      {
+        "fold": 2,
+        "fit_rows": 136961,
+        "valid_rows": 34241,
+        "fit_validation_disjoint": true,
+        "nested_te_rows": 136961,
+        "lightgbm": {
+          "auc": 0.7730564140605305,
+          "best_iteration": 285,
+          "device": "CPU"
+        },
+        "catboost": {
+          "auc": 0.7728285875607283,
+          "best_iteration": 664,
+          "device": "GPU:0",
+          "gpu_telemetry": {
+            "samples": [
+              {
+                "query": "2026/11/01 21:13:56.426, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:57.513, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:58.570, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:13:59.634, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:00.692, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:01.792, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:02.863, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:03.949, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:05.017, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:06.097, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:07.158, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:08.219, NVIDIA GeForce RTX 4050 Laptop GPU, 41 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:09.290, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:10.365, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:11.425, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:12.495, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:13.563, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:14.634, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:15.693, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:16.763, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:17.823, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:18.881, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:19.956, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:21.015, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:22.072, NVIDIA GeForce RTX 4050 Laptop GPU, 45 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:23.140, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:24.197, NVIDIA GeForce RTX 4050 Laptop GPU, 36 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:25.243, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:26.307, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:27.365, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:28.457, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:29.529, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:30.600, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:31.661, NVIDIA GeForce RTX 4050 Laptop GPU, 26 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:32.721, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:33.048, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 185 MiB"
+              }
+            ],
+            "sample_count": 36,
+            "errors": []
+          }
+        },
+        "elapsed_seconds": 46.035142099979566
+      },
+      {
+        "fold": 3,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "fit_validation_disjoint": true,
+        "nested_te_rows": 136962,
+        "lightgbm": {
+          "auc": 0.7760881467312333,
+          "best_iteration": 393,
+          "device": "CPU"
+        },
+        "catboost": {
+          "auc": 0.7739069888821639,
+          "best_iteration": 409,
+          "device": "GPU:0",
+          "gpu_telemetry": {
+            "samples": [
+              {
+                "query": "2026/11/01 21:14:43.672, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:44.772, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:45.845, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:46.902, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:47.973, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:49.029, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:50.147, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:51.205, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:52.261, NVIDIA GeForce RTX 4050 Laptop GPU, 40 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:53.319, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:54.397, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:55.490, NVIDIA GeForce RTX 4050 Laptop GPU, 47 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:56.550, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:57.620, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:58.711, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:14:59.789, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:00.864, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:01.924, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:02.997, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:04.067, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:05.140, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:06.229, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:07.287, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:08.246, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 185 MiB"
+              }
+            ],
+            "sample_count": 24,
+            "errors": []
+          }
+        },
+        "elapsed_seconds": 35.10863950001658
+      },
+      {
+        "fold": 4,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "fit_validation_disjoint": true,
+        "nested_te_rows": 136962,
+        "lightgbm": {
+          "auc": 0.7680856445606503,
+          "best_iteration": 396,
+          "device": "CPU"
+        },
+        "catboost": {
+          "auc": 0.7685972557319302,
+          "best_iteration": 494,
+          "device": "GPU:0",
+          "gpu_telemetry": {
+            "samples": [
+              {
+                "query": "2026/11/01 21:15:19.130, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:20.189, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:21.274, NVIDIA GeForce RTX 4050 Laptop GPU, 59 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:22.344, NVIDIA GeForce RTX 4050 Laptop GPU, 47 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:23.419, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:24.521, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:25.629, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:26.722, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:27.780, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:28.848, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:29.917, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:30.976, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:32.046, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:33.122, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:34.197, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:35.267, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:36.326, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:37.385, NVIDIA GeForce RTX 4050 Laptop GPU, 42 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:38.459, NVIDIA GeForce RTX 4050 Laptop GPU, 41 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:39.533, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:40.602, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:41.672, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:42.732, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:43.833, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:44.889, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:45.959, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:47.021, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:15:47.707, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 185 MiB"
+              }
+            ],
+            "sample_count": 28,
+            "errors": []
+          }
+        },
+        "elapsed_seconds": 39.42083799999091
+      },
+      {
+        "fold": 5,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "fit_validation_disjoint": true,
+        "nested_te_rows": 136962,
+        "lightgbm": {
+          "auc": 0.7682969327329815,
+          "best_iteration": 419,
+          "device": "CPU"
+        },
+        "catboost": {
+          "auc": 0.7694010059625058,
+          "best_iteration": 732,
+          "device": "GPU:0",
+          "gpu_telemetry": {
+            "samples": [
+              {
+                "query": "2026/11/01 21:15:59.050, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:00.124, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:01.184, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:02.255, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:03.311, NVIDIA GeForce RTX 4050 Laptop GPU, 40 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:04.383, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:05.461, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:06.565, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:07.626, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:08.695, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:09.752, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:10.841, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:11.899, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:12.963, NVIDIA GeForce RTX 4050 Laptop GPU, 45 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:14.023, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:15.099, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:16.162, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:17.244, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:18.306, NVIDIA GeForce RTX 4050 Laptop GPU, 31 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:19.367, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:20.449, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:21.521, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:22.597, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:23.668, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:24.724, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:25.781, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:26.851, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:27.924, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:28.983, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:30.043, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:31.128, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:32.221, NVIDIA GeForce RTX 4050 Laptop GPU, 32 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:33.294, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:34.412, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:35.485, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:36.543, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:37.613, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+              },
+              {
+                "query": "2026/11/01 21:16:38.669, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 185 MiB"
+              }
+            ],
+            "sample_count": 38,
+            "errors": []
+          }
+        },
+        "elapsed_seconds": 50.90573939998285
+      }
+    ]
+  },
+  "model_configuration": {
+    "outer_cv": {
+      "n_splits": 5,
+      "shuffle": true,
+      "seed": 42
+    },
+    "target_encoding_cv": {
+      "n_splits": 5,
+      "shuffle": true,
+      "seed": 7
+    },
+    "cpu_threads": 8,
+    "lightgbm": {
+      "device": "CPU",
+      "objective": "binary",
+      "metric": "auc",
+      "boosting_type": "gbdt",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 80,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l1": 0.1,
+      "lambda_l2": 5.0,
+      "max_bin": 127,
+      "num_boost_round": 3000,
+      "early_stopping_rounds": 150
+    },
+    "catboost": {
+      "device": "GPU:0",
+      "iterations": 2500,
+      "depth": 7,
+      "learning_rate": 0.045,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "l2_leaf_reg": 5.0,
+      "random_strength": 0.5,
+      "bootstrap_type": "Bernoulli",
+      "subsample": 0.8,
+      "border_count": 128,
+      "task_type": "GPU",
+      "devices": "0",
+      "early_stopping_rounds": 150
+    }
+  },
+  "models": {
+    "lightgbm_device": "CPU",
+    "catboost_device": "GPU:0",
+    "lightgbm_fold_auc": [
+      0.7665621239903787,
+      0.7730564140605305,
+      0.7760881467312333,
+      0.7680856445606503,
+      0.7682969327329815
+    ],
+    "catboost_fold_auc": [
+      0.7678191923563329,
+      0.7728285875607283,
+      0.7739069888821639,
+      0.7685972557319302,
+      0.7694010059625058
+    ],
+    "lightgbm_best_iterations": [
+      310,
+      285,
+      393,
+      396,
+      419
+    ],
+    "catboost_best_iterations": [
+      342,
+      664,
+      409,
+      494,
+      732
+    ]
+  },
+  "ensemble": {
+    "formula": "0.5 * LightGBM raw probability + 0.5 * CatBoost raw probability",
+    "post_processing": "none",
+    "oof_auc": 0.7715805073203805,
+    "per_fold_auc": [
+      0.7682728003866742,
+      0.7741089223926058,
+      0.7761638998973605,
+      0.7695607652001966,
+      0.7701226409334179
+    ],
+    "reference_oof_auc": 0.7715614423106346,
+    "oof_auc_delta": 1.9065009745911077e-05
+  },
+  "reproduction_validation": {
+    "status": "PASS",
+    "reference_candidate_sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa",
+    "limits": {
+      "maximum_absolute_global_oof_auc_delta": 0.001,
+      "maximum_absolute_per_fold_auc_delta": 0.003,
+      "minimum_oof_blend_pearson": 0.99,
+      "minimum_test_blend_pearson": 0.99,
+      "minimum_submission_pearson": 0.99
+    },
+    "checks": {
+      "fold_assignments_exact": true,
+      "global_oof_auc_within_tolerance": true,
+      "per_fold_auc_within_tolerance": true,
+      "oof_prediction_correlation_within_tolerance": true,
+      "test_prediction_correlation_within_tolerance": true,
+      "submission_correlation_within_tolerance": true
+    },
+    "fold_auc_delta": [
+      -1.1493932139394758e-08,
+      -1.846465529464769e-05,
+      1.3793156716790378e-07,
+      0.0,
+      0.0001087762821705418
+    ],
+    "oof_prediction_comparison": {
+      "pearson": 0.9998989777887344,
+      "mae": 0.00034209751948951643,
+      "rmse": 0.0011801417325482553,
+      "maximum_absolute_difference": 0.050842173397541046,
+      "current_mean": 0.08007718587817511,
+      "reference_mean": 0.08008597760345011,
+      "current_std": 0.08302077632980082,
+      "reference_std": 0.08300028087228808
+    },
+    "test_prediction_comparison": {
+      "pearson": 0.9999796136791369,
+      "mae": 0.0002969953099595065,
+      "rmse": 0.0005821090264319005,
+      "maximum_absolute_difference": 0.008080020546913147,
+      "current_mean": 0.08896503551409966,
+      "reference_mean": 0.08897369398797363,
+      "current_std": 0.09114169342118804,
+      "reference_std": 0.09113040754973785
+    },
+    "submission_comparison": {
+      "pearson": 0.999979613679134,
+      "mae": 0.00029699530999999994,
+      "rmse": 0.0005821090264738818,
+      "maximum_absolute_difference": 0.008080020500000007,
+      "current_mean": 0.08896503551407968,
+      "reference_mean": 0.08897369398789104,
+      "current_std": 0.09114169342126728,
+      "reference_std": 0.09113040754978108
+    },
+    "frozen_submission_checks": {
+      "status": "PASS",
+      "rows": 61500,
+      "schema": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "ids_unique": true,
+      "ids_match_test_order": true,
+      "ids_match_sample_order": true,
+      "probabilities_finite": true,
+      "probability_min": 0.0035331467,
+      "probability_max": 0.7410276234
+    }
+  },
+  "submission": {
+    "run_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_COMPLETE_SUBMISSION\\runs\\phase2_complete_raw_20261101T211310\\submissions\\submission_phase2_complete.csv",
+    "sha256": "0b0fd01b5150362c9887033a4b202c6ea7c51443cf42b566237a3055d117835c",
+    "verification": {
+      "status": "PASS",
+      "rows": 61500,
+      "schema": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "ids_unique": true,
+      "ids_match_test_order": true,
+      "ids_match_sample_order": true,
+      "probabilities_finite": true,
+      "probability_min": 0.0035129165,
+      "probability_max": 0.7411373854
+    },
+    "promoted_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_COMPLETE_SUBMISSION\\submissions\\phase2_complete_raw_20261101T211310\\submission_phase2_complete.csv",
+    "promoted_sha256": "0b0fd01b5150362c9887033a4b202c6ea7c51443cf42b566237a3055d117835c"
+  },
+  "gpu": {
+    "before": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 103 MiB, 0 %"
+    },
+    "preflight": {
+      "gpu_snapshot": {
+        "available": true,
+        "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 103 MiB, 0 %"
+      },
+      "catboost_gpu_smoke_test": "PASS",
+      "catboost_gpu_task_type": "GPU",
+      "catboost_gpu_devices": "0",
+      "smoke_test_tree_count": 2
+    },
+    "after": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 185 MiB, 0 %"
+    },
+    "catboost_fold_telemetry": [
+      {
+        "samples": [
+          {
+            "query": "2026/11/01 21:13:24.446, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:25.504, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:26.561, NVIDIA GeForce RTX 4050 Laptop GPU, 59 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:27.631, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:28.721, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:29.791, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:30.850, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:31.920, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:32.980, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:34.043, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:35.120, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:36.249, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:37.308, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:38.367, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:39.427, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:40.516, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:41.577, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:42.652, NVIDIA GeForce RTX 4050 Laptop GPU, 31 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:43.711, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:44.769, NVIDIA GeForce RTX 4050 Laptop GPU, 26 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:45.839, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:46.916, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:46.961, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 185 MiB"
+          }
+        ],
+        "sample_count": 23,
+        "errors": []
+      },
+      {
+        "samples": [
+          {
+            "query": "2026/11/01 21:13:56.426, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:57.513, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:58.570, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:13:59.634, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:00.692, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:01.792, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:02.863, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:03.949, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:05.017, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:06.097, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:07.158, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:08.219, NVIDIA GeForce RTX 4050 Laptop GPU, 41 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:09.290, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:10.365, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:11.425, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:12.495, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:13.563, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:14.634, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:15.693, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:16.763, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:17.823, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:18.881, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:19.956, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:21.015, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:22.072, NVIDIA GeForce RTX 4050 Laptop GPU, 45 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:23.140, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:24.197, NVIDIA GeForce RTX 4050 Laptop GPU, 36 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:25.243, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:26.307, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:27.365, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:28.457, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:29.529, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:30.600, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:31.661, NVIDIA GeForce RTX 4050 Laptop GPU, 26 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:32.721, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:33.048, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 185 MiB"
+          }
+        ],
+        "sample_count": 36,
+        "errors": []
+      },
+      {
+        "samples": [
+          {
+            "query": "2026/11/01 21:14:43.672, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:44.772, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:45.845, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:46.902, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:47.973, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:49.029, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:50.147, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:51.205, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:52.261, NVIDIA GeForce RTX 4050 Laptop GPU, 40 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:53.319, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:54.397, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:55.490, NVIDIA GeForce RTX 4050 Laptop GPU, 47 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:56.550, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:57.620, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:58.711, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:14:59.789, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:00.864, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:01.924, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:02.997, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:04.067, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:05.140, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:06.229, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:07.287, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:08.246, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 185 MiB"
+          }
+        ],
+        "sample_count": 24,
+        "errors": []
+      },
+      {
+        "samples": [
+          {
+            "query": "2026/11/01 21:15:19.130, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:20.189, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:21.274, NVIDIA GeForce RTX 4050 Laptop GPU, 59 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:22.344, NVIDIA GeForce RTX 4050 Laptop GPU, 47 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:23.419, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:24.521, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:25.629, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:26.722, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:27.780, NVIDIA GeForce RTX 4050 Laptop GPU, 39 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:28.848, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:29.917, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:30.976, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:32.046, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:33.122, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:34.197, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:35.267, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:36.326, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:37.385, NVIDIA GeForce RTX 4050 Laptop GPU, 42 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:38.459, NVIDIA GeForce RTX 4050 Laptop GPU, 41 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:39.533, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:40.602, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:41.672, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:42.732, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:43.833, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:44.889, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:45.959, NVIDIA GeForce RTX 4050 Laptop GPU, 33 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:47.021, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:15:47.707, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 185 MiB"
+          }
+        ],
+        "sample_count": 28,
+        "errors": []
+      },
+      {
+        "samples": [
+          {
+            "query": "2026/11/01 21:15:59.050, NVIDIA GeForce RTX 4050 Laptop GPU, 0 %, 185 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:00.124, NVIDIA GeForce RTX 4050 Laptop GPU, 99 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:01.184, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:02.255, NVIDIA GeForce RTX 4050 Laptop GPU, 52 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:03.311, NVIDIA GeForce RTX 4050 Laptop GPU, 40 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:04.383, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:05.461, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:06.565, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:07.626, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:08.695, NVIDIA GeForce RTX 4050 Laptop GPU, 54 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:09.752, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:10.841, NVIDIA GeForce RTX 4050 Laptop GPU, 30 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:11.899, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:12.963, NVIDIA GeForce RTX 4050 Laptop GPU, 45 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:14.023, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:15.099, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:16.162, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:17.244, NVIDIA GeForce RTX 4050 Laptop GPU, 44 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:18.306, NVIDIA GeForce RTX 4050 Laptop GPU, 31 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:19.367, NVIDIA GeForce RTX 4050 Laptop GPU, 57 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:20.449, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:21.521, NVIDIA GeForce RTX 4050 Laptop GPU, 46 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:22.597, NVIDIA GeForce RTX 4050 Laptop GPU, 56 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:23.668, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:24.724, NVIDIA GeForce RTX 4050 Laptop GPU, 48 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:25.781, NVIDIA GeForce RTX 4050 Laptop GPU, 55 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:26.851, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:27.924, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:28.983, NVIDIA GeForce RTX 4050 Laptop GPU, 49 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:30.043, NVIDIA GeForce RTX 4050 Laptop GPU, 50 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:31.128, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:32.221, NVIDIA GeForce RTX 4050 Laptop GPU, 32 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:33.294, NVIDIA GeForce RTX 4050 Laptop GPU, 35 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:34.412, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:35.485, NVIDIA GeForce RTX 4050 Laptop GPU, 38 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:36.543, NVIDIA GeForce RTX 4050 Laptop GPU, 37 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:37.613, NVIDIA GeForce RTX 4050 Laptop GPU, 53 %, 5003 MiB"
+          },
+          {
+            "query": "2026/11/01 21:16:38.669, NVIDIA GeForce RTX 4050 Laptop GPU, 51 %, 185 MiB"
+          }
+        ],
+        "sample_count": 38,
+        "errors": []
+      }
+    ]
+  },
+  "reference": {
+    "frozen_candidate_sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa",
+    "reference_manifest_sha256": "6df044932d2405fd942f78ced7a963b22f851bd0a49f17eaf5cd59cb29ef6e21",
+    "frozen_release_manifest_sha256": "61af2e190e49cea24f3fcc1d015349eec5a36dc7abb825939792634f584a2e7e",
+    "candidate_oof_auc": 0.7715614423106346,
+    "candidate_oof_by_fold": [
+      0.7682728118806064,
+      0.7741273870479004,
+      0.7761637619657933,
+      0.7695607652001966,
+      0.7700138646512473
+    ],
+    "reference_files_verified": 15,
+    "raw_inputs_match_frozen_hashes": true
+  },
+  "software_versions": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "scipy": "1.18.1"
+  },
+  "authoritative_source_hashes": {
+    "experiments/phase_01_fee_product_features/run_experiment.py": {
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "experiments/phase_02_fold_safe_key_encodings/run_experiment.py": {
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    },
+    "source/run_independent_baseline.py": {
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    }
+  },
+  "git": {
+    "repository": "D:\\gci\\_gci_push_tmp",
+    "commit": "79da8eb146dde3dc6b97b45f954bcded939a0651",
+    "branch": "main",
+    "status": "M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/BEST_MODEL_REPORT.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/EXPERIMENT_REGISTER.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEGATIVE_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/NEXT_ACTIONS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/OPPORTUNITY_RANKING.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/RESEARCH_FINDINGS.md\n M champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/STATUS.md\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144300Z_raw_xgb_diversity_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T144500Z_raw_xgb_diversity_seed20261101/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/runs/20261101T145000Z_epoly_interactions_seed42/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_diversity.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/source/run_raw_xgb_seed_replication.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/__pycache__/\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_epoly_interactions.py\n?? champion/EXP85_DEEP_RESEARCH_AND_IMPROVEMENT/tests/test_raw_xgb_diversity.py\n?? champion/EXP85_PHASE2_COMPLETE_SUBMISSION/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_01_fee_product_features/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/experiments/phase_02_fold_safe_key_encodings/__pycache__/\n?? champion/EXP85_PHASE2_FROZEN_RELEASE/SOURCE/project/source/__pycache__/"
+  },
+  "official_competition_score": "NOT_EVALUATED"
+}

@@ -1,0 +1,10 @@
+{
+  "model_predictions": "raw binary probabilities",
+  "lightgbm_weight": 0.5,
+  "catboost_weight": 0.5,
+  "formula": "0.5 * LightGBM_probability + 0.5 * CatBoost_probability",
+  "test_prediction_aggregation": "mean of five fold model probabilities, then cast to float32",
+  "oof_prediction_aggregation": "arithmetic mean after casting each model OOF vector to float64",
+  "post_processing": "none",
+  "output_decimal_places": 10
+}

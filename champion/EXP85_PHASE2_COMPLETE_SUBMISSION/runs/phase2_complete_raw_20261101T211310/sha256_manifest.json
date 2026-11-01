@@ -1,0 +1,163 @@
+{
+  "run_id": "phase2_complete_raw_20261101T211310",
+  "algorithm": "SHA-256",
+  "files": {
+    "catboost_feature_importance.csv": {
+      "sha256": "ef8bfd7fcad915726d40949eaeadfe8f66b2c52d9b3b8badb018a65b9a246e34",
+      "size_bytes": 22644
+    },
+    "catboost_importance_fold_1.csv": {
+      "sha256": "19771c882a5cd4b4de717d44ad38289a6ae8d4a7d2ff8a626a924b362855c1b2",
+      "size_bytes": 4570
+    },
+    "catboost_importance_fold_2.csv": {
+      "sha256": "8a3129bdc1e8e60af568c15f2ef5d0b70c8078d2eb9ab02d742e118246ca5cca",
+      "size_bytes": 4567
+    },
+    "catboost_importance_fold_3.csv": {
+      "sha256": "777abcb6c22b65848f433858d0c60f618a8c4178ee3b1d5c6dd7c92f03f066dd",
+      "size_bytes": 4562
+    },
+    "catboost_importance_fold_4.csv": {
+      "sha256": "c9088f0ccf52ee66327b5439deb67f57e557cfac1e4e609f5b46ddff9cbe6b86",
+      "size_bytes": 4516
+    },
+    "catboost_importance_fold_5.csv": {
+      "sha256": "cdbfe03978a2397635e95d5c350ae1a5aa81c34478e598113145de1e23870d28",
+      "size_bytes": 4529
+    },
+    "feature_schema.json": {
+      "sha256": "731a459bd5b849ba0520fbff4c7854cfe9d45beab5aef4b7bbd06b95a5e906f5",
+      "size_bytes": 25660
+    },
+    "fold_1_indices.npz": {
+      "sha256": "80eda33e974fff9777830cc6d8c6665cb60f9fa125d66aebceb0d768ad550dc0",
+      "size_bytes": 238585
+    },
+    "fold_2_indices.npz": {
+      "sha256": "2229bf2cb3d4deedfb4ff78d45fa1675b0c4a45416bc581cb52eb586b6fa426c",
+      "size_bytes": 238585
+    },
+    "fold_3_indices.npz": {
+      "sha256": "50d2f2fb248474757d0d02014d4b961309155799f34df08ee7b640c99c3c142b",
+      "size_bytes": 238607
+    },
+    "fold_4_indices.npz": {
+      "sha256": "d935cece0b3972880befed976d287ad7babee436e1377718c089aefcf92b26ba",
+      "size_bytes": 238575
+    },
+    "fold_5_indices.npz": {
+      "sha256": "863a311958c927cbf37dd4d94a973cd92a1b47a82f740eee0275b4322ee368a7",
+      "size_bytes": 238578
+    },
+    "fold_assignments.npz": {
+      "sha256": "40c19de5bc7618138041b19965e12e3f4dff603a138c4aa54c3170471a7011bd",
+      "size_bytes": 1259570
+    },
+    "lightgbm_feature_importance.csv": {
+      "sha256": "7bbdc9f16255b2feadb058dcd8fc5152ba2a59029805b7160b4981d8093511a9",
+      "size_bytes": 44251
+    },
+    "lightgbm_importance_fold_1.csv": {
+      "sha256": "e93514b3cac742f04a203a6088c5294b7750dff06198f930d486b4f68cefa992",
+      "size_bytes": 8802
+    },
+    "lightgbm_importance_fold_2.csv": {
+      "sha256": "07c34f7e88fb490836a46404b318623512e3e0235c929840c16ce47af10dbf55",
+      "size_bytes": 8743
+    },
+    "lightgbm_importance_fold_3.csv": {
+      "sha256": "1deabb3f93a05659127529330d2571ee56a4d0137123f38c30107203ea40892f",
+      "size_bytes": 8929
+    },
+    "lightgbm_importance_fold_4.csv": {
+      "sha256": "40fbdcd38a043c489764df253ae1afcb638c2d05e59635990636cf8efb83322f",
+      "size_bytes": 8910
+    },
+    "lightgbm_importance_fold_5.csv": {
+      "sha256": "c341cd23acc24ca222f80522419588c96f9ec6aa9daacee2b9b1f32dcc4b2f54",
+      "size_bytes": 8967
+    },
+    "models/catboost/fold_1.cbm": {
+      "sha256": "65794ab05c03c26d7656aadf7da7ed6aa6ffc4fed6bdaff33900aa5d9985d72c",
+      "size_bytes": 858680
+    },
+    "models/catboost/fold_2.cbm": {
+      "sha256": "f794a289ce480b740587a46f7800d230d68eb7c5af5d55ecd9d2acf566594b02",
+      "size_bytes": 1722320
+    },
+    "models/catboost/fold_3.cbm": {
+      "sha256": "10300f0e1b774cd3be256e95bee811a79951612c2339ba984423fb9c6ae46709",
+      "size_bytes": 1102380
+    },
+    "models/catboost/fold_4.cbm": {
+      "sha256": "5651ae9934f9eabf4de9e56547247e87137590f9ced9c7563b5a1951b0d2d0fb",
+      "size_bytes": 1324008
+    },
+    "models/catboost/fold_5.cbm": {
+      "sha256": "2016887822657e0c13bcbbf446d42aad674169effc0ae44331a73f38c76b1fa8",
+      "size_bytes": 1869004
+    },
+    "models/lightgbm/fold_1.txt": {
+      "sha256": "ebdec9807722eb90556b95fa442cb750c443813aafe9b692b32c058968a3b457",
+      "size_bytes": 1113744
+    },
+    "models/lightgbm/fold_2.txt": {
+      "sha256": "f244ef2dd05f8086e8fc14c98540648e8ade98ee710ad6853b881ce51d008eeb",
+      "size_bytes": 1025892
+    },
+    "models/lightgbm/fold_3.txt": {
+      "sha256": "73c81ba6031c3d5556da98e07fc8b28ee520eac6cc252f4c250085f870177dae",
+      "size_bytes": 1406980
+    },
+    "models/lightgbm/fold_4.txt": {
+      "sha256": "6ece0ee452206ac3dce1d47814a3cfdd5b052add83d9ff646fa39c86f5ddc2c0",
+      "size_bytes": 1417768
+    },
+    "models/lightgbm/fold_5.txt": {
+      "sha256": "69e0ba6c4a7939b537914d1e1a1b3794fb8a2c07ef554b6695404d7df66243ed",
+      "size_bytes": 1498079
+    },
+    "predictions/oof_catboost.npy": {
+      "sha256": "4fa979ce8d6b20127f9f3542e1d1caab042a50aab17c295010b788f99b141702",
+      "size_bytes": 684936
+    },
+    "predictions/oof_lightgbm.npy": {
+      "sha256": "b8c4d6779880bc9cce44e7d396e477a1bb659d001ac1ec394bfbff6be3c404d7",
+      "size_bytes": 684936
+    },
+    "predictions/oof_phase2_blend.npy": {
+      "sha256": "c8ba943ae9306137ac9a50bde9b6330077642949d0ce1c746889be47fe5941b1",
+      "size_bytes": 1369744
+    },
+    "predictions/test_catboost.npy": {
+      "sha256": "b71ac625529762b4237291512134290017efd1b4684526c8e5aff3eae3fdcbef",
+      "size_bytes": 246128
+    },
+    "predictions/test_lightgbm.npy": {
+      "sha256": "eef3c4af26eb343d9936758a7124c75fb1c97f38b6a5ffa57ebd3b95457d4ce3",
+      "size_bytes": 246128
+    },
+    "predictions/test_phase2_blend.npy": {
+      "sha256": "859a7c22957fb8c28e46ad730bf47bfb557aeea8d20c34570345170fff146271",
+      "size_bytes": 492128
+    },
+    "reports/implementation_report.json": {
+      "sha256": "0b84d97cf4350401ab3c7948eb636061620bd07f35c85203cbf239acfc97ccae",
+      "size_bytes": 85770
+    },
+    "reports/implementation_report.md": {
+      "sha256": "f7b1258c1823b76027e4b8c569dffde5cd84f98af089c3f3918f7b0ac3f68dad",
+      "size_bytes": 1761
+    },
+    "run_manifest.json": {
+      "sha256": "2ad6901ba04911238437d3b2d363872b55f29c8cfe8eea02f66809554fbb0b30",
+      "size_bytes": 12365
+    },
+    "submissions/submission_phase2_complete.csv": {
+      "sha256": "0b0fd01b5150362c9887033a4b202c6ea7c51443cf42b566237a3055d117835c",
+      "size_bytes": 1291519
+    }
+  },
+  "manifest_excludes_itself": true
+}

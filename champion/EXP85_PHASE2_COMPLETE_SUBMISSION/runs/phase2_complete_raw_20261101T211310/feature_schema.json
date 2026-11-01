@@ -1,0 +1,1378 @@
+{
+  "catboost_features": [
+    {
+      "name": "CNT_CHILDREN",
+      "dtype": "int64"
+    },
+    {
+      "name": "AMT_INCOME_TOTAL",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_CREDIT",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_ANNUITY",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_GOODS_PRICE",
+      "dtype": "float64"
+    },
+    {
+      "name": "REGION_POPULATION_RELATIVE",
+      "dtype": "float64"
+    },
+    {
+      "name": "DAYS_BIRTH",
+      "dtype": "int64"
+    },
+    {
+      "name": "DAYS_EMPLOYED",
+      "dtype": "int64"
+    },
+    {
+      "name": "DAYS_REGISTRATION",
+      "dtype": "float64"
+    },
+    {
+      "name": "DAYS_ID_PUBLISH",
+      "dtype": "int64"
+    },
+    {
+      "name": "OWN_CAR_AGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "FLAG_MOBIL",
+      "dtype": "int64"
+    },
+    {
+      "name": "FLAG_EMP_PHONE",
+      "dtype": "int64"
+    },
+    {
+      "name": "FLAG_WORK_PHONE",
+      "dtype": "int64"
+    },
+    {
+      "name": "CNT_FAM_MEMBERS",
+      "dtype": "float64"
+    },
+    {
+      "name": "REGION_RATING_CLIENT",
+      "dtype": "int64"
+    },
+    {
+      "name": "EXT_SOURCE_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_SOURCE_2",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_SOURCE_3",
+      "dtype": "float64"
+    },
+    {
+      "name": "DAYS_LAST_PHONE_CHANGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_MON",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_QRT",
+      "dtype": "float64"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "dtype": "float64"
+    },
+    {
+      "name": "NA_CNT_CHILDREN",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_INCOME_TOTAL",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_CREDIT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_ANNUITY",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_GOODS_PRICE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_REGION_POPULATION_RELATIVE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_BIRTH",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_EMPLOYED",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_REGISTRATION",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_ID_PUBLISH",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_OWN_CAR_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_MOBIL",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_EMP_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_WORK_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_CNT_FAM_MEMBERS",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_REGION_RATING_CLIENT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_LAST_PHONE_CHANGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_MON",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+      "dtype": "float32"
+    },
+    {
+      "name": "RAW_MISSING_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_EMPLOYED_CLEAN",
+      "dtype": "float64"
+    },
+    {
+      "name": "DAYS_EMPLOYED_SENTINEL",
+      "dtype": "float32"
+    },
+    {
+      "name": "AGE_YEARS",
+      "dtype": "float64"
+    },
+    {
+      "name": "EMPLOYED_YEARS",
+      "dtype": "float64"
+    },
+    {
+      "name": "EMPLOYED_TO_AGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "REGISTRATION_TO_AGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "ID_PUBLISH_TO_AGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "PHONE_CHANGE_YEARS",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_TO_INCOME",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_TO_INCOME",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_TO_GOODS",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_TO_CREDIT",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_TERM",
+      "dtype": "float64"
+    },
+    {
+      "name": "INCOME_PER_FAMILY",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_PER_FAMILY",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_PER_FAMILY",
+      "dtype": "float64"
+    },
+    {
+      "name": "DISPOSABLE_INCOME",
+      "dtype": "float64"
+    },
+    {
+      "name": "DISPOSABLE_INCOME_TO_INCOME",
+      "dtype": "float64"
+    },
+    {
+      "name": "DEBT_SERVICE_COVERAGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_TERM_ROUND_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_TO_GOODS_ROUND_2",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_MEAN",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_MIN",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_MAX",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_STD",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_RANGE",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_PRODUCT",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_DIFF_01",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_PRODUCT_01",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_RATIO_01",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_DIFF_02",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_PRODUCT_02",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_RATIO_02",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_DIFF_12",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_PRODUCT_12",
+      "dtype": "float64"
+    },
+    {
+      "name": "EXT_RATIO_12",
+      "dtype": "float64"
+    },
+    {
+      "name": "MERTON_DISTANCE_20",
+      "dtype": "float64"
+    },
+    {
+      "name": "MERTON_PD_20",
+      "dtype": "float64"
+    },
+    {
+      "name": "MERTON_DISTANCE_25",
+      "dtype": "float64"
+    },
+    {
+      "name": "MERTON_PD_25",
+      "dtype": "float64"
+    },
+    {
+      "name": "BUREAU_INQUIRY_SUM",
+      "dtype": "float64"
+    },
+    {
+      "name": "INCOME_LOG1P",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_LOG1P",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_LOG1P",
+      "dtype": "float64"
+    },
+    {
+      "name": "NAME_CONTRACT_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "CODE_GENDER",
+      "dtype": "str"
+    },
+    {
+      "name": "NAME_INCOME_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "NAME_EDUCATION_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "NAME_FAMILY_STATUS",
+      "dtype": "str"
+    },
+    {
+      "name": "NAME_HOUSING_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "OCCUPATION_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "ORGANIZATION_TYPE",
+      "dtype": "str"
+    },
+    {
+      "name": "FEE_DECODED",
+      "dtype": "float32"
+    },
+    {
+      "name": "FEE_RAW_RATIO_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "FEE_ADJUSTED_RATIO_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "dtype": "float64"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "dtype": "float64"
+    },
+    {
+      "name": "CREDIT_GOODS_RATIO",
+      "dtype": "float64"
+    },
+    {
+      "name": "PRODUCT_KEY_VALID",
+      "dtype": "float32"
+    },
+    {
+      "name": "PRODUCT_KEY_K",
+      "dtype": "float64"
+    },
+    {
+      "name": "PRODUCT_KEY_DISTANCE",
+      "dtype": "float64"
+    },
+    {
+      "name": "TE_FEE_Q3",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q3",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_FEE_Q4",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q4",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_FEE_Q5",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q5",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_PRODUCT_K",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_PRODUCT_K",
+      "dtype": "float32"
+    }
+  ],
+  "lightgbm_features": [
+    {
+      "name": "CNT_CHILDREN",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_INCOME_TOTAL",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_CREDIT",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_ANNUITY",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_GOODS_PRICE",
+      "dtype": "float32"
+    },
+    {
+      "name": "REGION_POPULATION_RELATIVE",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_BIRTH",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_EMPLOYED",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_REGISTRATION",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_ID_PUBLISH",
+      "dtype": "float32"
+    },
+    {
+      "name": "OWN_CAR_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "FLAG_MOBIL",
+      "dtype": "float32"
+    },
+    {
+      "name": "FLAG_EMP_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "FLAG_WORK_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "CNT_FAM_MEMBERS",
+      "dtype": "float32"
+    },
+    {
+      "name": "REGION_RATING_CLIENT",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_SOURCE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_SOURCE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_SOURCE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_LAST_PHONE_CHANGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_MON",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_QRT",
+      "dtype": "float32"
+    },
+    {
+      "name": "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_CNT_CHILDREN",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_INCOME_TOTAL",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_CREDIT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_ANNUITY",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_GOODS_PRICE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_REGION_POPULATION_RELATIVE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_BIRTH",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_EMPLOYED",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_REGISTRATION",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_ID_PUBLISH",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_OWN_CAR_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_MOBIL",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_EMP_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_FLAG_WORK_PHONE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_CNT_FAM_MEMBERS",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_REGION_RATING_CLIENT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_EXT_SOURCE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_DAYS_LAST_PHONE_CHANGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_MON",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+      "dtype": "float32"
+    },
+    {
+      "name": "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+      "dtype": "float32"
+    },
+    {
+      "name": "RAW_MISSING_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_EMPLOYED_CLEAN",
+      "dtype": "float32"
+    },
+    {
+      "name": "DAYS_EMPLOYED_SENTINEL",
+      "dtype": "float32"
+    },
+    {
+      "name": "AGE_YEARS",
+      "dtype": "float32"
+    },
+    {
+      "name": "EMPLOYED_YEARS",
+      "dtype": "float32"
+    },
+    {
+      "name": "EMPLOYED_TO_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "REGISTRATION_TO_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "ID_PUBLISH_TO_AGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "PHONE_CHANGE_YEARS",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_TO_INCOME",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_TO_INCOME",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_TO_GOODS",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_TO_CREDIT",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_TERM",
+      "dtype": "float32"
+    },
+    {
+      "name": "INCOME_PER_FAMILY",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_PER_FAMILY",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_PER_FAMILY",
+      "dtype": "float32"
+    },
+    {
+      "name": "DISPOSABLE_INCOME",
+      "dtype": "float32"
+    },
+    {
+      "name": "DISPOSABLE_INCOME_TO_INCOME",
+      "dtype": "float32"
+    },
+    {
+      "name": "DEBT_SERVICE_COVERAGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_TERM_ROUND_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_TO_GOODS_ROUND_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_MEAN",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_MIN",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_MAX",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_STD",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_RANGE",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_PRODUCT",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_DIFF_01",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_PRODUCT_01",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_RATIO_01",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_DIFF_02",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_PRODUCT_02",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_RATIO_02",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_DIFF_12",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_PRODUCT_12",
+      "dtype": "float32"
+    },
+    {
+      "name": "EXT_RATIO_12",
+      "dtype": "float32"
+    },
+    {
+      "name": "MERTON_DISTANCE_20",
+      "dtype": "float32"
+    },
+    {
+      "name": "MERTON_PD_20",
+      "dtype": "float32"
+    },
+    {
+      "name": "MERTON_DISTANCE_25",
+      "dtype": "float32"
+    },
+    {
+      "name": "MERTON_PD_25",
+      "dtype": "float32"
+    },
+    {
+      "name": "BUREAU_INQUIRY_SUM",
+      "dtype": "float32"
+    },
+    {
+      "name": "INCOME_LOG1P",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_LOG1P",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_LOG1P",
+      "dtype": "float32"
+    },
+    {
+      "name": "FEE_DECODED",
+      "dtype": "float32"
+    },
+    {
+      "name": "FEE_RAW_RATIO_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "FEE_ADJUSTED_RATIO_COUNT",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CREDIT_GOODS_RATIO",
+      "dtype": "float32"
+    },
+    {
+      "name": "PRODUCT_KEY_VALID",
+      "dtype": "float32"
+    },
+    {
+      "name": "PRODUCT_KEY_K",
+      "dtype": "float32"
+    },
+    {
+      "name": "PRODUCT_KEY_DISTANCE",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_FEE_Q3",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q3",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_FEE_Q4",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q4",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_FEE_Q5",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_FEE_Q5",
+      "dtype": "float32"
+    },
+    {
+      "name": "TE_PRODUCT_K",
+      "dtype": "float32"
+    },
+    {
+      "name": "LOG_COUNT_PRODUCT_K",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_CONTRACT_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_CONTRACT_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_CODE_GENDER_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_CODE_GENDER_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_CODE_GENDER_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_6",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_INCOME_TYPE_7",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_EDUCATION_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_EDUCATION_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_EDUCATION_TYPE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_EDUCATION_TYPE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_EDUCATION_TYPE_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_FAMILY_STATUS_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_NAME_HOUSING_TYPE_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_6",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_7",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_8",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_9",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_10",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_11",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_12",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_13",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_14",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_15",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_16",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_17",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_OCCUPATION_TYPE_18",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_0",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_1",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_2",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_3",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_4",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_5",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_6",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_7",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_8",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_9",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_10",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_11",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_12",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_13",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_14",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_15",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_16",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_17",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_18",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_19",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_20",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_21",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_22",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_23",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_24",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_25",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_26",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_27",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_28",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_29",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_30",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_31",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_32",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_33",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_34",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_35",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_36",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_37",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_38",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_39",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_40",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_41",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_42",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_43",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_44",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_45",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_46",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_47",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_48",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_49",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_50",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_51",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_52",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_53",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_54",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_55",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_56",
+      "dtype": "float32"
+    },
+    {
+      "name": "CAT_ORGANIZATION_TYPE_57",
+      "dtype": "float32"
+    }
+  ]
+}
