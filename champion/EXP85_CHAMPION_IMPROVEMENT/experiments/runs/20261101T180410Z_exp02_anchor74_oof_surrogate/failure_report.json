@@ -1,0 +1,22 @@
+{
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "exit_code": "NOT_CAPTURED",
+  "experiment_id": "20261101T180410Z",
+  "gpu_telemetry_samples": 763,
+  "limitation": "No OOF arrays, fold indices, final metrics, or normal exit code were persisted. Fold AUCs in the log are partial diagnostics only.",
+  "observed_completed_folds": 3,
+  "observed_incomplete_fold": 4,
+  "partial_results_accepted": false,
+  "preserved_files": {
+    "gpu_telemetry.csv": "420b5a750ab2d3bebce9cc1a6f081e67ff5a4eb8983626581b9efa773c362afe",
+    "training.log": "8d357302192e061c2b81236d0c55b8ab75cb6072c97d202b4a2e1d8843d154a4"
+  },
+  "provenance": {
+    "command": "NOT_RECORDED",
+    "python": "3.12.10",
+    "raw_input_sha256_at_execution": "NOT_RECORDED",
+    "source_sha256_at_execution": "NOT_RECORDED"
+  },
+  "status": "ABORTED_INVALID_PARTIAL",
+  "stop_reason": "The run was stopped after a LightGBM dataset-reuse/seed interaction was identified. The retained log ends during fold 4 CatBoost training and does not capture an exception or stop event."
+}

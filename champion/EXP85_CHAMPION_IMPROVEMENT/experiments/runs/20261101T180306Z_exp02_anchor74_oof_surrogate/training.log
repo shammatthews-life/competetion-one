@@ -1,0 +1,26 @@
+Experiment: 20261101T180306Z
+Classification: INDEPENDENT_RAW_DATA_SURROGATE_OOF
+Python: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe | 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Learning rate set to 0.5
+0:	learn: 0.3807415	total: 47.2ms	remaining: 47.2ms
+1:	learn: 0.2383268	total: 48.8ms	remaining: 0us
+[*] Ingesting raw train dataset: D:\gci\inpuy\train.csv
+[*] Ingesting raw test dataset : D:\gci\inpuy\test.csv
+[*] Engineering full 143-feature financial and transductive manifold from raw data...
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:200: RuntimeWarning: Mean of empty slice
+  F["EXT_MEAN"] = np.nanmean(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:201: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MIN"] = np.nanmin(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:202: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MAX"] = np.nanmax(ext_stack, axis=1).astype(np.float32)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+[+] Hasan 143-feature manifold built in 2.7s (695 features)
+{
+  "experiment_id": "20261101T180306Z",
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "status": "FAILED",
+  "error": "ValueError('Expected 143 features, got 695')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py\", line 547, in main\n    raise ValueError(f\"Expected {N_FEATURES} features, got {x_train.shape[1]}\")\nValueError: Expected 143 features, got 695\n",
+  "runtime_seconds": 4.033509700006107
+}

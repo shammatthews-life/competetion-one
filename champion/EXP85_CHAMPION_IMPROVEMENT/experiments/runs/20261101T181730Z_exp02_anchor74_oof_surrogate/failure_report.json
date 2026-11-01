@@ -1,0 +1,22 @@
+{
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "exit_code": "NOT_CAPTURED",
+  "experiment_id": "20261101T181730Z",
+  "gpu_telemetry_samples": 628,
+  "limitation": "No OOF arrays, fold indices, final metrics, or normal exit code were persisted. Fold AUCs in the log are partial diagnostics only.",
+  "observed_completed_folds": 2,
+  "observed_incomplete_fold": 3,
+  "partial_results_accepted": false,
+  "preserved_files": {
+    "gpu_telemetry.csv": "cb7231823f8bae40dc337bb626d9d93cb12edeb1645d91b645caf0a0f582a51e",
+    "training.log": "f2dce7eaf5da9aeed4c0745d79094d5ca5138818e66bc04ebe024798c4d5e26e"
+  },
+  "provenance": {
+    "command": "NOT_RECORDED",
+    "python": "3.12.10",
+    "raw_input_sha256_at_execution": "NOT_RECORDED",
+    "source_sha256_at_execution": "NOT_RECORDED"
+  },
+  "status": "ABORTED_INVALID_PARTIAL",
+  "stop_reason": "The run was stopped after review found that row-wise stratified folds could split repeat-borrower entity groups across fit and validation, invalidating graph-calibration evaluation."
+}

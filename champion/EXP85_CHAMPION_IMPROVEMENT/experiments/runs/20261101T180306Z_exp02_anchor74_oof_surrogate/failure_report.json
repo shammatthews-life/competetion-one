@@ -1,0 +1,11 @@
+{
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "error": "ValueError('Expected 143 features, got 695')",
+  "experiment_id": "20261101T180306Z",
+  "gpu_telemetry_samples": 3,
+  "gpu_telemetry_sha256": "e8810e5480f330d2f7666c471f02e826eda348e23b087adafce25706fcbfa580",
+  "runtime_seconds": 4.033509700006107,
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py\", line 547, in main\n    raise ValueError(f\"Expected {N_FEATURES} features, got {x_train.shape[1]}\")\nValueError: Expected 143 features, got 695\n",
+  "training_log_sha256": "09d03616447ece817184e1584c6bbaefb06d09ac7dccbe850ef546d005f2cd84"
+}

@@ -1,0 +1,423 @@
+{
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "configuration": {
+    "blend_anchor_weights_tested": [
+      0.8,
+      0.85,
+      0.9
+    ],
+    "blend_suite_weights": {
+      "0.80": 0.2,
+      "0.85": 0.15,
+      "0.90": 0.1
+    },
+    "early_stopping": "Disabled; fixed iteration counts prevent validation-label selection.",
+    "family_names": [
+      "lgb_cons",
+      "lgb_et",
+      "xgb",
+      "cat",
+      "lgb_deep"
+    ],
+    "family_weights": [
+      0.22,
+      0.18,
+      0.24,
+      0.2,
+      0.16
+    ],
+    "feature_count": 695,
+    "feature_selection": "None; no global-label-selected feature list used.",
+    "features": "Tracked raw builder returns 695 columns despite its 143-feature header; all transformations are covariate-only and transductive.",
+    "gpu": {
+      "catboost_task_type": "GPU",
+      "catboost_version": "1.2.10",
+      "lightgbm_backend": "CPU; installed LightGBM build is CPU-based",
+      "lightgbm_version": "4.7.0",
+      "nvidia_smi": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 5920 MiB",
+      "xgboost_device": "cuda:0",
+      "xgboost_version": "3.4.1"
+    },
+    "group_overlap_by_fold": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lgbm_cpu_reason": "Installed LightGBM build is CPU-based.",
+    "model_parameters": {
+      "cat": {
+        "depth": 6,
+        "devices": "0",
+        "eval_metric": "AUC",
+        "iterations": 450,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.045,
+        "loss_function": "Logloss",
+        "random_seed": 45,
+        "task_type": "GPU"
+      },
+      "lgb_cons": {
+        "bagging_fraction": 0.8,
+        "feature_fraction": 0.6,
+        "fold_seed_offset": "feature/bagging/data=42+fold",
+        "learning_rate": 0.03,
+        "max_depth": 6,
+        "min_child_samples": 80,
+        "num_leaves": 31,
+        "reg_alpha": 2.0,
+        "reg_lambda": 5.0,
+        "rounds": 700,
+        "seed": 42,
+        "threads": 4
+      },
+      "lgb_deep": {
+        "bagging_fraction": 0.8,
+        "feature_fraction": 0.5,
+        "fold_seed_offset": "feature/bagging/data=46+fold",
+        "learning_rate": 0.03,
+        "max_depth": 8,
+        "min_child_samples": 50,
+        "num_leaves": 63,
+        "reg_alpha": 2.5,
+        "reg_lambda": 6.0,
+        "rounds": 750,
+        "seed": 46,
+        "threads": 4
+      },
+      "lgb_et": {
+        "bagging_fraction": 0.8,
+        "extra_trees": true,
+        "feature_fraction": 0.45,
+        "fold_seed_offset": "feature/bagging/data=43+fold",
+        "learning_rate": 0.035,
+        "max_depth": 7,
+        "min_child_samples": 60,
+        "num_leaves": 45,
+        "reg_alpha": 3.0,
+        "reg_lambda": 8.0,
+        "rounds": 750,
+        "seed": 43,
+        "threads": 4
+      },
+      "xgb": {
+        "colsample_bytree": 0.6,
+        "device": "cuda",
+        "learning_rate": 0.04,
+        "max_depth": 6,
+        "random_state": 44,
+        "reg_alpha": 2.0,
+        "reg_lambda": 5.0,
+        "rounds": 500,
+        "subsample": 0.8,
+        "threads": 4,
+        "tree_method": "hist"
+      }
+    },
+    "multirow_entity_groups": 2311,
+    "outer_folds": 5,
+    "outer_validation_labels_used_for_fit": false,
+    "primary_ratio": [
+      0.85,
+      0.15
+    ],
+    "seed": 20261101,
+    "shuffle": true,
+    "split_deviation": "Uses exact historical applicant entity key as groups; row-wise seed-matched folds were rejected to prevent borrower leakage.",
+    "splitter": "StratifiedGroupKFold",
+    "unique_entity_groups": 168839
+  },
+  "exit_code": 0,
+  "experiment_id": "20261101T183230Z",
+  "folds": [
+    {
+      "elapsed_seconds": 214.02491939999163,
+      "fit_rows": 136961,
+      "fold": 1,
+      "model_auc": {
+        "cat": 0.7561366655659113,
+        "lgb_cons": 0.7572917348893741,
+        "lgb_deep": 0.7558399671657754,
+        "lgb_et": 0.7562202448456954,
+        "xgb": 0.7573473988735526
+      },
+      "model_runtime_seconds": {
+        "cat": 9.735249200020917,
+        "lgb_cons": 62.04864819999784,
+        "lgb_deep": 90.58633729998837,
+        "lgb_et": 32.311828800011426,
+        "xgb": 18.93683439999586
+      },
+      "seed": 20261101,
+      "valid_rows": 34241
+    },
+    {
+      "elapsed_seconds": 214.5820589000068,
+      "fit_rows": 136961,
+      "fold": 2,
+      "model_auc": {
+        "cat": 0.7587521235614251,
+        "lgb_cons": 0.7611328732113085,
+        "lgb_deep": 0.7584689705441323,
+        "lgb_et": 0.7596521214327491,
+        "xgb": 0.760914229887929
+      },
+      "model_runtime_seconds": {
+        "cat": 9.16804210000555,
+        "lgb_cons": 62.86594490002608,
+        "lgb_deep": 90.83245639997767,
+        "lgb_et": 32.70407760000671,
+        "xgb": 18.56867019998026
+      },
+      "seed": 20261101,
+      "valid_rows": 34241
+    },
+    {
+      "elapsed_seconds": 215.9399645999947,
+      "fit_rows": 136962,
+      "fold": 3,
+      "model_auc": {
+        "cat": 0.7488864439752319,
+        "lgb_cons": 0.7541623494086137,
+        "lgb_deep": 0.7498072406348604,
+        "lgb_et": 0.7506199104401139,
+        "xgb": 0.7504345131723726
+      },
+      "model_runtime_seconds": {
+        "cat": 9.20923340000445,
+        "lgb_cons": 62.48778639998636,
+        "lgb_deep": 91.91352649999317,
+        "lgb_et": 33.19453180002165,
+        "xgb": 18.667977599980077
+      },
+      "seed": 20261101,
+      "valid_rows": 34240
+    },
+    {
+      "elapsed_seconds": 213.4512469000183,
+      "fit_rows": 136962,
+      "fold": 4,
+      "model_auc": {
+        "cat": 0.7592350241720474,
+        "lgb_cons": 0.7589976784278155,
+        "lgb_deep": 0.7567881411587981,
+        "lgb_et": 0.7584176302106179,
+        "xgb": 0.7577571449011574
+      },
+      "model_runtime_seconds": {
+        "cat": 9.746669200016186,
+        "lgb_cons": 62.55438119999599,
+        "lgb_deep": 89.35205129999667,
+        "lgb_et": 32.85527619998902,
+        "xgb": 18.445097399991937
+      },
+      "seed": 20261101,
+      "valid_rows": 34240
+    },
+    {
+      "elapsed_seconds": 213.02403639999102,
+      "fit_rows": 136962,
+      "fold": 5,
+      "model_auc": {
+        "cat": 0.7570255788574081,
+        "lgb_cons": 0.7591431502540058,
+        "lgb_deep": 0.7546730525304098,
+        "lgb_et": 0.7583616070057466,
+        "xgb": 0.7571068148033308
+      },
+      "model_runtime_seconds": {
+        "cat": 10.097673699987354,
+        "lgb_cons": 61.349358400009805,
+        "lgb_deep": 90.351806199993,
+        "lgb_et": 32.268747399997665,
+        "xgb": 18.526537500001723
+      },
+      "seed": 20261101,
+      "valid_rows": 34240
+    }
+  ],
+  "gpu_telemetry": {
+    "monitor_error": null,
+    "peak_memory_used_mib": 4903,
+    "peak_utilization_percent": 100,
+    "sample_count": 1092,
+    "sha256": "66e8e0646fbfb11cea173027a7f97f9cfe6840f46f4492fe86de1e89c05b9d50"
+  },
+  "graph_calibration": [
+    {
+      "fold": 1,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 656
+    },
+    {
+      "fold": 2,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 694
+    },
+    {
+      "fold": 3,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 684
+    },
+    {
+      "fold": 4,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 692
+    },
+    {
+      "fold": 5,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 694
+    }
+  ],
+  "historical_anchor74_claim": false,
+  "official_score": "NOT_EVALUATED",
+  "oof_metrics": {
+    "blend_fold_auc": [
+      {
+        "anchor_0.80_suite_0.20_auc": 0.7653013047973404,
+        "anchor_0.85_suite_0.15_auc": 0.763987051071605,
+        "anchor_0.90_suite_0.10_auc": 0.7626145423350768,
+        "fold": 1,
+        "historical_ratio_surrogate_blend_auc": 0.763987051071605,
+        "suite_oof_auc": 0.775970221693063,
+        "surrogate_anchor_auc": 0.7597103289696079,
+        "two_stream_meta_auc": 0.7759649936792739
+      },
+      {
+        "anchor_0.80_suite_0.20_auc": 0.7688086015254655,
+        "anchor_0.85_suite_0.15_auc": 0.7674545703483124,
+        "anchor_0.90_suite_0.10_auc": 0.7660174955117345,
+        "fold": 2,
+        "historical_ratio_surrogate_blend_auc": 0.7674545703483124,
+        "suite_oof_auc": 0.7791513243745335,
+        "surrogate_anchor_auc": 0.7629117086249593,
+        "two_stream_meta_auc": 0.7791103370126636
+      },
+      {
+        "anchor_0.80_suite_0.20_auc": 0.7602558671950733,
+        "anchor_0.85_suite_0.15_auc": 0.7587800339090964,
+        "anchor_0.90_suite_0.10_auc": 0.757248280866924,
+        "fold": 3,
+        "historical_ratio_surrogate_blend_auc": 0.7587800339090964,
+        "suite_oof_auc": 0.7726290069350152,
+        "surrogate_anchor_auc": 0.7539836820519215,
+        "two_stream_meta_auc": 0.7726350414410795
+      },
+      {
+        "anchor_0.80_suite_0.20_auc": 0.7677899307749051,
+        "anchor_0.85_suite_0.15_auc": 0.7663355918248145,
+        "anchor_0.90_suite_0.10_auc": 0.764802551421348,
+        "fold": 4,
+        "historical_ratio_surrogate_blend_auc": 0.7663355918248145,
+        "suite_oof_auc": 0.7797972645043778,
+        "surrogate_anchor_auc": 0.7615113892853654,
+        "two_stream_meta_auc": 0.7798157128514888
+      },
+      {
+        "anchor_0.80_suite_0.20_auc": 0.7667139725964919,
+        "anchor_0.85_suite_0.15_auc": 0.7653012430025018,
+        "anchor_0.90_suite_0.10_auc": 0.763799593524867,
+        "fold": 5,
+        "historical_ratio_surrogate_blend_auc": 0.7653012430025018,
+        "suite_oof_auc": 0.7785641447994558,
+        "surrogate_anchor_auc": 0.7605854086976703,
+        "two_stream_meta_auc": 0.7785788919828471
+      }
+    ],
+    "blend_mean_auc": {
+      "0.8": 0.7657739353778552,
+      "0.85": 0.764371698031266,
+      "0.9": 0.7628964927319901
+    },
+    "family_pooled_auc": {
+      "cat": 0.7559647118110125,
+      "lgb_cons": 0.7581163447820474,
+      "lgb_deep": 0.7551000556118835,
+      "lgb_et": 0.7566236569710443,
+      "xgb": 0.7566817390603217
+    },
+    "fold_delta_vs_85_15_surrogate": {
+      "0.8": [
+        0.0013142537257353482,
+        0.0013540311771530478,
+        0.0014758332859768908,
+        0.0014543389500906168,
+        0.0014127295939900808
+      ],
+      "0.85": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "0.9": [
+        -0.0013725087365282773,
+        -0.0014370748365779562,
+        -0.0015317530421724568,
+        -0.001533040403466468,
+        -0.0015016494776347589
+      ]
+    },
+    "historical_ratio_surrogate_blend_pooled_auc": 0.764340948289323,
+    "positive_folds_vs_85_15_surrogate": {
+      "0.8": 5,
+      "0.85": 0,
+      "0.9": 0
+    },
+    "suite_pooled_auc": 0.7772070027231033,
+    "surrogate_anchor_fold_auc": [
+      0.7597103289696079,
+      0.7629117086249593,
+      0.7539836820519215,
+      0.7615113892853654,
+      0.7605854086976703
+    ],
+    "surrogate_anchor_pooled_auc": 0.7597101436454733,
+    "two_stream_crossfit_logistic_pooled_auc": 0.7771967064822934
+  },
+  "outputs": {
+    "anchor_surrogate_oof.npy": "cc673cf0747f77404ecb67c915b5e29e00067dc16b3962d56fd4245774890ce5",
+    "blend_85_15_oof.npy": "7417ec7d652f4b3641fc266a13afcdef7e96aea84296e34e7b3278f87447e04f",
+    "gpu_telemetry.csv": "66e8e0646fbfb11cea173027a7f97f9cfe6840f46f4492fe86de1e89c05b9d50",
+    "raw_family_oof.npz": "607e9d4842e6d0e285f8c78c9c23912a8ac80906911bc748890328ee7b6e89c7",
+    "suite_oof_rank_probit.npy": "692400f19da6f45ae8cd1d0c76da922d1b6c429d98906f848d8926a3c1877b64",
+    "training.log": "a821cb0c6a1c7663e08bc5dd740ebb6a05088b97ad60b42c553ea5fa04cdaf4b",
+    "two_stream_meta_oof.npy": "e31f1d5e1e4f71360106c86cf77c8988460e9d4250866b14a9f1845a6485905c"
+  },
+  "provenance": {
+    "anchor_builder_path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py",
+    "anchor_builder_sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py"
+    ],
+    "experiment_source_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py",
+    "experiment_source_sha256": "a32fccee17dc61d3ba5a969c1c42171e199ab83baf01c5d952b370d1a6917c34",
+    "feature_cache_used": false,
+    "fold_indices_saved": true,
+    "historical_test_predictions_used": false,
+    "raw_test_sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "raw_train_sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+    "source_notes": [
+      "This is not the historical Anchor74 architecture: its 143-feature header yields 695 columns and differs from the original 669/550-feature zoo and upstream optimal-transductive stack.",
+      "The historical Anchor74 source applies a cached optimal-apex prediction; no verified OOF for that upstream stage was found.",
+      "This surrogate's OOF predictions are independently trained from raw data; its 85:15 suite blend is hybrid-cache-assisted diagnostic only.",
+      "Unsupervised feature construction includes train/test covariates; no target labels are used by the feature builder.",
+      "All graph label calibration is refit per fold using outer-fit labels only."
+    ],
+    "suite_cache_hashes": {
+      "labels": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "v17": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "v55": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "xgb": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d"
+    },
+    "suite_cache_limitation": "Historical suite OOF fold sidecars and producer metadata are unavailable."
+  },
+  "reason_no_candidate": "This is a nonhistorical raw-data surrogate; a verified, leakage-safe historical Anchor74 OOF baseline is unavailable.",
+  "runtime_seconds": 1101.0540971000155,
+  "runtime_seconds_before_report": 1100.2777780000179,
+  "status": "DIAGNOSTIC_ONLY_NO_CANDIDATE"
+}

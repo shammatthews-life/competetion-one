@@ -1,0 +1,487 @@
+Experiment: 20261101T183230Z
+Classification: INDEPENDENT_RAW_DATA_SURROGATE_OOF
+Python: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe | 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Learning rate set to 0.5
+0:	learn: 0.3807415	total: 20.6ms	remaining: 20.6ms
+1:	learn: 0.2383268	total: 22.1ms	remaining: 0us
+[*] Ingesting raw train dataset: D:\gci\inpuy\train.csv
+[*] Ingesting raw test dataset : D:\gci\inpuy\test.csv
+[*] Engineering full 143-feature financial and transductive manifold from raw data...
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:200: RuntimeWarning: Mean of empty slice
+  F["EXT_MEAN"] = np.nanmean(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:201: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MIN"] = np.nanmin(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:202: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MAX"] = np.nanmax(ext_stack, axis=1).astype(np.float32)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+[+] Hasan 143-feature manifold built in 2.5s (695 features)
+Raw rows=171202 test_rows=61500 features=695 outer_folds=5 seed=20261101 groups=168839
+Outer validation labels are not passed to any fit/early-stopping call.
+StratifiedGroupKFold isolates all exact applicant entity keys.
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\xgboost\core.py:569: UserWarning: [00:04:49] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 22.2ms	remaining: 9.97s
+100:	total: 1.9s	remaining: 6.57s
+200:	total: 3.68s	remaining: 4.55s
+300:	total: 5.46s	remaining: 2.7s
+400:	total: 7.14s	remaining: 872ms
+449:	total: 7.97s	remaining: 0us
+Fold 1/5: lgb_cons=0.757292, lgb_et=0.756220, xgb=0.757347, cat=0.756137, lgb_deep=0.755840
+Fold 1 fit_rows=136961 valid_rows=34241
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 19ms	remaining: 8.52s
+100:	total: 1.78s	remaining: 6.17s
+200:	total: 3.46s	remaining: 4.28s
+300:	total: 5.1s	remaining: 2.52s
+400:	total: 6.69s	remaining: 818ms
+449:	total: 7.48s	remaining: 0us
+Fold 2/5: lgb_cons=0.761133, lgb_et=0.759652, xgb=0.760914, cat=0.758752, lgb_deep=0.758469
+Fold 2 fit_rows=136961 valid_rows=34241
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 18.8ms	remaining: 8.46s
+100:	total: 1.75s	remaining: 6.04s
+200:	total: 3.39s	remaining: 4.2s
+300:	total: 5.05s	remaining: 2.5s
+400:	total: 6.67s	remaining: 816ms
+449:	total: 7.46s	remaining: 0us
+Fold 3/5: lgb_cons=0.754162, lgb_et=0.750620, xgb=0.750435, cat=0.748886, lgb_deep=0.749807
+Fold 3 fit_rows=136962 valid_rows=34240
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 20.4ms	remaining: 9.17s
+100:	total: 1.78s	remaining: 6.16s
+200:	total: 3.61s	remaining: 4.47s
+300:	total: 5.45s	remaining: 2.7s
+400:	total: 7.14s	remaining: 873ms
+449:	total: 7.99s	remaining: 0us
+Fold 4/5: lgb_cons=0.758998, lgb_et=0.758418, xgb=0.757757, cat=0.759235, lgb_deep=0.756788
+Fold 4 fit_rows=136962 valid_rows=34240
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 19.1ms	remaining: 8.59s
+100:	total: 1.9s	remaining: 6.58s
+200:	total: 3.94s	remaining: 4.89s
+300:	total: 5.77s	remaining: 2.86s
+400:	total: 7.51s	remaining: 918ms
+449:	total: 8.32s	remaining: 0us
+Fold 5/5: lgb_cons=0.759143, lgb_et=0.758362, xgb=0.757107, cat=0.757026, lgb_deep=0.754673
+Fold 5 fit_rows=136962 valid_rows=34240
+{
+  "experiment_id": "20261101T183230Z",
+  "classification": "INDEPENDENT_RAW_DATA_SURROGATE_OOF",
+  "historical_anchor74_claim": false,
+  "status": "DIAGNOSTIC_ONLY_NO_CANDIDATE",
+  "reason_no_candidate": "This is a nonhistorical raw-data surrogate; a verified, leakage-safe historical Anchor74 OOF baseline is unavailable.",
+  "official_score": "NOT_EVALUATED",
+  "configuration": {
+    "outer_folds": 5,
+    "shuffle": true,
+    "seed": 20261101,
+    "splitter": "StratifiedGroupKFold",
+    "split_deviation": "Uses exact historical applicant entity key as groups; row-wise seed-matched folds were rejected to prevent borrower leakage.",
+    "unique_entity_groups": 168839,
+    "multirow_entity_groups": 2311,
+    "group_overlap_by_fold": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "feature_count": 695,
+    "features": "Tracked raw builder returns 695 columns despite its 143-feature header; all transformations are covariate-only and transductive.",
+    "outer_validation_labels_used_for_fit": false,
+    "early_stopping": "Disabled; fixed iteration counts prevent validation-label selection.",
+    "feature_selection": "None; no global-label-selected feature list used.",
+    "family_names": [
+      "lgb_cons",
+      "lgb_et",
+      "xgb",
+      "cat",
+      "lgb_deep"
+    ],
+    "family_weights": [
+      0.22,
+      0.18,
+      0.24,
+      0.2,
+      0.16
+    ],
+    "model_parameters": {
+      "lgb_cons": {
+        "rounds": 700,
+        "learning_rate": 0.03,
+        "num_leaves": 31,
+        "max_depth": 6,
+        "feature_fraction": 0.6,
+        "bagging_fraction": 0.8,
+        "min_child_samples": 80,
+        "reg_alpha": 2.0,
+        "reg_lambda": 5.0,
+        "threads": 4,
+        "seed": 42,
+        "fold_seed_offset": "feature/bagging/data=42+fold"
+      },
+      "lgb_et": {
+        "rounds": 750,
+        "extra_trees": true,
+        "learning_rate": 0.035,
+        "num_leaves": 45,
+        "max_depth": 7,
+        "feature_fraction": 0.45,
+        "bagging_fraction": 0.8,
+        "min_child_samples": 60,
+        "reg_alpha": 3.0,
+        "reg_lambda": 8.0,
+        "threads": 4,
+        "seed": 43,
+        "fold_seed_offset": "feature/bagging/data=43+fold"
+      },
+      "xgb": {
+        "rounds": 500,
+        "learning_rate": 0.04,
+        "max_depth": 6,
+        "subsample": 0.8,
+        "colsample_bytree": 0.6,
+        "reg_alpha": 2.0,
+        "reg_lambda": 5.0,
+        "tree_method": "hist",
+        "device": "cuda",
+        "random_state": 44,
+        "threads": 4
+      },
+      "cat": {
+        "iterations": 450,
+        "depth": 6,
+        "learning_rate": 0.045,
+        "loss_function": "Logloss",
+        "eval_metric": "AUC",
+        "l2_leaf_reg": 5.0,
+        "task_type": "GPU",
+        "devices": "0",
+        "random_seed": 45
+      },
+      "lgb_deep": {
+        "rounds": 750,
+        "learning_rate": 0.03,
+        "num_leaves": 63,
+        "max_depth": 8,
+        "feature_fraction": 0.5,
+        "bagging_fraction": 0.8,
+        "min_child_samples": 50,
+        "reg_alpha": 2.5,
+        "reg_lambda": 6.0,
+        "threads": 4,
+        "seed": 46,
+        "fold_seed_offset": "feature/bagging/data=46+fold"
+      }
+    },
+    "blend_anchor_weights_tested": [
+      0.8,
+      0.85,
+      0.9
+    ],
+    "blend_suite_weights": {
+      "0.80": 0.2,
+      "0.85": 0.15,
+      "0.90": 0.1
+    },
+    "primary_ratio": [
+      0.85,
+      0.15
+    ],
+    "gpu": {
+      "nvidia_smi": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 5920 MiB",
+      "xgboost_device": "cuda:0",
+      "xgboost_version": "3.4.1",
+      "catboost_task_type": "GPU",
+      "catboost_version": "1.2.10",
+      "lightgbm_version": "4.7.0",
+      "lightgbm_backend": "CPU; installed LightGBM build is CPU-based"
+    },
+    "lgbm_cpu_reason": "Installed LightGBM build is CPU-based."
+  },
+  "provenance": {
+    "anchor_builder_path": "D:\\gci\\_gci_push_tmp\\champion\\02_EXP85_REBUILT\\source\\generate_anchor74_from_scratch.py",
+    "anchor_builder_sha256": "db3fa4148a681d6e0c7029bf908dca12dab8b0708329937daf59a94be1eed022",
+    "experiment_source_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py",
+    "experiment_source_sha256": "a32fccee17dc61d3ba5a969c1c42171e199ab83baf01c5d952b370d1a6917c34",
+    "command": [
+      "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp02_anchor74_oof\\run_anchor74_oof.py"
+    ],
+    "fold_indices_saved": true,
+    "feature_cache_used": false,
+    "historical_test_predictions_used": false,
+    "raw_train_sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+    "raw_test_sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "suite_cache_hashes": {
+      "v17": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "v55": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "xgb": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+      "labels": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2"
+    },
+    "suite_cache_limitation": "Historical suite OOF fold sidecars and producer metadata are unavailable.",
+    "source_notes": [
+      "This is not the historical Anchor74 architecture: its 143-feature header yields 695 columns and differs from the original 669/550-feature zoo and upstream optimal-transductive stack.",
+      "The historical Anchor74 source applies a cached optimal-apex prediction; no verified OOF for that upstream stage was found.",
+      "This surrogate's OOF predictions are independently trained from raw data; its 85:15 suite blend is hybrid-cache-assisted diagnostic only.",
+      "Unsupervised feature construction includes train/test covariates; no target labels are used by the feature builder.",
+      "All graph label calibration is refit per fold using outer-fit labels only."
+    ]
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "seed": 20261101,
+      "model_auc": {
+        "lgb_cons": 0.7572917348893741,
+        "lgb_et": 0.7562202448456954,
+        "xgb": 0.7573473988735526,
+        "cat": 0.7561366655659113,
+        "lgb_deep": 0.7558399671657754
+      },
+      "model_runtime_seconds": {
+        "lgb_cons": 62.04864819999784,
+        "lgb_et": 32.311828800011426,
+        "xgb": 18.93683439999586,
+        "cat": 9.735249200020917,
+        "lgb_deep": 90.58633729998837
+      },
+      "elapsed_seconds": 214.02491939999163
+    },
+    {
+      "fold": 2,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "seed": 20261101,
+      "model_auc": {
+        "lgb_cons": 0.7611328732113085,
+        "lgb_et": 0.7596521214327491,
+        "xgb": 0.760914229887929,
+        "cat": 0.7587521235614251,
+        "lgb_deep": 0.7584689705441323
+      },
+      "model_runtime_seconds": {
+        "lgb_cons": 62.86594490002608,
+        "lgb_et": 32.70407760000671,
+        "xgb": 18.56867019998026,
+        "cat": 9.16804210000555,
+        "lgb_deep": 90.83245639997767
+      },
+      "elapsed_seconds": 214.5820589000068
+    },
+    {
+      "fold": 3,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "seed": 20261101,
+      "model_auc": {
+        "lgb_cons": 0.7541623494086137,
+        "lgb_et": 0.7506199104401139,
+        "xgb": 0.7504345131723726,
+        "cat": 0.7488864439752319,
+        "lgb_deep": 0.7498072406348604
+      },
+      "model_runtime_seconds": {
+        "lgb_cons": 62.48778639998636,
+        "lgb_et": 33.19453180002165,
+        "xgb": 18.667977599980077,
+        "cat": 9.20923340000445,
+        "lgb_deep": 91.91352649999317
+      },
+      "elapsed_seconds": 215.9399645999947
+    },
+    {
+      "fold": 4,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "seed": 20261101,
+      "model_auc": {
+        "lgb_cons": 0.7589976784278155,
+        "lgb_et": 0.7584176302106179,
+        "xgb": 0.7577571449011574,
+        "cat": 0.7592350241720474,
+        "lgb_deep": 0.7567881411587981
+      },
+      "model_runtime_seconds": {
+        "lgb_cons": 62.55438119999599,
+        "lgb_et": 32.85527619998902,
+        "xgb": 18.445097399991937,
+        "cat": 9.746669200016186,
+        "lgb_deep": 89.35205129999667
+      },
+      "elapsed_seconds": 213.4512469000183
+    },
+    {
+      "fold": 5,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "seed": 20261101,
+      "model_auc": {
+        "lgb_cons": 0.7591431502540058,
+        "lgb_et": 0.7583616070057466,
+        "xgb": 0.7571068148033308,
+        "cat": 0.7570255788574081,
+        "lgb_deep": 0.7546730525304098
+      },
+      "model_runtime_seconds": {
+        "lgb_cons": 61.349358400009805,
+        "lgb_et": 32.268747399997665,
+        "xgb": 18.526537500001723,
+        "cat": 10.097673699987354,
+        "lgb_deep": 90.351806199993
+      },
+      "elapsed_seconds": 213.02403639999102
+    }
+  ],
+  "graph_calibration": [
+    {
+      "fold": 1,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 656
+    },
+    {
+      "fold": 2,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 694
+    },
+    {
+      "fold": 3,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 684
+    },
+    {
+      "fold": 4,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 692
+    },
+    {
+      "fold": 5,
+      "train_to_validation_pairs": 0,
+      "validation_to_validation_pairs": 694
+    }
+  ],
+  "oof_metrics": {
+    "family_pooled_auc": {
+      "lgb_cons": 0.7581163447820474,
+      "lgb_et": 0.7566236569710443,
+      "xgb": 0.7566817390603217,
+      "cat": 0.7559647118110125,
+      "lgb_deep": 0.7551000556118835
+    },
+    "surrogate_anchor_fold_auc": [
+      0.7597103289696079,
+      0.7629117086249593,
+      0.7539836820519215,
+      0.7615113892853654,
+      0.7605854086976703
+    ],
+    "suite_pooled_auc": 0.7772070027231033,
+    "surrogate_anchor_pooled_auc": 0.7597101436454733,
+    "historical_ratio_surrogate_blend_pooled_auc": 0.764340948289323,
+    "two_stream_crossfit_logistic_pooled_auc": 0.7771967064822934,
+    "blend_fold_auc": [
+      {
+        "fold": 1,
+        "surrogate_anchor_auc": 0.7597103289696079,
+        "suite_oof_auc": 0.775970221693063,
+        "historical_ratio_surrogate_blend_auc": 0.763987051071605,
+        "two_stream_meta_auc": 0.7759649936792739,
+        "anchor_0.80_suite_0.20_auc": 0.7653013047973404,
+        "anchor_0.85_suite_0.15_auc": 0.763987051071605,
+        "anchor_0.90_suite_0.10_auc": 0.7626145423350768
+      },
+      {
+        "fold": 2,
+        "surrogate_anchor_auc": 0.7629117086249593,
+        "suite_oof_auc": 0.7791513243745335,
+        "historical_ratio_surrogate_blend_auc": 0.7674545703483124,
+        "two_stream_meta_auc": 0.7791103370126636,
+        "anchor_0.80_suite_0.20_auc": 0.7688086015254655,
+        "anchor_0.85_suite_0.15_auc": 0.7674545703483124,
+        "anchor_0.90_suite_0.10_auc": 0.7660174955117345
+      },
+      {
+        "fold": 3,
+        "surrogate_anchor_auc": 0.7539836820519215,
+        "suite_oof_auc": 0.7726290069350152,
+        "historical_ratio_surrogate_blend_auc": 0.7587800339090964,
+        "two_stream_meta_auc": 0.7726350414410795,
+        "anchor_0.80_suite_0.20_auc": 0.7602558671950733,
+        "anchor_0.85_suite_0.15_auc": 0.7587800339090964,
+        "anchor_0.90_suite_0.10_auc": 0.757248280866924
+      },
+      {
+        "fold": 4,
+        "surrogate_anchor_auc": 0.7615113892853654,
+        "suite_oof_auc": 0.7797972645043778,
+        "historical_ratio_surrogate_blend_auc": 0.7663355918248145,
+        "two_stream_meta_auc": 0.7798157128514888,
+        "anchor_0.80_suite_0.20_auc": 0.7677899307749051,
+        "anchor_0.85_suite_0.15_auc": 0.7663355918248145,
+        "anchor_0.90_suite_0.10_auc": 0.764802551421348
+      },
+      {
+        "fold": 5,
+        "surrogate_anchor_auc": 0.7605854086976703,
+        "suite_oof_auc": 0.7785641447994558,
+        "historical_ratio_surrogate_blend_auc": 0.7653012430025018,
+        "two_stream_meta_auc": 0.7785788919828471,
+        "anchor_0.80_suite_0.20_auc": 0.7667139725964919,
+        "anchor_0.85_suite_0.15_auc": 0.7653012430025018,
+        "anchor_0.90_suite_0.10_auc": 0.763799593524867
+      }
+    ],
+    "blend_mean_auc": {
+      "0.8": 0.7657739353778552,
+      "0.85": 0.764371698031266,
+      "0.9": 0.7628964927319901
+    },
+    "fold_delta_vs_85_15_surrogate": {
+      "0.8": [
+        0.0013142537257353482,
+        0.0013540311771530478,
+        0.0014758332859768908,
+        0.0014543389500906168,
+        0.0014127295939900808
+      ],
+      "0.85": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "0.9": [
+        -0.0013725087365282773,
+        -0.0014370748365779562,
+        -0.0015317530421724568,
+        -0.001533040403466468,
+        -0.0015016494776347589
+      ]
+    },
+    "positive_folds_vs_85_15_surrogate": {
+      "0.8": 5,
+      "0.85": 0,
+      "0.9": 0
+    }
+  },
+  "runtime_seconds_before_report": 1100.2777780000179,
+  "outputs": {
+    "anchor_surrogate_oof.npy": "cc673cf0747f77404ecb67c915b5e29e00067dc16b3962d56fd4245774890ce5",
+    "blend_85_15_oof.npy": "7417ec7d652f4b3641fc266a13afcdef7e96aea84296e34e7b3278f87447e04f",
+    "raw_family_oof.npz": "607e9d4842e6d0e285f8c78c9c23912a8ac80906911bc748890328ee7b6e89c7",
+    "suite_oof_rank_probit.npy": "692400f19da6f45ae8cd1d0c76da922d1b6c429d98906f848d8926a3c1877b64",
+    "two_stream_meta_oof.npy": "e31f1d5e1e4f71360106c86cf77c8988460e9d4250866b14a9f1845a6485905c"
+  },
+  "runtime_seconds": 1101.0217435999948
+}

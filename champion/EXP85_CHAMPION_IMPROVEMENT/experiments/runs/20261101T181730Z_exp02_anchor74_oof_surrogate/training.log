@@ -1,0 +1,53 @@
+Experiment: 20261101T181730Z
+Classification: INDEPENDENT_RAW_DATA_SURROGATE_OOF
+Python: C:\Users\SHARON\AppData\Local\Programs\Python\Python312\python.exe | 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Learning rate set to 0.5
+0:	learn: 0.3807415	total: 34ms	remaining: 34ms
+1:	learn: 0.2383268	total: 37.5ms	remaining: 0us
+[*] Ingesting raw train dataset: D:\gci\inpuy\train.csv
+[*] Ingesting raw test dataset : D:\gci\inpuy\test.csv
+[*] Engineering full 143-feature financial and transductive manifold from raw data...
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:200: RuntimeWarning: Mean of empty slice
+  F["EXT_MEAN"] = np.nanmean(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:201: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MIN"] = np.nanmin(ext_stack, axis=1).astype(np.float32)
+D:\gci\_gci_push_tmp\champion\02_EXP85_REBUILT\source\generate_anchor74_from_scratch.py:202: RuntimeWarning: All-NaN slice encountered
+  F["EXT_MAX"] = np.nanmax(ext_stack, axis=1).astype(np.float32)
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+[+] Hasan 143-feature manifold built in 2.4s (695 features)
+Raw rows=171202 test_rows=61500 features=695 outer_folds=5 seed=20261101
+Outer validation labels are not passed to any fit/early-stopping call.
+C:\Users\SHARON\AppData\Local\Programs\Python\Python312\Lib\site-packages\xgboost\core.py:569: UserWarning: [23:49:29] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 22.2ms	remaining: 9.96s
+100:	total: 1.76s	remaining: 6.09s
+200:	total: 3.41s	remaining: 4.23s
+300:	total: 5.01s	remaining: 2.48s
+400:	total: 6.63s	remaining: 810ms
+449:	total: 7.42s	remaining: 0us
+Fold 1/5: lgb_cons=0.753969, lgb_et=0.751035, xgb=0.750130, cat=0.752980, lgb_deep=0.749220
+Fold 1 fit_rows=136961 valid_rows=34241
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 18.4ms	remaining: 8.27s
+100:	total: 1.84s	remaining: 6.36s
+200:	total: 3.6s	remaining: 4.46s
+300:	total: 5.38s	remaining: 2.66s
+400:	total: 7.11s	remaining: 868ms
+449:	total: 8.02s	remaining: 0us
+Fold 2/5: lgb_cons=0.762808, lgb_et=0.759824, xgb=0.762150, cat=0.757289, lgb_deep=0.759220
+Fold 2 fit_rows=136961 valid_rows=34241
+Default metric period is 5 because AUC is/are not implemented for GPU
+0:	total: 23.5ms	remaining: 10.6s
+100:	total: 1.87s	remaining: 6.46s
+200:	total: 3.58s	remaining: 4.44s
+300:	total: 5.27s	remaining: 2.61s
+400:	total: 6.89s	remaining: 842ms
+449:	total: 7.68s	remaining: 0us

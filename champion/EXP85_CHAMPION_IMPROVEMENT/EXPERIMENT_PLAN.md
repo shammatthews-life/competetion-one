@@ -22,17 +22,16 @@ not rerun here.
 
 | Rank | Test | Rationale | Gate / limitation |
 |---:|---|---|---|
-| 1 | Regularized meta-stacker on the eight historical OOF suite streams | Directly tests whether the existing fixed 8-stream suite leaves usable OOF signal without retraining base models | Five outer folds; scaler and logistic model fit only on each outer-fit partition; one predeclared `C=0.1`; require mean paired AUC lift >= 0.0002, at least 4/5 positive folds, and lift > 2 standard errors |
+| 1 | Fold-safe raw-data Anchor74 surrogate OOF (EXP02) | Tests five independently trained raw-data model families with group-isolated folds | Five-fold diagnostic completed; nonhistorical surrogate and not eligible for submission |
 | 2 | Additional raw-data neural/TabM model | Potentially distinct signal | Existing Python 3.12 environment lacks CUDA-enabled PyTorch; current `gemini` virtual environment has CPU-only PyTorch. Defer a full run until an isolated CUDA environment is available and validated. |
 | 3 | New relational features from auxiliary competition tables | Could add substantial signal | Required auxiliary tables are absent from the supplied data; no unverified download or fabricated input. |
 | 4 | Retune full EXP85 weights against historical test predictions | Not valid | Explicitly prohibited: prediction similarity to the historical test output is not a generalization target. |
 
-The first experiment uses cached OOF arrays supplied by the historical
-pipeline. Their exact original fold sidecars and producer run manifest are
-unavailable, so the result is classified as **historical-cache-assisted
-meta-validation**, not certified independent raw reconstruction. If the
-predeclared gate fails, no candidate submission is generated and no seed or
-parameter sweep follows from this experiment.
+EXP01 used cached OOF arrays supplied by the historical pipeline. Their exact
+original fold sidecars and producer run manifest are unavailable, so the
+result is classified as **historical-cache-assisted meta-validation**, not
+certified independent raw reconstruction. The predeclared gate failed; no
+candidate submission was generated and no seed or parameter sweep followed.
 
 OOF lifts from the eight-engine suite cannot be directly equated to the full
 EXP85 champion OOF metric: the original 85%-weight Anchor74 has no verified
@@ -55,7 +54,37 @@ every possible stacker is inferior.
 
 No parameter or seed sweep will follow this result. The next viable evaluation
 must either establish leakage-safe OOF predictions for the 85%-weight
-Anchor74 component or introduce a genuinely new raw-data model whose
-contribution can be assessed without using historical test predictions as a
-tuning target. In the checked `D:\gci\gemini\.venv`, PyTorch is CPU-only
+historical Anchor74 component or use a genuinely new raw-data surrogate without
+using historical test predictions as a tuning target. EXP02 implements the
+latter diagnostic path; it does not claim to reconstruct Anchor74.
+
+## EXP02 execution gate
+
+The runner is implemented in
+`experiments/exp02_anchor74_oof/run_anchor74_oof.py`. It uses five fixed
+outer folds grouped by the exact historical repeat-borrower entity key,
+disables early stopping, and recomputes graph calibration using only each
+fold's training labels. The raw feature builder returns 695 columns despite
+printing a 143-feature description. This is documented and validated rather
+than silently reconciled.
+
+The grouped-fold and calibration tests pass; actual raw-data split preflight
+confirmed zero entity overlap in every fold. Two prior partial training runs
+were invalidated and their logs/telemetry retained with abort reports. The
+complete five-fold run completed as `20261101T183230Z`. Every fold had zero
+group overlap and complete finite predictions. Pooled AUCs were `0.7597101`
+for the graph-calibrated raw surrogate, `0.7643409` for the 85:15 surrogate/
+cache blend, and `0.7771967` for the cross-fit two-stream logistic diagnostic.
+The 85:15 result is not comparable to the true historical EXP85 pipeline
+because suite OOF fold lineage is unavailable. The report, OOF arrays, fold
+indices, and telemetry are preserved under
+`experiments/runs/20261101T183230Z_exp02_anchor74_oof_surrogate/`.
+
+The experiment remains diagnostic-only: there is no verified historical
+Anchor74 OOF baseline, so no submission is permitted. The next valid full
+85:15 evaluation requires leakage-safe predictions from the actual historical
+Anchor74 upstream stack and verified fold provenance for the suite streams,
+or independent retraining of those historical producers.
+
+In the checked `D:\gci\gemini\.venv`, PyTorch is CPU-only
 (`2.14.1+cpu`, CUDA unavailable); no GPU neural experiment was run.
