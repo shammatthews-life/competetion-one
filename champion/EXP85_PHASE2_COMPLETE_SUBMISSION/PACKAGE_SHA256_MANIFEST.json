@@ -14,21 +14,25 @@
       "sha256": "56ad493ca71cb62afe47dd51572cfae1b8d71419d6c2f2a290669f5eb46ad182",
       "size_bytes": 1037
     },
+    "EXP85_PHASE2_COMPLETE_SUBMISSION.ipynb": {
+      "sha256": "f66d1a19da6a7db53fba6937340453c36f08d456512f825a966a24cb45d27f5e",
+      "size_bytes": 15538
+    },
     "IMPLEMENTATION_REPORT.json": {
       "sha256": "0b84d97cf4350401ab3c7948eb636061620bd07f35c85203cbf239acfc97ccae",
       "size_bytes": 85770
     },
     "IMPLEMENTATION_REPORT.md": {
-      "sha256": "96186be850bf174c179c669bb35e28d3251965d5811b3ec73a89fc6db09cbb03",
-      "size_bytes": 3472
+      "sha256": "c07cecdcc46b02354ee56c6d02bce094885bc409bfa81c99b22fc5ada60a5c50",
+      "size_bytes": 3724
     },
     "MODEL_CARD.md": {
       "sha256": "d4261a9ac0e39095bf5adb2d487fda41ba313c549c081af3628c659a52fafbee",
       "size_bytes": 2633
     },
     "README.md": {
-      "sha256": "639974a217b1cab53a37f7594bfc38a4a46b7cc1dc54954b550f81e84c035aa5",
-      "size_bytes": 4326
+      "sha256": "598a6a24745f7a46a558c38d8608d0b981e0cce393449dbfe923046aa8023ff2",
+      "size_bytes": 4930
     },
     "requirements.txt": {
       "sha256": "27d1035ca553699aef962bde0c8b953a855db023a109bfa3f1ebff75e3958032",

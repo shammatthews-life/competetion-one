@@ -19,6 +19,10 @@ An unseen key receives `p`; each key also contributes `log1p(fit-fold count)`. T
 
 ## Run from the repository root
 
+The ordered Jupyter front end is [EXP85_PHASE2_COMPLETE_SUBMISSION.ipynb](./EXP85_PHASE2_COMPLETE_SUBMISSION.ipynb). It calls the same validated modules and configurations in this package; it intentionally does not copy or fork model logic. Keep the notebook beside `source/`, `scripts/`, and `config/`. It is not a standalone single-file Kaggle notebook unless those dependencies are bundled with it.
+
+The notebook's input preflight is safe to run on its own. Its final training cell performs a full five-fold run and creates a new timestamped candidate only after the frozen-reference gates pass.
+
 ```powershell
 python -B champion\EXP85_PHASE2_COMPLETE_SUBMISSION\scripts\run_full_pipeline.py
 ```

@@ -60,5 +60,7 @@
 | `python -B -m unittest discover -s tests -p test_*.py -v` | 0 | 22 tests passed |
 | Python AST parse over package source/scripts/tests | 0 | 24 files parsed |
 | `scripts\package_manifest.py create`, then `verify` | 0 | PASS; 75 package files |
+| Notebook JSON/Python-cell validation and ordered-section check | 0 | PASS; 12 code cells, all sections in requested order |
+| Notebook setup and raw-input preflight cells | 0 | PASS; raw input hashes and row alignment verified; no training started |
 
 The JSON execution report contains full per-fold metrics, input/source/config hashes, software versions, fold indices, GPU sample telemetry, and prediction comparisons.
