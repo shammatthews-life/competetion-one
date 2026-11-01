@@ -1,0 +1,249 @@
+{
+  "run_id": "20261101T151056Z_historical_cache_v5",
+  "status": "RECONSTRUCTED_DIFFERENT_FROM_PRIOR_V5",
+  "started_at_utc": "2026-11-01T15:10:56.332537+00:00",
+  "completed_at_utc": "2026-11-01T15:10:56.679495+00:00",
+  "elapsed_seconds": 0.34706590001587756,
+  "classification": "HYBRID_HISTORICAL_CACHE_RECONSTRUCTION",
+  "historical_prediction_cache_inputs": true,
+  "full_raw_data_historical_pipeline_reconstruction": false,
+  "official_competition_score": "NOT_EVALUATED",
+  "formula": {
+    "suite_member_weights": {
+      "v17_e1Aet": 0.2932,
+      "xgb10": 0.2596,
+      "v17_final": 0.2051,
+      "v55_cbprod": 0.0874,
+      "v17_e1et": 0.0489,
+      "v55_deep_et": 0.0442,
+      "v55_allfam": 0.0383,
+      "v55_v2_mono": 0.0233
+    },
+    "suite_weight_sum": 1.0,
+    "member_transform": "(average rank - 0.5) / n; probit clip eps=1e-6",
+    "suite_aggregation": "weighted sum of eight transformed test members",
+    "final_transform": "ordinal rank(0.85 * probit(Anchor74) + 0.15 * SuiteZ); output=(rank - 0.5) / 61500",
+    "anchor_weight": 0.85,
+    "suite_weight": 0.15
+  },
+  "input_artifacts": {
+    "raw_test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "size_bytes": 15818118,
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "sample_submission": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "size_bytes": 676518,
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    },
+    "anchor74_v5_rebuilt": {
+      "path": "D:\\gci\\champion\\02_EXP85_REBUILT\\artifacts\\v_20261027_precision_transductive_apex.csv",
+      "size_bytes": 1291519,
+      "sha256": "315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b"
+    },
+    "v17_historical_bundle": {
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\v_17_full_suite_bundle.npz",
+      "size_bytes": 6866482,
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223"
+    },
+    "v55_historical_members": {
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\v55_members.npz",
+      "size_bytes": 7088141,
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f"
+    },
+    "xgb10_historical_test": {
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\test_10f_xgb.npy",
+      "size_bytes": 246128,
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+    },
+    "historical_champion": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+      "size_bytes": 1291519,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+    },
+    "historical_champion_source": {
+      "path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+      "size_bytes": 1291519,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+    },
+    "prior_v5_candidate": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+      "size_bytes": 1291519,
+      "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+    },
+    "prior_v5_candidate_source": {
+      "path": "D:\\gci\\champion\\08_SUBMISSIONS\\submission_exp85_recovery_v5_rebuilt.csv",
+      "size_bytes": 1291519,
+      "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+    },
+    "original_notebook": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\exp85_recovery_v5_original.ipynb",
+      "size_bytes": 36967,
+      "sha256": "d7d16d00599061b041e2b85619eb4dbc3f3607d437766c9c1e72d928a913f7b7"
+    },
+    "phase3_source": {
+      "path": "D:\\gci\\champion\\02_EXP85_REBUILT\\source\\reconstruct_transductive_pyramid.py",
+      "size_bytes": 17103,
+      "sha256": "a99bd2ba02ed673a6660eb67c39fb16e80d9d01d4560e02ef3ba3ae0fefbd0f4"
+    },
+    "artifact_equivalence_evidence": {
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\reports\\EXP85_ARTIFACT_EQUIVALENCE.csv",
+      "size_bytes": 3661,
+      "sha256": "01d5c090aab9b18dc1bb8470e12fb17909b406362724b415036954407181a8ad"
+    }
+  },
+  "rejected_alternate_anchor": {
+    "path": "D:\\gci\\champion\\02_EXP85_REBUILT\\rebuilt_artifacts\\v_20261027_precision_transductive_apex.csv",
+    "exists": true,
+    "sha256": "04deaa2e3e89c13bbfbe759f36aabf34609856cd7bb5c47b65ef3c2b715134d8",
+    "used": false,
+    "reason": "Different Anchor74 generation; hash is not the V5 notebook input."
+  },
+  "supporting_recovered_generator_sources": {
+    "v17_recovered_generator": {
+      "path": "D:\\gci\\gemini\\champion\\cacherecreation\\recreate_v17_bundle.py",
+      "exists": true,
+      "sha256": "f9c15e292161a4dd8c2d71419d1a95134a5ebba4b8d366e0a86885b79a7c65a6",
+      "exact_historical_cache_producer_verified": false
+    },
+    "v55_recovered_generator": {
+      "path": "D:\\gci\\gemini\\champion\\cacherecreation\\recreate_v55_members.py",
+      "exists": true,
+      "sha256": "3c2979bc8941c61d9f2ebbd0de725d15f09bca32245d9dcd46812bbb9e0cf290",
+      "exact_historical_cache_producer_verified": false
+    },
+    "xgb10_recovered_generator": {
+      "path": "D:\\gci\\gemini\\champion\\cacherecreation\\recreate_xgb10_and_labels.py",
+      "exists": true,
+      "sha256": "7fbeaa89fb7b4473aefa9dbdb2c83b6ee337389b1ffc783b442a1640f9c1c900",
+      "exact_historical_cache_producer_verified": false
+    }
+  },
+  "suite_archive_keys": {
+    "v17_archive_keys": [
+      "oof_old",
+      "test_old",
+      "oof_e1",
+      "test_e1",
+      "oof_e1et",
+      "test_e1et",
+      "oof_e1Aet",
+      "test_e1Aet",
+      "oof_cb",
+      "test_cb",
+      "final_oof",
+      "final_test",
+      "final_auc"
+    ],
+    "v55_archive_keys": [
+      "oof_qf_shallow",
+      "oof_qf_reg",
+      "oof_v1_allfam_oh",
+      "oof_v2_allfam_oh",
+      "oof_v2_mono",
+      "oof_deep_et",
+      "oof_cb_product",
+      "test_qf_shallow",
+      "test_qf_reg",
+      "test_v1_allfam_oh",
+      "test_v2_allfam_oh",
+      "test_v2_mono",
+      "test_deep_et",
+      "test_cb_product"
+    ]
+  },
+  "cache_row_identity": {
+    "cache_arrays_embed_ids": false,
+    "verified_row_id_sidecars_found": false,
+    "assembly_order": "Historical cache array order is consumed unchanged, as in the original notebook. Final candidate IDs are checked against raw test and sample-submission order."
+  },
+  "candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T151056Z_historical_cache_v5\\submission_historical_cache_v5.csv",
+    "sha256": "b7b0a801340b0cce9759d042ca381a88c393b6f3fd72dcd1d9cd6ae802cb3c16",
+    "rows": 61500,
+    "schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "unique_ids": true,
+    "ids_match_raw_test_and_sample_order": true,
+    "finite_predictions": true,
+    "probability_min": 8.1301e-06,
+    "probability_max": 0.9999918699,
+    "byte_identical_to_prior_v5": false,
+    "value_identical_to_prior_v5": false,
+    "prior_candidate_sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+  },
+  "historical_reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "comparison_to_historical_champion": {
+    "pearson": 0.9999975815858748,
+    "spearman": 0.999997581585873,
+    "mae": 0.00030141741027642276,
+    "rmse": 0.000634877169816573,
+    "maximum_absolute_difference": 0.012504065100000017,
+    "mean_rank_displacement": 18.537170731707317,
+    "maximum_rank_displacement": 769,
+    "exact_prediction_matches": 3093,
+    "exact_rank_matches": 3093,
+    "aligned_rows": 61500,
+    "alignment": "one-to-one SK_ID_CURR join in raw test ID order"
+  },
+  "dependency_graph": [
+    {
+      "artifact": "Rebuilt Anchor74 used by V5",
+      "path": "D:\\gci\\champion\\02_EXP85_REBUILT\\artifacts\\v_20261027_precision_transductive_apex.csv",
+      "sha256": "315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b",
+      "producer_lineage": "Exact notebook input identified; producer execution is not bound to this file by a run manifest.",
+      "consumer": "85% Anchor74 probit branch"
+    },
+    {
+      "artifact": "V17 historical test bundle",
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\v_17_full_suite_bundle.npz",
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "producer_lineage": "Exact historical producer run unavailable; recovered generator output is not byte/array-identical.",
+      "consumer": "Three explicitly named suite members"
+    },
+    {
+      "artifact": "V55 historical test members",
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\v55_members.npz",
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "producer_lineage": "Exact historical producer run unavailable; recovered generator output is not byte/array-identical.",
+      "consumer": "Four explicitly named suite members"
+    },
+    {
+      "artifact": "XGB10 historical test vector",
+      "path": "D:\\gci\\champion\\01_EXP85_RECOVERY\\cache\\test_10f_xgb.npy",
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "producer_lineage": "Exact historical producer run unavailable; recovered generator output is not byte/array-identical.",
+      "consumer": "One explicitly named suite member"
+    },
+    {
+      "artifact": "Raw test IDs and sample submission",
+      "path": "D:\\gci\\inpuy",
+      "sha256": "test=dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65; sample=6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "producer_lineage": "Supplied competition inputs; hash-verified.",
+      "consumer": "ID-order validation only; not model features."
+    }
+  ],
+  "unresolved_dependencies": [
+    {
+      "item": "Original V17/V55/XGB10 training execution metadata and cache ID sidecars",
+      "status": "UNAVAILABLE",
+      "impact": "The historical vectors are exactly identified and reproduce the prior candidate, but their original per-row ID mapping and training environment cannot be independently certified."
+    },
+    {
+      "item": "Exact Anchor74 producer run manifest for SHA-256 315b0bd80e4698240a7a902648a157d84da1480dea77901cdb60892502a7b55b",
+      "status": "UNAVAILABLE",
+      "impact": "The exact V5 input is present and hash-pinned; its upstream training/cache ancestry is not fully proven."
+    },
+    {
+      "item": "Official platform record linking score 0.801340 to this candidate hash",
+      "status": "UNAVAILABLE",
+      "impact": "The local reconstruction proves numeric correlation only; the official score is not claimed."
+    }
+  ]
+}

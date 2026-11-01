@@ -47,12 +47,28 @@ The 85/15 rank/probit synthesis is a real high-correlation numerical result, but
 
 These are not competing calculations of one candidate. Their file identities differ.
 
+## Historical-cache reconstruction replay
+
+The reconstruction runner was executed with hash-pinned inputs and wrote a new candidate under `runs/20261101T151558Z_historical_cache_v5/`. The output is byte-for-byte and value-for-value identical to the pinned prior V5 candidate:
+
+- Candidate SHA-256: `91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482`.
+- Prior V5 candidate SHA-256: `91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482`.
+- Pearson / Spearman against the historical champion: `0.9999975815867518` / `0.9999975815867501`.
+- MAE / RMSE / maximum absolute difference: `0.00030141741027642276` / `0.000634877054701475` / `0.012504065100000017`.
+- Mean / maximum rank displacement: `18.537170731707317` / `769`; exact prediction matches: `3,093`.
+- 61,500 unique IDs in raw-test/sample order; expected schema and probability bounds verified.
+- Run manifest records command exit code `0`, source hash, input hashes, and output hashes.
+
+The first replay wrote a candidate but failed while rendering its report. It also exposed a numerical mismatch: the notebook's `float32` XGB10 and V55 `cb_product` values remain `float32` through rank normalization and probit, while the initial runner promoted them to `float64` too early. The corrected runner preserves those source dtypes and now reproduces the pinned candidate exactly. The failed run and its failure report remain preserved at `runs/20261101T151056Z_historical_cache_v5/`; no prior artifact was overwritten.
+
 ## Official evaluation and stale hash
 
 Local correlation does not establish a competition score. The historical `SUBMISSION_RESULTS.md` claims score `0.801340` for the V5 filename but lists hash `e979a04a...`, not the on-disk file hash `91aa95c9...`. The evidence gathered here does not resolve which bytes were evaluated by the official platform. No new submission was made, and no official score is claimed for any replicated candidate.
 
 ## Run artifacts
 
+- Exact historical-cache V5 reconstruction: `runs/20261101T151558Z_historical_cache_v5/`.
+- Preserved initial failed reconstruction attempt: `runs/20261101T151056Z_historical_cache_v5/`.
 - Current-code legacy Stage 9 revalidation: `runs/20261101T133203Z_notebook_stage9_v5_revalidated/`
 - Current-code ID-aligned V5 comparison: `runs/20261101T133251Z_id_aligned_v5/`
 - Current-code candidate comparisons: `runs/20261101T133254Z_phase3/`, `runs/20261101T133257Z_full_rebuilt/`, `runs/20261101T133259Z_submission_final/`, and `runs/20261101T133302Z_current_track1b/`.

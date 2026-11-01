@@ -20,9 +20,20 @@ Other near-identical-looking figures are from different candidates. Exact identi
 
 No official score is inferred from correlation. The official historical champion score is context only; none of these local correlation runs submitted an artifact.
 
+## Historical V5 reconstruction
+
+The original notebook's eight-member suite and 85/15 probit/ordinal-rank merge are now executable through `source/reconstruct_historical_v5.py`. Run `20261101T151558Z_historical_cache_v5` reproduced the previous V5 candidate byte-for-byte:
+
+- Candidate: `runs/20261101T151558Z_historical_cache_v5/submission_historical_cache_v5.csv`
+- SHA-256: `91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482`
+- Pearson / Spearman against the historical champion: `0.9999975815867518` / `0.9999975815867501`
+- Exact candidate bytes and values matched the pinned previous V5 artifact; 61,500 IDs, order, schema, uniqueness, finite values, and probability bounds passed.
+
+The replay preserves the original `float32` arithmetic through rank normalization and probit for float32 cache members; promoting these arrays early changes low-order values and can change the final ordinal ordering. Run inputs, hashes, dependency graph, metrics, and command exit code are recorded in the run's JSON, Markdown, and manifest files. The earlier failed replay remains preserved as a separate run.
+
 ## Contents
 
-- `source/`: original notebook/audit/source snapshots and the new fail-closed comparison runner.
+- `source/`: original notebook/audit/source snapshots, the fail-closed comparison runner, and the historical V5 reconstruction runner.
 - `reference_artifacts/` and `candidate_artifacts/`: byte-verified copies of the exact comparison inputs.
 - `runs/`: unique, non-overwriting result directories with JSON/Markdown output and execution provenance.
 - `evidence/`: prior forensic report and its machine-readable evidence.
@@ -49,10 +60,16 @@ python -B champion\EXP85_SUBMISSION_CORRELATION_REPLICATION\source\correlation_r
 
 `notebook_stage9` reproduces the notebook's raw-vector comparison and ordinal rank displacement, but fails closed unless candidate and reference IDs are unique, equal, and in identical order. The default `id_aligned` method joins by ID and uses average ranks for displacement. Both methods enforce exactly 61,500 rows by default; `--expected-rows` is available for synthetic/test inputs. A run directory must not already exist.
 
-Run the runner tests (9 pass):
+Run the replication and reconstruction tests (17 pass):
 
 ```powershell
 python -B -m unittest discover -s champion\EXP85_SUBMISSION_CORRELATION_REPLICATION\tests -p "test_*.py"
+```
+
+Run the historical-cache reconstruction from the repository root. This writes to a new run directory and fails if that directory already exists:
+
+```powershell
+python -B champion\EXP85_SUBMISSION_CORRELATION_REPLICATION\source\reconstruct_historical_v5.py
 ```
 
 Run the preserved original auditor's synthetic suite:
