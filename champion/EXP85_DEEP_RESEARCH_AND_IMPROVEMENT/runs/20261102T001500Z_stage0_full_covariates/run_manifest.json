@@ -1,0 +1,54 @@
+{
+  "run_id": "20261102T001500Z_stage0_full_covariates",
+  "inputs": {
+    "historical_champion": {
+      "path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+      "size_bytes": 1291519,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+    },
+    "phase2": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\CANDIDATE\\submission_key_target_encoding.csv",
+      "size_bytes": 1291519,
+      "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa"
+    },
+    "hybrid_v5": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+      "size_bytes": 1291519,
+      "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "size_bytes": 15818118,
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "size_bytes": 676518,
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    },
+    "source_files": {
+      "correlation_gap_diagnostics.py": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\source\\correlation_gap_diagnostics.py",
+        "sha256": "ba68535f4012b63a7056c0d0ea1a51163774bb52fa307ea824ca276fd65b686f"
+      },
+      "gap_diagnostics.py": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\source\\gap_diagnostics.py",
+        "sha256": "09122d35cdc93bc8f4662a42781434f024d72a99de7843fe7a8b13e4a52f8387"
+      }
+    }
+  },
+  "outputs": {
+    "gap_report.json": {
+      "size_bytes": 5369,
+      "sha256": "cf60b445bd97c248572164ba2d58671bca13985cbb9b90abf61b8c9db4d65e4c"
+    },
+    "gap_report.md": {
+      "size_bytes": 1111,
+      "sha256": "2eb1a62bcbdfe87cb9527622acd855494ba96cf0f2f09477b3e350fa940f585a"
+    },
+    "grouped_prediction_differences.csv": {
+      "size_bytes": 9517,
+      "sha256": "05708ac29a89817386c89f7146e1cab119957cd324f7009a8367e1d40a925619"
+    }
+  }
+}

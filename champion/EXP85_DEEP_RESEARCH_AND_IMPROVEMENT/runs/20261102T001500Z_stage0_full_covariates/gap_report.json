@@ -1,0 +1,135 @@
+{
+  "run_id": "20261102T001500Z_stage0_full_covariates",
+  "status": "VALID_DIAGNOSTIC_ONLY",
+  "started_at_utc": "2026-11-01T13:54:15.121878+00:00",
+  "completed_at_utc": "2026-11-01T13:54:15.652513+00:00",
+  "git_commit": "0e1bcbea881f926b07aaa6916328cfd242684a51",
+  "command": [
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\source\\correlation_gap_diagnostics.py",
+    "--run-id",
+    "20261102T001500Z_stage0_full_covariates"
+  ],
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1"
+  },
+  "inputs": {
+    "historical_champion": {
+      "path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+      "size_bytes": 1291519,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+    },
+    "phase2": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\CANDIDATE\\submission_key_target_encoding.csv",
+      "size_bytes": 1291519,
+      "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa"
+    },
+    "hybrid_v5": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+      "size_bytes": 1291519,
+      "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "size_bytes": 15818118,
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "size_bytes": 676518,
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    },
+    "source_files": {
+      "correlation_gap_diagnostics.py": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\source\\correlation_gap_diagnostics.py",
+        "sha256": "ba68535f4012b63a7056c0d0ea1a51163774bb52fa307ea824ca276fd65b686f"
+      },
+      "gap_diagnostics.py": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\source\\gap_diagnostics.py",
+        "sha256": "09122d35cdc93bc8f4662a42781434f024d72a99de7843fe7a8b13e4a52f8387"
+      }
+    }
+  },
+  "alignment": {
+    "test_rows": 61500,
+    "test_columns": 33,
+    "target_in_test": false,
+    "sample_order_matches_test": true,
+    "phase2": {
+      "rows": 61500,
+      "reference_row_order_matches_test": true,
+      "candidate_row_order_matches_test": true,
+      "duplicate_ids": 0,
+      "missing_or_extra_ids": 0
+    },
+    "hybrid_v5": {
+      "rows": 61500,
+      "reference_row_order_matches_test": true,
+      "candidate_row_order_matches_test": true,
+      "duplicate_ids": 0,
+      "missing_or_extra_ids": 0
+    }
+  },
+  "comparisons": {
+    "phase2_vs_historical_champion": {
+      "pearson": 0.7782506969580697,
+      "spearman": 0.9157084581110128,
+      "mae": 0.41111345726630405,
+      "rmse": 0.4686509339505776,
+      "maximum_absolute_error": 0.9401703012999999,
+      "mean_signed_error": -0.41102630601210893,
+      "mean_rank_displacement": 5392.105073170732,
+      "median_rank_displacement": 4051.0,
+      "p95_rank_displacement": 15026.099999999991,
+      "maximum_rank_displacement": 52044.0,
+      "exact_rank_agreement_count": 13
+    },
+    "v5_hybrid_vs_historical_champion": {
+      "pearson": 0.9999975815867518,
+      "spearman": 0.9999975815867501,
+      "mae": 0.00030141741027642276,
+      "rmse": 0.000634877054701475,
+      "maximum_absolute_error": 0.012504065100000017,
+      "mean_signed_error": -7.333790304942599e-22,
+      "mean_rank_displacement": 18.537170731707317,
+      "median_rank_displacement": 7.0,
+      "p95_rank_displacement": 80.0,
+      "maximum_rank_displacement": 769.0,
+      "exact_rank_agreement_count": 3093
+    },
+    "phase2_vs_v5_hybrid": {
+      "pearson": 0.7782540515095574,
+      "spearman": 0.9157128812199841,
+      "mae": 0.4111134165654553,
+      "rmse": 0.46865074564735526,
+      "maximum_absolute_error": 0.9402353419999999,
+      "mean_signed_error": 0.41102630601210893,
+      "mean_rank_displacement": 5392.086764227643,
+      "median_rank_displacement": 4051.0,
+      "p95_rank_displacement": 15020.049999999996,
+      "maximum_rank_displacement": 52100.0,
+      "exact_rank_agreement_count": 12
+    }
+  },
+  "slices": {
+    "reference_prediction_decile": "10 equal-sized groups from historical predictions",
+    "ext_source_missingness": "0, 1, or 2+ missing values among EXT_SOURCE_1..3",
+    "total_feature_missingness": "0, 1-5, 6-10, or >10 missing test covariates",
+    "income_quartile": "rank quartiles of AMT_INCOME_TOTAL",
+    "age_band": "under 25, 25-34, 35-44, 45-54, 55+",
+    "contract_type": "raw categorical test covariate",
+    "gender": "raw categorical test covariate"
+  },
+  "interpretation_guard": {
+    "test_labels_available": false,
+    "historical_predictions_used_as_labels": false,
+    "training_or_tuning_performed": false,
+    "model_selection_performed": false,
+    "official_score_inferred": false,
+    "candidate_promotion_allowed": false,
+    "meaning": "Descriptive prediction-disagreement analysis only."
+  }
+}
