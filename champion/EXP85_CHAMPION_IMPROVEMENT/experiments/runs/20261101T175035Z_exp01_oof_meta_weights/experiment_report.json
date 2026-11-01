@@ -1,0 +1,136 @@
+{
+  "candidate": null,
+  "classification": "HISTORICAL_CACHE_ASSISTED_META_VALIDATION",
+  "configuration": {
+    "fixed_weights_raw": [
+      0.2932,
+      0.2596,
+      0.2051,
+      0.0874,
+      0.0489,
+      0.0442,
+      0.0383,
+      0.0233
+    ],
+    "logistic_C": 0.1,
+    "members": [
+      "v17_e1Aet",
+      "xgb10",
+      "v17_final",
+      "v55_cbprod",
+      "v17_e1et",
+      "v55_deep_et",
+      "v55_allfam",
+      "v55_v2_mono"
+    ],
+    "outer_folds": 5,
+    "seed": 20261101,
+    "shuffle": true,
+    "standardization": "fit on outer training rows only"
+  },
+  "decision": "No test candidate generated because the predeclared OOF gate failed.",
+  "execution_identity": {
+    "configuration_sha256": "cdecfaacbf33aef35e914cfcf1764f8c117c08e6e8a6a6358d48255538170b45",
+    "raw_test_sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+    "raw_train_sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+    "source_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp01_meta_weights.py",
+    "source_sha256": "d8c540972d3d6923bbff07261432ff7ec25f5bb2b640c21ae3cbf609a46d6c6b"
+  },
+  "experiment_id": "20261101T175035Z",
+  "hypothesis": "An L2-regularized logistic stack over the existing eight OOF streams may generalize better than the fixed historical weights.",
+  "inputs": {
+    "oof_10f_xgb.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\oof_10f_xgb.npy",
+      "sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d"
+    },
+    "test_10f_xgb.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\test_10f_xgb.npy",
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+    },
+    "v55_members.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v55_members.npz",
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f"
+    },
+    "v_17_full_suite_bundle.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_17_full_suite_bundle.npz",
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223"
+    },
+    "y_train.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\y_train.npy",
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2"
+    }
+  },
+  "outputs": {
+    "crossfit_meta_oof.npy": "e0fc66681d9f3d4696826888468ee4b2690765039fe80d2ddccf2d4832d6dae3",
+    "fixed_suite_oof.npy": "af29ee0689848693bd0dc83482d8b555b2839c35e0ee3b7c58f8022e40418b54",
+    "fold_membership.npy": "08aa8bc39ce8e2c2c12b12f4bb1166beea25ab656f43de43dce5b2d83934770b"
+  },
+  "provenance_limitations": [
+    "Historical V17/V55/XGB10 OOF artifacts are inputs; original fold sidecars and producer run manifest are unavailable.",
+    "The historical fixed weights were selected using the complete OOF label set; this makes the fixed-weight fold comparator optimistic and the paired-fold comparison non-nested.",
+    "This is not an independent raw-data reconstruction.",
+    "The historical 85% Anchor74 has no verified aligned OOF vector; this experiment evaluates the 15% suite, not the full champion.",
+    "No historical test prediction was used as a label or tuning target."
+  ],
+  "runtime": {
+    "device": "CPU; rank transforms and logistic meta-fit do not use GPU",
+    "elapsed_seconds": 1.8802932999969926
+  },
+  "status": "REJECTED_SCREEN",
+  "validation": {
+    "OOF_fold_sidecars_available": false,
+    "crossfit_meta_pooled_auc": 0.7771115234330453,
+    "fixed_suite_pooled_auc": 0.7772070077801961,
+    "folds": [
+      {
+        "fit_rows": 136961,
+        "fixed_suite_auc": 0.7700603941765856,
+        "fold": 1,
+        "meta_stack_auc": 0.7700107288959799,
+        "paired_auc_delta": -4.966528060568187e-05,
+        "valid_rows": 34241
+      },
+      {
+        "fit_rows": 136961,
+        "fixed_suite_auc": 0.7808794070719973,
+        "fold": 2,
+        "meta_stack_auc": 0.7808601266167489,
+        "paired_auc_delta": -1.928045524846045e-05,
+        "valid_rows": 34241
+      },
+      {
+        "fit_rows": 136962,
+        "fixed_suite_auc": 0.777854521369186,
+        "fold": 3,
+        "meta_stack_auc": 0.7777276013387822,
+        "paired_auc_delta": -0.00012692003040382094,
+        "valid_rows": 34240
+      },
+      {
+        "fit_rows": 136962,
+        "fixed_suite_auc": 0.7751071659311236,
+        "fold": 4,
+        "meta_stack_auc": 0.7751447522831812,
+        "paired_auc_delta": 3.758635205763916e-05,
+        "valid_rows": 34240
+      },
+      {
+        "fit_rows": 136962,
+        "fixed_suite_auc": 0.7821164918521984,
+        "fold": 5,
+        "meta_stack_auc": 0.7818681460654835,
+        "paired_auc_delta": -0.0002483457867149541,
+        "valid_rows": 34240
+      }
+    ],
+    "gate": {
+      "minimum_gain_to_standard_error": 2.0,
+      "minimum_mean_gain": 0.0002,
+      "minimum_positive_folds": 4,
+      "passed": false
+    },
+    "mean_paired_fold_delta": -8.132504018305564e-05,
+    "paired_fold_delta_standard_error": 4.9480613883685815e-05,
+    "positive_folds": 1
+  }
+}

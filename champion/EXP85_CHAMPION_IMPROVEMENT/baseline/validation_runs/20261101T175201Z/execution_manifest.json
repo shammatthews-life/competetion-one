@@ -1,0 +1,80 @@
+{
+  "baseline_inputs": {
+    "anchor74": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_20261027_precision_transductive_apex.csv",
+      "sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484"
+    },
+    "exp79_comparison": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_20261027_grand_master_macro_stacker_apex.csv",
+      "sha256": "483c911bb02f0dba229f83d12e63cd2c4a0d4cc7f6d93908aa278d662a01ab04"
+    },
+    "labels": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\y_train.npy",
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2"
+    },
+    "v17": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_17_full_suite_bundle.npz",
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223"
+    },
+    "v55": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v55_members.npz",
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f"
+    },
+    "xgb10_oof": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\oof_10f_xgb.npy",
+      "sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d"
+    },
+    "xgb10_test": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\test_10f_xgb.npy",
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+    }
+  },
+  "baseline_manifest_sha256": "e85dd0c2423c21d0cb23f3aca1c7cae1656df4f84a23faed3c9758cada01ab30",
+  "classification": "HISTORICAL_CACHE_ASSISTED_EXECUTION",
+  "command": [
+    "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\validation_runs\\20261101T175201Z\\build_exp85_optimal_macro_apex_isolated.py"
+  ],
+  "comparison": {
+    "byte_identical": true,
+    "finite_probabilities_in_unit_interval": true,
+    "rows": 61500,
+    "test_ids_unique_and_ordered": true,
+    "value_identical": true
+  },
+  "elapsed_seconds": 3.5127699000004213,
+  "exit_code": 0,
+  "gpu": "Not used; the historical synthesis performs prediction blending only.",
+  "historical_reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\reference\\EXP85_HISTORICAL_CHAMPION.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "official_public_score": "NOT_EVALUATED_BY_THIS_LOCAL_REPLAY; historical source reports 0.801340",
+  "output": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\validation_runs\\20261101T175201Z\\baseline_submission.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "python_executable": "C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "raw_data_model_retraining": false,
+  "raw_inputs": {
+    "test.csv": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65"
+    },
+    "train.csv": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1"
+    }
+  },
+  "run_id": "20261101T175201Z",
+  "source_isolated": {
+    "changes": "Redirected direct-input reads and output/log paths only.",
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\validation_runs\\20261101T175201Z\\build_exp85_optimal_macro_apex_isolated.py",
+    "sha256": "4d6a708b5543e7e9b221b576d11a2361546338a44634141bb5c54629b10ae1ce"
+  },
+  "source_original": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_exp85_optimal_macro_apex.py",
+    "sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555"
+  }
+}

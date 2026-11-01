@@ -1,0 +1,172 @@
+{
+  "baseline_id": "EXP85_HISTORICAL_0.801340",
+  "classification": "HISTORICAL_CACHE_ASSISTED_BASELINE",
+  "direct_synthesis_inputs": {
+    "anchor74": {
+      "original_path": "D:\\gci\\gemini\\v_20261027_precision_transductive_apex.csv",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_20261027_precision_transductive_apex.csv",
+      "sha256": "e5869c8be91b5a69f8cbedfa36e35185d4ce3dd6b781df01440b42fe6d009484",
+      "size_bytes": 1291519
+    },
+    "exp79_comparison": {
+      "original_path": "D:\\gci\\gemini\\v_20261027_grand_master_macro_stacker_apex.csv",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_20261027_grand_master_macro_stacker_apex.csv",
+      "sha256": "483c911bb02f0dba229f83d12e63cd2c4a0d4cc7f6d93908aa278d662a01ab04",
+      "size_bytes": 1291519
+    },
+    "labels": {
+      "original_path": "D:\\gci\\gemini\\cache\\y_train.npy",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\y_train.npy",
+      "sha256": "2af2e56de31b22d326cd8fffe56b20cdd0b9c13cccddd0b4e8a50a97a5b984e2",
+      "size_bytes": 684936
+    },
+    "v17": {
+      "original_path": "D:\\gci\\gemini\\cache\\v_17_full_suite_bundle.npz",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v_17_full_suite_bundle.npz",
+      "sha256": "c1dfacea535ddac5d46a6d69ffcbbddf05ccbe876fc0fd115742feb91a701223",
+      "size_bytes": 6866482
+    },
+    "v55": {
+      "original_path": "D:\\gci\\gemini\\cache\\v55_members.npz",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\v55_members.npz",
+      "sha256": "995b0e80162b706e49e2d4b5551a34244bd33f6e8ae4893de1fd1fad38cbbc0f",
+      "size_bytes": 7088141
+    },
+    "xgb10_oof": {
+      "original_path": "D:\\gci\\gemini\\cache\\oof_10f_xgb.npy",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\oof_10f_xgb.npy",
+      "sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+      "size_bytes": 684936
+    },
+    "xgb10_test": {
+      "original_path": "D:\\gci\\gemini\\cache\\test_10f_xgb.npy",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\artifacts\\test_10f_xgb.npy",
+      "sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195",
+      "size_bytes": 246128
+    }
+  },
+  "execution_scope": "Final 85:15 synthesis only. Upstream models and Anchor74 remain historical cached predictions; this is not a raw rebuild.",
+  "historical_champion_reference": {
+    "original_path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\reference\\EXP85_HISTORICAL_CHAMPION.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "size_bytes": 1291519
+  },
+  "historical_notebook_reference": {
+    "path": "D:\\gci\\gemini\\GCI_CHAMPION_0801340_EXACT_REPRODUCIBLE.ipynb",
+    "sha256": "d02b5e186774822636981b0a245a4810c0fb9b02cd6dec7201d08b9a11174368",
+    "size_bytes": 211585
+  },
+  "historical_score_report_reference": {
+    "path": "D:\\gci\\gemini\\EXP85_DEPENDENCY_AUDIT.md",
+    "sha256": "bc5981135c110b7190141337f3825197cf02b42e6dea0013798b8b8244a4eaca",
+    "size_bytes": 13290
+  },
+  "historical_source_commit": null,
+  "historical_source_commit_note": "D:\\gci\\gemini is not a Git worktree; source SHA-256 values are the available identity evidence.",
+  "historical_source_git_metadata": "UNAVAILABLE",
+  "raw_inputs_hashed_not_copied": {
+    "sample_submission.csv": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test.csv": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train.csv": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "relevant_upstream_sources": {
+    "anchor74_builder": {
+      "original_path": "D:\\gci\\gemini\\build_precision_transductive_apex_champion.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_precision_transductive_apex_champion.py",
+      "sha256": "7b80c196bad395a2aaba478d08dc2087af4280d0f2b41ff75e36010a984b1fdc",
+      "size_bytes": 9645
+    },
+    "asymmetric_apex_builder": {
+      "original_path": "D:\\gci\\gemini\\build_asymmetric_convex_gated_champion.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_asymmetric_convex_gated_champion.py",
+      "sha256": "23f14c6fd6f3f15e34efad05e805d6caa21a79702440110e8d31b5891a49fd64",
+      "size_bytes": 9167
+    },
+    "exp85_final_synthesis": {
+      "original_path": "D:\\gci\\gemini\\build_exp85_optimal_macro_apex.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_exp85_optimal_macro_apex.py",
+      "sha256": "f4eeb19a5f3f161f186c318e5b942035e592cc001c710e18a679f589e39ed555",
+      "size_bytes": 10406
+    },
+    "feature_builder": {
+      "original_path": "D:\\gci\\gemini\\build_hasan_600_features.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_hasan_600_features.py",
+      "sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "size_bytes": 17482
+    },
+    "feature_selector": {
+      "original_path": "D:\\gci\\gemini\\screen_and_select_features.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\screen_and_select_features.py",
+      "sha256": "0a881c5bb2090e77e6cb3020e0134ba172650fe3ecfb1f7701ae57a5e8caafb7",
+      "size_bytes": 3636
+    },
+    "level2_builder": {
+      "original_path": "D:\\gci\\gemini\\build_level2_regime_meta_stacker.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_level2_regime_meta_stacker.py",
+      "sha256": "f1224d8f351daa8b8058fca99ed1f2eb5aa35b98408e2c306beddce5fd0a8490",
+      "size_bytes": 17756
+    },
+    "optimal_transductive_builder": {
+      "original_path": "D:\\gci\\gemini\\build_optimal_transductive_apex_champion.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_optimal_transductive_apex_champion.py",
+      "sha256": "e5d3febfc71e5194c05ce6db85358db5f9a93601619bea29ef3633dbd47e3011",
+      "size_bytes": 10528
+    },
+    "v080150_builder": {
+      "original_path": "D:\\gci\\gemini\\solo_grand_master_apex_080.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\solo_grand_master_apex_080.py",
+      "sha256": "38917ee975beeb5abb1ff522490732d42e351ef161fc179e0b5bf6ad44871756",
+      "size_bytes": 8124
+    },
+    "v080200_builder": {
+      "original_path": "D:\\gci\\gemini\\build_v80200_apex.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\build_v80200_apex.py",
+      "sha256": "312e760a1f09c71620968cc80938cab6c612bf1576dfe2b474ba10f152053c28",
+      "size_bytes": 4645
+    },
+    "v17_trainer": {
+      "original_path": "D:\\gci\\gemini\\train_full_v16_suite.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_full_v16_suite.py",
+      "sha256": "eb20c21039c3a09f63367a538d9b46d2f34b8c04879b0b83fa4c29ef880bcec0",
+      "size_bytes": 10617
+    },
+    "v55_trainer": {
+      "original_path": "D:\\gci\\gemini\\train_clean_honors_champion.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_clean_honors_champion.py",
+      "sha256": "fcc248cea1c7cc18e9277f676995e5578407ca7fc4493b34411ac9351697756a",
+      "size_bytes": 11756
+    },
+    "zoo_trainer_a": {
+      "original_path": "D:\\gci\\gemini\\train_hasan_master_zoo.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_hasan_master_zoo.py",
+      "sha256": "bb8a2e8d8205fcbdc534854899ca46bf7ffeddbff16ade82c618c578f8a51009",
+      "size_bytes": 7849
+    },
+    "zoo_trainer_b": {
+      "original_path": "D:\\gci\\gemini\\train_catboost_and_deep_lgb.py",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\source\\train_catboost_and_deep_lgb.py",
+      "sha256": "1c74ca4620ace7e927e8b9ec5c6bb0ecec9f6e4c577c9d01e44da1eff42f0290",
+      "size_bytes": 5077
+    }
+  },
+  "reported_historical_public_auc": 0.80134,
+  "score_evidence_note": "0.801340 is reported by the historical EXP85 source and audit; an official upload receipt bound to this CSV hash was not found.",
+  "snapshot_created_utc": "2026-11-01T17:50:25.038860+00:00",
+  "user_target_public_auc": 0.80314,
+  "v20_v080041_scope": "Not direct inputs to the final EXP85 synthesis script; their lineage is upstream of the historical Anchor74 cache.",
+  "workspace_git_commit_at_snapshot": "cad4a0d8a185c2c7e1bd69a154dbba9662e5b066",
+  "workspace_git_root": "D:\\gci\\_gci_push_tmp"
+}

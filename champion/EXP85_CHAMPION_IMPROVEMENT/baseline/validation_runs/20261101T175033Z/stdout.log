@@ -1,0 +1,46 @@
+=====================================================================================
+EXP_85: OPTIMAL 8-ENGINE PROBIT MACRO-SYNTHESIS (BUG-FREE ASCENT)
+=====================================================================================
+[1] Loading Foundation Artifacts...
+    Train: 171,202 | Test: 61,500
+    Bedrock Anchor 74: D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\baseline\artifacts\v_20261027_precision_transductive_apex.csv (0.800850 LB)
+    Standing Champion 79: D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\baseline\artifacts\v_20261027_grand_master_macro_stacker_apex.csv (0.801290 LB)
+
+[2] Assembling Upgraded 8-Engine Suite (OOF-Optimized via Nelder-Mead)...
+    - v17_e1Aet       (Weight: 29.32% | OOF AUC: 0.776105)
+    - xgb10           (Weight: 25.96% | OOF AUC: 0.774331)
+    - v17_final       (Weight: 20.51% | OOF AUC: 0.776347)
+    - v55_cbprod      (Weight:  8.74% | OOF AUC: 0.773050)
+    - v17_e1et        (Weight:  4.89% | OOF AUC: 0.775884)
+    - v55_deep_et     (Weight:  4.42% | OOF AUC: 0.774026)
+    - v55_allfam      (Weight:  3.83% | OOF AUC: 0.775207)
+    - v55_v2_mono     (Weight:  2.33% | OOF AUC: 0.775316)
+    --> Total 8-Engine Suite OOF AUC: 0.777207 (+1.43 bps over EXP_79 suite)
+
+[3] Executing Pure Probit Macro-Synthesis (85% Anchor 74 + 15% Upgraded Suite)...
+
+[4] Converting to Strictly Distinct Ordinal Percentile Ranks...
+
+=====================================================================================
+TELEMETRY & STRUCTURAL AUDIT
+=====================================================================================
+[*] Spearman Correlation with Champion 79 (0.801290) : 0.9998988
+[*] Spearman Correlation with Anchor 74 (0.800850)   : 0.9977788
+[*] Mean Absolute Rank Shift vs EXP_79               : 185.14 ranks (Target: 150-250)
+[*] Median Absolute Rank Shift vs EXP_79             : 136.00 ranks
+[*] 90th Percentile Rank Shift vs EXP_79             : 417.00 ranks
+[*] Maximum Absolute Rank Shift vs EXP_79            : 2285.00 ranks
+[*] Rows Shifted > 500 Positions vs EXP_79           : 3,569 (5.80%)
+[*] Rows Shifted > 1,000 Positions vs EXP_79         : 118 (0.19%)
+[*] Total Distinct Ranks                             : 61,500 / 61,500
+
+=====================================================================================
+[*] OUTPUT SAVED SUCCESSFULLY : D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\baseline\validation_runs\20261101T175033Z\baseline_submission.csv
+[*] Total Rows Exported       : 61,500 (Expected: 61,500)
+[*] Null Count                : 0 (Zero nulls guaranteed)
+[*] Distinct Ranks            : 61,500 / 61,500 (100% distinct)
+[*] Min / Max / Mean Target   : 0.00000813 / 0.99999187 / 0.50000000
+[*] SHA-256 Checksum          : 78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947
+[*] Execution Time            : 0.88s
+=====================================================================================
+[*] Successfully logged EXP_85 to D:\gci\_gci_push_tmp\champion\EXP85_CHAMPION_IMPROVEMENT\baseline\validation_runs\20261101T175033Z\isolated_experiment_log.csv
