@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "start_utc": "2026-11-01T10:06:38.658898+00:00",
+  "end_utc": "2026-11-01T10:10:26.394458+00:00",
+  "elapsed_seconds": 227.735586099996,
+  "exit_code": 1,
+  "command": [
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+    "--data-dir",
+    "D:\\gci\\inpuy",
+    "--run-dir",
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_153631"
+  ],
+  "error_type": "ValueError",
+  "error": "The truth value of a Series is ambiguous. Use a.empty, a.item(), a.any() or a.all().",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 966, in main\n    result = execute(args)\n             ^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 786, in execute\n    model_results[\"lightgbm\"] = fit_model(\n                                ^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 578, in fit_model\n    if not any(item[\"fold\"] == fold_number for item in importances):\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\core\\generic.py\", line 1445, in __bool__\n    raise ValueError(\nValueError: The truth value of a Series is ambiguous. Use a.empty, a.item(), a.any() or a.all().\n"
+}

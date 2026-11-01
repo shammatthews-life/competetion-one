@@ -1,0 +1,99 @@
+{
+  "baseline": {
+    "command": [
+      "python",
+      "-u",
+      "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+      "--data-dir",
+      "D:\\gci\\inpuy",
+      "--run-dir",
+      "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_154924"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 736.717401700007,
+    "git_commit_at_execution": "7edc262e8428a09929586f1eaf4602a2c4ec6916",
+    "raw_input_sha256": {
+      "train.csv": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "test.csv": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "sample_submission.csv": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    },
+    "source_sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+    "candidate_sha256": "2ba6f3d0677851417e55265f74b707f9f25d2233cdad772559e67f27b78ba2fc",
+    "oof_blend_sha256": "36bdf6442ecbb8a652fb3cb3b264d748bd0a8b59b7bdacdd20865872ba03afe9",
+    "test_blend_sha256": "10a9d77f7f9ed0dc10a83cfec8c200afc4f12b9fe1bef22bffc7c2b62341160e",
+    "validation": {
+      "status": "PASS",
+      "row_count": 61500,
+      "columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "ids_match_test_and_sample_in_order": true,
+      "unique_ids": true,
+      "predictions_finite_and_in_range": true,
+      "prediction_min": 0.0028129886,
+      "prediction_max": 0.7822664082,
+      "candidate_csv_vs_saved_blend_max_absolute_difference": 4.999961902840688e-11,
+      "independent_oof_auc": 0.7625457907047022,
+      "all_eight_run_manifest_hashes_verified": true,
+      "official_competition_score": "NOT_EVALUATED"
+    }
+  },
+  "feature_screen_single_seed": {
+    "command": [
+      "python",
+      "-u",
+      "D:\\gci\\pre info\\oct22\\extracted_files\\fast_screen.py",
+      "--data",
+      "D:\\gci\\inpuy",
+      "--validate",
+      "--model",
+      "xgb",
+      "--out",
+      "runs\\research_screen_validation_20261101_162000\\fast_screen_validation.csv"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 407.1364511,
+    "model": "XGBoost 3.4.1, device=cuda, tree_method=hist",
+    "cache_root": "runs\\research_screen_validation_20261101_162000",
+    "prediction_cache_inputs_discovered": {
+      "HGB_PATH": null,
+      "HGB_OOF": null
+    },
+    "validation_gate": "FAIL_RANDOM_NOISE_CONTROL_OUTSIDE_PLUS_MINUS_0.0003"
+  },
+  "feature_screen_three_seed_controls": {
+    "command": [
+      "python",
+      "-u",
+      "D:\\gci\\pre info\\oct22\\extracted_files\\fast_screen.py",
+      "--data",
+      "D:\\gci\\inpuy",
+      "--only",
+      "ctrl_noise,ctrl_dup",
+      "--seeds",
+      "3",
+      "--model",
+      "xgb",
+      "--out",
+      "runs\\research_screen_controls_3seed_20261101_163000\\fast_screen_controls_3seed.csv"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 660.5876842,
+    "model": "XGBoost 3.4.1, device=cuda, tree_method=hist",
+    "cache_root": "runs\\research_screen_controls_3seed_20261101_163000",
+    "prediction_cache_inputs_discovered": {
+      "HGB_PATH": null,
+      "HGB_OOF": null
+    },
+    "mean_paired_auc_delta": {
+      "ctrl_noise": -0.00036,
+      "ctrl_dup": -0.00004
+    },
+    "standard_error": {
+      "ctrl_noise": 0.00012,
+      "ctrl_dup": 0.00010
+    },
+    "validation_gate": "FAIL_RANDOM_NOISE_CONTROL_OUTSIDE_PLUS_MINUS_0.0003"
+  }
+}

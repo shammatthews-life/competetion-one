@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "start_utc": "2026-11-01T10:05:08.010166+00:00",
+  "end_utc": "2026-11-01T10:05:15.707301+00:00",
+  "elapsed_seconds": 7.697843100002501,
+  "exit_code": 1,
+  "command": [
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+    "--data-dir",
+    "D:\\gci\\inpuy",
+    "--run-dir",
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_153501"
+  ],
+  "error_type": "LightGBMError",
+  "error": "Do not support special JSON characters in feature name.",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 942, in main\n    result = execute(args)\n             ^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 762, in execute\n    model_results[\"lightgbm\"] = fit_model(\n                                ^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 483, in fit_model\n    train_lightgbm_fold(\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 340, in train_lightgbm_fold\n    model = lgb.train(\n            ^^^^^^^^^^\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\engine.py\", line 296, in train\n    booster = Booster(params=params, train_set=train_set)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\basic.py\", line 3758, in __init__\n    train_set.construct()\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\basic.py\", line 2574, in construct\n    self._lazy_init(\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\basic.py\", line 2207, in _lazy_init\n    return self.set_feature_name(feature_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\basic.py\", line 3059, in set_feature_name\n    _safe_call(\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\lightgbm\\basic.py\", line 297, in _safe_call\n    raise LightGBMError(_LIB.LGBM_GetLastError().decode(\"utf-8\"))\nlightgbm.basic.LightGBMError: Do not support special JSON characters in feature name.\n"
+}

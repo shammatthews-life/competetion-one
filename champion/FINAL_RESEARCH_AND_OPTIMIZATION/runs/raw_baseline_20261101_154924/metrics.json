@@ -1,0 +1,174 @@
+{
+  "lightgbm": {
+    "folds": [
+      {
+        "fold": 1,
+        "status": "TRAINED",
+        "best_iteration": 706,
+        "auc": 0.7577269107937998,
+        "elapsed_seconds": 39.57536529999925
+      },
+      {
+        "fold": 2,
+        "status": "TRAINED",
+        "best_iteration": 550,
+        "auc": 0.7623158101801264,
+        "elapsed_seconds": 35.56680880000931
+      },
+      {
+        "fold": 3,
+        "status": "TRAINED",
+        "best_iteration": 733,
+        "auc": 0.7681525758536264,
+        "elapsed_seconds": 45.00090369998361
+      },
+      {
+        "fold": 4,
+        "status": "TRAINED",
+        "best_iteration": 469,
+        "auc": 0.7572926718429625,
+        "elapsed_seconds": 29.34570290002739
+      },
+      {
+        "fold": 5,
+        "status": "TRAINED",
+        "best_iteration": 583,
+        "auc": 0.761959735844497,
+        "elapsed_seconds": 38.04646009998396
+      }
+    ],
+    "auc": 0.7614474490086683,
+    "mean_fold_auc": 0.7614895409030024,
+    "std_fold_auc": 0.003926090528766788,
+    "best_iterations": [
+      706,
+      550,
+      733,
+      469,
+      583
+    ],
+    "feature_importance_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_154924\\lightgbm_feature_importance.csv"
+  },
+  "catboost": {
+    "folds": [
+      {
+        "fold": 1,
+        "status": "TRAINED",
+        "best_iteration": 740,
+        "auc": 0.7581795878156412,
+        "elapsed_seconds": 105.29747049999423
+      },
+      {
+        "fold": 2,
+        "status": "TRAINED",
+        "best_iteration": 888,
+        "auc": 0.760356040378191,
+        "elapsed_seconds": 124.34005860000616
+      },
+      {
+        "fold": 3,
+        "status": "TRAINED",
+        "best_iteration": 841,
+        "auc": 0.7645012284185374,
+        "elapsed_seconds": 115.47502879999229
+      },
+      {
+        "fold": 4,
+        "status": "TRAINED",
+        "best_iteration": 601,
+        "auc": 0.7556448953641935,
+        "elapsed_seconds": 86.16397020002478
+      },
+      {
+        "fold": 5,
+        "status": "TRAINED",
+        "best_iteration": 811,
+        "auc": 0.762121920378911,
+        "elapsed_seconds": 110.93694280000636
+      }
+    ],
+    "auc": 0.7601360676266915,
+    "mean_fold_auc": 0.7601607344710948,
+    "std_fold_auc": 0.003067312412519571,
+    "best_iterations": [
+      740,
+      888,
+      841,
+      601,
+      811
+    ],
+    "feature_importance_path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_154924\\catboost_feature_importance.csv"
+  },
+  "oof_pearson_lgbm_catboost": 0.9613905030452151,
+  "oof_spearman_lgbm_catboost": 0.9677522764237583,
+  "fixed_50_50_probability_blend": {
+    "auc": 0.7625457907047022,
+    "oof_sha256": "36bdf6442ecbb8a652fb3cb3b264d748bd0a8b59b7bdacdd20865872ba03afe9",
+    "test_sha256": "10a9d77f7f9ed0dc10a83cfec8c200afc4f12b9fe1bef22bffc7c2b62341160e",
+    "selection_note": "predeclared equal probability blend; no weight tuning"
+  },
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "lightgbm_auc": 0.7577269107937998,
+      "catboost_auc": 0.7581795878156412,
+      "fixed_blend_auc": 0.759881816171843
+    },
+    {
+      "fold": 2,
+      "lightgbm_auc": 0.7623158101801264,
+      "catboost_auc": 0.760356040378191,
+      "fixed_blend_auc": 0.7630289342412382
+    },
+    {
+      "fold": 3,
+      "lightgbm_auc": 0.7681525758536264,
+      "catboost_auc": 0.7645012284185374,
+      "fixed_blend_auc": 0.7683050821897428
+    },
+    {
+      "fold": 4,
+      "lightgbm_auc": 0.7572926718429625,
+      "catboost_auc": 0.7556448953641935,
+      "fixed_blend_auc": 0.7579722951573697
+    },
+    {
+      "fold": 5,
+      "lightgbm_auc": 0.761959735844497,
+      "catboost_auc": 0.762121920378911,
+      "fixed_blend_auc": 0.7636765585669387
+    }
+  ],
+  "prediction_correlation": {
+    "pearson": 0.9613905030452151,
+    "spearman": 0.9677522764237583
+  },
+  "historical_reference_comparison": {
+    "classification": "historical reference comparison only; not a model input",
+    "reference_path": "D:\\gci\\gemini\\v_20261027_optimal_macro_apex_v85.csv",
+    "reference_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "pearson": 0.7618873647763239,
+    "spearman": 0.8961553031319281,
+    "mae": 0.411790101812169,
+    "rmse": 0.47105803458762413,
+    "mean_rank_displacement": 6009.3885528455285,
+    "maximum_rank_displacement": 52957
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "training_lineage": "INDEPENDENT_RAW_ONLY_NO_HISTORICAL_PREDICTIONS",
+  "test_prediction_summary": {
+    "mean": 0.08832979406722125,
+    "std": 0.08779151664432976,
+    "min": 0.0028129885904490948,
+    "max": 0.7822664082050323,
+    "positive_rate_at_0_5": 0.004276422764227642
+  },
+  "gpu_before": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 0 MiB, 0 %"
+  },
+  "gpu_after": {
+    "available": true,
+    "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 83 MiB, 0 %"
+  }
+}

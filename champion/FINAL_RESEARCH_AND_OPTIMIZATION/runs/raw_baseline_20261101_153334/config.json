@@ -1,0 +1,74 @@
+{
+  "raw_train_sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+  "raw_test_sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+  "sample_submission_sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+  "source_sha256": "da461eff7c9347e51f3ff7dcd6635951a96467343874a9b2d7e21d82a4a4cc10",
+  "git_commit": "7edc262e8428a09929586f1eaf4602a2c4ec6916",
+  "folds": {
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 42
+  },
+  "models": {
+    "lightgbm": {
+      "device": "CPU",
+      "objective": "binary",
+      "metric": "auc",
+      "boosting_type": "gbdt",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 80,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l1": 0.1,
+      "lambda_l2": 5.0,
+      "max_bin": 127,
+      "num_threads": 8,
+      "verbosity": -1,
+      "num_boost_round": 3000,
+      "early_stopping_rounds": 150
+    },
+    "catboost": {
+      "device": "GPU:0",
+      "iterations": 2500,
+      "depth": 7,
+      "learning_rate": 0.045,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "l2_leaf_reg": 5.0,
+      "random_strength": 0.5,
+      "bootstrap_type": "Bernoulli",
+      "subsample": 0.8,
+      "border_count": 128,
+      "task_type": "GPU",
+      "devices": "0",
+      "early_stopping_rounds": 150
+    }
+  },
+  "versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit_learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10"
+  },
+  "experiment": "raw-only inductive CatBoost-GPU and LightGBM-CPU 5-fold baseline",
+  "fingerprint": "a81dfc34bb19ad5b956c7c7527c0157dd5f7348782c17493d18ea240f702d9c5",
+  "command": [
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+    "--data-dir",
+    "D:\\gci\\inpuy",
+    "--run-dir",
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_153334"
+  ],
+  "start_utc": "2026-11-01T10:03:40.369561+00:00",
+  "raw_data_used_for_model_training": [
+    "D:\\gci\\inpuy\\train.csv",
+    "D:\\gci\\inpuy\\test.csv"
+  ],
+  "historical_prediction_inputs": [],
+  "transductive_feature_inputs": []
+}

@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "start_utc": "2026-11-01T10:03:40.352096+00:00",
+  "end_utc": "2026-11-01T10:03:43.000880+00:00",
+  "elapsed_seconds": 2.6482897000096273,
+  "exit_code": 1,
+  "command": [
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py",
+    "--data-dir",
+    "D:\\gci\\inpuy",
+    "--run-dir",
+    "champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\raw_baseline_20261101_153334"
+  ],
+  "error_type": "ValueError",
+  "error": "TARGET is unexpectedly present in test/submission input",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 942, in main\n    result = execute(args)\n             ^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py\", line 722, in execute\n    raise ValueError(\"TARGET is unexpectedly present in test/submission input\")\nValueError: TARGET is unexpectedly present in test/submission input\n"
+}

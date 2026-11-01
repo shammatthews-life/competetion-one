@@ -1,0 +1,5 @@
+candidate,mean_gain,se,per_fold,nonneg,verdict
+ctrl_dup,-0.00017,0.00021,"[0.00017, -0.00083, 0.00018, 0.00012, -0.00049]",3/5,control/ablation
+ctrl_noise,-0.00079,0.00022,"[-0.00016, -0.00142, -0.00095, -0.00095, -0.00046]",0/5,control/ablation
+abl_no_partner_labels,-0.0014,0.00017,"[-0.00077, -0.00166, -0.00148, -0.00176, -0.00131]",0/5,control/ablation
+abl_no_product_keys,-0.00941,0.00127,"[-0.00934, -0.01301, -0.00855, -0.01083, -0.00533]",0/5,control/ablation
