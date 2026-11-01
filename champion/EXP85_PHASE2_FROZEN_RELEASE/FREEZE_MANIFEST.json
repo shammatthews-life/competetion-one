@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "release_label": "FROZEN_DEVELOPMENT_CANDIDATE",
-  "created_at_utc": "2026-11-01T13:18:09.440236+00:00",
+  "created_at_utc": "2026-11-01T13:18:29.601404+00:00",
   "source_repository": "https://github.com/shammatthews-life/competetion-one",
   "source_commit_before_freeze": "db867d015d522e49aa895eff2630a71e7a4525a7",
-  "git_head_at_manifest_generation": "db867d015d522e49aa895eff2630a71e7a4525a7",
+  "git_head_at_manifest_generation": "6cd8bd8d86e066e27d8d59395c2cccfb564e5659",
   "source_candidate": {
     "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\phase02_key_te_20261101_181500\\submission_key_target_encoding.csv",
     "release_relative_path": "CANDIDATE/submission_key_target_encoding.csv",
@@ -480,8 +480,8 @@
       "sha256": "a455cfe41067477d5c737ddba2eceebc9dc07e67deeb818605024043c737416d"
     },
     "REPORTS/FREEZE_REPORT.md": {
-      "size_bytes": 4074,
-      "sha256": "699da779e90de54efcd2983be030846386d02fd4114a767db2eae40e51ffa895"
+      "size_bytes": 4162,
+      "sha256": "7091759c47f9b021cc52554a9a4b73b8106e055cecdb313c0f594a1bc6958166"
     },
     "REPORTS/LEAKAGE_AUDIT_REPORT.md": {
       "size_bytes": 5120,

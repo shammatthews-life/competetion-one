@@ -10,8 +10,8 @@ This label means the selected independent development candidate and its validati
 
 - Source repository: `https://github.com/shammatthews-life/competetion-one`
 - Source commit before freeze: `db867d015d522e49aa895eff2630a71e7a4525a7`
-- Freeze release commit: `PENDING_RELEASE_COMMIT_SHA`
-- GitHub release commit: `PENDING_RELEASE_COMMIT_URL`
+- Freeze release commit: `6cd8bd8d86e066e27d8d59395c2cccfb564e5659`
+- GitHub release commit: `https://github.com/shammatthews-life/competetion-one/commit/6cd8bd8d86e066e27d8d59395c2cccfb564e5659`
 - Candidate source path: `D:\gci\_gci_push_tmp\champion\FINAL_RESEARCH_AND_OPTIMIZATION\runs\phase02_key_te_20261101_181500\submission_key_target_encoding.csv`
 - Frozen path: `CANDIDATE/submission_key_target_encoding.csv`
 - Candidate SHA-256: `2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa`
