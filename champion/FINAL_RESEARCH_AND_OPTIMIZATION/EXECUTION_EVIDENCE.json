@@ -95,5 +95,81 @@
       "ctrl_dup": 0.00010
     },
     "validation_gate": "FAIL_RANDOM_NOISE_CONTROL_OUTSIDE_PLUS_MINUS_0.0003"
+  },
+  "final_phase2_validation_gate": {
+    "status": "PASS",
+    "final_decision": "PASS",
+    "official_competition_score": "NOT_EVALUATED",
+    "outer_seed": 20261101,
+    "outer_folds": 5,
+    "inner_target_encoding_seed": 7,
+    "models_retrained_by_independent_verifier": false,
+    "training_runs": {
+      "main_gate": {
+        "run_id": "final_gate_seed20261101",
+        "elapsed_seconds": 1327.3055340999854,
+        "oof_auc": {
+          "raw_baseline": 0.7620389005999739,
+          "phase2_pooled_frequency": 0.7711413866258005,
+          "phase2_fold_local_frequency": 0.7709638203765881
+        },
+        "paired_delta_vs_baseline": {
+          "phase2_pooled_frequency": 0.009102486025826528,
+          "phase2_fold_local_frequency": 0.008924919776614137,
+          "positive_folds": {
+            "phase2_pooled_frequency": 5,
+            "phase2_fold_local_frequency": 5
+          }
+        },
+        "catboost": "GPU:0 explicitly configured; nvidia-smi sampled during every fit",
+        "lightgbm": "CPU",
+        "gpu_samples": 1709,
+        "gpu_max_utilization_range_percent": [43, 99],
+        "gpu_max_memory_range_mib": [5031, 5366]
+      },
+      "frequency_decoder_ablation": {
+        "run_id": "final_gate_seed20261101_frequency_ablation",
+        "elapsed_seconds": 330.20695170000545,
+        "frequency_disabled_oof_auc": 0.7677737812232842,
+        "fold_local_enabled_oof_auc": 0.7709638203765881,
+        "enabled_minus_disabled_oof_auc": 0.0031900391533038475,
+        "positive_folds": 5,
+        "catboost": "GPU:0 explicitly configured; per-fold nvidia-smi samples recorded",
+        "lightgbm": "CPU",
+        "max_utilization_range_percent": [52, 95]
+      }
+    },
+    "independent_verification": {
+      "status": "PASS",
+      "run_output_records_verified": 27,
+      "raw_input_records_verified": 3,
+      "source_records_verified": 4,
+      "ablation_output_records_verified": 13,
+      "ablation_raw_input_records_verified": 3,
+      "ablation_source_records_verified": 5,
+      "oof_auc_recomputed_from_saved_arrays": true,
+      "fold_local_frequency_reference_ids_verified": true,
+      "nested_target_encoding_boundaries_verified": true,
+      "candidate_schema_id_order_uniqueness_range_and_csv_blend_verified": true
+    },
+    "raw_input_sha256": {
+      "train.csv": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "test.csv": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "sample_submission.csv": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db"
+    },
+    "frozen_candidate": {
+      "path": "runs/phase02_key_te_20261101_181500/submission_key_target_encoding.csv",
+      "sha256": "2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa",
+      "preserved_unchanged": true
+    },
+    "tests": {
+      "phase1": 3,
+      "phase2": 3,
+      "raw_baseline": 7,
+      "final_gate": 5,
+      "total": 18,
+      "status": "PASS"
+    },
+    "failed_initialization": "One initial runner start failed before training because a reporting-only device field was passed into CatBoost; the argument was removed and the successful run outputs were generated afterward."
   }
 }

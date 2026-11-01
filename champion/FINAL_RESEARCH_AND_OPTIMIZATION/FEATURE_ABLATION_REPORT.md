@@ -39,3 +39,11 @@ The fee and product features were added as one combined block, so the current ru
 The Phase 1/2 fee-frequency transform uses all available unlabeled train/test covariates, matching the transductive research recipe. It does not use labels, but CV includes held-out rows in the unlabeled frequency table. Therefore these scores validate the stated transductive competition pipeline, not an inductive future-cohort pipeline. A fold-local covariate-frequency sensitivity run is recommended before final submission.
 
 The supplied `fast_screen.py` candidate rankings were not used: its random-noise control missed its stated tolerance, including after three model seeds.
+
+## Second-seed frequency sensitivity and ablation
+
+On outer seed 20261101, the fold-local frequency version scored 0.7709638204 OOF AUC, versus 0.7711413866 for pooled frequencies and 0.7620389006 for a newly trained same-fold raw baseline. The fold-local variant improved over baseline on all five folds and was only 0.0001775662 below pooled frequencies.
+
+A controlled fold-local decoder ablation retained rowwise and product-key features, the pointwise fee-adjusted ratio, and nested target encodings while disabling frequency-derived decoding. The decoder-enabled variant scored 0.7709638204 versus 0.7677737812 disabled, a +0.0031900392 OOF AUC difference, positive on all five paired folds. This measures the frequency-decoding block in the tested feature stack; it does not separate every underlying formula or establish performance on other cohorts.
+
+The fold-local sensitivity addresses the transductive-frequency caveat for this validation, but the selected original seed-42 submission remains the pooled-frequency Phase 2 candidate. The new-seed variants are validation evidence and do not replace it.

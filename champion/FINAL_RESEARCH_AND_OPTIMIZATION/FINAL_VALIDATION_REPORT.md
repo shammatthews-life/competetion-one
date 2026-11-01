@@ -6,6 +6,14 @@ The strongest supported independent raw-data candidate is the fixed 50/50 LightG
 
 This is a local five-fold development-CV result. It is not the historical EXP85 0.801340 leaderboard score. No submission was sent to the competition, and no official score was evaluated.
 
+## Final second-seed gate
+
+The independent final gate used a new five-fold seed (20261101) and retrained a raw baseline, pooled-frequency Phase 2, and fold-local-frequency Phase 2 on identical folds. Their recomputed OOF AUCs were 0.7620389006, 0.7711413866, and 0.7709638204 respectively. Pooled and fold-local Phase 2 improved on the matched raw baseline on 5/5 folds (+0.0091024860 and +0.0089249198 full-OOF deltas). In a controlled ablation, fold-local frequency decoding exceeded the decoder-disabled variant by +0.0031900392 OOF AUC on 5/5 folds.
+
+The verifier independently recalculated OOF AUCs from saved arrays, verified the 27 main-run and 13 ablation output records, raw/source hashes, fold splits, target-encoding boundaries, frequency-map references, candidate schema/IDs/range, CSV-to-array agreement, and GPU observations. It returned PASS without retraining. The original Phase 2 candidate was not overwritten; its SHA-256 remains `2470cecc0819d696b03b8d0fcc80d7b91b680986e9c7fe877a57a1684a7411fa`.
+
+The detailed report is `FINAL_PHASE2_GATE_REPORT.md`; machine-readable independent results are in `FINAL_PHASE2_GATE_EVIDENCE.json`. The gate's PASS confirms the stated raw-only development validation criteria. It does not establish 99% correlation to the historical champion or reproduce its official score.
+
 ## Candidate and integrity
 
 - Candidate file: `runs/phase02_key_te_20261101_181500/submission_key_target_encoding.csv`
@@ -64,6 +72,6 @@ Result: **PASS**, exit code 0, approximately 1.6 seconds; no training was perfor
 
 ## Interpretation and next step
 
-The target encoding is nested and leakage-safe with respect to labels. The fee ratio frequency decoder is transductive: pooled unlabeled train/test covariates influence each row's decoder features. The OOF lift should therefore be confirmed with a second predeclared outer seed and a fold-local fee-frequency sensitivity experiment before final submission.
+The target encoding is nested and leakage-safe with respect to labels. The original fee ratio frequency decoder is transductive: pooled unlabeled train/test covariates influence each row's decoder features. The new-seed fold-local sensitivity retained nearly all of the pooled-frequency lift; the selected original candidate remains unchanged.
 
 This work does not resolve historical V20/V080041 lineage blockers, rebuild the frozen EXP85 model chain, or establish an official competition score. Preserve the historical champion, Recovery V5 replay, and this raw-data candidate as distinct artifacts.

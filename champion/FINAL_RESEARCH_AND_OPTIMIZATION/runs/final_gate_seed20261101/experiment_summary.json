@@ -1,0 +1,1695 @@
+{
+  "experiment_id": "final_gate_seed20261101",
+  "status": "COMPLETED",
+  "decision": "PASS",
+  "outer_seed": 20261101,
+  "outer_folds": {
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261101,
+    "different_from_previous_seed_42": true
+  },
+  "inner_target_encoding": {
+    "n_splits": 5,
+    "random_state": 7,
+    "nested_within_outer_training_rows": true,
+    "self_target_contribution": false,
+    "validation_labels_enter_training_encodings": false
+  },
+  "lineage": "INDEPENDENT_RAW_ONLY_FINAL_VALIDATION",
+  "historical_prediction_inputs": [],
+  "historical_champion_read": false,
+  "target_used_in_unsupervised_frequency_features": false,
+  "fee_frequency_protocol": {
+    "pooled": "counts from train and test covariates, without targets",
+    "fold_local": "each outer fold's frequency maps use only its fit-row covariates; validation and test covariates are excluded",
+    "pooled_feature_diagnostics": {
+      "count_reference_rows": 232702,
+      "apply_rows": 232702,
+      "count_reference_id_sha256": "130a475e4570521d9be18c9947f98c42166650cc4ac277f92a7c092e228c487a",
+      "reference_contains_validation_or_test_rows": false,
+      "target_used": false,
+      "fee_decoded_rows": 158042,
+      "product_key_valid_rows": 135609
+    }
+  },
+  "metrics": {
+    "raw_baseline": {
+      "oof_blend_auc": 0.7620389005999739,
+      "mean_fold_blend_auc": 0.7620242894367737,
+      "fold_blend_auc": [
+        0.7557839247888577,
+        0.7646717829962929,
+        0.7625575944753075,
+        0.7602262923682096,
+        0.7668818525552007
+      ],
+      "oof_lightgbm_auc": 0.7607120341701724,
+      "oof_catboost_auc": 0.7597654629530417
+    },
+    "phase2_pooled": {
+      "oof_blend_auc": 0.7711413866258005,
+      "mean_fold_blend_auc": 0.7711683434022494,
+      "fold_blend_auc": [
+        0.7669118383684648,
+        0.7734762522931448,
+        0.7711448862607102,
+        0.7686830204309755,
+        0.7756257196579518
+      ],
+      "oof_lightgbm_auc": 0.7698595108513903,
+      "oof_catboost_auc": 0.769982002832164
+    },
+    "phase2_fold_local": {
+      "oof_blend_auc": 0.7709638203765881,
+      "mean_fold_blend_auc": 0.7709896152406941,
+      "fold_blend_auc": [
+        0.766081907507225,
+        0.7730233339469068,
+        0.771754813903649,
+        0.7686946871426998,
+        0.77539333370299
+      ],
+      "oof_lightgbm_auc": 0.7697712163109026,
+      "oof_catboost_auc": 0.7695061772987722
+    }
+  },
+  "comparisons": {
+    "phase2_pooled": {
+      "full_oof_auc_delta_vs_raw_baseline": 0.009102486025826528,
+      "paired_fold_auc_deltas_vs_raw_baseline": [
+        0.011127913579607074,
+        0.008804469296851858,
+        0.00858729178540274,
+        0.008456728062765873,
+        0.008743867102751102
+      ],
+      "positive_folds_vs_raw_baseline": 5,
+      "mean_paired_fold_delta_vs_raw_baseline": 0.00914405396547573
+    },
+    "phase2_fold_local": {
+      "full_oof_auc_delta_vs_raw_baseline": 0.008924919776614137,
+      "paired_fold_auc_deltas_vs_raw_baseline": [
+        0.010297982718367349,
+        0.008351550950613906,
+        0.009197219428341508,
+        0.00846839477449024,
+        0.008511481147789324
+      ],
+      "positive_folds_vs_raw_baseline": 5,
+      "mean_paired_fold_delta_vs_raw_baseline": 0.008965325803920465
+    },
+    "phase2_fold_local_vs_pooled": {
+      "full_oof_auc_delta": -0.00017756624921239084,
+      "paired_fold_auc_deltas": [
+        -0.0008299308612397249,
+        -0.0004529183462379516,
+        0.0006099276429387679,
+        1.1666711724367396e-05,
+        -0.00023238595496177794
+      ],
+      "positive_folds": 2
+    }
+  },
+  "models": {
+    "raw_baseline": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "seed": 20261102,
+          "best_iteration": 439,
+          "auc": 0.7543828661885159,
+          "elapsed_seconds": 19.486301800003275
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "seed": 20261103,
+          "best_iteration": 528,
+          "auc": 0.7634558848706338,
+          "elapsed_seconds": 13.54365149998921
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "seed": 20261104,
+          "best_iteration": 670,
+          "auc": 0.7620256326507191,
+          "elapsed_seconds": 18.24797270001727
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "seed": 20261105,
+          "best_iteration": 620,
+          "auc": 0.757820875032345,
+          "elapsed_seconds": 16.264152500021737
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "seed": 20261106,
+          "best_iteration": 774,
+          "auc": 0.7658975843860731,
+          "elapsed_seconds": 16.688185599981807
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "seed": 20261102,
+          "best_iteration": 673,
+          "auc": 0.7542211523108298,
+          "elapsed_seconds": 63.71519800001988,
+          "gpu_monitor": {
+            "samples": 107,
+            "max_gpu_utilization_percent": 43,
+            "max_gpu_memory_used_mib": 5093,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:26:07.679591+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 191,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:26:08.393227+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 191,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:26:08.968262+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 271,
+                "utilization_percent": 0
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:27:09.434942+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5093,
+                "utilization_percent": 39
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:27:10.016189+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5093,
+                "utilization_percent": 39
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:27:10.638572+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 22
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "seed": 20261103,
+          "best_iteration": 849,
+          "auc": 0.7623796206737037,
+          "elapsed_seconds": 74.32083509999211,
+          "gpu_monitor": {
+            "samples": 125,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:29:19.114568+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:29:19.802074+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:29:20.519795+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:30:31.185370+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 34
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:30:31.774471+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 35
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:30:32.363278+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 40
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "seed": 20261104,
+          "best_iteration": 1047,
+          "auc": 0.75936371432423,
+          "elapsed_seconds": 93.41994889997295,
+          "gpu_monitor": {
+            "samples": 157,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:33:24.296834+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:33:24.940852+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:33:25.676324+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:34:55.329426+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 37
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:34:55.917801+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 30
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:34:56.516509+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 37
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "seed": 20261105,
+          "best_iteration": 847,
+          "auc": 0.7591568399620485,
+          "elapsed_seconds": 74.37466659999336,
+          "gpu_monitor": {
+            "samples": 125,
+            "max_gpu_utilization_percent": 97,
+            "max_gpu_memory_used_mib": 5031,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:37:16.651323+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 196,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:37:17.358212+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 196,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:37:18.018947+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5014,
+                "utilization_percent": 97
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:38:28.690012+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5031,
+                "utilization_percent": 29
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:38:29.277465+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5031,
+                "utilization_percent": 37
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:38:29.852753+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5031,
+                "utilization_percent": 47
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "seed": 20261106,
+          "best_iteration": 1212,
+          "auc": 0.763687932174083,
+          "elapsed_seconds": 131.39912300001015,
+          "gpu_monitor": {
+            "samples": 220,
+            "max_gpu_utilization_percent": 54,
+            "max_gpu_memory_used_mib": 5366,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:41:11.504670+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 220,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:41:12.500732+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 488,
+                "utilization_percent": 22
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:41:13.180795+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5360,
+                "utilization_percent": 0
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:43:20.481603+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5087,
+                "utilization_percent": 48
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:43:21.075774+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5087,
+                "utilization_percent": 52
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:43:21.665063+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5088,
+                "utilization_percent": 51
+              }
+            ],
+            "errors": []
+          }
+        }
+      ]
+    },
+    "phase2_pooled": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "seed": 20261102,
+          "best_iteration": 336,
+          "auc": 0.7652798206964981,
+          "elapsed_seconds": 9.796109400020214
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "seed": 20261103,
+          "best_iteration": 375,
+          "auc": 0.7721778607059496,
+          "elapsed_seconds": 11.603600799979176
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "seed": 20261104,
+          "best_iteration": 290,
+          "auc": 0.7708741783186658,
+          "elapsed_seconds": 10.29274499998428
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "seed": 20261105,
+          "best_iteration": 373,
+          "auc": 0.7675873897627926,
+          "elapsed_seconds": 12.037201099999947
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "seed": 20261106,
+          "best_iteration": 643,
+          "auc": 0.7735949589414507,
+          "elapsed_seconds": 24.38014110000222
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "seed": 20261102,
+          "best_iteration": 348,
+          "auc": 0.7663422680571628,
+          "elapsed_seconds": 39.592006100021536,
+          "gpu_monitor": {
+            "samples": 66,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:27:26.861147+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:27:27.659114+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:27:28.372574+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:28:04.302650+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 35
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:28:04.893895+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 45
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:28:05.498138+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 27
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "seed": 20261103,
+          "best_iteration": 630,
+          "auc": 0.7723460361429254,
+          "elapsed_seconds": 60.97865629999433,
+          "gpu_monitor": {
+            "samples": 102,
+            "max_gpu_utilization_percent": 98,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:30:50.890470+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:30:51.652967+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:30:52.336296+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 98
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:31:49.710353+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 37
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:31:50.301264+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 32
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:31:50.887445+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 41
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "seed": 20261104,
+          "best_iteration": 419,
+          "auc": 0.7694473049918905,
+          "elapsed_seconds": 44.205864800023846,
+          "gpu_monitor": {
+            "samples": 74,
+            "max_gpu_utilization_percent": 66,
+            "max_gpu_memory_used_mib": 5051,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:35:13.987108+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 230,
+                "utilization_percent": 4
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:35:14.752328+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 227,
+                "utilization_percent": 15
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:35:15.457121+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5029,
+                "utilization_percent": 66
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:35:56.140775+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5043,
+                "utilization_percent": 38
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:35:56.716374+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5043,
+                "utilization_percent": 43
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:35:57.302713+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5043,
+                "utilization_percent": 41
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "seed": 20261105,
+          "best_iteration": 530,
+          "auc": 0.7675952346206762,
+          "elapsed_seconds": 52.319175000011455,
+          "gpu_monitor": {
+            "samples": 88,
+            "max_gpu_utilization_percent": 46,
+            "max_gpu_memory_used_mib": 5120,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:38:49.301076+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 221,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:38:50.167715+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 221,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:38:50.801618+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5051,
+                "utilization_percent": 0
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:39:39.668427+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5120,
+                "utilization_percent": 44
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:39:40.257860+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5115,
+                "utilization_percent": 38
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:39:40.881867+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 635,
+                "utilization_percent": 41
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "seed": 20261106,
+          "best_iteration": 845,
+          "auc": 0.7742722316720673,
+          "elapsed_seconds": 90.4348139000067,
+          "gpu_monitor": {
+            "samples": 153,
+            "max_gpu_utilization_percent": 55,
+            "max_gpu_memory_used_mib": 5115,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:43:55.442485+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 255,
+                "utilization_percent": 35
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:43:56.267006+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 255,
+                "utilization_percent": 31
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:43:56.853869+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5074,
+                "utilization_percent": 27
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:45:23.822353+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5069,
+                "utilization_percent": 49
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:45:24.405386+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5070,
+                "utilization_percent": 55
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:45:25.070582+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 252,
+                "utilization_percent": 53
+              }
+            ],
+            "errors": []
+          }
+        }
+      ]
+    },
+    "phase2_fold_local": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "seed": 20261102,
+          "best_iteration": 234,
+          "auc": 0.7647649270201977,
+          "elapsed_seconds": 8.753189999988535
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "seed": 20261103,
+          "best_iteration": 425,
+          "auc": 0.7717995306047928,
+          "elapsed_seconds": 11.753731600008905
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "seed": 20261104,
+          "best_iteration": 453,
+          "auc": 0.7712455015918223,
+          "elapsed_seconds": 12.38924620000762
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "seed": 20261105,
+          "best_iteration": 512,
+          "auc": 0.7679336899508026,
+          "elapsed_seconds": 14.471810000017285
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "seed": 20261106,
+          "best_iteration": 760,
+          "auc": 0.7732279690183631,
+          "elapsed_seconds": 27.585200799978338
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "seed": 20261102,
+          "best_iteration": 396,
+          "auc": 0.7652116157034146,
+          "elapsed_seconds": 42.35095049999654,
+          "gpu_monitor": {
+            "samples": 71,
+            "max_gpu_utilization_percent": 90,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:28:21.946685+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:28:22.653192+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:28:23.396172+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 90
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:29:02.330116+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 40
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:29:02.917763+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 42
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:29:03.491596+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 31
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "seed": 20261103,
+          "best_iteration": 526,
+          "auc": 0.7717911255672395,
+          "elapsed_seconds": 54.194170600007055,
+          "gpu_monitor": {
+            "samples": 90,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5091,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:32:10.395801+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:32:11.372207+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 273,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:32:12.112388+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:33:02.289404+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 40
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:33:02.871989+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 39
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:33:03.459171+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5091,
+                "utilization_percent": 33
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "seed": 20261104,
+          "best_iteration": 379,
+          "auc": 0.7697982661174415,
+          "elapsed_seconds": 41.844541499973275,
+          "gpu_monitor": {
+            "samples": 70,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5133,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:36:17.134706+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 225,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:36:17.909506+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 225,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:36:18.631463+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5043,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:36:57.030108+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5089,
+                "utilization_percent": 33
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:36:57.645994+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5070,
+                "utilization_percent": 38
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:36:58.227083+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5070,
+                "utilization_percent": 42
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "seed": 20261105,
+          "best_iteration": 512,
+          "auc": 0.7667218002129296,
+          "elapsed_seconds": 50.91314869999769,
+          "gpu_monitor": {
+            "samples": 85,
+            "max_gpu_utilization_percent": 50,
+            "max_gpu_memory_used_mib": 5118,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:40:02.538558+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 292,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:40:03.291773+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 292,
+                "utilization_percent": 0
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:40:03.964391+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5110,
+                "utilization_percent": 10
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:40:51.133462+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5032,
+                "utilization_percent": 37
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:40:51.720386+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5032,
+                "utilization_percent": 34
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:40:52.306470+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5016,
+                "utilization_percent": 41
+              }
+            ],
+            "errors": []
+          }
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "seed": 20261106,
+          "best_iteration": 863,
+          "auc": 0.7741072022990801,
+          "elapsed_seconds": 108.75982999999542,
+          "gpu_monitor": {
+            "samples": 176,
+            "max_gpu_utilization_percent": 99,
+            "max_gpu_memory_used_mib": 5325,
+            "first_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:46:01.776768+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 238,
+                "utilization_percent": 34
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:46:02.614146+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 238,
+                "utilization_percent": 31
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:46:03.245222+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5056,
+                "utilization_percent": 99
+              }
+            ],
+            "last_samples": [
+              {
+                "timestamp_utc": "2026-11-01T12:47:47.776626+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5167,
+                "utilization_percent": 63
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:47:48.371299+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5167,
+                "utilization_percent": 62
+              },
+              {
+                "timestamp_utc": "2026-11-01T12:47:48.977285+00:00",
+                "index": 0,
+                "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+                "memory_used_mib": 5167,
+                "utilization_percent": 62
+              }
+            ],
+            "errors": []
+          }
+        }
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "fit_validation_ids_disjoint": true,
+      "variants": {
+        "raw_baseline": {
+          "lightgbm_auc": 0.7543828661885159,
+          "catboost_auc": 0.7542211523108298,
+          "blend_auc": 0.7557839247888577,
+          "audit": {},
+          "elapsed_seconds": 84.67375759998686
+        },
+        "phase2_pooled": {
+          "lightgbm_auc": 0.7652798206964981,
+          "catboost_auc": 0.7663422680571628,
+          "blend_auc": 0.7669118383684648,
+          "audit": {
+            "frequency": {
+              "mode": "pooled_train_test_unlabeled",
+              "target_used": false,
+              "validation_test_covariates_in_frequency_reference": true
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136961,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 55.17446549999295
+        },
+        "phase2_fold_local": {
+          "lightgbm_auc": 0.7647649270201977,
+          "catboost_auc": 0.7652116157034146,
+          "blend_auc": 0.766081907507225,
+          "audit": {
+            "frequency": {
+              "fit": {
+                "count_reference_rows": 136961,
+                "apply_rows": 136961,
+                "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 92909,
+                "product_key_valid_rows": 79652
+              },
+              "validation": {
+                "count_reference_rows": 136961,
+                "apply_rows": 34241,
+                "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 23190,
+                "product_key_valid_rows": 19905
+              },
+              "test": {
+                "count_reference_rows": 136961,
+                "apply_rows": 61500,
+                "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 41826,
+                "product_key_valid_rows": 36052
+              },
+              "fit_validation_ids_disjoint": true,
+              "test_ids_used_in_frequency_reference": false
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136961,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 57.82909369998379
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "fit_rows": 136961,
+      "valid_rows": 34241,
+      "fit_validation_ids_disjoint": true,
+      "variants": {
+        "raw_baseline": {
+          "lightgbm_auc": 0.7634558848706338,
+          "catboost_auc": 0.7623796206737037,
+          "blend_auc": 0.7646717829962929,
+          "audit": {},
+          "elapsed_seconds": 88.95254810000188
+        },
+        "phase2_pooled": {
+          "lightgbm_auc": 0.7721778607059496,
+          "catboost_auc": 0.7723460361429254,
+          "blend_auc": 0.7734762522931448,
+          "audit": {
+            "frequency": {
+              "mode": "pooled_train_test_unlabeled",
+              "target_used": false,
+              "validation_test_covariates_in_frequency_reference": true
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136961,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 78.44503319999785
+        },
+        "phase2_fold_local": {
+          "lightgbm_auc": 0.7717995306047928,
+          "catboost_auc": 0.7717911255672395,
+          "blend_auc": 0.7730233339469068,
+          "audit": {
+            "frequency": {
+              "fit": {
+                "count_reference_rows": 136961,
+                "apply_rows": 136961,
+                "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 92894,
+                "product_key_valid_rows": 79619
+              },
+              "validation": {
+                "count_reference_rows": 136961,
+                "apply_rows": 34241,
+                "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 23193,
+                "product_key_valid_rows": 19938
+              },
+              "test": {
+                "count_reference_rows": 136961,
+                "apply_rows": 61500,
+                "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 41825,
+                "product_key_valid_rows": 36052
+              },
+              "fit_validation_ids_disjoint": true,
+              "test_ids_used_in_frequency_reference": false
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136961,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 72.70629120001104
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "fit_validation_ids_disjoint": true,
+      "variants": {
+        "raw_baseline": {
+          "lightgbm_auc": 0.7620256326507191,
+          "catboost_auc": 0.75936371432423,
+          "blend_auc": 0.7625575944753075,
+          "audit": {},
+          "elapsed_seconds": 112.817819399992
+        },
+        "phase2_pooled": {
+          "lightgbm_auc": 0.7708741783186658,
+          "catboost_auc": 0.7694473049918905,
+          "blend_auc": 0.7711448862607102,
+          "audit": {
+            "frequency": {
+              "mode": "pooled_train_test_unlabeled",
+              "target_used": false,
+              "validation_test_covariates_in_frequency_reference": true
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 60.62967840000056
+        },
+        "phase2_fold_local": {
+          "lightgbm_auc": 0.7712455015918223,
+          "catboost_auc": 0.7697982661174415,
+          "blend_auc": 0.771754813903649,
+          "audit": {
+            "frequency": {
+              "fit": {
+                "count_reference_rows": 136962,
+                "apply_rows": 136962,
+                "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 92957,
+                "product_key_valid_rows": 79698
+              },
+              "validation": {
+                "count_reference_rows": 136962,
+                "apply_rows": 34240,
+                "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 23176,
+                "product_key_valid_rows": 19859
+              },
+              "test": {
+                "count_reference_rows": 136962,
+                "apply_rows": 61500,
+                "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 41836,
+                "product_key_valid_rows": 36052
+              },
+              "fit_validation_ids_disjoint": true,
+              "test_ids_used_in_frequency_reference": false
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 60.788810900005046
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "fit_validation_ids_disjoint": true,
+      "variants": {
+        "raw_baseline": {
+          "lightgbm_auc": 0.757820875032345,
+          "catboost_auc": 0.7591568399620485,
+          "blend_auc": 0.7602262923682096,
+          "audit": {},
+          "elapsed_seconds": 91.85721809999086
+        },
+        "phase2_pooled": {
+          "lightgbm_auc": 0.7675873897627926,
+          "catboost_auc": 0.7675952346206762,
+          "blend_auc": 0.7686830204309755,
+          "audit": {
+            "frequency": {
+              "mode": "pooled_train_test_unlabeled",
+              "target_used": false,
+              "validation_test_covariates_in_frequency_reference": true
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 70.56871649998357
+        },
+        "phase2_fold_local": {
+          "lightgbm_auc": 0.7679336899508026,
+          "catboost_auc": 0.7667218002129296,
+          "blend_auc": 0.7686946871426998,
+          "audit": {
+            "frequency": {
+              "fit": {
+                "count_reference_rows": 136962,
+                "apply_rows": 136962,
+                "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 92826,
+                "product_key_valid_rows": 79543
+              },
+              "validation": {
+                "count_reference_rows": 136962,
+                "apply_rows": 34240,
+                "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 23328,
+                "product_key_valid_rows": 20014
+              },
+              "test": {
+                "count_reference_rows": 136962,
+                "apply_rows": 61500,
+                "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 41854,
+                "product_key_valid_rows": 36052
+              },
+              "fit_validation_ids_disjoint": true,
+              "test_ids_used_in_frequency_reference": false
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 71.8639365999843
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "fit_rows": 136962,
+      "valid_rows": 34240,
+      "fit_validation_ids_disjoint": true,
+      "variants": {
+        "raw_baseline": {
+          "lightgbm_auc": 0.7658975843860731,
+          "catboost_auc": 0.763687932174083,
+          "blend_auc": 0.7668818525552007,
+          "audit": {},
+          "elapsed_seconds": 149.27909550000913
+        },
+        "phase2_pooled": {
+          "lightgbm_auc": 0.7735949589414507,
+          "catboost_auc": 0.7742722316720673,
+          "blend_auc": 0.7756257196579518,
+          "audit": {
+            "frequency": {
+              "mode": "pooled_train_test_unlabeled",
+              "target_used": false,
+              "validation_test_covariates_in_frequency_reference": true
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 122.96827260000282
+        },
+        "phase2_fold_local": {
+          "lightgbm_auc": 0.7732279690183631,
+          "catboost_auc": 0.7741072022990801,
+          "blend_auc": 0.77539333370299,
+          "audit": {
+            "frequency": {
+              "fit": {
+                "count_reference_rows": 136962,
+                "apply_rows": 136962,
+                "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 92889,
+                "product_key_valid_rows": 79716
+              },
+              "validation": {
+                "count_reference_rows": 136962,
+                "apply_rows": 34240,
+                "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 23222,
+                "product_key_valid_rows": 19841
+              },
+              "test": {
+                "count_reference_rows": 136962,
+                "apply_rows": 61500,
+                "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+                "reference_contains_validation_or_test_rows": false,
+                "target_used": false,
+                "fee_decoded_rows": 41824,
+                "product_key_valid_rows": 36052
+              },
+              "fit_validation_ids_disjoint": true,
+              "test_ids_used_in_frequency_reference": false
+            },
+            "target_encoding": {
+              "outer_fit_valid_overlap": 0,
+              "fit_rows_encoded_by_inner_oof": 136962,
+              "validation_encoded_from_outer_fit_only": true,
+              "test_encoded_from_outer_fit_only": true,
+              "apply_row_targets_used_by_mapping": false,
+              "inner_splits": 5,
+              "inner_seed": 7
+            }
+          },
+          "elapsed_seconds": 144.69729240000015
+        }
+      }
+    }
+  ],
+  "candidate_integrity": {
+    "raw_baseline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\final_gate_seed20261101\\submission_raw_baseline.csv",
+      "sha256": "add32be22da60cb99f1e606e2df34594f258dce3636be425faa7b1a0eefb5b31",
+      "rows": 61500,
+      "columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "unique_ids": 61500,
+      "prediction_min": 0.002535770274698734,
+      "prediction_max": 0.7670448660850525
+    },
+    "phase2_pooled": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\final_gate_seed20261101\\submission_phase2_pooled.csv",
+      "sha256": "887fe3b6e2d1c4a0b41bb5ab59c37df62288440d2f4ff05dd8e7f696cdfa1863",
+      "rows": 61500,
+      "columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "unique_ids": 61500,
+      "prediction_min": 0.0033848873688839378,
+      "prediction_max": 0.7357014834880828
+    },
+    "phase2_fold_local": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\final_gate_seed20261101\\submission_phase2_fold_local.csv",
+      "sha256": "07baaa54686999734b0545176d9aad9ed79b2799496e798adb67b1229b480690",
+      "rows": 61500,
+      "columns": [
+        "SK_ID_CURR",
+        "TARGET"
+      ],
+      "unique_ids": 61500,
+      "prediction_min": 0.003352351428475231,
+      "prediction_max": 0.7476644814014435
+    }
+  },
+  "devices": {
+    "lightgbm": "CPU",
+    "catboost": "GPU:0 explicitly configured",
+    "gpu_before": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 149 MiB, 43 %"
+    },
+    "gpu_after": {
+      "available": true,
+      "query": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB, 394 MiB, 43 %"
+    },
+    "per_catboost_fold_monitoring": true
+  },
+  "raw_inputs": {
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    }
+  },
+  "source_sha256": {
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_04_final_validation_gate\\run_final_gate.py": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_01_fee_product_features\\run_experiment.py": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e"
+  },
+  "model_configuration": {
+    "lightgbm": {
+      "device": "CPU",
+      "objective": "binary",
+      "metric": "auc",
+      "boosting_type": "gbdt",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 80,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l1": 0.1,
+      "lambda_l2": 5.0,
+      "max_bin": 127,
+      "num_threads": 8,
+      "verbosity": -1,
+      "num_boost_round": 3000,
+      "early_stopping_rounds": 150
+    },
+    "catboost": {
+      "device": "GPU:0",
+      "iterations": 2500,
+      "depth": 7,
+      "learning_rate": 0.045,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "l2_leaf_reg": 5.0,
+      "random_strength": 0.5,
+      "bootstrap_type": "Bernoulli",
+      "subsample": 0.8,
+      "border_count": 128,
+      "task_type": "GPU",
+      "devices": "0",
+      "early_stopping_rounds": 150
+    }
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "elapsed_seconds_total": 1327.3055340999854
+}

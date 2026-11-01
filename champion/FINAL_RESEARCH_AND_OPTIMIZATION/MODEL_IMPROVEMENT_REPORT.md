@@ -44,8 +44,14 @@ CatBoost used GPU:0; LightGBM used CPU because the installed build has no suppor
 
 The repository's historical champion and the origin notebook were not changed. The new candidate remains a separate independent raw-data experiment; it does not replace the historical 0.801340 champion.
 
+## Second-seed validation
+
+The final validation gate trained a new raw-only baseline and both pooled and fold-local Phase 2 variants on identical folds with outer seed 20261101. The raw baseline scored 0.7620389006 OOF AUC; pooled Phase 2 scored 0.7711413866 (+0.0091024860) and fold-local Phase 2 scored 0.7709638204 (+0.0089249198). Each Phase 2 variant improved on the baseline on all five paired folds. A controlled same-seed ablation also found that fold-local frequency decoding improved OOF AUC by +0.0031900392 versus the decoder-disabled control, positive on 5/5 folds.
+
+The second-seed results confirm repeatability across the two tested five-fold seeds, not universal stability. The original seed-42 Phase 2 candidate remains frozen and unchanged; the seed-20261101 candidate files are validation outputs, not replacements.
+
 ## Limits and next step
 
-The fixed folds provide paired evidence but are still one CV realization. Before submission, replicate the selected procedure with a second predeclared outer seed and assess whether the gain persists. Then train the final fold ensemble, validate its schema/IDs/hashes, and evaluate through the official competition if the user chooses.
+The Phase 2 candidate remains a local-CV development candidate. Its transductive fee-frequency recipe uses unlabeled train/test covariates; a separate fold-local sensitivity test preserves nearly all of the gain. Historical V20/V080041 lineage blockers remain unresolved and are not needed to train this independent candidate. No official leaderboard evaluation was run. See `FINAL_PHASE2_GATE_REPORT.md` for the detailed validation evidence and decision.
 
 Historical V20/V080041 lineage blockers remain unresolved and are not needed to train this independent candidate. No claim is made that the new pipeline rebuilds the historical ensemble or reproduces its leaderboard score.

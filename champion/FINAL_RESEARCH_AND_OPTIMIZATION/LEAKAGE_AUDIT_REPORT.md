@@ -22,9 +22,10 @@ Phase 1 computes rounded raw and fee-adjusted annuity/credit ratio counts on poo
 
 Consequences:
 
-1. The CV score is evidence for this fixed competition train/test pool and this transductive feature recipe.
-2. Held-out validation rows influence the unlabeled frequency table used to build their own ratio features. No held-out labels are revealed, but the CV is not an inductive estimate for an unrelated future cohort.
-3. Before relying on the gain in another deployment setting, repeat the evaluation with fee-frequency counts computed within each outer-training fold and test rows transformed from that fold's counts. Compare both pipelines on identical folds.
+1. The original seed-42 CV score is evidence for this fixed competition train/test pool and its transductive feature recipe.
+2. Held-out validation rows influence the pooled unlabeled frequency table used to build their own ratio features. No held-out labels are revealed, but that score alone is not an inductive estimate for an unrelated future cohort.
+3. This caveat was tested on a second five-fold seed with fold-local frequency counts built only from each outer-training fold. The fold-local variant improved over a newly trained same-fold raw baseline on all five folds and scored 0.7709638204 versus 0.7711413866 for pooled frequencies. A controlled fold-local decoder ablation improved by 0.0031900392 OOF AUC on all five folds.
+4. The selected original seed-42 candidate still uses pooled frequencies; the fold-local run is a sensitivity result and does not silently alter the frozen candidate.
 
 ## Model and prediction boundaries
 
@@ -41,6 +42,6 @@ The three submissions contain 61,500 rows each, have exactly `SK_ID_CURR,TARGET`
 
 ## Limitations
 
-The OOF lift was measured on one predeclared five-fold split seed and then used to choose among experiments. It may be optimistic due to research iteration, even though no fold labels enter the target-encoding values for their own predictions. Confirm with a second predeclared outer seed or nested model-selection evaluation before treating the size of the gain as final.
+The lift has now repeated across two outer split seeds, but both use five-fold development CV and the experiments were conducted during model research. Treat it as repeatability evidence, not a guarantee of future-cohort performance or official leaderboard score. No fold labels enter their own target-encoding values; fold-local frequency sensitivity also limits the transductive caveat but does not replace the selected pooled-frequency candidate.
 
 No official leaderboard evaluation was run. Correlation with a historical submission and any notebook text that prints a score are not official score evidence.

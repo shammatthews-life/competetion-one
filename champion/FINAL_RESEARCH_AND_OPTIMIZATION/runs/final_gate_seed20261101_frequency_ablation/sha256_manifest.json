@@ -1,0 +1,104 @@
+{
+  "experiment_id": "final_gate_seed20261101_frequency_ablation",
+  "created_at_utc": "2026-11-01T12:57:48.351011+00:00",
+  "inputs": {
+    "train": {
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    },
+    "test": {
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "sample": {
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    }
+  },
+  "analysis_only_inputs": {
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\final_gate_seed20261101\\oof_phase2_fold_local_blend.npy": {
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "size_bytes": 1369744
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\runs\\final_gate_seed20261101\\oof_raw_baseline_blend.npy": {
+      "sha256": "ee20c2d4924b4e1d27bc42012cffd7e18db301106b031b308b0864bd86621af4",
+      "size_bytes": 1369744
+    }
+  },
+  "sources": {
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_04_final_validation_gate\\run_frequency_ablation.py": {
+      "sha256": "c35f95c74887f075c9c6af9afd5233d706ba8552d4bee7abd246594fc5a28aa4",
+      "size_bytes": 22577
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_04_final_validation_gate\\run_final_gate.py": {
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\source\\run_independent_baseline.py": {
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_01_fee_product_features\\run_experiment.py": {
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "D:\\gci\\_gci_push_tmp\\champion\\FINAL_RESEARCH_AND_OPTIMIZATION\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py": {
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  },
+  "outputs": {
+    "experiment_summary.json": {
+      "sha256": "cb3873e9f3ad324dd4f141f3e16bc58b6823bdcd8750da0d71f245d5f977e338",
+      "size_bytes": 9846
+    },
+    "fold_1_indices.npz": {
+      "sha256": "3ae7880d822976ea19abff5ae2cc798e9cb85f412632070c02595154ec8fb6f0",
+      "size_bytes": 238589
+    },
+    "fold_2_indices.npz": {
+      "sha256": "2665b47f80270fdf54a53a7fdd60be34c6525416cb8fe3477cfc68b76c59ccba",
+      "size_bytes": 238600
+    },
+    "fold_3_indices.npz": {
+      "sha256": "fa28af4f2c41c9521a4cd2772806c459dd681b01896c9f48b90f8f389f6f07e9",
+      "size_bytes": 238584
+    },
+    "fold_4_indices.npz": {
+      "sha256": "7050662c85e10ca3badd5beacb4264c8a2c14d0dfcf790caf353686d8d04dd7d",
+      "size_bytes": 238618
+    },
+    "fold_5_indices.npz": {
+      "sha256": "cb8601177c8681e88ce775b0e66392d7cd2892e84242a81655b4ae1b5c63d2f5",
+      "size_bytes": 238618
+    },
+    "oof_frequency_disabled_blend.npy": {
+      "sha256": "0f5a7c80dab363533a40e3a159c8c540c267e9ab13eb0509a5924a334f8c5108",
+      "size_bytes": 1369744
+    },
+    "oof_frequency_disabled_catboost.npy": {
+      "sha256": "8ee8b5e3e453ef5e7c37e4361608435aec65fd49e1da780f2525cb376b1074f9",
+      "size_bytes": 684936
+    },
+    "oof_frequency_disabled_lightgbm.npy": {
+      "sha256": "f3d7ac7e2ea4bc980112e46c0307b53bf2bc71c1c102c7da35ea1326577bb092",
+      "size_bytes": 684936
+    },
+    "submission_frequency_disabled.csv": {
+      "sha256": "bd96610fc78a6c1b7390fafa70caf998404c7900665ce3781d1b7c40b25e1998",
+      "size_bytes": 1291519
+    },
+    "test_frequency_disabled_blend.npy": {
+      "sha256": "4083de34fcf820f85ee5aec0e9a84bb6000c2e922c7e6105827dc0c0f8701923",
+      "size_bytes": 492128
+    },
+    "test_frequency_disabled_catboost.npy": {
+      "sha256": "879a55904d021f28505f8d981089dacb9ec4ef21fd42c05282214f9d5ce49378",
+      "size_bytes": 492128
+    },
+    "test_frequency_disabled_lightgbm.npy": {
+      "sha256": "2f1aed5524b6f571c6e1cf34e5fa02da587572b1bfb495d50973a522ae22d464",
+      "size_bytes": 492128
+    }
+  }
+}
