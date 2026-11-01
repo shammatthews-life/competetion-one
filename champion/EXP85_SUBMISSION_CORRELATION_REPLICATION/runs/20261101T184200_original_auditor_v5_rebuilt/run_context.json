@@ -1,0 +1,79 @@
+{
+  "run_id": "20261101T184200_original_auditor_v5_rebuilt",
+  "status": "VALID",
+  "created_at_utc": "2026-11-01T13:26:23.774054+00:00",
+  "git_commit": "fb42cdd2bd9a333b0fa3a6bda975c8beaf763b64",
+  "command": [
+    "python",
+    "-B",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\original_isolated_audit\\audit_prediction_correlations.py",
+    "--reference",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "--candidate",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+    "--id-col",
+    "SK_ID_CURR",
+    "--pred-col",
+    "TARGET",
+    "--report",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T184200_original_auditor_v5_rebuilt\\original_auditor_report.md",
+    "--json-out",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T184200_original_auditor_v5_rebuilt\\original_auditor_report.json"
+  ],
+  "exit_code": 0,
+  "script_sha256": "0e1c7862c9974451d5e2ab539a6f05ba917421a57d7e2fb00e7621b97e529653",
+  "configuration": {
+    "id_col": "SK_ID_CURR",
+    "pred_col": "TARGET",
+    "alignment": "original audit one-to-one ID merge then sort by ID",
+    "rank_ties": "average"
+  },
+  "configuration_sha256": "d0fb2f1369901c1060535665b873d79cf28009fdb78f0559f698a609d6643e8c",
+  "inputs": {
+    "reference": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+      "source_path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+      "size_bytes": 1291519,
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+    },
+    "candidate": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+      "source_path": "D:\\gci\\champion\\08_SUBMISSIONS\\submission_exp85_recovery_v5_rebuilt.csv",
+      "size_bytes": 1291519,
+      "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+    },
+    "script": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\original_isolated_audit\\audit_prediction_correlations.py",
+      "source_path": "D:\\gci\\champion\\EXP85_ISOLATED_REPAIR\\scripts\\audit_prediction_correlations.py",
+      "size_bytes": 9862,
+      "sha256": "0e1c7862c9974451d5e2ab539a6f05ba917421a57d7e2fb00e7621b97e529653"
+    }
+  },
+  "alignment": {
+    "duplicate_ids_ref": 0,
+    "duplicate_ids_cand": 0,
+    "missing_ids": 0,
+    "extra_ids": 0,
+    "row_order_matches": true,
+    "aligned_row_count": 61500,
+    "valid": true
+  },
+  "metrics": {
+    "pearson": 0.9999975815867513,
+    "spearman": 0.9999975815867501,
+    "mae": 0.00030141741027642276,
+    "rmse": 0.000634877054701475,
+    "max_abs_prediction_difference": 0.012504065100000017,
+    "mean_abs_prediction_difference": 0.00030141741027642276,
+    "max_rank_displacement": 769,
+    "mean_rank_displacement": 18.537170731707317,
+    "median_rank_displacement": 7.0,
+    "quantile_90_abs_pred_diff": 0.0007804878000000626,
+    "quantile_95_abs_pred_diff": 0.0013008130000000118,
+    "quantile_99_abs_pred_diff": 0.002813008101000014,
+    "tie_handling": "Pandas rank(method='average') is used for ties in both reference and candidate ranks.",
+    "note": "This is a correlation/error audit, not an official leaderboard score."
+  },
+  "lineage": "HYBRID_HISTORICAL_CACHE_REPLAY; recreated Phase 3 Anchor74 plus cached historical suite predictions; not raw-only.",
+  "limitation": "Original audit metric; no official score inferred."
+}

@@ -1,0 +1,97 @@
+{
+  "run_id": "20261101T133203Z_notebook_stage9_v5_revalidated",
+  "status": "VALID",
+  "started_at_utc": "2026-11-01T13:32:06.253748+00:00",
+  "git_commit": "fb42cdd2bd9a333b0fa3a6bda975c8beaf763b64",
+  "command": [
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+    "--reference",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "--candidate",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+    "--run-dir",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T133203Z_notebook_stage9_v5_revalidated",
+    "--method",
+    "notebook_stage9",
+    "--reference-source-path",
+    "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "--candidate-source-path",
+    "D:\\gci\\champion\\08_SUBMISSIONS\\submission_exp85_recovery_v5_rebuilt.csv",
+    "--lineage-note",
+    "Hybrid historical-cache replay; the Anchor74 was a reconstructed artifact, but the V17/V55/XGB10 suite uses historical cached predictions. This is not a full raw-only rebuild."
+  ],
+  "exit_code": 0,
+  "script_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+  "script_sha256": "bbf4282cb7e2d393be0590718d370bbc8fb80d2d84503eab7b395ff885454e2c",
+  "configuration": {
+    "id_column": "SK_ID_CURR",
+    "prediction_column": "TARGET",
+    "method": "notebook_stage9",
+    "rank_tie_method": "ordinal",
+    "probability_bounds": [
+      0.0,
+      1.0
+    ],
+    "expected_rows": 61500
+  },
+  "configuration_sha256": "a898bbab3ba8552097a1fde407bd0df76f0f61710befe52fc34268ea1383c632",
+  "reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "source_path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "exists": true,
+    "size_bytes": 1291519,
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+    "source_path": "D:\\gci\\champion\\08_SUBMISSIONS\\submission_exp85_recovery_v5_rebuilt.csv",
+    "exists": true,
+    "size_bytes": 1291519,
+    "sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482"
+  },
+  "lineage_note": "Hybrid historical-cache replay; the Anchor74 was a reconstructed artifact, but the V17/V55/XGB10 suite uses historical cached predictions. This is not a full raw-only rebuild.",
+  "alignment": {
+    "reference_rows": 61500,
+    "candidate_rows": 61500,
+    "reference_duplicate_id_rows": 0,
+    "candidate_duplicate_id_rows": 0,
+    "missing_from_candidate_ids": 0,
+    "extra_in_candidate_ids": 0,
+    "aligned_row_count": 61500,
+    "row_order_matches": true,
+    "valid": true
+  },
+  "prediction_validation": {
+    "reference": {
+      "minimum": 8.1301e-06,
+      "maximum": 0.9999918699,
+      "finite": true
+    },
+    "candidate": {
+      "minimum": 8.1301e-06,
+      "maximum": 0.9999918699,
+      "finite": true
+    }
+  },
+  "metrics": {
+    "pearson": 0.9999975815867518,
+    "spearman": 0.9999975815867501,
+    "mae": 0.00030141741027642276,
+    "rmse": 0.000634877054701475,
+    "maximum_absolute_prediction_error": 0.012504065100000017,
+    "mean_absolute_prediction_error": 0.00030141741027642276,
+    "rank_displacement": {
+      "mean": 18.537170731707317,
+      "median": 7.0,
+      "p95": 80.0,
+      "maximum": 769.0,
+      "exact_rank_agreement_count": 3093
+    },
+    "rank_method": "ordinal",
+    "alignment_method": "original notebook row-position comparison after exact ID-order validation",
+    "correlation_is_not_prediction_equality": true,
+    "official_score_inferred": false
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "completed_at_utc": "2026-11-01T13:32:06.605604+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "run_id": "20261101T184500_phase3",
+  "status": "VALID",
+  "started_at_utc": "2026-11-01T13:25:15.799891+00:00",
+  "git_commit": "fb42cdd2bd9a333b0fa3a6bda975c8beaf763b64",
+  "command": [
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+    "--reference",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "--candidate",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_phase3_rebuilt.csv",
+    "--run-dir",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T184500_phase3",
+    "--method",
+    "id_aligned",
+    "--reference-source-path",
+    "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "--candidate-source-path",
+    "D:\\gci\\gemini\\champion\\phase3_reconstruction\\independent_rebuild\\submission_exp85_rebuilt.csv",
+    "--lineage-note",
+    "Phase 3 synthesis uses historical V17/V55/XGB10 suite caches; mixed lineage."
+  ],
+  "exit_code": 0,
+  "script_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+  "script_sha256": "7a732b4a9dd9897df4fa9d99dae0415ada6bfc5a29e8486ae6595f3f7d9d5726",
+  "configuration": {
+    "id_column": "SK_ID_CURR",
+    "prediction_column": "TARGET",
+    "method": "id_aligned",
+    "rank_tie_method": "average",
+    "probability_bounds": [
+      0.0,
+      1.0
+    ],
+    "expected_rows": 61500
+  },
+  "configuration_sha256": "e5d9b801ae4f50c4e7c5d93732bc55948d4b90d2e4b19aa7c4c86704795bae19",
+  "reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "source_path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "exists": true,
+    "size_bytes": 1291519,
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_phase3_rebuilt.csv",
+    "source_path": "D:\\gci\\gemini\\champion\\phase3_reconstruction\\independent_rebuild\\submission_exp85_rebuilt.csv",
+    "exists": true,
+    "size_bytes": 1168519,
+    "sha256": "8165ad2c33c1b1a367bf01752f740e240d04af8bbf999356dc65f611191abc46"
+  },
+  "lineage_note": "Phase 3 synthesis uses historical V17/V55/XGB10 suite caches; mixed lineage.",
+  "alignment": {
+    "reference_rows": 61500,
+    "candidate_rows": 61500,
+    "reference_duplicate_id_rows": 0,
+    "candidate_duplicate_id_rows": 0,
+    "missing_from_candidate_ids": 0,
+    "extra_in_candidate_ids": 0,
+    "aligned_row_count": 61500,
+    "row_order_matches": true,
+    "valid": true
+  },
+  "metrics": {
+    "pearson": 0.9999592592916924,
+    "spearman": 0.9999628751933789,
+    "mae": 0.0025133036257398377,
+    "rmse": 0.003134577590267396,
+    "maximum_absolute_prediction_error": 0.03396563880000003,
+    "mean_absolute_prediction_error": 0.0025133036257398377,
+    "rank_displacement": {
+      "mean": 109.00832520325203,
+      "median": 78.0,
+      "p95": 313.0,
+      "maximum": 2091.0,
+      "exact_rank_agreement_count": 288
+    },
+    "rank_method": "average",
+    "alignment_method": "one-to-one ID join, sorted by ID",
+    "correlation_is_not_prediction_equality": true,
+    "official_score_inferred": false
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "completed_at_utc": "2026-11-01T13:25:16.117728+00:00"
+}

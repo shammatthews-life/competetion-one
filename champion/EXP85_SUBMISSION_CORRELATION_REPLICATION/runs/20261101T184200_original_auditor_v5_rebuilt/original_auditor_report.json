@@ -1,0 +1,32 @@
+{
+  "status": "VALID",
+  "reference_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+  "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\track1_v5_rebuilt.csv",
+  "reference_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+  "candidate_sha256": "91aa95c9501efb358e98b47e2def6678faa6c2f4ba34431e4f9d0b4d4b792482",
+  "alignment": {
+    "duplicate_ids_ref": 0,
+    "duplicate_ids_cand": 0,
+    "missing_ids": 0,
+    "extra_ids": 0,
+    "row_order_matches": true,
+    "aligned_row_count": 61500,
+    "valid": true
+  },
+  "metrics": {
+    "pearson": 0.9999975815867513,
+    "spearman": 0.9999975815867501,
+    "mae": 0.00030141741027642276,
+    "rmse": 0.000634877054701475,
+    "max_abs_prediction_difference": 0.012504065100000017,
+    "mean_abs_prediction_difference": 0.00030141741027642276,
+    "max_rank_displacement": 769,
+    "mean_rank_displacement": 18.537170731707317,
+    "median_rank_displacement": 7.0,
+    "quantile_90_abs_pred_diff": 0.0007804878000000626,
+    "quantile_95_abs_pred_diff": 0.0013008130000000118,
+    "quantile_99_abs_pred_diff": 0.002813008101000014,
+    "tie_handling": "Pandas rank(method='average') is used for ties in both reference and candidate ranks.",
+    "note": "This is a correlation/error audit, not an official leaderboard score."
+  }
+}

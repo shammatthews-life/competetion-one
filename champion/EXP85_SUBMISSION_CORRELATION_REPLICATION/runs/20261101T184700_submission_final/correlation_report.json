@@ -1,0 +1,85 @@
+{
+  "run_id": "20261101T184700_submission_final",
+  "status": "VALID",
+  "started_at_utc": "2026-11-01T13:25:21.275958+00:00",
+  "git_commit": "fb42cdd2bd9a333b0fa3a6bda975c8beaf763b64",
+  "command": [
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+    "--reference",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "--candidate",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\submission_final.csv",
+    "--run-dir",
+    "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\runs\\20261101T184700_submission_final",
+    "--method",
+    "id_aligned",
+    "--reference-source-path",
+    "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "--candidate-source-path",
+    "D:\\gci\\gemini\\final_submission\\submission_final.csv",
+    "--lineage-note",
+    "Submission file origin is not established by this numeric comparison."
+  ],
+  "exit_code": 0,
+  "script_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\source\\correlation_runner.py",
+  "script_sha256": "7a732b4a9dd9897df4fa9d99dae0415ada6bfc5a29e8486ae6595f3f7d9d5726",
+  "configuration": {
+    "id_column": "SK_ID_CURR",
+    "prediction_column": "TARGET",
+    "method": "id_aligned",
+    "rank_tie_method": "average",
+    "probability_bounds": [
+      0.0,
+      1.0
+    ],
+    "expected_rows": 61500
+  },
+  "configuration_sha256": "e5d9b801ae4f50c4e7c5d93732bc55948d4b90d2e4b19aa7c4c86704795bae19",
+  "reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\reference_artifacts\\historical_champion.csv",
+    "source_path": "D:\\gci\\champion\\00_HISTORICAL_REFERENCE\\EXP85_HISTORICAL_CHAMPION.csv",
+    "exists": true,
+    "size_bytes": 1291519,
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947"
+  },
+  "candidate": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_SUBMISSION_CORRELATION_REPLICATION\\candidate_artifacts\\submission_final.csv",
+    "source_path": "D:\\gci\\gemini\\final_submission\\submission_final.csv",
+    "exists": true,
+    "size_bytes": 1291519,
+    "sha256": "8e8158ae5ea9a83650e46be0edb19497f4745ef2119da39309212e42ac372d2b"
+  },
+  "lineage_note": "Submission file origin is not established by this numeric comparison.",
+  "alignment": {
+    "reference_rows": 61500,
+    "candidate_rows": 61500,
+    "reference_duplicate_id_rows": 0,
+    "candidate_duplicate_id_rows": 0,
+    "missing_from_candidate_ids": 0,
+    "extra_in_candidate_ids": 0,
+    "aligned_row_count": 61500,
+    "row_order_matches": true,
+    "valid": true
+  },
+  "metrics": {
+    "pearson": 0.9969658880270195,
+    "spearman": 0.9969658880270557,
+    "mae": 0.015484782585372359,
+    "rmse": 0.022487265915100176,
+    "maximum_absolute_prediction_error": 0.26612784949999996,
+    "mean_absolute_prediction_error": 0.015484782585372359,
+    "rank_displacement": {
+      "mean": 952.3170081300813,
+      "median": 675.0,
+      "p95": 2692.0499999999956,
+      "maximum": 16367.0,
+      "exact_rank_agreement_count": 41
+    },
+    "rank_method": "average",
+    "alignment_method": "one-to-one ID join, sorted by ID",
+    "correlation_is_not_prediction_equality": true,
+    "official_score_inferred": false
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "completed_at_utc": "2026-11-01T13:25:21.582529+00:00"
+}
