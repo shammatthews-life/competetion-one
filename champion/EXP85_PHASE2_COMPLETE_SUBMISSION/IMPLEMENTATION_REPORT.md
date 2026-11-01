@@ -60,7 +60,18 @@
 | `python -B -m unittest discover -s tests -p test_*.py -v` | 0 | 22 tests passed |
 | Python AST parse over package source/scripts/tests | 0 | 24 files parsed |
 | `scripts\package_manifest.py create`, then `verify` | 0 | PASS; 75 package files |
-| Notebook JSON/Python-cell validation and ordered-section check | 0 | PASS; 12 code cells, all sections in requested order |
-| Notebook setup and raw-input preflight cells | 0 | PASS; raw input hashes and row alignment verified; no training started |
+| Standalone notebook JSON/Python-cell validation | 0 | PASS; 89 cells, all 24 package Python files embedded, no saved outputs |
+| Notebook source restoration, imports, raw-input and frozen-evidence preflight | 0 | PASS; 171,202 train rows, 61,500 test rows, all input hashes and 15 frozen reference files verified |
+| Full standalone notebook run plus post-run verification | 0 | PASS; all cells completed, OOF AUC `0.7715614961`, run/submission verification passed for 61,500 rows |
 
 The JSON execution report contains full per-fold metrics, input/source/config hashes, software versions, fold indices, GPU sample telemetry, and prediction comparisons.
+
+## Standalone notebook execution evidence
+
+The notebook was executed end-to-end in a clean temporary working directory without access to the project package files. It restored the embedded modules/configs/frozen evidence, found the hash-matched raw inputs, trained all five folds, promoted within its isolated runtime, and passed both post-run verifiers.
+
+- Runtime: `246.837` seconds; CatBoost GPU telemetry: `176` samples.
+- OOF AUC: `0.7715614961` vs frozen `0.7715614423`; delta `+0.0000000538`.
+- OOF Pearson: `0.99987842`; test Pearson: `0.99997553`.
+- Isolated verification-run submission SHA-256: `a5a97209c515a2880664faed1994488bbf9620a88256bb3e9ed859d67f880f3d`.
+- That test was deliberately run in a disposable temporary directory; its output was not retained as a new candidate. Running the notebook normally saves a uniquely named CSV in the notebook working directory.
