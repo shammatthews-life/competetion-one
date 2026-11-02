@@ -1,0 +1,2865 @@
+[
+  {
+    "index": 0,
+    "memory_used_mib": 3,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:54.261478+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:54.840077+00:00",
+    "utilization_percent": 58
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:55.441418+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:56.016733+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:56.653355+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:57.216082+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:57.809486+00:00",
+    "utilization_percent": 15
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:58.374327+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:58.945070+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:00:59.514482+00:00",
+    "utilization_percent": 45
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:00.099747+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:00.682633+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:01.249036+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:01.811921+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:02.382241+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:02.965232+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:03.533539+00:00",
+    "utilization_percent": 43
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:04.108422+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:04.747483+00:00",
+    "utilization_percent": 25
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:05.348495+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:05.914873+00:00",
+    "utilization_percent": 8
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:06.488039+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:07.056932+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:07.634308+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:08.205195+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:08.788097+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:09.353644+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:10.034802+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:10.722514+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:11.365510+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:12.016497+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:12.574070+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:13.143592+00:00",
+    "utilization_percent": 44
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:13.708422+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:14.272058+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:14.847929+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:15.426076+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:15.999156+00:00",
+    "utilization_percent": 24
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:16.691368+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:17.375161+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:17.994816+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:18.657715+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:19.224410+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:19.785213+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:20.361513+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:20.922028+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:21.493113+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:22.073768+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:22.648661+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:23.232283+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:23.798168+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:24.373613+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:24.957156+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:25.600540+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:26.177316+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:26.770110+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:27.354521+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:27.930572+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:28.570317+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:29.138999+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:29.717500+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:30.328477+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:30.961507+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:31.554537+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:32.123406+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:32.839058+00:00",
+    "utilization_percent": 85
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:33.494794+00:00",
+    "utilization_percent": 12
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:34.106443+00:00",
+    "utilization_percent": 12
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:34.663108+00:00",
+    "utilization_percent": 21
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:35.222624+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:35.805055+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:36.391666+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:36.955154+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:37.523398+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:38.142416+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 275,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:38.704589+00:00",
+    "utilization_percent": 51
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 233,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:48.985447+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:49.559518+00:00",
+    "utilization_percent": 56
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:50.150705+00:00",
+    "utilization_percent": 23
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:50.837401+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:51.398854+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:51.983376+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:52.572117+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:53.135648+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:53.707115+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:54.276609+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:54.836966+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:55.408486+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:55.978025+00:00",
+    "utilization_percent": 14
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:56.552595+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:57.110203+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:57.749133+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:58.422518+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:59.124988+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:01:59.694251+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:00.253054+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:00.818004+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:01.397089+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:01.973416+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:02.541307+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:03.118554+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:03.689108+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:04.315585+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:04.976282+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:05.600712+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:06.271631+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:06.838008+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:07.400886+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:07.975441+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:08.524646+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:09.108812+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:09.679469+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:10.259886+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:10.831800+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:11.393737+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:11.962985+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:12.527172+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:13.104236+00:00",
+    "utilization_percent": 24
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:13.669881+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:14.240610+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:14.808780+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:15.373491+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:15.955312+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:16.527148+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:17.092230+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:17.655682+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:18.224142+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:18.809094+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:19.375517+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:20.007807+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:20.579594+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:21.146233+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:21.720152+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:22.305169+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:22.891939+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:23.469713+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:24.036811+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:24.622224+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:25.216481+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:25.837746+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:26.510895+00:00",
+    "utilization_percent": 82
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:27.073219+00:00",
+    "utilization_percent": 62
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:27.641635+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:28.209586+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:28.787662+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:29.348415+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:29.913142+00:00",
+    "utilization_percent": 7
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:30.498375+00:00",
+    "utilization_percent": 6
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:31.074176+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:31.649376+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:32.209956+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:32.840549+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:33.427975+00:00",
+    "utilization_percent": 45
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 233,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:43.056780+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:43.639907+00:00",
+    "utilization_percent": 63
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:44.198594+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:44.760148+00:00",
+    "utilization_percent": 43
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:45.333858+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:46.021021+00:00",
+    "utilization_percent": 16
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:46.678937+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:47.256552+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:47.822491+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:48.403928+00:00",
+    "utilization_percent": 23
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:48.963792+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:49.547702+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:50.109546+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:50.764224+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:51.340691+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:51.911296+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:52.580499+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:53.141590+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:53.720779+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:54.293922+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:54.868407+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:55.429141+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:56.007804+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:56.565983+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:57.143053+00:00",
+    "utilization_percent": 4
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:57.704603+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:58.272123+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:58.910155+00:00",
+    "utilization_percent": 1
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:02:59.615100+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:00.323514+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:00.903387+00:00",
+    "utilization_percent": 7
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:01.479686+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:02.041142+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:02.611683+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:03.178986+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:03.747401+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:04.310144+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:04.909211+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:05.600015+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:06.273602+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:06.931685+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:07.576242+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:08.152253+00:00",
+    "utilization_percent": 45
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:08.721666+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:09.286567+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:09.854633+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:10.412542+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:10.985065+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:11.557664+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:12.138655+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:12.703628+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:13.272160+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:13.846910+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:14.432760+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:15.004370+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:15.575605+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:16.140388+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:16.707546+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:17.279899+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:17.848131+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:18.481818+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:19.082797+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:19.693156+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:20.306549+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:20.934318+00:00",
+    "utilization_percent": 72
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:21.499622+00:00",
+    "utilization_percent": 7
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:22.057887+00:00",
+    "utilization_percent": 11
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:22.638528+00:00",
+    "utilization_percent": 11
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:23.205840+00:00",
+    "utilization_percent": 25
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:23.781896+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:24.354078+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:24.908948+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:25.482232+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:26.054978+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:26.707354+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:27.286374+00:00",
+    "utilization_percent": 52
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 233,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:37.235033+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:37.799446+00:00",
+    "utilization_percent": 1
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:38.375789+00:00",
+    "utilization_percent": 57
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:38.946206+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:39.508363+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:40.157081+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:40.841734+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:41.415343+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:41.987312+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:42.576125+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:43.146082+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:43.716525+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:44.281392+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:44.844019+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:45.413858+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:45.985607+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:46.556103+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:47.128465+00:00",
+    "utilization_percent": 3
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:47.716813+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:48.297363+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:48.878816+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:49.453427+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:50.014510+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:50.576482+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:51.141887+00:00",
+    "utilization_percent": 10
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:51.718871+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:52.298122+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:52.979406+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:53.674234+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:54.336480+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:55.009885+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:55.580481+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:56.149345+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:56.721875+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:57.287300+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:57.857653+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:58.452323+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:59.092312+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:03:59.650139+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:00.230536+00:00",
+    "utilization_percent": 4
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:00.805304+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:01.388273+00:00",
+    "utilization_percent": 14
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:02.032665+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:02.613721+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:03.190264+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:03.763227+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:04.325346+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:04.894987+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:05.479374+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:06.136912+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:06.712288+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:07.306293+00:00",
+    "utilization_percent": 26
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:07.873592+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:08.451794+00:00",
+    "utilization_percent": 14
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:09.016915+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:09.585949+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:10.155818+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:10.721330+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:11.300183+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:11.858699+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:12.447779+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:13.090589+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:13.654529+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:14.227403+00:00",
+    "utilization_percent": 25
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:14.800125+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:15.401831+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:16.049215+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:16.613687+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:17.183811+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:17.759249+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:18.323270+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:18.909445+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:19.514051+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:20.110743+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:20.676463+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:21.239623+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:21.831563+00:00",
+    "utilization_percent": 11
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:22.433805+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:23.006186+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:23.580043+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:24.141263+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:24.740562+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:25.329020+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:25.910430+00:00",
+    "utilization_percent": 8
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:26.488425+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:27.067863+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:27.631856+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:28.206169+00:00",
+    "utilization_percent": 46
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:28.768139+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:29.356911+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:29.938997+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:30.501533+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:31.161431+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:31.724351+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 233,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:41.381432+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:41.950103+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:42.527448+00:00",
+    "utilization_percent": 51
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:43.087828+00:00",
+    "utilization_percent": 25
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:43.664598+00:00",
+    "utilization_percent": 28
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:44.225960+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:44.799021+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:45.370491+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:45.942574+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:46.522144+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:47.087399+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:47.774062+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:48.346015+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:48.911282+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:49.467034+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:50.032334+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:50.605618+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:51.182550+00:00",
+    "utilization_percent": 28
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:51.782335+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:52.346102+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:52.915897+00:00",
+    "utilization_percent": 37
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:53.480922+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:54.048801+00:00",
+    "utilization_percent": 23
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:54.640247+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:55.218912+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:55.906533+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:56.480155+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:57.038836+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:57.601208+00:00",
+    "utilization_percent": 15
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:58.175864+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:58.739936+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:59.308670+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:04:59.880332+00:00",
+    "utilization_percent": 31
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:00.449541+00:00",
+    "utilization_percent": 3
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:01.032684+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:01.648000+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:02.357183+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:03.059022+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:03.647364+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:04.214597+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:04.784056+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:05.363340+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:05.945851+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:06.509884+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:07.145847+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:07.709259+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:08.409930+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:09.125870+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:09.807580+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:10.477256+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:11.172912+00:00",
+    "utilization_percent": 29
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:11.751776+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:12.320499+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:12.901138+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:13.483491+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:14.046915+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:14.616705+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:15.291690+00:00",
+    "utilization_percent": 42
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:15.856326+00:00",
+    "utilization_percent": 12
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:16.430258+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:16.990564+00:00",
+    "utilization_percent": 13
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:17.581565+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:18.165947+00:00",
+    "utilization_percent": 39
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:18.747808+00:00",
+    "utilization_percent": 41
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:19.305831+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:19.891154+00:00",
+    "utilization_percent": 38
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:20.478009+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:21.077030+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:21.675111+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:22.264105+00:00",
+    "utilization_percent": 0
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:22.818499+00:00",
+    "utilization_percent": 33
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:23.374670+00:00",
+    "utilization_percent": 14
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:23.939965+00:00",
+    "utilization_percent": 14
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:24.557108+00:00",
+    "utilization_percent": 27
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:25.130171+00:00",
+    "utilization_percent": 30
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:25.720040+00:00",
+    "utilization_percent": 8
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:26.299821+00:00",
+    "utilization_percent": 40
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:26.982425+00:00",
+    "utilization_percent": 24
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:27.570290+00:00",
+    "utilization_percent": 35
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:28.141670+00:00",
+    "utilization_percent": 45
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:28.724573+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:29.289144+00:00",
+    "utilization_percent": 36
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:29.874056+00:00",
+    "utilization_percent": 32
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:30.438830+00:00",
+    "utilization_percent": 45
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:31.007574+00:00",
+    "utilization_percent": 34
+  },
+  {
+    "index": 0,
+    "memory_used_mib": 281,
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "timestamp_utc": "2026-11-02T03:05:31.578179+00:00",
+    "utilization_percent": 14
+  }
+]

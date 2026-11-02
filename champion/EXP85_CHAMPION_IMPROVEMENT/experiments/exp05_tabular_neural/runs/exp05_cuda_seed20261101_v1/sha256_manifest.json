@@ -1,0 +1,214 @@
+{
+  "experiment_id": "exp05_cuda_seed20261101_v1",
+  "inputs": {
+    "exp04_oof_reference": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "size_bytes": 684936
+    },
+    "historical_champion_diagnostic_only": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\reference\\EXP85_HISTORICAL_CHAMPION.csv",
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "size_bytes": 1291519
+    },
+    "phase2_oof_reference": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\oof_phase2_fold_local_blend.npy",
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "size_bytes": 1369744
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "outputs": {
+    "checkpoint_fold_1_final.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_1_final.pt",
+      "sha256": "5b4d0b18d8affba5327dc83a4c47bcc9e1b01115e93549ab864c2de9513fdc41",
+      "size_bytes": 1383331
+    },
+    "checkpoint_fold_1_inner.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_1_inner.pt",
+      "sha256": "a476f8d888910448c63baf1243414ff476e50bf1f75ca1c269897753398f3b3a",
+      "size_bytes": 1383331
+    },
+    "checkpoint_fold_2_final.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_2_final.pt",
+      "sha256": "332912e3547b6eb6d0cb3658ce4bb90c9950b2082bf7450a0f04d1c2c6f77fa5",
+      "size_bytes": 1383267
+    },
+    "checkpoint_fold_2_inner.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_2_inner.pt",
+      "sha256": "c33209fac6be63afd900588be6a47be78767246d7d4d43b38db8bbe9b99fd047",
+      "size_bytes": 1383267
+    },
+    "checkpoint_fold_3_final.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_3_final.pt",
+      "sha256": "e4827c1fd2c34383147b21007b93c37754bd67ddeb37018e35922fa6b11e3b44",
+      "size_bytes": 1383331
+    },
+    "checkpoint_fold_3_inner.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_3_inner.pt",
+      "sha256": "328399d83c1638467a25da61f5eae02e967500c2ff99cd22ff6d02097ed8103c",
+      "size_bytes": 1383267
+    },
+    "checkpoint_fold_4_final.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_4_final.pt",
+      "sha256": "3b794e61738c970dcfb6cc72ebf20a39ff5733bd51f3f0107b917fd79e0bf329",
+      "size_bytes": 1383331
+    },
+    "checkpoint_fold_4_inner.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_4_inner.pt",
+      "sha256": "07a849f186d4f7fdf419f917ab646e555173622f21e868a1518d8c3ad5bbcb51",
+      "size_bytes": 1383267
+    },
+    "checkpoint_fold_5_final.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_5_final.pt",
+      "sha256": "6a816e1b18f24a8905da39fc555254f85f92353448d1559e2c8012cf22daa2df",
+      "size_bytes": 1383331
+    },
+    "checkpoint_fold_5_inner.pt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_5_inner.pt",
+      "sha256": "846f7f64b1dfbbd2f51e8525b64419884842f90cc4e6f94db3766be2ba96dcba",
+      "size_bytes": 1383331
+    },
+    "experiment_summary.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\experiment_summary.json",
+      "sha256": "5b86423f7b6fd673c5164b33a93a0e601d85ce84858fd7506c70b62b5edaa301",
+      "size_bytes": 40858
+    },
+    "feature_columns.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\feature_columns.json",
+      "sha256": "a9d2160e1b3e72e99cbbd0314d749e9590ece0437b494f4a198bdc16d8bd6797",
+      "size_bytes": 2908
+    },
+    "feature_diagnostics.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\feature_diagnostics.csv",
+      "sha256": "e3489a448ee06763053044db6a74efc0f20d8b51b9984478ce8a674cf8ceb050",
+      "size_bytes": 4805
+    },
+    "fold_1_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_1_indices.npz",
+      "sha256": "3ae7880d822976ea19abff5ae2cc798e9cb85f412632070c02595154ec8fb6f0",
+      "size_bytes": 238589
+    },
+    "fold_1_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_1_predictions.npz",
+      "sha256": "5a554af1f5f615f0740cf3fd621a1a1c223fe66dbf0d738cf2cd7292e1064755",
+      "size_bytes": 395441
+    },
+    "fold_2_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_2_indices.npz",
+      "sha256": "2665b47f80270fdf54a53a7fdd60be34c6525416cb8fe3477cfc68b76c59ccba",
+      "size_bytes": 238600
+    },
+    "fold_2_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_2_predictions.npz",
+      "sha256": "8695a4335220084f88bdbcb4c0f7309367b3c434c5a677f921b715b89819c294",
+      "size_bytes": 394100
+    },
+    "fold_3_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_3_indices.npz",
+      "sha256": "fa28af4f2c41c9521a4cd2772806c459dd681b01896c9f48b90f8f389f6f07e9",
+      "size_bytes": 238584
+    },
+    "fold_3_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_3_predictions.npz",
+      "sha256": "9eb5fbc6cda4ac769b59a8787f495ce27709d5b0c91f491704678dd83cbf2c56",
+      "size_bytes": 394873
+    },
+    "fold_4_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_4_indices.npz",
+      "sha256": "7050662c85e10ca3badd5beacb4264c8a2c14d0dfcf790caf353686d8d04dd7d",
+      "size_bytes": 238618
+    },
+    "fold_4_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_4_predictions.npz",
+      "sha256": "ac2dfb0eccb0405a7bcc8ee14d1564dde7b531a85d30774dcb081a7927fc2465",
+      "size_bytes": 395119
+    },
+    "fold_5_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_5_indices.npz",
+      "sha256": "cb8601177c8681e88ce775b0e66392d7cd2892e84242a81655b4ae1b5c63d2f5",
+      "size_bytes": 238618
+    },
+    "fold_5_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_5_predictions.npz",
+      "sha256": "683bacfcaf592fe1f7d802221c59d4b8281b01fa5009d801f7611d3827e4c094",
+      "size_bytes": 394011
+    },
+    "fold_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_indices.npz",
+      "sha256": "3a78264b9ace01bae4192617738f6025bed10768a4bdb0bd9fec44af4ba4cd86",
+      "size_bytes": 1192801
+    },
+    "gpu_telemetry.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\gpu_telemetry.json",
+      "sha256": "430b9f5b9b07a9f292c0a22d05494449ff2b719e762f615d60ac93ae6ec9735a",
+      "size_bytes": 80514
+    },
+    "oof_tabular_neural.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "size_bytes": 684936
+    },
+    "run.log": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\run.log",
+      "sha256": "76f8a0fa3f5fbae61c57fe2e3f90a8185cfd06aeea0c5947e9477cb1225cf0ac",
+      "size_bytes": 1017
+    },
+    "submission_tabular_neural.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\submission_tabular_neural.csv",
+      "sha256": "b89423e99f1255ab90b6252d97e04e8d3d5cb7b783152f8f6d0877a6409b678d",
+      "size_bytes": 1291519
+    },
+    "test_tabular_neural.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\test_tabular_neural.npy",
+      "sha256": "0d76cc1baf2744763a9b432746fef00072bc42b859a61684aa5d4de127d9d57c",
+      "size_bytes": 246128
+    }
+  },
+  "sources": {
+    "exp04_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\run_experiment.py",
+      "sha256": "c46cbc7db1f5883a24076ce33d3e50b6c801c42a1800ecb1ed8a104d31be29ad",
+      "size_bytes": 33835
+    },
+    "experiment_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\run_experiment.py",
+      "sha256": "0fca358096551775296251225f8954fec59d577aab5274b47ec335aee9db12f7",
+      "size_bytes": 53398
+    },
+    "phase1_fee_product_features": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  }
+}

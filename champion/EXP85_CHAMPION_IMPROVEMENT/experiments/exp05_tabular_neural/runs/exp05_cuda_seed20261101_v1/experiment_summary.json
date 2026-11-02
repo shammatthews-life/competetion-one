@@ -1,0 +1,1073 @@
+{
+  "candidate_submission": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\submission_tabular_neural.csv",
+    "prediction_max": 0.5315931439399719,
+    "prediction_min": 0.005113199353218079,
+    "rows": 61500,
+    "sha256": "b89423e99f1255ab90b6252d97e04e8d3d5cb7b783152f8f6d0877a6409b678d",
+    "unique_ids": 61500
+  },
+  "champion_reference_read_after_training_for_diagnostic_only": true,
+  "champion_reference_sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+  "comparisons": {
+    "exp04_lossguide": {
+      "candidate_fold_auc": [
+        0.7595053036910647,
+        0.7682467964914628,
+        0.7673489463131721,
+        0.7653673122231828,
+        0.7686943193251872
+      ],
+      "candidate_oof_auc": 0.763727307784168,
+      "oof_pearson": 0.9297172493651182,
+      "oof_spearman": 0.9440702652041572,
+      "paired_fold_auc_delta": [
+        -0.005620940831674415,
+        -0.0008038846785185516,
+        -0.0017619608278026666,
+        0.00042933499145458853,
+        -0.0035623126084717294
+      ],
+      "pooled_auc_delta": -0.004305404402693114,
+      "positive_folds": 1,
+      "reference_fold_auc": [
+        0.7651262445227391,
+        0.7690506811699813,
+        0.7691109071409747,
+        0.7649379772317282,
+        0.7722566319336589
+      ],
+      "reference_oof_auc": 0.7680327121868611
+    },
+    "phase2_fold_local": {
+      "candidate_fold_auc": [
+        0.7595053036910647,
+        0.7682467964914628,
+        0.7673489463131721,
+        0.7653673122231828,
+        0.7686943193251872
+      ],
+      "candidate_oof_auc": 0.763727307784168,
+      "oof_pearson": 0.9342484790694687,
+      "oof_spearman": 0.9507444035597193,
+      "paired_fold_auc_delta": [
+        -0.00657660381616032,
+        -0.004776537455444041,
+        -0.004405867590476897,
+        -0.0033273749195170677,
+        -0.006699014377802848
+      ],
+      "pooled_auc_delta": -0.007236512592420086,
+      "positive_folds": 0,
+      "reference_fold_auc": [
+        0.766081907507225,
+        0.7730233339469068,
+        0.771754813903649,
+        0.7686946871426998,
+        0.77539333370299
+      ],
+      "reference_oof_auc": 0.7709638203765881
+    }
+  },
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "fold_seeds_and_checkpoints_saved": true,
+    "independent_full_run_repeat": "NOT_PERFORMED",
+    "torch_deterministic_algorithms": true
+  },
+  "elapsed_seconds": 293.81873359996825,
+  "experiment_id": "exp05_cuda_seed20261101_v1",
+  "feature_generation": {
+    "additional_features": "Existing Phase 2 fold-local frequency/product features and nested target encodings",
+    "base": "Frozen Phase 2 rowwise features",
+    "categorical_columns": [
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "feature_count": 122,
+    "feature_name_sha256": "8c5f1d132be62e9fc5196482702eba0e80ec3555f13d87e7a5913e13301c053a",
+    "feature_names": [
+      "CNT_CHILDREN",
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "REGION_POPULATION_RELATIVE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "NA_CNT_CHILDREN",
+      "NA_AMT_INCOME_TOTAL",
+      "NA_AMT_CREDIT",
+      "NA_AMT_ANNUITY",
+      "NA_AMT_GOODS_PRICE",
+      "NA_REGION_POPULATION_RELATIVE",
+      "NA_DAYS_BIRTH",
+      "NA_DAYS_EMPLOYED",
+      "NA_DAYS_REGISTRATION",
+      "NA_DAYS_ID_PUBLISH",
+      "NA_OWN_CAR_AGE",
+      "NA_FLAG_MOBIL",
+      "NA_FLAG_EMP_PHONE",
+      "NA_FLAG_WORK_PHONE",
+      "NA_CNT_FAM_MEMBERS",
+      "NA_REGION_RATING_CLIENT",
+      "NA_EXT_SOURCE_1",
+      "NA_EXT_SOURCE_2",
+      "NA_EXT_SOURCE_3",
+      "NA_DAYS_LAST_PHONE_CHANGE",
+      "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+      "NA_AMT_REQ_CREDIT_BUREAU_MON",
+      "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+      "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+      "RAW_MISSING_COUNT",
+      "DAYS_EMPLOYED_CLEAN",
+      "DAYS_EMPLOYED_SENTINEL",
+      "AGE_YEARS",
+      "EMPLOYED_YEARS",
+      "EMPLOYED_TO_AGE",
+      "REGISTRATION_TO_AGE",
+      "ID_PUBLISH_TO_AGE",
+      "PHONE_CHANGE_YEARS",
+      "CREDIT_TO_INCOME",
+      "ANNUITY_TO_INCOME",
+      "CREDIT_TO_GOODS",
+      "ANNUITY_TO_CREDIT",
+      "CREDIT_TERM",
+      "INCOME_PER_FAMILY",
+      "CREDIT_PER_FAMILY",
+      "ANNUITY_PER_FAMILY",
+      "DISPOSABLE_INCOME",
+      "DISPOSABLE_INCOME_TO_INCOME",
+      "DEBT_SERVICE_COVERAGE",
+      "CREDIT_TERM_ROUND_1",
+      "CREDIT_TO_GOODS_ROUND_2",
+      "EXT_MEAN",
+      "EXT_MIN",
+      "EXT_MAX",
+      "EXT_STD",
+      "EXT_RANGE",
+      "EXT_COUNT",
+      "EXT_PRODUCT",
+      "EXT_DIFF_01",
+      "EXT_PRODUCT_01",
+      "EXT_RATIO_01",
+      "EXT_DIFF_02",
+      "EXT_PRODUCT_02",
+      "EXT_RATIO_02",
+      "EXT_DIFF_12",
+      "EXT_PRODUCT_12",
+      "EXT_RATIO_12",
+      "MERTON_DISTANCE_20",
+      "MERTON_PD_20",
+      "MERTON_DISTANCE_25",
+      "MERTON_PD_25",
+      "BUREAU_INQUIRY_SUM",
+      "INCOME_LOG1P",
+      "CREDIT_LOG1P",
+      "ANNUITY_LOG1P",
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE",
+      "FEE_DECODED",
+      "FEE_RAW_RATIO_COUNT",
+      "FEE_ADJUSTED_RATIO_COUNT",
+      "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+      "ANNUITY_CREDIT_RATIO_DECODED",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+      "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+      "CREDIT_GOODS_RATIO",
+      "PRODUCT_KEY_VALID",
+      "PRODUCT_KEY_K",
+      "PRODUCT_KEY_DISTANCE",
+      "TE_FEE_Q3",
+      "LOG_COUNT_FEE_Q3",
+      "TE_FEE_Q4",
+      "LOG_COUNT_FEE_Q4",
+      "TE_FEE_Q5",
+      "LOG_COUNT_FEE_Q5",
+      "TE_PRODUCT_K",
+      "LOG_COUNT_PRODUCT_K"
+    ],
+    "frequency_reference": "Outer-fit rows for outer OOF/test features; inner-fit rows for inner early stopping",
+    "numeric_preprocessing": "Fold-fit medians, means, standard deviations; z-score clipping to [-12,12]",
+    "target_encoding": "Nested inner OOF for model-fit rows; only fit-partition labels used for apply rows",
+    "unknown_categories": "Dedicated index zero; category maps fit on training partition only"
+  },
+  "fold_results": [
+    {
+      "categorical_embedding_dims": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        7,
+        12
+      ],
+      "checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_1_final.pt",
+      "elapsed_seconds": 45.70029789995169,
+      "feature_count": 122,
+      "feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92909,
+            "product_key_valid_rows": 79652,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23190,
+            "product_key_valid_rows": 19905,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "fit_rows": 136961,
+      "fit_validation_disjoint": true,
+      "fold": 1,
+      "gpu": {
+        "device": "cuda:0",
+        "max_memory_used_mib": 275,
+        "max_utilization_percent": 85,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "telemetry_samples": 76,
+        "torch_peak_allocated_mib": 108,
+        "torch_peak_reserved_mib": 116
+      },
+      "inner_best_auc": 0.7624218870534204,
+      "inner_feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79100,
+            "product_key_valid_rows": 67676,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41832,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13833,
+            "product_key_valid_rows": 11976,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_outer_validation_overlap": 0,
+      "inner_fit_rows": 116416,
+      "inner_model_seed": 100001,
+      "inner_split_seed": 20261102,
+      "inner_validation_outer_validation_overlap": 0,
+      "inner_validation_rows": 20545,
+      "numeric_feature_count": 114,
+      "outer_oof_auc": 0.7595053036910647,
+      "outer_refit_seed": 20271102,
+      "outer_validation_used_for_early_stopping": false,
+      "selected_epochs": 3,
+      "validation_rows": 34241
+    },
+    {
+      "categorical_embedding_dims": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        7,
+        12
+      ],
+      "checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_2_final.pt",
+      "elapsed_seconds": 44.77790460002143,
+      "feature_count": 122,
+      "feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92894,
+            "product_key_valid_rows": 79619,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41825,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23193,
+            "product_key_valid_rows": 19938,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "fit_rows": 136961,
+      "fit_validation_disjoint": true,
+      "fold": 2,
+      "gpu": {
+        "device": "cuda:0",
+        "max_memory_used_mib": 281,
+        "max_utilization_percent": 82,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "telemetry_samples": 77,
+        "torch_peak_allocated_mib": 113,
+        "torch_peak_reserved_mib": 122
+      },
+      "inner_best_auc": 0.7583018182610143,
+      "inner_feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79034,
+            "product_key_valid_rows": 67685,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41850,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13911,
+            "product_key_valid_rows": 11934,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_outer_validation_overlap": 0,
+      "inner_fit_rows": 116416,
+      "inner_model_seed": 100002,
+      "inner_split_seed": 20261103,
+      "inner_validation_outer_validation_overlap": 0,
+      "inner_validation_rows": 20545,
+      "numeric_feature_count": 114,
+      "outer_oof_auc": 0.7682467964914628,
+      "outer_refit_seed": 20271103,
+      "outer_validation_used_for_early_stopping": false,
+      "selected_epochs": 3,
+      "validation_rows": 34241
+    },
+    {
+      "categorical_embedding_dims": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        7,
+        12
+      ],
+      "checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_3_final.pt",
+      "elapsed_seconds": 44.663122199999634,
+      "feature_count": 122,
+      "feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92957,
+            "product_key_valid_rows": 79698,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41836,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23176,
+            "product_key_valid_rows": 19859,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "fit_rows": 136962,
+      "fit_validation_disjoint": true,
+      "fold": 3,
+      "gpu": {
+        "device": "cuda:0",
+        "max_memory_used_mib": 281,
+        "max_utilization_percent": 72,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "telemetry_samples": 76,
+        "torch_peak_allocated_mib": 113,
+        "torch_peak_reserved_mib": 122
+      },
+      "inner_best_auc": 0.7694648746512897,
+      "inner_feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 79094,
+            "product_key_valid_rows": 67765,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13847,
+            "product_key_valid_rows": 11933,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_outer_validation_overlap": 0,
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 100003,
+      "inner_split_seed": 20261104,
+      "inner_validation_outer_validation_overlap": 0,
+      "inner_validation_rows": 20545,
+      "numeric_feature_count": 114,
+      "outer_oof_auc": 0.7673489463131721,
+      "outer_refit_seed": 20271104,
+      "outer_validation_used_for_early_stopping": false,
+      "selected_epochs": 3,
+      "validation_rows": 34240
+    },
+    {
+      "categorical_embedding_dims": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        7,
+        12
+      ],
+      "checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_4_final.pt",
+      "elapsed_seconds": 54.72738540003775,
+      "feature_count": 122,
+      "feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92826,
+            "product_key_valid_rows": 79543,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41854,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23328,
+            "product_key_valid_rows": 20014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "fit_rows": 136962,
+      "fit_validation_disjoint": true,
+      "fold": 4,
+      "gpu": {
+        "device": "cuda:0",
+        "max_memory_used_mib": 281,
+        "max_utilization_percent": 57,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "telemetry_samples": 94,
+        "torch_peak_allocated_mib": 113,
+        "torch_peak_reserved_mib": 122
+      },
+      "inner_best_auc": 0.7673764741936598,
+      "inner_feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78855,
+            "product_key_valid_rows": 67529,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41835,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13955,
+            "product_key_valid_rows": 12014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_outer_validation_overlap": 0,
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 100004,
+      "inner_split_seed": 20261105,
+      "inner_validation_outer_validation_overlap": 0,
+      "inner_validation_rows": 20545,
+      "numeric_feature_count": 114,
+      "outer_oof_auc": 0.7653673122231828,
+      "outer_refit_seed": 20271105,
+      "outer_validation_used_for_early_stopping": false,
+      "selected_epochs": 5,
+      "validation_rows": 34240
+    },
+    {
+      "categorical_embedding_dims": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        7,
+        12
+      ],
+      "checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\checkpoint_fold_5_final.pt",
+      "elapsed_seconds": 50.446458099992014,
+      "feature_count": 122,
+      "feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92889,
+            "product_key_valid_rows": 79716,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41824,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23222,
+            "product_key_valid_rows": 19841,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "fit_rows": 136962,
+      "fit_validation_disjoint": true,
+      "fold": 5,
+      "gpu": {
+        "device": "cuda:0",
+        "max_memory_used_mib": 281,
+        "max_utilization_percent": 51,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "telemetry_samples": 86,
+        "torch_peak_allocated_mib": 113,
+        "torch_peak_reserved_mib": 122
+      },
+      "inner_best_auc": 0.7710971102462624,
+      "inner_feature_protocol": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78907,
+            "product_key_valid_rows": 67767,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41803,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13922,
+            "product_key_valid_rows": 11949,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_outer_validation_overlap": 0,
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 100005,
+      "inner_split_seed": 20261106,
+      "inner_validation_outer_validation_overlap": 0,
+      "inner_validation_rows": 20545,
+      "numeric_feature_count": 114,
+      "outer_oof_auc": 0.7686943193251872,
+      "outer_refit_seed": 20271106,
+      "outer_validation_used_for_early_stopping": false,
+      "selected_epochs": 4,
+      "validation_rows": 34240
+    }
+  ],
+  "folds": {
+    "inner_validation_fraction": 0.15,
+    "matched_phase2_and_exp04_indices": true,
+    "n_splits": 5,
+    "outer_validation_used_for_stopping": false,
+    "seed": 20261101,
+    "shuffle": true
+  },
+  "historical_predictions_used_as_model_inputs": false,
+  "historical_predictions_used_as_training_labels": false,
+  "historical_public_score_reference": 0.80134,
+  "historical_public_score_verified_for_candidate": false,
+  "inputs": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "lineage": "INDEPENDENT_RAW_ONLY_PYTORCH_RESIDUAL_TABULAR_NET",
+  "model": {
+    "gpu_preflight": {
+      "cpu_fallback": false,
+      "cuda_available": true,
+      "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "device_index": 0,
+      "free_memory_mib_before_run": 5072,
+      "process_memory_fraction": 0.76,
+      "smoke_fit": "PASS",
+      "torch_cuda_build": "12.8",
+      "torch_module_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\.venv\\Lib\\site-packages\\torch\\__init__.py",
+      "torch_version": "2.11.0+cu128",
+      "total_memory_mib": 6140
+    },
+    "gpu_telemetry": {
+      "max_memory_used_mib": 281,
+      "max_torch_allocated_mib": 113,
+      "max_utilization_percent": 85,
+      "sample_count": 409
+    },
+    "gpu_training_confirmed": true,
+    "parameters": {
+      "architecture": "categorical embeddings + 2-block residual MLP",
+      "batch_size": 2048,
+      "dropout": 0.2,
+      "early_stopping_patience": 12,
+      "embedding_max_dim": 16,
+      "embedding_min_dim": 4,
+      "gpu_memory_fraction": 0.76,
+      "hidden_width": 256,
+      "inner_validation_fraction": 0.15,
+      "learning_rate": 0.001,
+      "loss": "BCEWithLogitsLoss",
+      "max_epochs": 100,
+      "optimizer": "AdamW",
+      "residual_blocks": 2,
+      "weight_decay": 0.0001
+    },
+    "seeds": {
+      "inner_model": [
+        100001,
+        100002,
+        100003,
+        100004,
+        100005
+      ],
+      "inner_split": [
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106
+      ],
+      "outer_refit": [
+        20271102,
+        20271103,
+        20271104,
+        20271105,
+        20271106
+      ]
+    }
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "outputs": {
+    "feature_columns.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\feature_columns.json",
+      "sha256": "a9d2160e1b3e72e99cbbd0314d749e9590ece0437b494f4a198bdc16d8bd6797",
+      "size_bytes": 2908
+    },
+    "feature_diagnostics.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\feature_diagnostics.csv",
+      "sha256": "e3489a448ee06763053044db6a74efc0f20d8b51b9984478ce8a674cf8ceb050",
+      "size_bytes": 4805
+    },
+    "fold_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_indices.npz",
+      "sha256": "3a78264b9ace01bae4192617738f6025bed10768a4bdb0bd9fec44af4ba4cd86",
+      "size_bytes": 1192801
+    },
+    "gpu_telemetry.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\gpu_telemetry.json",
+      "sha256": "430b9f5b9b07a9f292c0a22d05494449ff2b719e762f615d60ac93ae6ec9735a",
+      "size_bytes": 80514
+    },
+    "oof_tabular_neural.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "size_bytes": 684936
+    },
+    "submission_tabular_neural.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\submission_tabular_neural.csv",
+      "sha256": "b89423e99f1255ab90b6252d97e04e8d3d5cb7b783152f8f6d0877a6409b678d",
+      "size_bytes": 1291519
+    },
+    "test_tabular_neural.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\test_tabular_neural.npy",
+      "sha256": "0d76cc1baf2744763a9b432746fef00072bc42b859a61684aa5d4de127d9d57c",
+      "size_bytes": 246128
+    }
+  },
+  "prediction_diagnostics": {
+    "historical_champion_rank_displacement": {
+      "classification": "Diagnostic only",
+      "max": 51840.0,
+      "mean": 5619.192894308943
+    },
+    "oof": {
+      "max": 0.5816993117332458,
+      "mean": 0.08093348890542984,
+      "min": 0.0031300727277994156,
+      "p01": 0.0069289011880755424,
+      "p50": 0.04982876405119896,
+      "p99": 0.393327534198761,
+      "std": 0.08339210599660873
+    },
+    "test": {
+      "max": 0.5315931439399719,
+      "mean": 0.08960877358913422,
+      "min": 0.005113199353218079,
+      "p01": 0.008042742498219013,
+      "p50": 0.05694982409477234,
+      "p99": 0.395717054605484,
+      "std": 0.08825183659791946
+    },
+    "test_correlations": {
+      "exp04_lossguide": {
+        "pearson": 0.9655036405474338,
+        "spearman": 0.9747232192217428
+      },
+      "historical_champion_diagnostic_only": {
+        "classification": "Post-training diagnostic only; not a tuning target",
+        "pearson": 0.8039468709515296,
+        "spearman": 0.9093381005532322
+      }
+    }
+  },
+  "raw_training_labels_used": true,
+  "references": {
+    "exp04_oof": {
+      "classification": "OOF validation comparator only; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "status": "COMPLETED"
+    },
+    "phase2_oof": {
+      "classification": "OOF validation comparator only; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\oof_phase2_fold_local_blend.npy",
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "status": "COMPLETED"
+    }
+  },
+  "source_hashes": {
+    "exp04_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\run_experiment.py",
+      "sha256": "c46cbc7db1f5883a24076ce33d3e50b6c801c42a1800ecb1ed8a104d31be29ad",
+      "size_bytes": 33835
+    },
+    "experiment_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\run_experiment.py",
+      "sha256": "0fca358096551775296251225f8954fec59d577aab5274b47ec335aee9db12f7",
+      "size_bytes": 53398
+    },
+    "phase1_fee_product_features": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  },
+  "status": "COMPLETED",
+  "versions": {
+    "catboost": "1.2.10",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "scikit_learn": "1.9.1",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8"
+  }
+}

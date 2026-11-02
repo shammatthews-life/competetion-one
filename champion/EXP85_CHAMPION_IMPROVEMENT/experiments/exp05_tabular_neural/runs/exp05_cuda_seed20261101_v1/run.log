@@ -1,0 +1,12 @@
+CUDA preflight: NVIDIA GeForce RTX 4050 Laptop GPU torch=2.11.0+cu128 CUDA=12.8 free=5072MiB
+Training exp05_cuda_seed20261101_v1: rows=171202 test_rows=61500 folds=5 seed=20261101
+checkpoint_fold_1_inner.pt: epoch=10 fit_bce=0.235794 inner_auc=0.753631 best_epoch=3
+Fold 1/5: OOF_AUC=0.75950530 inner_AUC=0.76242189 epochs=3 gpu=85% VRAM=275MiB
+checkpoint_fold_2_inner.pt: epoch=10 fit_bce=0.237976 inner_auc=0.751946 best_epoch=3
+Fold 2/5: OOF_AUC=0.76824680 inner_AUC=0.75830182 epochs=3 gpu=82% VRAM=281MiB
+checkpoint_fold_3_inner.pt: epoch=10 fit_bce=0.237553 inner_auc=0.765817 best_epoch=3
+Fold 3/5: OOF_AUC=0.76734895 inner_AUC=0.76946487 epochs=3 gpu=72% VRAM=281MiB
+checkpoint_fold_4_inner.pt: epoch=10 fit_bce=0.237442 inner_auc=0.762193 best_epoch=5
+Fold 4/5: OOF_AUC=0.76536731 inner_AUC=0.76737647 epochs=5 gpu=57% VRAM=281MiB
+checkpoint_fold_5_inner.pt: epoch=10 fit_bce=0.238278 inner_auc=0.762671 best_epoch=4
+Fold 5/5: OOF_AUC=0.76869432 inner_AUC=0.77109711 epochs=4 gpu=51% VRAM=281MiB
