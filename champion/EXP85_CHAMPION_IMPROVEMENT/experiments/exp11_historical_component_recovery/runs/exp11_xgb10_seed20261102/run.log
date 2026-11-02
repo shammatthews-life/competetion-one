@@ -1,0 +1,17 @@
+[2026-11-02T14:41:12.511035+00:00] Loading raw competition train/test data
+[2026-11-02T14:41:13.407989+00:00] Fold 1/5: building inner-fit and inner-stop features
+[2026-11-02T14:41:19.732130+00:00] Fold 1/5: refitting 396 rounds on all outer-train rows
+[2026-11-02T14:41:26.237548+00:00] Fold 1: candidate AUC=0.75762172, Phase2 AUC=0.76970934, rounds=396
+[2026-11-02T14:41:26.446263+00:00] Fold 2/5: building inner-fit and inner-stop features
+[2026-11-02T14:41:32.468330+00:00] Fold 2/5: refitting 355 rounds on all outer-train rows
+[2026-11-02T14:41:39.012498+00:00] Fold 2: candidate AUC=0.76427790, Phase2 AUC=0.77795252, rounds=355
+[2026-11-02T14:41:39.213526+00:00] Fold 3/5: building inner-fit and inner-stop features
+[2026-11-02T14:41:45.140606+00:00] Fold 3/5: refitting 300 rounds on all outer-train rows
+[2026-11-02T14:41:51.444414+00:00] Fold 3: candidate AUC=0.75668093, Phase2 AUC=0.76660063, rounds=300
+[2026-11-02T14:41:51.653178+00:00] Fold 4/5: building inner-fit and inner-stop features
+[2026-11-02T14:41:58.582542+00:00] Fold 4/5: refitting 435 rounds on all outer-train rows
+[2026-11-02T14:42:05.519123+00:00] Fold 4: candidate AUC=0.76262572, Phase2 AUC=0.77349758, rounds=435
+[2026-11-02T14:42:05.743958+00:00] Fold 5/5: building inner-fit and inner-stop features
+[2026-11-02T14:42:12.292126+00:00] Fold 5/5: refitting 444 rounds on all outer-train rows
+[2026-11-02T14:42:19.199699+00:00] Fold 5: candidate AUC=0.75847188, Phase2 AUC=0.76645277, rounds=444
+[2026-11-02T14:42:20.317588+00:00] Completed: pooled AUC=0.75988817, delta=-0.01087955, gate=FAIL

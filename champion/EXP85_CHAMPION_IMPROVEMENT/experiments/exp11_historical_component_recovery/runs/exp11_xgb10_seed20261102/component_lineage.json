@@ -1,0 +1,159 @@
+{
+  "classification": {
+    "exp11_predictions": "independent raw-data training, five matched OOF folds",
+    "historical_cache": "historical cache replay evidence, not fresh training",
+    "missing_neural_streams": [
+      {
+        "artifact": "group_a_oof_10stream.npy",
+        "meaning": "No exact historical OOF file available for independent evaluation.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "artifact": "group_a_test_10stream.npy",
+        "meaning": "No exact historical test prediction file available.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "artifact": "oof_and_test_tabm32_463_dae.npz",
+        "meaning": "No exact TabM/DAE prediction archive available.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "artifact": "oof_and_test_lgbm_dae491.npz",
+        "meaning": "No exact LightGBM/DAE prediction archive available.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "artifact": "dae_pt_v1.npz",
+        "meaning": "Contains E_tr/E_te embeddings, not the named OOF/test streams or encoder provenance.",
+        "status": "PRESENT_EMBEDDINGS_ONLY"
+      },
+      {
+        "artifact": "gbdt_dae_pt_v1.npz",
+        "meaning": "Contains four OOF-like and four test-like arrays, but no verified mapping to the requested lgbm_dae491 stream, fold IDs, or training configuration; not used as a substitute.",
+        "status": "PRESENT_UNVERIFIED_PREDICTION_CACHE"
+      }
+    ]
+  },
+  "historical_cache": {
+    "classification": "HISTORICAL_CACHE_REPLAY_EVIDENCE",
+    "fold_membership_available": false,
+    "independent_training": false,
+    "oof_path": "D:\\gci\\champion\\cache\\oof_10f_xgb.npy",
+    "oof_sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+    "pooled_oof_auc_recomputed": 0.7743306407803909,
+    "test_path": "D:\\gci\\champion\\cache\\test_10f_xgb.npy",
+    "test_sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+  },
+  "historical_component_lineage_table": [
+    {
+      "blocking_dependencies": [
+        "No OOF counterpart for the 0.80084 transductive anchor",
+        "Named TabM/DAE prediction archives are missing"
+      ],
+      "classification": "exact historical test artifact/cache synthesis; not independent training",
+      "component": "Anchor 74 precision transductive anchor",
+      "historical_role": "85% of final EXP85 probit-space synthesis",
+      "historical_test_artifact": "D:/gci/gemini/v_20261027_precision_transductive_apex.csv",
+      "independent_leakage_safe_oof_available": false,
+      "inputs_and_transformations": "Cached 0.80084 transductive submission and five-model hasan_expanded_zoo test streams; regime discrepancy gate, test-pair smoothing, bounded rank shift",
+      "raw_data_training_reproducible": false,
+      "source_and_entrypoint": [
+        "champion/04_MODEL_LINEAGE/ANCHOR74/generate_anchor74_from_scratch.py",
+        "D:/gci/gemini/build_precision_transductive_apex_champion.py"
+      ]
+    },
+    {
+      "blocking_dependencies": [
+        "Fold provenance is not embedded in the prediction bundle",
+        "Cached engineered views and residual/encoding artifacts are upstream dependencies"
+      ],
+      "classification": "historical cache replay; raw rebuild requires further provenance validation",
+      "component": "V17 full-suite bundle",
+      "historical_prediction_artifact": "D:/gci/gemini/cache/v_17_full_suite_bundle.npz",
+      "historical_role": "V17 members collectively contribute to the 15% suite; e1Aet reported at 29.32% of that suite",
+      "independent_leakage_safe_oof_available": false,
+      "inputs_and_transformations": "Eight cached V16 view matrices, residual features, fold encodings, and LightGBM/CatBoost member streams",
+      "raw_data_training_reproducible": "partial; source and raw builders exist, but the historical entrypoint consumes cached views/residuals/encodings",
+      "source_and_entrypoint": [
+        "champion/04_MODEL_LINEAGE/V17/generate_v17_from_scratch.py",
+        "D:/gci/gemini/train_full_v16_suite.py"
+      ]
+    },
+    {
+      "blocking_dependencies": [
+        "Fold-local provenance for the cached feature blocks is incomplete",
+        "Prediction bundle contains no fold assignments"
+      ],
+      "classification": "historical cache replay; not selected for fresh validation",
+      "component": "V55 suite members",
+      "historical_prediction_artifact": "D:/gci/gemini/cache/v55_members.npz",
+      "historical_role": "V55 members collectively contribute to the 15% suite",
+      "independent_leakage_safe_oof_available": false,
+      "inputs_and_transformations": "Cached V16 feature views plus residual, hierarchical, WOE, KNN, reconstructed-external-source, domain, and contract-risk blocks",
+      "raw_data_training_reproducible": "partial; training source exists but consumes derived feature caches",
+      "source_and_entrypoint": [
+        "champion/04_MODEL_LINEAGE/V55/generate_v55_from_scratch.py",
+        "D:/gci/gemini/train_clean_honors_champion.py"
+      ]
+    },
+    {
+      "blocking_dependencies": [],
+      "classification": "fresh raw-data training in EXP11; historical cache separately identified",
+      "component": "XGB10 suite member",
+      "historical_prediction_artifact": [
+        "D:/gci/champion/cache/oof_10f_xgb.npy",
+        "D:/gci/champion/cache/test_10f_xgb.npy"
+      ],
+      "historical_role": "25.96% of the historical 8-engine suite",
+      "independent_leakage_safe_oof_available": "EXP11 refit; historical cache has no fold index",
+      "inputs_and_transformations": "Raw train/test CSV; financial ratios, demographics, external source aggregates, Merton features, one-hot demographics, raw numeric columns",
+      "raw_data_training_reproducible": true,
+      "source_and_entrypoint": [
+        "exp11_historical_component_recovery/source/historical_xgb10_source.py",
+        "exp11_historical_component_recovery/source/run_exp11.py"
+      ],
+      "training_configuration": "Hist-XGBoost, 450 trees maximum, learning_rate 0.035, max_depth 6, subsample 0.80, colsample_bytree 0.55, reg_alpha 3, reg_lambda 8, min_child_weight 30; historical seed 42 and 10 folds"
+    },
+    {
+      "blocking_dependencies": [
+        "Exact named prediction archives and their configurations are unavailable",
+        "dae_pt_v1.npz contains embeddings only, with no encoder/training provenance"
+      ],
+      "classification": "missing exact artifacts; no substitution",
+      "component": "TabM/DAE and group-A neural streams",
+      "historical_prediction_artifact": [
+        "group_a_oof_10stream.npy",
+        "group_a_test_10stream.npy",
+        "oof_and_test_tabm32_463_dae.npz",
+        "oof_and_test_lgbm_dae491.npz"
+      ],
+      "historical_role": "Named historical neural prediction streams",
+      "independent_leakage_safe_oof_available": false,
+      "inputs_and_transformations": "Unavailable for the named streams",
+      "raw_data_training_reproducible": false,
+      "source_and_entrypoint": "Exact source/training entrypoint not recovered"
+    }
+  ],
+  "historical_role": {
+    "historical_fold_seed": 42,
+    "historical_folds": 10,
+    "lineage_discrepancy": "The available full-data generator emits 173 features, while lineage documentation claims 239. EXP11 pins the available generator and does not silently invent the missing 66 features.",
+    "measured_historical_source_feature_count": 173,
+    "reported_historical_feature_count": 239,
+    "reported_historical_oof_auc": 0.774331,
+    "suite_weight": 0.2596
+  },
+  "original_training_entrypoint": {
+    "repository_path": "champion/EXP85_CHAMPION_IMPROVEMENT/experiments/exp11_historical_component_recovery/source/historical_xgb10_source.py",
+    "sha256": "7fbeaa89fb7b4473aefa9dbdb2c83b6ee337389b1ffc783b442a1640f9c1c900",
+    "size_bytes": 10281
+  },
+  "preprocessing": {
+    "categorical_mapping": "fit-partition one-hot levels plus explicit unseen and missing indicators",
+    "early_stopping": "inner 10% stratified split of outer-training rows; refit all outer-training rows for selected rounds",
+    "historical_feature_count_mismatch": "Available source emits 173 full-data features; lineage documentation claims 239",
+    "rowwise_features": "XGB10 financial feature and raw numeric recipe from the pinned source"
+  },
+  "selected_component": "EXP85 8-engine suite member xgb10"
+}

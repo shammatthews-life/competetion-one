@@ -1,0 +1,52 @@
+{
+  "candidate_pooled_oof_auc": 0.7598881735381423,
+  "decision": "REJECTED",
+  "delta_vs_phase2": -0.010879549792374488,
+  "experiment_id": "exp11_xgb10_seed20261102",
+  "fold_membership_sha256": "9b3dc1f79c04f728301175def0b4428120e05317070bb55ee7feb085a6654505",
+  "fold_metrics": [
+    {
+      "candidate_auc": 0.7576217240741833,
+      "delta": -0.012087616681226487,
+      "fold": 1,
+      "phase2_auc": 0.7697093407554098
+    },
+    {
+      "candidate_auc": 0.7642779009903811,
+      "delta": -0.013674616924471028,
+      "fold": 2,
+      "phase2_auc": 0.7779525179148521
+    },
+    {
+      "candidate_auc": 0.7566809338482042,
+      "delta": -0.009919699230102719,
+      "fold": 3,
+      "phase2_auc": 0.766600633078307
+    },
+    {
+      "candidate_auc": 0.7626257154280504,
+      "delta": -0.010871863826968475,
+      "fold": 4,
+      "phase2_auc": 0.7734975792550188
+    },
+    {
+      "candidate_auc": 0.7584718832937103,
+      "delta": -0.007980887144575566,
+      "fold": 5,
+      "phase2_auc": 0.7664527704382859
+    }
+  ],
+  "gate_passed": false,
+  "labels_sha256": "7ec37a3341478bc5dd40e418dcc9f9ebb9820293aad6df6aca1588c326703444",
+  "model_replay_device": "cuda:0",
+  "oof_sha256": "afd3711ec11e257d8ecfe57202a63666dfc7389f58a7dc4612e5ed4c7be25ee8",
+  "passed": true,
+  "phase2_pooled_oof_auc": 0.7707677233305168,
+  "positive_folds": 0,
+  "replayed_saved_models": true,
+  "test_ids_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+  "test_sha256": "b868b5333c4c374d647c1e7a4190aec13e25529c327dd686bde5226127b8a9d7",
+  "train_ids_sha256": "622cd56eda8cd01a351db0f8afac946cd992cf9dd78dbb62ac2c3274dd552c40",
+  "verified_outer_folds": 5,
+  "verified_output_count": 28
+}

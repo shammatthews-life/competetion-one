@@ -1,0 +1,18 @@
+{
+  "candidate_auc": 0.7626257154280504,
+  "delta_vs_phase2": -0.010871863826968475,
+  "early_stopping_best_iteration": 434,
+  "feature_count": 181,
+  "final_rounds": 435,
+  "fold": 4,
+  "indices_file": "fold_4_indices.npz",
+  "inner_fit_rows": 123265,
+  "inner_stop_rows": 13697,
+  "model_file": "fold_4_xgb.ubj",
+  "outer_train_rows": 136962,
+  "outer_validation_rows": 34240,
+  "phase2_auc": 0.7734975792550188,
+  "positive_fold": false,
+  "training_runtime_seconds": 14.047000000020489,
+  "xgboost_device": "cuda:0"
+}

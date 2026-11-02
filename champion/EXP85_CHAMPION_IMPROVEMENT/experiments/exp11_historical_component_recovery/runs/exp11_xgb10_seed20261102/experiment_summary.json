@@ -1,0 +1,236 @@
+{
+  "advancement_gate": {
+    "full_gate_pending_independent_model_replay": false,
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "passed": false,
+    "pooled_auc_delta": -0.010879549792374488,
+    "positive_folds": 0
+  },
+  "baseline": {
+    "fold_membership_sha256": "9b3dc1f79c04f728301175def0b4428120e05317070bb55ee7feb085a6654505",
+    "fold_seed": 20261102,
+    "oof_sha256": "692270dbd756e236eea8d0f83cf97f70776a69bf4faad314827607917d1da118",
+    "pooled_oof_auc": 0.7707677233305168,
+    "sha256": "781e27bcd96422083c8fac554f0bdd2ff78e4b7dd5e9be57217192a39358a1ab",
+    "source": "EXP10 independently verified shared Phase 2 contract"
+  },
+  "candidate_submission_created": false,
+  "component_lineage": "component_lineage.json",
+  "decision": "REJECTED",
+  "experiment_id": "exp11_xgb10_seed20261102",
+  "feature_count_by_fold": [
+    181,
+    181,
+    181,
+    181,
+    181
+  ],
+  "fold_seed": 20261102,
+  "folds": 5,
+  "gpu_evidence": {
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "driver_version": "592.82",
+    "maximum_memory_used_mib": 187,
+    "maximum_utilization_percent": 92,
+    "memory_used_mib_before": 0,
+    "monitor_errors": [],
+    "sample_count": 62,
+    "total_memory_mib": 6141,
+    "training_runtime_seconds": 66.03099999995902
+  },
+  "historical_component_cache_reference": {
+    "classification": "HISTORICAL_CACHE_REPLAY_EVIDENCE",
+    "fold_membership_available": false,
+    "independent_training": false,
+    "oof_path": "D:\\gci\\champion\\cache\\oof_10f_xgb.npy",
+    "oof_sha256": "2bf468c7757b42ac7f7cf0105ffdc2557593dea27f19e704311b34a79dd6f46d",
+    "pooled_oof_auc_recomputed": 0.7743306407803909,
+    "test_path": "D:\\gci\\champion\\cache\\test_10f_xgb.npy",
+    "test_sha256": "5a8d8a23b2f36ac6f27703b1f8c4b0b29aa15fefe4292edc4a628702fff76195"
+  },
+  "historical_full_data_feature_count": 173,
+  "integrity": {
+    "all_outer_validation_rows_predicted_once": true,
+    "baseline_contract_sha256": "781e27bcd96422083c8fac554f0bdd2ff78e4b7dd5e9be57217192a39358a1ab",
+    "fold_membership_sha256": "9b3dc1f79c04f728301175def0b4428120e05317070bb55ee7feb085a6654505",
+    "labels_sha256": "7ec37a3341478bc5dd40e418dcc9f9ebb9820293aad6df6aca1588c326703444",
+    "oof_prediction_sha256": "afd3711ec11e257d8ecfe57202a63666dfc7389f58a7dc4612e5ed4c7be25ee8",
+    "ordered_test_ids_sha256": "a0c774d3be210fcdd186254d498f8c48c9239dddc26f9da67ab40305bdd872e9",
+    "ordered_train_ids_sha256": "622cd56eda8cd01a351db0f8afac946cd992cf9dd78dbb62ac2c3274dd552c40",
+    "outer_validation_used_for_early_stopping": false,
+    "raw_inputs_hash_verified": true,
+    "shared_baseline_exactly_aligned": true,
+    "test_prediction_sha256": "b868b5333c4c374d647c1e7a4190aec13e25529c327dd686bde5226127b8a9d7"
+  },
+  "metrics": {
+    "absolute_delta_vs_phase2": -0.010879549792374488,
+    "absolute_error_correlation": 0.9924890625109112,
+    "ext_source_missingness_subgroups": [
+      {
+        "candidate_auc": 0.7712913981535984,
+        "ext_source_missing_count": 0,
+        "phase2_auc": 0.7790154474499684,
+        "positive_labels": 2570,
+        "rows": 36164
+      },
+      {
+        "candidate_auc": 0.7635626545924044,
+        "ext_source_missing_count": 1,
+        "phase2_auc": 0.7733637711718223,
+        "positive_labels": 7742,
+        "rows": 96310
+      },
+      {
+        "candidate_auc": 0.7372355994092877,
+        "ext_source_missing_count": 2,
+        "phase2_auc": 0.7539959121117042,
+        "positive_labels": 3498,
+        "rows": 38611
+      },
+      {
+        "candidate_auc": 0.5471698113207547,
+        "ext_source_missing_count": 3,
+        "phase2_auc": 0.6200686106346484,
+        "positive_labels": 11,
+        "rows": 117
+      }
+    ],
+    "fold_metrics": [
+      {
+        "candidate_auc": 0.7576217240741833,
+        "delta_vs_phase2": -0.012087616681226487,
+        "early_stopping_best_iteration": 395,
+        "feature_count": 181,
+        "final_rounds": 396,
+        "fold": 1,
+        "indices_file": "fold_1_indices.npz",
+        "inner_fit_rows": 123264,
+        "inner_stop_rows": 13697,
+        "model_file": "fold_1_xgb.ubj",
+        "outer_train_rows": 136961,
+        "outer_validation_rows": 34241,
+        "phase2_auc": 0.7697093407554098,
+        "positive_fold": false,
+        "training_runtime_seconds": 13.046999999962281,
+        "xgboost_device": "cuda:0"
+      },
+      {
+        "candidate_auc": 0.7642779009903811,
+        "delta_vs_phase2": -0.013674616924471028,
+        "early_stopping_best_iteration": 354,
+        "feature_count": 181,
+        "final_rounds": 355,
+        "fold": 2,
+        "indices_file": "fold_2_indices.npz",
+        "inner_fit_rows": 123264,
+        "inner_stop_rows": 13697,
+        "model_file": "fold_2_xgb.ubj",
+        "outer_train_rows": 136961,
+        "outer_validation_rows": 34241,
+        "phase2_auc": 0.7779525179148521,
+        "positive_fold": false,
+        "training_runtime_seconds": 12.76600000000326,
+        "xgboost_device": "cuda:0"
+      },
+      {
+        "candidate_auc": 0.7566809338482042,
+        "delta_vs_phase2": -0.009919699230102719,
+        "early_stopping_best_iteration": 299,
+        "feature_count": 181,
+        "final_rounds": 300,
+        "fold": 3,
+        "indices_file": "fold_3_indices.npz",
+        "inner_fit_rows": 123265,
+        "inner_stop_rows": 13697,
+        "model_file": "fold_3_xgb.ubj",
+        "outer_train_rows": 136962,
+        "outer_validation_rows": 34240,
+        "phase2_auc": 0.766600633078307,
+        "positive_fold": false,
+        "training_runtime_seconds": 12.420999999972992,
+        "xgboost_device": "cuda:0"
+      },
+      {
+        "candidate_auc": 0.7626257154280504,
+        "delta_vs_phase2": -0.010871863826968475,
+        "early_stopping_best_iteration": 434,
+        "feature_count": 181,
+        "final_rounds": 435,
+        "fold": 4,
+        "indices_file": "fold_4_indices.npz",
+        "inner_fit_rows": 123265,
+        "inner_stop_rows": 13697,
+        "model_file": "fold_4_xgb.ubj",
+        "outer_train_rows": 136962,
+        "outer_validation_rows": 34240,
+        "phase2_auc": 0.7734975792550188,
+        "positive_fold": false,
+        "training_runtime_seconds": 14.047000000020489,
+        "xgboost_device": "cuda:0"
+      },
+      {
+        "candidate_auc": 0.7584718832937103,
+        "delta_vs_phase2": -0.007980887144575566,
+        "early_stopping_best_iteration": 443,
+        "feature_count": 181,
+        "final_rounds": 444,
+        "fold": 5,
+        "indices_file": "fold_5_indices.npz",
+        "inner_fit_rows": 123265,
+        "inner_stop_rows": 13697,
+        "model_file": "fold_5_xgb.ubj",
+        "outer_train_rows": 136962,
+        "outer_validation_rows": 34240,
+        "phase2_auc": 0.7664527704382859,
+        "positive_fold": false,
+        "training_runtime_seconds": 13.655999999959022,
+        "xgboost_device": "cuda:0"
+      }
+    ],
+    "phase2_pooled_oof_auc": 0.7707677233305168,
+    "positive_folds": 0,
+    "prediction_correlation": 0.9444792107069471,
+    "residual_correlation": 0.994498869597009,
+    "residual_distribution": {
+      "candidate_mae": 0.13529739653837478,
+      "candidate_mean_signed_error": 0.00031065252221158075,
+      "phase2_mae": 0.1338995482614769,
+      "phase2_mean_signed_error": 0.0008403269915963189
+    },
+    "xgb10_strict_pooled_oof_auc": 0.7598881735381423
+  },
+  "model_configuration": {
+    "early_stopping_rounds": 30,
+    "fold_model_seeds": [
+      20261104,
+      20261105,
+      20261106,
+      20261107,
+      20261108
+    ],
+    "historical_fixed_parameters": {
+      "colsample_bytree": 0.55,
+      "device": "cuda:0",
+      "eval_metric": "auc",
+      "learning_rate": 0.035,
+      "max_depth": 6,
+      "max_estimators": 450,
+      "min_child_weight": 30,
+      "reg_alpha": 3.0,
+      "reg_lambda": 8.0,
+      "subsample": 0.8,
+      "tree_method": "hist"
+    },
+    "inner_stop_fraction": 0.1
+  },
+  "model_seed": 20261103,
+  "official_leaderboard_score": null,
+  "official_score_claim": false,
+  "runtime_seconds": 66.03099999995902,
+  "source_hashes": {
+    "exp11_runner_sha256": "dd74a8539213afa6acd95c456c5e9cb91edff865fc1eb8a6b5b5059205df1aeb",
+    "historical_xgb10_source_sha256": "7fbeaa89fb7b4473aefa9dbdb2c83b6ee337389b1ffc783b442a1640f9c1c900"
+  },
+  "xgboost_version": "3.4.1"
+}
