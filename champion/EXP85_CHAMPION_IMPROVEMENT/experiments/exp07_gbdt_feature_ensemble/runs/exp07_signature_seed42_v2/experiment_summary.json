@@ -1,0 +1,353 @@
+{
+  "advancement_gate": {
+    "decision": "REJECTED",
+    "fold_delta_standard_error": 0.0003081480445303976,
+    "folds": 5,
+    "mean_delta": 0.0007120786134448443,
+    "minimum_mean_delta_standard_errors": 2.0,
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "passed": false,
+    "pooled_auc_delta": 0.0006971413814645944,
+    "positive_folds": 4
+  },
+  "candidate_public_score": "NOT_EVALUATED",
+  "decision": "REJECTED",
+  "experiment_id": "exp07_signature_seed42_v2",
+  "feature_inventory": {
+    "feature_count_added": 2,
+    "file": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\FEATURE_INVENTORY.md",
+    "new_features": [
+      "EXP07_SIG_COUNT_LOG",
+      "EXP07_SIG_TARGET_RATE"
+    ],
+    "phase2_base_feature_count": 122,
+    "sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2"
+  },
+  "feature_repetition_diagnostics": {
+    "test_rows_matching_fit_signature_mean": 1268.4,
+    "training_rows_with_repeated_signature": 2996
+  },
+  "fold_protocol": {
+    "inner_seed_base": 42,
+    "inner_training_signature_encoding": "cross-fitted OOF within inner-fit",
+    "inner_validation_fraction": 0.15,
+    "outer_folds": 5,
+    "outer_seed": 42,
+    "outer_training_signature_encoding": "cross-fitted OOF within outer-fit",
+    "outer_validation_isolated_from_model_and_blend_selection": true,
+    "signature_target_encoding_splits": 5,
+    "validation_test_signature_encoding": "fit partition labels only"
+  },
+  "inputs": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "metrics": {
+    "candidate_signature": {
+      "fold_auc": [
+        0.769749908588758,
+        0.7740356555136472,
+        0.776289480842133,
+        0.7696279321262667,
+        0.7697565820484088
+      ],
+      "fold_delta_vs_phase2": [
+        0.0018657755160580436,
+        0.0008589913908975122,
+        5.5862284709551346e-05,
+        0.00024329404306666635,
+        -1.9798927039627046e-05
+      ],
+      "macro_fold_auc": 0.7718919118238426,
+      "pooled_delta_vs_phase2": 0.0005807825048400606,
+      "pooled_oof_auc": 0.7718293551306461,
+      "positive_folds": 4
+    },
+    "exp04_catboost_lossguide": {
+      "candidate_pooled_delta": 0.003913001820409545,
+      "comparison_classification": "pooled diagnostic only; outer folds differ",
+      "pooled_oof_auc": 0.7680327121868611
+    },
+    "exp05_residual_mlp": {
+      "candidate_pooled_delta": 0.008218406223102659,
+      "comparison_classification": "pooled diagnostic only; outer folds differ",
+      "pooled_oof_auc": 0.763727307784168
+    },
+    "exp06_ft_transformer": {
+      "candidate_pooled_delta": 0.007923377501709905,
+      "comparison_classification": "pooled diagnostic only; outer folds differ",
+      "pooled_oof_auc": 0.7640223365055607
+    },
+    "nested_blend": {
+      "fold_auc": [
+        0.7696796231939642,
+        0.7740832821447589,
+        0.7767096433843699,
+        0.769786697107244,
+        0.7697565820484088
+      ],
+      "fold_delta_standard_error": 0.0003081480445303976,
+      "fold_delta_vs_phase2": [
+        0.0017954901212642316,
+        0.0009066180220091979,
+        0.00047602482694641957,
+        0.0004020590240439992,
+        -1.9798927039627046e-05
+      ],
+      "macro_fold_auc": 0.7720031655757491,
+      "mean_fold_delta": 0.0007120786134448443,
+      "pooled_delta_vs_phase2": 0.0006971413814645944,
+      "pooled_oof_auc": 0.7719457140072706,
+      "positive_folds": 4
+    },
+    "strict_phase2_matched": {
+      "fold_auc": [
+        0.7678841330727,
+        0.7731766641227497,
+        0.7762336185574235,
+        0.7693846380832,
+        0.7697763809754484
+      ],
+      "pooled_oof_auc": 0.771248572625806
+    }
+  },
+  "model": {
+    "blend_components": "fixed 50:50 LightGBM/CatBoost",
+    "catboost_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "catboost_gpu_task_type_verified": true,
+    "configuration": {
+      "catboost": {
+        "bootstrap_type": "Bernoulli",
+        "border_count": 128,
+        "depth": 7,
+        "device": "GPU:0",
+        "devices": "0",
+        "early_stopping_rounds": 150,
+        "eval_metric": "AUC",
+        "iterations": 2500,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.045,
+        "loss_function": "Logloss",
+        "random_strength": 0.5,
+        "subsample": 0.8,
+        "task_type": "GPU"
+      },
+      "lightgbm": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "boosting_type": "gbdt",
+        "device": "CPU",
+        "early_stopping_rounds": 150,
+        "feature_fraction": 0.8,
+        "lambda_l1": 0.1,
+        "lambda_l2": 5.0,
+        "learning_rate": 0.03,
+        "max_bin": 127,
+        "max_depth": -1,
+        "metric": "auc",
+        "min_child_samples": 80,
+        "num_boost_round": 3000,
+        "num_leaves": 31,
+        "num_threads": 8,
+        "objective": "binary",
+        "verbosity": -1
+      }
+    },
+    "fold_selected_candidate_weights": [
+      0.8,
+      0.7000000000000001,
+      0.45,
+      0.7000000000000001,
+      1.0
+    ],
+    "gpu_preflight": {
+      "driver_version": "592.82",
+      "free_memory_mib_before_run": 5830,
+      "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "total_memory_mib": 6141,
+      "utilization_percent_before_run": 22
+    },
+    "gpu_telemetry": {
+      "max_memory_used_mib": 5146,
+      "max_utilization_percent": 98,
+      "monitor_errors": [],
+      "sample_count": 1033
+    },
+    "lightgbm_device": "CPU (frozen installed build)",
+    "mean_selected_candidate_weight": 0.73,
+    "nested_ensemble_weight_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ]
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "outer_seed": 42,
+  "prediction_diagnostics": {
+    "candidate_oof_error_correlation_vs_phase2": 0.9990565035457935,
+    "candidate_oof_pearson_vs_phase2": 0.9908374081901267,
+    "candidate_oof_spearman_vs_phase2": 0.9944866804952155,
+    "candidate_test_distribution": {
+      "max": 0.7360048294067383,
+      "mean": 0.08898730077862936,
+      "min": 0.0031560203060507774,
+      "p01": 0.007561723999679089,
+      "p50": 0.055952200666069984,
+      "p99": 0.4412978619337089,
+      "std": 0.09141097333038077
+    },
+    "candidate_test_pearson_vs_phase2": 0.9962860533838496,
+    "nested_blend_test_distribution": {
+      "max": 0.7361336946487427,
+      "mean": 0.08899494901272219,
+      "min": 0.003111309837549925,
+      "p01": 0.007582669295370579,
+      "p50": 0.055954987183213234,
+      "p99": 0.4405155280232451,
+      "std": 0.09133278683502209
+    }
+  },
+  "references": {
+    "exp04_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "status": "COMPLETED"
+    },
+    "exp05_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "status": "COMPLETED"
+    },
+    "exp06_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\sha256_manifest.json",
+      "sha256": "cbeb53d6275d1f18b488401ef481339892f60f38cca80577c9d12377b59e2937",
+      "size_bytes": 15678
+    },
+    "exp06_oof": {
+      "classification": "diagnostic only; not a feature or blend input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_ft_transformer.npy",
+      "sha256": "f5c2cf5df01522091693aace2c954d8b28190a2a43f6ba8803e0e435bf99fe78"
+    },
+    "exp06_summary": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\experiment_summary.json",
+      "sha256": "f8275c6bf090f6e4bf175fb55e0f04af1a0f49cbeff143029f6c9870ef67c895",
+      "size_bytes": 45256
+    },
+    "folds_verified": {
+      "folds_verified": 5,
+      "reference_manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\original_runs\\phase_02\\sha256_manifest.json"
+    },
+    "historical_feature_builder_reference": {
+      "path": "D:\\gci\\champion\\05_FEATURE_ENGINEERING\\FEATURE_BUILDERS\\build_hasan_600_features.py",
+      "sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "size_bytes": 17482
+    },
+    "strict_phase2_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\original_runs\\phase_02\\sha256_manifest.json",
+      "sha256": "6df044932d2405fd942f78ced7a963b22f851bd0a49f17eaf5cd59cb29ef6e21",
+      "size_bytes": 3597
+    },
+    "strict_phase2_oof": {
+      "classification": "fresh same-seed Phase 2 refit; inner-only stopping",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed42_v2\\oof_phase2_strict_matched.npy",
+      "sha256": "4c7ac6c897231831891dfc600781bd83ec88e980b0026453a5d3a011508fd7d0",
+      "size_bytes": 684936
+    },
+    "strict_phase2_test": {
+      "classification": "fresh same-seed Phase 2 refit; inner-only stopping",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed42_v2\\test_phase2_strict_matched.npy",
+      "sha256": "fde3fcc0d077c4dbafd93e6af981029928f68811ca8641df25e2968a3e5c8659",
+      "size_bytes": 246128
+    }
+  },
+  "runtime_seconds": 1145.5332307000062,
+  "sources": {
+    "exp06_protocol_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py",
+      "sha256": "b221cffa50bcdbcd187884a9be18a5a0b0779ed551af62aa42c5d3728af52c5f",
+      "size_bytes": 66048
+    },
+    "exp07_focused_tests": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\tests\\test_exp07_gbdt_feature_ensemble.py",
+      "sha256": "2a0d8ec1d39277f99143616364dd3b2fb95222938bb94a9c3710ce0e17a91b41",
+      "size_bytes": 5208
+    },
+    "exp07_independent_verifier": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\verify_exp07.py",
+      "sha256": "acccbe5f80f1b15e816bc6ed6895fec575e7c88d099277bd2370ce7d62afda8a",
+      "size_bytes": 8507
+    },
+    "exp07_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\run_exp07.py",
+      "sha256": "26d630099129e0565cc092913f70394661c016ab0e5ae4b255bd4aac880cd557",
+      "size_bytes": 66288
+    },
+    "experiment_readme": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\README.md",
+      "sha256": "dc592f33a7ae5b5f0fee358737e341c01b4baedaf98160de97c3633daeae425e",
+      "size_bytes": 4334
+    },
+    "phase2_rowwise_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase4_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "results_report": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\RESULTS.md",
+      "sha256": "e808ef897b80b609430f138e84dde533ea33cc9b3cc5621a22b9e722e447accd",
+      "size_bytes": 5353
+    }
+  },
+  "status": "COMPLETED_SCREEN",
+  "submission": {
+    "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed42_v2\\submission_nested_blend.csv",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "candidate_sha256": "e9b224373b05d04f4af5452690a37b64bfe5ce5d0703972b37368c2b6901b486",
+    "candidate_unique_ids": 61500,
+    "signature_model_sha256": "59a2c63e36c3e535309c9964b0f642b35b1c0981bc22fb0f51c2f65094eeffdf"
+  },
+  "training_seconds": 1138.8765078000142
+}

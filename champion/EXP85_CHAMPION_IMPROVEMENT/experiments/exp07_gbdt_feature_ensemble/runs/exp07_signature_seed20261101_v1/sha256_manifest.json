@@ -1,0 +1,269 @@
+{
+  "experiment_id": "exp07_signature_seed20261101_v1",
+  "inputs": {
+    "exp06_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\sha256_manifest.json",
+      "sha256": "cbeb53d6275d1f18b488401ef481339892f60f38cca80577c9d12377b59e2937",
+      "size_bytes": 15678
+    },
+    "historical_feature_builder_reference": {
+      "path": "D:\\gci\\champion\\05_FEATURE_ENGINEERING\\FEATURE_BUILDERS\\build_hasan_600_features.py",
+      "sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "size_bytes": 17482
+    },
+    "phase2_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json",
+      "sha256": "eee5c1262dec25a01c51f9af115cf7e10fbedd6e944100803f5630847258094c",
+      "size_bytes": 5918
+    },
+    "phase2_strict_oof": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_phase2_strict_matched.npy",
+      "sha256": "82383096c1ea2b029c133fd07ba0e63a8ae10a8de25d4f3cd123cf4b73ace6cf",
+      "size_bytes": 684936
+    },
+    "phase2_strict_test": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\test_phase2_strict_matched.npy",
+      "sha256": "85d1326690f6d24e24d17741cb6e27850c162951c593b7df8df543608dce52a1",
+      "size_bytes": 246128
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "outputs": {
+    "experiment_summary.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\experiment_summary.json",
+      "sha256": "976f4a64a06f095d3cf336aff483219af0b75ad108feee009039d3c2996f3254",
+      "size_bytes": 14536
+    },
+    "feature_config.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\feature_config.json",
+      "sha256": "11cef73f030e4b5cd1ae0fe626ae8603ce5af84164ec050661c926608f5de305",
+      "size_bytes": 1145
+    },
+    "feature_importance.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\feature_importance.csv",
+      "sha256": "cf05fe6a12f54474641dbfff152f21ab2872c7f6070c3897051c0e2660656aa7",
+      "size_bytes": 80510
+    },
+    "fold_1_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_1_indices.npz",
+      "sha256": "d3e4cf1fc5e2fca8756aa266bedb369bc973c74295b555e17c382f7b96fa0ff1",
+      "size_bytes": 628930
+    },
+    "fold_1_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_1_predictions.npz",
+      "sha256": "01f43ae850d459ef0239a260292175b19c770267a0904840936c108a4d4d34fe",
+      "size_bytes": 787946
+    },
+    "fold_1_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_1_signature_cat.cbm",
+      "sha256": "3d113939e96050dab76b79651333905fc4de0abab14cb1487321c7b4b7968b83",
+      "size_bytes": 725100
+    },
+    "fold_1_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_1_signature_lgb.txt",
+      "sha256": "3afe077ff4476f76383f7f2d0954c528fb99e64e49abeab2562aabf3dbe2e244",
+      "size_bytes": 1198700
+    },
+    "fold_2_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_2_indices.npz",
+      "sha256": "dfd08d475661e0c047c3fb2ac235c63804fae6c364ae0add179a157e33902067",
+      "size_bytes": 628958
+    },
+    "fold_2_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_2_predictions.npz",
+      "sha256": "cf811c2bb3193bc052b66515285c5d1270753e1baa5b69a51523d23307c9ae5d",
+      "size_bytes": 788031
+    },
+    "fold_2_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_2_signature_cat.cbm",
+      "sha256": "8ceb8c72a88ea189d0ee6ce823d47031c9defe5bbf8da5d035b2e118cf86ffad",
+      "size_bytes": 904020
+    },
+    "fold_2_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_2_signature_lgb.txt",
+      "sha256": "986eddc9500019d4b97bb23eb38c87d83feebbf2013c4caaabe5e7b17e7665dc",
+      "size_bytes": 1600801
+    },
+    "fold_3_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_3_indices.npz",
+      "sha256": "65059b2dfd9114155cddc10164899392a3cd86541e54a5c95f6322b48e4836bd",
+      "size_bytes": 629070
+    },
+    "fold_3_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_3_predictions.npz",
+      "sha256": "ad6b4dd4e960fdb8f77cd27b5826ab334f80f0d7c999237faf13e91d655d8fd6",
+      "size_bytes": 788189
+    },
+    "fold_3_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_3_signature_cat.cbm",
+      "sha256": "c1eddbf9170ae3f00f7b68b0f146ba075edd9eaf98648bcb98c3a36cb674e81d",
+      "size_bytes": 752836
+    },
+    "fold_3_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_3_signature_lgb.txt",
+      "sha256": "e8d8985cd1c5a08e463604925465355b17ce17881468b4208827c2eca4d4bd06",
+      "size_bytes": 1790832
+    },
+    "fold_4_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_4_indices.npz",
+      "sha256": "1f31ef469af3ff5b7c948c1d89da57d96c580a1943a4ddfebf4ff7bb6be8ba3f",
+      "size_bytes": 629206
+    },
+    "fold_4_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_4_predictions.npz",
+      "sha256": "3faa26865c0b19ba82bd02535da6829ab27af36eb8a82e307fd52b0c2885eb26",
+      "size_bytes": 788531
+    },
+    "fold_4_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_4_signature_cat.cbm",
+      "sha256": "d84bab0d8907afc2cbbe7cb804a5e89d7f5e2a83f9fe7e1f7aa2d508b34bfa1b",
+      "size_bytes": 1421044
+    },
+    "fold_4_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_4_signature_lgb.txt",
+      "sha256": "e14b0132985d12629e6f71db67473777026b5841441489b4db9e132f4ea0aa4a",
+      "size_bytes": 2161609
+    },
+    "fold_5_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_5_indices.npz",
+      "sha256": "24c5280f057817fc5ddcb40deff0e9295e2a9ae067b6e4e5220efd7128c66643",
+      "size_bytes": 629110
+    },
+    "fold_5_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_5_predictions.npz",
+      "sha256": "c859f0e9628235ba83a2b4564c175199f13d3ead0c7c6c95bb9b2ede6281914e",
+      "size_bytes": 787746
+    },
+    "fold_5_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_5_signature_cat.cbm",
+      "sha256": "4fb8a311193dec80538265eb979717ca3e3486701021ead76e26ed4709486445",
+      "size_bytes": 1083192
+    },
+    "fold_5_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_5_signature_lgb.txt",
+      "sha256": "961f3a20a33d7fc36afc51489c5ae8aaa448b0bbd73d3e1e0a463f66853ed29f",
+      "size_bytes": 1403578
+    },
+    "fold_metrics.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\fold_metrics.json",
+      "sha256": "19ebd053898590c5b7d9efdabe373e704fe264709e56824d32af7d4ce5b54d16",
+      "size_bytes": 35762
+    },
+    "gpu_telemetry.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\gpu_telemetry.json",
+      "sha256": "4060155d637d1c6a4fe9fee45064d2d2ffe442b5f6c9188f36cf345f3cb02508",
+      "size_bytes": 122454
+    },
+    "oof_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\oof_nested_blend.npy",
+      "sha256": "37288dd0e754f3f4f57d5c1d7a9863a01e5774a8c2b71a0c78c66d8d57304a9d",
+      "size_bytes": 684936
+    },
+    "oof_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\oof_phase2_strict_matched.npy",
+      "sha256": "82383096c1ea2b029c133fd07ba0e63a8ae10a8de25d4f3cd123cf4b73ace6cf",
+      "size_bytes": 684936
+    },
+    "oof_signature_model.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\oof_signature_model.npy",
+      "sha256": "b74f9c786106fa4be6e38877317b15c7b3809ab4f9d2853e9303c4d486bdfddf",
+      "size_bytes": 684936
+    },
+    "run.log": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\run.log",
+      "sha256": "a7630b3bf4ac4957004ec99751d083b3d69bfc062e69532f94594156b2a0e9fd",
+      "size_bytes": 1014
+    },
+    "source_snapshot_exp07_runner.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\source_snapshot_exp07_runner.py",
+      "sha256": "6ff735dce11031ab55fa1e3110629b8e9c46128510175e542f47d07eaf417cdb",
+      "size_bytes": 59954
+    },
+    "submission_nested_blend.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\submission_nested_blend.csv",
+      "sha256": "45291e04dc75c9a230af3c9cd392b046249b83a2dd717cdf4db3efe49a2a2f79",
+      "size_bytes": 1729771
+    },
+    "submission_signature_model.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\submission_signature_model.csv",
+      "sha256": "82298cd8ce2c3917a5a9738eadc9ac7868dec655723411aa97b94833d7901cd9",
+      "size_bytes": 1729929
+    },
+    "test_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\test_nested_blend.npy",
+      "sha256": "39956d42bc76d7daface765d20e2ccedb56b66c60916690b375b08fc0086b452",
+      "size_bytes": 246128
+    },
+    "test_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\test_phase2_strict_matched.npy",
+      "sha256": "85d1326690f6d24e24d17741cb6e27850c162951c593b7df8df543608dce52a1",
+      "size_bytes": 246128
+    },
+    "test_signature_model.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\test_signature_model.npy",
+      "sha256": "733cc5e2a47e31ac9c3823ef25c426959fb2b75776bfc9e15c14d9b0c8aeb63c",
+      "size_bytes": 246128
+    }
+  },
+  "sources": {
+    "exp06_protocol_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py",
+      "sha256": "b221cffa50bcdbcd187884a9be18a5a0b0779ed551af62aa42c5d3728af52c5f",
+      "size_bytes": 66048
+    },
+    "exp07_focused_tests": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\tests\\test_exp07_gbdt_feature_ensemble.py",
+      "sha256": "2a0d8ec1d39277f99143616364dd3b2fb95222938bb94a9c3710ce0e17a91b41",
+      "size_bytes": 5208
+    },
+    "exp07_independent_verifier": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\verify_exp07.py",
+      "sha256": "acccbe5f80f1b15e816bc6ed6895fec575e7c88d099277bd2370ce7d62afda8a",
+      "size_bytes": 8507
+    },
+    "exp07_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\source_snapshot_exp07_runner.py",
+      "sha256": "6ff735dce11031ab55fa1e3110629b8e9c46128510175e542f47d07eaf417cdb",
+      "size_bytes": 59954
+    },
+    "experiment_readme": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\README.md",
+      "sha256": "dc592f33a7ae5b5f0fee358737e341c01b4baedaf98160de97c3633daeae425e",
+      "size_bytes": 4334
+    },
+    "feature_inventory": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\FEATURE_INVENTORY.md",
+      "sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2",
+      "size_bytes": 4447
+    },
+    "phase2_rowwise_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase4_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "results_report": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\RESULTS.md",
+      "sha256": "e808ef897b80b609430f138e84dde533ea33cc9b3cc5621a22b9e722e447accd",
+      "size_bytes": 5353
+    }
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "advancement_gate": {
+    "decision": "PROMISING_SCREEN_REQUIRES_INDEPENDENT_SEED",
+    "fold_delta_standard_error": 0.0003197760117428946,
+    "folds": 5,
+    "mean_delta": 0.0010092908379913056,
+    "minimum_mean_delta_standard_errors": 2.0,
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "passed": true,
+    "pooled_auc_delta": 0.00101712846458335,
+    "positive_folds": 4
+  },
+  "candidate_public_score": "NOT_EVALUATED",
+  "decision": "PROMISING_SCREEN_REQUIRES_INDEPENDENT_SEED",
+  "experiment_id": "exp07_signature_seed20261101_v1",
+  "feature_inventory": {
+    "feature_count_added": 2,
+    "file": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\FEATURE_INVENTORY.md",
+    "new_features": [
+      "EXP07_SIG_COUNT_LOG",
+      "EXP07_SIG_TARGET_RATE"
+    ],
+    "phase2_base_feature_count": 122,
+    "sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2"
+  },
+  "feature_repetition_diagnostics": {
+    "test_rows_matching_fit_signature_mean": 1267.2,
+    "training_rows_with_repeated_signature": 3008
+  },
+  "fold_protocol": {
+    "inner_seed_base": 20261101,
+    "inner_training_signature_encoding": "cross-fitted OOF within inner-fit",
+    "inner_validation_fraction": 0.15,
+    "outer_folds": 5,
+    "outer_training_signature_encoding": "cross-fitted OOF within outer-fit",
+    "outer_validation_isolated_from_model_and_blend_selection": true,
+    "signature_target_encoding_splits": 5,
+    "validation_test_signature_encoding": "fit partition labels only"
+  },
+  "inputs": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "metrics": {
+    "candidate_signature": {
+      "fold_auc": [
+        0.7669761469185665,
+        0.7739171864231584,
+        0.7726990014582126,
+        0.768410387194139,
+        0.7750886026410401
+      ],
+      "fold_delta_vs_phase2": [
+        0.0009069229654143918,
+        0.0012801624797743605,
+        0.0012744072206991586,
+        -0.000125845313609374,
+        0.0017857310345473776
+      ],
+      "macro_fold_auc": 0.7714182649270233,
+      "pooled_delta_vs_phase2": 0.0010346814036011898,
+      "pooled_oof_auc": 0.7713842649978271,
+      "positive_folds": 4
+    },
+    "exp04_catboost_lossguide": {
+      "candidate_pooled_delta": 0.0033339998719481567,
+      "fold_auc": [
+        0.7651262445227391,
+        0.7690506811699813,
+        0.7691109071409747,
+        0.7649379772317282,
+        0.7722566319336589
+      ],
+      "pooled_oof_auc": 0.7680327121868611
+    },
+    "exp05_residual_mlp": {
+      "candidate_pooled_delta": 0.0076394042746412705,
+      "fold_auc": [
+        0.7595053036910647,
+        0.7682467964914628,
+        0.7673489463131721,
+        0.7653673122231828,
+        0.7686943193251872
+      ],
+      "pooled_oof_auc": 0.763727307784168
+    },
+    "exp06_ft_transformer": {
+      "candidate_pooled_delta": 0.007344375553248517,
+      "comparison_classification": "secondary architecture comparison; diagnostic only",
+      "fold_auc": [
+        0.761249278008655,
+        0.7677526745024825,
+        0.767059801518314,
+        0.762774681520609,
+        0.7692680859089295
+      ],
+      "pooled_oof_auc": 0.7640223365055607
+    },
+    "nested_blend": {
+      "fold_auc": [
+        0.7669268264559239,
+        0.7738859332418259,
+        0.7727046509053184,
+        0.768410387194139,
+        0.7750886026410401
+      ],
+      "fold_delta_standard_error": 0.0003197760117428946,
+      "fold_delta_vs_phase2": [
+        0.0008576025027717815,
+        0.0012489092984417915,
+        0.0012800566678049519,
+        -0.000125845313609374,
+        0.0017857310345473776
+      ],
+      "macro_fold_auc": 0.7714032800876495,
+      "mean_fold_delta": 0.0010092908379913056,
+      "pooled_delta_vs_phase2": 0.00101712846458335,
+      "pooled_oof_auc": 0.7713667120588092,
+      "positive_folds": 4
+    },
+    "strict_phase2_matched": {
+      "fold_auc": [
+        0.7660692239531521,
+        0.7726370239433841,
+        0.7714245942375134,
+        0.7685362325077484,
+        0.7733028716064927
+      ],
+      "pooled_oof_auc": 0.7703495835942259
+    }
+  },
+  "model": {
+    "blend_components": "fixed 50:50 LightGBM/CatBoost",
+    "catboost_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "catboost_gpu_task_type_verified": true,
+    "configuration": {
+      "catboost": {
+        "bootstrap_type": "Bernoulli",
+        "border_count": 128,
+        "depth": 7,
+        "device": "GPU:0",
+        "devices": "0",
+        "early_stopping_rounds": 150,
+        "eval_metric": "AUC",
+        "iterations": 2500,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.045,
+        "loss_function": "Logloss",
+        "random_strength": 0.5,
+        "subsample": 0.8,
+        "task_type": "GPU"
+      },
+      "lightgbm": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "boosting_type": "gbdt",
+        "device": "CPU",
+        "early_stopping_rounds": 150,
+        "feature_fraction": 0.8,
+        "lambda_l1": 0.1,
+        "lambda_l2": 5.0,
+        "learning_rate": 0.03,
+        "max_bin": 127,
+        "max_depth": -1,
+        "metric": "auc",
+        "min_child_samples": 80,
+        "num_boost_round": 3000,
+        "num_leaves": 31,
+        "num_threads": 8,
+        "objective": "binary",
+        "verbosity": -1
+      }
+    },
+    "fold_selected_candidate_weights": [
+      0.55,
+      0.8500000000000001,
+      0.9500000000000001,
+      1.0,
+      1.0
+    ],
+    "gpu_preflight": {
+      "driver_version": "592.82",
+      "free_memory_mib_before_run": 5836,
+      "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "total_memory_mib": 6141,
+      "utilization_percent_before_run": 41
+    },
+    "gpu_telemetry": {
+      "max_memory_used_mib": 5092,
+      "max_utilization_percent": 99,
+      "monitor_errors": [],
+      "sample_count": 658
+    },
+    "lightgbm_device": "CPU (frozen installed build)",
+    "mean_selected_candidate_weight": 0.8699999999999999,
+    "nested_ensemble_weight_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ]
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "outer_seed": 20261101,
+  "prediction_diagnostics": {
+    "candidate_oof_error_correlation_vs_phase2": 0.9991063091691097,
+    "candidate_oof_pearson_vs_phase2": 0.9912614216618976,
+    "candidate_oof_spearman_vs_phase2": 0.9947136024445704,
+    "candidate_test_distribution": {
+      "max": 0.7447393536567688,
+      "mean": 0.08895599795097667,
+      "min": 0.0034830032382160425,
+      "p01": 0.007773491307161749,
+      "p50": 0.05593016743659973,
+      "p99": 0.4415192189812664,
+      "std": 0.09139468427941402
+    },
+    "candidate_test_pearson_vs_phase2": 0.9961003129529725,
+    "nested_blend_test_distribution": {
+      "max": 0.7437957525253296,
+      "mean": 0.0889641164793686,
+      "min": 0.0035417370963841677,
+      "p01": 0.007812582040205598,
+      "p50": 0.05594862066209316,
+      "p99": 0.4409213325381286,
+      "std": 0.09129248505515886
+    }
+  },
+  "references": {
+    "exp04_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "status": "COMPLETED"
+    },
+    "exp05_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "status": "COMPLETED"
+    },
+    "exp06_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\sha256_manifest.json",
+      "sha256": "cbeb53d6275d1f18b488401ef481339892f60f38cca80577c9d12377b59e2937",
+      "size_bytes": 15678
+    },
+    "exp06_oof": {
+      "classification": "diagnostic only; not a feature or blend input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_ft_transformer.npy",
+      "sha256": "f5c2cf5df01522091693aace2c954d8b28190a2a43f6ba8803e0e435bf99fe78"
+    },
+    "exp06_summary": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\experiment_summary.json",
+      "sha256": "f8275c6bf090f6e4bf175fb55e0f04af1a0f49cbeff143029f6c9870ef67c895",
+      "size_bytes": 45256
+    },
+    "folds_verified": {
+      "exp04": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\sha256_manifest.json"
+      },
+      "exp05": {
+        "folds_verified": 5,
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_indices.npz"
+      },
+      "phase2": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json"
+      }
+    },
+    "historical_feature_builder_reference": {
+      "path": "D:\\gci\\champion\\05_FEATURE_ENGINEERING\\FEATURE_BUILDERS\\build_hasan_600_features.py",
+      "sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "size_bytes": 17482
+    },
+    "strict_phase2_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json",
+      "sha256": "eee5c1262dec25a01c51f9af115cf7e10fbedd6e944100803f5630847258094c",
+      "size_bytes": 5918
+    },
+    "strict_phase2_oof": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_phase2_strict_matched.npy",
+      "sha256": "82383096c1ea2b029c133fd07ba0e63a8ae10a8de25d4f3cd123cf4b73ace6cf",
+      "size_bytes": 684936
+    },
+    "strict_phase2_test": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\test_phase2_strict_matched.npy",
+      "sha256": "85d1326690f6d24e24d17741cb6e27850c162951c593b7df8df543608dce52a1",
+      "size_bytes": 246128
+    }
+  },
+  "runtime_seconds": 732.4455636999919,
+  "sources": {
+    "exp06_protocol_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py",
+      "sha256": "b221cffa50bcdbcd187884a9be18a5a0b0779ed551af62aa42c5d3728af52c5f",
+      "size_bytes": 66048
+    },
+    "exp07_focused_tests": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\tests\\test_exp07_gbdt_feature_ensemble.py",
+      "sha256": "2a0d8ec1d39277f99143616364dd3b2fb95222938bb94a9c3710ce0e17a91b41",
+      "size_bytes": 5208
+    },
+    "exp07_independent_verifier": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\verify_exp07.py",
+      "sha256": "acccbe5f80f1b15e816bc6ed6895fec575e7c88d099277bd2370ce7d62afda8a",
+      "size_bytes": 8507
+    },
+    "exp07_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\source_snapshot_exp07_runner.py",
+      "sha256": "6ff735dce11031ab55fa1e3110629b8e9c46128510175e542f47d07eaf417cdb",
+      "size_bytes": 59954
+    },
+    "experiment_readme": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\README.md",
+      "sha256": "dc592f33a7ae5b5f0fee358737e341c01b4baedaf98160de97c3633daeae425e",
+      "size_bytes": 4334
+    },
+    "phase2_rowwise_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase4_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "results_report": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\RESULTS.md",
+      "sha256": "e808ef897b80b609430f138e84dde533ea33cc9b3cc5621a22b9e722e447accd",
+      "size_bytes": 5353
+    }
+  },
+  "status": "COMPLETED_SCREEN",
+  "submission": {
+    "candidate_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\submission_nested_blend.csv",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "candidate_sha256": "45291e04dc75c9a230af3c9cd392b046249b83a2dd717cdf4db3efe49a2a2f79",
+    "candidate_unique_ids": 61500,
+    "signature_model_sha256": "82298cd8ce2c3917a5a9738eadc9ac7868dec655723411aa97b94833d7901cd9"
+  },
+  "training_seconds": 726.4272236999823
+}
