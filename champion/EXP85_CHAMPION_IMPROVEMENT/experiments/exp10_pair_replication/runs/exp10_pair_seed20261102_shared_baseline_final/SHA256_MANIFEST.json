@@ -1,0 +1,755 @@
+{
+  "experiment_id": "exp10_pair_seed20261102_shared_baseline_final",
+  "inputs": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "outputs": {
+    "FOLD_METRICS.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\FOLD_METRICS.csv",
+      "sha256": "0753125ca608e1ccec74d5241d4326d901676bbed6c5d611446e8f960f1063d6",
+      "size_bytes": 1974
+    },
+    "RESULTS.md": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\RESULTS.md",
+      "sha256": "d3e2913ce24bc6e89d0ca71d05c2704c9b316a7d102666c914fb0b6d79d4ffb1",
+      "size_bytes": 3509
+    },
+    "experiment_summary.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\experiment_summary.json",
+      "sha256": "cdd6ed16e57cb485b18c8388c7c08796f584bb2ee93c0c5de66b5e752934582c",
+      "size_bytes": 22968
+    },
+    "replication_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\replication_predictions.npz",
+      "sha256": "b859bb5213cc0f6264f99fed3214904d5662ad682a81b4e1c29a2c01fe375d30",
+      "size_bytes": 5391955
+    },
+    "reused_components/exp07_signature/experiment_summary.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\experiment_summary.json",
+      "sha256": "f2b22b620d38281706c24d3d2161a45a98b7077e20e26b393a98ec77e05bfbd5",
+      "size_bytes": 12337
+    },
+    "reused_components/exp07_signature/feature_config.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\feature_config.json",
+      "sha256": "11cef73f030e4b5cd1ae0fe626ae8603ce5af84164ec050661c926608f5de305",
+      "size_bytes": 1145
+    },
+    "reused_components/exp07_signature/feature_importance.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\feature_importance.csv",
+      "sha256": "c1004e250d81e90c6014218974651d0b574d36a9cba700ee492bfd44ed262b1f",
+      "size_bytes": 80371
+    },
+    "reused_components/exp07_signature/fold_1_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_indices.npz",
+      "sha256": "408dc23330cad2b07cec8ab5579e80ac4b57da5a70f695595d50e6c3e2173e64",
+      "size_bytes": 629034
+    },
+    "reused_components/exp07_signature/fold_1_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_phase2_reference_cat.cbm",
+      "sha256": "46aeecd600089904508b9d9756c8267b63987436fd825acd5a1b4fc3756656c8",
+      "size_bytes": 1058108
+    },
+    "reused_components/exp07_signature/fold_1_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_phase2_reference_lgb.txt",
+      "sha256": "0ddceedcb797ab47e7ebe409ab2b9ad5e40059df9d8fb666c880fa3ec7f6b88a",
+      "size_bytes": 1244435
+    },
+    "reused_components/exp07_signature/fold_1_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_predictions.npz",
+      "sha256": "a471980ac0c5c2d6e5a257b1d955666f87dce078a3578f4947429a5688039ad5",
+      "size_bytes": 788719
+    },
+    "reused_components/exp07_signature/fold_1_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_signature_cat.cbm",
+      "sha256": "aec190c3036db00b1c02e82317484148ca1409ef44463da2657e617e6b599817",
+      "size_bytes": 1292420
+    },
+    "reused_components/exp07_signature/fold_1_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_1_signature_lgb.txt",
+      "sha256": "5591799c8cf33d766965573541e19b4dba1b09674445cba61bf23e2df6550423",
+      "size_bytes": 1847646
+    },
+    "reused_components/exp07_signature/fold_2_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_indices.npz",
+      "sha256": "b923fba65d2b4a944ee94c85f40a337c01b4bf7ca175781342e1efe6307c0e46",
+      "size_bytes": 629082
+    },
+    "reused_components/exp07_signature/fold_2_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_phase2_reference_cat.cbm",
+      "sha256": "4941d99979aa469486a9199ba2985b08d3c4a85ea567c99912bd8a4192369974",
+      "size_bytes": 946508
+    },
+    "reused_components/exp07_signature/fold_2_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_phase2_reference_lgb.txt",
+      "sha256": "46812c07c3c7c2a74f7074befc4df0e297532a2c3b4fa054a899c739f16eb88c",
+      "size_bytes": 1124861
+    },
+    "reused_components/exp07_signature/fold_2_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_predictions.npz",
+      "sha256": "534baaeae45962bc61c4e63fefa80af890d5156607e717efbf8ea7d4fd572eb0",
+      "size_bytes": 787269
+    },
+    "reused_components/exp07_signature/fold_2_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_signature_cat.cbm",
+      "sha256": "b2c383a46cb00643fca62a9eeecfed3204fb1178eab46277dc10f1efcec5c3bb",
+      "size_bytes": 903524
+    },
+    "reused_components/exp07_signature/fold_2_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_2_signature_lgb.txt",
+      "sha256": "1dc40d6c0a6e6b7544a2300e271f837c687e27d6b43665a55bdb78413579c17a",
+      "size_bytes": 1068798
+    },
+    "reused_components/exp07_signature/fold_3_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_indices.npz",
+      "sha256": "e99fd1c9905aa5ca01dbd14bbf733b68113e743be919596967fce8d6f6c98cd2",
+      "size_bytes": 628960
+    },
+    "reused_components/exp07_signature/fold_3_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_phase2_reference_cat.cbm",
+      "sha256": "c7b94a79081abecdf093637cd22abfe97cc45ff325dcb68ded71fca10f186fde",
+      "size_bytes": 1950844
+    },
+    "reused_components/exp07_signature/fold_3_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_phase2_reference_lgb.txt",
+      "sha256": "e9f8ef8d8e52966ba6738037dcf939737e3e16b9a04d6669c5353cc183a444c3",
+      "size_bytes": 1191943
+    },
+    "reused_components/exp07_signature/fold_3_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_predictions.npz",
+      "sha256": "30362410fe4c4ed73dbfa69a7d612d59840203cb4d9ae3e755cdfdb92eed769b",
+      "size_bytes": 788428
+    },
+    "reused_components/exp07_signature/fold_3_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_signature_cat.cbm",
+      "sha256": "5b5b234b0bcd2457921dc3c33d2d9924d41ba3553229eee0f928bc4c7dda8894",
+      "size_bytes": 802132
+    },
+    "reused_components/exp07_signature/fold_3_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_3_signature_lgb.txt",
+      "sha256": "c17bd9605b720a603590e4f8125345422c990972a4fd60f76d2402e60cca6c49",
+      "size_bytes": 1520196
+    },
+    "reused_components/exp07_signature/fold_4_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_indices.npz",
+      "sha256": "cfdae19c3babb54abc770109640c46a35bb067ebbc06a39cce0dbf4e7e3d332d",
+      "size_bytes": 628900
+    },
+    "reused_components/exp07_signature/fold_4_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_phase2_reference_cat.cbm",
+      "sha256": "aa74e04e79f53dd9554599dc83e77f0a16ecf9270312e7840115790d524eb486",
+      "size_bytes": 1906008
+    },
+    "reused_components/exp07_signature/fold_4_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_phase2_reference_lgb.txt",
+      "sha256": "b4d748a521f5b92c51a7f70017ee9d1e31c9ea9a5fdd21b470dc92a8c30b0149",
+      "size_bytes": 1305018
+    },
+    "reused_components/exp07_signature/fold_4_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_predictions.npz",
+      "sha256": "71329ae7a18cc9c7d78f619239ded120fa005d05cb9d6435e1c2a830f1b12586",
+      "size_bytes": 787763
+    },
+    "reused_components/exp07_signature/fold_4_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_signature_cat.cbm",
+      "sha256": "d14062a2a939548bd5924fbe36729ae24937446b798aeb9c7094883fe951340d",
+      "size_bytes": 1851688
+    },
+    "reused_components/exp07_signature/fold_4_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_4_signature_lgb.txt",
+      "sha256": "49a8c7dddf607dcd7e2aa173b3de614c4cd20cb85a69309b8b4a6cfbb67e504f",
+      "size_bytes": 842808
+    },
+    "reused_components/exp07_signature/fold_5_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_indices.npz",
+      "sha256": "7639b2c1347e16ce589e919ebcb55abde411b3b0350a41b3c2b61ce53ad12313",
+      "size_bytes": 629126
+    },
+    "reused_components/exp07_signature/fold_5_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_phase2_reference_cat.cbm",
+      "sha256": "456623030a84e1c92db159b5e4d4e26d59bcafea127418859bceac701f13b66d",
+      "size_bytes": 1222032
+    },
+    "reused_components/exp07_signature/fold_5_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_phase2_reference_lgb.txt",
+      "sha256": "fa42d1f3cfe9622712d2b5a16dec1b45623afa4df4d891440532bda006a1a7f1",
+      "size_bytes": 1526702
+    },
+    "reused_components/exp07_signature/fold_5_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_predictions.npz",
+      "sha256": "376306c93322df823d5a55e76698a1fb84a66e4fc9014b61c3ab57196d95ef3c",
+      "size_bytes": 788218
+    },
+    "reused_components/exp07_signature/fold_5_signature_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_signature_cat.cbm",
+      "sha256": "03a134717aacf5f3526507b7193576170f5c0c8cedf531c416d4b518ab69aae8",
+      "size_bytes": 1240244
+    },
+    "reused_components/exp07_signature/fold_5_signature_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_5_signature_lgb.txt",
+      "sha256": "35fa32727eca59b2fd7c244796511c0a30a3d198499b71c2a4853d41b8c868c9",
+      "size_bytes": 1731188
+    },
+    "reused_components/exp07_signature/fold_metrics.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\fold_metrics.json",
+      "sha256": "292f238291a8955a91a3d518df5c7d4ddebab84116005fb1e0b6d1ef0c531cca",
+      "size_bytes": 35742
+    },
+    "reused_components/exp07_signature/gpu_telemetry.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\gpu_telemetry.json",
+      "sha256": "552fb6fde15340c607abdd0669f273968bf1efe99cd096de649891e81e0bd752",
+      "size_bytes": 169165
+    },
+    "reused_components/exp07_signature/oof_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\oof_nested_blend.npy",
+      "sha256": "6de6597446f6fe3224af2afa1cd72ca53e3a7750a0c1a86fb62aff007c3cbf9c",
+      "size_bytes": 684936
+    },
+    "reused_components/exp07_signature/oof_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\oof_phase2_strict_matched.npy",
+      "sha256": "6e2e139d094808dcf5c9855bdf5529b830647c20839a3c141b210da6dcbbe83e",
+      "size_bytes": 684936
+    },
+    "reused_components/exp07_signature/oof_signature_model.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\oof_signature_model.npy",
+      "sha256": "5e11a62a25499702724ba8945a8808b81b046cf44d4afa5325eb9217785b30fe",
+      "size_bytes": 684936
+    },
+    "reused_components/exp07_signature/run.log": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\run.log",
+      "sha256": "d394e2cf5eeab8cb3db9b2d0f4966cc20f7f6bf0cb7872beb144b858f756e83c",
+      "size_bytes": 980
+    },
+    "reused_components/exp07_signature/sha256_manifest.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\sha256_manifest.json",
+      "sha256": "81bf7c9c85a6e12cb04d3c1d81fa902999ead469032a4798eb2be50bcd971c1b",
+      "size_bytes": 18621
+    },
+    "reused_components/exp07_signature/test_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\test_nested_blend.npy",
+      "sha256": "ae7d4a181690f436809fde4eb13f37396258498fbcdb558086542d7e7828e85f",
+      "size_bytes": 246128
+    },
+    "reused_components/exp07_signature/test_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\test_phase2_strict_matched.npy",
+      "sha256": "7b74d3e8cc5953a92cee9d00d2c520750f1cedf89ab2a9df24352a1a992b3f5c",
+      "size_bytes": 246128
+    },
+    "reused_components/exp07_signature/test_signature_model.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\test_signature_model.npy",
+      "sha256": "16d9228d45cdd3052ea3b4d3edc585d55c1a8501baa8c17d791000c4788ac94f",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/FEATURE_INVENTORY.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\FEATURE_INVENTORY.csv",
+      "sha256": "5c3367eb439a496188771d7bb0674704f2c0b79530dfcbc4e7f304857cd8f78b",
+      "size_bytes": 209570
+    },
+    "reused_components/exp08_historical_lgbcat/RESULTS.md": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\RESULTS.md",
+      "sha256": "1828bfbcd907da042eea46f744012259679c2c3fd35dfff0fa44179c79d429fb",
+      "size_bytes": 3054
+    },
+    "reused_components/exp08_historical_lgbcat/experiment_summary.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\experiment_summary.json",
+      "sha256": "f3f50059ec9f6a1008d0281cbb9bfcae0c20d174dda370d15ef1e6980259f9d9",
+      "size_bytes": 161077
+    },
+    "reused_components/exp08_historical_lgbcat/feature_config.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\feature_config.json",
+      "sha256": "b8d86b4b429f5ffc1a17c5e5ccddd40b1e2beec2573e0d975a18585732dc9732",
+      "size_bytes": 1922
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_historical_combined_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_historical_combined_cat.cbm",
+      "sha256": "d5118c2a8fa9ef732743199ea15e7fb0bf28f7a77d29b977f66a066b141bb1b3",
+      "size_bytes": 1098200
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_historical_combined_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_historical_combined_lgb.txt",
+      "sha256": "f2e0fb3467cd6402a4fee134e6f2fabe0ee78dc8c85eec19147c605d1c670549",
+      "size_bytes": 1844185
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_historical_xgb.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_historical_xgb.json",
+      "sha256": "d4942adf3057fce4aef06bc5b06770f25f52dd01b01697acee543599966c0eb2",
+      "size_bytes": 1107197
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_indices.npz",
+      "sha256": "146dfeb1c112f0fe730e3fe6feee59f8707b358d2815cf7647378fd101730a04",
+      "size_bytes": 260953
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_phase2_reference_cat.cbm",
+      "sha256": "10419a6367814778bfdd27511e941c5e84a2c82afd2e35d99b64fc58deffadf0",
+      "size_bytes": 1058100
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_phase2_reference_lgb.txt",
+      "sha256": "0ddceedcb797ab47e7ebe409ab2b9ad5e40059df9d8fb666c880fa3ec7f6b88a",
+      "size_bytes": 1244435
+    },
+    "reused_components/exp08_historical_lgbcat/fold_1_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_1_predictions.npz",
+      "sha256": "d8c800ad8aff2ed1919cf9e8404c52b05bfc358218875efc6b2aa63e7c21c4bf",
+      "size_bytes": 1311256
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_historical_combined_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_historical_combined_cat.cbm",
+      "sha256": "f720cc571b3da676de0be390bf9bcfafc4aafc1a6d3417169b327c6e434f2200",
+      "size_bytes": 1108112
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_historical_combined_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_historical_combined_lgb.txt",
+      "sha256": "c821dd32019faf5176bcc0c065d5857dd499f1051ea1dd0a711bc349146d1d46",
+      "size_bytes": 1075515
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_historical_xgb.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_historical_xgb.json",
+      "sha256": "a14d6085e5764610b5ad03bd5fbd2bf6bdb97561a293f82807c5b674a49c79e8",
+      "size_bytes": 1131943
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_indices.npz",
+      "sha256": "f5a819e43c73f69264d803cb3f8d185970ee15c65a038b488f9af006dc4a2668",
+      "size_bytes": 260949
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_phase2_reference_cat.cbm",
+      "sha256": "05fce79913c4e12ff284f4cdbe95a0964b30d9bbb50fef433a69ed6b61665d9b",
+      "size_bytes": 946500
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_phase2_reference_lgb.txt",
+      "sha256": "46812c07c3c7c2a74f7074befc4df0e297532a2c3b4fa054a899c739f16eb88c",
+      "size_bytes": 1124861
+    },
+    "reused_components/exp08_historical_lgbcat/fold_2_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_2_predictions.npz",
+      "sha256": "7bb346b8d6c3c2106bab07298c8489a17c4a730e2f7bdbe89a842246a42faac5",
+      "size_bytes": 1308843
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_historical_combined_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_historical_combined_cat.cbm",
+      "sha256": "36dfa437f4e658f31975d1f7f72f6c0a37a45935c05c94a8c77ccd9b7893677c",
+      "size_bytes": 1991060
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_historical_combined_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_historical_combined_lgb.txt",
+      "sha256": "e9f8ef8d8e52966ba6738037dcf939737e3e16b9a04d6669c5353cc183a444c3",
+      "size_bytes": 1191943
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_historical_xgb.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_historical_xgb.json",
+      "sha256": "99ee0769ec43baa247ba9b32533d4b317be2391e1be8b3e605de63703535eb95",
+      "size_bytes": 955355
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_indices.npz",
+      "sha256": "aefa5c752e8c96c00f8dca8cc3bd4f9190050cd974d3aaaca5fb6a5db674900d",
+      "size_bytes": 260954
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_phase2_reference_cat.cbm",
+      "sha256": "224c645e0514ee0f4e182ceeed92688e70ded259f8fe5c1d535369e3d470ea00",
+      "size_bytes": 2013604
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_phase2_reference_lgb.txt",
+      "sha256": "e9f8ef8d8e52966ba6738037dcf939737e3e16b9a04d6669c5353cc183a444c3",
+      "size_bytes": 1191943
+    },
+    "reused_components/exp08_historical_lgbcat/fold_3_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_3_predictions.npz",
+      "sha256": "fd542b569e5b1caba0307f207c72dc1937a1bd0d77b40e2f45d71dd0ffb15450",
+      "size_bytes": 1311058
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_historical_combined_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_historical_combined_cat.cbm",
+      "sha256": "cbbe614b259b5f2c2e8f384f3ab6f280614f18c114e8a3119f2c42d09c508f72",
+      "size_bytes": 1617348
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_historical_combined_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_historical_combined_lgb.txt",
+      "sha256": "4e09bac1d20def08e2b712ee6d6c57cc2345c1c8d088eab71d0b938e57ab3069",
+      "size_bytes": 1017742
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_historical_xgb.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_historical_xgb.json",
+      "sha256": "c7616d1973cda6dd61435c3a528ed988d91cfa9cab7e10412ab8371a5a267715",
+      "size_bytes": 834326
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_indices.npz",
+      "sha256": "6d993903af5f44285ea00058e49046e9776d05a09c090f4259af995f6d01a78e",
+      "size_bytes": 260945
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_phase2_reference_cat.cbm",
+      "sha256": "dc1dc038031a2b280d376a17e15d99c3d39a86f9b7229d1a62dbc40931e39803",
+      "size_bytes": 1909276
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_phase2_reference_lgb.txt",
+      "sha256": "b4d748a521f5b92c51a7f70017ee9d1e31c9ea9a5fdd21b470dc92a8c30b0149",
+      "size_bytes": 1305018
+    },
+    "reused_components/exp08_historical_lgbcat/fold_4_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_4_predictions.npz",
+      "sha256": "17f2f2e2f6d1075d335e0f41e324796a7a68914faf4e6e753e7967b9618c51a6",
+      "size_bytes": 1309943
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_historical_combined_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_historical_combined_cat.cbm",
+      "sha256": "45335dfe232dde3e98637c1d5014ff553c72c4247664f6c7fe0927d18a85d51c",
+      "size_bytes": 1182504
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_historical_combined_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_historical_combined_lgb.txt",
+      "sha256": "e9084934a7eb7e8450d64c51ca455de125920c04aab56cbf5bbd90b7e80efd5a",
+      "size_bytes": 1058472
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_historical_xgb.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_historical_xgb.json",
+      "sha256": "f2dc14b4a569e6c59f8e0f2e977e59e6475761dec5c4f4257a85314024befdfa",
+      "size_bytes": 1218073
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_indices.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_indices.npz",
+      "sha256": "acb0cf7e74d61248e42a033f11cad06709abc7a0114d2bdbc328443e60a6b8e0",
+      "size_bytes": 260925
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_phase2_reference_cat.cbm": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_phase2_reference_cat.cbm",
+      "sha256": "ef57ba2ec9119ffe1cbaa57050d20808b186642a91ac8688e49d5268f44a1d17",
+      "size_bytes": 1222040
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_phase2_reference_lgb.txt": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_phase2_reference_lgb.txt",
+      "sha256": "fa42d1f3cfe9622712d2b5a16dec1b45623afa4df4d891440532bda006a1a7f1",
+      "size_bytes": 1526702
+    },
+    "reused_components/exp08_historical_lgbcat/fold_5_predictions.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_5_predictions.npz",
+      "sha256": "0c34f9e32979fca79fee2be5696050488ccf0824d8421039e888f6a8bef78954",
+      "size_bytes": 1310459
+    },
+    "reused_components/exp08_historical_lgbcat/fold_metrics.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\fold_metrics.csv",
+      "sha256": "c1bcb02f1a38d1c70d5372338c84bb4aaa6fb7b157d7778484c4f6f535119e23",
+      "size_bytes": 494
+    },
+    "reused_components/exp08_historical_lgbcat/gpu_telemetry.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\gpu_telemetry.csv",
+      "sha256": "4cb68a83aefbb6888f5a61b465a85c3ffb2e5acf530d8c1ab4e3f5ebbeadacc1",
+      "size_bytes": 118579
+    },
+    "reused_components/exp08_historical_lgbcat/inner_feature_importance.csv": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\inner_feature_importance.csv",
+      "sha256": "8cc5decb324463f0df63425ecd647a95196863e2fb28f9ea140e14374bf78edd",
+      "size_bytes": 307823
+    },
+    "reused_components/exp08_historical_lgbcat/oof_a_financial.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_a_financial.npy",
+      "sha256": "b75e875ef714b2e7f7b89245183eda520cbc53b7f957968cb81549af5ad4a4b5",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_b_risk.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_b_risk.npy",
+      "sha256": "a1588aa2b0a325aab2436f3d35805d10903ef5e83699b066b131418dc91d3a8a",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_c_temporal.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_c_temporal.npy",
+      "sha256": "8cde69f1f276bfa013699f5306f2b60822cb8124b3f45eac591c4dba6a609e71",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_d_demographic.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_d_demographic.npy",
+      "sha256": "c2883866e21bb666eebbdc7089f220d1a7bff0bf6d1481ed5ba2a149afa385f5",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_e_inquiry.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_e_inquiry.npy",
+      "sha256": "3fe8002ea96a8fc0af7bde07ae0ac9c95c6677c6591e959c492391cb1e82190f",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_f_external.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_f_external.npy",
+      "sha256": "803083cccc843c65541a443e83b1bf192149c7f739e601622fd3852ab72b7851",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_h_interactions.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_h_interactions.npy",
+      "sha256": "c1d5e2d95cbd8e38e3426b64d8a661a79227edc345d8e532983c42b31e86c82f",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_historical_candidate.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_historical_candidate.npy",
+      "sha256": "40f8994c758777c74939adbbd7583f6798d96552e1184f54c1d02fcffc0b08c1",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_nested_blend.npy",
+      "sha256": "8a887fe16a8f707db48eded69b9e78858ac0c2870964de0116c9e4f538935e9d",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/oof_phase2_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_phase2_matched.npy",
+      "sha256": "205476eb4a9a029b656d69a39eb5ac55e7ec69f4b3b3832701a7ee3536830603",
+      "size_bytes": 684936
+    },
+    "reused_components/exp08_historical_lgbcat/prediction_correlations.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\prediction_correlations.json",
+      "sha256": "da6ee2727e90c559ea3a3dff63ce862c3af0c062670157d610e092e7fd33b7d2",
+      "size_bytes": 3983
+    },
+    "reused_components/exp08_historical_lgbcat/run.log": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\run.log",
+      "sha256": "8b367d9f42ff7e8192769398a6ce9720b14c20e6c3a632aa47936ad6ab7567d1",
+      "size_bytes": 5371
+    },
+    "reused_components/exp08_historical_lgbcat/sha256_manifest.json": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\sha256_manifest.json",
+      "sha256": "2aaf4100ba5481a45df7ddde0e93504e21046200510926128bd02b97a9c91f46",
+      "size_bytes": 31286
+    },
+    "reused_components/exp08_historical_lgbcat/test_a_financial.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_a_financial.npy",
+      "sha256": "4e48b382e877f028006c2b89a2288fc882a35c3dc1513c131cac08fc7faa789e",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_b_risk.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_b_risk.npy",
+      "sha256": "4a43051532a8b067957c913ee753e10549a890f3497089e94c7f3c64571b1953",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_c_temporal.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_c_temporal.npy",
+      "sha256": "b3e5874052a99d02715451ef71fa10f160e3698035122130eec456509eba346a",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_d_demographic.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_d_demographic.npy",
+      "sha256": "40815f46772a9d1380f5133139c19449f47f200074764ce22c823b7f6ef4c44d",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_e_inquiry.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_e_inquiry.npy",
+      "sha256": "90f8030b4079e00770d4fbe76228cca0201aaaa7aa568a7d2caf912365440aba",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_f_external.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_f_external.npy",
+      "sha256": "03a08785067badaf9dd1212bac7aafcb4178e7f7ae0f14dd2a697b046ebb075c",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_h_interactions.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_h_interactions.npy",
+      "sha256": "78e3e81f64d2838777c56de4aeb765ef5c22ad7a2c0350eed573168c58ab1285",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_historical_candidate.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_historical_candidate.npy",
+      "sha256": "a018f1265ecca35eb01da1742069a322c8a6e1d3136ae86cf4fdd3127604af45",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_nested_blend.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_nested_blend.npy",
+      "sha256": "9fc3be90a0666702e154e8b09772cc915740b810dfc61871a38d7e898ffc6e32",
+      "size_bytes": 246128
+    },
+    "reused_components/exp08_historical_lgbcat/test_phase2_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_phase2_matched.npy",
+      "sha256": "2b7454503cf1d390a8c8a6908864578ceee600467c7d8d1970b29492b1f80b1f",
+      "size_bytes": 246128
+    },
+    "shared_baseline_contract.npz": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\shared_baseline_contract.npz",
+      "sha256": "781e27bcd96422083c8fac554f0bdd2ff78e4b7dd5e9be57217192a39358a1ab",
+      "size_bytes": 1394899
+    }
+  },
+  "replication_metadata": {
+    "exp07_feature_inventory_sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2",
+    "exp07_original_runner_sha256": "26d630099129e0565cc092913f70394661c016ab0e5ae4b255bd4aac880cd557",
+    "exp07_snapshot_sha256": "fdc51670600cc473f7df80c9b273eb222b1b28c961e0d31ee2a58af12e73ee3a",
+    "exp08_original_feature_builder_sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+    "exp08_original_runner_sha256": "a76fd981594623a5d9940f6a86ca5147c88818af09145d3a34535af19e2af188",
+    "exp08_original_sources_archived_inside_exp10": true,
+    "exp08_snapshot_feature_builder_sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+    "exp08_snapshot_sha256": "7c5b5f76609d4a56f1bf47c6cfff8232fac4876ded9d3175771f70ccb4a8c20d",
+    "exp09_discovery_run": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5",
+    "exp10_readme_sha256": "7b3f3777289cc83ee1afb3394525913b22474e1ecc9ab8a8bb30a9497b4e3618",
+    "exp10_runner_sha256": "1c025d8b537a407993a6f1dabaa1088d3294643353df933479c82728f4d28a50",
+    "exp10_unit_tests_sha256": {
+      "test_exp10.py": "aea62a2886dd5dce519dc4711e838b7b194116427c70fe902479b6ddb7709693"
+    },
+    "exp10_verifier_sha256": "17bda48a1a9e1cbf5bf2a1bdd6747bb6da90dfc0e5baa13c7eda45f0d10fb8f9",
+    "seed_only_source_changes": "Snapshots add explicit seed-20261102 fold support and record generated folds instead of comparing to a frozen old seed. Model/feature code and hyperparameters are unchanged. Component submission CSV writes are disabled; all ID/order checks remain."
+  },
+  "seed": 20261102,
+  "source_lineage": {
+    "exp06_protocol_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py",
+      "sha256": "b221cffa50bcdbcd187884a9be18a5a0b0779ed551af62aa42c5d3728af52c5f",
+      "size_bytes": 66048
+    },
+    "exp07_original_run_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\runs\\exp07_signature_seed20261101_v1\\sha256_manifest.json",
+      "sha256": "f9648a94ec6aa7ff6ec68c469d10d407610c23ef14bee87a2bec3b689a99204b",
+      "size_bytes": 16505
+    },
+    "exp07_original_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\run_exp07.py",
+      "sha256": "26d630099129e0565cc092913f70394661c016ab0e5ae4b255bd4aac880cd557",
+      "size_bytes": 66288
+    },
+    "exp08_original_feature_builder_snapshot": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\original\\historical_features.py",
+      "sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+      "size_bytes": 26511
+    },
+    "exp08_original_runner_snapshot": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\original\\run_exp08.py",
+      "sha256": "a76fd981594623a5d9940f6a86ca5147c88818af09145d3a34535af19e2af188",
+      "size_bytes": 90721
+    },
+    "exp09_diversity": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5\\PREDICTION_DIVERSITY.csv",
+      "sha256": "cf2727fccd4b86c1d9565e512dba77bb3ddd9a5536e3235d9d5342782a674b6f",
+      "size_bytes": 29031
+    },
+    "exp09_inventory": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5\\ARTIFACT_INVENTORY.csv",
+      "sha256": "e4111d06256b69b63fccc1a6ca011a4d42304da6ae6157f54f2908adf811fd02",
+      "size_bytes": 73526
+    },
+    "exp09_selected_pair_summary": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5\\experiment_summary.json",
+      "sha256": "aeb51a540b96428c6068b61783f6335f686ec09305fc32429d2122f4cc3f5dac",
+      "size_bytes": 26275
+    },
+    "exp09_sha256_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5\\SHA256_MANIFEST.json",
+      "sha256": "def0c886f88fc2b18a644d387266173faa4e5b81b58f31fbe9acc0cc6dc1b88b",
+      "size_bytes": 9617
+    },
+    "exp10_readme": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\README.md",
+      "sha256": "7b3f3777289cc83ee1afb3394525913b22474e1ecc9ab8a8bb30a9497b4e3618",
+      "size_bytes": 2697
+    },
+    "exp10_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\run_exp10.py",
+      "sha256": "1c025d8b537a407993a6f1dabaa1088d3294643353df933479c82728f4d28a50",
+      "size_bytes": 51748
+    },
+    "exp10_test_test_exp10.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\tests\\test_exp10.py",
+      "sha256": "aea62a2886dd5dce519dc4711e838b7b194116427c70fe902479b6ddb7709693",
+      "size_bytes": 5603
+    },
+    "exp10_verifier": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\verify_exp10.py",
+      "sha256": "17bda48a1a9e1cbf5bf2a1bdd6747bb6da90dfc0e5baa13c7eda45f0d10fb8f9",
+      "size_bytes": 22032
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    }
+  },
+  "source_snapshots": {
+    "source_snapshot/FEATURE_INVENTORY.md": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\FEATURE_INVENTORY.md",
+      "sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2",
+      "size_bytes": 4447
+    },
+    "source_snapshot/FEATURE_PARITY.md": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\FEATURE_PARITY.md",
+      "sha256": "3891acacda2bcbed7757f65189d2aca604e1fc8f2ccaf78c431a4d80a94313e2",
+      "size_bytes": 2758
+    },
+    "source_snapshot/README.md": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\README.md",
+      "sha256": "4eb88ec358d01ede8987de3a66e3b487390a1d7121e918ef7a1147cd04e3e70c",
+      "size_bytes": 2749
+    },
+    "source_snapshot/__pycache__\\historical_features.cpython-312.pyc": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\__pycache__\\historical_features.cpython-312.pyc",
+      "sha256": "e5678de189a79be8b957452af8c4e3d268ad4d0238d733ae50987167a59d9e6c",
+      "size_bytes": 36736
+    },
+    "source_snapshot/__pycache__\\run_exp07.cpython-312.pyc": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\__pycache__\\run_exp07.cpython-312.pyc",
+      "sha256": "d89c92a6f890722a510fe4ad56ca76f9bffda7c6ffa92cf669ee933cd4408045",
+      "size_bytes": 70687
+    },
+    "source_snapshot/__pycache__\\run_exp08.cpython-312.pyc": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\__pycache__\\run_exp08.cpython-312.pyc",
+      "sha256": "2db194e467d2de384f421a343c9edbe41895af5a68a5afe85b6d4d4b8b5d1425",
+      "size_bytes": 88979
+    },
+    "source_snapshot/historical_features.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\historical_features.py",
+      "sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+      "size_bytes": 26511
+    },
+    "source_snapshot/original\\historical_features.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\original\\historical_features.py",
+      "sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+      "size_bytes": 26511
+    },
+    "source_snapshot/original\\run_exp08.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\original\\run_exp08.py",
+      "sha256": "a76fd981594623a5d9940f6a86ca5147c88818af09145d3a34535af19e2af188",
+      "size_bytes": 90721
+    },
+    "source_snapshot/run_exp07.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\run_exp07.py",
+      "sha256": "fdc51670600cc473f7df80c9b273eb222b1b28c961e0d31ee2a58af12e73ee3a",
+      "size_bytes": 70520
+    },
+    "source_snapshot/run_exp08.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\run_exp08.py",
+      "sha256": "7c5b5f76609d4a56f1bf47c6cfff8232fac4876ded9d3175771f70ccb4a8c20d",
+      "size_bytes": 90580
+    },
+    "source_snapshot/tests\\__pycache__\\test_exp08_historical_features.cpython-312.pyc": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\tests\\__pycache__\\test_exp08_historical_features.cpython-312.pyc",
+      "sha256": "ff7d7933affd8bb73ebb76a5d9535a2f8da93f648d34408227f5e89c1ce261fd",
+      "size_bytes": 16311
+    },
+    "source_snapshot/tests\\test_exp08_historical_features.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\tests\\test_exp08_historical_features.py",
+      "sha256": "733fcb9256e5aa67f86235b53290ee3bc5f3be7027dc2ec10385ff49fe9a3563",
+      "size_bytes": 9846
+    },
+    "source_snapshot/verify_exp08.py": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\verify_exp08.py",
+      "sha256": "5ab205c8c96ea08221d9e5dc0bb65501e587b4424ebb7aa930c5d26408fb4d98",
+      "size_bytes": 10683
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "advancement_gate_passed": false,
+  "candidate_submission_created": false,
+  "fold_deltas": [
+    0.0005159108892914821,
+    0.0006948547382004122,
+    0.0005781976353381735,
+    0.0008036295404542093,
+    0.0013924594007627134
+  ],
+  "outputs_verified": 114,
+  "pair_oof_auc": 0.7715612995626988,
+  "phase2_oof_auc": 0.7707677233305168,
+  "pooled_delta": 0.0007935762321820139,
+  "positive_folds": 5,
+  "seed": 20261102,
+  "status": "PASS"
+}

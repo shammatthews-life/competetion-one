@@ -1,0 +1,47 @@
+{
+  "blend_weight_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.30000000000000004,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6000000000000001,
+    0.65,
+    0.7000000000000001,
+    0.75,
+    0.8,
+    0.8500000000000001,
+    0.9,
+    0.9500000000000001,
+    1.0
+  ],
+  "blend_weight_selection": "inner-validation ROC-AUC only; lower candidate weight wins ties",
+  "feature_names": [
+    "EXP07_SIG_COUNT_LOG",
+    "EXP07_SIG_TARGET_RATE"
+  ],
+  "frequency_count": "fit-partition covariates only; subtract self for fit rows",
+  "key_formula": [
+    "int(DAYS_BIRTH - DAYS_REGISTRATION)",
+    "int(DAYS_BIRTH - DAYS_ID_PUBLISH)",
+    "CODE_GENDER with missing sentinel",
+    "NAME_EDUCATION_TYPE with missing sentinel"
+  ],
+  "signature_columns": [
+    "DAYS_BIRTH",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "CODE_GENDER",
+    "NAME_EDUCATION_TYPE"
+  ],
+  "target_rate_smoothing": 20.0,
+  "target_rate_training_encoding": "5-fold stratified cross-fit within each model-fit partition",
+  "validation_test_target_rate": "fit-partition labels only; no apply-row labels"
+}

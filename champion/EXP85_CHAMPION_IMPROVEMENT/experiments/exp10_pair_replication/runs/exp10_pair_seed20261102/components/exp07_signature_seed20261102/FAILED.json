@@ -1,0 +1,8 @@
+{
+  "error": "[Errno 2] No such file or directory: 'D:\\\\gci\\\\_gci_push_tmp\\\\champion\\\\EXP85_CHAMPION_IMPROVEMENT\\\\experiments\\\\exp10_pair_replication\\\\source_snapshot\\\\FEATURE_INVENTORY.md'",
+  "error_type": "FileNotFoundError",
+  "experiment_id": "exp07_signature_seed20261102",
+  "failed_at_utc": "2026-11-02T09:27:25.539175+00:00",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\run_exp07.py\", line 1410, in run_experiment\n    \"sha256\": sha256_file(EXPERIMENT_DIR / \"FEATURE_INVENTORY.md\"),\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\source_snapshot\\run_exp07.py\", line 107, in sha256_file\n    with path.open(\"rb\") as stream:\n         ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\SHARON\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\gci\\\\_gci_push_tmp\\\\champion\\\\EXP85_CHAMPION_IMPROVEMENT\\\\experiments\\\\exp10_pair_replication\\\\source_snapshot\\\\FEATURE_INVENTORY.md'\n"
+}

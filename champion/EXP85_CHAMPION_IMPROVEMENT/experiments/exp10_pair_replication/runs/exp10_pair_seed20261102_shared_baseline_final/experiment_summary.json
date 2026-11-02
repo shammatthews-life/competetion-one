@@ -1,0 +1,580 @@
+{
+  "advancement_gate": {
+    "folds": 5,
+    "fresh_models_and_phase2": true,
+    "independent_replication": true,
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "new_seed_fold_membership_verified": true,
+    "passed": false,
+    "pooled_auc_delta": 0.0007935762321820139,
+    "positive_folds": 5
+  },
+  "candidate_submission_created": false,
+  "candidate_submission_reason": "Pair failed the predeclared advancement gate; no candidate submission was created.",
+  "component_runs": {
+    "component_source_run": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final",
+    "exp07": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102",
+      "runtime_seconds": 1016.0158710000105,
+      "source_summary_sha256": "f2b22b620d38281706c24d3d2161a45a98b7077e20e26b393a98ec77e05bfbd5",
+      "status": "COMPLETED_SCREEN",
+      "training_seconds": 1008.7553213000065
+    },
+    "exp08": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102",
+      "runtime_seconds": 1763.1352084999671,
+      "source_summary_sha256": "f3f50059ec9f6a1008d0281cbb9bfcae0c20d174dda370d15ef1e6980259f9d9",
+      "status": "COMPLETED",
+      "training_seconds": 1759.3822421999648
+    }
+  },
+  "decision": "REJECTED",
+  "discovery_reference": {
+    "exp09_baseline_pooled_oof_auc": 0.7703495835942259,
+    "exp09_best_two_strategy": "equal_exp07_signature__exp08_lgbcat",
+    "exp09_delta_vs_phase2": 0.0010074563149904403,
+    "exp09_main_seed": 20261101,
+    "exp09_pooled_oof_auc": 0.7713570399092163,
+    "exp09_positive_folds": 5
+  },
+  "experiment_id": "exp10_pair_seed20261102_shared_baseline_final",
+  "folds": 5,
+  "gpu_evidence": {
+    "exp07": {
+      "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "preflight": {
+        "driver_version": "592.82",
+        "free_memory_mib_before_run": 5920,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "total_memory_mib": 6141,
+        "utilization_percent_before_run": 0
+      },
+      "telemetry": {
+        "max_memory_used_mib": 4903,
+        "max_utilization_percent": 99,
+        "monitor_errors": [],
+        "sample_count": 909
+      }
+    },
+    "exp07_telemetry_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\gpu_telemetry.json",
+    "exp08": {
+      "preflight": {
+        "driver_version": "592.82",
+        "free_memory_mib_before_run": 5838,
+        "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "total_memory_mib": 6141,
+        "utilization_percent_before_run": 0
+      },
+      "telemetry": {
+        "maximum_memory_used_mib": 4901,
+        "maximum_utilization_percent": 100,
+        "monitor_errors": [],
+        "sample_count": 1566
+      }
+    },
+    "exp08_telemetry_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\gpu_telemetry.csv",
+    "training_device_policy": "GPU CatBoost/XGBoost required by source preflights; LightGBM remains CPU because the installed build is CPU-only. No silent fallback."
+  },
+  "input_records": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "integrity": {
+    "component_local_exp08_baseline_used_for_pair_scoring": false,
+    "component_models_trained_with_original_feature_logic": true,
+    "historical_champion_or_prior_runs_modified": false,
+    "no_outer_validation_used_for_model_or_pair_weight_selection": true,
+    "one_authoritative_phase2_baseline_used_for_all_reported_metrics": true,
+    "oof_fold_rows_verified_against_seed": true,
+    "ordered_test_ids_sha256": "d7fd39f08d114162f875cfd643a5952c74e0599192010884dfa675f54e85c645",
+    "ordered_train_ids_sha256": "99d34a12b348a94bbaf6d517c3891424d4b4fb325c1551089c8a689751fc3449",
+    "phase2_oof_comparison_max_abs_difference": 0.10299411416053772,
+    "phase2_test_comparison_max_abs_difference": 0.030008941888809204,
+    "prediction_archive_sha256": "b859bb5213cc0f6264f99fed3214904d5662ad682a81b4e1c29a2c01fe375d30",
+    "raw_inputs_hash_verified": true,
+    "sample_ids_exactly_match_test": true,
+    "shared_baseline_contract_sha256": "781e27bcd96422083c8fac554f0bdd2ff78e4b7dd5e9be57217192a39358a1ab",
+    "test_pair_prediction_values_sha256": "b3ca98121fff570890c8eefe1bd0aab5dbc022eb2881bfde979ceab60e5623fc",
+    "test_rows": 61500
+  },
+  "metrics": {
+    "exp07_signature": {
+      "fold_auc": [
+        0.7697762699220302,
+        0.778411118135417,
+        0.7669899794095757,
+        0.7739214544552725,
+        0.7680991388656397
+      ],
+      "fold_delta_vs_phase2": [
+        6.692916662043302e-05,
+        0.00045860022056487537,
+        0.0003893463312687473,
+        0.000423875200253665,
+        0.0016463684273538837
+      ],
+      "pooled_delta_vs_phase2": 0.0005941808123078873,
+      "pooled_oof_auc": 0.7713619041428247,
+      "positive_folds": 5
+    },
+    "exp08_lgbcat": {
+      "fold_auc": [
+        0.7697039903300169,
+        0.7781181885012651,
+        0.766550380010663,
+        0.7738484944033807,
+        0.7668751456327464
+      ],
+      "fold_delta_vs_phase2": [
+        -5.350425392847136e-06,
+        0.0001656705864130359,
+        -5.02530676439461e-05,
+        0.00035091514836183,
+        0.0004223751944605336
+      ],
+      "pooled_delta_vs_phase2": 0.00017107937843952037,
+      "pooled_oof_auc": 0.7709388027089563,
+      "positive_folds": 3
+    },
+    "fixed_equal_pair": {
+      "fold_auc": [
+        0.7702252516447012,
+        0.7786473726530525,
+        0.7671788307136451,
+        0.774301208795473,
+        0.7678452298390486
+      ],
+      "fold_delta_vs_phase2": [
+        0.0005159108892914821,
+        0.0006948547382004122,
+        0.0005781976353381735,
+        0.0008036295404542093,
+        0.0013924594007627134
+      ],
+      "pooled_delta_vs_phase2": 0.0007935762321820139,
+      "pooled_oof_auc": 0.7715612995626988,
+      "positive_folds": 5
+    },
+    "phase2": {
+      "fold_auc": [
+        0.7697093407554098,
+        0.7779525179148521,
+        0.766600633078307,
+        0.7734975792550188,
+        0.7664527704382859
+      ],
+      "fold_delta_vs_phase2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_delta_vs_phase2": 0.0,
+      "pooled_oof_auc": 0.7707677233305168,
+      "positive_folds": 0
+    }
+  },
+  "pair": {
+    "blend_rule": "fixed 50:50 arithmetic mean; no weight fitting",
+    "components": [
+      "exp07_signature",
+      "exp08_lgbcat"
+    ],
+    "exact_exp09_strategy": "equal_exp07_signature__exp08_lgbcat",
+    "exp07_model_configuration": {
+      "catboost": {
+        "bootstrap_type": "Bernoulli",
+        "border_count": 128,
+        "depth": 7,
+        "device": "GPU:0",
+        "devices": "0",
+        "early_stopping_rounds": 150,
+        "eval_metric": "AUC",
+        "iterations": 2500,
+        "l2_leaf_reg": 5.0,
+        "learning_rate": 0.045,
+        "loss_function": "Logloss",
+        "random_strength": 0.5,
+        "subsample": 0.8,
+        "task_type": "GPU"
+      },
+      "lightgbm": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "boosting_type": "gbdt",
+        "device": "CPU",
+        "early_stopping_rounds": 150,
+        "feature_fraction": 0.8,
+        "lambda_l1": 0.1,
+        "lambda_l2": 5.0,
+        "learning_rate": 0.03,
+        "max_bin": 127,
+        "max_depth": -1,
+        "metric": "auc",
+        "min_child_samples": 80,
+        "num_boost_round": 3000,
+        "num_leaves": 31,
+        "num_threads": 8,
+        "objective": "binary",
+        "verbosity": -1
+      }
+    },
+    "exp07_signature_config": {
+      "blend_weight_grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.15000000000000002,
+        0.2,
+        0.25,
+        0.30000000000000004,
+        0.35000000000000003,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.65,
+        0.7000000000000001,
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9,
+        0.9500000000000001,
+        1.0
+      ],
+      "blend_weight_selection": "inner-validation ROC-AUC only; lower candidate weight wins ties",
+      "feature_names": [
+        "EXP07_SIG_COUNT_LOG",
+        "EXP07_SIG_TARGET_RATE"
+      ],
+      "frequency_count": "fit-partition covariates only; subtract self for fit rows",
+      "key_formula": [
+        "int(DAYS_BIRTH - DAYS_REGISTRATION)",
+        "int(DAYS_BIRTH - DAYS_ID_PUBLISH)",
+        "CODE_GENDER with missing sentinel",
+        "NAME_EDUCATION_TYPE with missing sentinel"
+      ],
+      "signature_columns": [
+        "DAYS_BIRTH",
+        "DAYS_REGISTRATION",
+        "DAYS_ID_PUBLISH",
+        "CODE_GENDER",
+        "NAME_EDUCATION_TYPE"
+      ],
+      "target_rate_smoothing": 20.0,
+      "target_rate_training_encoding": "5-fold stratified cross-fit within each model-fit partition",
+      "validation_test_target_rate": "fit-partition labels only; no apply-row labels"
+    },
+    "exp08_component_config": {
+      "blend_weight_grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.15000000000000002,
+        0.2,
+        0.25,
+        0.30000000000000004,
+        0.35000000000000003,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.65,
+        0.7000000000000001,
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9,
+        0.9500000000000001,
+        1.0
+      ],
+      "evaluated_groups": [
+        "A_FINANCIAL",
+        "B_RISK",
+        "C_TEMPORAL",
+        "D_DEMOGRAPHIC",
+        "E_INQUIRY",
+        "F_EXTERNAL",
+        "H_INTERACTIONS"
+      ],
+      "excluded_groups": {
+        "G_ENTITY_TIMELINE": "Uses the same birth/registration/ID-publish/gender/education signature tested in EXP07; excluded to avoid repeating the rejected hypothesis. Historical counts and next/previous application gaps also depend on a pooled train/test cohort.",
+        "UIDY_SUPERVISED_MEMORY": "Uses labels joined on the same signature with a global seed-42 five-fold assignment, which is not nested inside EXP08 outer folds. Excluded because that construction leaks outer-validation labels."
+      },
+      "group_sizes": {
+        "A_FINANCIAL": 34,
+        "B_RISK": 11,
+        "C_TEMPORAL": 11,
+        "D_DEMOGRAPHIC": 8,
+        "E_INQUIRY": 10,
+        "F_EXTERNAL": 16,
+        "H_INTERACTIONS": 570
+      },
+      "model_configurations": {
+        "combined_candidate": "Phase 2 LightGBM CPU + CatBoost GPU; CUDA XGBoost added only when an explicit CUDA preflight succeeds",
+        "individual_family_screen": "LightGBM CPU; Phase 2 inner settings capped at 600 rounds and 50-round early stopping; outer rounds fixed by inner validation"
+      },
+      "selected_feature_caps": {
+        "maximum_groups_per_fold": 3,
+        "maximum_interactions_per_fold": 60
+      },
+      "xgboost_cuda_preflight": {
+        "available": true,
+        "cpu_fallback_used": false,
+        "device": "CUDA",
+        "parameters": {
+          "device": "cuda",
+          "max_depth": 2,
+          "objective": "binary:logistic",
+          "tree_method": "hist",
+          "verbosity": 0
+        },
+        "version": "3.4.1"
+      }
+    },
+    "exp08_component_lineage": "historical_lgb_cat_valid from fold-local EXP08 candidate LightGBM/CatBoost predictions; XGBoost was removed from the three-model EXP08 candidate average using its saved fold prediction as 2*mean(LGB/Cat/XGB)-XGB.",
+    "exp08_model_configuration": {
+      "catboost_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "catboost_gpu_preflight": {
+        "available": true,
+        "device": "CUDA:0",
+        "iterations": 2,
+        "task_type": "GPU"
+      },
+      "combined_blend": "fixed equal-weight average of candidate LightGBM/CatBoost and CUDA XGBoost when supported; candidate/reference mixing weight selected only on inner validation",
+      "combined_candidate_models": "Phase 2 LightGBM CPU + CatBoost GPU; CUDA XGBoost added only when an explicit CUDA preflight succeeds",
+      "family_screen_and_outer_family_models": "LightGBM CPU; Phase 2 inner settings capped at 600 rounds and 50-round early stopping; outer rounds fixed by inner validation",
+      "lightgbm_device": "CPU; installed LightGBM build is CPU-only",
+      "phase2_cat_lgb_blend": "fixed 50:50",
+      "xgboost_configuration": {
+        "alpha": 0.0,
+        "colsample_bytree": 0.85,
+        "device": "cuda",
+        "eta": 0.04,
+        "eval_metric": "auc",
+        "lambda": 4.0,
+        "max_bin": 256,
+        "max_depth": 5,
+        "min_child_weight": 20,
+        "nthread": 8,
+        "objective": "binary:logistic",
+        "subsample": 0.85,
+        "tree_method": "hist",
+        "verbosity": 0
+      },
+      "xgboost_cuda_models_included": true,
+      "xgboost_gpu_preflight": {
+        "available": true,
+        "cpu_fallback_used": false,
+        "device": "CUDA",
+        "parameters": {
+          "device": "cuda",
+          "max_depth": 2,
+          "objective": "binary:logistic",
+          "tree_method": "hist",
+          "verbosity": 0
+        },
+        "version": "3.4.1"
+      }
+    },
+    "exp08_selected_groups_by_fold": [
+      {
+        "candidate_catboost_best_iteration": 448,
+        "candidate_lgb_best_iteration": 517,
+        "fold": 1,
+        "selected_feature_count": 9,
+        "selected_groups": [
+          "C_TEMPORAL"
+        ]
+      },
+      {
+        "candidate_catboost_best_iteration": 414,
+        "candidate_lgb_best_iteration": 298,
+        "fold": 2,
+        "selected_feature_count": 35,
+        "selected_groups": [
+          "B_RISK",
+          "D_DEMOGRAPHIC",
+          "A_FINANCIAL"
+        ]
+      },
+      {
+        "candidate_catboost_best_iteration": 757,
+        "candidate_lgb_best_iteration": 332,
+        "fold": 3,
+        "selected_feature_count": 0,
+        "selected_groups": []
+      },
+      {
+        "candidate_catboost_best_iteration": 594,
+        "candidate_lgb_best_iteration": 282,
+        "fold": 4,
+        "selected_feature_count": 25,
+        "selected_groups": [
+          "D_DEMOGRAPHIC",
+          "C_TEMPORAL",
+          "E_INQUIRY"
+        ]
+      },
+      {
+        "candidate_catboost_best_iteration": 463,
+        "candidate_lgb_best_iteration": 294,
+        "fold": 5,
+        "selected_feature_count": 9,
+        "selected_groups": [
+          "C_TEMPORAL"
+        ]
+      }
+    ],
+    "shared_phase2_baseline": {
+      "arrays": {
+        "fold_membership_sha256": "731404e870ef5acf6f67b761e431983e3b22f239b44fc3b23a919215600e8ee1",
+        "labels_sha256": "86f7ce42776dff1c71e3a303aba1a4ec5943e25c778c397822d7886036e0875e",
+        "phase2_oof_sha256": "4ca663096d1f248f536952ce5b9cf49bdc50990eddb4c6f6c156dc5b075c2bd0",
+        "phase2_test_sha256": "b3bc911e309af6601b57ea15473de1de68b51775ecd569c139042977a6e2b24f",
+        "test_ids_sha256": "d7fd39f08d114162f875cfd643a5952c74e0599192010884dfa675f54e85c645",
+        "train_ids_sha256": "99d34a12b348a94bbaf6d517c3891424d4b4fb325c1551089c8a689751fc3449"
+      },
+      "authority": "fresh EXP07 seed-20261102 matched Phase 2 stream",
+      "comparison_streams": [
+        "phase2",
+        "exp07_signature",
+        "exp08_lgbcat",
+        "fixed_equal_pair"
+      ],
+      "exp07_baseline_source": {
+        "oof": {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\oof_phase2_strict_matched.npy",
+          "sha256": "6e2e139d094808dcf5c9855bdf5529b830647c20839a3c141b210da6dcbbe83e",
+          "size_bytes": 684936
+        },
+        "test": {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp07_signature_seed20261102\\test_phase2_strict_matched.npy",
+          "sha256": "7b74d3e8cc5953a92cee9d00d2c520750f1cedf89ab2a9df24352a1a992b3f5c",
+          "size_bytes": 246128
+        }
+      },
+      "exp08_local_baseline_diagnostic": {
+        "oof": {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\oof_phase2_matched.npy",
+          "sha256": "205476eb4a9a029b656d69a39eb5ac55e7ec69f4b3b3832701a7ee3536830603",
+          "size_bytes": 684936
+        },
+        "oof_difference": {
+          "identical": false,
+          "max_absolute_difference": 0.10299411416053772,
+          "mean_absolute_difference": 0.0009267939813670626
+        },
+        "test": {
+          "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_final\\components\\exp08_historical_lgbcat_seed20261102\\test_phase2_matched.npy",
+          "sha256": "2b7454503cf1d390a8c8a6908864578ceee600467c7d8d1970b29492b1f80b1f",
+          "size_bytes": 246128
+        },
+        "test_difference": {
+          "identical": false,
+          "max_absolute_difference": 0.030008941888809204,
+          "mean_absolute_difference": 0.0008791377705264443
+        },
+        "used_for_pair_scoring": false
+      },
+      "file": {
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp10_pair_replication\\runs\\exp10_pair_seed20261102_shared_baseline_final\\shared_baseline_contract.npz",
+        "sha256": "781e27bcd96422083c8fac554f0bdd2ff78e4b7dd5e9be57217192a39358a1ab",
+        "size_bytes": 1394899
+      },
+      "folds": [
+        {
+          "fit_indices_sha256": "b1aae18954f4b3d9c6b13b9762ee6829ac2c962ddffa59b13732eaa8e56c343a",
+          "fold": 1,
+          "phase2_valid_sha256": "6fd6d3f7b7cb6a230b2ec54ac884f886576e5ae79539234bffb6f4f9bee0c8a8",
+          "valid_indices_sha256": "85dc7995be8d8970171c69b64cc23acdf4fc600661f77a34a5694153dc933112"
+        },
+        {
+          "fit_indices_sha256": "77af76d0d6ad2bbd9258db705d63e6ab2ea9037ed721af3701b70a8b03496286",
+          "fold": 2,
+          "phase2_valid_sha256": "c0b58be7cc133b381be651ca873ceaab5cd51ad0507916ba549ca93d0a8a741f",
+          "valid_indices_sha256": "af153e6c3425d1a8ce8cf167173c6fecec7b1a79ddcdb8419911941163ef3024"
+        },
+        {
+          "fit_indices_sha256": "f485d909d112863d266bab5ec6e1a3c9c3e58dc72093cb4a24dddb1bd9321e8e",
+          "fold": 3,
+          "phase2_valid_sha256": "20649b32e05a55fd478584262c4d9574bab236c5ed8def389ccb3bba6f96073f",
+          "valid_indices_sha256": "73ecf1ad34258c82faa49f91966f8be832bffd47610132bcda2ffc0f23ad2944"
+        },
+        {
+          "fit_indices_sha256": "0d8a0d9236dc24745f9fe5cf6ce5deb5f497ac3c720b2638e429fa999482687d",
+          "fold": 4,
+          "phase2_valid_sha256": "d86dcc80b9c8b230b1538b648de4e572025afe1869b54602fd029960cc86ad3b",
+          "valid_indices_sha256": "63a6337eedd576a329b353ffe93bfee1049656025e34525ebedcaef5763d086f"
+        },
+        {
+          "fit_indices_sha256": "8a7a0c89fa56cf1f7a7081519e0499432a46e3631b77031df336af750ca24fef",
+          "fold": 5,
+          "phase2_valid_sha256": "f648df0778f30db290ecbce504e394f85ad2a76fb3131d4ec489c774e235500f",
+          "valid_indices_sha256": "452c4db059a1367d292b83f9add162e9358c17f065d62f3664978141e3a5adb1"
+        }
+      ]
+    }
+  },
+  "prediction_diversity": {
+    "between_pair_components": {
+      "baseline_binary_error_count": 19306,
+      "binary_error_jaccard_at_prevalence": 0.8954543225616634,
+      "candidate_binary_error_count": 19348,
+      "pearson_correlation": 0.9899262124659208,
+      "residual_correlation": 0.9989706315433466,
+      "shared_binary_error_count": 18261,
+      "spearman_correlation": 0.9939428874286386,
+      "top_prevalence_overlap": 0.9228709934158165
+    },
+    "pair_vs_phase2": {
+      "baseline_binary_error_count": 19324,
+      "binary_error_jaccard_at_prevalence": 0.9193957163444815,
+      "candidate_binary_error_count": 19300,
+      "pearson_correlation": 0.9951189901085131,
+      "residual_correlation": 0.9995029780252178,
+      "shared_binary_error_count": 18501,
+      "spearman_correlation": 0.996817410439594,
+      "top_prevalence_overlap": 0.9413211779176616
+    }
+  },
+  "promotion_eligible": false,
+  "runtime_seconds": 5.209227400016971,
+  "seed": 20261102,
+  "source_lineage": {
+    "exp07_feature_inventory_sha256": "f68ddfc05b2d2ef95adf649722e931aa39b6abb50bf98f58aa544d5e2e77b3c2",
+    "exp07_original_runner_sha256": "26d630099129e0565cc092913f70394661c016ab0e5ae4b255bd4aac880cd557",
+    "exp07_snapshot_sha256": "fdc51670600cc473f7df80c9b273eb222b1b28c961e0d31ee2a58af12e73ee3a",
+    "exp08_original_feature_builder_sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+    "exp08_original_runner_sha256": "a76fd981594623a5d9940f6a86ca5147c88818af09145d3a34535af19e2af188",
+    "exp08_original_sources_archived_inside_exp10": true,
+    "exp08_snapshot_feature_builder_sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+    "exp08_snapshot_sha256": "7c5b5f76609d4a56f1bf47c6cfff8232fac4876ded9d3175771f70ccb4a8c20d",
+    "exp09_discovery_run": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp09_prediction_diversity\\runs\\exp09_prediction_diversity_v5",
+    "exp10_readme_sha256": "7b3f3777289cc83ee1afb3394525913b22474e1ecc9ab8a8bb30a9497b4e3618",
+    "exp10_runner_sha256": "1c025d8b537a407993a6f1dabaa1088d3294643353df933479c82728f4d28a50",
+    "exp10_unit_tests_sha256": {
+      "test_exp10.py": "aea62a2886dd5dce519dc4711e838b7b194116427c70fe902479b6ddb7709693"
+    },
+    "exp10_verifier_sha256": "17bda48a1a9e1cbf5bf2a1bdd6747bb6da90dfc0e5baa13c7eda45f0d10fb8f9",
+    "seed_only_source_changes": "Snapshots add explicit seed-20261102 fold support and record generated folds instead of comparing to a frozen old seed. Model/feature code and hyperparameters are unchanged. Component submission CSV writes are disabled; all ID/order checks remain."
+  },
+  "status": "COMPLETED"
+}

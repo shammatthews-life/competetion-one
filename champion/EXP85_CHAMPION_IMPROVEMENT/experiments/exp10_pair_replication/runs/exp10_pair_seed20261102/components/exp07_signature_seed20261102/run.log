@@ -1,0 +1,6 @@
+[2026-11-02T09:09:31.602654+00:00] Starting five-fold application-signature feature experiment on NVIDIA GeForce RTX 4050 Laptop GPU
+[2026-11-02T09:13:04.801851+00:00] Fold 1/5: candidate=0.76977627 Phase2=0.76970934 blend=0.77010725 weight=0.70 CatBoost=GPU elapsed=212.9s
+[2026-11-02T09:16:00.283014+00:00] Fold 2/5: candidate=0.77841112 Phase2=0.77795247 blend=0.77841112 weight=1.00 CatBoost=GPU elapsed=175.2s
+[2026-11-02T09:19:42.844117+00:00] Fold 3/5: candidate=0.76698999 Phase2=0.76630830 blend=0.76700265 weight=0.40 CatBoost=GPU elapsed=222.2s
+[2026-11-02T09:23:53.834335+00:00] Fold 4/5: candidate=0.77392145 Phase2=0.77347929 blend=0.77413485 weight=0.55 CatBoost=GPU elapsed=250.7s
+[2026-11-02T09:27:25.173627+00:00] Fold 5/5: candidate=0.76808625 Phase2=0.76645272 blend=0.76808625 weight=1.00 CatBoost=GPU elapsed=211.1s

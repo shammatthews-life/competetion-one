@@ -1,0 +1,1107 @@
+[
+  {
+    "baseline_outer_auc": 0.7697093407554098,
+    "blend_fold_delta": 0.00039787395358670263,
+    "candidate_fold_delta": 6.692916662043302e-05,
+    "candidate_gpu_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "candidate_outer_auc": 0.7697762699220302,
+    "catboost_task_type": "GPU",
+    "elapsed_seconds": 200.42244530003518,
+    "fold": 1,
+    "inner_baseline_auc": 0.7671516711703871,
+    "inner_baseline_cat_best_iteration": 437,
+    "inner_baseline_lgb_best_iteration": 347,
+    "inner_blend_auc": 0.7681898790988371,
+    "inner_blend_grid": [
+      {
+        "auc": 0.7671516711703871,
+        "candidate_weight": 0.0
+      },
+      {
+        "auc": 0.7673322380908337,
+        "candidate_weight": 0.05
+      },
+      {
+        "auc": 0.7674795960177806,
+        "candidate_weight": 0.1
+      },
+      {
+        "auc": 0.7676040060674316,
+        "candidate_weight": 0.15000000000000002
+      },
+      {
+        "auc": 0.7677165113073032,
+        "candidate_weight": 0.2
+      },
+      {
+        "auc": 0.7678137286011044,
+        "candidate_weight": 0.25
+      },
+      {
+        "auc": 0.7678932961367072,
+        "candidate_weight": 0.30000000000000004
+      },
+      {
+        "auc": 0.76796370367122,
+        "candidate_weight": 0.35000000000000003
+      },
+      {
+        "auc": 0.7680313025642833,
+        "candidate_weight": 0.4
+      },
+      {
+        "auc": 0.7680832305147147,
+        "candidate_weight": 0.45
+      },
+      {
+        "auc": 0.7681248494743723,
+        "candidate_weight": 0.5
+      },
+      {
+        "auc": 0.7681543721259698,
+        "candidate_weight": 0.55
+      },
+      {
+        "auc": 0.7681767135920436,
+        "candidate_weight": 0.6000000000000001
+      },
+      {
+        "auc": 0.7681822032094219,
+        "candidate_weight": 0.65
+      },
+      {
+        "auc": 0.7681898790988371,
+        "candidate_weight": 0.7000000000000001
+      },
+      {
+        "auc": 0.7681792030696919,
+        "candidate_weight": 0.75
+      },
+      {
+        "auc": 0.768174383696296,
+        "candidate_weight": 0.8
+      },
+      {
+        "auc": 0.7681457866197215,
+        "candidate_weight": 0.8500000000000001
+      },
+      {
+        "auc": 0.7681032420850409,
+        "candidate_weight": 0.9
+      },
+      {
+        "auc": 0.7680611124633017,
+        "candidate_weight": 0.9500000000000001
+      },
+      {
+        "auc": 0.768031813226365,
+        "candidate_weight": 1.0
+      }
+    ],
+    "inner_blend_weight": 0.7000000000000001,
+    "inner_candidate_auc": 0.768031813226365,
+    "inner_candidate_cat_best_iteration": 507,
+    "inner_candidate_lgb_best_iteration": 518,
+    "inner_fit_rows": 116416,
+    "inner_validation_rows": 20545,
+    "nested_blend_outer_auc": 0.7701072147089965,
+    "outer_fit_rows": 136961,
+    "outer_validation_rows": 34241,
+    "phase2_inner_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 116416,
+          "count_reference_id_sha256": "63be47572abcc1281026fa25ed835eb5e0e86a7aa3f764a9d1f6ad3af0b690b4",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 79027,
+          "product_key_valid_rows": 67934,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "63be47572abcc1281026fa25ed835eb5e0e86a7aa3f764a9d1f6ad3af0b690b4",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 41807,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 20545,
+          "count_reference_id_sha256": "63be47572abcc1281026fa25ed835eb5e0e86a7aa3f764a9d1f6ad3af0b690b4",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 13853,
+          "product_key_valid_rows": 11885,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 116416,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "phase2_outer_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 136961,
+          "count_reference_id_sha256": "581fc96a53a983359c85da6dc66cd7dd2c4aba0c4a6f01ea85f34d9c988705aa",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 92916,
+          "product_key_valid_rows": 79819,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "581fc96a53a983359c85da6dc66cd7dd2c4aba0c4a6f01ea85f34d9c988705aa",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 41815,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 34241,
+          "count_reference_id_sha256": "581fc96a53a983359c85da6dc66cd7dd2c4aba0c4a6f01ea85f34d9c988705aa",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 23139,
+          "product_key_valid_rows": 19738,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 136961,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "signature_inner_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 20545,
+      "apply_rows_matching_fit_signature": 380,
+      "fit_repeated_signature_groups": 1090,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 116416,
+      "fit_rows_with_repeated_signature": 2199,
+      "fit_unique_signatures": 115307,
+      "max_fit_signature_count": 5,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1081
+    },
+    "signature_outer_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 34241,
+      "apply_rows_matching_fit_signature": 763,
+      "fit_repeated_signature_groups": 1488,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 136961,
+      "fit_rows_with_repeated_signature": 3009,
+      "fit_unique_signatures": 135440,
+      "max_fit_signature_count": 5,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1269
+    }
+  },
+  {
+    "baseline_outer_auc": 0.7779525179148521,
+    "blend_fold_delta": 0.00045860022056487537,
+    "candidate_fold_delta": 0.00045860022056487537,
+    "candidate_gpu_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "candidate_outer_auc": 0.778411118135417,
+    "catboost_task_type": "GPU",
+    "elapsed_seconds": 161.4481034000055,
+    "fold": 2,
+    "inner_baseline_auc": 0.7698472784907101,
+    "inner_baseline_cat_best_iteration": 364,
+    "inner_baseline_lgb_best_iteration": 313,
+    "inner_blend_auc": 0.7714696503355013,
+    "inner_blend_grid": [
+      {
+        "auc": 0.7698472784907101,
+        "candidate_weight": 0.0
+      },
+      {
+        "auc": 0.7699920350368961,
+        "candidate_weight": 0.05
+      },
+      {
+        "auc": 0.7701302770594947,
+        "candidate_weight": 0.1
+      },
+      {
+        "auc": 0.7702652618202998,
+        "candidate_weight": 0.15000000000000002
+      },
+      {
+        "auc": 0.7703876965430171,
+        "candidate_weight": 0.2
+      },
+      {
+        "auc": 0.7704939726925222,
+        "candidate_weight": 0.25
+      },
+      {
+        "auc": 0.7706133098231416,
+        "candidate_weight": 0.30000000000000004
+      },
+      {
+        "auc": 0.7707048005588184,
+        "candidate_weight": 0.35000000000000003
+      },
+      {
+        "auc": 0.7707934811078497,
+        "candidate_weight": 0.4
+      },
+      {
+        "auc": 0.7708755193975368,
+        "candidate_weight": 0.45
+      },
+      {
+        "auc": 0.7709545239630043,
+        "candidate_weight": 0.5
+      },
+      {
+        "auc": 0.7710260559867098,
+        "candidate_weight": 0.55
+      },
+      {
+        "auc": 0.7710927979195421,
+        "candidate_weight": 0.6000000000000001
+      },
+      {
+        "auc": 0.7711577515517818,
+        "candidate_weight": 0.65
+      },
+      {
+        "auc": 0.7712194638891975,
+        "candidate_weight": 0.7000000000000001
+      },
+      {
+        "auc": 0.7712784458748152,
+        "candidate_weight": 0.75
+      },
+      {
+        "auc": 0.7713216524944908,
+        "candidate_weight": 0.8
+      },
+      {
+        "auc": 0.7713634061199351,
+        "candidate_weight": 0.8500000000000001
+      },
+      {
+        "auc": 0.7714011201020762,
+        "candidate_weight": 0.9
+      },
+      {
+        "auc": 0.7714383870090693,
+        "candidate_weight": 0.9500000000000001
+      },
+      {
+        "auc": 0.7714696503355013,
+        "candidate_weight": 1.0
+      }
+    ],
+    "inner_blend_weight": 1.0,
+    "inner_candidate_auc": 0.7714696503355013,
+    "inner_candidate_cat_best_iteration": 364,
+    "inner_candidate_lgb_best_iteration": 297,
+    "inner_fit_rows": 116416,
+    "inner_validation_rows": 20545,
+    "nested_blend_outer_auc": 0.778411118135417,
+    "outer_fit_rows": 136961,
+    "outer_validation_rows": 34241,
+    "phase2_inner_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 116416,
+          "count_reference_id_sha256": "888509a2472147767fe3fbe077833b8e4926566b6e242906a064c08ff74f9e7a",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 79070,
+          "product_key_valid_rows": 67667,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "888509a2472147767fe3fbe077833b8e4926566b6e242906a064c08ff74f9e7a",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 41805,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 20545,
+          "count_reference_id_sha256": "888509a2472147767fe3fbe077833b8e4926566b6e242906a064c08ff74f9e7a",
+          "count_reference_rows": 116416,
+          "fee_decoded_rows": 13795,
+          "product_key_valid_rows": 11996,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 116416,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "phase2_outer_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 136961,
+          "count_reference_id_sha256": "717e738649335bb4b245325ed2cbbb0aed97ce4fc4decd4f98ecab5b8bdb10be",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 92932,
+          "product_key_valid_rows": 79663,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "717e738649335bb4b245325ed2cbbb0aed97ce4fc4decd4f98ecab5b8bdb10be",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 41839,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 34241,
+          "count_reference_id_sha256": "717e738649335bb4b245325ed2cbbb0aed97ce4fc4decd4f98ecab5b8bdb10be",
+          "count_reference_rows": 136961,
+          "fee_decoded_rows": 23198,
+          "product_key_valid_rows": 19894,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 136961,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "signature_inner_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 20545,
+      "apply_rows_matching_fit_signature": 370,
+      "fit_repeated_signature_groups": 1082,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 116416,
+      "fit_rows_with_repeated_signature": 2180,
+      "fit_unique_signatures": 115318,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1081
+    },
+    "signature_outer_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 34241,
+      "apply_rows_matching_fit_signature": 751,
+      "fit_repeated_signature_groups": 1471,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 136961,
+      "fit_rows_with_repeated_signature": 2970,
+      "fit_unique_signatures": 135462,
+      "max_fit_signature_count": 5,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1277
+    }
+  },
+  {
+    "baseline_outer_auc": 0.766600633078307,
+    "blend_fold_delta": 0.0005427549697204492,
+    "candidate_fold_delta": 0.0003893463312687473,
+    "candidate_gpu_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "candidate_outer_auc": 0.7669899794095757,
+    "catboost_task_type": "GPU",
+    "elapsed_seconds": 203.30479879997438,
+    "fold": 3,
+    "inner_baseline_auc": 0.7661809983022401,
+    "inner_baseline_cat_best_iteration": 757,
+    "inner_baseline_lgb_best_iteration": 332,
+    "inner_blend_auc": 0.766373757279887,
+    "inner_blend_grid": [
+      {
+        "auc": 0.7661809983022401,
+        "candidate_weight": 0.0
+      },
+      {
+        "auc": 0.7662160584457858,
+        "candidate_weight": 0.05
+      },
+      {
+        "auc": 0.7662594328063493,
+        "candidate_weight": 0.1
+      },
+      {
+        "auc": 0.766304754066099,
+        "candidate_weight": 0.15000000000000002
+      },
+      {
+        "auc": 0.766338074766929,
+        "candidate_weight": 0.2
+      },
+      {
+        "auc": 0.7663694804849528,
+        "candidate_weight": 0.25
+      },
+      {
+        "auc": 0.7663670548400646,
+        "candidate_weight": 0.30000000000000004
+      },
+      {
+        "auc": 0.766367118672825,
+        "candidate_weight": 0.35000000000000003
+      },
+      {
+        "auc": 0.766373757279887,
+        "candidate_weight": 0.4
+      },
+      {
+        "auc": 0.766361692888207,
+        "candidate_weight": 0.45
+      },
+      {
+        "auc": 0.7663385375544406,
+        "candidate_weight": 0.5
+      },
+      {
+        "auc": 0.7663172652871002,
+        "candidate_weight": 0.55
+      },
+      {
+        "auc": 0.7662912853536945,
+        "candidate_weight": 0.6000000000000001
+      },
+      {
+        "auc": 0.7662543261855324,
+        "candidate_weight": 0.65
+      },
+      {
+        "auc": 0.7661993980953709,
+        "candidate_weight": 0.7000000000000001
+      },
+      {
+        "auc": 0.7661334907704532,
+        "candidate_weight": 0.75
+      },
+      {
+        "auc": 0.766074429509068,
+        "candidate_weight": 0.8
+      },
+      {
+        "auc": 0.7659930586979892,
+        "candidate_weight": 0.8500000000000001
+      },
+      {
+        "auc": 0.7659199063547875,
+        "candidate_weight": 0.9
+      },
+      {
+        "auc": 0.7658334767974619,
+        "candidate_weight": 0.9500000000000001
+      },
+      {
+        "auc": 0.7657478770660191,
+        "candidate_weight": 1.0
+      }
+    ],
+    "inner_blend_weight": 0.4,
+    "inner_candidate_auc": 0.7657478770660191,
+    "inner_candidate_cat_best_iteration": 289,
+    "inner_candidate_lgb_best_iteration": 425,
+    "inner_fit_rows": 116417,
+    "inner_validation_rows": 20545,
+    "nested_blend_outer_auc": 0.7671433880480274,
+    "outer_fit_rows": 136962,
+    "outer_validation_rows": 34240,
+    "phase2_inner_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 116417,
+          "count_reference_id_sha256": "ae31ddfb090ff79d77cd82d842356af9a94859ff7f804715f3307e4852462896",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 78835,
+          "product_key_valid_rows": 67650,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "ae31ddfb090ff79d77cd82d842356af9a94859ff7f804715f3307e4852462896",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 41798,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 20545,
+          "count_reference_id_sha256": "ae31ddfb090ff79d77cd82d842356af9a94859ff7f804715f3307e4852462896",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 13913,
+          "product_key_valid_rows": 11874,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 116417,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "phase2_outer_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 136962,
+          "count_reference_id_sha256": "e674babafbf778aacfc15cba73b038efc6d4ea132c428ed0bd2737c3977f67a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 92819,
+          "product_key_valid_rows": 79524,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "e674babafbf778aacfc15cba73b038efc6d4ea132c428ed0bd2737c3977f67a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 41825,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 34240,
+          "count_reference_id_sha256": "e674babafbf778aacfc15cba73b038efc6d4ea132c428ed0bd2737c3977f67a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 23272,
+          "product_key_valid_rows": 20033,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 136962,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "signature_inner_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 20545,
+      "apply_rows_matching_fit_signature": 389,
+      "fit_repeated_signature_groups": 1087,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 116417,
+      "fit_rows_with_repeated_signature": 2189,
+      "fit_unique_signatures": 115315,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1108
+    },
+    "signature_outer_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 34240,
+      "apply_rows_matching_fit_signature": 757,
+      "fit_repeated_signature_groups": 1491,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 136962,
+      "fit_rows_with_repeated_signature": 3008,
+      "fit_unique_signatures": 135445,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1281
+    }
+  },
+  {
+    "baseline_outer_auc": 0.7734975792550188,
+    "blend_fold_delta": 0.0006496059570988422,
+    "candidate_fold_delta": 0.000423875200253665,
+    "candidate_gpu_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "candidate_outer_auc": 0.7739214544552725,
+    "catboost_task_type": "GPU",
+    "elapsed_seconds": 240.40613730001496,
+    "fold": 4,
+    "inner_baseline_auc": 0.7742013133335082,
+    "inner_baseline_cat_best_iteration": 686,
+    "inner_baseline_lgb_best_iteration": 364,
+    "inner_blend_auc": 0.7746449829333542,
+    "inner_blend_grid": [
+      {
+        "auc": 0.7742013133335082,
+        "candidate_weight": 0.0
+      },
+      {
+        "auc": 0.774282923517438,
+        "candidate_weight": 0.05
+      },
+      {
+        "auc": 0.7743529161390091,
+        "candidate_weight": 0.1
+      },
+      {
+        "auc": 0.7744266748934329,
+        "candidate_weight": 0.15000000000000002
+      },
+      {
+        "auc": 0.7744769112757186,
+        "candidate_weight": 0.2
+      },
+      {
+        "auc": 0.7745297328847933,
+        "candidate_weight": 0.25
+      },
+      {
+        "auc": 0.7745634046658045,
+        "candidate_weight": 0.30000000000000004
+      },
+      {
+        "auc": 0.7746069705246486,
+        "candidate_weight": 0.35000000000000003
+      },
+      {
+        "auc": 0.774624428784566,
+        "candidate_weight": 0.4
+      },
+      {
+        "auc": 0.7746387113646633,
+        "candidate_weight": 0.45
+      },
+      {
+        "auc": 0.7746445999367929,
+        "candidate_weight": 0.5
+      },
+      {
+        "auc": 0.7746449829333542,
+        "candidate_weight": 0.55
+      },
+      {
+        "auc": 0.7746422381246649,
+        "candidate_weight": 0.6000000000000001
+      },
+      {
+        "auc": 0.7746265352656532,
+        "candidate_weight": 0.65
+      },
+      {
+        "auc": 0.7745942358889865,
+        "candidate_weight": 0.7000000000000001
+      },
+      {
+        "auc": 0.774555633027249,
+        "candidate_weight": 0.75
+      },
+      {
+        "auc": 0.7745038487005278,
+        "candidate_weight": 0.8
+      },
+      {
+        "auc": 0.7744550804717266,
+        "candidate_weight": 0.8500000000000001
+      },
+      {
+        "auc": 0.7743915668753167,
+        "candidate_weight": 0.9
+      },
+      {
+        "auc": 0.7743279256133865,
+        "candidate_weight": 0.9500000000000001
+      },
+      {
+        "auc": 0.774264795013538,
+        "candidate_weight": 1.0
+      }
+    ],
+    "inner_blend_weight": 0.55,
+    "inner_candidate_auc": 0.774264795013538,
+    "inner_candidate_cat_best_iteration": 665,
+    "inner_candidate_lgb_best_iteration": 233,
+    "inner_fit_rows": 116417,
+    "inner_validation_rows": 20545,
+    "nested_blend_outer_auc": 0.7741471852121177,
+    "outer_fit_rows": 136962,
+    "outer_validation_rows": 34240,
+    "phase2_inner_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 116417,
+          "count_reference_id_sha256": "f3e426c34b693ef6ad5372e4a87910128fd0a3d78b7a1416abc8aba936f9e8de",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 78923,
+          "product_key_valid_rows": 67599,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "f3e426c34b693ef6ad5372e4a87910128fd0a3d78b7a1416abc8aba936f9e8de",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 41825,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 20545,
+          "count_reference_id_sha256": "f3e426c34b693ef6ad5372e4a87910128fd0a3d78b7a1416abc8aba936f9e8de",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 13932,
+          "product_key_valid_rows": 11959,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 116417,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "phase2_outer_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 136962,
+          "count_reference_id_sha256": "3e5d902cb38cc4d27fbefd6daadecccf91db2c81d2963d3bcf40b9e76ddaa5a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 92876,
+          "product_key_valid_rows": 79558,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "3e5d902cb38cc4d27fbefd6daadecccf91db2c81d2963d3bcf40b9e76ddaa5a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 41833,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 34240,
+          "count_reference_id_sha256": "3e5d902cb38cc4d27fbefd6daadecccf91db2c81d2963d3bcf40b9e76ddaa5a9",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 23233,
+          "product_key_valid_rows": 19999,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 136962,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "signature_inner_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 20545,
+      "apply_rows_matching_fit_signature": 347,
+      "fit_repeated_signature_groups": 1117,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 116417,
+      "fit_rows_with_repeated_signature": 2261,
+      "fit_unique_signatures": 115273,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1099
+    },
+    "signature_outer_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 34240,
+      "apply_rows_matching_fit_signature": 737,
+      "fit_repeated_signature_groups": 1495,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 136962,
+      "fit_rows_with_repeated_signature": 3023,
+      "fit_unique_signatures": 135434,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1277
+    }
+  },
+  {
+    "baseline_outer_auc": 0.7664527704382859,
+    "blend_fold_delta": 0.0016463684273538837,
+    "candidate_fold_delta": 0.0016463684273538837,
+    "candidate_gpu_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "candidate_outer_auc": 0.7680991388656397,
+    "catboost_task_type": "GPU",
+    "elapsed_seconds": 200.5852573000011,
+    "fold": 5,
+    "inner_baseline_auc": 0.7765743600271086,
+    "inner_baseline_cat_best_iteration": 492,
+    "inner_baseline_lgb_best_iteration": 427,
+    "inner_blend_auc": 0.7783384262301067,
+    "inner_blend_grid": [
+      {
+        "auc": 0.7765743600271086,
+        "candidate_weight": 0.0
+      },
+      {
+        "auc": 0.7767679967052084,
+        "candidate_weight": 0.05
+      },
+      {
+        "auc": 0.7769590002819493,
+        "candidate_weight": 0.1
+      },
+      {
+        "auc": 0.7771212152838354,
+        "candidate_weight": 0.15000000000000002
+      },
+      {
+        "auc": 0.7772640410848072,
+        "candidate_weight": 0.2
+      },
+      {
+        "auc": 0.7773946588703887,
+        "candidate_weight": 0.25
+      },
+      {
+        "auc": 0.7775057438313457,
+        "candidate_weight": 0.30000000000000004
+      },
+      {
+        "auc": 0.7776102699761911,
+        "candidate_weight": 0.35000000000000003
+      },
+      {
+        "auc": 0.7777070404406706,
+        "candidate_weight": 0.4
+      },
+      {
+        "auc": 0.777796087141165,
+        "candidate_weight": 0.45
+      },
+      {
+        "auc": 0.7778754950948673,
+        "candidate_weight": 0.5
+      },
+      {
+        "auc": 0.7779560201218734,
+        "candidate_weight": 0.55
+      },
+      {
+        "auc": 0.7780249595029011,
+        "candidate_weight": 0.6000000000000001
+      },
+      {
+        "auc": 0.778086653865645,
+        "candidate_weight": 0.65
+      },
+      {
+        "auc": 0.7781298686443077,
+        "candidate_weight": 0.7000000000000001
+      },
+      {
+        "auc": 0.7781781262110272,
+        "candidate_weight": 0.75
+      },
+      {
+        "auc": 0.7782250752061622,
+        "candidate_weight": 0.8
+      },
+      {
+        "auc": 0.7782622577889851,
+        "candidate_weight": 0.8500000000000001
+      },
+      {
+        "auc": 0.7782930251794067,
+        "candidate_weight": 0.9
+      },
+      {
+        "auc": 0.7783233776568871,
+        "candidate_weight": 0.9500000000000001
+      },
+      {
+        "auc": 0.7783384262301067,
+        "candidate_weight": 1.0
+      }
+    ],
+    "inner_blend_weight": 1.0,
+    "inner_candidate_auc": 0.7783384262301067,
+    "inner_candidate_cat_best_iteration": 504,
+    "inner_candidate_lgb_best_iteration": 485,
+    "inner_fit_rows": 116417,
+    "inner_validation_rows": 20545,
+    "nested_blend_outer_auc": 0.7680991388656397,
+    "outer_fit_rows": 136962,
+    "outer_validation_rows": 34240,
+    "phase2_inner_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 116417,
+          "count_reference_id_sha256": "c174b8dfdcc97ef19e0d3713199a0b9f79347d8ad98cd0f9de470ff669d92697",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 78924,
+          "product_key_valid_rows": 67767,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "c174b8dfdcc97ef19e0d3713199a0b9f79347d8ad98cd0f9de470ff669d92697",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 41830,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 20545,
+          "count_reference_id_sha256": "c174b8dfdcc97ef19e0d3713199a0b9f79347d8ad98cd0f9de470ff669d92697",
+          "count_reference_rows": 116417,
+          "fee_decoded_rows": 13977,
+          "product_key_valid_rows": 11897,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 116417,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "phase2_outer_feature_audit": {
+      "frequency": {
+        "fit": {
+          "apply_rows": 136962,
+          "count_reference_id_sha256": "0b690f31a18c750a4becacaac20d7b468139ea68131ea9c3514ff170bb8490cc",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 92865,
+          "product_key_valid_rows": 79664,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "fit_validation_ids_disjoint": true,
+        "test": {
+          "apply_rows": 61500,
+          "count_reference_id_sha256": "0b690f31a18c750a4becacaac20d7b468139ea68131ea9c3514ff170bb8490cc",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 41831,
+          "product_key_valid_rows": 36052,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        },
+        "test_ids_used_in_frequency_reference": false,
+        "validation": {
+          "apply_rows": 34240,
+          "count_reference_id_sha256": "0b690f31a18c750a4becacaac20d7b468139ea68131ea9c3514ff170bb8490cc",
+          "count_reference_rows": 136962,
+          "fee_decoded_rows": 23255,
+          "product_key_valid_rows": 19893,
+          "reference_contains_validation_or_test_rows": false,
+          "target_used": false
+        }
+      },
+      "target_encoding": {
+        "apply_row_targets_used_by_mapping": false,
+        "fit_rows_encoded_by_inner_oof": 136962,
+        "inner_seed": 7,
+        "inner_splits": 5,
+        "outer_fit_valid_overlap": 0,
+        "test_encoded_from_outer_fit_only": true,
+        "validation_encoded_from_outer_fit_only": true
+      }
+    },
+    "signature_inner_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 20545,
+      "apply_rows_matching_fit_signature": 390,
+      "fit_repeated_signature_groups": 1101,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 116417,
+      "fit_rows_with_repeated_signature": 2224,
+      "fit_unique_signatures": 115294,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1060
+    },
+    "signature_outer_audit": {
+      "apply_labels_used": false,
+      "apply_rows": 34240,
+      "apply_rows_matching_fit_signature": 742,
+      "fit_repeated_signature_groups": 1507,
+      "fit_row_target_excluded_by_crossfit": true,
+      "fit_rows": 136962,
+      "fit_rows_with_repeated_signature": 3043,
+      "fit_unique_signatures": 135426,
+      "max_fit_signature_count": 4,
+      "target_rate_crossfit_splits": 5,
+      "target_rate_smoothing": 20.0,
+      "test_rows_matching_fit_signature": 1237
+    }
+  }
+]
