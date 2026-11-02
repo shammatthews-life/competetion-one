@@ -1,6 +1,7 @@
 # Improvement experiment plan
 
-Experiments are run only in unique directories under `experiments/runs`.
+Experiments are run only in unique directories under
+`experiments/<experiment-id>/runs`.
 Historical cache arrays are never used as training labels; test predictions
 are not used as a target or validation criterion.
 
@@ -13,10 +14,27 @@ rejected:
 - nested category encodings (TE-01);
 - raw rowwise XGBoost, including an independent seed replication (XGB-01/02);
 - five EXT_SOURCE/affordability interactions (E-INT-01).
+- CatBoost GPU with asymmetric Lossguide trees (EXP04; rejected on matched
+  five-fold OOF).
 
 Those candidates were tested against frozen Phase 2, not the historical
 EXP85 OOF baseline, so they are not described as EXP85 improvements. They are
 not rerun here.
+
+## Data and feature-source availability
+
+| Source | Classification | Use / limitation |
+|---|---|---|
+| `D:\gci\inpuy\train.csv`, `test.csv`, `sample_submission.csv` | Available and SHA-256 verified | Raw application data; only permitted training source for EXP04 |
+| Phase 2 rowwise feature builder | Available and reproducible | 122 rowwise/fold-safe features; no target or applicant ID in the model matrix |
+| Phase 1 fee/product features and Phase 2 nested target encodings | Available and reproducible | Fit-only frequency references and nested encodings are regenerated inside outer folds |
+| Phase 2 second-seed OOF and fold indices | Available with frozen manifest | Matched validation comparator only; not a model feature, label, or training input |
+| Frozen historical champion CSV | Available and SHA-256 verified | Post-training test-correlation diagnostic only |
+| Bureau, previous-application, POS, installment, and credit-card tables | Missing from the available raw-data directory | Relational/aggregate feature work requiring these tables is blocked |
+| Historical 463/491-feature matrices and corresponding neural/ensemble archives | Missing | Historical 080041/Anchor74 ancestry cannot be rebuilt from the local data/source set |
+| Historical cached Anchor74/suite predictions and downstream artifacts | Historically cached only | Replay/parity references; excluded from raw candidate training |
+| CatBoost 1.2.10 / XGBoost 3.4.1 | Available with RTX 4050 support | GPU use explicitly verified for prior work and EXP04 |
+| LightGBM 4.7.0 / PyTorch 2.14.1+cpu | Available, CPU-only in the checked environment | LightGBM is not configured for GPU here; neural training on GPU is unavailable without a separate CUDA environment |
 
 ## Ranked remaining opportunities
 
@@ -85,6 +103,40 @@ Anchor74 OOF baseline, so no submission is permitted. The next valid full
 85:15 evaluation requires leakage-safe predictions from the actual historical
 Anchor74 upstream stack and verified fold provenance for the suite streams,
 or independent retraining of those historical producers.
+
+## EXP04: CatBoost Lossguide architecture screen
+
+EXP04 trained one raw-data CatBoost Lossguide model per matched Phase 2
+second-seed fold using the existing fold-local feature pipeline. The split
+seed and all five fit/validation index arrays match the reference exactly.
+Early stopping used a stratified inner split of each outer-fit partition;
+the model was then refit on the complete outer-fit rows at the selected
+iteration count. Outer-validation labels were not used for fitting, feature
+generation, or stopping.
+
+The pooled candidate OOF AUC was `0.7680327122`; the archived float64 Phase 2
+OOF vector recomputed to `0.7709638204`. The paired delta was
+`-0.0029311082`, with zero positive folds. The predeclared
+`+0.001`/four-fold gate rejected this screen. No parameter tuning or
+second-seed run was performed.
+
+The Phase 2 comparison run itself used the outer validation fold for
+early-stopping selection, so its OOF reference may be optimistic relative to
+EXP04's inner-only stopping protocol. This makes the negative paired
+comparison conservative.
+
+The RTX 4050 was explicitly selected by CatBoost on all five folds. The run
+captured 205 `nvidia-smi` samples, peak utilization of 99%, and peak VRAM use
+of 4,041 MiB. The valid-format 61,500-row diagnostic CSV hash is
+`a718e1b55e319a35ffe9945d1a7fa222e06eb1794e59aa26e7ce8579f4b31ef9`.
+Historical-champion correlation is diagnostic only; the candidate has no
+official leaderboard score and is not promoted.
+
+An earlier run used outer-validation labels for early stopping. Its artifacts
+are preserved but its report is marked `INVALIDATED` and it is excluded from
+selection. The strict run and its full input/source/output hash manifest are
+under
+`experiments/exp04_catboost_lossguide/runs/exp04_lossguide_strict_seed20261101/`.
 
 In the checked `D:\gci\gemini\.venv`, PyTorch is CPU-only
 (`2.14.1+cpu`, CUDA unavailable); no GPU neural experiment was run.

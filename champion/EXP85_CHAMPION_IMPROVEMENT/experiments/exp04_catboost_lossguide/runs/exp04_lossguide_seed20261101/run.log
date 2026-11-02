@@ -1,0 +1,7 @@
+Starting exp04_lossguide_seed20261101: rows=171202 test_rows=61500 GPU=NVIDIA GeForce RTX 4050 Laptop GPU VRAM_free=5920MiB
+Fold 1/5: AUC=0.76523542 best_iteration=255 gpu_max=45% vram_max=4041MiB
+Fold 2/5: AUC=0.77016751 best_iteration=399 gpu_max=66% vram_max=4039MiB
+Fold 3/5: AUC=0.76876684 best_iteration=252 gpu_max=43% vram_max=4039MiB
+Fold 4/5: AUC=0.76528449 best_iteration=454 gpu_max=42% vram_max=4039MiB
+Fold 5/5: AUC=0.77181427 best_iteration=351 gpu_max=41% vram_max=4039MiB
+Completed: candidate_auc=0.76820454 phase2_auc=0.77096382 delta=-0.00275928 gate=REJECT_SCREEN

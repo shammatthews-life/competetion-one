@@ -1,0 +1,125 @@
+{
+  "experiment_id": "exp04_lossguide_seed20261101",
+  "inputs": {
+    "historical_champion_diagnostic_reference": {
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "size_bytes": 1291519
+    },
+    "phase2_oof_reference": {
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "size_bytes": 1369744
+    },
+    "sample": {
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "outputs": {
+    "experiment_summary.json": {
+      "sha256": "b31f7ccf0cbb8833f06407284367116955bfab25dc6b3c0dbb4edabbd61e09aa",
+      "size_bytes": 19515
+    },
+    "feature_columns.json": {
+      "sha256": "a9d2160e1b3e72e99cbbd0314d749e9590ece0437b494f4a198bdc16d8bd6797",
+      "size_bytes": 2908
+    },
+    "feature_importance.csv": {
+      "sha256": "470a666ff72466102422396407aaafb793f7c0233dc1bcb66fe5e8f6e2372f99",
+      "size_bytes": 4346
+    },
+    "fold_1_indices.npz": {
+      "sha256": "3ae7880d822976ea19abff5ae2cc798e9cb85f412632070c02595154ec8fb6f0",
+      "size_bytes": 238589
+    },
+    "fold_1_predictions.npz": {
+      "sha256": "ddf87b34cd84d8a7ec32de59b0d85a1691b8d5699de9984d5a9a4789d635611d",
+      "size_bytes": 394372
+    },
+    "fold_2_indices.npz": {
+      "sha256": "2665b47f80270fdf54a53a7fdd60be34c6525416cb8fe3477cfc68b76c59ccba",
+      "size_bytes": 238600
+    },
+    "fold_2_predictions.npz": {
+      "sha256": "58b796055d72f27f17dd714f75ff774b2bcd56c0f1c1dccab3e32bdc0a1c6204",
+      "size_bytes": 394547
+    },
+    "fold_3_indices.npz": {
+      "sha256": "fa28af4f2c41c9521a4cd2772806c459dd681b01896c9f48b90f8f389f6f07e9",
+      "size_bytes": 238584
+    },
+    "fold_3_predictions.npz": {
+      "sha256": "2edb87255a9a69f8d097420d81e5faa76e2c2cdf13253e52f8597879afe25d2e",
+      "size_bytes": 394285
+    },
+    "fold_4_indices.npz": {
+      "sha256": "7050662c85e10ca3badd5beacb4264c8a2c14d0dfcf790caf353686d8d04dd7d",
+      "size_bytes": 238618
+    },
+    "fold_4_predictions.npz": {
+      "sha256": "cfab60d8786254955d7359bbd2d69e6b6a858fa7e7d03722d7d0c9a12f8efb52",
+      "size_bytes": 394786
+    },
+    "fold_5_indices.npz": {
+      "sha256": "cb8601177c8681e88ce775b0e66392d7cd2892e84242a81655b4ae1b5c63d2f5",
+      "size_bytes": 238618
+    },
+    "fold_5_predictions.npz": {
+      "sha256": "fe7c7a268a6580fd8edcc830d055f711aa16dcabf4261c56b61e8055f4f5863f",
+      "size_bytes": 394358
+    },
+    "fold_indices.npz": {
+      "sha256": "3a78264b9ace01bae4192617738f6025bed10768a4bdb0bd9fec44af4ba4cd86",
+      "size_bytes": 1192801
+    },
+    "gpu_telemetry.json": {
+      "sha256": "ac80d8f5d7ca9778ed3aa2cf62b2ce84b26f6b266d7c9f4606936f9d95a99111",
+      "size_bytes": 29080
+    },
+    "oof_catboost_lossguide.npy": {
+      "sha256": "4f0f3307b2a36379ae210d8603a3bffc189a515af77ab3780c25139ed88c6e27",
+      "size_bytes": 684936
+    },
+    "run.log": {
+      "sha256": "28b21adeec51f531f86767bd7a853c43eb1e17d7a4a6fd6a6ac2172166a1eb47",
+      "size_bytes": 591
+    },
+    "submission_catboost_lossguide.csv": {
+      "sha256": "e50e7676fcde4ca5148a3533a4d8d8824443d1ab0e9f6adcbc4993536046dab0",
+      "size_bytes": 1291519
+    },
+    "test_catboost_lossguide.npy": {
+      "sha256": "d982b9a90d6cfc5c6635b8c38c0fafd9e86b927fe80daf01729cbb960a454038",
+      "size_bytes": 246128
+    }
+  },
+  "sources": {
+    "experiment_runner": {
+      "sha256": "41e5238e149889027fc0cf929101952ce34234f82c41f35aa537efdef1960453",
+      "size_bytes": 30291
+    },
+    "phase1_fee_product_features": {
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  }
+}

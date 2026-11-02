@@ -1,0 +1,157 @@
+{
+  "execution_source_hashes_at_training_start": {
+    "experiment_runner": {
+      "sha256": "c0b6e6d93ccb24df7f423b0604696bb78377468a73df2353530f839ccacd6604",
+      "size_bytes": 33805
+    },
+    "phase1_fee_product_features": {
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  },
+  "experiment_id": "exp04_lossguide_strict_seed20261101",
+  "inputs": {
+    "historical_champion_diagnostic_reference": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\reference\\EXP85_HISTORICAL_CHAMPION.csv",
+      "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+      "size_bytes": 1291519
+    },
+    "phase2_oof_reference": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\oof_phase2_fold_local_blend.npy",
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "size_bytes": 1369744
+    },
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "outputs": {
+    "experiment_summary.json": {
+      "sha256": "751c16ea51530d76877100dcaf6c38253008820340dc7f8965a268fa7bd83c0a",
+      "size_bytes": 32425
+    },
+    "feature_columns.json": {
+      "sha256": "a9d2160e1b3e72e99cbbd0314d749e9590ece0437b494f4a198bdc16d8bd6797",
+      "size_bytes": 2908
+    },
+    "feature_importance.csv": {
+      "sha256": "b9fceec042bb5e213ccb904977b6547e4aaf1bbb201ad5f339d59487c0f2bf81",
+      "size_bytes": 4395
+    },
+    "fold_1_indices.npz": {
+      "sha256": "3ae7880d822976ea19abff5ae2cc798e9cb85f412632070c02595154ec8fb6f0",
+      "size_bytes": 238589
+    },
+    "fold_1_predictions.npz": {
+      "sha256": "c15a9277a5b883a3d8e8e4069d55164efbc102ec5704195cf80448f826c5fb4f",
+      "size_bytes": 394258
+    },
+    "fold_2_indices.npz": {
+      "sha256": "2665b47f80270fdf54a53a7fdd60be34c6525416cb8fe3477cfc68b76c59ccba",
+      "size_bytes": 238600
+    },
+    "fold_2_predictions.npz": {
+      "sha256": "3e56fc8e7f21e84b7f82aef53bfd42e88d15c344b9967d757796fc11e3439c2b",
+      "size_bytes": 393885
+    },
+    "fold_3_indices.npz": {
+      "sha256": "fa28af4f2c41c9521a4cd2772806c459dd681b01896c9f48b90f8f389f6f07e9",
+      "size_bytes": 238584
+    },
+    "fold_3_predictions.npz": {
+      "sha256": "27716d98502f814fbd2fe9de04672738ebac8213a69342a68292090c11b8f3d8",
+      "size_bytes": 394483
+    },
+    "fold_4_indices.npz": {
+      "sha256": "7050662c85e10ca3badd5beacb4264c8a2c14d0dfcf790caf353686d8d04dd7d",
+      "size_bytes": 238618
+    },
+    "fold_4_predictions.npz": {
+      "sha256": "9dfecab2c9bf5d2bc64103bd3e39f624887358f3d1f7eeec68d0d43596a18725",
+      "size_bytes": 394675
+    },
+    "fold_5_indices.npz": {
+      "sha256": "cb8601177c8681e88ce775b0e66392d7cd2892e84242a81655b4ae1b5c63d2f5",
+      "size_bytes": 238618
+    },
+    "fold_5_predictions.npz": {
+      "sha256": "d069c93379d04dd7ee573e3881eca66722d63462ad6ecb8f20f60d6ec42d66a7",
+      "size_bytes": 394544
+    },
+    "fold_indices.npz": {
+      "sha256": "3a78264b9ace01bae4192617738f6025bed10768a4bdb0bd9fec44af4ba4cd86",
+      "size_bytes": 1192801
+    },
+    "gpu_telemetry.json": {
+      "sha256": "adea5082de4a9f76fed716675b2db5c5c7cb2537998e203a2ac991c5f83bcb88",
+      "size_bytes": 40554
+    },
+    "oof_catboost_lossguide.npy": {
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "size_bytes": 684936
+    },
+    "run.log": {
+      "sha256": "d2485f7a78679f47266c9619d8484e23a3fe1836ba585aebe6221c441be0d3e4",
+      "size_bytes": 733
+    },
+    "submission_catboost_lossguide.csv": {
+      "sha256": "a718e1b55e319a35ffe9945d1a7fa222e06eb1794e59aa26e7ce8579f4b31ef9",
+      "size_bytes": 1291519
+    },
+    "test_catboost_lossguide.npy": {
+      "sha256": "68de672cbda2437168ace15a2aac1fb4a442d864eed5d58f46d2f344bfbdd6f6",
+      "size_bytes": 246128
+    }
+  },
+  "sources": {
+    "experiment_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\run_experiment.py",
+      "sha256": "c46cbc7db1f5883a24076ce33d3e50b6c801c42a1800ecb1ed8a104d31be29ad",
+      "size_bytes": 33835
+    },
+    "phase1_fee_product_features": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  }
+}

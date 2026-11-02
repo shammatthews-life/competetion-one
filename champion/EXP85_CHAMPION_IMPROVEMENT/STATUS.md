@@ -177,3 +177,38 @@ in `RECONSTRUCTION_STATUS.md`. Until the exact 080041 ancestry and every
 final-synthesis member can be reproduced from raw data, do not call either
 generated candidate an independent historical submission or claim the
 `0.801340` score.
+
+## Independent improvement update (2026-11-02)
+
+The improvement track has started separately from blocked historical
+reconstruction. EXP04 tested GPU CatBoost Lossguide using only the available
+Home Credit application train/test CSVs and fold-local Phase 2 features.
+Historical predictions were not training inputs or labels; the frozen
+champion was read only after training for a diagnostic comparison.
+
+- Data: 171,202 labeled rows, 61,500 test rows, 122 features. Raw input hashes
+  and complete code/output hashes are in the run manifest.
+- Validation: five matched folds, seed `20261101`; inner-fit early stopping
+  followed by full outer-fit refitting. OOF ROC-AUC was `0.7680327122`,
+  compared with `0.7709638204` from the saved Phase 2 OOF vector
+  (`-0.0029311082`); all five paired folds declined.
+- The Phase 2 comparator selected stopping iterations using its outer
+  validation folds, so it may be optimistic relative to EXP04's stricter
+  inner-only stopping; the negative comparison is conservative.
+- Hardware: all folds used the RTX 4050 GPU; 205 telemetry samples, 99% peak
+  utilization and 4,041 MiB peak VRAM.
+- Result: the candidate passed 61,500-row schema/ID checks, but failed the
+  predeclared advancement gate and is **not promoted**. SHA-256:
+  `a718e1b55e319a35ffe9945d1a7fa222e06eb1794e59aa26e7ce8579f4b31ef9`.
+- Validation: five focused tests passed; the output manifest independently
+  verified 19 run outputs, five inputs, and five source files.
+- The first exploratory run is retained and marked invalid because it used
+  the outer validation labels for early stopping. Only the strict run above
+  is considered a valid OOF screen.
+
+This local OOF result does not measure the historical champion's
+`0.801340` public score or establish any new leaderboard score. Do not tune
+Lossguide on these same folds or treat its candidate as a replacement. The
+next credible improvement requires either a new, predeclared feature/model
+source or recovered auxiliary data; the historical relational archives and
+auxiliary tables remain unavailable.
