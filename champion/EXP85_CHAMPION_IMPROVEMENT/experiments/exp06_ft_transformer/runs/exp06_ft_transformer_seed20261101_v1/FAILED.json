@@ -1,0 +1,8 @@
+{
+  "run_id": "exp06_ft_transformer_seed20261101_v1",
+  "status": "FAILED_BEFORE_FT_TRAINING",
+  "stage": "matched-baseline output alignment",
+  "cause": "The first implementation reused inner-validation indices to select outer-validation predictions, producing a 20,545-versus-34,241 row mismatch.",
+  "scope": "Fold 1 LightGBM/CatBoost inner stopping and outer refit ran; no FT-Transformer fold training or candidate output was produced.",
+  "resolution": "Corrected the baseline interface to pass distinct inner-fit, inner-validation, outer-fit, and outer-validation indices. The corrected run uses a new run directory and preserves this failure log."
+}

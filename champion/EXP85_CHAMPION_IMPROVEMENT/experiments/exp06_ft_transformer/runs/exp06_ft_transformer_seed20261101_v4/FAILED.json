@@ -1,0 +1,23 @@
+{
+  "run_id": "exp06_ft_transformer_seed20261101_v4",
+  "status": "FAILED_DURING_FOLD_2_TELEMETRY_VALIDATION",
+  "stage": "fold-level GPU monitor check",
+  "cause": "The reused monitor treated a transient nvidia-smi subprocess timeout as fatal after the fold-2 inner and outer FT fits.",
+  "scope": "Fold 1 OOF prediction and both fold checkpoints are saved. Fold 2 inner and final checkpoints were written, but its predictions were not persisted. Folds 3-5 and full OOF/submission artifacts are absent.",
+  "fold_1": {
+    "ft_auc": 0.76029137,
+    "matched_phase2_auc": 0.76606915,
+    "selected_epochs": 9,
+    "peak_gpu_utilization_percent": 95,
+    "peak_memory_used_mib": 779
+  },
+  "fold_2": {
+    "matched_phase2_inner_iterations": {
+      "lightgbm": 362,
+      "catboost": 344
+    },
+    "ft_inner_best_epoch": 21,
+    "outer_checkpoint_written": true
+  },
+  "resolution": "Replaced the reused short-timeout monitor with an EXP06-local monitor using a 30-second query timeout. Sampling errors are retained in run telemetry; valid GPU samples and explicit CUDA training evidence remain required."
+}

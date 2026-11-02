@@ -1,0 +1,2 @@
+CUDA preflight: NVIDIA GeForce RTX 4050 Laptop GPU torch=2.11.0+cu128 CUDA=12.8 free=5072MiB
+Matched Phase 2 fold 1: inner_iterations lgb=349 cat=396

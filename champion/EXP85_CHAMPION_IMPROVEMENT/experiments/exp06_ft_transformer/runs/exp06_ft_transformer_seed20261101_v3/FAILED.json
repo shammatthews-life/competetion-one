@@ -1,0 +1,13 @@
+{
+  "run_id": "exp06_ft_transformer_seed20261101_v3",
+  "status": "STOPPED_AFTER_FOLD_1",
+  "stage": "incomplete five-fold run",
+  "cause": "The initial 32-dimensional, three-layer attention model ran at high GPU utilization but had an impractical per-epoch runtime on the available RTX 4050.",
+  "scope": "Fold 1 completed with FT AUC 0.76073798 and matched Phase 2 AUC 0.76606925 after 14 selected epochs. Its fold checkpoint and predictions are preserved. Folds 2-5 and the complete OOF/candidate submission were not produced.",
+  "observed_gpu": {
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "peak_utilization_percent": 97,
+    "peak_memory_used_mib": 1059
+  },
+  "resolution": "Preserved this run log and reduced the FT model to 16-dimensional tokens, two heads, two encoder layers, batch size 1,024, and an eight-epoch early-stopping patience. Architecture and data protocol remain FT-Transformer and strict inner-only selection."
+}

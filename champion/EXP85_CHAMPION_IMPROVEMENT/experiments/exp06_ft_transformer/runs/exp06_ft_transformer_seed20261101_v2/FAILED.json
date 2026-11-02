@@ -1,0 +1,8 @@
+{
+  "run_id": "exp06_ft_transformer_seed20261101_v2",
+  "status": "FAILED_BEFORE_FT_TRAINING",
+  "stage": "matched-baseline metric reporting",
+  "cause": "AUC reporting referenced the old generic validation-index variable after the inner/outer index split was made explicit.",
+  "scope": "Fold 1 inner-only baseline selection and outer refits completed; no FT-Transformer fold training or candidate output was produced.",
+  "resolution": "Corrected both matched-baseline fold AUC calculations to use outer validation indices. This run and the earlier v1 failure log are preserved."
+}

@@ -1,0 +1,1177 @@
+{
+  "advancement_gate": {
+    "decision": "REJECTED",
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "number_of_folds": 5,
+    "passed": false,
+    "pooled_auc_delta": -0.006327247088665167,
+    "positive_folds": 0
+  },
+  "candidate_submission": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\submission_ft_transformer.csv",
+    "prediction_max": 0.5162262320518494,
+    "prediction_min": 0.010757770389318466,
+    "rows": 61500,
+    "sha256": "ab1ae5ed9616eed5730c16323a183049e5953f1e45be8d5862ccab4c0d16c12b",
+    "unique_ids": 61500
+  },
+  "champion_reference": {
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\baseline\\reference\\EXP85_HISTORICAL_CHAMPION.csv",
+    "sha256": "78c31bb4e4534330479faa26861a49559dcadc40c7eac45620b92d7d9e6ea947",
+    "size_bytes": 1291519
+  },
+  "champion_reference_read_after_training_for_diagnostic_only": true,
+  "comparisons": {
+    "exp04_catboost_lossguide": {
+      "candidate_fold_auc": [
+        0.761249278008655,
+        0.7677526745024825,
+        0.767059801518314,
+        0.762774681520609,
+        0.7692680859089295
+      ],
+      "candidate_macro_fold_auc": 0.7656209042917981,
+      "candidate_pooled_auc": 0.7640223365055607,
+      "oof_pearson": 0.9334084847897457,
+      "oof_spearman": 0.9485351577720101,
+      "paired_fold_auc_delta": [
+        -0.0038769665140840903,
+        -0.0012980066674987967,
+        -0.002051105622660754,
+        -0.002163295711119173,
+        -0.0029885460247294215
+      ],
+      "pooled_auc_delta": -0.00401037568130036,
+      "positive_folds": 0,
+      "reference_fold_auc": [
+        0.7651262445227391,
+        0.7690506811699813,
+        0.7691109071409747,
+        0.7649379772317282,
+        0.7722566319336589
+      ],
+      "reference_macro_fold_auc": 0.7680964883998165,
+      "reference_pooled_auc": 0.7680327121868611
+    },
+    "exp05_residual_mlp": {
+      "candidate_fold_auc": [
+        0.761249278008655,
+        0.7677526745024825,
+        0.767059801518314,
+        0.762774681520609,
+        0.7692680859089295
+      ],
+      "candidate_macro_fold_auc": 0.7656209042917981,
+      "candidate_pooled_auc": 0.7640223365055607,
+      "oof_pearson": 0.9344750335465238,
+      "oof_spearman": 0.9453141542581753,
+      "paired_fold_auc_delta": [
+        0.0017439743175903244,
+        -0.0004941219889802451,
+        -0.0002891447948580872,
+        -0.0025926307025737616,
+        0.0005737665837423078
+      ],
+      "pooled_auc_delta": 0.0002950287213927538,
+      "positive_folds": 2,
+      "reference_fold_auc": [
+        0.7595053036910647,
+        0.7682467964914628,
+        0.7673489463131721,
+        0.7653673122231828,
+        0.7686943193251872
+      ],
+      "reference_macro_fold_auc": 0.7658325356088139,
+      "reference_pooled_auc": 0.763727307784168
+    },
+    "phase2_archived_outer_stopping_diagnostic": {
+      "candidate_fold_auc": [
+        0.761249278008655,
+        0.7677526745024825,
+        0.767059801518314,
+        0.762774681520609,
+        0.7692680859089295
+      ],
+      "candidate_macro_fold_auc": 0.7656209042917981,
+      "candidate_pooled_auc": 0.7640223365055607,
+      "oof_pearson": 0.9379917644380428,
+      "oof_spearman": 0.9561459819260197,
+      "paired_fold_auc_delta": [
+        -0.004832629498569996,
+        -0.005270659444424286,
+        -0.0046950123853349846,
+        -0.005920005622090829,
+        -0.00612524779406054
+      ],
+      "pooled_auc_delta": -0.006941483871027332,
+      "positive_folds": 0,
+      "reference_fold_auc": [
+        0.766081907507225,
+        0.7730233339469068,
+        0.771754813903649,
+        0.7686946871426998,
+        0.77539333370299
+      ],
+      "reference_macro_fold_auc": 0.7709896152406941,
+      "reference_pooled_auc": 0.7709638203765881
+    },
+    "phase2_strict_matched": {
+      "candidate_fold_auc": [
+        0.761249278008655,
+        0.7677526745024825,
+        0.767059801518314,
+        0.762774681520609,
+        0.7692680859089295
+      ],
+      "candidate_macro_fold_auc": 0.7656209042917981,
+      "candidate_pooled_auc": 0.7640223365055607,
+      "oof_pearson": 0.9412934778163972,
+      "oof_spearman": 0.9589631172141514,
+      "paired_fold_auc_delta": [
+        -0.004819945944497084,
+        -0.0048843494409015475,
+        -0.0043647927191994285,
+        -0.005761550987139374,
+        -0.004034785697563215
+      ],
+      "pooled_auc_delta": -0.006327247088665167,
+      "positive_folds": 0,
+      "reference_fold_auc": [
+        0.7660692239531521,
+        0.7726370239433841,
+        0.7714245942375134,
+        0.7685362325077484,
+        0.7733028716064927
+      ],
+      "reference_macro_fold_auc": 0.7703939892496582,
+      "reference_pooled_auc": 0.7703495835942259
+    }
+  },
+  "decision": "REJECTED",
+  "elapsed_seconds": 2860.8222693999996,
+  "exp05_oof_reference_sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+  "experiment_id": "exp06_ft_transformer_seed20261101_v5",
+  "feature_columns": [
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_MOBIL",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR",
+    "NA_CNT_CHILDREN",
+    "NA_AMT_INCOME_TOTAL",
+    "NA_AMT_CREDIT",
+    "NA_AMT_ANNUITY",
+    "NA_AMT_GOODS_PRICE",
+    "NA_REGION_POPULATION_RELATIVE",
+    "NA_DAYS_BIRTH",
+    "NA_DAYS_EMPLOYED",
+    "NA_DAYS_REGISTRATION",
+    "NA_DAYS_ID_PUBLISH",
+    "NA_OWN_CAR_AGE",
+    "NA_FLAG_MOBIL",
+    "NA_FLAG_EMP_PHONE",
+    "NA_FLAG_WORK_PHONE",
+    "NA_CNT_FAM_MEMBERS",
+    "NA_REGION_RATING_CLIENT",
+    "NA_EXT_SOURCE_1",
+    "NA_EXT_SOURCE_2",
+    "NA_EXT_SOURCE_3",
+    "NA_DAYS_LAST_PHONE_CHANGE",
+    "NA_AMT_REQ_CREDIT_BUREAU_HOUR",
+    "NA_AMT_REQ_CREDIT_BUREAU_MON",
+    "NA_AMT_REQ_CREDIT_BUREAU_QRT",
+    "NA_AMT_REQ_CREDIT_BUREAU_YEAR",
+    "RAW_MISSING_COUNT",
+    "DAYS_EMPLOYED_CLEAN",
+    "DAYS_EMPLOYED_SENTINEL",
+    "AGE_YEARS",
+    "EMPLOYED_YEARS",
+    "EMPLOYED_TO_AGE",
+    "REGISTRATION_TO_AGE",
+    "ID_PUBLISH_TO_AGE",
+    "PHONE_CHANGE_YEARS",
+    "CREDIT_TO_INCOME",
+    "ANNUITY_TO_INCOME",
+    "CREDIT_TO_GOODS",
+    "ANNUITY_TO_CREDIT",
+    "CREDIT_TERM",
+    "INCOME_PER_FAMILY",
+    "CREDIT_PER_FAMILY",
+    "ANNUITY_PER_FAMILY",
+    "DISPOSABLE_INCOME",
+    "DISPOSABLE_INCOME_TO_INCOME",
+    "DEBT_SERVICE_COVERAGE",
+    "CREDIT_TERM_ROUND_1",
+    "CREDIT_TO_GOODS_ROUND_2",
+    "EXT_MEAN",
+    "EXT_MIN",
+    "EXT_MAX",
+    "EXT_STD",
+    "EXT_RANGE",
+    "EXT_COUNT",
+    "EXT_PRODUCT",
+    "EXT_DIFF_01",
+    "EXT_PRODUCT_01",
+    "EXT_RATIO_01",
+    "EXT_DIFF_02",
+    "EXT_PRODUCT_02",
+    "EXT_RATIO_02",
+    "EXT_DIFF_12",
+    "EXT_PRODUCT_12",
+    "EXT_RATIO_12",
+    "MERTON_DISTANCE_20",
+    "MERTON_PD_20",
+    "MERTON_DISTANCE_25",
+    "MERTON_PD_25",
+    "BUREAU_INQUIRY_SUM",
+    "INCOME_LOG1P",
+    "CREDIT_LOG1P",
+    "ANNUITY_LOG1P",
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "OCCUPATION_TYPE",
+    "ORGANIZATION_TYPE",
+    "FEE_DECODED",
+    "FEE_RAW_RATIO_COUNT",
+    "FEE_ADJUSTED_RATIO_COUNT",
+    "ANNUITY_CREDIT_RATIO_FEE_ADJUSTED",
+    "ANNUITY_CREDIT_RATIO_DECODED",
+    "ANNUITY_CREDIT_RATIO_DECODED_ROUND_3",
+    "ANNUITY_CREDIT_RATIO_DECODED_ROUND_4",
+    "ANNUITY_CREDIT_RATIO_DECODED_ROUND_5",
+    "CREDIT_GOODS_RATIO",
+    "PRODUCT_KEY_VALID",
+    "PRODUCT_KEY_K",
+    "PRODUCT_KEY_DISTANCE",
+    "TE_FEE_Q3",
+    "LOG_COUNT_FEE_Q3",
+    "TE_FEE_Q4",
+    "LOG_COUNT_FEE_Q4",
+    "TE_FEE_Q5",
+    "LOG_COUNT_FEE_Q5",
+    "TE_PRODUCT_K",
+    "LOG_COUNT_PRODUCT_K"
+  ],
+  "feature_count": 122,
+  "fold_protocol": {
+    "feature_pipeline": "Frozen Phase 2 fold-local fee/product frequency and nested target encodings",
+    "inner_target_encoding": "Nested inner OOF; apply encodings use only current fit labels",
+    "inner_validation_fraction": 0.15,
+    "matched_phase2_exp04_exp05_outer_indices": true,
+    "n_splits": 5,
+    "outer_refit": "All outer-fit rows, epoch count selected on inner validation only",
+    "outer_seed": 20261101,
+    "outer_validation_used_for_stopping": false
+  },
+  "fold_results": [
+    {
+      "categorical_feature_count": 8,
+      "elapsed_seconds": 599.416459900036,
+      "feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92909,
+            "product_key_valid_rows": 79652,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23190,
+            "product_key_valid_rows": 19905,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "final_checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\checkpoint_fold_1_final.pt",
+      "fit_rows": 136961,
+      "fold": 1,
+      "ft_inner_selection_seconds": 281.48462449997896,
+      "ft_outer_refit_seconds": 220.04937339999015,
+      "gpu": {
+        "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "fold": 1,
+        "max_memory_used_mib": 1254,
+        "max_utilization_percent": 99,
+        "nvidia_smi_monitor_errors": [],
+        "sample_count": 243,
+        "torch_peak_allocated_mib": 742,
+        "torch_peak_reserved_mib": 928
+      },
+      "inner_best_auc": 0.762393337851416,
+      "inner_feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79100,
+            "product_key_valid_rows": 67676,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41832,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13833,
+            "product_key_valid_rows": 11976,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_rows": 116416,
+      "inner_model_seed": 310001,
+      "inner_split_seed": 20261102,
+      "inner_validation_rows": 20545,
+      "matched_phase2_blend_auc": 0.7660692239531521,
+      "matched_phase2_catboost_auc": 0.7651741052560052,
+      "matched_phase2_catboost_best_iteration": 396,
+      "matched_phase2_catboost_monitor_errors": [],
+      "matched_phase2_lgbm_auc": 0.7645368816603602,
+      "matched_phase2_lgbm_best_iteration": 349,
+      "numeric_feature_count": 114,
+      "oof_prediction": {
+        "max": 0.5268735289573669,
+        "mean": 0.08428792655467987,
+        "min": 0.010049459524452686,
+        "p01": 0.010185870341956615,
+        "p50": 0.052015211433172226,
+        "p99": 0.45855170488357544,
+        "std": 0.09196094423532486
+      },
+      "outer_oof_auc": 0.761249278008655,
+      "outer_refit_seed": 20281102,
+      "outer_validation_used_for_stopping": false,
+      "selected_epochs": 26,
+      "validation_rows": 34241
+    },
+    {
+      "categorical_feature_count": 8,
+      "elapsed_seconds": 571.899401600007,
+      "feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92894,
+            "product_key_valid_rows": 79619,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41825,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23193,
+            "product_key_valid_rows": 19938,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "final_checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\checkpoint_fold_2_final.pt",
+      "fit_rows": 136961,
+      "fold": 2,
+      "ft_inner_selection_seconds": 287.9312875000178,
+      "ft_outer_refit_seconds": 195.76979629998095,
+      "gpu": {
+        "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "fold": 2,
+        "max_memory_used_mib": 1360,
+        "max_utilization_percent": 99,
+        "nvidia_smi_monitor_errors": [],
+        "sample_count": 233,
+        "torch_peak_allocated_mib": 742,
+        "torch_peak_reserved_mib": 930
+      },
+      "inner_best_auc": 0.7585026348373856,
+      "inner_feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79034,
+            "product_key_valid_rows": 67685,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41850,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13911,
+            "product_key_valid_rows": 11934,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_rows": 116416,
+      "inner_model_seed": 310002,
+      "inner_split_seed": 20261103,
+      "inner_validation_rows": 20545,
+      "matched_phase2_blend_auc": 0.7726370239433841,
+      "matched_phase2_catboost_auc": 0.7714510001822337,
+      "matched_phase2_catboost_best_iteration": 344,
+      "matched_phase2_catboost_monitor_errors": [],
+      "matched_phase2_lgbm_auc": 0.7716011418441722,
+      "matched_phase2_lgbm_best_iteration": 362,
+      "numeric_feature_count": 114,
+      "oof_prediction": {
+        "max": 0.5017121434211731,
+        "mean": 0.07803069055080414,
+        "min": 0.01114684622734785,
+        "p01": 0.011288450099527836,
+        "p50": 0.05218952149152756,
+        "p99": 0.40119534730911255,
+        "std": 0.08130423724651337
+      },
+      "outer_oof_auc": 0.7677526745024825,
+      "outer_refit_seed": 20281103,
+      "outer_validation_used_for_stopping": false,
+      "selected_epochs": 23,
+      "validation_rows": 34241
+    },
+    {
+      "categorical_feature_count": 8,
+      "elapsed_seconds": 570.7951486000093,
+      "feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92957,
+            "product_key_valid_rows": 79698,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41836,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23176,
+            "product_key_valid_rows": 19859,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "final_checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\checkpoint_fold_3_final.pt",
+      "fit_rows": 136962,
+      "fold": 3,
+      "ft_inner_selection_seconds": 261.2447478999966,
+      "ft_outer_refit_seconds": 214.34352510003373,
+      "gpu": {
+        "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "fold": 3,
+        "max_memory_used_mib": 1338,
+        "max_utilization_percent": 98,
+        "nvidia_smi_monitor_errors": [],
+        "sample_count": 230,
+        "torch_peak_allocated_mib": 742,
+        "torch_peak_reserved_mib": 930
+      },
+      "inner_best_auc": 0.768473759341685,
+      "inner_feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 79094,
+            "product_key_valid_rows": 67765,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13847,
+            "product_key_valid_rows": 11933,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 310003,
+      "inner_split_seed": 20261104,
+      "inner_validation_rows": 20545,
+      "matched_phase2_blend_auc": 0.7714245942375134,
+      "matched_phase2_catboost_auc": 0.7697204669664012,
+      "matched_phase2_catboost_best_iteration": 362,
+      "matched_phase2_catboost_monitor_errors": [],
+      "matched_phase2_lgbm_auc": 0.7709462015853303,
+      "matched_phase2_lgbm_best_iteration": 375,
+      "numeric_feature_count": 114,
+      "oof_prediction": {
+        "max": 0.5215755701065063,
+        "mean": 0.0695081502199173,
+        "min": 0.00962347537279129,
+        "p01": 0.009702470153570175,
+        "p50": 0.04508607089519501,
+        "p99": 0.3612266182899475,
+        "std": 0.0723755732178688
+      },
+      "outer_oof_auc": 0.767059801518314,
+      "outer_refit_seed": 20281104,
+      "outer_validation_used_for_stopping": false,
+      "selected_epochs": 29,
+      "validation_rows": 34240
+    },
+    {
+      "categorical_feature_count": 8,
+      "elapsed_seconds": 513.2489546999568,
+      "feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92826,
+            "product_key_valid_rows": 79543,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41854,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23328,
+            "product_key_valid_rows": 20014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "final_checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\checkpoint_fold_4_final.pt",
+      "fit_rows": 136962,
+      "fold": 4,
+      "ft_inner_selection_seconds": 250.45761169999605,
+      "ft_outer_refit_seconds": 147.67958260001615,
+      "gpu": {
+        "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "fold": 4,
+        "max_memory_used_mib": 1282,
+        "max_utilization_percent": 99,
+        "nvidia_smi_monitor_errors": [],
+        "sample_count": 192,
+        "torch_peak_allocated_mib": 742,
+        "torch_peak_reserved_mib": 930
+      },
+      "inner_best_auc": 0.768273053185392,
+      "inner_feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78855,
+            "product_key_valid_rows": 67529,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41835,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13955,
+            "product_key_valid_rows": 12014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 310004,
+      "inner_split_seed": 20261105,
+      "inner_validation_rows": 20545,
+      "matched_phase2_blend_auc": 0.7685362325077484,
+      "matched_phase2_catboost_auc": 0.7666785241837255,
+      "matched_phase2_catboost_best_iteration": 482,
+      "matched_phase2_catboost_monitor_errors": [],
+      "matched_phase2_lgbm_auc": 0.7677366087298911,
+      "matched_phase2_lgbm_best_iteration": 479,
+      "numeric_feature_count": 114,
+      "oof_prediction": {
+        "max": 0.46984875202178955,
+        "mean": 0.06674448400735855,
+        "min": 0.010294722393155098,
+        "p01": 0.010446254163980484,
+        "p50": 0.046622369438409805,
+        "p99": 0.32814842462539673,
+        "std": 0.06578429043292999
+      },
+      "outer_oof_auc": 0.762774681520609,
+      "outer_refit_seed": 20281105,
+      "outer_validation_used_for_stopping": false,
+      "selected_epochs": 20,
+      "validation_rows": 34240
+    },
+    {
+      "categorical_feature_count": 8,
+      "elapsed_seconds": 597.8168672000174,
+      "feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92889,
+            "product_key_valid_rows": 79716,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41824,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23222,
+            "product_key_valid_rows": 19841,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "final_checkpoint": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\checkpoint_fold_5_final.pt",
+      "fit_rows": 136962,
+      "fold": 5,
+      "ft_inner_selection_seconds": 264.04335360002005,
+      "ft_outer_refit_seconds": 230.1405744999647,
+      "gpu": {
+        "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "fold": 5,
+        "max_memory_used_mib": 1330,
+        "max_utilization_percent": 98,
+        "nvidia_smi_monitor_errors": [],
+        "sample_count": 238,
+        "torch_peak_allocated_mib": 742,
+        "torch_peak_reserved_mib": 930
+      },
+      "inner_best_auc": 0.7717652317891996,
+      "inner_feature_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78907,
+            "product_key_valid_rows": 67767,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41803,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13922,
+            "product_key_valid_rows": 11949,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "inner_fit_rows": 116417,
+      "inner_model_seed": 310005,
+      "inner_split_seed": 20261106,
+      "inner_validation_rows": 20545,
+      "matched_phase2_blend_auc": 0.7733028716064927,
+      "matched_phase2_catboost_auc": 0.7730471407337849,
+      "matched_phase2_catboost_best_iteration": 421,
+      "matched_phase2_catboost_monitor_errors": [],
+      "matched_phase2_lgbm_auc": 0.7713291570873193,
+      "matched_phase2_lgbm_best_iteration": 272,
+      "numeric_feature_count": 114,
+      "oof_prediction": {
+        "max": 0.5814053416252136,
+        "mean": 0.09045254439115524,
+        "min": 0.01229025237262249,
+        "p01": 0.012426869012415409,
+        "p50": 0.056018516421318054,
+        "p99": 0.447295606136322,
+        "std": 0.09533648192882538
+      },
+      "outer_oof_auc": 0.7692680859089295,
+      "outer_refit_seed": 20281106,
+      "outer_validation_used_for_stopping": false,
+      "selected_epochs": 30,
+      "validation_rows": 34240
+    }
+  ],
+  "historical_predictions_used_as_model_inputs": false,
+  "historical_predictions_used_as_training_labels": false,
+  "historical_public_score_reference": 0.80134,
+  "historical_public_score_verified_for_candidate": false,
+  "inputs": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "lineage": "INDEPENDENT_RAW_ONLY_FT_TRANSFORMER_WITH_STRICT_MATCHED_PHASE2_BASELINE",
+  "matched_phase2_benchmark": {
+    "catboost_fold_auc": [
+      0.7651741052560052,
+      0.7714510001822337,
+      0.7697204669664012,
+      0.7666785241837255,
+      0.7730471407337849
+    ],
+    "catboost_gpu_telemetry_samples": 162,
+    "catboost_peak_memory_used_mib": 5231,
+    "catboost_peak_utilization_percent": 49,
+    "definition": "Arithmetic mean of frozen Phase 2 LightGBM and CatBoost configurations, with each best iteration selected on inner validation and each model refit on full outer-fit rows",
+    "lightgbm_fold_auc": [
+      0.7645368816603602,
+      0.7716011418441722,
+      0.7709462015853303,
+      0.7677366087298911,
+      0.7713291570873193
+    ],
+    "monitor_errors": [],
+    "outer_fold_auc": [
+      0.7660692239531521,
+      0.7726370239433841,
+      0.7714245942375134,
+      0.7685362325077484,
+      0.7733028716064927
+    ]
+  },
+  "model": {
+    "gpu_preflight": {
+      "allocator_fraction": 0.76,
+      "cpu_fallback": false,
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "free_memory_mib_before_run": 5072,
+      "ft_transformer_forward_backward_step": "PASS",
+      "index": 0,
+      "torch_module_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\.venv\\Lib\\site-packages\\torch\\__init__.py",
+      "torch_version": "2.11.0+cu128",
+      "total_memory_mib": 6140
+    },
+    "gpu_telemetry": {
+      "max_memory_used_mib": 1360,
+      "max_torch_allocated_mib": 742,
+      "max_utilization_percent": 99,
+      "monitor_errors": [],
+      "sample_count": 1136
+    },
+    "gpu_training_confirmed": true,
+    "parameters": {
+      "architecture": "FT-Transformer: per-feature numeric tokenizers, categorical embeddings, CLS token, Transformer encoder",
+      "attention_heads": 2,
+      "batch_size": 2048,
+      "dropout": 0.15,
+      "early_stopping_patience": 8,
+      "feedforward_dimension": 64,
+      "gpu_memory_fraction": 0.76,
+      "inner_validation_fraction": 0.15,
+      "learning_rate": 0.0003,
+      "loss": "BCEWithLogitsLoss",
+      "max_epochs": 30,
+      "mixed_precision": false,
+      "optimizer": "AdamW",
+      "token_dimension": 16,
+      "transformer_layers": 2,
+      "weight_decay": 0.0001
+    },
+    "seeds": {
+      "inner_split": [
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106
+      ],
+      "inner_training": [
+        310001,
+        310002,
+        310003,
+        310004,
+        310005
+      ],
+      "outer_refit": [
+        20281102,
+        20281103,
+        20281104,
+        20281105,
+        20281106
+      ]
+    }
+  },
+  "official_competition_score": "NOT_EVALUATED",
+  "outputs": {
+    "oof_ft_transformer.npy": {
+      "sha256": "f5c2cf5df01522091693aace2c954d8b28190a2a43f6ba8803e0e435bf99fe78",
+      "size_bytes": 684936
+    },
+    "oof_phase2_strict_matched.npy": {
+      "sha256": "82383096c1ea2b029c133fd07ba0e63a8ae10a8de25d4f3cd123cf4b73ace6cf",
+      "size_bytes": 684936
+    },
+    "oof_phase2_strict_matched_catboost.npy": {
+      "sha256": "e2776be692c31a346d28d694b28313bcfa9a3f68907840a1ee3327ea8118b6e6",
+      "size_bytes": 684936
+    },
+    "oof_phase2_strict_matched_lightgbm.npy": {
+      "sha256": "b07933f863d79a0d2d62ad658eae266e85d40342610c2710520674c5e6e4a455",
+      "size_bytes": 684936
+    },
+    "test_ft_transformer.npy": {
+      "sha256": "12690ba461cefa84478e63052ac93b879737296bcfe74f170861476a6ee711a0",
+      "size_bytes": 246128
+    },
+    "test_phase2_strict_matched.npy": {
+      "sha256": "85d1326690f6d24e24d17741cb6e27850c162951c593b7df8df543608dce52a1",
+      "size_bytes": 246128
+    }
+  },
+  "prediction_diagnostics": {
+    "oof": {
+      "max": 0.5814053416252136,
+      "mean": 0.07780478894710541,
+      "min": 0.00962347537279129,
+      "p01": 0.00995217077434063,
+      "p50": 0.05002054572105408,
+      "p99": 0.4134410619735718,
+      "std": 0.08260180801153183
+    },
+    "test": {
+      "max": 0.5162262320518494,
+      "mean": 0.08628184348344803,
+      "min": 0.010757770389318466,
+      "p01": 0.010938207618892193,
+      "p50": 0.05711654946208,
+      "p99": 0.41971781849861145,
+      "std": 0.0880906954407692
+    },
+    "test_pearson_historical_champion_diagnostic_only": 0.7852352253291812,
+    "test_spearman_historical_champion_diagnostic_only": 0.9051216906447984
+  },
+  "raw_training_labels_used": true,
+  "references": {
+    "exp04_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "status": "COMPLETED"
+    },
+    "exp05_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "status": "COMPLETED"
+    },
+    "folds_verified": {
+      "exp04": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\sha256_manifest.json"
+      },
+      "exp05": {
+        "folds_verified": 5,
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_indices.npz"
+      },
+      "phase2": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json"
+      }
+    },
+    "phase2_archived_outer_stopping_oof": {
+      "classification": "Post-training OOF comparator; never a model input",
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\oof_phase2_fold_local_blend.npy",
+      "sha256": "e630421a76afd309cbf1495873cca22117cb8d8d1443845ddf9312141fcefde6",
+      "status": "COMPLETED"
+    }
+  },
+  "source_hashes": {
+    "ft_transformer_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\ft_transformer_runner_training_snapshot.py",
+      "sha256": "9c746e1c69fcf1ef6c3e0b873ea76c212cd6246bb67b2f60ff89969b57ee00b7",
+      "size_bytes": 65981
+    },
+    "phase1_fee_product_features": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_01_fee_product_features\\run_experiment.py",
+      "sha256": "93713b018d3376bb35bbad770d1213eb5e5f9595bb243be635b531e3c99ddf9b",
+      "size_bytes": 15844
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    },
+    "phase2_target_encodings": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_02_fold_safe_key_encodings\\run_experiment.py",
+      "sha256": "cf45675c405588aab8c9d38976254b670144af1deaf423e08309fc64a190a34e",
+      "size_bytes": 20360
+    }
+  },
+  "status": "COMPLETED",
+  "versions": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "scikit_learn": "1.9.1",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8"
+  }
+}

@@ -1,0 +1,7 @@
+CUDA preflight: NVIDIA GeForce RTX 4050 Laptop GPU torch=2.11.0+cu128 CUDA=12.8 free=5072MiB
+Matched Phase 2 fold 1: inner_iterations lgb=349 cat=396
+FT checkpoint_fold_1_inner.pt: epoch=5 inner_auc=0.761593 best_epoch=4
+FT checkpoint_fold_1_inner.pt: epoch=10 inner_auc=0.763418 best_epoch=10
+FT checkpoint_fold_1_inner.pt: epoch=15 inner_auc=0.762416 best_epoch=14
+FT checkpoint_fold_1_inner.pt: epoch=20 inner_auc=0.760938 best_epoch=14
+Fold 1/5: FT_AUC=0.76073798 matched_AUC=0.76606925 epochs=14 gpu=97% VRAM=1059MiB
