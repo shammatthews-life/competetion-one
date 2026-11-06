@@ -131,3 +131,4 @@ Whenever a new experiment runs:
 2. Record exact parameters, local OOF AUC, fold standard deviations, and Public Leaderboard scores.
 3. Verify output CSV row count (61,500), unique IDs, and SHA-256 hash.
 4. Commit the updated ledger into git. Never rewrite previous entries.
+
