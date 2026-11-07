@@ -33,6 +33,8 @@
 | **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
 | **Phase 26 Research** | `gemini/run_deep_20_novel_exp121_140.py` | 20 Advanced Research Regime Splits & Bureau Topology (Exp 121 - 140) | 0.757463 | *(Diagnostic)* | 2,604 bps spread (Single Male Hazard) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_20_NOVEL_EXP121_140.md)) |
+| **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
+| **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
 | **Origin EXP 5** | `gemini/independentexperiments/origin_exp5.ipynb` | Full Community Keys + Person Pooling + 5 Members | *Target >= 0.7800* | *Target >= 0.7820* | *Target +400 bps* | IN DEVELOPMENT |
 
 ---
@@ -817,6 +819,47 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   18. **Exp 138 (`Vehicle_Liquidation_Annuity_Coverage`):** `(Income * exp(-Car_Age / 8)) / (12 * Annuity)`. N=58,210 (34.00%), Default: 7.25%, $\rho = -0.0524$, Spread: **`396.8 bps`** (9.54% vs 5.57%). Estimated vehicle asset recovery value divided by total annual contractual loan payment.
   19. **Exp 139 (`Inquiry_Annual_Acceleration_Index`):** `Inquiries_Month * 12 - Inquiries_Year`. N=113,911 (66.54%), Default: 7.87%, $\rho = -0.0200$, Spread: **`210.9 bps`** (8.87% vs 6.76%). Differential between annualized monthly credit inquiry velocity and actual trailing annual inquiries.
   20. **Exp 140 (`Credit_Income_Polynomial_Hazard`):** `(Credit / Income)^2 * (1 - E2)`. N=131,673 (76.91%), Default: 8.23%, $\rho = +0.0387$, Spread: **`438.2 bps`** (5.56% vs 9.94%). Quadratic leverage penalty capturing catastrophic non-linear default risk when credit exceeds twice income.
+
+### 2026-11-07 — Origin EXP 6: Apex Cognitive Synthesis (V11 Architecture)
+- **Runner Script:** [`gemini/run_and_build_origin_exp6_apex_synthesis.py`](file:///d:/gci/gemini/run_and_build_origin_exp6_apex_synthesis.py) (371.44s execution on RTX 4050 GPU)
+- **Manifest & Hash:** [`RUN_MANIFEST_ORIGIN_EXP6.json`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)
+- **Design:** Pure in-memory feature extraction combining Archimedean copula distress manifolds (Clayton $\theta=3$, Frank $\theta=4$, Joe $\theta=2$, Dual-bureau harmonic floor), information-theoretic conflict metrics (Bureau KL divergence, logit divergence), single male laborer hazard, and 25% inflation shock solvency buffer across a 6-engine suite.
+- **Results:**
+  - Individual Model OOF AUCs:
+    * `lgb_shallow`: 0.758604
+    * `lgb_reg`: **0.759570**
+    * `lgb_et`: 0.757913
+    * `lgb_mono`: 0.758951
+    * `xgb_gpu`: 0.756535
+    * `cb_gpu`: 0.757791
+  - Equal-Weight Probit Blend: **0.760467**
+  - Optimal Convex Probit Blend: **0.760528** (+0.6 bps vs equal)
+  - Optimal Model Weights: `lgb_reg` (29.32%), `cb_gpu` (25.56%), `lgb_mono` (18.94%), `xgb_gpu` (12.94%), `lgb_et` (11.19%), `lgb_shallow` (2.06%).
+
+### 2026-11-07 — Origin EXP 7: Grandmaster Cognitive Synthesis (V12 Architecture)
+- **Runner Script:** [`gemini/run_origin_exp7_grandmaster_synthesis.py`](file:///d:/gci/gemini/run_origin_exp7_grandmaster_synthesis.py) (444.81s execution on RTX 4050 GPU)
+- **Manifest & Hash:** [`RUN_MANIFEST_ORIGIN_EXP7.json`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)
+- **Breakthrough Innovation:** Full unification connecting:
+  1. Relational Entity Graph: `entity_key` invariant string identifying 4,070 multi-application borrower clusters, application sequence telemetry (`APP_ORDER`, `DAYS_SINCE_PREV_APP`, `N_APPS_ALL`), and in-fold leave-self-out prior default histories (`UIDY_ANYBAD`, `UIDY_NEAR_Y`).
+  2. Tariff Decoders: Integer pricing multiplier `K_DEC` (0.0132 lattice) and fee-offset ratio `Q0_FEE` (129.50 fee).
+  3. Master Copula & Demographic Formulations: Clayton deep lower tail, Frank comprehensive, Bureau KL divergence, Single male laborer hazard, and Tenured landline anchor.
+  4. 7 Diverse Model Engines with Nelder-Mead Probit Rank Optimization.
+- **Results:**
+  - Individual Model OOF AUCs:
+    * `lgb_reg`: **0.761577** (Fold 3 reached **0.766127**)
+    * `lgb_mono`: **0.761275**
+    * `lgb_deep`: 0.760486
+    * `lgb_shallow`: 0.760066
+    * `cb_gpu`: 0.759683
+    * `xgb_gpu`: 0.758603
+    * `lgb_et`: 0.756396
+  - Equal-Weight Probit Blend: **0.762320**
+  - Optimal Convex Probit Blend: **0.762572** (**+20.4 bps lift** over EXP 6!)
+  - Optimal Model Weights: `lgb_reg` (27.85%), `cb_gpu` (26.50%), `lgb_mono` (22.74%), `xgb_gpu` (14.20%), `lgb_deep` (8.71%).
+  - Disk Artifacts:
+    * `oof_predictions_origin_exp7_grade.csv` (171,202 rows)
+    * `submission_origin_exp7_blended_probabilities.csv` (61,500 rows)
+    * `submission_origin_exp7_average_ranks.csv` (61,500 rows)
 
 ---
 

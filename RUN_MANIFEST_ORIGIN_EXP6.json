@@ -1,0 +1,41 @@
+{
+  "experiment_id": "Origin_EXP_6_Apex_Synthesis",
+  "timestamp_utc": "2026-11-07T16:13:37Z",
+  "total_elapsed_seconds": 370.91,
+  "gpu_hardware": "NVIDIA GeForce RTX 4050 Laptop GPU (Driver 592.82, VRAM 6141 MB)",
+  "pooled_oof_roc_auc": 0.760528,
+  "equal_weight_oof_roc_auc": 0.760467,
+  "individual_model_aucs": {
+    "lgb_shallow": 0.758604,
+    "lgb_reg": 0.75957,
+    "lgb_et": 0.757913,
+    "lgb_mono": 0.758951,
+    "xgb_gpu": 0.756535,
+    "cb_gpu": 0.757791
+  },
+  "optimal_weights": {
+    "lgb_shallow": 0.0206,
+    "lgb_reg": 0.2932,
+    "lgb_et": 0.1119,
+    "lgb_mono": 0.1894,
+    "xgb_gpu": 0.1294,
+    "cb_gpu": 0.2556
+  },
+  "artifacts": {
+    "oof_predictions": {
+      "path": "D:\\gci\\oof_predictions_origin_exp6_grade.csv",
+      "sha256": "86c42e1e58a9e803bbac95bb427e81b688077204ae9d8d1aa5f7db11ed514ba2",
+      "rows": 171202
+    },
+    "submission_probabilities": {
+      "path": "D:\\gci\\submission_origin_exp6_blended_probabilities.csv",
+      "sha256": "388375f43e55f7fd365c46b428d1d73bb1b0ba3a303e24b5195bbb36a40de037",
+      "rows": 61500
+    },
+    "submission_ranks": {
+      "path": "D:\\gci\\submission_origin_exp6_average_ranks.csv",
+      "sha256": "3570684d464138e1b31de4c4ca7f08c0515a125d234d6433102b628eb92bffb0",
+      "rows": 61500
+    }
+  }
+}
