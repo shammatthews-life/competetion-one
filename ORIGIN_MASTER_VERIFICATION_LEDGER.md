@@ -550,6 +550,26 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   4. **Combined Ablation Interpretation:** The $-0.005984$ delta relative to V9 reflects a *combined ablation* removing both nested target encodings and pricing lattice hypotheses simultaneously; it does not isolate their individual contributions.
   5. **Submission Rules Reminder:** Under official competition scoring rules (`README.ipynb`, cell 3), the **last submitted file determines ranking**. Multi-candidate submissions are not jointly evaluated; the participant must explicitly select their final active file. If any external source code is reused, appropriate citations and attributions must be preserved.
 
+### 2026-11-07 — Phase 21: 10-Regime Sub-Population Discovery & Cross-Fold Concordance Suite
+- **Report & Manifest:** [`gemini/RESEARCH_10_REGIMES_REPORT.md`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md), `gemini/RESEARCH_10_REGIMES_REPORT.json`
+- **Global Reference Model:** 5-Fold Stratified LightGBM (Seed 42) | Pooled OOF ROC-AUC = **`0.757179`** | Mean = **`0.757211 +/- 0.002606`**.
+- **10 Regime Experiments Completed:**
+  1. *External Score Regimes:* Trio (0.76660, 21.1%), Duo (0.76538, 46.9%), Sparse (0.73671, 32.0%). In sparse regimes, internal solvency ratios carry 2.4x higher split importance.
+  2. *Employment Life-Stage:* Pensioners (0.72841, 18.05%, 5.42% default), Established (0.75602, 46.5%), Young (0.74590, 35.5%, 10.56% default).
+  3. *Contract Modality:* Cash loans (0.75629, 90.5%), Revolving loans (0.75147, 9.5%).
+  4. *Collateral / Financing Spread:* Financed Markup (0.75670, 65.0%, 8.75% default), Parity (0.75310, 35.0%, 6.82% default).
+  5. *Leverage Bands:* Low C/I (0.76317, 35.2%), Mid C/I (0.76245, 38.4%), High C/I > 5 (0.73467, 26.3%).
+  6. *Bureau Enquiry Signatures:* Dormant (0.75425, 30.5%), Recent Burst (0.76635, 14.7%), Normal (0.75585, 54.8%).
+  7. *Asset Wealth Proxy:* Car owners (0.75738, 34.0%, 7.25% default), Non-owners (0.75615, 66.0%, 8.50% default).
+  8. *Regional Hierarchy:* Tier 1 (0.74733, 10.4%, 4.70% default), Tier 2 (0.75448, 73.8%, 7.92% default), Tier 3 (0.74127, 15.8%, 11.03% default).
+  9. *Education Segments:* Higher Ed (0.75903, 24.3%, 5.37% default), Secondary (0.75011, 71.0%, 8.92% default), Lower (0.74238, 4.6%, 9.36% default).
+  10. *Household Vulnerability:* Single Males (0.73189, 8.4%, 13.44% default), Married (0.75796, 63.9%, 7.56% default), Females (0.75329, 65.7%, 7.00% default).
+- **Core Forensic Finding — The "Split-Model Paradox":** Slicing the dataset into isolated sub-models collapses AUC across all groups (-42.9 to -292.2 bps) due to leaf sample starvation. Regime-specific features must be fed into the unified 171,202 global matrix, allowing tree splits to condition on the regime without losing sample size.
+- **5x5 Cross-Fold Pairwise Concordance Analysis:**
+  - Within-Fold Mean Concordance (Diagonal): `0.759348`
+  - Cross-Fold Mean Concordance (Off-Diagonal): `0.757890`
+  - Cross-Fold Discrepancy: `-0.001458` (-14.6 bps drag on pooled OOF AUC due to slight inter-fold score calibration shifts, recoverable via probit rank normalization).
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
