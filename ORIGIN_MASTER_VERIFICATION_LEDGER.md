@@ -34,6 +34,7 @@
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
 | **Phase 26 Research** | `gemini/run_deep_20_novel_exp121_140.py` | 20 Advanced Research Regime Splits & Bureau Topology (Exp 121 - 140) | 0.757463 | *(Diagnostic)* | 2,604 bps spread (Single Male Hazard) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_20_NOVEL_EXP121_140.md)) |
 | **Phase 28 Research** | `gemini/run_deep_100_optimized_exp141_240.py` | 100 Deep Optimized Specialized Regime Splits & Master Formulas (Exp 141 - 240) | 0.753308 | *(Diagnostic)* | **+16.6 bps Lift** (2,015 bps spread across 10 domains) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md)) |
+| **Phase 29 Research** | `gemini/run_exhaustive_100_regimes_multi_round_optimizer.py` | Exhaustive Multi-Round Optimization across 100 Regimes (500 Formulations Evaluated) | 0.752630 | *(Diagnostic)* | **+9.9 to +1,368 bps Within-Split Lift** (Top: 0.7681 AUC / 2,903 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.md)) |
 | **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
 | **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
 | **Origin EXP 8** | `gemini/run_origin_exp8_unified_championship.py` | Unified Cognitive Championship (V13) — 105 Forensic Copulas + In-Fold Hermetic Nested TE | **0.768242** | *(Est. ~0.776)* | **+56.7 bps vs EXP7** (Zero Transductive Shifts) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)) |
@@ -922,6 +923,43 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   10. **Exp 203 (`Hourly_Emergency_Borrowing`):** `Inq_Hour * (Credit / Goods) / (E3 + 0.1)`. N=933 (0.5%), Default: 8.04%, $\rho = +0.1508$, Spread: **`1702.1 bps`** (4.26% vs 21.28%). Emergency inquiries submitted in the hour preceding application flag immediate distress.
   11. **Exp 160 (`Driver_Automotive_Collateral_Vulnerability`):** `(Credit / Goods) * (Car_Age + 1) / (E3 + 0.1)`. N=4,814 (2.8%), Default: 10.12%, $\rho = +0.1206$, Spread: **`1556.0 bps`** (4.78% vs 20.34%). Commercial drivers financing debt against aging vehicles face simultaneous repair costs and asset depreciation.
   12. **Exp 240 (`Unified_Cognitive_Super_Manifold`):** `Frank_Copula * (1 - Clayton_Copula) * (Monthly_Inc / Annuity) / (1 + Single_Male_Hazard)`. N=171,202 (100.0%), Default: 8.07%, $\rho = -0.1268$, Spread: **`1528.5 bps`** (19.46% vs 4.18%). Master cognitive manifold uniting copula topology, debt affordability, and demographic risk.
+
+### 2026-11-07 — Phase 29: Exhaustive Multi-Round Mathematical Optimization Across 100 Regimes (Exp 141 – 240)
+- **Runner Script:** [`gemini/run_exhaustive_100_regimes_multi_round_optimizer.py`](file:///d:/gci/gemini/run_exhaustive_100_regimes_multi_round_optimizer.py) (54.32s execution on RTX 4050 GPU)
+- **Comprehensive Reports:**
+  * JSON Metadata: [`RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.json`](file:///d:/gci/gemini/RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.json) (58.4 KB)
+  * Exhaustive Markdown Table: [`RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.md`](file:///d:/gci/gemini/RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.md) (28.0 KB)
+- **Design & Multi-Round Search Protocol:**
+  - Evaluated **500 total candidate formulations** (5 rounds per regime $\times$ 100 distinct regimes).
+  - For every single regime, tested across 5 functional classes:
+    1. *Round 1:* Core affordability ratio baseline.
+    2. *Round 2:* Non-linear power/root elasticity and disposable income cushion.
+    3. *Round 3:* Archimedean copula stress manifold coupling (Clayton / Frank / Joe / Harmonic floor).
+    4. *Round 4:* Cross-feature demographic hazard and credit-to-goods markup interaction.
+    5. *Round 5:* Merton structural distance-to-default and Alexander APR integration.
+  - Tracked within-split ROC-AUC lift ($\Delta \text{AUC}$) and default spread (bps between bottom and top deciles) for each round.
+- **Key Empirical Breakthroughs (Within-Split AUC Gains):**
+  - **Exp 142 (`Sandwich_Generation_Dependency_Strain`):** Base AUC 0.7022 $\to$ **`0.7681`** (**+659.0 bps Lift**, **2,903.2 bps spread**) via Round 5 Merton-Frank copula interaction: `Merton_PD * (Children + 1) * (1 - Frank_Copula)`.
+  - **Exp 161 (`Bureau_Triad_Full_Agreement_Anchor`):** Base AUC 0.6551 $\to$ **`0.7599`** (**+1,048.0 bps Lift**, **2,190.9 bps spread**) via Round 3 geometric triad consensus: `cop_frank * (u0 * u1 * u2)**(1/3) * (monthly_inc / (an + 1))`.
+  - **Exp 235 (`High_Density_Multi_App_Cluster`):** Base AUC 0.6957 $\to$ **`0.7398`** (**+441.0 bps Lift**, **2,857.1 bps spread**) via Round 4 cluster harmonic scaling: `(N_Apps / (Harmonic_Copula + 0.1)) * (Annuity / Monthly_Inc)`.
+  - **Exp 225 (`High_Rating_In_Rural_Periphery`):** Base AUC 0.6222 $\to$ **`0.7369`** (**+1,147.0 bps Lift**, **1,142.9 bps spread**) via Round 2 copula liquidity scaling: `(Monthly_Inc / Annuity) * Frank_Copula * (E2 * E3)`.
+  - **Exp 152 (`High_Skill_IT_Academic_Solvency`):** Reached **`0.7196`** within-split AUC and **1,159.4 bps spread** via career tenure scaling: `(Monthly_Inc / Annuity) * (E2 * E3) * log1p(Emp_Yrs)`.
+  - **Exp 232 (`Repeat_Applicant_Subsequent_Reapplication`):** Base AUC 0.6929 $\to$ **`0.7116`** (**+187.0 bps Lift**, **1,127.8 bps spread**) via Round 2 reapplication velocity: `(1 / Prev_App_Months) * (1 - Clayton_Copula) * (Credit / Goods)`.
+  - **Exp 154 (`Security_Police_Stable_Anchor`):** Base AUC 0.6662 $\to$ **`0.7044`** (**+382.0 bps Lift**, **2,185.2 bps spread**) via Round 3 Frank consensus: `cop_frank * (E2 * E3) * (Monthly_Inc / Annuity)`.
+  - **Exp 167 (`Missing_Bureau_1_Novel_Credit_Profile`):** Base AUC 0.6803 $\to$ **`0.7027`** (**+224.0 bps Lift**, **2,046.6 bps spread**) via Round 5 lifespan consensus: `(E2 * E3) * (Monthly_Inc / Annuity) * log1p(Adult_Life)`.
+  - **Exp 233 (`Long_Term_Returning_Borrower_Maturity`):** Base AUC 0.6329 $\to$ **`0.7013`** (**+684.0 bps Lift**, **2,400.0 bps spread**) via Round 5 sabbatical squared consensus: `log1p(Years_Since_Last_App) * (E2 * E3)^2`.
+  - **Exp 150 (`Multi_Generational_House_Asset_Anchor`):** Base AUC 0.6637 $\to$ **`0.6980`** (**+343.0 bps Lift**, **2,071.4 bps spread**) via Round 3 Harmonic floor: `cop_harmonic * (E2 * E3) * (Monthly_Inc / Annuity)`.
+  - **Exp 227 (`Dual_Workplace_Phone_Anchor`):** Base AUC 0.6833 $\to$ **`0.6959`** (**+126.0 bps Lift**, **1,869.6 bps spread**) via Round 5 squared consensus: `(Monthly_Inc / Annuity) * (E2 * E3)^2`.
+  - **Exp 157 (`Healthcare_Public_Sector_Tenure`):** Base AUC 0.6240 $\to$ **`0.6958`** (**+718.0 bps Lift**, **1,250.0 bps spread**) via Round 3 dependent dilution: `cop_frank * (E2 * E3) * (Monthly_Inc / Annuity) / (Children + 1)`.
+  - **Exp 240 (`Unified_Cognitive_Super_Manifold`):** Base AUC 0.6344 $\to$ **`0.6937`** (**+593.0 bps Lift**, **1,976.5 bps spread**) via Round 5 hazard-damped squared consensus: `((Monthly_Inc / Annuity) * (E2 * E3)^2) / (1 + Single_Male_Hazard)`.
+  - **Exp 176 (`Subsidized_Par_Financing_Contract`):** Base AUC 0.5784 $\to$ **`0.6866`** (**+1,082.0 bps Lift**, **1,649.1 bps spread**) via Round 2 Frank copula: `(Monthly_Inc / Annuity) * Frank_Copula * (E2 * E3)`.
+  - **Exp 141 (`Young_Single_Renter_Obligation`):** Base AUC 0.6216 $\to$ **`0.6853`** (**+637.0 bps Lift**, **2,258.1 bps spread**) via Round 3 subsistence-damped markup: `(Annuity / (Monthly_Inc - Subsistence)) * (Credit / Goods) / (Harmonic_Copula + 0.05)`.
+  - **Exp 186 (`Affluent_Liquidity_Fortress`):** Base AUC 0.5987 $\to$ **`0.6789`** (**+802.0 bps Lift**, **1,383.2 bps spread**) via Round 2 leverage discount: `(Income / Credit) * Frank_Copula * (E2 * E3)`.
+  - **Exp 171 (`Revolving_High_Velocity_Buffer`):** Base AUC 0.6044 $\to$ **`0.6779`** (**+735.0 bps Lift**, **1,331.7 bps spread**) via Round 2 consensus velocity: `(Monthly_Inc / Annuity) * Frank_Copula * (E2 * E3)`.
+  - **Exp 224 (`Elite_High_Density_Tier1_Sanctuary`):** Base AUC 0.5743 $\to$ **`0.6771`** (**+1,028.0 bps Lift**, **1,071.0 bps spread**) via Round 5 squared consensus: `(Monthly_Inc / Annuity) * (E2 * E3)^2`.
+  - **Exp 201 (`Zero_Inquiry_Calm_Credit_Sanctuary`):** Base AUC 0.5924 $\to$ **`0.6764`** (**+840.0 bps Lift**, **1,261.6 bps spread**) via Round 5 voluntary borrowing anchor: `(E2 * E3)^2 * (Monthly_Inc / Annuity)`.
+  - **Exp 237 (`Extreme_Undercollateralized_Laborer_Stress`):** Base AUC 0.6042 $\to$ **`0.6429`** (**+387.0 bps Lift**, **2,821.2 bps spread**) via Round 4 copula markup penalty: `(Single_Male_Laborer_Hazard / (Harmonic_Copula + 0.1)) * ((Credit - Goods) / Goods)`.
+
 
 
 
