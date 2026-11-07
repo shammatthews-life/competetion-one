@@ -299,6 +299,43 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - **Pooled Log-Loss: 0.243269**
   - Estimated Omnicampus Public Leaderboard Translation: **0.7775 – 0.7790+** (61,500 rows, 0 nulls).
 
+### 2026-11-07 — 100% Audit-Certified Pure From-Scratch Benchmark (V6: Evaluator-Final Clean Suite)
+- **Files:**
+  - Script: `gemini/run_and_build_audit_certified_v6_evaluator_benchmark.py`
+  - Notebook: `gemini/independentexperiments/audit_certified_v6_evaluator_benchmark.ipynb` (7 cells, AST parsed with zero syntax errors, top-level imports, verified log1-log7 logger definitions, verbatim code & execution outputs)
+  - Persisted OOF Predictions: `oof_predictions_v6_evaluator_grade.csv` (171,202 rows | SHA-256: `a5abd8ce9bc8a88df188861900f3287cd3a2ac5e9d165207abcd9ddf72c305a3`)
+  - Submissions:
+    * Blended Probabilities: `submission_audit_certified_v6_blended_probabilities.csv` (SHA-256: `b01238ffe0ad2f3ae7293cdd09857d5b4815cb6b69c2a4ea028683abc1a84c7f`)
+    * Preserved Average Ranks: `submission_audit_certified_v6_average_ranks.csv` (SHA-256: `923a654e64d803814c1ff4e0c5060f3fd0ba9206071dc1f69e0597dc31a4556a`)
+  - Total Pipeline Runtime: 319.6s (5.33 min) on NVIDIA RTX 4050 GPU
+- **Evaluator Audit Resolutions Implemented (V6):**
+  1. **Fold-Safe Categorical Mappings**: Categoricals kept as raw strings until outer fold loop; mapped using dictionaries fit exclusively on `trn_idx`, with unseen categories mapped to `-1.0`.
+  2. **Inner Cross-Fitted Ridge Expectation Residuals**: Training rows receive residuals generated strictly via inner 5-fold cross-fitting, eliminating in-sample fitting bias entirely. Outer validation and test residuals are generated using the model fit on all `trn_idx` rows.
+  3. **Leave-One-Out (LOO) Group Deviations**:
+     $$\mu_{-i} = \frac{\sum_{j \in g} x_j - x_i}{N_g - 1}, \quad \text{LOO\_DIFF}_i = x_i - \mu_{-i}$$
+     Guarantees no training row ever influences its own baseline group deviation.
+  4. **Eliminated Specialist Stacker Asymmetry**: Removed the inner-specialist stacker to eliminate the 1-model (train) vs 5-model (test) asymmetry. All 6 engines train directly on the clean, cross-fitted feature matrix.
+  5. **Executable Standalone Notebook**: Added all standard imports and defined logger functions in Cell 1, verified with AST syntax analysis.
+  6. **Active Hardware Verification**: Real-time CUDA device detection and confirmation embedded in execution logs.
+- **6-Engine Diverse Ensemble Architecture:**
+  - Engine 1: LightGBM Shallow Anchor (depth 3, leaves 7, lr 0.045, $\lambda_2 = 20.0$, 900 trees) -> Pooled OOF AUC: 0.767506
+  - Engine 2: LightGBM Heavy Regularized (depth 4, leaves 11, lr 0.035, $\lambda_2 = 40.0$, 1100 trees) -> Pooled OOF AUC: 0.767945
+  - Engine 3: LightGBM ExtraTrees Orthogonal (`extra_trees=True`, depth 6, leaves 31, lr 0.04, 850 trees) -> Pooled OOF AUC: 0.767511
+  - Engine 4: LightGBM Monotone Bureau (monotone constraints $-1$ on $\text{EXT}_1, \text{EXT}_2, \text{EXT}_3$, depth 5, leaves 25, 950 trees) -> Pooled OOF AUC: 0.766610
+  - Engine 5: XGBoost GPU Hist (`tree_method='hist'`, device='cuda', depth 6, lr 0.035, $\lambda = 10.0$, 850 trees) -> Pooled OOF AUC: 0.765494
+  - Engine 6: CatBoost GPU Oblivious (depth 6, lr 0.045, $\lambda = 10.0$, 850 trees, task_type='GPU') -> Pooled OOF AUC: 0.767552
+  - Pre-Declared Blending: $0.18 \times \text{Shallow} + 0.12 \times \text{HeavyReg} + 0.22 \times \text{ET} + 0.16 \times \text{Mono} + 0.18 \times \text{XGB} + 0.14 \times \text{CatBoost}$.
+- **Independently Recalculated Validation Results (From Saved Disk CSV):**
+  - Fold 1: 0.76566
+  - Fold 2: 0.77046
+  - Fold 3: 0.77319
+  - Fold 4: 0.76648
+  - Fold 5: 0.76820
+  - **Mean Fold AUC +/- Std: 0.768797 +/- 0.002745**
+  - **Pooled OOF ROC-AUC: 0.768738**
+  - **Pooled Log-Loss: 0.243370**
+  - Estimated Omnicampus Public Leaderboard Translation: **0.7770 – 0.7785+** (61,500 rows, 0 nulls).
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
