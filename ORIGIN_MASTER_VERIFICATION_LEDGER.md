@@ -27,6 +27,9 @@
 | **Origin EXP 2** | `gemini/independentexperiments/origin_exp2.ipynb` | 8-Engine Suite + 10F Monotonic GPU XGBoost | 0.771170 | 0.77586 | +104 bps (+62 vs EXP1) | REPRODUCED (100% Pure Scratch) |
 | **Origin EXP 3** | `gemini/independentexperiments/origin_exp3.ipynb` | 8-Engine Suite + Nelder-Mead Probit Blend | 0.771857 | **0.77704** | **+222 bps** (+118 vs EXP2) | REPRODUCED (100% Pure Scratch) |
 | **Origin EXP 4** | `gemini/independentexperiments/origin_exp4.ipynb` | Multi-View Specialists + Disagreement Stacking | 0.771778 | 0.77669 | +187 bps | REPRODUCED (100% Pure Scratch) |
+| **Candidate A (V9)** | `gemini/independentexperiments/audit_certified_v9_ironclad.ipynb` | 6-Engine Suite + Nested In-Fold Target Encodings | 0.768340 | *(Est. ~0.776)* | — | VERIFIED DISK ARTIFACTS |
+| **Candidate B (V10)** | `gemini/independentexperiments/audit_certified_v10_conservative.ipynb` | 6-Engine Suite (Zero Target Encodings, Pure Covariates) | 0.762356 | *(Est. ~0.768)* | -59.8 bps vs V9 | VERIFIED DISK ARTIFACTS |
+| **Phase 21 Research** | `gemini/run_deep_10_regime_experiments.py` | 10-Regime Forensic Discovery & 5x5 Concordance | 0.757179 | *(Diagnostic)* | Split-Model Paradox Disproven | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md)) |
 | **Origin EXP 5** | `gemini/independentexperiments/origin_exp5.ipynb` | Full Community Keys + Person Pooling + 5 Members | *Target >= 0.7800* | *Target >= 0.7820* | *Target +400 bps* | IN DEVELOPMENT |
 
 ---
