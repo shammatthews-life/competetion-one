@@ -418,7 +418,7 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - Estimated Omnicampus Public Leaderboard Translation: **0.7770 – 0.7785+** (61,500 rows, 0 nulls).
   - Runtime: 246.4s (4.11 minutes) on NVIDIA RTX 4050 GPU.
 
-### 2026-11-07 — 100% Audit-Certified Pure From-Scratch Benchmark (V9: Ironclad Evaluator Grade)
+### 2026-11-07 — Clean-Room Reproducible Benchmark Suite (V9: Ironclad Evaluator Grade)
 - **Files:**
   - Script: `gemini/run_and_build_audit_certified_v9_ironclad.py` (SHA-256: `62d4a900d9458aee0a8b9728859ec5f4c75e276149c692c0b0c3f23a33ce1514`)
   - Notebook: `gemini/independentexperiments/audit_certified_v9_ironclad.ipynb` (7 cells, authentic live execution, outputs captured in nbformat 4 stream format for all 7 cells | SHA-256: `462a142c0f9499fe70ef7dad9cf1b317ca6289f006c735c63905044ac2b2504c`)
@@ -439,7 +439,7 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
      - **0.0132 Modal Step:** Formally reported under the explicit filter `NAME_CONTRACT_TYPE == 'Cash loans'` and `AMT_CREDIT > AMT_GOODS_PRICE > 0` (110,937 eligible loans in `train.csv`). 99,261 rows (89.48%) fall within $\pm 0.001$ tolerance of integer multiples of 0.0132. Framed strictly as an empirical discretization feature hypothesis rather than a legally proven contract clause.
      - **129.50 Monthly Fee:** Formally reported from `train.csv` annuity decimals: 77,649 / 171,202 (45.36%) annuities end in `.50` and 93,547 (54.64%) end in `.00` (exactly 6 rows with other decimals). Subtracting 129.50 collapses unique 5-decimal ratio tiers from 5,102 to 4,050. Framed as an empirical fee-offset feature hypothesis.
   4. **Cryptographic Run Manifest:**
-     Persisted at `RUN_MANIFEST_V9.json` and `gemini/RUN_MANIFEST_V9.json`, documenting input hashes (`train.csv`: `b8dd5a61...`, `test.csv`: `dfb7aeb9...`), runner script hash, package versions (Python 3.11, LightGBM 4.7.0, XGBoost 3.4.1, CatBoost 1.2.10), GPU hardware, fold scores, and artifact hashes.
+     Persisted at `RUN_MANIFEST_V9.json` and `gemini/RUN_MANIFEST_V9.json`, documenting input hashes (`train.csv`: `b8dd5a61...`, `test.csv`: `dfb7aeb9...`), runner script hash, package versions (Python 3.12.10, LightGBM 4.7.0, XGBoost 3.4.1, CatBoost 1.2.10), GPU hardware, fold scores, and artifact hashes.
   5. **Validation Semantics Caveat:**
      Formally documented: 5-Fold Stratified Out-of-Fold Cross-Validation evaluates exactly 1 model per held-out row ($K=1$), whereas test-set inference computes the average of all 5 outer-fold models ($K=5$).
 - **6-Engine Diverse Ensemble Architecture:**
