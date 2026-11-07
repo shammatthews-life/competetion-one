@@ -1,0 +1,67 @@
+{
+  "benchmark_version": "V9: Ironclad Evaluator Grade",
+  "timestamp_utc": "2026-11-07T11:42:46Z",
+  "runner_script": {
+    "path": "D:\\gci\\gemini\\run_and_build_audit_certified_v9_ironclad.py",
+    "sha256": "62d4a900d9458aee0a8b9728859ec5f4c75e276149c692c0b0c3f23a33ce1514"
+  },
+  "inputs": {
+    "train_csv": {
+      "path": "d:/gci/inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "rows": 171202
+    },
+    "test_csv": {
+      "path": "d:/gci/inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "rows": 61500
+    }
+  },
+  "environment": {
+    "gpu_hardware": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_driver": "592.82",
+    "gpu_vram_mb": "6141",
+    "python_version": "3.12.10",
+    "lightgbm_version": "4.7.0",
+    "xgboost_version": "3.4.1",
+    "catboost_version": "1.2.10",
+    "numpy_version": "2.5.4",
+    "pandas_version": "3.1.0"
+  },
+  "metrics": {
+    "outer_fold_auc": [
+      0.76482,
+      0.770257,
+      0.773306,
+      0.765974,
+      0.767696
+    ],
+    "mean_fold_auc": 0.768411,
+    "std_fold_auc": 0.003056,
+    "pooled_oof_auc": 0.76834,
+    "pooled_oof_logloss": 0.243472
+  },
+  "artifacts": {
+    "oof_predictions": {
+      "path": "d:/gci/oof_predictions_v9_ironclad_grade.csv",
+      "sha256": "30341c9fba32bf0767ec4f4371852e972f2439739d97af9c0371e7695a91a1cc",
+      "rows": 171202
+    },
+    "submission_probabilities": {
+      "path": "d:/gci/submission_audit_certified_v9_blended_probabilities.csv",
+      "sha256": "ae061dffe901f3f4e1ec8155e96624b529fdc36dd3f55a62fc068784c79e76ce",
+      "rows": 61500
+    },
+    "submission_average_ranks": {
+      "path": "d:/gci/submission_audit_certified_v9_average_ranks.csv",
+      "sha256": "e013b6f86df06b6c7fdb3144deb61ba435ffed54847d33de0c64de56681fd684",
+      "rows": 61500
+    },
+    "executed_notebook": {
+      "path": "d:/gci/gemini/independentexperiments/audit_certified_v9_ironclad.ipynb",
+      "sha256": "462a142c0f9499fe70ef7dad9cf1b317ca6289f006c735c63905044ac2b2504c",
+      "total_cells": 7
+    }
+  },
+  "total_runtime_seconds": 339.79
+}
