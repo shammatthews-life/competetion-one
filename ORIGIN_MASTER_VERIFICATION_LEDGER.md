@@ -35,6 +35,7 @@
 | **Phase 26 Research** | `gemini/run_deep_20_novel_exp121_140.py` | 20 Advanced Research Regime Splits & Bureau Topology (Exp 121 - 140) | 0.757463 | *(Diagnostic)* | 2,604 bps spread (Single Male Hazard) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_20_NOVEL_EXP121_140.md)) |
 | **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
 | **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
+| **Origin EXP 8** | `gemini/run_origin_exp8_unified_championship.py` | Unified Cognitive Championship (V13) — 105 Forensic Copulas + In-Fold Hermetic Nested TE | **0.768242** | *(Est. ~0.776)* | **+56.7 bps vs EXP7** (Zero Transductive Shifts) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)) |
 | **Origin EXP 5** | `gemini/independentexperiments/origin_exp5.ipynb` | Full Community Keys + Person Pooling + 5 Members | *Target >= 0.7800* | *Target >= 0.7820* | *Target +400 bps* | IN DEVELOPMENT |
 
 ---
@@ -860,6 +861,41 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
     * `oof_predictions_origin_exp7_grade.csv` (171,202 rows)
     * `submission_origin_exp7_blended_probabilities.csv` (61,500 rows)
     * `submission_origin_exp7_average_ranks.csv` (61,500 rows)
+
+### 2026-11-07 — Origin EXP 8: Unified Cognitive Championship (V13 Architecture)
+- **Runner Script:** [`gemini/run_origin_exp8_unified_championship.py`](file:///d:/gci/gemini/run_origin_exp8_unified_championship.py) (326.48s execution on RTX 4050 GPU)
+- **Manifest & Hash:** [`RUN_MANIFEST_ORIGIN_EXP8.json`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)
+- **Compliance & Audit Verification:**
+  - **Zero Transductive Manual Shifts:** Completely eliminates all post-hoc test-applicant matching (+2.50 / -1.30 manual shifts) and intra-test pair smoothing ($\gamma = 0.12$). 100% pure model-generated predictions.
+  - **In-Fold Hermetic Nested Target Encoding:** Inner 5-fold cross-fitting strictly inside outer training partitions across 9 tariff and occupational keys: `TE_KEYS = ["Q3", "Q4", "P3", "P4", "CT1", "CT_INT", "K_DEC", "OCCUPATION_TYPE", "ORGANIZATION_TYPE"]` with empirical Bayes shrinkage. Zero validation or test target exposure.
+  - **Full Forensic Manifold Integration:** Combines Clayton lower-tail distress ($\theta=3$), Frank comprehensive ($\theta=4$), Joe extreme ($\theta=2$), Dual-bureau harmonic floor, Bureau Entropy KL divergence, Logit Gaussian divergence, Single Male Laborer Hazard, Tenured Landline anchor, Calm Credit anchor, and 25% inflation shock test.
+  - **Inner Cross-Fitted Ridge Expectation Residuals:** Unconditional expectation residuals for `EXT_SOURCE_1`, `EXT_SOURCE_2`, `EXT_SOURCE_3`, and `LOG_INCOME` cross-fitted within outer training folds.
+  - **5-Engine Multi-Model Suite:**
+    * Model 1: LightGBM Heavy Regularized (`max_depth=4`, `num_leaves=15`, `reg_lambda=40.0`, `learning_rate=0.035`)
+    * Model 2: LightGBM Monotone Bureau Constrained (`monotone_constraints` on external sources)
+    * Model 3: LightGBM Deep Conservative (`max_depth=6`, `num_leaves=31`, `reg_lambda=15.0`)
+    * Model 4: XGBoost GPU Hist (`tree_method="hist"`, `device="cuda"`, `max_depth=6`)
+    * Model 5: CatBoost GPU Oblivious Trees (`task_type="GPU"`, `depth=6`, `l2_leaf_reg=10.0`)
+- **Results:**
+  - Individual Model 5-Fold OOF ROC-AUCs:
+    * `cb_gpu` (CatBoost GPU): **0.767538** (Mean Fold: 0.767582 ± 0.002370) — Fold 3 reached **0.770915**!
+    * `lgb_reg` (LightGBM Heavy Reg): **0.766363** (Mean Fold: 0.766418 ± 0.002712) — Fold 3 reached **0.769960**!
+    * `lgb_mono` (LightGBM Monotone): 0.765326 (Mean Fold: 0.765373 ± 0.002634)
+    * `lgb_deep` (LightGBM Deep): 0.764711 (Mean Fold: 0.764783 ± 0.003276)
+    * `xgb_gpu` (XGBoost GPU): 0.762882 (Mean Fold: 0.762947 ± 0.003463)
+  - Equal-Weight Probit Blend: **0.767360**
+  - **Optimal Convex Probit Blend:** **0.768242** (**+56.7 bps lift** over EXP 7, **+77.1 bps lift** over EXP 6!)
+  - Optimal Model Architecture Weights:
+    * `cb_gpu`: **61.42%**
+    * `lgb_reg`: **30.12%**
+    * `lgb_deep`: **8.46%**
+    * `lgb_mono`: 0.00%
+    * `xgb_gpu`: 0.00%
+  - Disk Artifacts Verified:
+    * `oof_predictions_origin_exp8_grade.csv` (171,202 rows | SHA256: `23502610622cd114f259be3b8c1f7eb6a3f1f13445494c9879de2c890c58fd99`)
+    * `submission_origin_exp8_blended_probabilities.csv` (61,500 rows | SHA256: `ecf86050a390ea40e736eaf7ea4c27868f0d5e421fa14db9eb8969798f848493`)
+    * `submission_origin_exp8_average_ranks.csv` (61,500 rows | SHA256: `a6d89f385ac58c5cd160ca355ea7a10bd943416788abc9788adc00389a34bf23`)
+
 
 ---
 

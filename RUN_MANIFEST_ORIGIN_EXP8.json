@@ -1,0 +1,39 @@
+{
+  "experiment_id": "Origin_EXP_8_Unified_Championship",
+  "timestamp_utc": "2026-11-07T16:36:45Z",
+  "total_elapsed_seconds": 326.48,
+  "gpu_hardware": "NVIDIA GeForce RTX 4050 Laptop GPU (Driver 592.82, VRAM 6141 MB)",
+  "pooled_oof_roc_auc": 0.768242,
+  "equal_weight_oof_roc_auc": 0.76736,
+  "individual_model_aucs": {
+    "lgb_reg": 0.766363,
+    "lgb_mono": 0.765326,
+    "lgb_deep": 0.764711,
+    "xgb_gpu": 0.762882,
+    "cb_gpu": 0.767538
+  },
+  "optimal_weights": {
+    "lgb_reg": 0.3012,
+    "lgb_mono": 0.0,
+    "lgb_deep": 0.0846,
+    "xgb_gpu": 0.0,
+    "cb_gpu": 0.6142
+  },
+  "artifacts": {
+    "oof_predictions": {
+      "path": "D:\\gci\\oof_predictions_origin_exp8_grade.csv",
+      "sha256": "23502610622cd114f259be3b8c1f7eb6a3f1f13445494c9879de2c890c58fd99",
+      "rows": 171202
+    },
+    "submission_probabilities": {
+      "path": "D:\\gci\\submission_origin_exp8_blended_probabilities.csv",
+      "sha256": "ecf86050a390ea40e736eaf7ea4c27868f0d5e421fa14db9eb8969798f848493",
+      "rows": 61500
+    },
+    "submission_ranks": {
+      "path": "D:\\gci\\submission_origin_exp8_average_ranks.csv",
+      "sha256": "a6d89f385ac58c5cd160ca355ea7a10bd943416788abc9788adc00389a34bf23",
+      "rows": 61500
+    }
+  }
+}
