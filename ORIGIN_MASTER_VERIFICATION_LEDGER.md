@@ -30,6 +30,7 @@
 | **Candidate A (V9)** | `gemini/independentexperiments/audit_certified_v9_ironclad.ipynb` | 6-Engine Suite + Nested In-Fold Target Encodings | 0.768340 | *(Est. ~0.776)* | — | VERIFIED DISK ARTIFACTS |
 | **Candidate B (V10)** | `gemini/independentexperiments/audit_certified_v10_conservative.ipynb` | 6-Engine Suite (Zero Target Encodings, Pure Covariates) | 0.762356 | *(Est. ~0.768)* | -59.8 bps vs V9 | VERIFIED DISK ARTIFACTS |
 | **Phase 21 Research** | `gemini/run_deep_10_regime_experiments.py` | 10-Regime Forensic Discovery & 5x5 Concordance | 0.757179 | *(Diagnostic)* | Split-Model Paradox Disproven | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md)) |
+| **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Origin EXP 5** | `gemini/independentexperiments/origin_exp5.ipynb` | Full Community Keys + Person Pooling + 5 Members | *Target >= 0.7800* | *Target >= 0.7820* | *Target +400 bps* | IN DEVELOPMENT |
 
 ---
@@ -710,6 +711,44 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   28. *Amortization Fee Months (Exp 58):* $(\text{Credit}-\text{Goods})/\text{Annuity}$. Correlation: **`+0.0417`**, Spread: **`271.5 bps`** (6.72% vs 9.43%). Months of payments dedicated solely to amortizing uncollateralized financing fee.
   29. *Harmonic Multi-Bureau Index (Exp 59):* $3.0/((1/E_1)+(1/E_2)+(1/E_3))$. Correlation: **`-0.2093`**, Spread: **`817.2 bps`** (3.99% vs 12.16%). Weakest-link credit principle dominated by worst bureau score.
   30. *Disagreement Leverage Norm (Exp 60):* $|E_2 - E_3| \times (\text{Credit}/\text{Income})$. Correlation: **`+0.0335`**, Spread: **`182.1 bps`** (7.16% vs 8.98%). Interacts bureau uncertainty with financial leverage in contested credit states.
+
+### 2026-11-07 — Phase 24: 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90)
+- **Report & Telemetry:** [`gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md), `gemini/RESEARCH_30_SPLITS_AND_FORMULAS.json`
+- **Verification Harness:** 5-Fold Stratified CV on 171,202 training samples.
+  - Baseline Feature Set 5-Fold OOF AUC: **`0.750546`**
+  - Enhanced Feature Set (+15 Discovered Regime Features): **`0.751412`**
+  - **Net Generalization Lift:** **`+8.7 bps`** (`+0.000866` AUC)
+- **Exhaustive Ledger of 30 Discovered Formulations:**
+  1. **Exp 61 (`Affluent_Thin_File_Solvency`):** `(Income / (Credit + 12*Annuity)) * exp(-Car_Age / 10.0)`. N=9,477 (5.54%), Default: 7.75%, $\rho = +0.0116$, Spread: **`149.0 bps`** (7.00% vs 8.49%). Asset backing provides primary solvency proxy when bureau files are absent.
+  2. **Exp 62 (`Low_Income_Debt_Trap_Load`):** `(Annuity * Fam_Members) / (Income / 12)`. N=29,879 (17.45%), Default: 8.96%, $\rho = +0.0148$, Spread: **`19.0 bps`** (8.86% vs 9.05%). Scales debt burden against per-capita subsistence income.
+  3. **Exp 63 (`Job_Probation_Solvency_Buffer`):** `(Employed_Days / 365.25) * (Income / Credit)`. N=15,501 (9.05%), Default: 10.70%, $\rho = -0.0122$, Spread: **`19.0 bps`** (10.61% vs 10.80%). Income buffer offsetting probation fragility.
+  4. **Exp 64 (`Veteran_Tenure_Stability_Index`):** `log(Employed_Years) * (Income / Annuity)`. N=28,575 (16.69%), Default: 5.23%, $\rho = -0.0236$, Spread: **`114.0 bps`** (5.80% vs 4.66%). Career longevity scaling debt service capacity.
+  5. **Exp 65 (`Cash_Loan_Markup_to_Income`):** `(Annuity * Term - Credit) / Income`. N=102,211 (59.70%), Default: 8.24%, $\rho = -0.0161$, Spread: **`20.0 bps`** (8.34% vs 8.14%). Total financing charges relative to annual income.
+  6. **Exp 66 (`POS_Financed_Deficit_Burden`):** `((Credit - Goods) / Goods) * (Annuity / (Income / 12))`. N=111,298 (65.01%), Default: 8.75%, $\rho = +0.0720$, Spread: **`312.0 bps`** (7.19% vs 10.31%). Uncollateralized markup interacting with monthly annuity burden.
+  7. **Exp 67 (`Contested_Bureau_Safety_Floor`):** `min(E2, E3)^2 * (Income / Annuity)`. N=65,075 (38.01%), Default: 10.18%, $\rho = -0.1225$, Spread: **`891.0 bps`** (14.64% vs 5.73%). Worst-case bureau floor determines solvency under contested reports.
+  8. **Exp 68 (`Consensus_Prime_Amplifier`):** `(E2 * E3)^1.5 * log(1 + Income)`. N=21,092 (12.32%), Default: 2.16%, $\rho = -0.0319$, Spread: **`89.0 bps`** (2.61% vs 1.72%). Amplifies super-prime distinction under dual-bureau consensus.
+  9. **Exp 69 (`Subprime_Collapse_Leverage_Spike`):** `(1 / (E2 * E3 + 0.01)) * (Credit / Income)`. N=6,508 (3.80%), Default: 25.14%, $\rho = +0.0981$, Spread: **`904.0 bps`** (20.62% vs 29.66%). Severe delinquency paired with high leverage triggers insolvency cascade.
+  10. **Exp 70 (`Acute_Bureau_Shopping_Velocity`):** `(Inq_Mon * 4 + Inq_Hour * 12) / (Inq_Year + 1)`. N=25,136 (14.68%), Default: 7.28%, $\rho = -0.0330$, Spread: **`105.0 bps`** (7.69% vs 6.64%). Multi-lender search velocity over last 30 days.
+  11. **Exp 71 (`Thin_File_Internal_Capacity`):** `E2 * (Income / Annuity) * (Age / 40)`. N=52,271 (30.53%), Default: 8.67%, $\rho = -0.1017$, Spread: **`646.0 bps`** (11.90% vs 5.44%). Age maturity and cash-flow coverage serving as synthetic bureau proxy.
+  12. **Exp 72 (`Prime_Vehicle_Liquidity_Buffer`):** `(Income * (6 - Car_Age)) / Credit`. N=16,150 (9.43%), Default: 5.62%, $\rho = +0.0076$, Spread: **`58.0 bps`** (5.33% vs 5.91%). Liquid motor vehicle equity available for pledge.
+  13. **Exp 73 (`Vehicle_Depreciation_Maintenance_Drag`):** `(Car_Age / 10) * (Annuity / (Income / 12))`. N=15,986 (9.34%), Default: 9.03%, $\rho = +0.0112$, Spread: **`90.0 bps`** (8.58% vs 9.48%). Recurring maintenance costs of aging vehicles depleting cash flow.
+  14. **Exp 74 (`Lagging_Region_Solvency_Index`):** `(Income * Population_Density / Annuity) * E2`. N=26,999 (15.77%), Default: 11.03%, $\rho = -0.0787$, Spread: **`538.0 bps`** (13.72% vs 8.34%). Local purchasing density and external score in economically depressed zones.
+  15. **Exp 75 (`Metropolitan_Cost_of_Living_Strain`):** `(Annuity * 12) / (Income * Population + 1)`. N=17,801 (10.40%), Default: 4.70%, $\rho = +0.0062$, Spread: **`65.0 bps`** (4.37% vs 5.02%). Regional density cost-of-living adjustments for tier-1 cities.
+  16. **Exp 76 (`Single_Male_Mobility_Strain`):** `(Credit / Income) * (Phone_Tenure_Yrs + 0.1)^(-0.5)`. N=14,385 (8.40%), Default: 13.44%, $\rho = +0.0328$, Spread: **`321.0 bps`** (11.83% vs 15.04%). Rapid phone churn interacting with high debt leverage in highest-risk demographic.
+  17. **Exp 77 (`Married_Female_Household_Solvency`):** `((Income / Fam) / Annuity) * sqrt(E2 * E3)`. N=68,013 (39.73%), Default: 6.83%, $\rho = -0.0870$, Spread: **`480.0 bps`** (9.23% vs 4.43%). Per-capita family surplus with joint bureau consensus in resilient demographic.
+  18. **Exp 78 (`Stalled_Adulthood_Leverage_Index`):** `(Age / 30) * (Credit / (Income / 12))`. N=4,191 (2.45%), Default: 11.69%, $\rho = -0.0275$, Spread: **`57.0 bps`** (11.98% vs 11.41%). Debt burden scaled by degree of delayed financial autonomy.
+  19. **Exp 79 (`Renter_Total_Obligation_Ratio`):** `((Credit + 12*Annuity) / Income) * (1 + 0.3*Children)`. N=2,734 (1.60%), Default: 12.95%, $\rho = +0.0211$, Spread: **`220.0 bps`** (11.85% vs 14.05%). Unhedged rental housing lease obligations multiplied by dependent children.
+  20. **Exp 80 (`Higher_Ed_Human_Capital_Surplus`):** `((Income - 12*Annuity) / (Age * 1000)) * E2`. N=41,645 (24.33%), Default: 5.37%, $\rho = +0.0206$, Spread: **`114.0 bps`** (4.80% vs 5.94%). Unencumbered annual liquidity scaled by career age for university graduates.
+  21. **Exp 81 (`Laborer_Income_Volatility_Strain`):** `(Annuity / (Income / 12)) / (Employed_Years + 1)`. N=31,881 (18.62%), Default: 10.61%, $\rho = +0.0701$, Spread: **`472.0 bps`** (8.25% vs 12.97%). High wage volatility and seasonal vulnerability scaled by short job tenure.
+  22. **Exp 82 (`State_Servant_Discretionary_Per_Capita`):** `((Income / 12 - Annuity) / Fam) * E2`. N=12,007 (7.01%), Default: 5.89%, $\rho = +0.0434$, Spread: **`228.0 bps`** (4.75% vs 7.03%). Tenured civil servant discretionary cushion per family dependent.
+  23. **Exp 83 (`Commercial_Sector_Solvency_Score`):** `(Credit / Income) * sqrt(E2 * E3)`. N=40,007 (23.37%), Default: 7.52%, $\rho = -0.0846$, Spread: **`418.0 bps`** (9.61% vs 5.43%). Private corporate enterprise credit leverage scaled by joint bureau scores.
+  24. **Exp 84 (`Large_Annuity_Absorption_Buffer`):** `(Income - 12*Annuity) / Annuity`. N=41,790 (24.41%), Default: 7.16%, $\rho = -0.0173$, Spread: **`74.0 bps`** (7.53% vs 6.79%). Residual disposable income multiples for heavy annuity commitments.
+  25. **Exp 85 (`Micro_Loan_Speed_and_Collateral`):** `(Credit / Annuity) * (Goods / Credit)`. N=10,184 (5.95%), Default: 6.02%, $\rho = +0.0209$, Spread: **`241.0 bps`** (4.82% vs 7.23%). Rapid turnover and collateral backing for micro-credit consumer loans.
+  26. **Exp 86 (`Multi_Child_Non_Discretionary_Drain`):** `(Children * 15,000 + 12*Annuity) / Income`. N=17,277 (10.09%), Default: 8.80%, $\rho = +0.0323$, Spread: **`185.0 bps`** (7.87% vs 9.72%). Fixed non-discretionary child care costs combined with contractual debt.
+  27. **Exp 87 (`Childless_Discretionary_Surplus_Ratio`):** `(Income / Fam - Annuity) / (Credit / 12)`. N=119,950 (70.06%), Default: 7.72%, $\rho = -0.0020$, Spread: **`47.0 bps`** (7.48% vs 7.95%). Discretionary expenditure elasticity of childless applicants.
+  28. **Exp 88 (`Acute_Contact_Instability_Leverage`):** `(60 / (Phone_Days + 1)) * (Credit / Income)`. N=29,615 (17.30%), Default: 9.18%, $\rho = -0.0004$, Spread: **`146.0 bps`** (8.45% vs 9.91%). High debt leverage paired with phone replacement within 60 days of application.
+  29. **Exp 89 (`Five_Year_Phone_Veteran_Anchor`):** `log(Phone_Years) * (E2 + E3)`. N=28,535 (16.67%), Default: 5.63%, $\rho = -0.1561$, Spread: **`503.0 bps`** (8.14% vs 3.11%). Long-term telephone number stability confirming credit bureau reliability.
+  30. **Exp 90 (`Severe_Underwater_LTV_Penalty`):** `(Credit - 1.20 * Goods) / Annuity`. N=35,886 (20.96%), Default: 11.80%, $\rho = -0.0060$, Spread: **`93.0 bps`** (11.33% vs 12.26%). Excessive loan-to-value markup driven by rolled-in insurance and financing fees.
 
 ---
 
