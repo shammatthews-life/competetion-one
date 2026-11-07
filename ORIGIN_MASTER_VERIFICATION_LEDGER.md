@@ -543,6 +543,12 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   3. All 7 notebook cells contain complete live stream stdout outputs.
   4. Both submission files contain 61,500 rows, 0 nulls, correct SK_ID_CURR alignment matching sample submission.
   - Runtime: 392.59s (6.54 minutes) on NVIDIA RTX 4050 GPU.
+- **Evaluator Audit Qualification & Clarifications:**
+  1. **Nomenclature & Compliance Status:** V10 is designated as a "lower-ambiguity candidate; no explicit violation identified in the reviewed materials", not "zero ambiguity" or "organizer-approved" (as official rule interpretation rests solely with the competition organizers).
+  2. **Domain Periodicity Modeling Hypotheses:** Ratios incorporating factors of $12.0$ (`(inc / 12.0) - an` and `cr + 12.0 * an`) assume that `AMT_INCOME_TOTAL` is annual and `AMT_ANNUITY` is monthly scheduled payment. These periods are not established by the official data dictionary; the multiplier is strictly an engineered normalization hypothesis.
+  3. **Authoritative Metric:** The authoritative re-verified validation performance from saved disk artifacts is OOF ROC-AUC = **`0.762356`** (0.7623559), Log-Loss = **`0.244998`** (0.2449982).
+  4. **Combined Ablation Interpretation:** The $-0.005984$ delta relative to V9 reflects a *combined ablation* removing both nested target encodings and pricing lattice hypotheses simultaneously; it does not isolate their individual contributions.
+  5. **Submission Rules Reminder:** Under official competition scoring rules (`README.ipynb`, cell 3), the **last submitted file determines ranking**. Multi-candidate submissions are not jointly evaluated; the participant must explicitly select their final active file. If any external source code is reused, appropriate citations and attributions must be preserved.
 
 ---
 
