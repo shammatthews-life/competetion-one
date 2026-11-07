@@ -36,6 +36,7 @@
 | **Phase 28 Research** | `gemini/run_deep_100_optimized_exp141_240.py` | 100 Deep Optimized Specialized Regime Splits & Master Formulas (Exp 141 - 240) | 0.753308 | *(Diagnostic)* | **+16.6 bps Lift** (2,015 bps spread across 10 domains) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md)) |
 | **Phase 29 Research** | `gemini/run_exhaustive_100_regimes_multi_round_optimizer.py` | Exhaustive Multi-Round Optimization across 100 Regimes (500 Formulations Evaluated) | 0.752630 | *(Diagnostic)* | **+9.9 to +1,368 bps Within-Split Lift** (Top: 0.7681 AUC / 2,903 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.md)) |
 | **Phase 30 Research** | `gemini/run_deep_mathematical_feature_and_category_attribution.py` | Information Value (IV) & 8-Block Feature Ablation Study | 0.761778 | *(Diagnostic)* | **Identified +348.7 bps Tariff Engine + 0.0836 Occupation IV** | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.md)) |
+| **Phase 31 Research** | `gemini/run_deep_100_actuarial_and_quantitative_exp241_340.py` | 100 Advanced Actuarial & Quantitative Finance Manifolds (Exp 241 - 340) | 0.752804 | *(Diagnostic)* | **+11.6 bps Net 5F CV Lift** (Top: 0.7369 Within AUC, 3,600 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_ADVANCED_ACTUARIAL_EXP241_340.md)) |
 | **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
 | **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
 | **Origin EXP 8** | `gemini/run_origin_exp8_unified_championship.py` | Unified Cognitive Championship (V13) — 105 Forensic Copulas + In-Fold Hermetic Nested TE | **0.768242** | *(Est. ~0.776)* | **+56.7 bps vs EXP7** (Zero Transductive Shifts) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)) |
@@ -985,6 +986,60 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   7. **Block 7 (Relational Entity Graph `N_APPS_ALL, Invariant Registration/ID Deltas`):** AUC = **`0.753898`** (**+5.9 bps lift**).
   8. **Block 8 (Credit Inquiries `Hourly, Monthly, Quarterly Velocity, Acceleration`):** AUC = **`0.754696`** (**+8.0 bps lift**).
   9. **Phase 3 (Hermetic In-Fold Nested Target Encodings on Top 6 Keys):** AUC = **`0.761778`** (**+70.8 bps lift on a single LightGBM model!**).
+
+### 3.12 Phase 31: 100 Advanced Actuarial & Quantitative Finance Manifolds (Exp 241 – 340)
+
+- **Execution Script:** [`gemini/run_deep_100_actuarial_and_quantitative_exp241_340.py`](file:///d:/gci/gemini/run_deep_100_actuarial_and_quantitative_exp241_340.py)
+- **Artifacts Generated:**
+  - JSON Ledger: [`gemini/RESEARCH_100_ADVANCED_ACTUARIAL_EXP241_340.json`](file:///d:/gci/gemini/RESEARCH_100_ADVANCED_ACTUARIAL_EXP241_340.json)
+  - Markdown Report: [`gemini/RESEARCH_100_ADVANCED_ACTUARIAL_EXP241_340.md`](file:///d:/gci/gemini/RESEARCH_100_ADVANCED_ACTUARIAL_EXP241_340.md)
+- **Execution Runtime:** `49.40s` on RTX 4050 Laptop GPU (171,202 training records).
+- **Core Motivation:** Move beyond simple ratios and empirical heuristics into formal mathematical, actuarial, and information-theoretic credit risk manifolds. Evaluate whether formal macro-conditioning (Vasicek ASRF), structural default distance (Merton jump-diffusion), and multi-agency discordance (Jensen-Shannon entropy) uncover orthogonal signal layers that drive decision tree split gains.
+
+#### 1. The 10 Quantitative Mathematical Domains Formulated (Exp 241 – 340)
+1. **Vasicek Asymptotic Single Risk Factor (ASRF) Manifolds (Exp 241 – 250):**
+   - Incorporates regulatory capital theory: $PD(Y) = \Phi\left(\frac{\Phi^{-1}(p) - \sqrt{\rho}Y}{\sqrt{1 - \rho}}\right)$, setting systemic asset correlation $\rho = 0.15$ and regional macro factor $Y = (2 - \text{REGION\_RATING\_CLIENT}) / 0.8$.
+   - Highlights: **Exp 249 (`Vasicek_Pensioner_Safety_Invariant`)** achieves within-split AUC **0.6893**, $\rho = -0.1485$, and a **1,326.9 bps spread** (5.42% default rate across 30,898 senior applicants).
+2. **Merton Structural Distance-to-Default & Jump Solvency (Exp 251 – 260):**
+   - Formulates firm-value Merton dynamics adapted to household balance sheets: $DD = \frac{\ln(A / L) + (\mu - 0.5\sigma_A^2)T}{\sigma_A \sqrt{T}}$ with synthetic household asset volatility $\sigma_A = \text{clip}(0.15 + 0.20(1 - E2), 0.10, 0.60)$.
+   - Highlights: **Exp 257 (`Merton_Career_Tenure_Buffer`)** achieves within-split AUC **0.6710**, $\rho = -0.1498$, and **1,611.4 bps spread** (44.7% coverage).
+3. **Information-Theoretic Jensen-Shannon Agency Entropy (Exp 261 – 270):**
+   - Measures agency discordance on a normalized bounded $[0, 1]$ metric space: $JSD(P \parallel M) = \frac{1}{2} D_{KL}(P \parallel M) + \frac{1}{2} D_{KL}(Q \parallel M)$. When bureau agencies disagree sharply, credit risk expands non-linearly.
+   - Highlights: **Exp 261 (`JSD_Agency_Discordance_Penalty`)** flags 11,478 applicants (6.7%) with an alarming **21.95% default rate** (2.72x the population prior). **Exp 267 (`JSD_Phone_Longevity_Anchor`)** yields within-split AUC **0.6845** and **1,430.3 bps spread**.
+4. **Quantized Tariff Lattices & Fixed-Fee Discontinuities (Exp 271 – 280):**
+   - Models the bank's contractual pricing grid: $\Delta = |(Credit / Goods - 1) - 0.0132 \cdot \text{round}((Credit / Goods - 1) / 0.0132)|$ and flat administrative fee extraction $Q_0 = (Annuity - 129.50) / Credit$.
+   - Highlights: **Exp 280 (`Revolving_Line_Liquidity_Velocity`)** achieves within-split AUC **0.6779** and **1,331.7 bps spread**; **Exp 271 (`Integer_Lattice_00132_Precision`)** isolates 110,937 standardized loans (64.8%) with AUC **0.6531** and **1,464.8 bps spread**.
+5. **Actuarial Demographic Lifecycle & Squeezes (Exp 281 – 290):**
+   - Quantifies dependency dilution $\frac{\text{Children}}{\text{Family}}$ and adult-life debt velocity $\frac{Credit}{\text{Adult\_Life} \times 50,000}$.
+   - Highlights: **Exp 288 (`Early_Career_High_Growth_Stability`)** achieves within-split AUC **0.6809**, $\rho = -0.1620$, and **1,662.4 bps spread**.
+6. **Occupational Hazard & Industry Vulnerability (Exp 291 – 300):**
+   - Maps high-hazard labor regimes against stable public sector anchors.
+   - Highlights: **Exp 299 (`Healthcare_Teaching_Municipal_Anchor`)** achieves within-split AUC **0.6958**, $\rho = -0.1671$, and **1,612.7 bps spread**; **Exp 295 (`High_Tech_Staff_Premium_Anchor`)** achieves AUC **0.6826** and **1,477.6 bps spread**.
+7. **Asset Liquidation Dynamics & Vehicle Depreciations (Exp 301 – 310):**
+   - Exponential salvage depreciation: $\text{Salvage} = Goods \times \exp(-\text{Car\_Age} / 6.0)$.
+   - Highlights: **Exp 304 (`Homeowner_Debt_Service_Shield`)** achieves within-split AUC **0.6934**, $\rho = -0.1791$, and **1,855.5 bps spread** across 68,762 borrowers.
+8. **Credit Inquiry Velocity & Shopping Strain (Exp 311 – 320):**
+   - Immediate 1-hour inquiry spikes and quarterly-to-annual run rate acceleration $\Delta_{Q-Y} = 4 \times Inq_{QRT} - Inq_{YEAR}$.
+   - Highlights: **Exp 318 (`Zero_Inquiry_Voluntary_Sanctuary`)** achieves within-split AUC **0.6734** and **1,201.6 bps spread** (28,123 applicants with 4.95% default rate); **Exp 311 (`Emergency_Hourly_Borrowing_Shock`)** delivers AUC **0.6601** and **1,702.1 bps spread**.
+9. **Economic Geography & Verification Connectivity (Exp 321 – 330):**
+   - Spatial income deviation $\Delta_{Reg} = \frac{Income - \mu_{Region}}{\mu_{Region} + 1}$ and dual workplace phone corroboration.
+   - Highlights: **Exp 325 (`Institutional_Public_Hubs_Periphery`)** reaches a massive **0.7369 Within-Split AUC** (**1,142.9 bps spread**); **Exp 327 (`Dual_Workplace_Landline_Anchor`)** achieves within-split AUC **0.7042**, $\rho = -0.1905$, and **2,060.8 bps spread**.
+10. **Relational Identity Graph Telemetry & Cognitive Synthesis (Exp 331 – 340):**
+    - Connects invariant identity clusters (`birth - registration`, `birth - id_publish`, `gender`, `education`), loan sequence order, and days since previous application.
+    - Highlights: **Exp 333 (`Multi_Year_Sabbatical_Discipline`)** delivers **0.7196 Within-Split AUC** (**2,031.2 bps spread**); **Exp 335 (`Dense_Multi_App_Distress_Cluster`)** achieves **0.7072 Within-Split AUC** and a monumental **3,600.0 bps spread** ($\rho = +0.2126$); **Exp 338 (`Merton_Distance_Consensus_Hybrid`)** achieves **0.7041 Within-Split AUC** (**1,775.0 bps spread**); **Exp 340 (`Master_Cognitive_Super_Manifold`)** achieves **0.6937 Within-Split AUC** and **1,976.5 bps spread** on the full 100% sample.
+
+#### 2. Stratified 5-Fold Cross-Validation Verification
+To rigorously verify that these formulas provide true predictive generalization rather than in-sample overfitting:
+- **Baseline Feature Set (5-Fold CV):** LightGBM pooled OOF AUC = **`0.751644`**
+- **Enhanced Feature Set (+Top 15 Advanced Quantitative Formulations):** LightGBM pooled OOF AUC = **`0.752804`**
+- **Net Cross-Validation Lift:** **`+11.6 bps`** pure OOF lift across raw unstacked gradient boosting models.
+
+#### 3. Mathematical Mechanism: Why These Formulations Supercharge Tree Split Gain
+Gradient-boosted decision trees optimize leaf values by finding the feature $j$ and split threshold $s$ that maximizes the negative gradient variance reduction:
+$$\Delta \mathcal{L}_{\text{split}} = \frac{1}{2} \left[ \frac{\left(\sum_{i \in I_L} g_i\right)^2}{\sum_{i \in I_L} h_i + \lambda} + \frac{\left(\sum_{i \in I_R} g_i\right)^2}{\sum_{i \in I_R} h_i + \lambda} - \frac{\left(\sum_{i \in I} g_i\right)^2}{\sum_{i \in I} h_i + \lambda} \right]$$
+1. **Curvature Linearization:** Decision trees are orthogonal axis-aligned partitioners. They cannot model diagonal, hyperbolic, or copula boundaries without deep tree depth ($depth \ge 8$). Providing variables like $\frac{Annuity}{Monthly\_Inc} \times (E2 \times E3)^2$ linearizes complex non-linear failure surfaces, allowing shallow trees ($depth=4$) to split directly at the global optimum in a single cut.
+2. **Permutation Importance Robustness:** Because copulas bound agency agreement to $[0, 1]$ and filter out unilateral agency noise, shuffling a single agency score does not collapse model confidence. The feature retains high permutation importance because it captures the shared consensus rather than individual sensor variance.
+3. **Entropy & Information Value Concentration:** Combining discrete categorical risk tiers (e.g., Low-Skill Laborers, Transport Type 3) directly with continuous financial strain metrics creates bimodal distributions where the default probability distribution shifts from $p_0 = 0.0807$ to extreme poles ($p_{distress} = 0.2195$ vs $p_{prime} = 0.0430$), maximizing the Information Value $IV = \sum (p_i - q_i) \ln(p_i / q_i)$.
 
 
 
