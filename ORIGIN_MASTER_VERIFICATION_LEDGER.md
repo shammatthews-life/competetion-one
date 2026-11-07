@@ -514,6 +514,36 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - **Ablation Delta:** **`-0.005969`** (-59.7 bps). Quantitatively demonstrates that nested target encoding and pricing discretization hypotheses contribute ~60 bps of cross-validated lift.
   - Runtime: 220.4s (3.67 minutes) on NVIDIA RTX 4050 GPU.
 
+#### 2026-11-07 (Re-execution & Provenance Reconciliation) — V10 Verified Execution Run
+- **Execution Context:** Re-executed with self-hashing runner script verification to establish 100% hash parity between runner script on disk, execution kernel, and `RUN_MANIFEST_V10.json`.
+- **Files & Verified Disk Hashes:**
+  - Script: `gemini/run_and_build_audit_certified_v10_conservative.py` (SHA-256: `32fe1312513ef807079d75b4b17f10780e51471d1819a674774df58312596060`, 40,677 bytes)
+  - Notebook: `gemini/independentexperiments/audit_certified_v10_conservative.ipynb` (SHA-256: `cc36770096140b3ff2d0ac0553997da626b7878c204021c0e2e92d0b201edc97`, 7 cells with live stream outputs)
+  - Persisted OOF Predictions: `oof_predictions_v10_conservative_grade.csv` (171,202 rows | SHA-256: `d69b239bdde943beb69aac8be16172b5ebe49430fc4961edf1cfafae72436b25`)
+  - Submissions:
+    * Blended Probabilities: `submission_audit_certified_v10_conservative_blended_probabilities.csv` (SHA-256: `df64724a092d38a623a3677e5fb71931b79154cf2449621054649d8ca918f761`)
+    * Average Ranks: `submission_audit_certified_v10_conservative_average_ranks.csv` (SHA-256: `f11745978f74e13320a12e03c9926d349b2769747ac199a4d909868c1c921b7d`)
+  - Manifest: `RUN_MANIFEST_V10.json` (SHA-256: `185ec7d69fb32f123bcbfee5701f9ef34815d5a2c6d2c48ea97a9f60032e70e9`)
+- **Independently Recalculated Validation Results (From Saved Disk CSV):**
+  - Fold 1: 0.759221
+  - Fold 2: 0.762592
+  - Fold 3: 0.767643
+  - Fold 4: 0.759632
+  - Fold 5: 0.762941
+  - **Mean Fold AUC +/- Std: 0.762406 +/- 0.003019**
+  - **Pooled OOF ROC-AUC: 0.762356**
+  - **Pooled Log-Loss: 0.244998**
+- **Exact Ablation Delta vs V9:**
+  - V9 (Nested TE + Empirical Pricing Hypotheses): **`0.768340`** OOF AUC
+  - V10 (Zero TE + Zero Empirical Hypotheses): **`0.762356`** OOF AUC
+  - **Ablation Delta:** **`-0.005984`** (-59.8 bps)
+- **Provenance & Verification Checks:**
+  1. Runner script SHA-256 (`32fe1312...`) exactly matches line 7 in `RUN_MANIFEST_V10.json`.
+  2. Runner file modification timestamp (`18:27:44`) strictly precedes manifest timestamp (`18:34:41`).
+  3. All 7 notebook cells contain complete live stream stdout outputs.
+  4. Both submission files contain 61,500 rows, 0 nulls, correct SK_ID_CURR alignment matching sample submission.
+  - Runtime: 392.59s (6.54 minutes) on NVIDIA RTX 4050 GPU.
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)

@@ -1,10 +1,10 @@
 {
   "candidate_version": "V10: Conservative Lower-Ambiguity Benchmark",
   "description": "Zero Target Encoding | Zero 129.50/0.0132 Hypotheses | Pure Covariate Architecture",
-  "timestamp_utc": "2026-11-07T12:42:08Z",
+  "timestamp_utc": "2026-11-07T13:04:41Z",
   "runner_script": {
     "path": "D:\\gci\\gemini\\run_and_build_audit_certified_v10_conservative.py",
-    "sha256": "ac24e125cf62371d37ab31aa8d53f6ce98516f558eb2cb000483f8a0bac70ffd"
+    "sha256": "32fe1312513ef807079d75b4b17f10780e51471d1819a674774df58312596060"
   },
   "inputs": {
     "train_csv": {
@@ -31,44 +31,44 @@
   },
   "metrics": {
     "outer_fold_auc": [
-      0.759279,
-      0.76261,
+      0.759221,
+      0.762592,
       0.767643,
-      0.759612,
-      0.762952
+      0.759632,
+      0.762941
     ],
-    "mean_fold_auc": 0.762419,
-    "std_fold_auc": 0.003011,
-    "pooled_oof_auc": 0.762371,
-    "pooled_oof_logloss": 0.244994
+    "mean_fold_auc": 0.762406,
+    "std_fold_auc": 0.003019,
+    "pooled_oof_auc": 0.762356,
+    "pooled_oof_logloss": 0.244998
   },
   "comparison_with_v9": {
     "v9_pooled_oof_auc": 0.76834,
-    "v10_pooled_oof_auc": 0.762371,
-    "te_and_constants_ablation_delta": -0.005969,
+    "v10_pooled_oof_auc": 0.762356,
+    "te_and_constants_ablation_delta": -0.005984,
     "interpretation": "Impact of completely removing target encoding and empirical constant features"
   },
   "artifacts": {
     "oof_predictions": {
       "path": "d:/gci/oof_predictions_v10_conservative_grade.csv",
-      "sha256": "936d822d47e3f6fdd3da90bc93e6bc687c996ffa64ceebdbed59128e750ba219",
+      "sha256": "d69b239bdde943beb69aac8be16172b5ebe49430fc4961edf1cfafae72436b25",
       "rows": 171202
     },
     "submission_probabilities": {
       "path": "d:/gci/submission_audit_certified_v10_conservative_blended_probabilities.csv",
-      "sha256": "e7f49de3352ce0b0e924f3ab80213bcde70c1dd5f4ab9ac03a1d7577c6f7ddba",
+      "sha256": "df64724a092d38a623a3677e5fb71931b79154cf2449621054649d8ca918f761",
       "rows": 61500
     },
     "submission_average_ranks": {
       "path": "d:/gci/submission_audit_certified_v10_conservative_average_ranks.csv",
-      "sha256": "bb3b8badc3d084d021ab6487740345d547de91abfe34cb5b542cdceaf9992fef",
+      "sha256": "f11745978f74e13320a12e03c9926d349b2769747ac199a4d909868c1c921b7d",
       "rows": 61500
     },
     "executed_notebook": {
       "path": "d:/gci/gemini/independentexperiments/audit_certified_v10_conservative.ipynb",
-      "sha256": "824eb9da8159fdcc1ee6e95a1517ef608798506d46e1bbd75177b48f2cf5210b",
+      "sha256": "cc36770096140b3ff2d0ac0553997da626b7878c204021c0e2e92d0b201edc97",
       "total_cells": 7
     }
   },
-  "total_runtime_seconds": 220.45
+  "total_runtime_seconds": 392.59
 }
