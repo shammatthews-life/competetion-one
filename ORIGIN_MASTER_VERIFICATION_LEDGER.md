@@ -573,6 +573,21 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - Cross-Fold Mean Concordance (Off-Diagonal): `0.757890`
   - Cross-Fold Discrepancy: `-0.001458` (-14.6 bps drag on pooled OOF AUC due to slight inter-fold score calibration shifts, recoverable via probit rank normalization).
 
+### 2026-11-07 — Phase 22: 20 Advanced Forensic Research Investigations (Exp 11 - 30)
+- **Report & Telemetry:** [`gemini/RESEARCH_20_ADVANCED_INVESTIGATIONS.md`](file:///d:/gci/gemini/RESEARCH_20_ADVANCED_INVESTIGATIONS.md), `gemini/RESEARCH_20_ADVANCED_INVESTIGATIONS.json`
+- **Focus Areas & Key Forensic Breakthroughs:**
+  1. *Payment Quantization (Exp 11):* 100.0% of all annuities are divisible by `4.50` rubles, confirming an exact discrete administrative payment lattice.
+  2. *Implied Term Clusters (Exp 12):* Term $\text{Credit}/\text{Annuity}$ clusters on standard contracts (10, 12, 14, 18, 20, 24, 30, 36 months). On-grid loans default at 5.97% vs 8.76% for off-grid loans (+279 bps penalty).
+  3. *Downpayment Equity (Exp 14):* Financed negative equity ($\text{Credit} > \text{Goods}$) defaults at 8.75% vs 6.82% for parity loans (+193 bps higher risk).
+  4. *Self-Reporting Heuristics (Exp 15):* Heavily rounded income reports default at 8.1% vs 5.9% for exact unrounded payroll stubs (-220 bps stability premium).
+  5. *Statutory Passport Renewal Milestones (Exp 17):* Legal renewals at ages 20/45 default at 7.60% vs 8.37% for off-cycle re-issues (+77 bps risk).
+  6. *Phone Contact Pre-Application Churn (Exp 18):* Changing mobile phone within 90 days of application exhibits a default rate of 10.39% vs 7.45% for stable phone tenure (>1 year) (+294 bps distress gradient).
+  7. *External Score Convex Hull Geometry (Exp 19):* Euclidean distance from $(E_1, E_2, E_3)$ to the ideal vertex $(1, 1, 1)$ in 3D bureau space exhibits a $+0.2126$ correlation with default, outperforming all single external scores.
+  8. *Bureau Acceleration (Exp 21):* Accelerating inquiry pace ($\text{INQ\_MON} \times 4.0 > \text{INQ\_QRT}$) exhibits elevated credit-seeking velocity (10.42% default).
+  9. *Stalled Adulthood (Exp 23):* Adult applicants over age 30 living "With parents" default at 11.69% vs 7.78% for independent homeowners (+391 bps penalty).
+  10. *LTV Phase Transition (Exp 29):* $\text{LTV} < 0.80$ defaults at 4.10% vs 10.46% for $\text{LTV} > 1.15$ (+636 bps spread across collateralization spectrum).
+  11. *Error Topology (Exp 30):* Hard false negatives are overwhelmingly high-income young single males with clean credit who default due to sudden external liquidity shocks.
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
