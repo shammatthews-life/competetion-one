@@ -1040,6 +1040,76 @@ $$\Delta \mathcal{L}_{\text{split}} = \frac{1}{2} \left[ \frac{\left(\sum_{i \in
 2. **Permutation Importance Robustness:** Because copulas bound agency agreement to $[0, 1]$ and filter out unilateral agency noise, shuffling a single agency score does not collapse model confidence. The feature retains high permutation importance because it captures the shared consensus rather than individual sensor variance.
 3. **Entropy & Information Value Concentration:** Combining discrete categorical risk tiers (e.g., Low-Skill Laborers, Transport Type 3) directly with continuous financial strain metrics creates bimodal distributions where the default probability distribution shifts from $p_0 = 0.0807$ to extreme poles ($p_{distress} = 0.2195$ vs $p_{prime} = 0.0430$), maximizing the Information Value $IV = \sum (p_i - q_i) \ln(p_i / q_i)$.
 
+### 3.13 Phase 32: 100 Deep Research Domain & Actuarial Knowledge Formulations (Exp 341 – 440) + Feature Importance Split Gain Profiler
+
+- **Execution Script:** [`gemini/run_deep_100_advanced_knowledge_exp341_440.py`](file:///d:/gci/gemini/run_deep_100_advanced_knowledge_exp341_440.py)
+- **Artifacts Generated:**
+  - JSON Ledger: [`gemini/RESEARCH_100_ADVANCED_KNOWLEDGE_EXP341_440.json`](file:///d:/gci/gemini/RESEARCH_100_ADVANCED_KNOWLEDGE_EXP341_440.json)
+  - Markdown Report: [`gemini/RESEARCH_100_ADVANCED_KNOWLEDGE_EXP341_440.md`](file:///d:/gci/gemini/RESEARCH_100_ADVANCED_KNOWLEDGE_EXP341_440.md)
+- **Execution Runtime:** `51.13s` on RTX 4050 Laptop GPU (171,202 training records).
+- **Core Motivation:** Resolve precisely how decision trees allocate split gains across features, why certain mathematical formulations dominate tree selection, and how to construct next-generation formulas with extreme predictive leverage without relying on OOF leaks or external files.
+
+#### 1. Empirical Decision Tree Feature Importance Profiler (Split Gain vs Split Count)
+A 5-fold Stratified cross-validation profiling on 171,202 competition records was executed using LightGBM (`max_depth=31`, `learning_rate=0.05`, `reg_lambda=10.0`). The exact distribution of gradient variance reduction across all trees reveals:
+
+| Rank | Feature Name | Total Split Gain | Gain Share (%) | Split Count | Mathematical & Economic Mechanism |
+| :---: | :--- | :---: | :---: | :---: | :--- |
+| **1** | `EXT_PRODUCT` | **46,608.8** | **33.71%** | 297 | **Joint Bayesian Likelihood:** $u_0 \cdot u_1 \cdot u_2$ represents the probability that all three independent credit bureaus corroborate non-delinquency. Captures 1/3 of the entire predictive power of the model. |
+| **2** | `EXT_HARMONIC` | **13,050.3** | **9.44%** | 164 | **Lower-Tail Penalty:** $3 / (\frac{1}{u_0} + \frac{1}{u_1} + \frac{1}{u_2})$ severely penalizes an applicant if even a single agency reports severe delinquency, acting as a non-linear credit veto. |
+| **3** | `Q0_FEE` | **8,541.2** | **6.18%** | 535 | **Quantized Tariff Extraction:** $(Annuity - 129.50) / Credit$ decodes the hidden contractual interest rate grid set by the lending institution's risk pricing department. |
+| **4** | `CREDIT_TO_ANNUITY_TERM` | **8,015.5** | **5.80%** | 521 | **Contractual Tenor Horizon:** Implied loan amortization duration ($Credit / Annuity$) capturing long-term cyclical exposure. |
+| **5** | `DAYS_BIRTH` | **6,725.0** | **4.86%** | 584 | **Demographic Lifecyle:** Age in days reflecting accumulated household wealth, stability, and career seasoning. |
+| **6** | `EXT_SOURCE_3` | **5,979.3** | **4.32%** | 395 | Primary continuous external bureau sensor with highest individual univariate correlation. |
+| **7** | `DAYS_EMPLOYED` | **4,672.6** | **3.38%** | 425 | Career tenure capital and workplace seniority buffering against temporary layoffs. |
+| **8** | `CREDIT_TO_GOODS_RATIO` | **4,318.0** | **3.12%** | 323 | Uncollateralized financing markup ratio; separates secured asset purchases from pure cash consumption. |
+| **9** | `EXT_SOURCE_2` | **3,798.5** | **2.75%** | 308 | Secondary unconstrained continuous bureau sensor. |
+| **10** | `NEGATIVE_DOWNPAYMENT` | **3,730.1** | **2.70%** | 182 | $\max(Credit - Goods, 0) / Goods$; isolates borrowers taking instant negative equity loans with rolled-in dealer fees. |
+| **11** | `EXT_SOURCE_1` | **3,583.7** | **2.59%** | 315 | Historical bureau agency score (present in 43.6% of applicants). |
+| **12** | `DAYS_ID_PUBLISH` | **3,398.4** | **2.46%** | 393 | Administrative passport renewal friction and personal document aging. |
+| **13** | `DAYS_LAST_PHONE_CHANGE`| **3,132.1** | **2.27%** | 377 | Telecommunications longevity proxy for geographic and residential stability. |
+| **14** | `AMT_ANNUITY` | **3,033.0** | **2.19%** | 302 | Nominal monthly cash outflow obligation. |
+| **15** | `AMT_GOODS_PRICE` | **2,924.9** | **2.12%** | 245 | Real underlying market collateral valuation. |
+
+> **Key Theoretical Takeaway:** The top 4 features (`EXT_PRODUCT`, `EXT_HARMONIC`, `Q0_FEE`, `CREDIT_TO_ANNUITY_TERM`) generate **55.13% of the entire model's split gain**. Gradient boosted trees prioritize features that either (a) eliminate sensor noise through multi-agency consensus, or (b) reveal the bank's internal discrete underwriting tariff structure.
+
+#### 2. The 10 Deep Research Domains Formulated (Exp 341 – 440)
+1. **Black-Cox First-Passage Absorbing Barrier Models (Exp 341 – 350):**
+   - Formulates default as the first passage of household asset value $V(t)$ below a time-dependent subsistence floor $B(t) = 3 \times (15,000 \times \text{Family})$.
+   - Highlights: **Exp 344 (`BlackCox_Solvency_Anchor`)** achieves within-split AUC **0.6852** and **1,734.3 bps spread** ($\rho = -0.1696$).
+2. **Bühlmann-Straub Actuarial Credibility Theory (Exp 351 – 360):**
+   - Applies credibility weighting $\hat{\mu}_i = Z_i \bar{X}_i + (1 - Z_i) \mu_0$ with credibility factor $Z_i = \frac{n_i}{n_i + 250}$ across occupation cohorts.
+   - Highlights: **Exp 355 (`Buhlmann_High_Credibility_Anchor`)** yields within-split AUC **0.6896** and **1,886.7 bps spread** ($\rho = -0.1772$) across 151,631 applicants.
+3. **Extreme Value Theory (EVT) Gumbel-Clayton Manifolds (Exp 361 – 370):**
+   - Combines upper-tail Gumbel copula $C_{\text{Gumbel}}(u_1, u_2) = \exp(-((-\ln u_1)^2 + (-\ln u_2)^2)^{0.5})$ with lower-tail Clayton copula $C_{\text{Clayton}}(u_1, u_2) = (u_1^{-2} + u_2^{-2} - 1)^{-0.5}$.
+   - Highlights: **Exp 365 (`EVT_Gumbel_Prime_Sanctuary`)** achieves within-split AUC **0.6558** and **1,288.7 bps spread**.
+4. **Contractual Tariff Tenor Harmonics & Step Residuals (Exp 371 – 380):**
+   - Evaluates standard contractual amortization tenors (12, 18, 24, 36, 48 months) against irregular renegotiated terms and 0.0066 step grids.
+   - Highlights: **Exp 374 (`Tariff_Off_Lattice_Distortion`)** achieves a massive **0.7670 Within-Split AUC** (**1,000.0 bps spread**); **Exp 371 (`Tariff_Standard_Tenor_Anchor`)** achieves AUC **0.6543** and **1,250.7 bps spread**.
+5. **Net Disposable Free Cash Flow & Subsistence Strain (Exp 381 – 390):**
+   - Quantifies true post-subsistence free cash flow: $\text{FCF} = \frac{\text{Income}}{12} - \text{Subsistence} - \text{Annuity}$.
+   - Highlights: **Exp 382 (`Subsistence_Liquid_FCF_Buffer`)** delivers **0.7405 Within-Split AUC** (**1,428.6 bps spread**); **Exp 389 (`Subsistence_Discretionary_Cushion`)** delivers **0.6791 Within-Split AUC** and **2,272.7 bps spread**.
+6. **Multi-Dimensional Occupational Hazard Matrices (Exp 391 – 400):**
+   - Maps specialized high-risk labor cohorts against public sector anchors.
+   - Highlights: **Exp 396 (`Occupational_School_Teacher_Security`)** achieves **0.7086 Within-Split AUC** (**1,670.4 bps spread**); **Exp 393 (`Occupational_Core_Staff_Stability`)** reaches **0.7053 Within-Split AUC** (**1,603.4 bps spread**); **Exp 397 (`Occupational_Tech_Human_Capital`)** reaches **0.6951 Within-Split AUC** (**1,424.1 bps spread**).
+7. **Asset Liquidity Decay & Vehicle Maintenance Drag (Exp 401 – 410):**
+   - Models physical vehicle salvage recovery value depreciating exponentially on a 6-year half-life: $V_{\text{salvage}} = Goods \times \exp(-\text{Car\_Age} / 6.0)$.
+   - Highlights: **Exp 404 (`Asset_Homeowner_Solvency_Anchor`)** achieves **0.6961 Within-Split AUC** (**1,913.5 bps spread**).
+8. **Inquiry Acceleration Shock & High-Frequency Velocity (Exp 411 – 420):**
+   - Captures panic credit hunting via 1-hour inquiry spikes and quarterly-to-annual velocity surges $\Delta = 4 \times Inq_{QRT} - Inq_{YEAR}$.
+   - Highlights: **Exp 415 (`Inquiry_Zero_Inquiry_Prime_Sanctuary`)** achieves **0.6734 Within-Split AUC** (**1,201.6 bps spread**).
+9. **Spatial Economic Centroid Divergence & Municipal Buffers (Exp 421 – 430):**
+   - Measures individual income divergence from municipal centroid $\frac{Income - \mu_{\text{region}}}{\mu_{\text{region}} + 1}$ and dual employer landline verification.
+   - Highlights: **Exp 430 (`Spatial_Institutional_Periphery_Anchor`)** achieves **0.7369 Within-Split AUC** (**1,142.9 bps spread**); **Exp 427 (`Spatial_Dual_Landline_Verification_Anchor`)** achieves **0.7046 Within-Split AUC** (**2,345.0 bps spread**); **Exp 421 (`Spatial_Tier1_Megacity_Sanctuary`)** reaches **0.6956 Within-Split AUC** (**1,526.7 bps spread**).
+10. **Relational Sequence Multi-Loan Trajectory Dynamics (Exp 431 – 440):**
+    - Connects multi-application repeat borrowing pacing (`DAYS_SINCE_PREV_APP`) with structural solvency buffers.
+    - Highlights: **Exp 438 (`Relational_BlackCox_Solvency_Hybrid`)** reaches a remarkable **0.7470 Within-Split AUC** (**1,621.6 bps spread**); **Exp 433 (`Relational_Multi_Year_Sabbatical`)** achieves **0.7196 Within-Split AUC** (**2,031.2 bps spread**); **Exp 435 (`Relational_Dense_Distress_Cluster`)** achieves **0.7072 Within-Split AUC** and a monumental **3,600.0 bps decile spread** ($\rho = +0.2126$).
+
+#### 3. Principles for Engineering High-Gain Features
+Based on the split gain profile, formulas that achieve massive tree utilization follow three core rules:
+1. **Never feed raw ratios linearly when non-linear boundaries exist:** Always anchor ratios to consensus copulas: $\frac{\text{Monthly\_Inc}}{\text{Annuity}} \times (E_2 \times E_3)^2$. This eliminates noise in the low-score region while amplifying true solvency in the high-score region.
+2. **Isolate institutional pricing tariff artifacts:** Features incorporating $Q_0 = \frac{Annuity - 129.50}{Credit}$ or tenor roundings ($12, 18, 24, 36$) receive over 6% of total tree gain because they align with the bank's contractual scoring tables.
+3. **Couple categorical high-risk populations with negative downpayment debt:** When manual labor categories are crossed with $\max(Credit - Goods, 0) / Goods$, the default rate jumps to 16.2% – 17.0%, generating decisive tree partition cuts.
+
 
 
 
