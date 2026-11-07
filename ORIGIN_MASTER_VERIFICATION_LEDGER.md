@@ -677,6 +677,40 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
       - *Finding:* Hard false positives are older rural applicants (mean age 38.4, 10.5% pensioners) with low bureau scores but strong unrecorded family equity; hard false negatives are high-earning young single males (mean income 214,516 rubles) with clean bureau scores hit by sudden liquidity shocks.
       - *Reason:* Provides the topological boundary map for where specialist models or non-linear copula transforms resolve classification ambiguity.
 
+### 2026-11-07 — Phase 23: 30 Novel Advanced Forensic Research Experiments (Exp 31 - 60)
+- **Report & Telemetry:** [`gemini/RESEARCH_30_NOVEL_EXPERIMENTS.md`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXPERIMENTS.md), `gemini/RESEARCH_30_NOVEL_EXPERIMENTS.json`
+- **Focus Areas & Key Forensic Breakthroughs (30 Novel Formulations):**
+  1. *Basel II Vasicek Capital Stress (Exp 31):* $K = \Phi\left(\frac{\Phi^{-1}(p) + \sqrt{\rho}\Phi^{-1}(0.999)}{\sqrt{1 - \rho}}\right)$, $\rho=0.15$. Correlation: **`+0.1821`**, Spread: **`844.0 bps`** (3.86% low vs 12.30% high default). Simulates capital requirements under 99.9% systemic macroeconomic stress.
+  2. *Engel Subsistence Free Cash Flow (Exp 32):* $\text{FCF} = (\text{Income}/12) - (15,000 \times \text{Fam}) - \text{Annuity}$. Tests Engel's Law subsistence floor after food and shelter.
+  3. *Black-Cox First-Passage Default Distance (Exp 33):* $\text{DD} = (\log(V/D) + (\mu - 0.5\sigma^2)T) / (\sigma\sqrt{T})$. Estimates first passage time of asset value touching the insolvency barrier before maturity.
+  4. *Bureau Velocity Decay (Exp 34):* $4.0\text{Inq}_H + 1.0\text{Inq}_M + 0.33\text{Inq}_Q + 0.083\text{Inq}_Y$. Exponential decay weighting recent inquiries over annual checks.
+  5. *Alexander Implied APR Markup (Exp 35):* $r \approx \frac{2(n \cdot \text{Annuity} - \text{Credit})}{\text{Credit}(n + 1)}$. Taylor expansion extracting true contract APR charged by bank.
+  6. *Gini Bureau Inquiry Dispersion (Exp 36):* $G = 1 - \sum p_k^2$. Measures whether inquiries occurred in a single acute burst ($G \approx 0$) vs spread across the year.
+  7. *Breadwinner Burden Leverage (Exp 37):* $((\text{Fam}-1)/\max(\text{Children}, 1)) \times (\text{Credit}/\text{Income})$. Quantifies debt leverage supported per dependent.
+  8. *Car Capital Recovery Value (Exp 38):* $\text{Income} \cdot e^{-\text{Car\_Age}/8} - \text{Credit}$. Secondary motor vehicle liquidation recovery index.
+  9. *Generational Housing Crowding (Exp 39):* $(\text{Fam}/(\text{Children}+1)) \times \mathbb{I}(\text{House})$. Correlation: **`-0.0342`**, Spread: **`154.5 bps`** (7.21% vs 8.75%). Distinguishes multi-generational apartments from nuclear families.
+  10. *Statutory Passport Age Residual (Exp 40):* $\min(|\text{Age at ID}-20|, |\text{Age at ID}-45|)$. Continuous distance to statutory legal passport renewal milestones.
+  11. *Phone-to-Job Tenure Ratio (Exp 41):* $(\text{Phone\_Yrs}+0.1)/(\text{Job\_Yrs}+0.1)$. Correlation: **`-0.0416`**, Spread: **`81.4 bps`**. Uncovers masked employment instability.
+  12. *Mahalanobis Prime Centroid (Exp 42):* $\sqrt{\sum(1-E_i)^2 + 0.05 z_{\text{inc}}^2}$. Correlation: **`+0.1686`**, Spread: **`797.8 bps`** (4.08% vs 12.06%). Euclidean distance to prime borrower anchor in bureau space.
+  13. *Shannon Bureau Entropy (Exp 43):* $-\sum p_i \log_2(p_i)$. Correlation: **`-0.1664`**, Spread: **`511.3 bps`** (5.52% vs 10.63%). Low entropy flags severe inter-bureau disagreement where one bureau catches derogatories.
+  14. *Rule of 78 Interest Frontload (Exp 44):* $\frac{n}{n(n+1)/2} \times (n\cdot\text{Annuity} - \text{Credit})$. First-year interest front-loading load under installment financing.
+  15. *Spatial Income Density Gradient (Exp 45):* $\log(1+\text{Income})/\sqrt{\text{Pop}+1e-4}$. Correlation: **`+0.0260`**, Spread: **`119.3 bps`**. Separates rural high-earners from metropolitan baseline wage earners.
+  16. *Registration to ID Synchrony (Exp 46):* $(\text{Age\_Reg}+1)/(\text{Age\_ID}+1)$. Synchrony of address registration and state passport re-issuance.
+  17. *Uncollateralized Debt to Cash (UDDCR) (Exp 47):* $\max(\text{Credit}-\text{Goods}, 0)/\max((\text{Income}/12)-\text{Annuity}, 100)$. Correlation: **`+0.0317`**, Spread: **`253.2 bps`** (6.81% vs 9.34%). Months of free cash flow to pay off bank financing markup.
+  18. *Frechet Extreme Tail Copula (Exp 48):* $\exp(-\sqrt{(-\log E_2)^2 + (-\log E_3)^2})$. Correlation: **`-0.1946`**, Spread: **`784.9 bps`** (4.15% vs 12.00%). Joint catastrophic default probability.
+  19. *Human Capital Productivity Index (Exp 49):* $\text{Income}/(\text{Edu\_Tier} \times \text{Age} \times 500)$. Correlation: **`+0.0418`**, Spread: **`267.9 bps`** (6.73% vs 9.41%). Identifies under-earners relative to education/age expectations.
+  20. *LTV Rented Housing Multiplier (Exp 50):* $(\text{Credit}/\text{Goods}) \times (1 + 1.5\cdot\mathbb{I}(\text{Rented}))$. Correlation: **`+0.0552`**, Spread: **`306.5 bps`** (6.56% vs 9.62%). High LTV unbacked by real estate equity.
+  21. *Single Male Mobility Hazard (Exp 51):* $(\text{Phone\_Tenure}/\text{Age}) \times \mathbb{I}(\text{Single Male})$. Spread: **`516.1 bps`** (7.70% vs 12.86%). Contact instability in highest-risk demographic.
+  22. *Thin-File Absence Penalty (Exp 52):* $\mathbb{I}(\text{Inquiries}==0) \times (\text{Credit}/\text{Income})$. Penalizes large loans applied for with zero credit bureau track record.
+  23. *Retirement Distance Buffer (Exp 53):* $\max(60-\text{Age}, 0) \times (\text{Employed\_Yrs}/\text{Age})$. Career stability in pre-pension transition window.
+  24. *Goods in Income Months (Exp 54):* $\text{Goods}/(\text{Income}/12)$. Real physical economic scale of asset relative to monthly earning capacity.
+  25. *Gumbel Upper Tail Risk Copula (Exp 55):* $\exp(-((-\ln(1-E_2))^{1.6} + (-\ln(1-E_3))^{1.6})^{1/1.6})$. Correlation: **`+0.2063`**, Spread: **`811.3 bps`** (4.02% vs 12.13%). Joint upper-tail risk co-occurrence across credit bureaus.
+  26. *Verified Work Phone Solvency (Exp 56):* $(\text{Income}/\text{Annuity}) \times \mathbb{I}(\text{Work Phone})$. Spread: **`198.3 bps`** (7.68% vs 9.66%). Debt coverage verified by physical employer landline.
+  27. *Macro-Sector Risk Spread (Exp 57):* $\text{Empirical\_Default}(\text{Org}) - 0.0807$. Correlation: **`+0.0539`**, Spread: **`285.1 bps`** (6.97% vs 9.82%). Industry-level macroeconomic credit risk spreads.
+  28. *Amortization Fee Months (Exp 58):* $(\text{Credit}-\text{Goods})/\text{Annuity}$. Correlation: **`+0.0417`**, Spread: **`271.5 bps`** (6.72% vs 9.43%). Months of payments dedicated solely to amortizing uncollateralized financing fee.
+  29. *Harmonic Multi-Bureau Index (Exp 59):* $3.0/((1/E_1)+(1/E_2)+(1/E_3))$. Correlation: **`-0.2093`**, Spread: **`817.2 bps`** (3.99% vs 12.16%). Weakest-link credit principle dominated by worst bureau score.
+  30. *Disagreement Leverage Norm (Exp 60):* $|E_2 - E_3| \times (\text{Credit}/\text{Income})$. Correlation: **`+0.0335`**, Spread: **`182.1 bps`** (7.16% vs 8.98%). Interacts bureau uncertainty with financial leverage in contested credit states.
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
