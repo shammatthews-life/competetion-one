@@ -2,7 +2,7 @@
 
 ## Current verdict
 
-**GC-01 and TE-01 are complete and rejected on matched Phase 2 folds. Frozen Phase 2 remains the best validated independent candidate.**
+**GC-01, TE-01 and both XGBoost screens are complete; none is promoted. E-INT-01 is the next predeclared feature screen against Phase 2.**
 
 ## Verified
 
@@ -20,11 +20,23 @@
 
 - Stage 0 read-only diagnostic compared Phase 2 and hybrid V5 to the historical champion, aligned by all 61,500 raw test IDs.
 - Corrected Stage 0 run includes all raw test covariates for missingness slices, exact input/source hashes, and output hashes.
-- The complete research test suite passes (11/11); the frozen nested target-encoding tests pass (3/3).
+- The complete research test suite currently passes (16/16); the frozen nested target-encoding tests pass (3/3).
 - The new 76-feature peer-context builder passed a real-data first-fold preflight in 9.35 seconds; it uses only outer-fit covariates and leave-one-out means for training rows.
 - GC-01 five-fold seed-42 screen is complete and rejected: OOF AUC fell by `0.0016302` on all five folds; exact-fold, OOF and candidate integrity checks passed. GPU utilization peaked at 57% and VRAM use at 4,903 MiB.
 - TE-01 core categorical nested target-encoding screen is complete in a unique seed-42 run directory. It scored `0.7709211321` OOF AUC (`-0.0006403102` vs Phase 2), with 1/5 positive folds. Independent run-manifest, fold, OOF, candidate, GPU, and target-encoding test checks passed.
 - Package SHA-256 manifest was generated and verified after the experiment and report updates.
+
+## Completed model-diversity screen: XGB-01/02
+
+- XGBoost 3.4.1 reports `USE_CUDA=true`; a direct `device=cuda:0`, `tree_method=hist` smoke fit passed on the RTX 4050 (CUDA 13.3 build, driver 592.82).
+- Full real-data feature preflight used the frozen Phase 2 rowwise builder: 171,202 train rows, 61,500 test rows, 102 rowwise columns; fold-1 matrices have 201 features and 132.7 MiB total CSR storage. Preflight completed in 1.56 seconds. Process working set was 613 MiB at snapshot, peak 883 MiB; private bytes were 1.34 GiB.
+- The raw-data directory has the three expected competition CSVs plus an unrelated image; no relational Home Credit tables. The supplied `files.zip` contains only `fast_screen.py` and `gci_core.py`; `final_submission.rar` contains a README, a replay script and a historical submission CSV, not auxiliary input tables. Neither archive's historical prediction/replay artifacts are XGB-01 inputs.
+- Current Python has no PyTorch; TabM therefore remains feasibility-blocked pending an isolated dependency/environment plan. No package was installed.
+- XGB-01 standalone OOF AUC was `0.7613696` vs Phase 2 `0.7715614`; the fixed 80/20 rank blend gained only `+0.0001020` (3/5 folds).
+- The one predeclared replication on seed `20261101` scored XGBoost `0.7602661` vs Phase 2 `0.7709638`; the unchanged blend gained `+0.0000251` (2/5 folds). Residual correlations were about `0.994` on both seeds. No promotion or further seed/configuration sweep.
+- Both CUDA runs completed in about 30.7 seconds each. Six telemetry samples per run showed maximum utilization 77% / 69%, peak VRAM 318 MiB, and all folds reported device `cuda:0`. Process peak working set was about 1.12 GiB; peak private bytes about 1.73 GiB. Both run manifests and candidate integrity checks passed.
+- The final archived submission replay code was inspected: it loads precomputed `group_a_oof_10stream.npy` and `group_a_test_10stream.npy`. This is evidence for historical cached replay, not an independent raw model result.
+- E-INT-01 will now test five predeclared EXT_SOURCE/affordability interactions on the exact Phase 2 seed-42 folds. Its advancement gate is fixed before training: mean paired AUC gain `>=0.0002`, at least 4/5 positive folds, and mean gain greater than twice its standard error. Only a pass earns one independent-seed replication.
 
 ## Explicitly not done
 

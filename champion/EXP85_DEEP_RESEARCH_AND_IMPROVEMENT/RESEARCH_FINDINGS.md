@@ -29,6 +29,20 @@ Both experiments recomputed feature matrices and candidate predictions from raw 
 
 The next experiment should not be another variation of these rejected categories or groupings. Require a distinct, predeclared hypothesis and a rationale for expected signal before spending another full five-fold run.
 
+## Independent XGBoost screen
+
+XGBoost 3.4.1 is CUDA-enabled on the RTX 4050. A real-data sparse-matrix preflight produced 201 features and about 132.7 MiB CSR storage for fit/validation/test, with a measured peak working set under 0.9 GiB at that point. Full five-fold raw-only XGBoost ran in about 31 seconds per seed. The XGBoost member scored roughly 0.010 AUC below Phase 2 on both seed 42 and seed 20261101; the fixed 80/20 rank-blend gains were only `+0.0001020` and `+0.0000251`, and improved only 3/5 and 2/5 folds. Error residual correlations were about 0.994 on both seeds. It did not demonstrate robust complementary value and was not promoted.
+
+The supplied archives were checked for additional data. `files.zip` contains code files, and `final_submission.rar` contains a replay script and historical submission. The replay script loads cached `group_a_oof_10stream.npy` / `group_a_test_10stream.npy` matrices. Such replay can recreate a highly correlated historical prediction vector, but it does not establish independent raw-data model quality. No relational bureau/installment/previous-application/POS/credit-card tables are available in the supplied raw-data directory.
+
+The RTX 4050 has 6,141 MiB VRAM and XGBoost uses only about 318 MiB in this run. PyTorch is absent, so TabM was not installed or trained. Given the package-install/environment risk and no supported dataset-specific evidence, the next low-cost experiment is a fixed five-feature E_POLY block already described in the supplied research archive, validated against the actual frozen Phase 2 model. The exact definitions and a strict predeclared advancement gate are in `EXPERIMENT_REGISTER.md`.
+
+## E-INT-01 result
+
+The five fixed EXT_SOURCE/affordability interactions did not improve Phase 2 on matched seed-42 folds: pooled OOF AUC was `0.7712424145` (`-0.0003190278`), mean paired-fold change was `-0.0003192742` (SE `0.0002908994`), and only 2/5 folds improved. The predeclared gate was not met, so no independent-seed run or same-fold tuning is justified. Independent recomputation verified saved OOF metrics, exact fold matches, hashes, candidate IDs/schema/probabilities, and GPU telemetry.
+
+With XGBoost and E_POLY both failing their screens, the next bounded experiment is an isolated TabM dependency/CUDA feasibility pilot, not another full model run: do not touch the validated environment; on a 20k-row fixed sample, require CUDA availability, peak VRAM at or below 5.5 GiB, and projected five-fold runtime at or below two hours before considering a full CV run. The pilot has not yet been executed. Auxiliary relational feature work remains blocked until actual permitted tables are available.
+
 ## Research limitations
 
 - No TabM environment install or fit has been performed.

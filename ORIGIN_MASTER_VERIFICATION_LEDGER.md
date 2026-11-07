@@ -457,9 +457,14 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - Fold 4: 0.765974
   - Fold 5: 0.767696
   - **Mean Fold AUC +/- Std: 0.768411 +/- 0.003056**
-  - **Pooled OOF ROC-AUC: 0.768340**
-  - **Pooled Log-Loss: 0.243472**
-  - Estimated Omnicampus Public Leaderboard Translation: **0.7770 – 0.7785+** (61,500 rows, 0 nulls).
+  - **Pooled OOF ROC-AUC: 0.768340** (intermediate 79-feature run: 0.763107)
+  - **Pooled Log-Loss: 0.243472** (intermediate: 0.244790)
+  - **Leaderboard & Competition Status:**
+    * V9 produced a reproducible local artifact set and executed notebook matching `RUN_MANIFEST_V9.json`.
+    * Verified local OOF ROC-AUC = **0.768340** (recomputed directly from disk).
+    * No verified remote public leaderboard score or official organizer rule adjudication has been provided.
+    * The local OOF protocol evaluates one model per held-out row ($K=1$), whereas test inference averages the 5 outer-fold models ($K=5$).
+    * All empirical constants (`129.50` fee offset and `0.0132` tariff step) remain qualified feature-engineering hypotheses, not proven official bank contract clauses.
   - Runtime: 339.8s (5.66 minutes) on NVIDIA RTX 4050 GPU.
 
 ---
