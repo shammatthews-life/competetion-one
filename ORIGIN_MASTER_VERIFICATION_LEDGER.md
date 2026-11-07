@@ -33,6 +33,7 @@
 | **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
 | **Phase 26 Research** | `gemini/run_deep_20_novel_exp121_140.py` | 20 Advanced Research Regime Splits & Bureau Topology (Exp 121 - 140) | 0.757463 | *(Diagnostic)* | 2,604 bps spread (Single Male Hazard) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_20_NOVEL_EXP121_140.md)) |
+| **Phase 28 Research** | `gemini/run_deep_100_optimized_exp141_240.py` | 100 Deep Optimized Specialized Regime Splits & Master Formulas (Exp 141 - 240) | 0.753308 | *(Diagnostic)* | **+16.6 bps Lift** (2,015 bps spread across 10 domains) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md)) |
 | **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
 | **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
 | **Origin EXP 8** | `gemini/run_origin_exp8_unified_championship.py` | Unified Cognitive Championship (V13) — 105 Forensic Copulas + In-Fold Hermetic Nested TE | **0.768242** | *(Est. ~0.776)* | **+56.7 bps vs EXP7** (Zero Transductive Shifts) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)) |
@@ -895,6 +896,33 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
     * `oof_predictions_origin_exp8_grade.csv` (171,202 rows | SHA256: `23502610622cd114f259be3b8c1f7eb6a3f1f13445494c9879de2c890c58fd99`)
     * `submission_origin_exp8_blended_probabilities.csv` (61,500 rows | SHA256: `ecf86050a390ea40e736eaf7ea4c27868f0d5e421fa14db9eb8969798f848493`)
     * `submission_origin_exp8_average_ranks.csv` (61,500 rows | SHA256: `a6d89f385ac58c5cd160ca355ea7a10bd943416788abc9788adc00389a34bf23`)
+
+### 2026-11-07 — Phase 28: 100 Deep Optimized Specialized Regime Splits & Master Formulas (Exp 141 – 240)
+- **Runner Script:** [`gemini/run_deep_100_optimized_exp141_240.py`](file:///d:/gci/gemini/run_deep_100_optimized_exp141_240.py) (39.90s execution on RTX 4050 GPU)
+- **Comprehensive Reports:**
+  * JSON Metadata: [`RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.json`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.json)
+  * Exhaustive Markdown Table: [`RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md)
+- **Design & Methodology:**
+  - Evaluated 100 mutually distinct, zero-duplicate empirical regime partitions across all 10 core dimensions of retail credit risk.
+  - Tailored non-linear mathematical formulas to each specific regime, optimizing risk separation, rank correlation ($\rho$), and default spread (bps between bottom and top deciles).
+  - Selected the top 12 discovered formulations and evaluated incremental impact via Stratified 5-Fold Cross-Validation:
+    * **Baseline 5-Fold Pooled OOF AUC:** `0.751644`
+    * **Enhanced 5-Fold Pooled OOF AUC:** `0.753308`
+    * **Net Cross-Validated Lift:** **`+16.6 bps`**
+- **Top Empirical Discoveries Across 10 Thematic Domains:**
+  1. **Exp 237 (`Extreme_Undercollateralized_Laborer_Stress`):** `Single_Male_Laborer_Hazard * ((Credit - Goods) / Goods)`. N=3,970 (2.3%), Default: 17.00%, $\rho = +0.1356$, Spread: **`2015.1 bps`** (6.80% vs 26.95%). Isolates single male manual workers taking unbacked financing above goods prices.
+  2. **Exp 141 (`Young_Single_Renter_Obligation`):** `(Annuity / Monthly_Income) * (Credit / Goods) / (E2 + 0.1)`. N=303 (0.2%), Default: 14.19%, $\rho = +0.1471$, Spread: **`1935.5 bps`** (6.45% vs 25.81%). Young unpartnered tenants in rented apartments carrying high debt service obligations.
+  3. **Exp 142 (`Sandwich_Generation_Dependency_Strain`):** `(Annuity * (Children + 2)) / Income * (1 - Frank_Copula)`. N=308 (0.2%), Default: 9.09%, $\rho = +0.2013$, Spread: **`1935.5 bps`** (3.23% vs 22.58%). Middle-aged adults cohabiting with parents while supporting multiple children.
+  4. **Exp 150 (`Multi_Generational_House_Asset_Anchor`):** `(Monthly_Inc / Annuity) * Harmonic_Copula * (10 - Car_Age)`. N=1,400 (0.8%), Default: 8.93%, $\rho = -0.1617$, Spread: **`1928.6 bps`** (20.00% vs 0.71%). Co-residing adults with owned modern vehicles possess unencumbered personal asset mobility.
+  5. **Exp 220 (`Residential_Collateral_Shield_Ratio`):** `(Income / Credit) * (E2 * E3) * log1p(Adult_Life)`. N=52,617 (30.7%), Default: 7.63%, $\rho = -0.1783$, Spread: **`1847.2 bps`** (18.66% vs 0.19%). Standard apartment occupiers with low leverage demonstrate extraordinary credit stability.
+  6. **Exp 154 (`Security_Police_Stable_Anchor`):** `(Income / Credit) * Frank_Copula * (Emp_Yrs + 1)`. N=6,907 (4.0%), Default: 8.46%, $\rho = -0.1602$, Spread: **`1823.4 bps`** (19.42% vs 1.19%). State enforcement and institutional security staff maintain rigid regularized payroll schedules.
+  7. **Exp 167 (`Missing_Bureau_1_Novel_Credit_Profile`):** `Frank_Copula(E2, E3) * (Monthly_Inc / Annuity)`. N=80,229 (46.9%), Default: 7.97%, $\rho = -0.1692$, Spread: **`1803.6 bps`** (19.46% vs 1.42%). First-time borrowers without primary credit bureau history where joint consensus between E2 and E3 governs default.
+  8. **Exp 227 (`Dual_Workplace_Phone_Anchor`):** `(Monthly_Inc / Annuity) * (E2 * E3) * log1p(Emp_Yrs)`. N=16,094 (9.4%), Default: 7.40%, $\rho = -0.1662$, Spread: **`1788.8 bps`** (18.52% vs 0.63%). Long-tenured employees with dual workplace landline validation reflect authentic employment roots.
+  9. **Exp 207 (`Inquiry_Velocity_To_Income_Ratio`):** `(Inq_YEAR / log1p(Income)) * (1 - E3) * (Credit / Goods)`. N=1,757 (1.0%), Default: 11.21%, $\rho = +0.1599$, Spread: **`1724.1 bps`** (5.17% vs 22.41%). Heavy inquiry frequency from low-income applicants compounds repayment risk.
+  10. **Exp 203 (`Hourly_Emergency_Borrowing`):** `Inq_Hour * (Credit / Goods) / (E3 + 0.1)`. N=933 (0.5%), Default: 8.04%, $\rho = +0.1508$, Spread: **`1702.1 bps`** (4.26% vs 21.28%). Emergency inquiries submitted in the hour preceding application flag immediate distress.
+  11. **Exp 160 (`Driver_Automotive_Collateral_Vulnerability`):** `(Credit / Goods) * (Car_Age + 1) / (E3 + 0.1)`. N=4,814 (2.8%), Default: 10.12%, $\rho = +0.1206$, Spread: **`1556.0 bps`** (4.78% vs 20.34%). Commercial drivers financing debt against aging vehicles face simultaneous repair costs and asset depreciation.
+  12. **Exp 240 (`Unified_Cognitive_Super_Manifold`):** `Frank_Copula * (1 - Clayton_Copula) * (Monthly_Inc / Annuity) / (1 + Single_Male_Hazard)`. N=171,202 (100.0%), Default: 8.07%, $\rho = -0.1268$, Spread: **`1528.5 bps`** (19.46% vs 4.18%). Master cognitive manifold uniting copula topology, debt affordability, and demographic risk.
+
 
 
 ---
