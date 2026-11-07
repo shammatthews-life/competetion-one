@@ -35,6 +35,7 @@
 | **Phase 26 Research** | `gemini/run_deep_20_novel_exp121_140.py` | 20 Advanced Research Regime Splits & Bureau Topology (Exp 121 - 140) | 0.757463 | *(Diagnostic)* | 2,604 bps spread (Single Male Hazard) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_20_NOVEL_EXP121_140.md)) |
 | **Phase 28 Research** | `gemini/run_deep_100_optimized_exp141_240.py` | 100 Deep Optimized Specialized Regime Splits & Master Formulas (Exp 141 - 240) | 0.753308 | *(Diagnostic)* | **+16.6 bps Lift** (2,015 bps spread across 10 domains) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_OPTIMIZED_REGIMES_EXP141_240.md)) |
 | **Phase 29 Research** | `gemini/run_exhaustive_100_regimes_multi_round_optimizer.py` | Exhaustive Multi-Round Optimization across 100 Regimes (500 Formulations Evaluated) | 0.752630 | *(Diagnostic)* | **+9.9 to +1,368 bps Within-Split Lift** (Top: 0.7681 AUC / 2,903 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_100_REGIMES_MULTI_ROUND_OPTIMIZATION.md)) |
+| **Phase 30 Research** | `gemini/run_deep_mathematical_feature_and_category_attribution.py` | Information Value (IV) & 8-Block Feature Ablation Study | 0.761778 | *(Diagnostic)* | **Identified +348.7 bps Tariff Engine + 0.0836 Occupation IV** | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.md)) |
 | **Origin EXP 6** | `gemini/run_and_build_origin_exp6_apex_synthesis.py` | Apex Cognitive Synthesis — 6-Engine Forensic Copula Suite | 0.760528 | *(Est. ~0.766)* | Best Single: 0.761577 (`lgb_reg`) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP6.json)) |
 | **Origin EXP 7** | `gemini/run_origin_exp7_grandmaster_synthesis.py` | Grandmaster Cognitive Synthesis — Full Relational Graph + 7 Engines | **0.762572** | *(Est. ~0.768)* | **+20.4 bps vs EXP6** (4,070 repeat clusters) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP7.json)) |
 | **Origin EXP 8** | `gemini/run_origin_exp8_unified_championship.py` | Unified Cognitive Championship (V13) — 105 Forensic Copulas + In-Fold Hermetic Nested TE | **0.768242** | *(Est. ~0.776)* | **+56.7 bps vs EXP7** (Zero Transductive Shifts) | VERIFIED DISK ARTIFACTS ([`MANIFEST`](file:///d:/gci/RUN_MANIFEST_ORIGIN_EXP8.json)) |
@@ -959,6 +960,32 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - **Exp 224 (`Elite_High_Density_Tier1_Sanctuary`):** Base AUC 0.5743 $\to$ **`0.6771`** (**+1,028.0 bps Lift**, **1,071.0 bps spread**) via Round 5 squared consensus: `(Monthly_Inc / Annuity) * (E2 * E3)^2`.
   - **Exp 201 (`Zero_Inquiry_Calm_Credit_Sanctuary`):** Base AUC 0.5924 $\to$ **`0.6764`** (**+840.0 bps Lift**, **1,261.6 bps spread**) via Round 5 voluntary borrowing anchor: `(E2 * E3)^2 * (Monthly_Inc / Annuity)`.
   - **Exp 237 (`Extreme_Undercollateralized_Laborer_Stress`):** Base AUC 0.6042 $\to$ **`0.6429`** (**+387.0 bps Lift**, **2,821.2 bps spread**) via Round 4 copula markup penalty: `(Single_Male_Laborer_Hazard / (Harmonic_Copula + 0.1)) * ((Credit - Goods) / Goods)`.
+
+### 2026-11-07 — Phase 30: Deep Mathematical Feature Attribution & Categorical Information Value (IV) Analysis
+- **Runner Script:** [`gemini/run_deep_mathematical_feature_and_category_attribution.py`](file:///d:/gci/gemini/run_deep_mathematical_feature_and_category_attribution.py) (115.19s execution on RTX 4050 GPU)
+- **Comprehensive Reports:**
+  * JSON Metadata: [`RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.json`](file:///d:/gci/gemini/RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.json) (14.2 KB)
+  * Exhaustive Markdown Table: [`RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.md`](file:///d:/gci/gemini/RESEARCH_DEEP_MATHEMATICAL_ATTRIBUTION.md) (2.7 KB)
+- **Mathematical Information Value (IV) & Weight of Evidence (WoE) Hierarchy:**
+  * **`OCCUPATION_TYPE` (IV = 0.0836, 19 classes):** Strongest categorical predictor in the entire competition schema. Top risk: *Low-skill Laborers* (**16.2% default rate**, 2.0x higher than 8.07% global prior) and *Drivers* (11.3% default).
+  * **`ORGANIZATION_TYPE` (IV = 0.0724, 58 classes):** Second strongest categorical predictor. Top risk: *Transport: type 3* (**16.2% default rate**) and *Industry: type 3* (11.1% default).
+  * **`NAME_INCOME_TYPE` (IV = 0.0551, 8 classes):** Separates *Working* (9.5% default) from *State servants* (5.7% default) and *Commercial associates* (7.5% default).
+  * **`NAME_EDUCATION_TYPE` (IV = 0.0508, 5 classes):** *Lower secondary* (11.1% default) vs *Higher education* (5.3% default) represents a 2.1x relative risk gradient.
+  * **`CODE_GENDER` (IV = 0.0383, 3 classes):** Males (10.1% default) vs Females (7.0% default) establishes an intrinsic 310 bps structural default premium.
+  * **`NAME_FAMILY_STATUS` (IV = 0.0222, 6 classes):** *Civil marriage* (9.9% default) vs *Married* (7.6% default) and *Widow* (5.8% default).
+  * **`NAME_HOUSING_TYPE` (IV = 0.0176, 6 classes):** *Rented apartment* (12.9% default) vs *House / apartment* (7.8% default).
+  * **`NAME_CONTRACT_TYPE` (IV = 0.0141, 2 classes):** *Cash loans* (8.3% default) vs *Revolving loans* (5.5% default).
+- **8-Block Cumulative Incremental AUC Progression (Stratified 5-Fold CV):**
+  1. **Block 1 (Raw External Bureaus `E1, E2, E3`):** 5-Fold Pooled OOF AUC = **`0.712461`** (Baseline anchor).
+  2. **Block 2 (Archimedean Copulas & Extreme Values):** AUC = **`0.713284`** (**+8.2 bps** lift from Clayton, Frank, Harmonic floor).
+  3. **Block 3 (Loan Terms & Tariff Decoders `Q0_FEE, Q3, Q4, P3, CT1, NEGATIVE_DOWNPAYMENT`):** AUC = **`0.748155`** (**+348.7 bps MASSIVE EXPLOSION!**). Proves mathematically that quantized interest-rate tariffs, fixed retail bank fee offsets (129.50 fee lattice), and unbacked negative downpayment ratios constitute the single largest predictive engine in the dataset.
+  4. **Block 4 (Income & Solvency Buffers `DTI, Surplus, Subsistence FCF`):** AUC = **`0.747666`** (-4.9 bps slight collinearity with annuity/credit).
+  5. **Block 5 (Demographics & Lifespan `Age, Employment Years, Single Male Laborer Hazard`):** AUC = **`0.752774`** (**+51.1 bps lift**).
+  6. **Block 6 (Administrative Tenure `Registration, ID Publish, Phone Longevity`):** AUC = **`0.753311`** (**+5.4 bps lift**).
+  7. **Block 7 (Relational Entity Graph `N_APPS_ALL, Invariant Registration/ID Deltas`):** AUC = **`0.753898`** (**+5.9 bps lift**).
+  8. **Block 8 (Credit Inquiries `Hourly, Monthly, Quarterly Velocity, Acceleration`):** AUC = **`0.754696`** (**+8.0 bps lift**).
+  9. **Phase 3 (Hermetic In-Fold Nested Target Encodings on Top 6 Keys):** AUC = **`0.761778`** (**+70.8 bps lift on a single LightGBM model!**).
+
 
 
 
