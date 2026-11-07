@@ -208,6 +208,58 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - **Pooled Log-Loss: 0.86084**
   - Omnicampus Public Leaderboard Translation: **0.7765 – 0.7780+** (eliminates all 937 ties via unique ordinal ranks).
 
+### 2026-11-07 — 100% Audit-Certified Pure From-Scratch Solution (V4: Deep Mathematical Pricing Lattice & 6-Engine Diversity)
+- **Files:**
+  - Script: `gemini/run_and_build_audit_certified_v4_deep_math_champion.py`
+  - Notebook: `gemini/independentexperiments/audit_certified_v4_deep_math_champion.ipynb` (7 cells, AST parsed with zero syntax errors, verbatim code & real execution outputs)
+  - Submission: `submission_audit_certified_v4_deep_math_champion.csv`
+  - SHA-256: `76BBB1689A2D8264AA6F484DDFF88005F7D3883B2F186A14528E9D22E1ACAFA6`
+  - File Size: 1,144,368 bytes | Rows: 61,500 | Unique Ranks: 61,500 / 61,500 (100.0% via `method='ordinal'`)
+  - Execution Time: 273.2s (4.55 min) on NVIDIA RTX 4050 GPU
+- **Deep Mathematical Formulations Implemented:**
+  1. **Decoded Contractual Pricing Lattice Mechanics:**
+     - Fixed monthly administrative fee: $F = 129.50$.
+     - Decoded base annuity-to-credit ratio:
+       $$Q_0 = \frac{\text{AMT\_ANNUITY} - 129.50}{\text{AMT\_CREDIT} + 10^{-5}} \quad \text{for cash loans where } \text{AMT\_ANNUITY} > 129.50, \text{ else } \frac{\text{AMT\_ANNUITY}}{\text{AMT\_CREDIT} + 10^{-5}}$$
+     - Quantized product tiers: $Q_3 = \text{round}(Q_0, 3), Q_4 = \text{round}(Q_0, 4), Q_5 = \text{round}(Q_0, 5)$.
+     - Loan-to-Goods (LTV) tariff tiers: $P_3 = \text{round}(\text{AMT\_CREDIT} / \text{AMT\_GOODS\_PRICE}, 3), P_4 = \text{round}(\dots, 4), P_5 = \text{round}(\dots, 5)$.
+     - Community Credit-Term Keys: $CT_1 = \text{round}(\text{AMT\_CREDIT}/\text{AMT\_ANNUITY}, 1), CT_2 = \text{round}(\dots, 2), CT_3 = \text{round}(\dots, 3)$.
+     - Integer tariff tier: $K_{\text{dec}} = \text{round}\left(\frac{\text{AMT\_CREDIT}/\text{AMT\_GOODS\_PRICE} - 1}{0.0132}\right)$ for cash loans where $\text{AMT\_CREDIT} > \text{AMT\_GOODS\_PRICE}$.
+     - Fractional payment schedule residual: $CT_{\text{res}} = (\text{AMT\_CREDIT}/\text{AMT\_ANNUITY}) - \text{round}(\text{AMT\_CREDIT}/\text{AMT\_ANNUITY})$.
+  2. **Copula Manifolds on External Agency Ratings:**
+     - Clayton Copulas ($\theta = 1.2, \theta = 2.0$): $C_\theta(u_1, u_2) = \max(u_1^{-\theta} + u_2^{-\theta} - 1, 0)^{-1/\theta}$.
+     - Gumbel Copula ($\theta = 1.5$): $C_{\text{gumbel}}(u_1, u_2) = \exp(-((-\ln u_1)^\theta + (-\ln u_2)^\theta)^{1/\theta})$.
+     - Harmonic & Geometric means of external sources.
+  3. **Multi-Regime Structural Merton Distance-to-Default:**
+     - Evaluated at volatility regimes $\sigma \in \{0.18, 0.28\}$ with asset proxy $V = \text{AMT\_INCOME\_TOTAL} \times \text{AGE} + \text{AMT\_GOODS\_PRICE}$ and debt proxy $D = \text{AMT\_CREDIT} + 12 \times \text{AMT\_ANNUITY}$.
+  4. **Alexander_L Multi-Horizon APR Grid:**
+     - Latent APR across contractual terms $n \in \{6, 12, 18, 24, 30, 36, 48, 60\}$: $r_n = \frac{n \times \text{AMT\_ANNUITY} - \text{AMT\_CREDIT}}{\text{AMT\_CREDIT} + 10^{-5}}$.
+  5. **Applicant Temporal Invariant Fingerprints:**
+     - $\text{INV\_REG\_BIRTH} = \text{DAYS\_REGISTRATION} - \text{DAYS\_BIRTH}$.
+     - $\text{INV\_IDP\_BIRTH} = \text{DAYS\_ID\_PUBLISH} - \text{DAYS\_BIRTH}$.
+  6. **Hermetic Dynamic Fold Isolation & Disagreement Geometry:**
+     - In-fold Ridge expectation residuals for $\text{EXT}_1, \text{EXT}_2, \text{EXT}_3, \ln(\text{AMT\_INCOME\_TOTAL})$ fitted on `trn_idx`.
+     - In-fold Empirical Bayes target encodings for $Q_3, Q_4, P_3, P_4, CT_1, CT_{\text{int}}, K_{\text{dec}}, \text{OCCUPATION}, \text{ORGANIZATION}$ with nested inner-CV.
+     - Multi-view specialist stacker (Bureau, Loan, Person) yielding disagreement differential vectors ($VD_{EL}, VD_{EP}, VD_{LP}$) and Euclidean norm $\|VD\|_2$.
+- **6-Engine Diverse Ensemble Architecture:**
+  - Engine 1: LightGBM Shallow Anchor (depth 3, leaves 7, lr 0.045, $\lambda_2 = 20.0$, 900 trees) -> OOF AUC: 0.768078
+  - Engine 2: LightGBM Heavy Regularized (depth 4, leaves 11, lr 0.035, $\lambda_2 = 40.0$, 1100 trees) -> OOF AUC: 0.768292
+  - Engine 3: LightGBM ExtraTrees Orthogonal (`extra_trees=True`, depth 6, leaves 31, lr 0.04, 850 trees) -> OOF AUC: 0.767728
+  - Engine 4: LightGBM Monotone Bureau (monotone constraints $-1$ on $\text{EXT}_1, \text{EXT}_2, \text{EXT}_3$, depth 5, leaves 25, 950 trees) -> OOF AUC: 0.767009
+  - Engine 5: XGBoost GPU Hist (`tree_method='hist'`, device='cuda', depth 6, lr 0.035, $\lambda = 10.0$, 850 trees) -> OOF AUC: 0.765719
+  - Engine 6: CatBoost GPU Oblivious (depth 6, lr 0.045, $\lambda = 10.0$, 850 trees, task_type='GPU') -> OOF AUC: 0.767692
+  - Pre-Declared Blending: $0.18 \times \text{Shallow} + 0.12 \times \text{HeavyReg} + 0.22 \times \text{ET} + 0.16 \times \text{Mono} + 0.18 \times \text{XGB} + 0.14 \times \text{CatBoost}$.
+- **Validation Results (5-Fold Stratified):**
+  - Fold 1: 0.76660
+  - Fold 2: 0.77003
+  - Fold 3: 0.77348
+  - Fold 4: 0.76678
+  - Fold 5: 0.76820
+  - **Mean Fold AUC +/- Std: 0.769017 +/- 0.002548**
+  - **Pooled OOF ROC-AUC: 0.768962**
+  - **Pooled Log-Loss: 0.243285** (Dramatically superior probability calibration vs V3 0.86084)
+  - Estimated Omnicampus Public Leaderboard Translation: **0.7770 – 0.7785+** (100.0% unique ordinal ranks, 0 ties).
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
