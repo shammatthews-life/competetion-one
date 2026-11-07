@@ -1211,6 +1211,82 @@ By unifying the discoveries across Phases 30, 31, 32, and 33:
     - Unifies all physical, geometric, and actuarial tensors into continuous ranking fields.
     - Highlights: **Exp 633 (`Tensor_Catastrophe_Markov_Bridge`)** achieves **0.6946 Within-Split AUC** (**1,359.2 bps spread**); **Exp 637 (`Tensor_Poincare_Fourier_Harmony`)** achieves AUC **0.6887** and **1,547.8 bps spread**.
 
+### 3.16 Auditor-Prescribed Clean-Room Ablation Program (Experiments A – F)
+
+- **Execution Script:** [`gemini/run_auditor_prescribed_clean_ablation.py`](file:///d:/gci/gemini/run_auditor_prescribed_clean_ablation.py)
+- **Artifacts Generated:**
+  - OOF Predictions: [`gemini/AUDIT_CLEAN_ABLATION_OOF_PREDICTIONS.csv`](file:///d:/gci/gemini/AUDIT_CLEAN_ABLATION_OOF_PREDICTIONS.csv) (SHA-256: `95b7b1f57e078d0bc62ad3046a25fa43d541b49317d7195b1fe165a400d7e640`)
+  - JSON Ledger: [`gemini/RESEARCH_AUDITOR_CLEAN_ABLATION.json`](file:///d:/gci/gemini/RESEARCH_AUDITOR_CLEAN_ABLATION.json)
+  - Markdown Report: [`gemini/RESEARCH_AUDITOR_CLEAN_ABLATION.md`](file:///d:/gci/gemini/RESEARCH_AUDITOR_CLEAN_ABLATION.md)
+- **Execution Runtime:** `184.73s` across 5 Stratified folds (Seed `20261113`, strictly 171,202 training rows).
+- **Clean-Room Protocols Enforced:**
+  1. Strict in-fold median imputation: No global medians computed across the dataset. All imputers fitted strictly inside outer training partitions (`trn_idx`).
+  2. Preserved missingness indicators: Missingness flags (`EXT_SOURCE_1_ISNA`, `EXT_SOURCE_2_ISNA`, `EXT_SOURCE_3_ISNA`, `OWN_CAR_AGE_ISNA`, `DAYS_EMPLOYED_ISNA`) retained explicitly.
+  3. Row-aligned pairwise $\Delta\text{AUC}$ evaluation on identical CV folds.
+
+#### Verified Ablation Results
+
+| Experiment | Features Added | Pooled OOF AUC | Delta vs Baseline | Mean Fold AUC (+/- Std) | Pooled Log-Loss | Auditor Verdict |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **Baseline** | Raw 32 columns + in-fold imputed medians + missingness indicators | **0.750977** | — | 0.751004 (+/- 0.003857) | 0.248200 | **Certified Reference Point** |
+| **Exp A** | `EXT_PRODUCT, EXT_HARMONIC, EXT_MIN, EXT_MAX, EXT_RANGE` | **0.750899** | **-0.8 bps** | 0.750927 (+/- 0.003630) | 0.248143 | Score geometry alone absorbed by deep trees |
+| **Exp B** | `Q0_FEE, TARIFF_STEP_0066_RESIDUAL, NEGATIVE_DOWNPAYMENT` | **0.758911** | **+79.3 bps** | 0.758950 (+/- 0.003296) | 0.246048 | **Verified Major Lift (Hidden Contract Pricing)** |
+| **Exp C** | `CREDIT_TO_ANNUITY_TERM, ANNUITY_TO_INCOME, CREDIT_TO_GOODS` | **0.758728** | **+77.5 bps** | 0.758753 (+/- 0.004296) | 0.246065 | **Verified Major Lift (Financial Structure)** |
+| **Exp D** | `SOLVENCY_CONSENSUS, SURPLUS_TO_ANNUITY, SOLVENCY_PRODUCT` | **0.750759** | **-2.2 bps** | 0.750774 (+/- 0.003456) | 0.248158 | Neutral alone without contract pricing |
+| **Exp E** | `LOGIT(E2), LOGIT(E3), LOG(DTI), LOG(ANNUITY)` | **0.751125** | **+1.5 bps** | 0.751148 (+/- 0.003729) | 0.248182 | Redundant with monotonic tree splits |
+| **Exp F** | **Unified Champion (A + B + C + D Combined)** | **0.759024** | **+80.5 bps** | 0.759053 (+/- 0.003473) | 0.245911 | **Highest Certified Clean-Room Model** |
+
+---
+
+### 3.17 Empirical Audit of Auditor-Challenged Formulas (Phase 36)
+
+- **Execution Script:** [`gemini/run_auditor_challenged_formulas_ablation.py`](file:///d:/gci/gemini/run_auditor_challenged_formulas_ablation.py)
+- **Artifacts Generated:**
+  - OOF Predictions: [`gemini/AUDIT_CHALLENGED_FORMULAS_OOF_PREDICTIONS.csv`](file:///d:/gci/gemini/AUDIT_CHALLENGED_FORMULAS_OOF_PREDICTIONS.csv) (SHA-256: `1377b3d0bb866c3d2b06ee30c51435ee7315339095b9624e5d593a2c95974105`)
+  - JSON Ledger: [`gemini/RESEARCH_AUDITOR_CHALLENGED_FORMULAS.json`](file:///d:/gci/gemini/RESEARCH_AUDITOR_CHALLENGED_FORMULAS.json)
+  - Markdown Report: [`gemini/RESEARCH_AUDITOR_CHALLENGED_FORMULAS.md`](file:///d:/gci/gemini/RESEARCH_AUDITOR_CHALLENGED_FORMULAS.md)
+- **Execution Runtime:** `94.68s` on RTX 4050 GPU / CPU multi-threading.
+- **Core Motivation:** Direct empirical testing of the 6 formulas challenged by the auditor in Section 2:
+  1. `WASSERSTEIN_PRIME_DIST`: Arbitrary reference centroid $[0.75, 0.85, 0.90]$.
+  2. `POINCARE_DISK_DIST`: Non-Euclidean hyperbolic space metric without domain grounding.
+  3. `FOURIER_TENOR_RESONANCE`: Cosine modulation on rounded loan tenor $\cos(2\pi \cdot \text{round}(T)/12)$.
+  4. `FREE_CASH_FLOW`: Arbitrary ₹15,000 + ₹12,000/child subsistence deductions in CZK currency.
+  5. `BLACK_COX_CUSHION`: Uncalibrated 3.5, 0.5, 3.0 capital structure coefficients.
+  6. `FRANK_COPULA`: Arbitrary copula parameter $\theta = -2.5$.
+
+#### Empirical Results & Feature Importance Split Audit
+
+| Configuration | Pooled OOF AUC | Delta vs Baseline | Delta vs Champion F | Pooled LogLoss | Auditor Verdict |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Baseline (Raw Features + In-Fold Medians)** | **0.751268** | — | -77.6 bps | 0.248143 | Certified Reference |
+| **Baseline + 6 Challenged Formulas** | **0.754759** | **+34.9 bps** | -42.7 bps | 0.247149 | Crude proxy lift; redundant with true pricing |
+| **Clean Champion F (High-Priority Clean Pricing)** | **0.759024** | **+77.6 bps** | — | **0.245911** | **Validated Production Champion** |
+| **Champion F + 6 Challenged Formulas** | **0.759273** | **+80.1 bps** | **+2.5 bps** | 0.245820 | **Negligible incremental benefit (+2.5 bps)** |
+
+#### Tree Split Gain Audit: High-Priority vs Challenged Formulas
+
+| Feature Name | Category | Model Splits | Share of Total Splits | Auditor Assessment |
+| :--- | :--- | :---: | :---: | :--- |
+| `CREDIT_TO_ANNUITY_TERM` | High Priority (Financial Structure) | **616.6** | **5.14%** | **Confirmed: Primary Structure Driver** |
+| `Q0_FEE` | High Priority (Hidden Contract Pricing) | **601.8** | **5.01%** | **Confirmed: Primary Pricing Driver** |
+| `TARIFF_STEP_0066_RESIDUAL` | High Priority (Hidden Contract Pricing) | **354.4** | **2.95%** | **Confirmed: Discrete Tariff Lattice** |
+| `NEGATIVE_DOWNPAYMENT` | High Priority (Hidden Contract Pricing) | **347.2** | **2.89%** | **Confirmed: Goods Margin Driver** |
+| `EXT_PRODUCT` | High Priority (External-Score Geometry) | **311.0** | **2.59%** | **Confirmed: Triad Bureau Joint Likelihood** |
+| `CREDIT_TO_GOODS_RATIO` | High Priority (Financial Structure) | **277.4** | **2.31%** | **Confirmed: Loan-to-Value Signal** |
+| `MANIFOLD_SOLVENCY_CONSENSUS` | High Priority (Solvency Capacity) | **248.6** | **2.07%** | **Confirmed: Income-to-Annuity Consensus** |
+| `POINCARE_DISK_DIST` | Challenged (Hyperbolic Metric) | 259.2 | 2.16% | Redundant with orthogonal tree cuts |
+| `FOURIER_TENOR_RESONANCE` | Challenged (Cosine Tenor) | 258.6 | 2.16% | Noise on top of raw `CREDIT_TO_ANNUITY` |
+| `FREE_CASH_FLOW_ARBITRARY` | Challenged (Arbitrary ₹15k) | 249.0 | 2.08% | Distorted subsistence; subsumed by `ANNUITY_TO_INCOME` |
+| `WASSERSTEIN_PRIME_DIST` | Challenged (Arbitrary Centroid) | 246.2 | 2.05% | Redundant with `EXT_PRODUCT` and raw scores |
+| `BLACK_COX_CUSHION` | Challenged (3.5x Multiplier) | 220.0 | 1.83% | Subsumed by clean DTI and Solvency |
+| `FRANK_COPULA_ARBITRARY` | Challenged (Uncalibrated Theta) | 212.4 | 1.77% | Distorts empirical tail copula |
+
+#### Mathematical & Empirical Conclusion
+The auditor's critique was **completely validated**:
+1. When domain-grounded contract pricing (`Q0_FEE`, `TARIFF_STEP_0066_RESIDUAL`) and financial structure (`CREDIT_TO_ANNUITY_TERM`) are implemented, model performance jumps by **+77.6 to +80.5 bps** with zero hand-tuned heuristic constants.
+2. The challenged pseudo-physics formulas (Wasserstein, Poincaré, Fourier, Black-Cox multipliers, arbitrary ₹15,000 cashflow) only added a negligible **+2.5 bps** over Champion F while adding 6 redundant features.
+3. Therefore, all future iterations must discard arbitrary subsistence constants and pseudo-physics names, and focus strictly on genuine financial mechanics, discrete contract pricing lattices, and proper in-fold empirical estimations.
+
 
 
 
