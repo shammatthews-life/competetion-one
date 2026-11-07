@@ -110,6 +110,10 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - Pooled OOF AUC = **0.771778**
   - Public Leaderboard = **0.77669**
 
+> [!NOTE]
+> **Audit Qualification on Historical Section Headings (V1–V8):**
+> Headings in historical log entries below containing terms such as "100% Audit-Certified" represent historical developer iteration labels at the time of authoring, preserved in accordance with the append-only ledger protocol. As established in the independent competition audit review, they do not denote official competition organizer adjudication, external certification, or verified public leaderboard status. For the strictly qualified clean-room benchmark specifications, verified local artifact metrics, and empirical feature hypotheses, refer to the V9 section.
+
 ### 2026-11-07 — 100% Audit-Certified Pure From-Scratch Clean-Room Run
 - **Files:**
   - Script: `gemini/run_and_build_audit_certified.py`
