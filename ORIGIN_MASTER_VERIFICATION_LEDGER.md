@@ -469,6 +469,11 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
     * No verified remote public leaderboard score or official organizer rule adjudication has been provided.
     * The local OOF protocol evaluates one model per held-out row ($K=1$), whereas test inference averages the 5 outer-fold models ($K=5$).
     * All empirical constants (`129.50` fee offset and `0.0132` tariff step) remain qualified feature-engineering hypotheses, not proven official bank contract clauses.
+  - **Competition-Rule Compliance Assessment & Submission Gate:**
+    * **Data Permissibility:** Ingests strictly the competition-provided `train.csv` and `test.csv`. Zero external datasets, zero historical predictions.
+    * **No Manual Decision Logic:** All predictions generated strictly by trained models; zero manual per-applicant score adjustments or test-to-test label coupling.
+    * **Target-Encoding Status:** Target encodings are nested inside inner 5-fold splits on outer training data to eliminate validation leakage. However, since the official rules do not explicitly address target encoding, this remains an unresolved rule-interpretation area.
+    * **Recommended Submission Strategy:** If organizer clarification on target encoding cannot be confirmed, prepare an ultra-conservative zero-ambiguity ablation (V10) that omits all target-encoded features (`TE_KEYS = []`), maintaining both V9 (performance benchmark) and V10 (zero-ambiguity submission) side-by-side.
   - Runtime: 339.8s (5.66 minutes) on NVIDIA RTX 4050 GPU.
 
 ---
