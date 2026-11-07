@@ -1,0 +1,74 @@
+{
+  "candidate_version": "V10: Conservative Lower-Ambiguity Benchmark",
+  "description": "Zero Target Encoding | Zero 129.50/0.0132 Hypotheses | Pure Covariate Architecture",
+  "timestamp_utc": "2026-11-07T12:42:08Z",
+  "runner_script": {
+    "path": "D:\\gci\\gemini\\run_and_build_audit_certified_v10_conservative.py",
+    "sha256": "ac24e125cf62371d37ab31aa8d53f6ce98516f558eb2cb000483f8a0bac70ffd"
+  },
+  "inputs": {
+    "train_csv": {
+      "path": "d:/gci/inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "rows": 171202
+    },
+    "test_csv": {
+      "path": "d:/gci/inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "rows": 61500
+    }
+  },
+  "environment": {
+    "gpu_hardware": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_driver": "592.82",
+    "gpu_vram_mb": "6141",
+    "python_version": "3.12.10",
+    "lightgbm_version": "4.7.0",
+    "xgboost_version": "3.4.1",
+    "catboost_version": "1.2.10",
+    "numpy_version": "2.5.4",
+    "pandas_version": "3.1.0"
+  },
+  "metrics": {
+    "outer_fold_auc": [
+      0.759279,
+      0.76261,
+      0.767643,
+      0.759612,
+      0.762952
+    ],
+    "mean_fold_auc": 0.762419,
+    "std_fold_auc": 0.003011,
+    "pooled_oof_auc": 0.762371,
+    "pooled_oof_logloss": 0.244994
+  },
+  "comparison_with_v9": {
+    "v9_pooled_oof_auc": 0.76834,
+    "v10_pooled_oof_auc": 0.762371,
+    "te_and_constants_ablation_delta": -0.005969,
+    "interpretation": "Impact of completely removing target encoding and empirical constant features"
+  },
+  "artifacts": {
+    "oof_predictions": {
+      "path": "d:/gci/oof_predictions_v10_conservative_grade.csv",
+      "sha256": "936d822d47e3f6fdd3da90bc93e6bc687c996ffa64ceebdbed59128e750ba219",
+      "rows": 171202
+    },
+    "submission_probabilities": {
+      "path": "d:/gci/submission_audit_certified_v10_conservative_blended_probabilities.csv",
+      "sha256": "e7f49de3352ce0b0e924f3ab80213bcde70c1dd5f4ab9ac03a1d7577c6f7ddba",
+      "rows": 61500
+    },
+    "submission_average_ranks": {
+      "path": "d:/gci/submission_audit_certified_v10_conservative_average_ranks.csv",
+      "sha256": "bb3b8badc3d084d021ab6487740345d547de91abfe34cb5b542cdceaf9992fef",
+      "rows": 61500
+    },
+    "executed_notebook": {
+      "path": "d:/gci/gemini/independentexperiments/audit_certified_v10_conservative.ipynb",
+      "sha256": "824eb9da8159fdcc1ee6e95a1517ef608798506d46e1bbd75177b48f2cf5210b",
+      "total_cells": 7
+    }
+  },
+  "total_runtime_seconds": 220.45
+}

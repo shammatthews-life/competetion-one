@@ -476,6 +476,44 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
     * **Recommended Submission Strategy:** If organizer clarification on target encoding cannot be confirmed, prepare an ultra-conservative zero-ambiguity ablation (V10) that omits all target-encoded features (`TE_KEYS = []`), maintaining both V9 (performance benchmark) and V10 (zero-ambiguity submission) side-by-side.
   - Runtime: 339.8s (5.66 minutes) on NVIDIA RTX 4050 GPU.
 
+### 2026-11-07 — Conservative Lower-Ambiguity Benchmark Suite (V10: Zero Target Encoding, Zero Empirical Constant Hypotheses)
+- **Files:**
+  - Script: `gemini/run_and_build_audit_certified_v10_conservative.py` (SHA-256: `ac24e125cf62371d37ab31aa8d53f6ce98516f558eb2cb000483f8a0bac70ffd`)
+  - Notebook: `gemini/independentexperiments/audit_certified_v10_conservative.ipynb` (7 cells, authentic live execution, outputs captured in nbformat 4 stream format for all 7 cells | SHA-256: `824eb9da8159fdcc1ee6e95a1517ef608798506d46e1bbd75177b48f2cf5210b`)
+  - Persisted OOF Predictions: `oof_predictions_v10_conservative_grade.csv` (171,202 rows | SHA-256: `936d822d47e3f6fdd3da90bc93e6bc687c996ffa64ceebdbed59128e750ba219`)
+  - Submissions:
+    * Blended Probabilities: `submission_audit_certified_v10_conservative_blended_probabilities.csv` (SHA-256: `e7f49de3352ce0b0e924f3ab80213bcde70c1dd5f4ab9ac03a1d7577c6f7ddba`)
+    * Average Ranks: `submission_audit_certified_v10_conservative_average_ranks.csv` (SHA-256: `bb3b8badc3d084d021ab6487740345d547de91abfe34cb5b542cdceaf9992fef`)
+  - Manifest: `RUN_MANIFEST_V10.json` (capturing all input, script, environment, metric, artifact hashes, and ablation delta relative to V9).
+- **Conservative Lower-Ambiguity Criteria (V10):**
+  1. **Zero Target Encoding:** All `TE_*` features eliminated (`TE_KEYS = []`). Automated gate verified zero label-derived columns enter the model matrix.
+  2. **Zero Empirical Constant Hypotheses:** All features depending on `129.50` (`Q0`, `Q3`, `Q4`, `Q5`) and `0.0132` (`TARIFF_STEP_*`, `K_DEC`) removed. Standard continuous financial solvency ratios preserved.
+  3. **Pure Domain Covariate Architecture:** Preserves standard continuous financial solvency ratios, Sklar Archimedean copulas on external sources, Merton structural distance-to-default, Alexander APR term grids, invariant temporal fingerprints (`INV_REG_BIRTH`, `INV_IDP_BIRTH`), and LOO peer deviations.
+  4. **Strict Data Provenance:** Ingests strictly `train.csv` and `test.csv`. Fold statistics fit on outer `trn_idx` only; zero train/test pooled statistics.
+  5. **100% Supervised Model-Generated Predictions:** Zero manual EDA adjustments, zero transductive shifting.
+- **6-Engine Diverse Ensemble Architecture:**
+  - Engine 1: LightGBM Shallow Anchor (depth 3, leaves 7, lr 0.045, $\lambda_2 = 20.0$, 900 trees) -> Fold AUCs: [0.75717, 0.76049, 0.76403, 0.75662, 0.76034]
+  - Engine 2: LightGBM Heavy Regularized (depth 4, leaves 11, lr 0.035, $\lambda_2 = 40.0$, 1100 trees) -> Fold AUCs: [0.75841, 0.76128, 0.76611, 0.75742, 0.76151]
+  - Engine 3: LightGBM ExtraTrees Orthogonal (`extra_trees=True`, depth 6, leaves 31, lr 0.04, 850 trees) -> Fold AUCs: [0.75711, 0.75979, 0.76499, 0.75809, 0.76054]
+  - Engine 4: LightGBM Monotone Bureau (monotone constraints $-1$ on $\text{EXT}_1, \text{EXT}_2, \text{EXT}_3$, depth 5, leaves 25, 950 trees) -> Fold AUCs: [0.75690, 0.76166, 0.76636, 0.75809, 0.76262]
+  - Engine 5: XGBoost GPU Hist (`tree_method='hist'`, device='cuda', depth 6, lr 0.035, $\lambda = 10.0$, 850 trees) -> Fold AUCs: [0.75429, 0.75955, 0.76562, 0.75657, 0.76017]
+  - Engine 6: CatBoost GPU Oblivious (depth 6, lr 0.045, $\lambda = 10.0$, 850 trees, task_type='GPU') -> Fold AUCs: [0.75927, 0.75870, 0.76499, 0.75688, 0.75860]
+  - Pre-Declared Blending: $0.18 \times \text{Shallow} + 0.12 \times \text{HeavyReg} + 0.22 \times \text{ET} + 0.16 \times \text{Mono} + 0.18 \times \text{XGB} + 0.14 \times \text{CatBoost}$.
+- **Independently Recalculated Validation Results (From Saved Disk CSV):**
+  - Fold 1: 0.759279
+  - Fold 2: 0.762610
+  - Fold 3: 0.767643
+  - Fold 4: 0.759612
+  - Fold 5: 0.762952
+  - **Mean Fold AUC +/- Std: 0.762419 +/- 0.003011**
+  - **Pooled OOF ROC-AUC: 0.762371**
+  - **Pooled Log-Loss: 0.244994**
+- **Exact Ablation Delta Relative to V9:**
+  - V9 (Nested TE + Empirical Pricing Hypotheses): **`0.768340`** OOF AUC
+  - V10 (Zero TE + Zero Empirical Hypotheses): **`0.762371`** OOF AUC
+  - **Ablation Delta:** **`-0.005969`** (-59.7 bps). Quantitatively demonstrates that nested target encoding and pricing discretization hypotheses contribute ~60 bps of cross-validated lift.
+  - Runtime: 220.4s (3.67 minutes) on NVIDIA RTX 4050 GPU.
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
