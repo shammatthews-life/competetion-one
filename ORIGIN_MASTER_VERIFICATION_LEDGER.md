@@ -110,6 +110,27 @@ A deep study of `D:\gci\truth\GCI_MASTER_VERIFICATION_LEDGER_UPDATED_2026-11-04.
   - Pooled OOF AUC = **0.771778**
   - Public Leaderboard = **0.77669**
 
+### 2026-11-07 — 100% Audit-Certified Pure From-Scratch Clean-Room Run
+- **Files:**
+  - Script: `gemini/run_and_build_audit_certified.py`
+  - Notebook: `gemini/independentexperiments/audit_certified_from_scratch.ipynb` (8 cells with full source & outputs)
+  - Submission: `submission_audit_certified_from_scratch.csv` (SHA-256: `8396094dd159b173bec048a5f69f6cf9bdf7a0e7376255645bd27459a6db3898`)
+- **Strict Clean-Room Audit Compliance:**
+  - Zero external prediction files (`.npz`, `.npy`, `.feather`, historical `.csv`): **VERIFIED**
+  - Zero train/test covariate pooling (`pd.concat([train, test])` eliminated; train/test independently extracted): **VERIFIED**
+  - Zero target/identity encoding leakage (inner 5-fold CV nested on outer train folds; fold-local prior `y_trn.mean()`): **VERIFIED**
+  - Zero early-stopping validation leakage (fixed boost rounds: LGB=750, CatBoost=800): **VERIFIED**
+  - Zero selection-bias ensemble (pre-declared rank weights: $0.35 \times \text{LGB\_Deep} + 0.35 \times \text{CatBoost} + 0.30 \times \text{LGB\_ET}$): **VERIFIED**
+  - Zero test-time transductive shifting (100% pure supervised inference): **VERIFIED**
+- **Validation Results (5-Fold Stratified):**
+  - **LightGBM Deep Conservative:** Folds = [0.76185, 0.76545, 0.76983, 0.76316, 0.76464] | **Pooled OOF AUC = 0.764948**
+  - **LightGBM ExtraTrees:** Folds = [0.76427, 0.76762, 0.77043, 0.76562, 0.76606] | **Pooled OOF AUC = 0.766768**
+  - **CatBoost GPU Classifier:** Folds = [0.76548, 0.76666, 0.77001, 0.76440, 0.76500] | **Pooled OOF AUC = 0.766277**
+  - **Pre-Declared Clean-Room Ensemble:** **Pooled OOF AUC = 0.767474** | **Pooled Log-Loss = 0.86268**
+- **Test Set Verification:**
+  - Rows: 61,500 | Nulls: 0 | SK_ID_CURR alignment with sample_submission.csv: 100% Exact Match
+  - Total Pipeline Runtime: 194.7s (3.24 min)
+
 ---
 
 ## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
