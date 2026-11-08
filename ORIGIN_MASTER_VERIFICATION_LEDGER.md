@@ -1323,6 +1323,35 @@ The auditor's critique was **completely validated**:
 3. **Continuous features should not be hard-gated**: Gradient boosted decision trees naturally construct conditional interaction surfaces on continuous covariates like `goods_credit_ratio` and indicators like `pensioner_status`. Physically splitting the dataset into separate sub-models reduces effective sample size without providing structural inductive bias.
 4. **Distance to 0.77 Goal**: The contract-type mixture (`0.765192`) and nested-selected weight (`0.765218`) remain below Phase 37's multiseed diagnostic (`0.765968`). Split modeling alone is not sufficient to reach `0.77`; multi-architecture diversity and feature synthesis remain necessary.
 
+### 3.19 Multi-Architecture Contract Experts & Cross-Model Synthesis (Phase 48)
+
+- **Execution Script:** [`truth/experiments/phase48_cross_architecture_contract_experts/run_phase48_cross_architecture_contract_experts.py`](file:///D:/gci/truth/experiments/phase48_cross_architecture_contract_experts/run_phase48_cross_architecture_contract_experts.py)
+- **Artifacts Generated:**
+  - Summary JSON: [`truth/experiments/phase48_cross_architecture_contract_experts/runs/phase48_cross_experts_20261108T111650Z/PHASE48_SUMMARY.json`](file:///D:/gci/truth/experiments/phase48_cross_architecture_contract_experts/runs/phase48_cross_experts_20261108T111650Z/PHASE48_SUMMARY.json)
+  - OOF Predictions: `PHASE48_OOF_PREDICTIONS.csv` (SHA-256: `2d76f452959c96bb464d2852b1b41498b7e097fd37c811ac2c34f8ba78e15277`)
+- **Protocol:** 5-fold Stratified CV, Seed `20261113`, strictly 171,202 training rows.
+- **Architectures Evaluated:**
+  - `LightGBM`: `num_leaves=31`, `lr=0.03`, `min_child_samples=50`, `colsample=0.8`, `subsample=0.8`
+  - `XGBoost`: `max_depth=4`, `lr=0.035`, `min_child_weight=40`, `colsample=0.82`, `subsample=0.82`
+
+#### Pooled OOF Results
+
+| Model / Blend | Pooled OOF ROC-AUC | Pooled Log-Loss | Delta vs XGB Global | Delta vs Cross Global |
+| :--- | :---: | :---: | :---: | :---: |
+| **`lgb_global`** | 0.764843 | 0.244413 | +0.1 bps | — |
+| **`lgb_contract_hard`** | 0.763583 | 0.244839 | -12.5 bps | — |
+| **`lgb_contract_mixture_50_50`** | 0.765126 | 0.244369 | +2.9 bps | — |
+| **`xgb_global`** | 0.764835 | 0.244336 | — | — |
+| **`xgb_contract_hard`** | 0.764016 | 0.244591 | -8.2 bps | — |
+| **`xgb_contract_mixture_50_50`** | 0.765192 | 0.244240 | +3.6 bps | — |
+| **`cross_model_global_blend`** | 0.765710 | 0.244093 | +8.8 bps | — |
+| **`cross_model_expert_blend`** | **0.765858** | **0.244082** | **+10.2 bps** | **+1.5 bps** |
+
+#### Verified Conclusions
+1. **Contract Routing Generalizes Across Tree Implementations**: LightGBM replicates the exact same behavior as XGBoost: hard routing harms performance (-12.5 bps), while the 50/50 probability mixture yields a clean positive lift (+2.9 bps for LightGBM, +3.6 bps for XGBoost).
+2. **Specialist Signal is Additive to Ensembling**: Combining the LightGBM and XGBoost contract mixtures (`cross_model_expert_blend`) delivers `0.765858` (+1.5 bps over the cross-model global blend `0.765710`), with log-loss improving to `0.244082`.
+3. **The Empirical Frontier Without New Structural Formulas**: Cross-model specialist ensembling achieves `~0.7659 - 0.7660` on a single seed. To bridge the remaining gap toward `0.7700+`, split modeling must be paired with genuine domain feature discoveries (such as the verified hidden pricing offsets and term ratios).
+
 
 
 
