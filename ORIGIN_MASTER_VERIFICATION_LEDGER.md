@@ -1287,6 +1287,42 @@ The auditor's critique was **completely validated**:
 2. The challenged pseudo-physics formulas (Wasserstein, Poincaré, Fourier, Black-Cox multipliers, arbitrary ₹15,000 cashflow) only added a negligible **+2.5 bps** over Champion F while adding 6 redundant features.
 3. Therefore, all future iterations must discard arbitrary subsistence constants and pseudo-physics names, and focus strictly on genuine financial mechanics, discrete contract pricing lattices, and proper in-fold empirical estimations.
 
+### 3.18 Split-Model & Evidence-Partition Specialists (Phases 44 – 47)
+
+- **Execution Script:** [`truth/experiments/phase47_evidence_partition_experts/run_phase47_evidence_partition_experts.py`](file:///D:/gci/truth/experiments/phase47_evidence_partition_experts/run_phase47_evidence_partition_experts.py)
+- **Artifacts Generated:**
+  - Summary JSON: [`truth/experiments/phase47_evidence_partition_experts/runs/phase47_experts_20261108T101803Z/PHASE47_SUMMARY.json`](file:///D:/gci/truth/experiments/phase47_evidence_partition_experts/runs/phase47_experts_20261108T101803Z/PHASE47_SUMMARY.json)
+  - Fold Results: `PHASE47_FOLD_RESULTS.csv` (SHA-256: `0b0db74ca36b7a4711d46d5683cf3b8ca5bae982c54ae8fe98a1915e7ba5031a`)
+  - OOF Predictions: `PHASE47_OOF_PREDICTIONS.csv` (SHA-256: `8a56099273646f58987d65006cfdc131cb0022e6f3d1a0290aaadfefb827a97f`)
+- **Protocol:** 5-fold Stratified CV, Seed `20261113`, strictly 171,202 training rows. Outer validation rows scored only by the designated specialist; inner 12% split used strictly for early stopping.
+- **Evidence-Backed Partition Candidates Tested:**
+  1. `contract_type`: Cash loans (`0`) vs Revolving loans (`1`).
+  2. `goods_credit_ratio`: `AMT_GOODS_PRICE / AMT_CREDIT >= 0.90` (`0`, merchandise POS) vs `< 0.90` or missing (`1`, cash loans with financed fee margins).
+  3. `pensioner_status`: Actively employed (`0`) vs Pensioner / sentinel (`1`, `DAYS_EMPLOYED == 365243`).
+  4. `contract_goods_bivariate`: 3-way triage (Revolving=`0`, Cash POS=`1`, Cash fee=`2`).
+  5. `consensus_expert_mixture`: Predeclared combination of `0.50` global + `0.25` contract specialist + `0.25` goods/credit specialist.
+
+#### Pooled OOF Results
+
+| Model | Pooled OOF ROC-AUC | Delta vs Global | Pooled Log-Loss | Mean Fold AUC (± Std) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Global XGBoost** | **0.764835** | — | **0.244336** | 0.764873 (± 0.004226) |
+| **Contract-type hard routing** | 0.764016 | -8.2 bps | 0.244591 | 0.764070 (± 0.005000) |
+| **Contract-type 50/50 mixture** | **0.765192** | **+3.6 bps** | **0.244240** | **0.765231 (± 0.004607)** |
+| **Goods-credit ratio hard routing** | 0.759660 | -51.7 bps | 0.245788 | 0.759714 (± 0.004457) |
+| **Goods-credit ratio 50/50 mixture** | 0.763972 | -8.6 bps | 0.244570 | 0.764013 (± 0.004269) |
+| **Pensioner status hard routing** | 0.761684 | -31.5 bps | 0.245166 | 0.761744 (± 0.004393) |
+| **Pensioner status 50/50 mixture** | 0.764475 | -3.6 bps | 0.244413 | 0.764525 (± 0.004344) |
+| **Contract-goods bivariate hard routing** | 0.759839 | -50.0 bps | 0.245747 | 0.759882 (± 0.004307) |
+| **Contract-goods bivariate 50/50 mixture** | 0.764306 | -5.3 bps | 0.244467 | 0.764342 (± 0.004305) |
+| **Consensus expert mixture** | 0.765072 | +2.4 bps | 0.244265 | 0.765106 (± 0.004434) |
+
+#### Empirical Conclusions on Split Models
+1. **Contract type is the only gate that provides positive mixture lift (+3.6 bps)**: Revolving credit exhibits unique non-amortizing contract behavior that benefits from a dedicated expert when smoothed with the global model.
+2. **Hard routing fails across all domains (-8.2 to -51.7 bps)**: Partitioning the sample and evaluating specialists strictly on their subset discards critical global ranking distributions and inter-group calibration.
+3. **Continuous features should not be hard-gated**: Gradient boosted decision trees naturally construct conditional interaction surfaces on continuous covariates like `goods_credit_ratio` and indicators like `pensioner_status`. Physically splitting the dataset into separate sub-models reduces effective sample size without providing structural inductive bias.
+4. **Distance to 0.77 Goal**: The contract-type mixture (`0.765192`) and nested-selected weight (`0.765218`) remain below Phase 37's multiseed diagnostic (`0.765968`). Split modeling alone is not sufficient to reach `0.77`; multi-architecture diversity and feature synthesis remain necessary.
+
 
 
 
