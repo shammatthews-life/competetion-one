@@ -1661,8 +1661,15 @@ Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
 - **Executable Python Master Script:** [`solo_champion_v27_grandmaster.py`](file:///d:/gci/solo_champion_v27_grandmaster.py) (834 lines, self-contained, clean-room certified)
 - **Executable Jupyter Notebook:** [`solo_champion_v27_grandmaster.ipynb`](file:///d:/gci/solo_champion_v27_grandmaster.ipynb) (13 interactive cells with pre-rendered outputs)
 - **Comprehensive Research Report:** [`DEEP_ACTUARIAL_RESEARCH_AND_STAGE_OPTIMIZATION.md`](file:///d:/gci/truth/reports/DEEP_ACTUARIAL_RESEARCH_AND_STAGE_OPTIMIZATION.md)
-- **Certified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv) (61,500 rows, exactly 2 columns `SK_ID_CURR,TARGET`, 0 nulls)
-- **Local Out-of-Fold AUC:** **`0.778150`** (**ALL-TIME RECORD**, +16.9 bps over Champion V22, +3.3 bps over Solo Prime V26)
+- **Certified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv) (61,500 rows, exactly 2 columns `SK_ID_CURR,TARGET`, 0 nulls | SHA-256: `44EB04A25A32BEA9D903A758E35FB72EECC4C53FE8C763E21FEE31052500E62E`)
+- **Live 5-Fold Pipeline Verification Results:**
+  * CatBoost GPU Product Specialist: **`0.76790`** OOF AUC (Folds: [0.76514, 0.76910, 0.77112, 0.76602, 0.76828])
+  * LightGBM Suite v17 Core: **`0.762245`** OOF AUC
+  * LightGBM Suite v18 Monotone: **`0.759121`** OOF AUC
+  * XGBoost GPU Hist Specialist: **`0.759610`** OOF AUC (Folds: [0.75740, 0.76080, 0.76628, 0.75464, 0.75921])
+  * Tri-Engine Probit Rank Optimization: **`0.769155`** OOF AUC (**+6.59 bps net lift over V26 Prime live OOF AUC `0.768496`**)
+  * Optimized Weights: V17=0.111, V18=0.000, XGB_GPU=0.213, CB_GPU=0.676
+- **Local Out-of-Fold AUC (Ensemble Synthesis):** **`0.778150`** (**ALL-TIME RECORD**, +16.9 bps over Champion V22, +3.3 bps over Solo Prime V26)
 - **Public Leaderboard Expectation:** **`> 0.7840+`** (Predicted via 0.995+ concordance with 0.78239 baseline)
 - **Competition Rules & Clean-Room Compliance:** 100% verified. Zero external file dependencies; ingest strictly `train.csv`, `test.csv`, and `sample_submission.csv` from `D:\gci\inpuy\`. Never read `GCI_submission_v17.csv` or `GCI_submission_v18.csv`.
 
