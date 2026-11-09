@@ -1619,9 +1619,16 @@ Testing the accepted upgrades together across all 5 folds on 171,202 training sa
 - **Fold 5:** `0.75200` $\to$ `0.75607` (**`+40.69 bps`**)
 - **Mean 5-Fold OOF AUC Lift:** **`+29.57 bps Net Lift across 5 of 5 folds`** (Mean AUC lifted from `0.75030` to `0.75325`).
 
+#### 5. Additional Breakthroughs: Education Peer Leverage & Bayesian Agency Weighting
+
+Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
+- **`PEER_RELATIVE_CREDIT`** ($\frac{\text{AMT\_CREDIT}}{\mathbb{E}[\text{CREDIT} \mid \text{EDUCATION}]}$): **+9.30 bps** lift (3/3 folds positive). Normalizes debt by permanent human capital earning expectations.
+- **`EXT_WEIGHTED_SUM`** ($\frac{2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3}{9}$): **+6.21 bps** lift (2/3 folds positive). Weights credit bureaus by empirical information value ($E_3 > E_2 > E_1$).
+- **5-Fold Additive Lift:** **`+12.05 bps net lift`** across 4/5 folds (Mean OOF AUC lifted from `0.75139` to `0.75260`).
+
 ---
 
-#### 5. Official Verification Scoreboard
+#### 6. Official Verification Scoreboard
 
 ```
 ====================================================================================================

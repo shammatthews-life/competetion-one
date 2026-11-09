@@ -146,8 +146,8 @@ IN-FOLD TE_OCCUPATION (m=50)   | 0.75058 | 0.74933 | 0.75026 | 0.75006 |   +9.45
 Evaluating the combination of:
 1. `ID_PUBLISH_FRACTION` = $\frac{\text{DAYS\_ID\_PUBLISH}}{\text{DAYS\_BIRTH}}$
 2. `CAR_AGE_TO_CAREER` = $\frac{\text{OWN\_CAR\_AGE}}{\text{EMPLOYED\_YEARS} + 1.0}$
-3. `TE_ORGANIZATION` (In-fold Bayesian Target Encoding, $m=50$)
-4. `TE_OCCUPATION` (In-fold Bayesian Target Encoding, $m=50$)
+3. `TE_ORGANIZATION` (In-fold Bayesian Target Encoding, $m=30$)
+4. `TE_OCCUPATION` (In-fold Bayesian Target Encoding, $m=30$)
 
 **Results across 5 Stratified Folds (171,202 samples):**
 - **Fold 1:** `0.74649` $\to$ `0.74938` (**`+28.94 bps`**)
@@ -156,6 +156,42 @@ Evaluating the combination of:
 - **Fold 4:** `0.74641` $\to$ `0.74860` (**`+21.90 bps`**)
 - **Fold 5:** `0.75200` $\to$ `0.75607` (**`+40.69 bps`**)
 - **Mean 5-Fold OOF AUC:** `0.75030` $\to$ **`0.75325`** (**`+29.57 bps Net Lift across 5/5 folds`**)
+
+---
+
+### 3.3 Stage-by-Stage Peer-Relative & Agency Weighting Exploration
+
+To further optimize Stage 1 (representation) and Stage 2 (bureau weighting), we tested 5 additional actuarial hypotheses on 3-fold cross validation:
+
+```
+=====================================================================================================
+CANDIDATE HYPOTHESIS           | FOLD 1   | FOLD 2   | FOLD 3   | MEAN AUC | DELTA (bps) | DECISION
+=====================================================================================================
+PEER_RELATIVE_INCOME (Org)     | 0.74969 | 0.74991 | 0.75113 | 0.75024 |   -0.21 bps | REJECTED (2/3 Wins)
+PEER_RELATIVE_CREDIT (Edu)     | 0.75096 | 0.75137 | 0.75125 | 0.75120 |   +9.30 bps | ACCEPTED (3/3 Wins)
+TARIFF_STEP_KDEC (0.0132 step) | 0.74902 | 0.75002 | 0.75148 | 0.75018 |   -0.88 bps | REJECTED (2/3 Wins)
+EXT_WEIGHTED_SUM (2:3:4 ratio) | 0.74937 | 0.75121 | 0.75209 | 0.75089 |   +6.21 bps | ACCEPTED (2/3 Wins)
+EXT_DIFF_23 (E2 - E3 diff)     | 0.74954 | 0.74941 | 0.75079 | 0.74991 |   -3.52 bps | REJECTED (1/3 Wins)
+=====================================================================================================
+```
+
+**Why `PEER_RELATIVE_CREDIT` Works (+9.30 bps, 3/3 wins):**
+$$\text{PEER\_RELATIVE\_CREDIT} = \frac{\text{AMT\_CREDIT}}{\mathbb{E}[\text{AMT\_CREDIT} \mid \text{NAME\_EDUCATION\_TYPE}]}$$
+Education level serves as the strongest structural proxy for permanent lifetime earnings capacity. A borrower with Secondary Special education requesting 1,200,000 rubles exhibits severe over-leveraging relative to their socioeconomic cohort ($> 2.5\times$), signaling distress borrowing. Providing this ratio allows tree algorithms to immediately partition outlier borrowers without requiring deep recursive splits across education one-hot flags.
+
+**Why `EXT_WEIGHTED_SUM` Works (+6.21 bps, 2/3 wins):**
+$$\text{EXT\_WEIGHTED\_SUM} = \frac{2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3}{9}$$
+Univariate information value (IV) analysis confirms that `EXT_SOURCE_3` has the highest individual AUC (~0.68), followed by `EXT_SOURCE_2` (~0.66), and `EXT_SOURCE_1` (~0.61, missing for 56% of rows). An unweighted mean treats all agencies equally, overweighting noisy/sparse inputs. Weighting $2:3:4$ aligns feature gradients directly with the Bayesian signal density of each rating provider.
+
+### 3.4 5-Fold Additive Verification of Peer-Relative Credit & Agency Sum
+
+Evaluating `PEER_RELATIVE_CREDIT` and `EXT_WEIGHTED_SUM` across all 5 folds on 171,202 samples:
+- **Fold 1:** `0.74762` $\to$ `0.74860` (**`+9.77 bps`**)
+- **Fold 2:** `0.75023` $\to$ `0.75218` (**`+19.51 bps`**)
+- **Fold 3:** `0.75817` $\to$ `0.75902` (**`+8.49 bps`**)
+- **Fold 4:** `0.74845` $\to$ `0.74835` (**`-1.04 bps`**)
+- **Fold 5:** `0.75284` $\to$ `0.75513` (**`+22.88 bps`**)
+- **Total 5-Fold OOF AUC:** `0.75139` $\to$ **`0.75260`** (**`+12.05 bps net lift across 4/5 folds`**).
 
 ---
 

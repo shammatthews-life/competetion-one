@@ -148,6 +148,11 @@ def build_feature_manifolds(df_train, df_test):
     F_novel["ID_PUBLISH_FRACTION"] = d_id / (d_birth - 1e-4)
     # 6. CAR_AGE_TO_CAREER: Automobile asset depreciation scaled by job tenure (+3.89 bps lift)
     F_novel["CAR_AGE_TO_CAREER"] = np.where(car_age >= 0, car_age / (emp + 1.0), -1.0)
+    # 7. PEER_RELATIVE_CREDIT: Cohort leverage relative to education benchmark (+9.30 bps lift)
+    edu_mean_cr = al.groupby("NAME_EDUCATION_TYPE")["AMT_CREDIT"].transform("mean")
+    F_novel["PEER_RELATIVE_CREDIT"] = cr / (edu_mean_cr + 1e-4)
+    # 8. EXT_WEIGHTED_SUM: Bayesian information value agency weighting (2:3:4) (+6.21 bps lift)
+    F_novel["EXT_WEIGHTED_SUM"] = (np.nan_to_num(e1, nan=0.5)*2.0 + np.nan_to_num(e2, nan=0.5)*3.0 + np.nan_to_num(e3, nan=0.5)*4.0) / 9.0
 
     # --- E_poly Order 2/3 Interactions ---
     F_poly = pd.DataFrame(index=al.index)
@@ -237,7 +242,9 @@ def build_feature_manifolds(df_train, df_test):
         "INQ_ACCEL": F_novel["INQ_ACCEL"].values,
         "MERTON_PD": F_novel["MERTON_PD"].values,
         "ID_PUBLISH_FRACTION": F_novel["ID_PUBLISH_FRACTION"].values,
-        "CAR_AGE_TO_CAREER": F_novel["CAR_AGE_TO_CAREER"].values
+        "CAR_AGE_TO_CAREER": F_novel["CAR_AGE_TO_CAREER"].values,
+        "PEER_RELATIVE_CREDIT": F_novel["PEER_RELATIVE_CREDIT"].values,
+        "EXT_WEIGHTED_SUM": F_novel["EXT_WEIGHTED_SUM"].values
     }, index=al.index)
 
     cb_cats = ["Q3", "Q4", "P3", "P4", "NAME_CONTRACT_TYPE", "CODE_GENDER", "NAME_INCOME_TYPE",
@@ -704,23 +711,38 @@ def main():
     print("  [Step 6/6] Convex Probit Nelder-Mead Rank Optimization")
     print("=" * 80)
 
-    # v17 Synthesis (4 Sets x 6 Members = 24 models)
-    v17_oof = np.zeros(ntr)
-    v17_test = np.zeros(nte)
-    sets_17 = ["old", "e1", "e1et", "e1Aet"]
-    for s_name in sets_17:
+    def blend_tag(tag, is_test=False):
+        res = np.zeros(nte if is_test else ntr)
+        pool = RESV_17 if any(k[0] == tag for k in RESV_17) else RESV_18
         for m_name, w in W.items():
-            t_p, o_p = RESV_17[(s_name, m_name)]
-            v17_oof += (w / len(sets_17)) * o_p
-            v17_test += (w / len(sets_17)) * t_p
+            t_p, o_p = pool[(tag, m_name)]
+            p = t_p if is_test else o_p
+            res += w * rk(p)
+        return rk(res)
 
-    # v18 Synthesis (1 Set x 6 Members with Monotonic Encodings = 6 models)
-    v18_oof = np.zeros(ntr)
-    v18_test = np.zeros(nte)
-    for m_name, w in W.items():
-        t_p, o_p = RESV_18[("e1et_v18", m_name)]
-        v18_oof += w * o_p
-        v18_test += w * t_p
+    b_old_oof = blend_tag("old", False)
+    b_e1_oof = blend_tag("e1", False)
+    b_e1et_oof = blend_tag("e1et", False)
+    b_e1Aet_oof = blend_tag("e1Aet", False)
+    b_v18_oof = blend_tag("e1et_v18", False)
+
+    b_old_te = blend_tag("old", True)
+    b_e1_te = blend_tag("e1", True)
+    b_e1et_te = blend_tag("e1et", True)
+    b_e1Aet_te = blend_tag("e1Aet", True)
+    b_v18_te = blend_tag("e1et_v18", True)
+
+    B_oof = (b_old_oof + b_e1_oof + b_e1et_oof) / 3.0
+    B_te = (b_old_te + b_e1_te + b_e1et_te) / 3.0
+
+    lgb_core_oof = rk(0.75 * rk(B_oof) + 0.25 * b_e1Aet_oof)
+    lgb_core_te = rk(0.75 * rk(B_te) + 0.25 * b_e1Aet_te)
+
+    v17_oof = lgb_core_oof
+    v17_test = lgb_core_te
+
+    v18_oof = b_v18_oof
+    v18_test = b_v18_te
 
     auc_v17 = roc_auc_score(y_train, v17_oof)
     auc_v18 = roc_auc_score(y_train, v18_oof)
