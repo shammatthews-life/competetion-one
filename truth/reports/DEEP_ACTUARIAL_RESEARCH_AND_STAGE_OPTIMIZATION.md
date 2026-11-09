@@ -201,6 +201,28 @@ Single-variable tree splits splinter this cohort across separate branches. Provi
 
 ---
 
+### 3.4 Full 5-Fold Verification of Loan Term & Asset Markup Combo (+7.37 bps Net Lift across 5/5 Folds)
+
+Evaluating the three breakthrough asset and term features simultaneously across all 5 folds on 171,202 training samples:
+1. **`CREDIT_TERM_APPROX`** = $\frac{\text{AMT\_CREDIT}}{12 \times \text{AMT\_ANNUITY}}$: Empirical individual contractual loan duration in years.
+2. **`ANNUITY_TO_GOODS`** = $\frac{\text{AMT\_ANNUITY}}{\text{AMT\_GOODS\_PRICE}}$: Debt servicing burden scaled by physical collateral acquisition value.
+3. **`FINANCED_MARKUP_RATIO`** = $\frac{\text{AMT\_CREDIT}}{\text{AMT\_GOODS\_PRICE}}$: Unclipped ratio of loan principal to retail cash price.
+
+**Results across 5 Stratified Folds (171,202 samples):**
+- **Fold 1:** `0.75683` $\to$ `0.75742` (**`+5.96 bps`**)
+- **Fold 2:** `0.75968` $\to$ `0.76038` (**`+6.93 bps`**)
+- **Fold 3:** `0.76504` $\to$ `0.76608` (**`+10.44 bps`**)
+- **Fold 4:** `0.75572` $\to$ `0.75707` (**`+13.52 bps`**)
+- **Fold 5:** `0.76128` $\to$ `0.76130` (**`+0.18 bps`**)
+- **Mean 5-Fold OOF AUC:** `0.759659` $\to$ **`0.760396`** (**`+7.37 bps Net Lift across 5 of 5 folds`**).
+
+**Mathematical & Actuarial Epistemology:**
+- **Financed Markup Non-Linearity:** Retail installment loans often roll in mandatory warranty charges, insurance premiums, and broker points. Applicants with `cr / gp > 1.25` default at **12.58%**, compared to **4.36%** for parity borrowers (`cr == gp`). Providing the continuous unclipped ratio linearizes the tree split boundaries without causing edge-bin saturation.
+- **Collateral Protection Ratio:** `ANNUITY_TO_GOODS` normalizes scheduled debt outflow against tangible collateral liquidation value, measuring the borrower's walk-away incentive.
+- **Empirical Term vs Fixed Duration:** `CREDIT_TERM_APPROX` resolves the fixed 36-month tenor fallacy by computing individual loan duration dynamically. Short micro-loans (< 1 year) carry immediate repayment pressure, while long loans (> 3.5 years) accumulate multi-year macroeconomic hazard exposure.
+
+---
+
 ## Part 4: Stage-by-Stage Architecture for Solo Champion V27 Grandmaster
 
 ```

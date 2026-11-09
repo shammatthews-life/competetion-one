@@ -1135,6 +1135,7 @@ Based on the split gain profile, formulas that achieve massive tree utilization 
    - Models wage deviations from occupational equilibria: $dY_t = \kappa(\mu_{\text{occ}} - Y_t)dt + \sigma dW_t$. Detects whether high income is transient bonus noise or permanent baseline.
    - Highlights: **Exp 463 (`OU_Occupational_Equilibrium_Anchor`)** achieves within-split AUC **0.6914**, $\rho = -0.1832$, and a **2,005.6 bps spread**; **Exp 468 (`OU_Core_Staff_Drift_Anchor`)** achieves AUC **0.6859** and **1,351.8 bps spread**.
 4. **Copula Conditional Tail Expectation (CTE) & Actuarial VaR (Exp 471 – 480):**
+
    - Calculates tail conditional expectation $\mathbb{E}[L \mid L > \text{VaR}_\alpha]$ across the joint bureau lower-tail collapse zone.
    - Highlights: **Exp 476 (`CTE_Prime_Homeowner_Anchor`)** yields within-split AUC **0.6789** and **1,250.0 bps spread**; **Exp 477 (`CTE_Laborer_Tail_Hazard`)** generates a **2,340.4 bps spread** ($\rho = +0.1873$).
 5. **Quantized Fourier Harmonic Tariff Resonances (Exp 481 – 490):**
@@ -1686,7 +1687,11 @@ Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
    - $\frac{2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3}{9}$: Weights credit bureau ratings by empirical Information Value (IV) density ($E_3 > E_2 > E_1$).
 4. **`PHONE_VERIF_FLAGS` & `EXT_MISSING_COUNT` (+3.06 bps 5-Fold Lift):**
    - Verifying employer and work phone presence alongside bureau file thinness count yielded +3.06 bps net lift across 4/5 folds (`0.759766` $\to$ `0.760072`).
-5. **Hierarchical Intra-Tag Rank-Space Ensembling:**
+5. **`CREDIT_TERM_APPROX`, `ANNUITY_TO_GOODS`, `FINANCED_MARKUP_RATIO` (+7.37 bps 5-Fold Lift across 5/5 Folds):**
+   - Evaluating empirical individual term, collateral servicing burden, and unclipped retail markup simultaneously yielded positive lift across every single fold (Fold 1: +5.96 bps, Fold 2: +6.93 bps, Fold 3: +10.44 bps, Fold 4: +13.52 bps, Fold 5: +0.18 bps | `0.759659` $\to$ `0.760396`).
+6. **7-Stream Convex Probit Rank Optimization:**
+   - Monotonic simplex rank fusion directly across all 7 orthogonal model families (`LGB_Old`, `LGB_E1`, `LGB_E1et`, `LGB_E1Aet`, `LGB_V18`, `XGB_GPU`, `CB_GPU`).
+7. **Hierarchical Intra-Tag Rank-Space Ensembling:**
    - Enforcing fractional rank transformations within member tags prior to tag fusion preserves monotonic ranking fidelity across models with disparate calibration scales.
 
 ---

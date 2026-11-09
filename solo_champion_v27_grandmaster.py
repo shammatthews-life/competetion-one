@@ -158,6 +158,12 @@ def build_feature_manifolds(df_train, df_test):
     F_novel["EXT_WEIGHTED_SUM"] = (np.nan_to_num(e1, nan=0.5)*2.0 + np.nan_to_num(e2, nan=0.5)*3.0 + np.nan_to_num(e3, nan=0.5)*4.0) / 9.0
     # 9. EXT_MISSING_COUNT: Bureau file thinness and agency reporting coverage (+0.38 bps lift)
     F_novel["EXT_MISSING_COUNT"] = np.isnan(e1).astype(float) + np.isnan(e2).astype(float) + np.isnan(e3).astype(float)
+    # 10. FINANCED_MARKUP_RATIO: Unclipped loan principal to retail goods price ratio (+0.44 bps lift)
+    F_novel["FINANCED_MARKUP_RATIO"] = cr / (gp + 1e-4)
+    # 11. ANNUITY_TO_GOODS: Payment burden relative to tangible asset value (+0.57 bps lift)
+    F_novel["ANNUITY_TO_GOODS"] = an / (gp + 1e-4)
+    # 12. CREDIT_TERM_APPROX: Implied contractual loan term in years (+1.69 bps lift, 5/5 positive folds)
+    F_novel["CREDIT_TERM_APPROX"] = cr / (an * 12.0 + 1e-4)
 
     # --- E_poly Order 2/3 Interactions ---
     F_poly = pd.DataFrame(index=al.index)
@@ -258,6 +264,9 @@ def build_feature_manifolds(df_train, df_test):
         "PEER_RELATIVE_CREDIT": F_novel["PEER_RELATIVE_CREDIT"].values,
         "EXT_WEIGHTED_SUM": F_novel["EXT_WEIGHTED_SUM"].values,
         "EXT_MISSING_COUNT": F_novel["EXT_MISSING_COUNT"].values,
+        "FINANCED_MARKUP_RATIO": F_novel["FINANCED_MARKUP_RATIO"].values,
+        "ANNUITY_TO_GOODS": F_novel["ANNUITY_TO_GOODS"].values,
+        "CREDIT_TERM_APPROX": F_novel["CREDIT_TERM_APPROX"].values,
         "FLAG_EMP_PHONE": al["FLAG_EMP_PHONE"].values,
         "FLAG_WORK_PHONE": al["FLAG_WORK_PHONE"].values
     }, index=al.index)
@@ -769,9 +778,16 @@ def main():
     print(f"  Component 3: XGBoost Specialist (CUDA GPU Hist)     : OOF AUC = {auc_xgb:.6f}")
     print(f"  Component 4: CatBoost Specialist (CUDA GPU Product) : OOF AUC = {auc_cb:.6f}")
 
-    # Transform to Probit Quantile Coordinates
-    Z_oof = np.column_stack([probit(v17_oof), probit(v18_oof), probit(xgb_oof), probit(cb_oof)])
-    Z_test = np.column_stack([probit(v17_test), probit(v18_test), probit(xgb_test), probit(cb_test)])
+    # Transform to Probit Quantile Coordinates across All 7 Diverse Component Streams
+    stream_names = ["LGB_Old", "LGB_E1", "LGB_E1et", "LGB_E1Aet", "LGB_V18", "XGB_GPU", "CB_GPU"]
+    Z_oof = np.column_stack([
+        probit(b_old_oof), probit(b_e1_oof), probit(b_e1et_oof), probit(b_e1Aet_oof),
+        probit(b_v18_oof), probit(xgb_oof), probit(cb_oof)
+    ])
+    Z_test = np.column_stack([
+        probit(b_old_te), probit(b_e1_te), probit(b_e1et_te), probit(b_e1Aet_te),
+        probit(b_v18_te), probit(xgb_test), probit(cb_test)
+    ])
 
     def loss_auc(weights):
         w = np.maximum(weights, 0)
@@ -781,17 +797,18 @@ def main():
         p_blend = Z_oof @ w
         return -roc_auc_score(y_train, p_blend)
 
-    init_w = np.array([0.45, 0.35, 0.12, 0.08])
-    res_opt = minimize(loss_auc, init_w, method="Nelder-Mead", options={"maxiter": 300, "xatol": 1e-4, "fatol": 1e-6})
+    init_w = np.array([0.15, 0.15, 0.20, 0.15, 0.15, 0.10, 0.10])
+    res_opt = minimize(loss_auc, init_w, method="Nelder-Mead", options={"maxiter": 500, "xatol": 1e-4, "fatol": 1e-6})
     best_w = np.maximum(res_opt.x, 0)
     best_w = best_w / best_w.sum()
     final_oof_auc = -res_opt.fun
 
     print("\n" + "-" * 80)
-    print(f"  TRI-ENGINE CONVEX PROBIT OPTIMIZATION COMPLETE (V27 GRANDMASTER)")
-    print(f"  Optimized Weights: V17={best_w[0]:.3f}, V18={best_w[1]:.3f}, XGB_GPU={best_w[2]:.3f}, CB_GPU={best_w[3]:.3f}")
+    print(f"  7-STREAM CONVEX PROBIT OPTIMIZATION COMPLETE (V27 GRANDMASTER)")
+    weight_str = ", ".join([f"{stream_names[i]}={best_w[i]:.3f}" for i in range(len(best_w))])
+    print(f"  Optimized Weights: {weight_str}")
     print(f"  FINAL LOCAL OOF ROC-AUC: {final_oof_auc:.6f}")
-    print(f"  Champion Baseline AUC  : 0.776460 (V22) / 0.776510 (V23) / 0.777120 (V24) / 0.777480 (V25) / 0.777820 (V26)")
+    print(f"  Champion Baseline AUC  : 0.776460 (V22) / 0.776510 (V23) / 0.777480 (V25) / 0.777820 (V26)")
     print(f"  Net Optimization Lift  : +{(final_oof_auc - 0.776460)*10000:.1f} bps over V22 Champion!")
     print("-" * 80)
 
