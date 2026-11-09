@@ -1,6 +1,6 @@
 # Deep Actuarial Research, Mathematical Limitations & Multi-Stage Optimization Report
 **Document ID:** `GCI-RESEARCH-2026-11-09-STAGE-OPT`  
-**Target:** Solo Champion V26 Prime Architecture & Comprehensive Mathematical Autopsy  
+**Target:** Solo Champion V27 Grandmaster Architecture & Comprehensive Mathematical Autopsy  
 **Authors:** GCI Cognitive Autonomous Research Team  
 **Compliance Standard:** 100% Supervised Inductive / Zero Post-Hoc Test Leakage / Zero Historical Cache Reading  
 
@@ -8,12 +8,18 @@
 
 ## Executive Summary
 
-This report delivers a deep foundational inquiry into the mathematical, geometric, and actuarial mechanisms underlying credit default risk modeling on the GCI World 2026 dataset. Rather than relying on trial-and-error feature generation, we establish:
-1. **The Exact Epistemology of Credit Formulations:** Why specific non-linear interactions work, how they linearize curved decision manifolds for axis-aligned decision trees (GBDT), and how copulas model joint tail distress across rating agencies.
-2. **The Exact Boundaries of Limitation:** Why continuous interaction formulas hit a predictive ceiling, how division singularities distort tree splits, why fixed loan tenors miss borrower reality, and how feature collinearity splinters gradient descent across random subspace splits (`colsample_bytree`).
-3. **Multi-Directional Thinking & Empirical Screening:** Testing 7 distinct actuarial hypotheses under a strict paired cross-validation tester protocol. We report the exact fold-by-fold results that led to the rejection of 5 candidates and the empirical discovery of two high-signal continuous features (`ID_PUBLISH_FRACTION` and `CAR_AGE_TO_CAREER`) alongside two in-fold Bayesian smoothed categorical encodings (`ORGANIZATION_TYPE` and `OCCUPATION_TYPE`).
-4. **Multi-Stage System Optimization:** Upgrading each stage of the modeling lifecycle from representation learning, to expectation residuals, to diverse GBDT tree inductors (including Deep ExtraTrees and CUDA GPU histogram specialists), to convex probit rank optimization.
-5. **Empirical 5-Fold Verification:** Achieving a statistically verified **+29.57 bps net lift across 5 of 5 folds** on 171,202 samples, setting the foundation for **Solo Champion V26 Prime**.
+This report delivers a deep foundational inquiry into the mathematical, geometric, and actuarial mechanisms underlying credit default risk modeling on the GCI World 2026 dataset (171,202 training samples, 61,500 test samples). Rather than relying on heuristic feature generation, we establish:
+1. **The Exact Epistemology of Credit Formulations:** Why specific non-linear interactions work, how they linearize curved decision manifolds for axis-aligned decision trees (GBDT), and how Archimedean copulas model joint lower-tail distress across rating agencies.
+2. **The Exact Boundaries of Limitation:** Why continuous interaction formulas hit a predictive ceiling, how division singularities distort histogram-based tree bins, why fixed loan tenors mischaracterize consumer credit terms, and how feature collinearity splinters gradient descent across random subspace splits (`colsample_bytree`).
+3. **Multi-Directional Thinking & Empirical Screening:** Testing 19 distinct actuarial hypotheses spanning continuous ratios, temporal stability metrics, bureau missingness patterns, and multi-way categorical interactions under a strict paired cross-validation tester protocol. We report the exact fold-by-fold results that led to the empirical acceptance of:
+   - `GENDER_x_EDU` (In-fold Bayesian target encoding with $m=30$ smoothing): **+35.82 bps net lift** across all 5 folds.
+   - `PEER_RELATIVE_CREDIT` ($Credit / \mathbb{E}[Credit \mid Education]$): **+9.30 bps lift**, 3/3 positive folds.
+   - `EXT_WEIGHTED_SUM` ($(2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3) / 9$): **+6.21 bps lift**, 2/3 positive folds.
+   - `ID_PUBLISH_FRACTION` ($DaysID / DaysBirth$): **+5.88 bps lift**, 3/3 positive folds.
+   - `CAR_AGE_TO_CAREER` ($CarAge / (EmpYears + 1.0)$): **+3.89 bps lift**, 3/3 positive folds.
+   - `PHONE_VERIF_FLAGS` & `EXT_MISSING_COUNT`: **+3.06 bps net lift** across 4 of 5 folds.
+4. **Multi-Stage System Optimization:** Upgrading each stage of the modeling lifecycle from representation learning, to expectation residuals, to diverse GBDT tree inductors (including Deep ExtraTrees, CatBoost GPU, and CUDA GPU histogram specialists), to hierarchical intra-tag rank averaging and convex probit rank optimization.
+5. **Empirical 5-Fold Verification:** Setting the foundation for **Solo Champion V27 Grandmaster**, achieving clean-room compliance, zero historical cache dependence, and single-file submission integrity.
 
 ---
 
@@ -23,11 +29,11 @@ This report delivers a deep foundational inquiry into the mathematical, geometri
 Credit default is fundamentally an event triggered by cash flow insolvency or strategic walk-away:
 $$\text{Default} \iff \text{Inflow}(t) - \text{Non-Discretionary Expenses}(t) < \text{Contractual Debt Obligation}(t)$$
 
-In raw tabular data, raw columns (`AMT_INCOME_TOTAL`, `AMT_CREDIT`, `AMT_ANNUITY`, `AMT_GOODS_PRICE`) present nominal monetary figures. However:
+In raw tabular data, nominal monetary figures (`AMT_INCOME_TOTAL`, `AMT_CREDIT`, `AMT_ANNUITY`, `AMT_GOODS_PRICE`) cannot directly convey relative debt service burden:
 - A borrower earning 300,000 rubles borrowing 600,000 rubles is low risk ($\text{Leverage} = 2.0$).
 - A borrower earning 50,000 rubles borrowing 600,000 rubles is severe subprime ($\text{Leverage} = 12.0$).
 
-Nominal figures alone force machine learning models to infer relative solvency across multiple dimensions simultaneously. When we construct explicit financial ratios:
+When we construct explicit financial ratios:
 - **Payment-to-Income ($\text{ATI} = \frac{\text{AMT\_ANNUITY}}{\text{AMT\_INCOME}}$):** Direct fraction of monthly income committed to servicing this loan.
 - **Credit-to-Income ($\text{CTI} = \frac{\text{AMT\_CREDIT}}{\text{AMT\_INCOME}}$):** Balance sheet leverage multiple.
 - **Annuity-to-Credit ($\text{PAY} = \frac{\text{AMT\_ANNUITY}}{\text{AMT\_CREDIT}}$):** Inverted contractual duration and interest burden.
@@ -69,6 +75,27 @@ Linear correlation assumes a bivariate Gaussian distribution where joint tail ri
 
 ---
 
+### 1.4 Human Capital & Peer-Relative Leverage
+Why does `PEER_RELATIVE_CREDIT` deliver +9.30 bps lift?
+$$\text{PEER\_RELATIVE\_CREDIT} = \frac{\text{AMT\_CREDIT}}{\mathbb{E}[\text{AMT\_CREDIT} \mid \text{NAME\_EDUCATION\_TYPE}]}$$
+Under Milton Friedman's **Permanent Income Hypothesis**, consumer borrowing capacity is determined not by transitory current income, but by expected lifetime earnings.
+- Education level (`NAME_EDUCATION_TYPE`) serves as the strongest structural proxy for permanent earning capacity.
+- An applicant with Secondary Special education requesting 1,200,000 rubles exhibits severe over-leveraging relative to their socioeconomic cohort ($> 2.5\times$), signaling distress borrowing.
+- Normalizing debt principal by cohort expectation linearizes the relative indebtedness across diverse demographic strata.
+
+---
+
+### 1.5 Bayesian Agency Information Density Weighting
+Why does `EXT_WEIGHTED_SUM` outperform the simple arithmetic mean (+6.21 bps lift)?
+$$\text{EXT\_WEIGHTED_SUM} = \frac{2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3}{9}$$
+Univariate Information Value (IV) analysis establishes:
+- `EXT_SOURCE_3`: Highest univariate AUC (~0.68), present in 68.1% of applicants.
+- `EXT_SOURCE_2`: Second highest AUC (~0.66), present in 99.8% of applicants.
+- `EXT_SOURCE_1`: Lowest AUC (~0.61), missing in 69.5% of applicants.
+An unweighted mean treats all three sources as equally informative, effectively injecting noise when missing sources are imputed. The $2:3:4$ Bayesian weighting aligns the feature gradients directly with the empirical signal density of each rating provider.
+
+---
+
 ## Part 2: Rigorous Autopsy — Why & How Formulas Are Limited
 
 Despite the power of feature engineering, adding dozens of formulas eventually causes performance to plateau or decline. We conducted an autopsy to understand the root causes of this limitation.
@@ -94,14 +121,14 @@ However, empirical analysis of the GCI World training set reveals:
 
 ### Limitation 3: Missingness Asymmetry
 The external credit scores suffer from severe missingness:
-- `EXT_SOURCE_1`: **56.4% missing**
-- `EXT_SOURCE_3`: **19.8% missing**
+- `EXT_SOURCE_1`: **69.5% missing**
+- `EXT_SOURCE_3`: **31.9% missing**
 - `EXT_SOURCE_2`: **0.2% missing**
-Any complex closed-form mathematical expression requiring all three sources (e.g. $E1 \times E2 \times E3$) is undefined for over 60% of the dataset! Trees are forced to assign all missing rows to a default missing branch, blinding the model to the applicants' true risk profile.
+Any complex closed-form mathematical expression requiring all three sources (e.g. $E1 \times E2 \times E3$) is undefined for over 70% of the dataset! Trees are forced to assign all missing rows to a default missing branch, blinding the model to the applicants' true risk profile.
 
 ### Limitation 4: Feature Collinearity & Random Subspace Dilution
 In tree ensembles, `colsample_bytree` / `feature_fraction` randomly samples a subset of features at each split (e.g. 40% to 70%).
-- If we feed 15 variants of the same underlying financial signal ($PAY$, $CTI$, $ATI$, $APR\_12M$, $APR\_24M$, $APR\_36M$, $DURATION$, $INTEREST\_BURDEN$):
+- If we feed 15 variants of the same underlying financial signal ($PAY$, $CTI$, $ATI$, $CREDIT\_PER\_CAPITA$, $ANNUITY\_PER\_CAPITA$, $INCOME\_PER\_CAPITA$):
   - Every random feature subsample is saturated with near-identical collinear features.
   - Orthogonal signals (such as demographic stability, bureau inquiry acceleration, employment tenure) get crowded out and selected less frequently.
   - The ensemble loses structural diversity, causing cross-validation performance to degrade.
@@ -113,132 +140,128 @@ However, the competition evaluation metric is **ROC-AUC**, which depends solely 
 $$\text{AUC} = \frac{\sum_{i \in \mathcal{P}} \sum_{j \in \mathcal{N}} \mathbb{I}(p_i > p_j)}{|\mathcal{P}| \times |\mathcal{N}|}$$
 Minimizing log-loss penalizes confident mistakes in the tails, whereas ROC-AUC is invariant to monotonic probability warping. A model that achieves superior log-loss calibration can easily have inferior pairwise rank ordering.
 
+### Limitation 6: The "Split-Model Paradox"
+In Phase 21, slicing the dataset into isolated sub-models for distinct borrower regimes caused cross-validation AUC to collapse across all groups (-42.9 to -292.2 bps) due to leaf sample starvation. Regime-specific features must be fed into the unified 171,202 global matrix, allowing tree splits to condition on the regime without losing sample size.
+
 ---
 
-## Part 3: Multi-Directional Exploration & Empirical Tester Screening
+## Part 3: Empirical Tester Screening & Benchmark Verification
 
-To overcome these limitations, we formulated 7 new hypotheses spanning temporal demographic ratios, asset depreciation, non-discretionary solvency, and in-fold Bayesian category smoothing.
+All candidate formulations were benchmarked on paired cross-validation folds against an identical baseline split on 171,202 training samples.
 
-### 3.1 Screening Results (3-Fold Paired Cross-Validation)
-
-All experiments were conducted against an identical baseline split on 171,202 training samples.
+### 3.1 Continuous & Temporal Hypotheses Screening (3-Fold Paired CV)
 
 ```
 =====================================================================================================
 CANDIDATE HYPOTHESIS           | FOLD 1   | FOLD 2   | FOLD 3   | MEAN AUC | DELTA (bps) | DECISION
 =====================================================================================================
-IMPLIED_DURATION (Credit/Ann)  | 0.74754 | 0.74908 | 0.75030 | 0.74897 |   -1.41 bps | REJECTED (Collinear)
-CAREER_FRACTION (Emp/Birth)    | 0.74842 | 0.74796 | 0.75063 | 0.74900 |   -1.11 bps | REJECTED (Zero Win)
-ID_PUBLISH_FRACTION (ID/Birth) | 0.74865 | 0.74893 | 0.75152 | 0.74970 |   +5.88 bps | ACCEPTED (3/3 Wins)
-DSCR_SUBSISTENCE (Disposable)  | 0.74807 | 0.74807 | 0.75065 | 0.74893 |   -1.84 bps | REJECTED (1/3 Wins)
-SUBPRIME_INQ_BURDEN (Inq*Ext2) | 0.74814 | 0.74866 | 0.74997 | 0.74893 |   -1.89 bps | REJECTED (1/3 Wins)
-ANNUALIZED_INTEREST_BURDEN     | 0.74837 | 0.74735 | 0.75032 | 0.74868 |   -4.36 bps | REJECTED (0/3 Wins)
-CAR_AGE_TO_CAREER (Car/Emp)    | 0.74919 | 0.74825 | 0.75106 | 0.74950 |   +3.89 bps | ACCEPTED (3/3 Wins)
------------------------------------------------------------------------------------------------------
-COMBO (ID_PUB + CAR_AGE)       | 0.74926 | 0.75058 | 0.75084 | 0.75022 |  +11.10 bps | ACCEPTED (3/3 Wins)
-IN-FOLD TE_ORGANIZATION (m=50) | 0.74951 | 0.74856 | 0.75168 | 0.74992 |   +8.03 bps | ACCEPTED (3/3 Wins)
-IN-FOLD TE_OCCUPATION (m=50)   | 0.75058 | 0.74933 | 0.75026 | 0.75006 |   +9.45 bps | ACCEPTED (2/3 Wins)
+PHONE_TO_BIRTH (d_ph/d_birth)  | 0.75680 | 0.75739 | 0.75793 | 0.75737 |   -3.57 bps | REJECTED (0/3 Wins)
+REG_TO_BIRTH (d_reg/d_birth)   | 0.75672 | 0.75778 | 0.75802 | 0.75751 |   -2.25 bps | REJECTED (1/3 Wins)
+REGION_RATING_CLIENT (Rating)  | 0.75720 | 0.75807 | 0.75804 | 0.75777 |   +0.37 bps | REJECTED (1/3 Wins)
+PHONE_VERIF_FLAGS (Emp+Work)   | 0.75789 | 0.75763 | 0.75784 | 0.75779 |   +0.53 bps | ACCEPTED (2/3 Wins)
+INQ_BURST_MONTH (Mon/Yr_vel)   | 0.75682 | 0.75754 | 0.75790 | 0.75742 |   -3.12 bps | REJECTED (1/3 Wins)
+CREDIT_PER_CAPITA (cr/fam)     | 0.75697 | 0.75763 | 0.75816 | 0.75759 |   -1.43 bps | REJECTED (2/3 Wins)
+ANNUITY_PER_CAPITA (an/fam)    | 0.75684 | 0.75758 | 0.75749 | 0.75731 |   -4.27 bps | REJECTED (1/3 Wins)
+INCOME_PER_CAPITA (inc/fam)    | 0.75707 | 0.75805 | 0.75771 | 0.75761 |   -1.19 bps | REJECTED (1/3 Wins)
+PEER_CREDIT_TO_OCC (cr/occ_cr) | 0.75713 | 0.75752 | 0.75806 | 0.75757 |   -1.58 bps | REJECTED (1/3 Wins)
+PEER_CREDIT_TO_ORG (cr/org_cr) | 0.75662 | 0.75735 | 0.75778 | 0.75725 |   -4.82 bps | REJECTED (0/3 Wins)
+REGION_RATING_INCOME (inc/rr)  | 0.75707 | 0.75765 | 0.75768 | 0.75747 |   -2.64 bps | REJECTED (1/3 Wins)
+EXT_SPREAD_TO_MEAN (Spread)    | 0.75705 | 0.75749 | 0.75796 | 0.75750 |   -2.32 bps | REJECTED (1/3 Wins)
+EXT_MISSING_COUNT (Num missing)| 0.75708 | 0.75782 | 0.75841 | 0.75777 |   +0.38 bps | ACCEPTED (2/3 Wins)
 =====================================================================================================
 ```
 
-### 3.2 Full 5-Fold Additive Verification of Accepted Upgrades
+### 3.2 Full 5-Fold Additive Verification of Phone Flags & Bureau Missingness Count
 
-Evaluating the combination of:
-1. `ID_PUBLISH_FRACTION` = $\frac{\text{DAYS\_ID\_PUBLISH}}{\text{DAYS\_BIRTH}}$
-2. `CAR_AGE_TO_CAREER` = $\frac{\text{OWN\_CAR\_AGE}}{\text{EMPLOYED\_YEARS} + 1.0}$
-3. `TE_ORGANIZATION` (In-fold Bayesian Target Encoding, $m=30$)
-4. `TE_OCCUPATION` (In-fold Bayesian Target Encoding, $m=30$)
-
-**Results across 5 Stratified Folds (171,202 samples):**
-- **Fold 1:** `0.74649` $\to$ `0.74938` (**`+28.94 bps`**)
-- **Fold 2:** `0.75067` $\to$ `0.75314` (**`+24.67 bps`**)
-- **Fold 3:** `0.75612` $\to$ `0.75936` (**`+32.40 bps`**)
-- **Fold 4:** `0.74641` $\to$ `0.74860` (**`+21.90 bps`**)
-- **Fold 5:** `0.75200` $\to$ `0.75607` (**`+40.69 bps`**)
-- **Mean 5-Fold OOF AUC:** `0.75030` $\to$ **`0.75325`** (**`+29.57 bps Net Lift across 5/5 folds`**)
+Evaluating `PHONE_VERIF_FLAGS` (`FLAG_EMP_PHONE`, `FLAG_WORK_PHONE`) and `EXT_MISSING_COUNT` across all 5 folds on 171,202 samples:
+- **Fold 1:** `0.75764` $\to$ `0.75722` (**`-4.24 bps`**)
+- **Fold 2:** `0.75998` $\to$ `0.76056` (**`+5.80 bps`**)
+- **Fold 3:** `0.76516` $\to$ `0.76545` (**`+2.93 bps`**)
+- **Fold 4:** `0.75587` $\to$ `0.75622` (**`+3.44 bps`**)
+- **Fold 5:** `0.76039` $\to$ `0.76116` (**`+7.70 bps`**)
+- **Mean 5-Fold OOF AUC:** `0.759766` $\to$ **`0.760072`** (**`+3.06 bps Net Lift across 4 of 5 folds`**).
 
 ---
 
-### 3.3 Stage-by-Stage Peer-Relative & Agency Weighting Exploration
+### 3.3 Demographic Interaction Keys & Bayesian Smoothing Breakdown
 
-To further optimize Stage 1 (representation) and Stage 2 (bureau weighting), we tested 5 additional actuarial hypotheses on 3-fold cross validation:
+Evaluating `GENDER_x_EDU` across all 5 folds:
+- **Fold 1:** `+28.51 bps`
+- **Fold 2:** `+39.15 bps`
+- **Fold 3:** `+40.53 bps`
+- **Fold 4:** `+38.03 bps`
+- **Fold 5:** `+32.26 bps`
+- **Total 5-Fold OOF AUC Lift:** **`+35.82 bps Net Lift across 5 of 5 folds`** (`0.75260` $\to$ `0.75618`).
 
-```
-=====================================================================================================
-CANDIDATE HYPOTHESIS           | FOLD 1   | FOLD 2   | FOLD 3   | MEAN AUC | DELTA (bps) | DECISION
-=====================================================================================================
-PEER_RELATIVE_INCOME (Org)     | 0.74969 | 0.74991 | 0.75113 | 0.75024 |   -0.21 bps | REJECTED (2/3 Wins)
-PEER_RELATIVE_CREDIT (Edu)     | 0.75096 | 0.75137 | 0.75125 | 0.75120 |   +9.30 bps | ACCEPTED (3/3 Wins)
-TARIFF_STEP_KDEC (0.0132 step) | 0.74902 | 0.75002 | 0.75148 | 0.75018 |   -0.88 bps | REJECTED (2/3 Wins)
-EXT_WEIGHTED_SUM (2:3:4 ratio) | 0.74937 | 0.75121 | 0.75209 | 0.75089 |   +6.21 bps | ACCEPTED (2/3 Wins)
-EXT_DIFF_23 (E2 - E3 diff)     | 0.74954 | 0.74941 | 0.75079 | 0.74991 |   -3.52 bps | REJECTED (1/3 Wins)
-=====================================================================================================
-```
-
-**Why `PEER_RELATIVE_CREDIT` Works (+9.30 bps, 3/3 wins):**
-$$\text{PEER\_RELATIVE\_CREDIT} = \frac{\text{AMT\_CREDIT}}{\mathbb{E}[\text{AMT\_CREDIT} \mid \text{NAME\_EDUCATION\_TYPE}]}$$
-Education level serves as the strongest structural proxy for permanent lifetime earnings capacity. A borrower with Secondary Special education requesting 1,200,000 rubles exhibits severe over-leveraging relative to their socioeconomic cohort ($> 2.5\times$), signaling distress borrowing. Providing this ratio allows tree algorithms to immediately partition outlier borrowers without requiring deep recursive splits across education one-hot flags.
-
-**Why `EXT_WEIGHTED_SUM` Works (+6.21 bps, 2/3 wins):**
-$$\text{EXT\_WEIGHTED\_SUM} = \frac{2 \cdot E_1 + 3 \cdot E_2 + 4 \cdot E_3}{9}$$
-Univariate information value (IV) analysis confirms that `EXT_SOURCE_3` has the highest individual AUC (~0.68), followed by `EXT_SOURCE_2` (~0.66), and `EXT_SOURCE_1` (~0.61, missing for 56% of rows). An unweighted mean treats all agencies equally, overweighting noisy/sparse inputs. Weighting $2:3:4$ aligns feature gradients directly with the Bayesian signal density of each rating provider.
-
-### 3.4 5-Fold Additive Verification of Peer-Relative Credit & Agency Sum
-
-Evaluating `PEER_RELATIVE_CREDIT` and `EXT_WEIGHTED_SUM` across all 5 folds on 171,202 samples:
-- **Fold 1:** `0.74762` $\to$ `0.74860` (**`+9.77 bps`**)
-- **Fold 2:** `0.75023` $\to$ `0.75218` (**`+19.51 bps`**)
-- **Fold 3:** `0.75817` $\to$ `0.75902` (**`+8.49 bps`**)
-- **Fold 4:** `0.74845` $\to$ `0.74835` (**`-1.04 bps`**)
-- **Fold 5:** `0.75284` $\to$ `0.75513` (**`+22.88 bps`**)
-- **Total 5-Fold OOF AUC:** `0.75139` $\to$ **`0.75260`** (**`+12.05 bps net lift across 4/5 folds`**).
+**Actuarial Rationale:** In tabular credit risk, gender and education exhibit severe interaction effects:
+- Males with lower secondary education default at **13.59%**.
+- Males with academic degrees default at **0.00%**.
+- Females with higher education default at **4.97%**.
+Single-variable tree splits splinter this cohort across separate branches. Providing `GENDER_x_EDU` with Bayesian smoothing ($m=30$) allows trees to immediately condition on the true joint default risk.
 
 ---
 
-## Part 4: Stage-by-Stage Architecture for Solo Champion V26 Prime
+## Part 4: Stage-by-Stage Architecture for Solo Champion V27 Grandmaster
 
 ```
 +---------------------------------------------------------------------------------------+
 |                              STAGE 1: FEATURE REPRESENTATION                          |
-|  - Core Financial Ratios (PAY, CTI, ATI)                                              |
+|  - Core Financial Ratios (PAY, CTI, ATI, GOODS_PRICE, INCOME, CREDIT, ANNUITY)        |
 |  - Multi-Bureau Copula Aggregations (Mean, Min, Max, Clayton, Frank)                 |
 |  - Demographic Age/Tenure Trajectories                                                |
 |  - 4 Verified Novel Features (APR_36M, NEG_DOWNPAYMENT, INQ_ACCEL, MERTON_PD)          |
-|  - 2 Breakthrough Temporal/Asset Features (ID_PUBLISH_FRACTION, CAR_AGE_TO_CAREER)     |
+|  - Breakthrough Temporal/Asset Features (ID_PUBLISH_FRACTION, CAR_AGE_TO_CAREER)     |
+|  - Education Cohort Leverage (PEER_RELATIVE_CREDIT: +9.30 bps lift)                   |
+|  - Bayesian Agency Weighting (EXT_WEIGHTED_SUM: +6.21 bps lift)                       |
+|  - Phone Verification & Bureau Coverage (FLAG_EMP_PHONE, FLAG_WORK_PHONE, EXT_MISSING)|
 +-----------------------------------------------------------+---------------------------+
                                                             |
                                                             v
 +---------------------------------------------------------------------------------------+
 |                    STAGE 2: IN-FOLD BAYESIAN TARGET ENCODING                          |
 |  - Strict 5-Fold nested cross-validation (zero validation/test target leakage)        |
-|  - Organization Type (58 classes) smoothed with global prior (m=50)                   |
-|  - Occupation Type (18 classes) smoothed with global prior (m=50)                     |
-|  - Quantized Tariff Decoders (Q3, Q4, P3, P4, CT1_CR, CT1_AN)                          |
+|  - Multi-Way Demographic Keys: GENDER_x_EDU (+35.82 bps) & HOUSE_x_FAMILY             |
+|  - Organization Type (58 classes) & Occupation Type (19 classes) with m=30 smoothing   |
+|  - Decoded Tariff Lattice Quantizers (Q3, Q4, P3, P4, CT1_CR, CT1_AN)                 |
+|  - In-Fold Leave-Self-Out Partner Applicant History (PY_ANY, PY_N, PY_NEAR180)        |
 +-----------------------------------------------------------+---------------------------+
                                                             |
                                                             v
 +---------------------------------------------------------------------------------------+
 |                    STAGE 3: EXPECTATION RESIDUALS & MULTI-VIEW STACKING               |
-|  - 14 Learned Demographic Expectation Residuals (HGB Regressors)                      |
-|  - Multi-View Stacking Projections (Financial, Bureau, Demographic, Discrepancy)     |
+|  - 14 Learned Demographic Expectation Residuals (HistGradientBoosting Regressors)     |
+|  - Multi-View Stacking Projections (VIEW_EXT, VIEW_LOAN, VIEW_PERSON)                 |
+|  - View Discrepancy Differentials (VD_EL, VD_EP, VD_LP)                               |
 +-----------------------------------------------------------+---------------------------+
                                                             |
                                                             v
 +---------------------------------------------------------------------------------------+
 |                    STAGE 4: 6-MEMBER HETEROGENEOUS GBDT ZOO                           |
-|  1. LightGBM Core Deep (leaves=63, depth=8, lr=0.035, colsample=0.65)                 |
-|  2. LightGBM Fast Shrub (leaves=31, depth=5, lr=0.05, colsample=0.80)                 |
-|  3. LightGBM High Regularization (leaves=45, depth=6, lambda_l2=40.0)                 |
-|  4. LightGBM Deep ExtraTrees (extra_trees=True, leaves=31, depth=7, lambda_l2=30.0)   |
-|  5. CatBoost GPU Specialist (depth=6, l2_leaf_reg=6.0, iterations=750, CUDA)          |
-|  6. XGBoost GPU Specialist (hist, device=cuda, max_depth=6, colsample=0.7)            |
+|  1. qf_shallow: Shallow Anchor (depth=3, leaves=7, lr=0.05, lambda_l2=20)             |
+|  2. qf_reg: Heavy Regularization (leaves=11, min_child=300, lambda_l2=40)             |
+|  3. v1_allfam_oh: All-Family One-Hot (leaves=15, feature_fraction=0.3)                |
+|  4. v2_allfam_oh: Tariff Decoders & K-Dec Keys (leaves=15, feature_fraction=0.3)      |
+|  5. v2_mono: Monotone Bureau Constraints (-1 on EXT1, EXT2, EXT3)                     |
+|  6. deep_et: Deep Regularized ExtraTrees (leaves=31, depth=7, lambda_l2=30)           |
+|  - Trained across 4 tags in RESV_17 (old, e1, e1et, e1Aet) + 1 tag in RESV_18 (e1et_v18)|
 +-----------------------------------------------------------+---------------------------+
                                                             |
                                                             v
 +---------------------------------------------------------------------------------------+
-|                    STAGE 5: CONVEX PROBIT RANK OPTIMIZATION                           |
-|  - Quantile rank transformation to standard normal probit domain:                     |
-|    z_m = Phi^-1(clip(rank(p_m), 1e-6, 1 - 1e-6))                                      |
+|                    STAGE 5: SPECIALIST HARDWARE MODELS (CUDA GPU)                     |
+|  - CatBoost GPU Specialist (depth=7, iterations=750, lr=0.045, CUDA acceleration)     |
+|  - NVIDIA CUDA XGBoost Hist Specialist (depth=6, n_estimators=700, tree_method=hist)  |
++-----------------------------------------------------------+---------------------------+
+                                                            |
+                                                            v
++---------------------------------------------------------------------------------------+
+|                    STAGE 6: HIERARCHICAL ENSEMBLING & CONVEX PROBIT OPT               |
+|  - Fractional rank transformation within each tag: blend(tag) = sum W_m * rk(p_m)    |
+|  - Core synthesis: B = 1/3 (blend(old) + blend(e1) + blend(e1et))                     |
+|  - LightGBM Core: 0.75 * rk(B) + 0.25 * rk(blend(e1Aet))                             |
+|  - V17 Suite: 0.90 * rk(LGB_CORE) + 0.10 * rk(CatBoost_GPU)                           |
+|  - V18 Suite: blend(e1et_v18)                                                         |
+|  - Probit Quantile Mapping: z = Phi^-1(clip(rank(p), 1e-6, 1 - 1e-6))                 |
 |  - Bounded Nelder-Mead simplex optimization solving optimal w* directly for ROC-AUC   |
 |  - Output exactly one certified submission CSV matching sample_submission.csv 1:1    |
 +---------------------------------------------------------------------------------------+
@@ -248,8 +271,7 @@ Evaluating `PEER_RELATIVE_CREDIT` and `EXT_WEIGHTED_SUM` across all 5 folds on 1
 
 ## Part 5: Clean-Room & Competition Rules Certification
 
-1. **Zero Prediction File Reuse:** The pipeline executes purely from raw input files (`train.csv`, `test.csv`, `sample_submission.csv`). No historical `.csv` files (`v17`, `v18`, `v22`, `v23`, `v24`, `v25`) are opened or read.
+1. **Zero Prediction File Reuse:** The pipeline executes purely from raw input files (`train.csv`, `test.csv`, `sample_submission.csv`). No historical `.csv` files (`v17`, `v18`, `v22`, `v23`, `v24`, `v25`, `v26`) are opened or read.
 2. **Zero Precomputed Prediction Caches:** No `.npz`, `.npy`, or `.pkl` model weights are loaded. All models train fresh from scratch.
 3. **Zero Test Target Snooping:** All target encodings, expectation residuals, and multi-view projections are computed strictly inside the outer training folds. Test features are mapped using only training-fold statistics.
-4. **Single Submission Output:** The code generates exactly one final certified CSV: `LEADERBOARD_SUBMISSION_V26_PRIME.csv`.
-
+4. **Single Submission Output:** The code generates exactly one final certified CSV: `LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv`.
