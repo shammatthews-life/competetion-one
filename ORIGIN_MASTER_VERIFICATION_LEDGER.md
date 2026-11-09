@@ -1645,13 +1645,13 @@ Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
   Solo Champion V25 Zenith (4 Novel Features + Zoo)     : 0.777480                > 0.7830+ (Target)
   Solo Champion V26 Prime (Temporal Ratios + In-Fold TE): 0.777820                > 0.7835+ (Target)
 ----------------------------------------------------------------------------------------------------
-  SOLO CHAMPION V27 GRANDMASTER (Demographic Keys +      : 0.778150 (ALL-TIME REC) > 0.7840+ (Target)
+  SOLO CHAMPION V27 GRANDMASTER (Demographic Keys +      : 0.778480 (ALL-TIME REC) > 0.7845+ (Target)
   Peer Credit + Agency Sum + Phone Flags + Probit)
 ====================================================================================================
-  NET SCORE IMPROVEMENT OVER HISTORICAL CHAMPION (V22)  : +16.9 bps (+0.001690 AUC)
-  NET SCORE IMPROVEMENT OVER SOLO V26 PRIME             : +3.3 bps (+0.000330 AUC)
-  NET SCORE IMPROVEMENT OVER SOLO V25 ZENITH            : +6.7 bps (+0.000670 AUC)
-  NET SCORE IMPROVEMENT OVER V10 BASELINE               : +157.9 bps (+0.015794 AUC)
+  NET SCORE IMPROVEMENT OVER HISTORICAL CHAMPION (V22)  : +20.2 bps (+0.002020 AUC)
+  NET SCORE IMPROVEMENT OVER SOLO V26 PRIME             : +6.6 bps (+0.000660 AUC)
+  NET SCORE IMPROVEMENT OVER SOLO V25 ZENITH            : +10.0 bps (+0.001000 AUC)
+  NET SCORE IMPROVEMENT OVER V10 BASELINE               : +161.2 bps (+0.016124 AUC)
 ====================================================================================================
 ```
 
@@ -1693,8 +1693,6 @@ Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
    - Monotonic simplex rank fusion directly across all 7 orthogonal model families (`LGB_Old`, `LGB_E1`, `LGB_E1et`, `LGB_E1Aet`, `LGB_V18`, `XGB_GPU`, `CB_GPU`).
 7. **Hierarchical Intra-Tag Rank-Space Ensembling:**
    - Enforcing fractional rank transformations within member tags prior to tag fusion preserves monotonic ranking fidelity across models with disparate calibration scales.
-
----
 
 ---
 
