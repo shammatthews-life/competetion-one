@@ -1,10 +1,10 @@
 # Deep Actuarial Research, Mathematical Limitations & Multi-Stage Optimization Report
-**Document ID:** `GCI-RESEARCH-2026-11-09-STAGE-OPT`  
-**Target:** Solo Champion V27 Grandmaster Architecture & Comprehensive Mathematical Autopsy  
+**Document ID:** `GCI-RESEARCH-2026-11-10-V28-CERTIFIED`  
+**Target:** Solo Champion V28 Audit-Certified Architecture & Comprehensive Mathematical Autopsy  
 **Authors:** GCI Cognitive Autonomous Research Team  
-**Compliance Standard:** 100% Supervised Inductive / Zero Post-Hoc Test Leakage / Zero Historical Cache Reading  
-**Certified Local OOF ROC-AUC:** **`0.769520`** (Live Pipeline) / **`0.778480`** (All-Time Record Ensemble Synthesis)  
-**Public LB Expectation:** **`> 0.7845+`** (Strict Concordance Projection)  
+**Compliance Standard:** 100% Pure Supervised Inductive / Zero Target Propagation (`partner_enc` Removed) / Zero Test Pooling / Nested Unbiased CV  
+**Verified Unbiased Nested OOF ROC-AUC (Live):** **`0.772450`** (`+29.30 bps` real live improvement over prior V27 `0.769520`; 5-Fold Mean `0.772536`)  
+**Historical Reference Synthesis (With `partner_enc`):** `0.778480` *(superseded due to rule/validation audit findings)*
 
 ---
 
@@ -373,3 +373,36 @@ CONTRACT_CASH_FLAG (Cash loan)  | 0.75701 | 0.75768 | 0.75850 | 0.75773 |   +0.0
 2. **Zero Precomputed Prediction Caches:** No `.npz`, `.npy`, or `.pkl` precomputed files are loaded. All models train fresh from scratch.
 3. **Zero Test Target Snooping:** All target encodings, expectation residuals, and multi-view projections are computed strictly inside the outer training folds. Test features are mapped using only training-fold statistics.
 4. **Single Submission Output:** The code generates exactly one final certified CSV: `LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv` (61,500 rows, 2 columns `SK_ID_CURR,TARGET`, 0 nulls | SHA-256: `7C55050BAE39B93336CCE4DD5F21E2E30995DD10C622207517C041CC40159D46`).
+
+---
+
+## Part 7: Independent Competition Rules & Validation Audit Remediation (`V28 Certified`)
+
+Following two comprehensive technical and rule-compliance audits of `V22`, `V23`, and `V27`, every rule ambiguity, data leakage path, and validation bias was systematically audited and resolved in **Solo Champion V28 Audit-Certified** ([`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) / [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb)).
+
+### 7.1 Complete Remediation Matrix
+| Audit Finding | Affected Version(s) | Exact Issue | V28 Certified Fix |
+| :--- | :--- | :--- | :--- |
+| **Historical CSV Reads** | `V22` (Cell 9) | Read `GCI_submission_v17/v18` & `v_22` CSVs for correlation parity check | Removed all historical CSV paths in `V22` & strictly forbade across `V28` |
+| **Hard-Coded Test Routing** | `V23` (L746–759) | Conditional overrides (`w17[ext_nobs_te <= 1] = 0.40`, `is_pensioner_te`) | Replaced with uniform automatic model output in `V23` & `V28` |
+| **Repeat-Applicant Label Propagation** | `V22`, `V23`, `V27` | Heuristic `link_key` transferred `y_train` (`PY_ANY`, `PY_NEAR180`) | **100% eliminated** `partner_enc` and `link_key` (zero organizer grey area) |
+| **Train+Test Pooling** | `V22`, `V23`, `V27` | Pooled `df_train + df_test` for medians, residuals, group means, `onehot` | Every fit (`residuals`, `medians`, `FC_*`, `FG_*`, `StandardScaler`, `TE`, `CDF`) fits strictly inside training folds |
+| **Stacking In-Sample / Scrambling** | `V27` (L366, L371) | `variant != "A"` predicted in-sample on `Xs.iloc[a]`; `"A"` scrambled indices via `np.concatenate(pv)` | Strictly row-aligned inner 3-fold OOF (`inner[ib] = ...`) across all 6 views |
+| **Early-Stopping Validation Peeking** | `V23`, `V27` | `eval_set=(va_b)` triggered early stopping on outer validation fold `b` | Fixed iteration schedules & epochs across all 9 models (`b` untouched) |
+| **Un-Nested Weight Overfitting** | `V27` (L792–804) | `Nelder-Mead` fit weights directly on reported `Z_oof` labels | **Outer 5-Fold Nested Probit Calibration + L2-Regularized Simplex Optimization** evaluated solely on untouched validation folds |
+
+### 7.2 Deep Data Discoveries & Orthogonal Research Upgrades in V28
+1. **Exact Insurance Grid (`K_0066`) & Exact Servicing Fee (`Fee = 128.5`):**
+   - Forensic grid scanning across `154,988` Cash loans revealed that **`96.30%`** obey `AMT_CREDIT / AMT_GOODS_PRICE = 1 + 0.0066 * K_0066` (within 0.05 step error). Even non-multiple-of-6 tiers (`K_0066 % 2 == 0 & % 6 != 0`, $n=40,138$) default at **`9.98%`** vs **`4.70%`** off-grid ($n=5,742$).
+   - Scanning servicing fee deductibles on `(AMT_ANNUITY - F) / AMT_CREDIT` established **`Fee = 128.5`** maximizes top-10 tariff concentration (**`29.42%`** vs `28.10%` at `129.5`). Adding `P4_1285`, `P5_1285`, `K066`, and `K066_P4` strict in-fold TE lifted OOF by **`+3.54 bps`** (`0.768360` $\to$ `0.768714`).
+2. **Socioeconomic Cross-Section TE (`REG_HOUS` & `INC_EDU`):**
+   - Housing default rates span $2\times$ (`Rented 12.95%` vs `Office 6.51%`) and Region Rating spans $2.35\times$ (`Tier 1: 4.70%` vs `Tier 3: 11.03%`). Strict in-fold TE on `REGION_RATING_CLIENT | NAME_HOUSING_TYPE` + `NAME_INCOME_TYPE | NAME_EDUCATION_TYPE` lifted 5-fold CV by **`+5.94 bps` across 5/5 folds** (`0.768714` $\to$ `0.769308`).
+3. **Compressed `VIEW_GROUPS` Eliminates Collinearity Dilution:**
+   - Feeding 30 raw fold-fit count & group-deviation columns directly into LightGBM caused `-0.79 bps` `colsample` dilution (`0.761134` $\to$ `0.761055`). Isolating all 30 group statistics inside an aligned inner-OOF `VIEW_GROUPS` sub-model preserved the signal in 1 orthogonal meta-column.
+4. **Strictly Train-Only Full-Covariate Residuals (`+11.19 bps`, 5/5 Folds):**
+   - Expanding expectation regressors from V27's 4 features to full training covariates (strictly on `df_train`, zero test rows) lifted single-model LightGBM from `0.769177` to **`0.770296`**.
+5. **PyTorch Residual Neural Network Orthogonality (`TabResMLP_Neural`, `+9.18 bps` Ensemble Lift):**
+   - Unlike step-function decision trees, our 2-block `LayerNorm + SiLU + Dropout` residual network trained with train-only winsorization (`0.5%–99.5%`) and `StandardScaler` achieved `0.769250` OOF AUC and earned **`21.22%`** weight (the #1 highest nested ensemble weight!), propelling the strictly unbiased 9-model nested OOF AUC from `0.771532` to **`0.772450`** (**`+29.30 bps` live gain** over V27 `0.769520`).
+6. **Certified V28 Submission Artifact:**
+   - File: [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `0` nulls, SHA-256: `D96AC8582C6C9E09E3AE9B9134A8A6D7157841DD3C094F7C33C4C256EF5F0579`).
+

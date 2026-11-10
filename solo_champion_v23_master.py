@@ -743,20 +743,9 @@ def train_and_evaluate_solo_champion():
     print(f"  V17 Live Sub-Stream OOF AUC: {roc_auc_score(y_train, v17_oof):.6f}")
     print(f"  V18 Live Sub-Stream OOF AUC: {roc_auc_score(y_train, v18_oof):.6f}")
 
-    # Dynamic In-Fold Regime Routing Conditioned on Bureau Sparsity & Applicant Profile
-    ext_nobs_te = df_test[["EXT_SOURCE_1", "EXT_SOURCE_2", "EXT_SOURCE_3"]].notna().sum(axis=1).values
-    is_pensioner_te = (df_test["DAYS_EMPLOYED"] == 365243).values
-    is_revolving_te = (df_test["NAME_CONTRACT_TYPE"] == "Revolving loans").values
-
-    w17 = np.full(nte, 0.55)
-    w17[ext_nobs_te <= 1] = 0.40                       # Sparse Bureau -> v18 NOEXT View + Monotonic TE
-    w17[is_pensioner_te] = 0.42                        # Pensioners -> v18 Demographic Cohorts
-    w17[(ext_nobs_te == 3) & (~is_revolving_te)] = 0.62 # Dense Bureau Cash Loans -> v17 Copulas
-    w17[is_revolving_te] = 0.62                        # Revolving Loans -> v17 Unconstrained Ratios
-    w18 = 1.0 - w17
-
-    # Solo Champion Final Rank Combination
-    solo_champion_test = rk(w17 * rk(v17_test) + w18 * rk(v18_test))
+    # Audit Fix: Replaced hard-coded test-subset conditional routing (w17[...]) with uniform static ensemble weights
+    # to eliminate any Hand-Labeling rule ambiguity. Note: partner_enc is also deprecated and removed in V28 Certified.
+    solo_champion_test = rk(0.55 * rk(v17_test) + 0.45 * rk(v18_test))
 
     # Save EXACTLY ONE Final Submission CSV
     out_file = Path(r"D:\gci\LEADERBOARD_SUBMISSION_SOLO_CHAMPION.csv")

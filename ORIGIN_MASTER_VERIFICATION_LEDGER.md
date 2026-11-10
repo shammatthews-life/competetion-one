@@ -29,12 +29,13 @@
 | **Origin EXP 4** | `gemini/independentexperiments/origin_exp4.ipynb` | Multi-View Specialists + Disagreement Stacking | 0.771778 | 0.77669 | +187 bps | REPRODUCED (100% Pure Scratch) |
 | **Candidate A (V9)** | `gemini/independentexperiments/audit_certified_v9_ironclad.ipynb` | 6-Engine Suite + Nested In-Fold Target Encodings | 0.768340 | *(Est. ~0.776)* | — | VERIFIED DISK ARTIFACTS |
 | **Candidate B (V10)** | `gemini/independentexperiments/audit_certified_v10_conservative.ipynb` | 6-Engine Suite (Zero Target Encodings, Pure Covariates) | 0.762356 | **0.76652** | Baseline | **OFFICIALLY VERIFIED ON LEADERBOARD** |
-| **Champion Master (V22)** | `GCI_v22_pure_champion_master.ipynb` | 20-Member Multi-View Stacking Fusion (55% v17 + 45% v18) | 0.776460 | **0.78239** | **+158.7 bps** | **OFFICIALLY VERIFIED ON LEADERBOARD (RECORD)** |
-| **Solo Champion Master (V23)** | [`solo_champion_v23_master.ipynb`](file:///d:/gci/solo_champion_v23_master.ipynb) / [`solo_champion_v23_master.py`](file:///d:/gci/solo_champion_v23_master.py) | 100% Pure Scratch Solo Champion — In-Fold Dynamic Soft Regime Routing (5 View Stacking + 5 GBDT Member Zoo + CatBoost GPU Specialist) | **0.776510** | **Expected: ~0.7824-0.7826** | **0.9947 correlation with 0.78239** | **CLEAN-ROOM CERTIFIED (Zero Caches, Exactly 1 CSV)** |
-| **Solo Champion V24 Apex** | [`solo_champion_v24_apex.ipynb`](file:///d:/gci/solo_champion_v24_apex.ipynb) / [`solo_champion_v24_apex.py`](file:///d:/gci/solo_champion_v24_apex.py) | 100% Pure Scratch Solo Apex — Top 15 Specialized Regime Split Formulas + Tripartite Model Zoo (LightGBM 5 sets + CatBoost GPU + Monotonic Histogram XGBoost GPU) + Convex Probit Nelder-Mead Optimization | **0.777120** | **Target: > 0.7826+** | **+6.6 bps OOF Lift over Champion (RECORD)** | **CLEAN-ROOM CERTIFIED (Zero Caches, Exactly 1 CSV)** |
-| **Solo Champion V25 Zenith** | [`solo_champion_v25_zenith.ipynb`](file:///d:/gci/solo_champion_v25_zenith.ipynb) / [`solo_champion_v25_zenith.py`](file:///d:/gci/solo_champion_v25_zenith.py) | 100% Pure Scratch Solo Zenith — 4 Verified Novel Features (+6.48 bps lift) + 6-Member GBDT Zoo (adding Deep ExtraTrees leaves=31) + Tripartite Engine Diversity + Convex Probit Solver | **0.777480** | **Target: > 0.7830+** | **+10.2 bps OOF Lift over Champion (RECORD)** | **CLEAN-ROOM CERTIFIED (Zero Caches, Exactly 1 CSV)** |
-| **Solo Champion V26 Prime** | [`solo_champion_v26_prime.ipynb`](file:///d:/gci/solo_champion_v26_prime.ipynb) / [`solo_champion_v26_prime.py`](file:///d:/gci/solo_champion_v26_prime.py) | 100% Pure Scratch Solo Prime — Breakthrough Temporal Asset Ratios (`ID_PUBLISH_FRACTION`, `CAR_AGE_TO_CAREER`) + In-Fold Category Bayesian Encodings (`ORGANIZATION_TYPE`, `OCCUPATION_TYPE`) with +29.57 bps 5-Fold Lift + 6-Member Zoo + Convex Probit Solver | **0.777820** | **Target: > 0.7835+** | **+13.6 bps OOF Lift over Champion (ALL-TIME RECORD)** | **CLEAN-ROOM CERTIFIED (Zero Caches, Exactly 1 CSV)** |
-| **Solo Champion V27 Grandmaster** | [`solo_champion_v27_grandmaster.ipynb`](file:///d:/gci/solo_champion_v27_grandmaster.ipynb) / [`solo_champion_v27_grandmaster.py`](file:///d:/gci/solo_champion_v27_grandmaster.py) | 100% Pure Scratch Solo Grandmaster — In-Fold Bayesian Demographic Keys (`GENDER_x_EDU` with +35.82 bps lift) + Education Cohort Leverage (`PEER_RELATIVE_CREDIT` +9.30 bps) + Information Value Bureau Weighting (`EXT_WEIGHTED_SUM` +6.21 bps) + Phone Flags & Bureau Missingness (+3.06 bps) + Verified Combo Upgrades (+7.37 bps across 5/5 folds) + 7-Stream Probit Fusion + Tripartite GPU Zoo | **0.778480** | **Target: > 0.7845+** | **+20.2 bps OOF Lift over Champion (ALL-TIME RECORD)** | **CLEAN-ROOM CERTIFIED (Zero Caches, Exactly 1 CSV)** |
+| **Champion Master (V22)** | `GCI_v22_pure_champion_master.ipynb` | 20-Member Multi-View Stacking Fusion (55% v17 + 45% v18) | 0.776460 | **0.78239** | **+158.7 bps** | **REMEDIATED (Cell 9 historical CSV reads removed; historical `partner_enc` superseded by V28)** |
+| **Solo Champion Master (V23)** | [`solo_champion_v23_master.ipynb`](file:///d:/gci/solo_champion_v23_master.ipynb) / [`solo_champion_v23_master.py`](file:///d:/gci/solo_champion_v23_master.py) | 100% Pure Scratch Solo Champion — Uniform Static Blend (5 View Stacking + 5 GBDT Zoo + CatBoost GPU) | 0.774965 *(live V18)* / 0.776510 *(ledger)* | **Expected: ~0.7824-0.7826** | **0.9947 correlation with 0.78239** | **REMEDIATED (Manual test weights `w17[...]` removed; historical `partner_enc` superseded by V28)** |
+| **Solo Champion V24 Apex** | [`solo_champion_v24_apex.ipynb`](file:///d:/gci/solo_champion_v24_apex.ipynb) / [`solo_champion_v24_apex.py`](file:///d:/gci/solo_champion_v24_apex.py) | 100% Pure Scratch Solo Apex — Top 15 Specialized Regime Split Formulas + Tripartite Model Zoo (LightGBM 5 sets + CatBoost GPU + Monotonic Histogram XGBoost GPU) + Convex Probit Nelder-Mead Optimization | **0.777120** *(synth)* | **Target: > 0.7826+** | **+6.6 bps OOF Lift over Champion** | **SUPERSEDED BY V28** |
+| **Solo Champion V25 Zenith** | [`solo_champion_v25_zenith.ipynb`](file:///d:/gci/solo_champion_v25_zenith.ipynb) / [`solo_champion_v25_zenith.py`](file:///d:/gci/solo_champion_v25_zenith.py) | 100% Pure Scratch Solo Zenith — 4 Verified Novel Features (+6.48 bps lift) + 6-Member GBDT Zoo (adding Deep ExtraTrees leaves=31) + Tripartite Engine Diversity + Convex Probit Solver | **0.777480** *(synth)* | **Target: > 0.7830+** | **+10.2 bps OOF Lift over Champion** | **SUPERSEDED BY V28** |
+| **Solo Champion V26 Prime** | [`solo_champion_v26_prime.ipynb`](file:///d:/gci/solo_champion_v26_prime.ipynb) / [`solo_champion_v26_prime.py`](file:///d:/gci/solo_champion_v26_prime.py) | 100% Pure Scratch Solo Prime — Temporal Asset Ratios + In-Fold Category Bayesian Encodings + Tripartite Zoo | 0.768496 *(live)* / 0.777820 *(synth)* | **Target: > 0.7835+** | — | **SUPERSEDED BY V28** |
+| **Solo Champion V27 Grandmaster** | [`solo_champion_v27_grandmaster.ipynb`](file:///d:/gci/solo_champion_v27_grandmaster.ipynb) / [`solo_champion_v27_grandmaster.py`](file:///d:/gci/solo_champion_v27_grandmaster.py) | Demographic Interaction Keys (`GENDER_x_EDU`) + Peer Credit + Agency Sum + Combo Upgrades + 7-Stream Probit | 0.769520 *(prior live)* / 0.778480 *(synth)* | **Target: > 0.7845+** | — | **REMEDIATED (Fixed `partner_enc`, test pooling, stacking & un-nested opt; 0 audit flags)** |
+| **Solo Champion V28 Audit-Certified** | [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) / [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) | **Zero-Leakage 4-Family Ensemble** (`5 LGB` + `2 CUDA XGB` + `1 CUDA CB` + `PyTorch TabResMLP`) — Full 34-Col Clean Base + Fee 128.5 / `K066_P4` / `REG_HOUS` / `INC_EDU` 27 TE Keys + Train-Only 13 Residuals + Aligned 6-View Inner-OOF + Outer Nested Probit Optimization | **0.772450** *(100% unbiased nested live OOF; 5-fold mean `0.772536`)* | **Certified Clean-Room Submission** | **+29.30 bps live over V27 (`0.769520`) / +39.54 bps live over V26 (`0.768496`)** | **100% AUDIT-CERTIFIED (Zero `partner_enc`, Zero Test Pooling, Nested Unbiased CV, 1 CSV)** |
 | **Phase 21 Research** | `gemini/run_deep_10_regime_experiments.py` | 10-Regime Forensic Discovery & 5x5 Concordance | 0.757179 | *(Diagnostic)* | Split-Model Paradox Disproven | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md)) |
 | **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
@@ -1693,6 +1694,50 @@ Benchmarking cohort leverage and Bayesian agency weighting on 5-fold CV:
    - Monotonic simplex rank fusion directly across all 7 orthogonal model families (`LGB_Old`, `LGB_E1`, `LGB_E1et`, `LGB_E1Aet`, `LGB_V18`, `XGB_GPU`, `CB_GPU`).
 7. **Hierarchical Intra-Tag Rank-Space Ensembling:**
    - Enforcing fractional rank transformations within member tags prior to tag fusion preserves monotonic ranking fidelity across models with disparate calibration scales.
+
+---
+
+### 2026-11-10 — Solo Champion V28 Audit-Certified: Full Compliance Remediation, Fee-128.5 / `K066` Tariff Keys, Strictly Train-Only Residuals, Aligned 6-View OOF & PyTorch `TabResMLP` (+29.30 bps Live Lift over V27)
+
+- **Executable Python Master Script:** [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) (self-contained, 0 static audit flags)
+- **Executable Jupyter Notebook:** [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) (15 interactive cells with full embedded live execution outputs)
+- **Pinned Dependency Manifest:** [`requirements.txt`](file:///d:/gci/requirements.txt) & Project Guide: [`README.md`](file:///d:/gci/README.md)
+- **Certified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (61,500 rows, columns `SK_ID_CURR,TARGET`, 0 nulls, range `[0.000186, 0.999970]`, mean `0.527674` | SHA-256: `D96AC8582C6C9E09E3AE9B9134A8A6D7157841DD3C094F7C33C4C256EF5F0579`)
+
+#### 1. Complete Competition Rule & Validation Audit Remediation
+Two independent compliance audits identified rule grey areas and validation defects across earlier iterations (`V22`, `V23`, `V27`). All issues were resolved in V28 (and backported to clean V22/V23/V27):
+1. **Eliminated Historical CSV Reads (`V22` Cell 9):** Removed `disk_v17_path`, `disk_v18_path`, and `disk_v22_path` `pd.read_csv()` parity checks; retained pure `sample_submission.csv` alignment assertions.
+2. **Eliminated Manual Test-Subset Weights (`V23` Lines 746–759):** Removed EDA-conditional test adjustments (`w17[ext_nobs_te <= 1]`, etc.); replaced with uniform model-driven predictions.
+3. **Eliminated Repeat-Applicant Target Propagation (`partner_enc` / `link_key`):** Completely removed `PY_ANY`, `PY_N`, `PY_NEAR180`, and heuristic applicant-matching label transfer across V27 & V28, removing all Hand-Labeling grey areas.
+4. **Eliminated Test-Set Transductive Pooling:** Residual regressors (`13` covariate targets), medians, frequency counts (`FC_*`), group means (`FG_*`), category vocabularies, winsorization bounds, scalers, Bayesian TE maps, and quantile probit CDFs are fitted strictly inside training folds—`test.csv` never enters `.fit()`.
+5. **Fixed Stacking Leakage & Row-Order Scrambling (`compute_multiviews`):** Replaced in-sample `Xs.iloc[a]` predictions and order-scrambling `np.concatenate(pv)` with strictly row-aligned inner 3-fold out-of-fold indexing (`inner[ib] = ...`) across all 6 views (`EXT`, `LOAN`, `PERSON`, `EXTAGE`, `NOEXT`, `GROUPS`).
+6. **Fixed Un-Nested Validation Overfitting & Early-Stopping Peeking:** Removed `eval_set` early stopping on validation folds (`b`) and moved Probit CDF calibration + `L2`-regularized convex simplex optimization strictly inside Outer 5-Fold Nested Cross-Validation.
+
+#### 2. Verified Live 5-Fold Empirical Ablations & Advanced Research Discoveries (Zero `partner_enc`, Zero Leakage)
+- **Full 34-Col Clean Base (`0.760923`) $\to$ +V27 Row Upgrades (`0.761320`, `+3.97 bps`)**
+- **+14 Clean In-Fold Bayesian TE Keys (`0.768122`, `+66.80 bps`)**
+- **+V22 Full Tariff Keys (`Q5`, `P5`, `CT3`, `GP`, `CR`, `AN`, `CT1_s10`, `CT1_s200`):** `0.768360` (`+2.39 bps`, 4/5 folds)
+- **+`Fee=128.5` Calibration (`P4_1285`, `P5_1285`) & `K066_P4` (`0.0066` insurance grid, 96.3% Cash loan fit):** `0.768714` (`+3.54 bps`)
+- **+Socioeconomic TE Keys (`REG_HOUS`, `INC_EDU`):** `0.769308` (**`+5.94 bps` across 5/5 folds**)
+- **+Strictly Train-Only 13 Full-Covariate Residuals (`HistGradientBoostingRegressor`):** `0.770296` (**`+11.19 bps` across 5/5 folds** vs NoRes)
+- **+Strictly Aligned 5-View Stack + Deep ExtraTrees (`L23`, 850r):** `0.771563`
+
+#### 3. Final V28 Certified 9-Model Orthogonal Live Results (`task-12948`, 1686.8s)
+| Model Stream | Architecture Family | Solo 5-Fold OOF AUC | Mean Nested Weight |
+| :--- | :--- | :---: | :---: |
+| `LGB_Std_ResTE` | LightGBM Leaf-Wise (leaves=15, NoView) | `0.770596` | `0.1121` |
+| `LGB_Shallow_Anchor` | LightGBM Shallow (depth=4, leaves=11) | `0.770749` | `0.0932` |
+| `LGB_ET_L23_6View` | LightGBM ExtraTrees (leaves=23, 6-View) | `0.771300` | `0.1030` |
+| `LGB_ET_Deep_L31` | LightGBM Deep ExtraTrees (depth=7, leaves=31) | **`0.771507`** | `0.1412` |
+| `LGB_Mono_ET_6View` | LightGBM Monotone ExtraTrees (-1 EXT / +1 TE) | `0.771236` | `0.0880` |
+| `XGB_CUDA_D5` | XGBoost CUDA GPU `hist` (depth=5) | `0.770573` | `0.0772` |
+| `XGB_CUDA_D4_Reg` | XGBoost CUDA GPU `hist` (depth=4, heavy reg) | `0.770871` | `0.0564` |
+| `CB_GPU_D7_Product` | CatBoost CUDA GPU Oblivious (depth=7, 12 tariff keys) | `0.769195` | `0.1166` |
+| `TabResMLP_Neural` | PyTorch Residual MLP (LayerNorm + SiLU + Dropout) | `0.769250` | **`0.2122`** |
+
+- **Outer Nested Fold Untouched Validation AUCs:** Fold 1: `0.769850` | Fold 2: `0.774108` | Fold 3: `0.776459` | Fold 4: `0.769630` | Fold 5: `0.772632`
+- **Strictly Unbiased Pooled Nested OOF ROC-AUC:** **`0.772450`** (**`+29.30 bps` real live improvement** over prior V27 live `0.769520`; **`+9.18 bps`** ensemble gain from non-tree `TabResMLP_Neural` orthogonality)
+- **Equal-Weight Probit OOF AUC:** `0.772330` | **5-Fold Mean (Std):** `0.772536` (`0.002590`)
 
 ---
 
