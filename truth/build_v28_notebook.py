@@ -34,7 +34,7 @@ cells = [
             "**100% Rule-Compliant & Textbook Two-Level Outer-Nested Validation:**\n",
             "- **Zero External Data / Zero Historical CSVs / Zero Precomputed Caches** (`train.csv`, `test.csv`, `sample_submission.csv` only)\n",
             "- **Zero Target Propagation (`partner_enc` omitted)** & **Zero Manual Test-Subset Weights**\n",
-            "- **Strictly Outer-Fold Local Preprocessing:** Category vocabularies, medians, 13 covariate residual regressors, 6-view inner-OOF stackers, fold-fit group deviations, 27 Bayesian TE keys, scalers, empirical probit CDFs, and simplex weights are ALL fitted strictly inside each outer training fold `a` (zero `b` or `test` rows touched).\n",
+            "- **Strictly Fold-Local Preprocessing (Inner & Outer):** Category vocabularies, medians, 13 covariate residual regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency features, 27 Bayesian TE keys (`prior_inner = y_fit[ia].mean()`), scalers, empirical probit CDFs, and simplex weights are ALL fitted strictly inside each active training fold (`df_ia` for inner folds, `df_a` for outer folds), with zero held-out validation or `test` leakage.\n",
             "- **True Two-Level Nested Validation:** Inside each outer fold `(a, b)`, a nested 3-fold CV inside `a` produces strictly leak-free `inner_oof` predictions to calibrate probit CDFs and optimize ensemble weights before evaluating untouched outer fold `b`.\n",
             "- **Pinned Reproducibility:** Exact library versions pinned in `requirements.txt` (including `torch==2.15.0`).\n"
         ]

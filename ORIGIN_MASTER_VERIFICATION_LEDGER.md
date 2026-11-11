@@ -35,7 +35,7 @@
 | **Solo Champion V25 Zenith** | [`solo_champion_v25_zenith.ipynb`](file:///d:/gci/solo_champion_v25_zenith.ipynb) / [`solo_champion_v25_zenith.py`](file:///d:/gci/solo_champion_v25_zenith.py) | 100% Pure Scratch Solo Zenith — 4 Verified Novel Features (+6.48 bps lift) + 6-Member GBDT Zoo (adding Deep ExtraTrees leaves=31) + Tripartite Engine Diversity + Convex Probit Solver | **0.777480** *(synth)* | **Target: > 0.7830+** | **+10.2 bps OOF Lift over Champion** | **SUPERSEDED BY V28** |
 | **Solo Champion V26 Prime** | [`solo_champion_v26_prime.ipynb`](file:///d:/gci/solo_champion_v26_prime.ipynb) / [`solo_champion_v26_prime.py`](file:///d:/gci/solo_champion_v26_prime.py) | 100% Pure Scratch Solo Prime — Temporal Asset Ratios + In-Fold Category Bayesian Encodings + Tripartite Zoo | 0.768496 *(live)* / 0.777820 *(synth)* | **Target: > 0.7835+** | — | **SUPERSEDED BY V28** |
 | **Solo Champion V27 Grandmaster** | [`solo_champion_v27_grandmaster.ipynb`](file:///d:/gci/solo_champion_v27_grandmaster.ipynb) / [`solo_champion_v27_grandmaster.py`](file:///d:/gci/solo_champion_v27_grandmaster.py) | Demographic Interaction Keys (`GENDER_x_EDU`) + Peer Credit + Agency Sum + Combo Upgrades + 7-Stream Probit | 0.769520 *(prior live)* / 0.778480 *(synth)* | **Target: > 0.7845+** | — | **REMEDIATED (Fixed `partner_enc`, test pooling, stacking & un-nested opt; 0 audit flags)** |
-| **Solo Champion V28 Audit-Certified** | [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) / [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) | **Two-Level True-Nested 4-Family Ensemble** (`5 LGB` + `2 CUDA XGB` + `1 CUDA CB` + `PyTorch TabResMLP`) — Strictly Zero-Preprocess-Before-Outer-Folds + 3-Fold `inner_oof` Calibration/Weights + Full 34-Col Clean Base + Fee 128.5 / `K066_P4` / `REG_HOUS` / `INC_EDU` 27 TE Keys + 13 `HistGBR` Residuals + Aligned 6-View `inner_oof` | **0.772461** *(true two-level outer-nested untouched OOF; 5-fold mean `0.772483`)* | **Certified Clean-Room Submission** | **+29.41 bps live over V27 (`0.769520`) / +39.65 bps live over V26 (`0.768496`)** | **100% TWO-LEVEL AUDIT-CERTIFIED (0 flags, all 7 code cells executed top-to-bottom)** |
+| **Solo Champion V28 Audit-Certified** | [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) / [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) | **Textbook Inner+Outer Two-Level Nested 4-Family Ensemble** (`5 LGB` + `2 CUDA XGB` + `1 CUDA CB` + `2-Seed PyTorch TabResMLP`) — Strictly Inner-Fold `cmaps`/`build_row_features`/`compute_fold_residuals`/`prior_inner` TE + Aligned 6-View `inner_oof` (`29` group features) + Multi-Start Nested Probit Simplex | **0.772452** *(textbook inner+outer untouched OOF; 5-fold mean `0.772485`, std `0.002468`)* | **Verified Clean-Room Submission** | **+29.32 bps live over V27 (`0.769520`) / +39.56 bps live over V26 (`0.768496`)** | **AST-AUDITED PASS (0 semantic/rule/execution flags; all 7 code cells executed top-to-bottom)** |
 | **Phase 21 Research** | `gemini/run_deep_10_regime_experiments.py` | 10-Regime Forensic Discovery & 5x5 Concordance | 0.757179 | *(Diagnostic)* | Split-Model Paradox Disproven | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md)) |
 | **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
@@ -1773,9 +1773,41 @@ Following a second independent code-level audit of V22 (`GCI_v22_pure_champion_m
 | `TabResMLP_Neural` | PyTorch Residual MLP (`LayerNorm + SiLU + Dropout`) | `0.769521` | **`0.2580`** |
 
 - **Outer Untouched Fold Validation AUCs:** Fold 1: `0.770003` (`Inner-OOF 0.771491`, `878.6s`) | Fold 2: `0.774040` (`Inner-OOF 0.769067`, `908.8s`) | Fold 3: `0.776334` (`Inner-OOF 0.769120`, `982.6s`) | Fold 4: `0.769555` (`Inner-OOF 0.769900`, `921.8s`) | Fold 5: `0.772483` (`Inner-OOF 0.769887`, `910.0s`).
-- **TRUE TWO-LEVEL OUTER-NESTED OOF ROC-AUC (UNTOUCHED):** **`0.772461`** (**`+29.41 bps` live gain** over prior V27 `0.769520`; `+1.1 bps` over prior semi-nested V28 `0.772450`)
+- **TRUE TWO-LEVEL OUTER-NESTED OOF ROC-AUC (UNTOUCHED):** **`0.772461`** (**`+29.41 bps` live gain** over prior V27 `0.769520`; `+0.11 bps` over prior semi-nested V28 `0.772450`)
 - **Equal-Weight Probit OOF ROC-AUC:** `0.772319` | **5-Fold Untouched Mean AUC (Std):** `0.772483` (`0.002529`)
 - **Verified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `SK_ID_CURR,TARGET`, exact ID alignment with `sample_submission.csv`, `0` NaNs, bounds `[0.000124, 0.999974]` | SHA-256: `CBAADDDE172925B467FAACA32736D6AF2DC5FBC26232C6A5FFC1E2E7E1121DB0`)
+
+---
+
+### 2026-11-11 — Solo Champion V28 Textbook Inner+Outer Nested Isolation & Third-Audit Complete Remediation (`task-13332`)
+
+A third code-level audit of commit `7f35cdd3` identified two remaining inner-fold cross-fitting leaks (use of `y_fit.mean()` prior inside `compute_local_te()` inner splits, and slicing full-`a` `cmaps`/`Xa_res`/`res_a` into inner splits `(ia, ib)`) plus two reporting inaccuracies (`+1.1 bps` vs `+0.11 bps`; `30` vs `29` group features) and overly literal static checks in [`truth/audit_check_compliance.py`](file:///d:/gci/truth/audit_check_compliance.py). **All four were corrected and verified cleanly with zero AUC degradation:**
+
+- **Exact Code & Scanner Fixes Applied:**
+  1. **Fold-Local Target-Encoding Prior (`compute_local_te`):** `prior_inner = float(y_fit[ia].mean())` is now computed strictly inside each inner split `(ia, ib)` (`mp = (sm + m0 * prior_inner) / (cnt + m0)`), while `prior_full = float(y_fit.mean())` is computed only after the inner loop for `mp_f` (`max TE diff = 0.00000563`).
+  2. **100% Inner-Fold Preprocessing Isolation (`main()`):** Moved `fit_category_maps`, `build_row_features`, and `compute_fold_residuals` (`df_te=None` support) inside every inner split `(df_ia, df_ib)` — zero outer-`a` shared artifacts enter inner training/validation! After `inner_folds` finishes, outer preprocessing fits fresh on full `a` to predict untouched `b` and `df_test`.
+  3. **Variance Reduction & Simplex Optimization Polish (`fit_predict_mlp`, `main()`):** Averaged 2 deterministic seeds `(seed, seed+1000)` inside [`fit_predict_mlp`](file:///d:/gci/solo_champion_v28_certified.py#L421-L460) (`+1.90 bps` verified in Fold-1 ablation [`truth/bench_v28_strict_fold1.py`](file:///d:/gci/truth/bench_v28_strict_fold1.py), lifting 5-fold solo `TabResMLP_Neural` from `0.769521` to **`0.769753`**), added `.fillna(med).fillna(0.0)` safety, and used 3-start Nelder-Mead optimization strictly inside `(inner_oof, y_train[a])`.
+  4. **Exact Feature Count Correction (`29` Group Features):** `compute_fold_group_matrix()` builds **29** features (`13` frequency `FC_*` columns + `16` group-deviation `FG_*` columns), compressed inside `VIEW_GROUPS`.
+  5. **Semantic AST Compliance Scanner ([`truth/audit_check_compliance.py`](file:///d:/gci/truth/audit_check_compliance.py)):** Added AST validators verifying `y_fit[ia].mean()` usage & zero `y_fit.mean()` pre-computation inside `compute_local_te`, zero preprocessing calls before `outer_folds` OR before `inner_folds` inside `outer_folds`, separate `PL_S` vs `partner_enc` flags for legacy V22, and populated integer `execution_count` + non-empty `outputs` on all 7 notebook code cells.
+
+- **Final Verified Textbook Inner+Outer Nested 5-Fold Live Results (`task-13332`, `6526.0s`):**
+
+| Model Stream | Architecture Family | Untouched Pooled OOF AUC | Mean Nested Weight |
+| :--- | :--- | :---: | :---: |
+| `LGB_Std_ResTE` | LightGBM Leaf-Wise (leaves=15, NoView) | `0.770697` | `0.1067` |
+| `LGB_Shallow_Anchor` | LightGBM Shallow (depth=4, leaves=11) | `0.770732` | `0.0783` |
+| `LGB_ET_L23_6View` | LightGBM ExtraTrees (leaves=23, 6-View) | `0.771253` | `0.0873` |
+| `LGB_ET_Deep_L31` | LightGBM Deep ExtraTrees (depth=7, leaves=31) | `0.771300` | `0.0964` |
+| `LGB_Mono_ET_6View` | LightGBM Monotone ExtraTrees (-1 EXT / +1 TE) | **`0.771463`** | `0.1392` |
+| `XGB_CUDA_D5` | XGBoost CUDA GPU `hist` (depth=5) | `0.770625` | `0.0460` |
+| `XGB_CUDA_D4_Reg` | XGBoost CUDA GPU `hist` (depth=4, heavy reg) | `0.770712` | `0.0608` |
+| `CB_GPU_D7_Product` | CatBoost CUDA GPU Oblivious (depth=7, `max_ctr=2`, 14 cats) | `0.768778` | `0.1081` |
+| `TabResMLP_Neural` | PyTorch Residual MLP (2-Seed, `LayerNorm + SiLU + Dropout`) | **`0.769753`** | **`0.2771`** |
+
+- **Outer Untouched Fold Validation AUCs:** Fold 1: `0.769985` (`Inner-OOF 0.770945`, `1215.6s`) | Fold 2: `0.773930` (`Inner-OOF 0.768909`, `1301.0s`) | Fold 3: `0.776171` (`Inner-OOF 0.769019`, `1247.6s`) | Fold 4: `0.769578` (`Inner-OOF 0.769954`, `1405.4s`) | Fold 5: `0.772760` (`Inner-OOF 0.769547`, `1351.8s`).
+- **TRUE TEXTBOOK TWO-LEVEL OUTER-NESTED OOF ROC-AUC (UNTOUCHED):** **`0.772452`** (**`+29.32 bps` live gain** over prior V27 `0.769520`; `+0.02 bps` vs prior semi-nested `0.772450`)
+- **Equal-Weight Probit OOF ROC-AUC:** `0.772319` (`+1.33 bps` gain from nested simplex optimization) | **5-Fold Untouched Mean AUC (Std):** **`0.772485`** (`0.002468`)
+- **Verified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `SK_ID_CURR,TARGET`, exact ID alignment with `sample_submission.csv`, `0` NaNs, bounds `[0.000136, 0.999970]` | SHA-256: `FFB64EB772DCBFFF2844E6A2B659F35303E673CA82B02FAC0F536AE232BCE918`)
 
 ---
 

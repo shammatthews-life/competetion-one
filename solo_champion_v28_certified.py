@@ -10,15 +10,19 @@ GCI WORLD 2026: SOLO CHAMPION V28 AUDIT-CERTIFIED CLEAN-ROOM PIPELINE
   2. ZERO Hand-Labeling & ZERO Target Propagation:
      - Completely omits heuristic repeat-applicant target transfer and manual
        EDA-conditional test weights. Every prediction comes from trained models.
-  3. ZERO Test-Set Transductive Pooling & ZERO Outer-Fold Leakage:
+  3. ZERO Test-Set Transductive Pooling & ZERO Outer/Inner-Fold Leakage:
      - ALL preprocessing (category vocabularies, medians, 13 covariate residual
-       regressors, 6-view inner-OOF stackers, fold-fit group deviations, 27
-       Bayesian target encodings, winsorization bounds, scalers, empirical
+       regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency
+       features, 27 Bayesian target encodings with strict fold-local priors
+       `prior_inner = y_fit[ia].mean()`, winsorization bounds, scalers, empirical
        probit CDF maps, and L2-regularized simplex weights) is fitted STRICTLY
-       inside each outer training partition `a` (never touching outer val `b` or test).
-  4. True Two-Level Outer-Nested Validation:
-     - Inside every outer fold (a, b), a nested 3-fold CV inside `a` generates
-       leak-free inner OOF predictions `inner_oof` across all 9 orthogonal models.
+       inside each active training partition (`df_ia` for inner folds; `df_a`
+       for outer folds), never touching held-out validation `ib`/`b` or `test`.
+  4. True Textbook Two-Level Outer-Nested Validation:
+     - Inside every outer fold (a, b), each inner split `(ia, ib)` fits its own
+       `cmaps_in`, `build_row_features`, `compute_fold_residuals`, `compute_local_te`
+       (using `prior_inner = y_fit[ia].mean()`), and `compute_local_views` strictly
+       on `df_ia` before training all 9 models to predict `df_ib` into `inner_oof`.
      - Empirical probit CDF curves and ensemble weights `w_k` are fitted ONLY on
        `(inner_oof, y_train[a])`, then applied to outer-fold models trained on full `a`
        to evaluate completely untouched outer validation fold `b`.
@@ -178,7 +182,8 @@ def compute_fold_residuals(df_fit, df_val, df_te, cat_maps, seed=SEED):
         r["DAYS_EMPLOYED"] = r["DAYS_EMPLOYED"].where(r["DAYS_EMPLOYED"] != 365243)
         return r.reset_index(drop=True)
 
-    ra, rb, rte = prep_raw(df_fit), prep_raw(df_val), prep_raw(df_te)
+    ra, rb = prep_raw(df_fit), prep_raw(df_val)
+    rte = prep_raw(df_te) if df_te is not None else None
     demo_cols = [c for c in ra.columns if c.startswith("EXT_SOURCE") or c.startswith("AMT_")]
     T_spec = {
         "EXT1": ("EXT_SOURCE_1", ["EXT_SOURCE_1"]),
@@ -196,34 +201,38 @@ def compute_fold_residuals(df_fit, df_val, df_te, cat_maps, seed=SEED):
         "EXT3D": ("EXT_SOURCE_3", demo_cols),
     }
 
-    res_a, res_b, res_te = {}, {}, {}
+    res_a, res_b = {}, {}
+    res_te = {} if rte is not None else None
     kf3 = list(KFold(3, shuffle=True, random_state=seed).split(ra))
     for nm, (col_tgt, drop_cols) in T_spec.items():
         yt_a = np.log(ra[col_tgt]) if nm in ("LOGINC", "LOGCR") else ra[col_tgt]
         yt_b = np.log(rb[col_tgt]) if nm in ("LOGINC", "LOGCR") else rb[col_tgt]
-        yt_t = np.log(rte[col_tgt]) if nm in ("LOGINC", "LOGCR") else rte[col_tgt]
+        yt_t = (np.log(rte[col_tgt]) if nm in ("LOGINC", "LOGCR") else rte[col_tgt]) if rte is not None else None
 
-        Xpa, Xpb, Xpt = ra.drop(columns=drop_cols), rb.drop(columns=drop_cols), rte.drop(columns=drop_cols)
-        pa = np.zeros(len(ra)); pbs, pts = [], []
-        obsa, obsb, obst = yt_a.notna().values, yt_b.notna().values, yt_t.notna().values
+        Xpa, Xpb = ra.drop(columns=drop_cols), rb.drop(columns=drop_cols)
+        Xpt = rte.drop(columns=drop_cols) if rte is not None else None
+        pa = np.zeros(len(ra)); pbs = []; pts = []
+        obsa, obsb = yt_a.notna().values, yt_b.notna().values
+        obst = yt_t.notna().values if yt_t is not None else None
 
         for tri, vai in kf3:
             m = HistGradientBoostingRegressor(max_iter=60, learning_rate=0.1, max_leaf_nodes=31, min_samples_leaf=100, random_state=seed)
             m.fit(Xpa.iloc[tri][obsa[tri]], yt_a.iloc[tri][obsa[tri]])
             pa[vai] = m.predict(Xpa.iloc[vai])
             pbs.append(m.predict(Xpb))
-            pts.append(m.predict(Xpt))
+            if Xpt is not None:
+                pts.append(m.predict(Xpt))
 
-        pb, pt = np.mean(pbs, axis=0), np.mean(pts, axis=0)
+        pb = np.mean(pbs, axis=0)
         res_a[f"RP_{nm}"] = pa; res_a[f"RR_{nm}"] = np.where(obsa, yt_a.values - pa, np.nan)
         res_b[f"RP_{nm}"] = pb; res_b[f"RR_{nm}"] = np.where(obsb, yt_b.values - pb, np.nan)
-        res_te[f"RP_{nm}"] = pt; res_te[f"RR_{nm}"] = np.where(obst, yt_t.values - pt, np.nan)
+        if res_te is not None:
+            pt = np.mean(pts, axis=0)
+            res_te[f"RP_{nm}"] = pt; res_te[f"RR_{nm}"] = np.where(obst, yt_t.values - pt, np.nan)
 
-    return (
-        pd.DataFrame(res_a, dtype=np.float32),
-        pd.DataFrame(res_b, dtype=np.float32),
-        pd.DataFrame(res_te, dtype=np.float32),
-    )
+    df_res_a = pd.DataFrame(res_a, dtype=np.float32)
+    df_res_b = pd.DataFrame(res_b, dtype=np.float32)
+    return (df_res_a, df_res_b) if res_te is None else (df_res_a, df_res_b, pd.DataFrame(res_te, dtype=np.float32))
 
 # ==============================================================================
 # 3. FOLD-LOCAL 6-VIEW INNER-OOF STACKING & FOLD-SAFE GROUP VIEW
@@ -346,12 +355,11 @@ def build_key_series(df):
     }
 
 def compute_local_te(df_fit, df_val, y_fit, n_inner=4, seed=SEED, df_te=None):
-    """Vocabularies and nested Bayesian TE maps built strictly on `df_fit`."""
+    """Vocabularies and nested Bayesian TE maps built strictly on `df_fit` with fold-local priors."""
     kf = build_key_series(df_fit)
     kv = build_key_series(df_val)
     kt = build_key_series(df_te) if df_te is not None else None
 
-    pr = float(y_fit.mean())
     in_splits = list(StratifiedKFold(n_inner, shuffle=True, random_state=seed).split(np.zeros(len(y_fit)), y_fit))
     d_fit, d_val = {}, {}
     d_te = {} if df_te is not None else None
@@ -363,17 +371,21 @@ def compute_local_te(df_fit, df_val, y_fit, n_inner=4, seed=SEED, df_te=None):
         ca = s_fit.map(cmap).fillna(unk).astype(np.int32).values
         cb = kv[kname][0].map(cmap).fillna(unk).astype(np.int32).values
 
-        enc_a = np.full(len(y_fit), pr); cnt_a = np.zeros(len(y_fit))
+        enc_a = np.empty(len(y_fit), dtype=np.float64)
+        cnt_a = np.empty(len(y_fit), dtype=np.float64)
         for ia, ib in in_splits:
+            prior_inner = float(y_fit[ia].mean())
             cia, cib = ca[ia], ca[ib]
             cnt = np.bincount(cia, minlength=n_cat).astype(float)
             sm = np.bincount(cia, weights=y_fit[ia], minlength=n_cat)
-            mp = (sm + m0 * pr) / (cnt + m0)
-            enc_a[ib] = mp[cib]; cnt_a[ib] = cnt[cib]
+            mp = (sm + m0 * prior_inner) / (cnt + m0)
+            enc_a[ib] = mp[cib]
+            cnt_a[ib] = cnt[cib]
 
+        prior_full = float(y_fit.mean())
         cnt_f = np.bincount(ca, minlength=n_cat).astype(float)
         sm_f = np.bincount(ca, weights=y_fit, minlength=n_cat)
-        mp_f = (sm_f + m0 * pr) / (cnt_f + m0)
+        mp_f = (sm_f + m0 * prior_full) / (cnt_f + m0)
         d_fit[f"TE_{kname}"] = enc_a; d_fit[f"CNT_{kname}"] = cnt_a
         d_val[f"TE_{kname}"] = mp_f[cb]; d_val[f"CNT_{kname}"] = cnt_f[cb]
         if df_te is not None:
@@ -408,35 +420,43 @@ class TabResMLP(nn.Module):
 
 def fit_predict_mlp(Xa_df, Xb_df, y_a, Xte_df=None, seed=SEED):
     med = Xa_df.median()
-    xa_raw = np.clip(Xa_df.fillna(med).values, -1e6, 1e6).astype(np.float32)
-    xb_raw = np.clip(Xb_df.fillna(med).values, -1e6, 1e6).astype(np.float32)
+    xa_raw = np.clip(Xa_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
+    xb_raw = np.clip(Xb_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
     lo = np.percentile(xa_raw, 0.5, axis=0); hi = np.percentile(xa_raw, 99.5, axis=0)
     sc = StandardScaler()
     Xa_s = sc.fit_transform(np.clip(xa_raw, lo, hi)).astype(np.float32)
     Xb_s = sc.transform(np.clip(xb_raw, lo, hi)).astype(np.float32)
     if Xte_df is not None:
-        xt_raw = np.clip(Xte_df.fillna(med).values, -1e6, 1e6).astype(np.float32)
+        xt_raw = np.clip(Xte_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
         Xt_s = sc.transform(np.clip(xt_raw, lo, hi)).astype(np.float32)
 
-    torch.manual_seed(seed)
     X_t = torch.from_numpy(Xa_s); y_t = torch.from_numpy(y_a.astype(np.float32))
-    net = TabResMLP(Xa_s.shape[1])
-    opt = torch.optim.AdamW(net.parameters(), lr=3e-3, weight_decay=2e-2)
-    sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=13)
-    crit = nn.BCEWithLogitsLoss()
-    bs, n = 4096, len(Xa_s)
-    for _ in range(13):
-        net.train()
-        perm = torch.randperm(n)
-        for i in range(0, n, bs):
-            idx = perm[i:i + bs]
-            opt.zero_grad(); loss = crit(net(X_t[idx]), y_t[idx]); loss.backward(); opt.step()
-        sched.step()
-    net.eval()
-    with torch.no_grad():
-        pb = torch.sigmoid(net(torch.from_numpy(Xb_s))).numpy()
-        pt = torch.sigmoid(net(torch.from_numpy(Xt_s))).numpy() if Xte_df is not None else None
-    return pb if Xte_df is None else (pb, pt)
+    Xb_t = torch.from_numpy(Xb_s)
+    Xt_t = torch.from_numpy(Xt_s) if Xte_df is not None else None
+    pb_acc = np.zeros(len(Xb_s), dtype=np.float64)
+    pt_acc = np.zeros(len(Xt_s), dtype=np.float64) if Xte_df is not None else None
+    seeds_use = (seed, seed + 1000)
+
+    for s_run in seeds_use:
+        torch.manual_seed(s_run)
+        net = TabResMLP(Xa_s.shape[1])
+        opt = torch.optim.AdamW(net.parameters(), lr=3e-3, weight_decay=2e-2)
+        sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=13)
+        crit = nn.BCEWithLogitsLoss()
+        bs, n = 4096, len(Xa_s)
+        for _ in range(13):
+            net.train()
+            perm = torch.randperm(n)
+            for i in range(0, n, bs):
+                idx = perm[i:i + bs]
+                opt.zero_grad(); loss = crit(net(X_t[idx]), y_t[idx]); loss.backward(); opt.step()
+            sched.step()
+        net.eval()
+        with torch.no_grad():
+            pb_acc += torch.sigmoid(net(Xb_t)).numpy() / float(len(seeds_use))
+            if Xte_df is not None:
+                pt_acc += torch.sigmoid(net(Xt_t)).numpy() / float(len(seeds_use))
+    return pb_acc if Xte_df is None else (pb_acc, pt_acc)
 
 def fit_probit_map(p_fit):
     p_s = np.sort(p_fit)
@@ -582,34 +602,31 @@ def main():
         t_f = time.time()
         print(f"\n--- OUTER FOLD {fi+1}/5 (Train={len(a):,}, Untouched Val={len(b):,}) ---", flush=True)
 
-        # 1. Strictly Fold-Local Preprocessing inside `a`
-        cmaps = fit_category_maps(df_train.iloc[a])
-        Xa_base = build_row_features(df_train.iloc[a], cmaps)
-        Xb_base = build_row_features(df_train.iloc[b], cmaps)
-        Xte_base = build_row_features(df_test, cmaps)
-
-        res_a, res_b, res_te = compute_fold_residuals(df_train.iloc[a], df_train.iloc[b], df_test, cmaps, seed=SEED + fi)
-        Xa_res = pd.concat([Xa_base, res_a], axis=1)
-        Xb_res = pd.concat([Xb_base, res_b], axis=1)
-        Xte_res = pd.concat([Xte_base, res_te], axis=1)
-
-        # 2. Inner 3-Fold CV strictly inside `a` -> true leak-free `inner_oof` for calibration & weights
+        # 1. Inner 3-Fold CV strictly inside `a`: EVERY preprocessing stage fits on `df_ia` only!
         inner_oof = {m: np.zeros(len(a)) for m in model_names}
         inner_folds = list(StratifiedKFold(3, shuffle=True, random_state=100 + fi).split(np.zeros(len(a)), y_train[a]))
         for ii, (ia, ib) in enumerate(inner_folds):
             df_ia, df_ib = df_train.iloc[a[ia]], df_train.iloc[a[ib]]
-            te_ia, te_ib, k_ia, k_ib = compute_local_te(df_ia, df_ib, y_train[a[ia]], n_inner=4, seed=SEED + fi * 10 + ii)
-            v_ia, v_ib = compute_local_views(Xa_res.iloc[ia].reset_index(drop=True), Xa_res.iloc[ib].reset_index(drop=True),
-                                             df_ia, df_ib, y_train[a[ia]], n_inner=2, seed=SEED + fi * 10 + ii)
+            y_ia = y_train[a[ia]]
+            s_in = SEED + fi * 10 + ii
+
+            cmaps_in = fit_category_maps(df_ia)
+            Xia_base = build_row_features(df_ia, cmaps_in)
+            Xib_base = build_row_features(df_ib, cmaps_in)
+            res_ia, res_ib = compute_fold_residuals(df_ia, df_ib, None, cmaps_in, seed=s_in)
+            Xia_res = pd.concat([Xia_base, res_ia], axis=1)
+            Xib_res = pd.concat([Xib_base, res_ib], axis=1)
+
+            te_ia, te_ib, k_ia, k_ib = compute_local_te(df_ia, df_ib, y_ia, n_inner=4, seed=s_in)
+            v_ia, v_ib = compute_local_views(Xia_res, Xib_res, df_ia, df_ib, y_ia, n_inner=2, seed=s_in)
             preds_ib = fit_predict_all_9_models(
-                Xa_res.iloc[ia].reset_index(drop=True), Xa_res.iloc[ib].reset_index(drop=True),
-                df_ia, df_ib, y_train[a[ia]], te_ia, te_ib, v_ia, v_ib, k_ia, k_ib,
-                cb_task, xgb_device, seed=SEED + fi * 10 + ii
+                Xia_res, Xib_res, df_ia, df_ib, y_ia, te_ia, te_ib, v_ia, v_ib, k_ia, k_ib,
+                cb_task, xgb_device, seed=s_in
             )
             for mn in model_names:
                 inner_oof[mn][ib] = preds_ib[mn]
 
-        # 3. Fit Probit CDFs and L2-Regularized Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
+        # 2. Fit Probit CDFs and Multi-Start L2-Regularized Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
         pmaps = {mn: fit_probit_map(inner_oof[mn]) for mn in model_names}
         Z_in = np.column_stack([np.interp(inner_oof[mn], *pmaps[mn]) for mn in model_names])
         uniform = np.ones(M) / float(M)
@@ -620,11 +637,27 @@ def main():
             w = w / sm
             return -roc_auc_score(y_train[a], Z_in @ w) + 0.0025 * np.sum((w - uniform) ** 2)
 
-        opt = minimize(loss_inner, uniform, method="Nelder-Mead", options={"maxiter": 400, "xatol": 1e-4})
-        w_k = np.maximum(opt.x, 0.0); w_k /= w_k.sum()
+        in_aucs = np.array([roc_auc_score(y_train[a], inner_oof[mn]) for mn in model_names])
+        auc_prior = np.exp((in_aucs - in_aucs.max()) * 250.0); auc_prior /= auc_prior.sum()
+        starts = [uniform, auc_prior, 0.5 * uniform + 0.5 * auc_prior]
+        best_res = min(
+            [minimize(loss_inner, s0, method="Nelder-Mead", options={"maxiter": 600, "xatol": 1e-4}) for s0 in starts],
+            key=lambda r: r.fun
+        )
+        w_k = np.maximum(best_res.x, 0.0); w_k /= w_k.sum()
         weights_history.append(w_k)
 
-        # 4. Outer Models Trained on Full `a` -> Predict Strictly Untouched `b` and `df_test`
+        # 3. Outer-Fold Preprocessing on Full `a` & Outer Models -> Predict Strictly Untouched `b` and `df_test`
+        cmaps = fit_category_maps(df_train.iloc[a])
+        Xa_base = build_row_features(df_train.iloc[a], cmaps)
+        Xb_base = build_row_features(df_train.iloc[b], cmaps)
+        Xte_base = build_row_features(df_test, cmaps)
+
+        res_a, res_b, res_te = compute_fold_residuals(df_train.iloc[a], df_train.iloc[b], df_test, cmaps, seed=SEED + fi)
+        Xa_res = pd.concat([Xa_base, res_a], axis=1)
+        Xb_res = pd.concat([Xb_base, res_b], axis=1)
+        Xte_res = pd.concat([Xte_base, res_te], axis=1)
+
         te_a, te_b, te_te, kf_a, kv_b, kt_te = compute_local_te(df_train.iloc[a], df_train.iloc[b], y_train[a], n_inner=5, seed=SEED + fi, df_te=df_test)
         v_a, v_b, v_te = compute_local_views(Xa_res, Xb_res, df_train.iloc[a], df_train.iloc[b], y_train[a], n_inner=3, seed=SEED + fi, X_te_res=Xte_res, df_te=df_test)
 
