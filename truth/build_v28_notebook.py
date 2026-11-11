@@ -11,7 +11,7 @@ markers = [
     ("# ==============================================================================\n# 2. OUTER-FOLD LOCAL COVARIATE RESIDUALS", "Step 3"),
     ("# ==============================================================================\n# 3. FOLD-LOCAL 6-VIEW INNER-OOF STACKING", "Step 4"),
     ("# ==============================================================================\n# 4. FOLD-LOCAL 27 BAYESIAN TARGET ENCODINGS", "Step 5"),
-    ("# ==============================================================================\n# 5. ORTHOGONAL NEURAL MODEL", "Step 6"),
+    ("# ==============================================================================\n# 5. ORTHOGONAL GPU NEURAL ARCHITECTURES", "Step 6"),
     ("# ==============================================================================\n# 6. MAIN TWO-LEVEL OUTER-NESTED CLEAN-ROOM EXECUTION PIPELINE", "Step 7"),
 ]
 
@@ -29,14 +29,14 @@ cells = [
         "cell_type": "markdown",
         "metadata": {},
         "source": [
-            "# GCI World 2026: Solo Champion V28 Audit-Certified Clean-Room Pipeline (True Two-Level Nested CV)\n",
+            "# GCI World 2026: Solo Champion V28 Clean-Room GPU Pipeline (`SEED_EVAL=2027` Two-Level Nested CV)\n",
             "\n",
-            "**100% Rule-Compliant & Textbook Two-Level Outer-Nested Validation:**\n",
-            "- **Zero External Data / Zero Historical CSVs / Zero Precomputed Caches** (`train.csv`, `test.csv`, `sample_submission.csv` only)\n",
+            "**100% Rule-Compliant & Untouched Evaluation Two-Level Outer-Nested Validation:**\n",
+            "- **Zero External Data / Zero Historical CSVs / Zero Precomputed Caches** (`train.csv`, `test.csv`, `sample_submission.csv` only, with live SHA-256 provenance printing)\n",
             "- **Zero Target Propagation (`partner_enc` omitted)** & **Zero Manual Test-Subset Weights**\n",
-            "- **Strictly Fold-Local Preprocessing (Inner & Outer):** Category vocabularies, medians, 13 covariate residual regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency features, 27 Bayesian TE keys (`prior_inner = y_fit[ia].mean()`), scalers, empirical probit CDFs, and simplex weights are ALL fitted strictly inside each active training fold (`df_ia` for inner folds, `df_a` for outer folds), with zero held-out validation or `test` leakage.\n",
-            "- **True Two-Level Nested Validation:** Inside each outer fold `(a, b)`, a nested 3-fold CV inside `a` produces strictly leak-free `inner_oof` predictions to calibrate probit CDFs and optimize ensemble weights before evaluating untouched outer fold `b`.\n",
-            "- **Pinned Reproducibility:** Exact library versions pinned in `requirements.txt` (including `torch==2.15.0`).\n"
+            "- **Strictly Fold-Local Preprocessing (Inner & Outer):** Category vocabularies, medians, 13 covariate residual regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency features, 27 Bayesian TE keys (`prior_inner = y_fit[ia].mean()`), scalers, empirical probit CDFs, and convex `LogisticRegression` probit weights are ALL fitted strictly inside each active training fold (`df_ia` for inner folds, `df_a` for outer folds), with zero held-out validation or `test` leakage.\n",
+            "- **Untouched Outer Evaluation Split (`SEED_EVAL=2027`):** Evaluated on a brand-new 5-fold stratified split never touched during inner-dev feature/architecture research (`SEED=42`), with GPU-accelerated `TabResMLP_NaNMask_GPU`, `TabPeriodicSwiGLU_GPU`, `CB_GPU_D7_Product`, and `XGB_CUDA_B512`.\n",
+            "- **Pinned Reproducibility:** Exact library versions pinned in `requirements.txt` (including `torch==2.14.1+cu130`).\n"
         ]
     }
 ]
@@ -47,8 +47,8 @@ section_titles = [
     "## Step 3: Outer-Fold Local Full-Covariate Expectation Residuals",
     "## Step 4: Fold-Local Aligned 6-View Inner-OOF Stacking & Group View",
     "## Step 5: Fold-Local 27 Bayesian Target Encodings",
-    "## Step 6: Orthogonal Neural Architecture (`TabResMLP`) & 9-Model Family Trainer",
-    "## Step 7: True Two-Level Outer-Nested Execution & Certified Submission Export",
+    "## Step 6: Orthogonal GPU Neural Architectures (`TabResMLP` + `TabPeriodicSwiGLU`) & 10-Model Trainer",
+    "## Step 7: True Two-Level Outer-Nested Execution (`SEED_EVAL=2027`) & Certified Submission Export",
 ]
 
 for idx_c, (a, b) in enumerate(chunks):

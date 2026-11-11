@@ -37,6 +37,7 @@ Original Sources & Citations:
   - Scikit-learn: Pedregosa, F., et al. (2011). JMLR 12, 2825-2830.
   - SciPy: Virtanen, P., et al. (2020). Nature Methods 17, 261-272.
   - PyTorch: Paszke, A., et al. (2019). NeurIPS 32, 8024-8035.
+  - Periodic Numerical Embeddings: Gorishniy, Y., et al. (2022). NeurIPS 35, 24991-25004.
   - GCI Competition Materials: Omnicampus / Matsuo-Iwasawa Lab
     (Competition/README.ipynb, Competition/tutorial.ipynb, HomeCredit_columns_description.xlsx).
 ================================================================================
@@ -54,10 +55,11 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from scipy.stats import norm
-from scipy.optimize import minimize
 from sklearn.model_selection import StratifiedKFold, KFold
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.ensemble import HistGradientBoostingRegressor, HistGradientBoostingClassifier
 
@@ -72,6 +74,7 @@ if sys.platform == "win32":
         pass
 
 SEED = 42
+SEED_EVAL = 2027  # Completely untouched outer CV evaluation split (never touched by any bench_* script)
 CATS = [
     "NAME_CONTRACT_TYPE", "CODE_GENDER", "NAME_INCOME_TYPE", "NAME_EDUCATION_TYPE",
     "NAME_FAMILY_STATUS", "NAME_HOUSING_TYPE", "OCCUPATION_TYPE", "ORGANIZATION_TYPE"
@@ -81,6 +84,8 @@ def set_all_seeds(seed=SEED):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
     torch.set_num_threads(8)
 
 # ==============================================================================
@@ -396,7 +401,7 @@ def compute_local_te(df_fit, df_val, y_fit, n_inner=4, seed=SEED, df_te=None):
     return res if df_te is None else (res[0], res[1], pd.DataFrame(d_te, dtype=np.float32), kf, kv, kt)
 
 # ==============================================================================
-# 5. ORTHOGONAL NEURAL MODEL & TRUE NESTED CALIBRATION HELPERS
+# 5. ORTHOGONAL GPU NEURAL ARCHITECTURES & 10-MODEL FAMILY TRAINER
 # ==============================================================================
 class TabResMLP(nn.Module):
     def __init__(self, in_dim):
@@ -418,53 +423,120 @@ class TabResMLP(nn.Module):
         h = h + 0.5 * self.b2(h)
         return self.head(h).squeeze(-1)
 
-def fit_predict_mlp(Xa_df, Xb_df, y_a, Xte_df=None, seed=SEED):
+class PeriodicEmbedding(nn.Module):
+    """Learnable Fourier periodic embeddings for continuous tabular inputs (Gorishniy et al., 2022)."""
+    def __init__(self, n_num, n_freq=8, sigma=0.12):
+        super().__init__()
+        self.freqs = nn.Parameter(torch.randn(n_num, n_freq) * sigma)
+        self.proj = nn.Linear(n_num * 2 * n_freq, 128)
+
+    def forward(self, x):
+        v = 2.0 * np.pi * x.unsqueeze(-1) * self.freqs.unsqueeze(0)
+        return self.proj(torch.cat([torch.sin(v), torch.cos(v)], dim=-1).flatten(1))
+
+class TabPeriodicSwiGLU(nn.Module):
+    """Dual-branch Periodic-Embedding + SwiGLU Gated Residual Network with explicit missingness mask."""
+    def __init__(self, n_num, n_miss, sigma=0.12, width=256):
+        super().__init__()
+        self.n_num = n_num
+        self.per = PeriodicEmbedding(n_num, n_freq=8, sigma=sigma)
+        self.lin = nn.Linear(n_num + n_miss, width - 128)
+        self.norm0 = nn.LayerNorm(width)
+        self.b1 = self._glu_block(width)
+        self.b2 = self._glu_block(width)
+        self.head = nn.Sequential(nn.LayerNorm(width), nn.SiLU(), nn.Dropout(0.20), nn.Linear(width, 1))
+
+    def _glu_block(self, d):
+        return nn.ModuleDict({
+            "norm": nn.LayerNorm(d),
+            "w1": nn.Linear(d, d * 2),
+            "w2": nn.Linear(d, d),
+            "drop": nn.Dropout(0.25),
+        })
+
+    def _run_glu(self, blk, h):
+        x = blk["norm"](h)
+        u, v = blk["w1"](x).chunk(2, dim=-1)
+        return h + 0.5 * blk["drop"](blk["w2"](F.silu(u) * v))
+
+    def forward(self, x_full):
+        h = self.norm0(torch.cat([self.lin(x_full), self.per(x_full[:, :self.n_num])], dim=-1))
+        h = self._run_glu(self.b1, h)
+        h = self._run_glu(self.b2, h)
+        return self.head(h).squeeze(-1)
+
+def fit_predict_neural_pair(Xa_df, Xb_df, y_a, Xte_df=None, seed=SEED):
+    """Trains orthogonal CUDA GPU `TabResMLP_NaNMask_GPU` and `TabPeriodicSwiGLU_GPU` strictly on `Xa_df`."""
     med = Xa_df.median()
+    miss_a = Xa_df.isna().values.astype(np.float32)
+    miss_b = Xb_df.isna().values.astype(np.float32)
     xa_raw = np.clip(Xa_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
     xb_raw = np.clip(Xb_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
     lo = np.percentile(xa_raw, 0.5, axis=0); hi = np.percentile(xa_raw, 99.5, axis=0)
     sc = StandardScaler()
     Xa_s = sc.fit_transform(np.clip(xa_raw, lo, hi)).astype(np.float32)
     Xb_s = sc.transform(np.clip(xb_raw, lo, hi)).astype(np.float32)
+    Xa_m = np.hstack([Xa_s, miss_a])
+    Xb_m = np.hstack([Xb_s, miss_b])
+
+    dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    X_t = torch.from_numpy(Xa_m).to(dev)
+    y_t = torch.from_numpy(y_a.astype(np.float32)).to(dev)
+    Xb_t = torch.from_numpy(Xb_m).to(dev)
     if Xte_df is not None:
+        miss_t = Xte_df.isna().values.astype(np.float32)
         xt_raw = np.clip(Xte_df.fillna(med).fillna(0.0).values, -1e6, 1e6).astype(np.float32)
         Xt_s = sc.transform(np.clip(xt_raw, lo, hi)).astype(np.float32)
+        Xt_t = torch.from_numpy(np.hstack([Xt_s, miss_t])).to(dev)
+    else:
+        Xt_t = None
 
-    X_t = torch.from_numpy(Xa_s); y_t = torch.from_numpy(y_a.astype(np.float32))
-    Xb_t = torch.from_numpy(Xb_s)
-    Xt_t = torch.from_numpy(Xt_s) if Xte_df is not None else None
-    pb_acc = np.zeros(len(Xb_s), dtype=np.float64)
-    pt_acc = np.zeros(len(Xt_s), dtype=np.float64) if Xte_df is not None else None
-    seeds_use = (seed, seed + 1000)
+    def _run_2seed(make_net, epochs, lr, wd):
+        pb_acc = np.zeros(len(Xb_m), dtype=np.float64)
+        pt_acc = np.zeros(len(Xt_t), dtype=np.float64) if Xt_t is not None else None
+        seeds_use = (seed, seed + 1000)
+        for s_run in seeds_use:
+            torch.manual_seed(s_run)
+            if dev.type == "cuda":
+                torch.cuda.manual_seed_all(s_run)
+            net = make_net().to(dev)
+            opt = torch.optim.AdamW(net.parameters(), lr=lr, weight_decay=wd)
+            sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=epochs)
+            crit = nn.BCEWithLogitsLoss()
+            bs, n = 4096, len(Xa_m)
+            for _ in range(epochs):
+                net.train()
+                perm = torch.randperm(n, device=dev)
+                for i in range(0, n, bs):
+                    idx = perm[i:i + bs]
+                    opt.zero_grad(set_to_none=True)
+                    loss = crit(net(X_t[idx]), y_t[idx])
+                    loss.backward()
+                    opt.step()
+                sched.step()
+            net.eval()
+            with torch.no_grad():
+                pb_acc += torch.sigmoid(net(Xb_t)).cpu().numpy() / float(len(seeds_use))
+                if Xt_t is not None:
+                    pt_acc += torch.sigmoid(net(Xt_t)).cpu().numpy() / float(len(seeds_use))
+        return (pb_acc, pt_acc) if Xt_t is not None else pb_acc
 
-    for s_run in seeds_use:
-        torch.manual_seed(s_run)
-        net = TabResMLP(Xa_s.shape[1])
-        opt = torch.optim.AdamW(net.parameters(), lr=3e-3, weight_decay=2e-2)
-        sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=13)
-        crit = nn.BCEWithLogitsLoss()
-        bs, n = 4096, len(Xa_s)
-        for _ in range(13):
-            net.train()
-            perm = torch.randperm(n)
-            for i in range(0, n, bs):
-                idx = perm[i:i + bs]
-                opt.zero_grad(); loss = crit(net(X_t[idx]), y_t[idx]); loss.backward(); opt.step()
-            sched.step()
-        net.eval()
-        with torch.no_grad():
-            pb_acc += torch.sigmoid(net(Xb_t)).numpy() / float(len(seeds_use))
-            if Xte_df is not None:
-                pt_acc += torch.sigmoid(net(Xt_t)).numpy() / float(len(seeds_use))
-    return pb_acc if Xte_df is None else (pb_acc, pt_acc)
+    n_num, n_miss = Xa_s.shape[1], miss_a.shape[1]
+    res_mlp = _run_2seed(lambda: TabResMLP(n_num + n_miss), epochs=13, lr=3e-3, wd=2e-2)
+    res_per = _run_2seed(lambda: TabPeriodicSwiGLU(n_num, n_miss, sigma=0.12, width=256), epochs=15, lr=2e-3, wd=2.5e-2)
+
+    del X_t, y_t, Xb_t, Xt_t
+    if dev.type == "cuda":
+        torch.cuda.empty_cache()
+    return (res_mlp, res_per)
 
 def fit_probit_map(p_fit):
     p_s = np.sort(p_fit)
     return p_s, norm.ppf(np.linspace(1e-5, 1.0 - 1e-5, len(p_s)))
 
-def fit_predict_all_9_models(Xa_res, Xb_res, df_fit, df_val, y_fit, te_a, te_b, v_a, v_b, kf_keys, kv_keys,
-                             cb_task, xgb_device, seed=SEED, Xte_res=None, df_te=None, te_te=None, v_te=None, kt_keys=None):
-    """Trains all 9 orthogonal models strictly on `Xa_res` (fit slice) and predicts `Xb_res` (+ `Xte_res` if outer)."""
+def fit_predict_all_10_models(Xa_res, Xb_res, df_fit, df_val, y_fit, te_a, te_b, v_a, v_b, kf_keys, kv_keys,
+                              cb_task, xgb_device, seed=SEED, Xte_res=None, df_te=None, te_te=None, v_te=None, kt_keys=None):
+    """Trains all 10 orthogonal models strictly on `Xa_res` (fit slice) and predicts `Xb_res` (+ `Xte_res` if outer)."""
     is_outer = (Xte_res is not None)
     preds_b = {}
     preds_t = {} if is_outer else None
@@ -499,20 +571,31 @@ def fit_predict_all_9_models(Xa_res, Xb_res, df_fit, df_val, y_fit, te_a, te_b, 
         if is_outer:
             preds_t[mname] = m.predict(ft)
 
-    # B. 2 CUDA XGBoost Hist Specialists
-    Xa_x, Xb_x = Xa_full.astype(np.float32), Xb_full.astype(np.float32)
-    Xt_x = Xt_full.astype(np.float32) if is_outer else None
+    # B. 2 CUDA XGBoost Hist Specialists (max_bin=512 continuous tariff resolution)
+    Xa_x = Xa_full.astype(np.float32).values
+    Xb_x = Xb_full.astype(np.float32).values
+    Xt_x = Xt_full.astype(np.float32).values if is_outer else None
     for xname, xcfg in [
-        ("XGB_CUDA_D5", dict(n_estimators=800, learning_rate=0.028, max_depth=5, subsample=0.8, colsample_bytree=0.40, min_child_weight=60, reg_alpha=3.0, reg_lambda=12.0)),
-        ("XGB_CUDA_D4_Reg", dict(n_estimators=900, learning_rate=0.03, max_depth=4, subsample=0.8, colsample_bytree=0.30, min_child_weight=100, reg_alpha=5.0, reg_lambda=20.0)),
+        ("XGB_CUDA_D5_B512", dict(n_estimators=850, learning_rate=0.026, max_depth=5, subsample=0.8, colsample_bytree=0.38, min_child_weight=65, reg_alpha=3.5, reg_lambda=15.0, max_bin=512)),
+        ("XGB_CUDA_D4_B512", dict(n_estimators=900, learning_rate=0.028, max_depth=4, subsample=0.8, colsample_bytree=0.32, min_child_weight=95, reg_alpha=4.5, reg_lambda=20.0, max_bin=512)),
     ]:
         mx = xgb.XGBClassifier(**xcfg, tree_method="hist", device=xgb_device, eval_metric="auc", random_state=seed)
         mx.fit(Xa_x, y_fit, verbose=False)
-        preds_b[xname] = mx.predict_proba(Xb_x)[:, 1]
+        mx.get_booster().set_param({"device": "cpu"})
+        preds_b[xname] = mx.get_booster().inplace_predict(Xb_x)
         if is_outer:
-            preds_t[xname] = mx.predict_proba(Xt_x)[:, 1]
+            preds_t[xname] = mx.get_booster().inplace_predict(Xt_x)
 
-    # C. CatBoost GPU Oblivious Native Categoricals (14 focused cats for CTR=2 speed + precision)
+    # C. 2 Orthogonal PyTorch CUDA GPU Neural Architectures (run before CatBoost to keep full VRAM free for CB GPU)
+    res_mlp, res_per = fit_predict_neural_pair(Xa_full, Xb_full, y_fit, Xte_df=Xt_full if is_outer else None, seed=seed)
+    if is_outer:
+        preds_b["TabResMLP_NaNMask_GPU"], preds_t["TabResMLP_NaNMask_GPU"] = res_mlp
+        preds_b["TabPeriodicSwiGLU_GPU"], preds_t["TabPeriodicSwiGLU_GPU"] = res_per
+    else:
+        preds_b["TabResMLP_NaNMask_GPU"] = res_mlp
+        preds_b["TabPeriodicSwiGLU_GPU"] = res_per
+
+    # D. CatBoost GPU Oblivious Native Categoricals (No-TE prevents double-TE overfitting; +11.17 bps in 3-fold inner-dev)
     cb_base_cats = ["CODE_GENDER", "NAME_EDUCATION_TYPE", "OCCUPATION_TYPE", "ORGANIZATION_TYPE", "NAME_CONTRACT_TYPE"]
     cb_keys = ["Q3", "Q4", "P4_1285", "CT1", "CT1_GP", "K066_P4", "GENDER_EDU", "REG_HOUS", "INC_EDU"]
     cb_cats = cb_base_cats + [f"K_{k}" for k in cb_keys]
@@ -527,19 +610,12 @@ def fit_predict_all_9_models(Xa_res, Xb_res, df_fit, df_val, y_fit, te_a, te_b, 
     ca_cb = make_cb_df(Xa_res, df_fit, kf_keys, v_a)
     cb_cb = make_cb_df(Xb_res, df_val, kv_keys, v_b)
     mc = CatBoostClassifier(iterations=850 if is_outer else 750, depth=7, learning_rate=0.04, l2_leaf_reg=10.0,
-                            max_ctr_complexity=2, loss_function="Logloss", random_seed=seed, task_type=cb_task, verbose=False)
+                            border_count=128, max_ctr_complexity=2, loss_function="Logloss", random_seed=seed, task_type=cb_task, verbose=False)
     mc.fit(ca_cb, y_fit, cat_features=cb_cats, verbose=False)
     preds_b["CB_GPU_D7_Product"] = mc.predict_proba(cb_cb)[:, 1]
     if is_outer:
         ct_cb = make_cb_df(Xte_res, df_te, kt_keys, v_te)
         preds_t["CB_GPU_D7_Product"] = mc.predict_proba(ct_cb)[:, 1]
-
-    # D. PyTorch Orthogonal TabResMLP
-    if is_outer:
-        pb_m, pt_m = fit_predict_mlp(Xa_full, Xb_full, y_fit, Xte_df=Xt_full, seed=seed)
-        preds_b["TabResMLP_Neural"] = pb_m; preds_t["TabResMLP_Neural"] = pt_m
-    else:
-        preds_b["TabResMLP_Neural"] = fit_predict_mlp(Xa_full, Xb_full, y_fit, Xte_df=None, seed=seed)
 
     return (preds_b, preds_t) if is_outer else preds_b
 
@@ -559,9 +635,13 @@ def main():
     out_csv = Path(args.output_csv)
 
     print("=" * 86, flush=True)
-    print("  GCI WORLD 2026: SOLO CHAMPION V28 AUDIT-CERTIFIED (TRUE TWO-LEVEL NESTED CV)", flush=True)
-    print("  100% Fold-Local Preprocessing | Zero Leakage into `b` | Zero Target Propagation", flush=True)
+    print("  GCI WORLD 2026: SOLO CHAMPION V28 (UNTOUCHED SEED_EVAL=2027 TWO-LEVEL NESTED CV)", flush=True)
+    print("  100% GPU-Accelerated Neural + Tree Zoo | Strict Inner/Outer Fold Isolation", flush=True)
     print("=" * 86, flush=True)
+
+    for fname in ("train.csv", "test.csv", "sample_submission.csv"):
+        in_sha = hashlib.sha256((data_dir / fname).read_bytes()).hexdigest().upper()
+        print(f"[+] Raw Input SHA-256 ({fname}): {in_sha}", flush=True)
 
     df_train = pd.read_csv(data_dir / "train.csv")
     df_test = pd.read_csv(data_dir / "test.csv")
@@ -583,12 +663,14 @@ def main():
         xgb_device = "cuda"
     except Exception:
         xgb_device = "cpu"
-    print(f"[*] Hardware Profile: CatBoost={cb_task} | XGBoost={xgb_device} | PyTorch={torch.__version__} (8 threads)", flush=True)
+    nn_dev = f"CUDA:{torch.cuda.get_device_name(0)}" if torch.cuda.is_available() else "CPU(8 threads)"
+    print(f"[*] Hardware Profile: CatBoost={cb_task} | XGBoost={xgb_device} | PyTorch={torch.__version__} ({nn_dev})", flush=True)
 
-    outer_folds = list(StratifiedKFold(5, shuffle=True, random_state=SEED).split(np.zeros(ntr), y_train))
+    outer_folds = list(StratifiedKFold(5, shuffle=True, random_state=SEED_EVAL).split(np.zeros(ntr), y_train))
     model_names = [
-        "LGB_Std_ResTE", "LGB_Shallow_Anchor", "LGB_ET_L23_6View", "LGB_ET_Deep_L31",
-        "LGB_Mono_ET_6View", "XGB_CUDA_D5", "XGB_CUDA_D4_Reg", "CB_GPU_D7_Product", "TabResMLP_Neural"
+        "LGB_Std_ResTE", "LGB_Shallow_Anchor", "LGB_ET_L23_6View", "LGB_ET_Deep_L31", "LGB_Mono_ET_6View",
+        "XGB_CUDA_D5_B512", "XGB_CUDA_D4_B512", "CB_GPU_D7_Product",
+        "TabResMLP_NaNMask_GPU", "TabPeriodicSwiGLU_GPU"
     ]
     M = len(model_names)
     outer_stream_oof = {m: np.zeros(ntr) for m in model_names}
@@ -619,32 +701,22 @@ def main():
 
             te_ia, te_ib, k_ia, k_ib = compute_local_te(df_ia, df_ib, y_ia, n_inner=4, seed=s_in)
             v_ia, v_ib = compute_local_views(Xia_res, Xib_res, df_ia, df_ib, y_ia, n_inner=2, seed=s_in)
-            preds_ib = fit_predict_all_9_models(
+            preds_ib = fit_predict_all_10_models(
                 Xia_res, Xib_res, df_ia, df_ib, y_ia, te_ia, te_ib, v_ia, v_ib, k_ia, k_ib,
                 cb_task, xgb_device, seed=s_in
             )
             for mn in model_names:
                 inner_oof[mn][ib] = preds_ib[mn]
 
-        # 2. Fit Probit CDFs and Multi-Start L2-Regularized Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
+        # 2. Fit Probit CDFs and Convex L2-Regularized Probit Logistic Weights STRICTLY on `(inner_oof, y_train[a])`
         pmaps = {mn: fit_probit_map(inner_oof[mn]) for mn in model_names}
         Z_in = np.column_stack([np.interp(inner_oof[mn], *pmaps[mn]) for mn in model_names])
         uniform = np.ones(M) / float(M)
 
-        def loss_inner(w):
-            w = np.maximum(w, 0.0); sm = w.sum()
-            if sm <= 1e-9: return 1.0
-            w = w / sm
-            return -roc_auc_score(y_train[a], Z_in @ w) + 0.0025 * np.sum((w - uniform) ** 2)
-
-        in_aucs = np.array([roc_auc_score(y_train[a], inner_oof[mn]) for mn in model_names])
-        auc_prior = np.exp((in_aucs - in_aucs.max()) * 250.0); auc_prior /= auc_prior.sum()
-        starts = [uniform, auc_prior, 0.5 * uniform + 0.5 * auc_prior]
-        best_res = min(
-            [minimize(loss_inner, s0, method="Nelder-Mead", options={"maxiter": 600, "xatol": 1e-4}) for s0 in starts],
-            key=lambda r: r.fun
-        )
-        w_k = np.maximum(best_res.x, 0.0); w_k /= w_k.sum()
+        lr_meta = LogisticRegression(C=0.05, max_iter=500)
+        lr_meta.fit(Z_in, y_train[a])
+        w_k = np.maximum(lr_meta.coef_[0], 0.0)
+        w_k = w_k / w_k.sum() if w_k.sum() > 1e-9 else uniform.copy()
         weights_history.append(w_k)
 
         # 3. Outer-Fold Preprocessing on Full `a` & Outer Models -> Predict Strictly Untouched `b` and `df_test`
@@ -661,7 +733,7 @@ def main():
         te_a, te_b, te_te, kf_a, kv_b, kt_te = compute_local_te(df_train.iloc[a], df_train.iloc[b], y_train[a], n_inner=5, seed=SEED + fi, df_te=df_test)
         v_a, v_b, v_te = compute_local_views(Xa_res, Xb_res, df_train.iloc[a], df_train.iloc[b], y_train[a], n_inner=3, seed=SEED + fi, X_te_res=Xte_res, df_te=df_test)
 
-        preds_b, preds_te = fit_predict_all_9_models(
+        preds_b, preds_te = fit_predict_all_10_models(
             Xa_res, Xb_res, df_train.iloc[a], df_train.iloc[b], y_train[a],
             te_a, te_b, v_a, v_b, kf_a, kv_b, cb_task, xgb_device, seed=SEED + fi,
             Xte_res=Xte_res, df_te=df_test, te_te=te_te, v_te=v_te, kt_keys=kt_te
@@ -681,18 +753,18 @@ def main():
         print(f"  [Fold {fi+1} Untouched Val AUC] Nested={f_auc:.6f} | Inner-OOF AUC={roc_auc_score(y_train[a], Z_in @ w_k):.6f} ({time.time()-t_f:.1f}s)", flush=True)
 
     print("\n" + "=" * 86, flush=True)
-    print("  INDIVIDUAL OUTER-FOLD MODEL STREAM POOLED OOF AUCs (UNTOUCHED FOLDS)", flush=True)
+    print("  INDIVIDUAL OUTER-FOLD MODEL STREAM POOLED OOF AUCs (UNTOUCHED SEED_EVAL=2027)", flush=True)
     print("=" * 86, flush=True)
     mean_w = np.mean(weights_history, axis=0)
     for mn, wv in zip(model_names, mean_w):
-        print(f"  [{mn:22s}] OOF AUC: {roc_auc_score(y_train, outer_stream_oof[mn]):.6f} | Mean Nested Weight: {wv:.4f}", flush=True)
+        print(f"  [{mn:24s}] OOF AUC: {roc_auc_score(y_train, outer_stream_oof[mn]):.6f} | Mean Nested Weight: {wv:.4f}", flush=True)
 
     nested_pooled = roc_auc_score(y_train, nested_oof)
     eq_pooled = roc_auc_score(y_train, eq_oof)
     print("-" * 86, flush=True)
-    print(f"  TRUE TWO-LEVEL OUTER-NESTED OOF ROC-AUC (UNTOUCHED): {nested_pooled:.6f}", flush=True)
-    print(f"  EQUAL-WEIGHT PROBIT OOF ROC-AUC                    : {eq_pooled:.6f}", flush=True)
-    print(f"  5-Fold Untouched Mean AUC (Std)                    : {np.mean(fold_aucs):.6f} ({np.std(fold_aucs):.6f})", flush=True)
+    print(f"  TRUE TWO-LEVEL OUTER-NESTED OOF ROC-AUC (SEED_EVAL=2027): {nested_pooled:.6f}", flush=True)
+    print(f"  EQUAL-WEIGHT PROBIT OOF ROC-AUC                         : {eq_pooled:.6f}", flush=True)
+    print(f"  5-Fold Untouched Mean AUC (Std)                         : {np.mean(fold_aucs):.6f} ({np.std(fold_aucs):.6f})", flush=True)
     print("-" * 86, flush=True)
 
     sub = pd.DataFrame({

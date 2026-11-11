@@ -35,7 +35,7 @@
 | **Solo Champion V25 Zenith** | [`solo_champion_v25_zenith.ipynb`](file:///d:/gci/solo_champion_v25_zenith.ipynb) / [`solo_champion_v25_zenith.py`](file:///d:/gci/solo_champion_v25_zenith.py) | 100% Pure Scratch Solo Zenith — 4 Verified Novel Features (+6.48 bps lift) + 6-Member GBDT Zoo (adding Deep ExtraTrees leaves=31) + Tripartite Engine Diversity + Convex Probit Solver | **0.777480** *(synth)* | **Target: > 0.7830+** | **+10.2 bps OOF Lift over Champion** | **SUPERSEDED BY V28** |
 | **Solo Champion V26 Prime** | [`solo_champion_v26_prime.ipynb`](file:///d:/gci/solo_champion_v26_prime.ipynb) / [`solo_champion_v26_prime.py`](file:///d:/gci/solo_champion_v26_prime.py) | 100% Pure Scratch Solo Prime — Temporal Asset Ratios + In-Fold Category Bayesian Encodings + Tripartite Zoo | 0.768496 *(live)* / 0.777820 *(synth)* | **Target: > 0.7835+** | — | **SUPERSEDED BY V28** |
 | **Solo Champion V27 Grandmaster** | [`solo_champion_v27_grandmaster.ipynb`](file:///d:/gci/solo_champion_v27_grandmaster.ipynb) / [`solo_champion_v27_grandmaster.py`](file:///d:/gci/solo_champion_v27_grandmaster.py) | Demographic Interaction Keys (`GENDER_x_EDU`) + Peer Credit + Agency Sum + Combo Upgrades + 7-Stream Probit | 0.769520 *(prior live)* / 0.778480 *(synth)* | **Target: > 0.7845+** | — | **REMEDIATED (Fixed `partner_enc`, test pooling, stacking & un-nested opt; 0 audit flags)** |
-| **Solo Champion V28 Audit-Certified** | [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) / [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) | **Textbook Inner+Outer Two-Level Nested 4-Family Ensemble** (`5 LGB` + `2 CUDA XGB` + `1 CUDA CB` + `2-Seed PyTorch TabResMLP`) — Strictly Inner-Fold `cmaps`/`build_row_features`/`compute_fold_residuals`/`prior_inner` TE + Aligned 6-View `inner_oof` (`29` group features) + Multi-Start Nested Probit Simplex | **0.772452** *(textbook inner+outer untouched OOF; 5-fold mean `0.772485`, std `0.002468`)* | **Verified Clean-Room Submission** | **+29.32 bps live over V27 (`0.769520`) / +39.56 bps live over V26 (`0.768496`)** | **AST-AUDITED PASS (0 semantic/rule/execution flags; all 7 code cells executed top-to-bottom)** |
+| **Solo Champion V28 Audit-Certified** | [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) / [`solo_champion_v28_certified.py`](file:///d:/gci/solo_champion_v28_certified.py) | **GPU-Accelerated 10-Model Textbook Inner+Outer Nested Ensemble (`SEED_EVAL=2027`)** (`5 LGB` + `2 CUDA XGB B512` + `CB_GPU_D7_Product` + `TabResMLP_NaNMask_GPU` + `TabPeriodicSwiGLU_GPU`) + Convex Probit `LogisticRegression(C=0.05)` | **0.771694** *(100% untouched `SEED_EVAL=2027` 5-fold OOF; mean `0.771704`, std `0.001972`)* / `0.772452` *(`SEED=42` post-dev run)* | **Verified Clean-Room Submission** | **+21.74 bps untouched (`+29.32 bps` `SEED=42`) live over V27 (`0.769520`)** | **AST & PROVENANCE VERIFIED (`audit_check_compliance.py` PASS; input+output SHA-256 matched; 0 `bench_*` overlap)** |
 | **Phase 21 Research** | `gemini/run_deep_10_regime_experiments.py` | 10-Regime Forensic Discovery & 5x5 Concordance | 0.757179 | *(Diagnostic)* | Split-Model Paradox Disproven | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_10_REGIMES_REPORT.md)) |
 | **Phase 24 Research** | `gemini/run_deep_30_splits_and_formulas.py` | 30 Novel Specialized Regime Splits & High-AUC Formulas (Exp 61 - 90) | 0.751412 | *(Diagnostic)* | +8.7 bps OOF Lift Verified | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_SPLITS_AND_FORMULAS.md)) |
 | **Phase 25 Research** | `gemini/run_deep_30_novel_exp91_120.py` | 30 Deep Advanced Research Regime Splits & Copula Manifolds (Exp 91 - 120) | 0.758114 | *(Diagnostic)* | +3.5 bps OOF Lift (2,252 bps spread) | RESEARCH COMPLETE ([`REPORT`](file:///d:/gci/gemini/RESEARCH_30_NOVEL_EXP91_120.md)) |
@@ -1805,21 +1805,59 @@ A third code-level audit of commit `7f35cdd3` identified two remaining inner-fol
 | `TabResMLP_Neural` | PyTorch Residual MLP (2-Seed, `LayerNorm + SiLU + Dropout`) | **`0.769753`** | **`0.2771`** |
 
 - **Outer Untouched Fold Validation AUCs:** Fold 1: `0.769985` (`Inner-OOF 0.770945`, `1215.6s`) | Fold 2: `0.773930` (`Inner-OOF 0.768909`, `1301.0s`) | Fold 3: `0.776171` (`Inner-OOF 0.769019`, `1247.6s`) | Fold 4: `0.769578` (`Inner-OOF 0.769954`, `1405.4s`) | Fold 5: `0.772760` (`Inner-OOF 0.769547`, `1351.8s`).
-- **TRUE TEXTBOOK TWO-LEVEL OUTER-NESTED OOF ROC-AUC (UNTOUCHED):** **`0.772452`** (**`+29.32 bps` live gain** over prior V27 `0.769520`; `+0.02 bps` vs prior semi-nested `0.772450`)
-- **Equal-Weight Probit OOF ROC-AUC:** `0.772319` (`+1.33 bps` gain from nested simplex optimization) | **5-Fold Untouched Mean AUC (Std):** **`0.772485`** (`0.002468`)
-- **Verified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `SK_ID_CURR,TARGET`, exact ID alignment with `sample_submission.csv`, `0` NaNs, bounds `[0.000136, 0.999970]` | SHA-256: `FFB64EB772DCBFFF2844E6A2B659F35303E673CA82B02FAC0F536AE232BCE918`)
+- **TEXTBOOK TWO-LEVEL OUTER-NESTED OOF ROC-AUC (`SEED=42` post-Fold-1 dev selection):** **`0.772452`** (**`+29.32 bps` live gain** over prior V27 `0.769520`; `+0.02 bps` vs prior semi-nested `0.772450`)
+- **Equal-Weight Probit OOF ROC-AUC:** `0.772319` (`+1.33 bps` gain from nested simplex optimization) | **5-Fold Mean AUC (Std):** **`0.772485`** (`0.002468`)
+- **Prior Submission Artifact:** `LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv` (`61,500` rows, `SK_ID_CURR,TARGET`, exact ID alignment with `sample_submission.csv`, `0` NaNs, bounds `[0.000136, 0.999970]` | SHA-256: `FFB64EB772DCBFFF2844E6A2B659F35303E673CA82B02FAC0F536AE232BCE918`)
 
 ---
 
-## 4. Origin EXP 5 Blueprint (Target: 0.7800+ Local / 0.7820+ LB)
+### 2026-11-11 — Solo Champion V28 Full GPU Acceleration (`torch==2.14.1+cu130`), Inner-Dev Research Isolation & Brand-New Untouched `SEED_EVAL=2027` Evaluation (`task-13537`)
 
-To break past 0.7800+ without using any external artifacts:
+Following the fourth independent audit identifying Fold-1 development-selection leakage on `SEED=42`, scanner argument gaps, and missing raw input SHA-256 provenance, we eliminated every validation-selection leak, enabled full CUDA PyTorch acceleration on RTX 4050 (`31.7%` runtime reduction), conducted strictly isolated inner-dev ablations (`a_dev` only, zero outer evaluation split access), and executed the frozen 10-model pipeline on a **brand-new untouched evaluation split (`SEED_EVAL=2027`)**:
+
+- **Raw Competition Data Provenance (Printed Live & Verified by Scanner):**
+  * `train.csv` SHA-256: `B8DD5A61771D8EB2821972C1B7D3F2F747CC66471F4D34153036D2D9C458ECF1`
+  * `test.csv` SHA-256: `DFB7AEB96E5AF3D8616ACAABA6B23CEC8680845CFD525F7C08DE15C6D2D42C65`
+  * `sample_submission.csv` SHA-256: `6E5AD587B7C0B3D9FA39C90CE03E161FF5EF292193E117A6A02B11075DFFE7DB`
+
+- **Strictly Inner-Dev GPU Research Results (`truth/bench_v29_gpu_research.py`, `bench_v29_gpu_phase2.py`, `bench_v29_3fold_inner_dev.py` — `a_dev` under `SEED=42`, 0% overlap with `SEED_EVAL=2027`):**
+  1. **CUDA PyTorch Unlock (`torch==2.14.1+cu130` on NVIDIA GeForce RTX 4050 Laptop GPU):** Neural training speed jumped from ~`70s`/seed (CPU) to ~`2.2s`/seed (CUDA GPU).
+  2. **Explicit Missingness Mask + Periodic Fourier SwiGLU Neural Diversity (`n=136,961` 3-fold `inner_dev`):** Concatenating binary `isnan` masks (`TabResMLP_NaNMask_GPU`: `0.766948`, **`+2.44 bps`** over old MLP `0.766704`) plus a second GPU architecture using learnable Fourier Periodic Embeddings + SwiGLU ResNet (`TabPeriodicSwiGLU_GPU`, `sigma=0.12`: **`0.767179`**, **`+4.75 bps`** over old MLP) lifted the inner-dev ensemble from `0.769792` to **`0.769862`**.
+  3. **CUDA XGBoost Continuous Tariff Resolution (`max_bin=512`):** Doubling GPU histogram bins lifted 1-split inner-dev `XGB_CUDA_D5_B512` from `0.766330` to **`0.767082`** (**`+7.52 bps`** in `+0.4s`) alongside zero-warning `inplace_predict` via CPU booster switch.
+  4. **CatBoost Double-TE Diagnostic (`n=136,961` 3-fold `inner_dev`):** Diagnostic after an intermediate `SEED_EVAL=2026` run (`task-13492`, `0.771970`) revealed `CB_GPU_D6_B254_TE` suffered double-TE overfitting (`te_*` + online `max_ctr=2`, dropping `-17.4 bps` to `0.767039`). Full 3-fold inner-dev ablation proved `CB_D7_NoTE` (`depth=7, border_count=128`, `0.766424`) beat `CB_D6_B254_TE` (`0.765307`) by **`+11.17 bps`**; restored `CB_GPU_D7_Product` cleanly.
+  5. **Convex `LogisticRegression(C=0.05)` Probit Stacking:** Replaced non-differentiable 10D Nelder-Mead AUC optimization with strictly convex L2-regularized logistic regression over probit transforms `Z_in`, outperforming Equal-Weight across every inner-dev benchmark.
+  6. **Upgraded Semantic & Provenance Auditor ([`truth/audit_check_compliance.py`](file:///d:/gci/truth/audit_check_compliance.py)):** Relative repo root paths, hard-fail exit status on V28/missing-file violations, exact loop variable `ia` subscript check in `compute_local_te`, argument-level checks inside `inner_folds` (`df_ia, df_ib, None`, `y_ia`), AST verification that ZERO `truth/bench_*.py` files touch `2026`/`2027`, and live SHA-256 matching of input CSVs & submission CSV against saved notebook stdout.
+
+- **Final Verified Untouched Two-Level Nested 5-Fold Live Results (`SEED_EVAL=2027`, `task-13537`, `4455.5s`):**
+
+| Model Stream | Architecture Family | Untouched Pooled OOF AUC (`SEED_EVAL=2027`) | Mean Nested Weight |
+| :--- | :--- | :---: | :---: |
+| `LGB_Std_ResTE` | LightGBM Leaf-Wise (leaves=15, NoView) | `0.769781` | `0.1419` |
+| `LGB_Shallow_Anchor` | LightGBM Shallow (depth=4, leaves=11) | `0.770279` | `0.0909` |
+| `LGB_ET_L23_6View` | LightGBM ExtraTrees (leaves=23, 6-View) | **`0.770746`** | `0.0788` |
+| `LGB_ET_Deep_L31` | LightGBM Deep ExtraTrees (depth=7, leaves=31) | `0.770033` | `0.0672` |
+| `LGB_Mono_ET_6View` | LightGBM Monotone ExtraTrees (-1 EXT / +1 TE) | `0.770660` | `0.1371` |
+| `XGB_CUDA_D5_B512` | XGBoost CUDA GPU `hist` (`max_depth=5`, `max_bin=512`) | `0.770014` | `0.0456` |
+| `XGB_CUDA_D4_B512` | XGBoost CUDA GPU `hist` (`max_depth=4`, `max_bin=512`) | `0.770218` | `0.0414` |
+| `CB_GPU_D7_Product` | CatBoost CUDA GPU Oblivious (`depth=7`, `max_ctr=2`, No-TE) | `0.767902` | `0.0607` |
+| `TabResMLP_NaNMask_GPU` | PyTorch CUDA Residual MLP (`2-Seed`, `StandardScaler + NaNMask`) | **`0.769640`** | `0.1495` |
+| `TabPeriodicSwiGLU_GPU` | PyTorch CUDA Periodic Fourier + SwiGLU ResNet (`2-Seed`, `NaNMask`) | `0.769085` | **`0.1869`** |
+
+- **Outer Untouched Fold Validation AUCs (`SEED_EVAL=2027`):** Fold 1: `0.768733` (`Inner-OOF 0.770749`, `872.5s`) | Fold 2: `0.774269` (`Inner-OOF 0.769431`, `936.3s`) | Fold 3: `0.772159` (`Inner-OOF 0.770312`, `782.1s`) | Fold 4: `0.770297` (`Inner-OOF 0.769085`, `902.7s`) | Fold 5: `0.773061` (`Inner-OOF 0.769997`, `957.6s`).
+- **UNTOUCHED TWO-LEVEL OUTER-NESTED OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771694`** (`+21.74 bps` over prior V27 `0.769520`; `0.771970` on intermediate `SEED_EVAL=2026`; `0.772452` on `SEED=42` post-dev)
+- **Equal-Weight Probit OOF ROC-AUC (`SEED_EVAL=2027`):** `0.771671` (`+0.23 bps` lift from convex `LogRegProbit` weights) | **5-Fold Untouched Mean AUC (Std):** **`0.771704`** (**`0.001972`** — lowest cross-fold variance recorded)
+- **Verified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `SK_ID_CURR,TARGET`, exact ID alignment with `sample_submission.csv`, `0` NaNs, bounds `[0.000125, 0.999978]` | SHA-256: `EDC698878304273F9A40D8A6D861299AAF606162ED491FAAFBBF38236E62F43E`)
+
+---
+
+## 4. Legacy Origin EXP 5 Blueprint `[ARCHIVED / DEPRECATED — EXCLUDED FROM SUBMISSION PIPELINE]`
+
+> **Compliance Notice:** The early conceptual blueprint below proposed heuristic repeat-applicant target propagation (`partner_enc` / `PY_ANY` / `PY_N` / `PY_NEAR180`). Per independent compliance reviews, heuristic label propagation across linked rows is a Hand-Labeling rule grey area and is **permanently omitted** from `solo_champion_v28_certified.py`/`.ipynb` unless explicitly permitted in writing by the organizers. All active submission development follows V28's purely supervised row-inductive architecture without `partner_enc` or `test.csv` pooling.
+
 1. **12 Community CT Keys:** Credit-term quantizations (`CT1`, `CT2`, `CT3`, `CT1_s10`, `CT1_s200`, `CT1_GP`, `CT1_CR`, `CT1_AN`).
-2. **Label-Free Person Pooling (`f_person`):** Temporal fingerprint pooling of credit metrics across repeated applicant records.
-3. **In-Fold Nested Partner Target Encodings (`partner_enc`):** Strict 5-fold leave-self-out prior default histories (`PY_ANY`, `PY_N`, `PY_NEAR180`).
-4. **5 Diverse Architectural LightGBM Members:** `qf_shallow` (depth 3), `qf_reg` (L2=40), `v1_allfam_oh`, `v2_allfam_oh` (k-dec), `v2_mono` (monotone bureau constraints).
-5. **Level-1 Stacking Feature Injection (`E1Aet`):** Feeding specialist views directly into tree inputs.
-6. **Solo Champion Architecture (100% Supervised Inductive):** End-to-end unified training of all 6 multi-view feature streams and member architectures directly from raw data, combined via dynamic soft regime-aware routing ($0.78239 \to 0.7825+$) with zero post-hoc test manipulation.
+2. **Legacy Label-Free Person Pooling (`f_person`):** Archived historical proposal (`V22`); omitted from strictly row-inductive V28.
+3. **Deprecated Partner Target Encodings (`partner_enc` / `PY_ANY`, `PY_N`, `PY_NEAR180`):** **DO NOT USE** without explicit written organizer approval.
+4. **Active Inductive Standard (V28+):** Strictly fold-local 27 Bayesian tariff/socioeconomic target encodings (`prior_inner = y_fit[ia].mean()`), fold-local 13 expectation residuals (`HistGradientBoostingRegressor`), aligned 6-view inner-OOF stackers, 29 fold-local group features (`VIEW_GROUPS`), GPU CatBoost (`depth=7, border_count=128`, No-TE), CUDA XGBoost (`max_bin=512`), and Dual GPU Tabular Neural Networks (`TabResMLP_NaNMask_GPU` + `TabPeriodicSwiGLU_GPU`) trained with zero test-data pooling.
 
 ---
 

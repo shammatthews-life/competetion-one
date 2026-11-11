@@ -1,4 +1,4 @@
-# Pinned Environment Dependencies for Solo Champion V28 Clean-Room Pipeline
+--extra-index-url https://download.pytorch.org/whl/cu130
 numpy==2.5.4
 pandas==3.1.0
 scipy==1.18.1
@@ -6,4 +6,4 @@ scikit-learn==1.9.1
 lightgbm==4.7.0
 xgboost==3.4.1
 catboost==1.2.10
-torch==2.15.0
+torch==2.14.1+cu130

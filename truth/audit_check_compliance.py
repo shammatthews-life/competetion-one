@@ -1,7 +1,11 @@
 import ast
+import hashlib
 import json
 import re
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
 
 CHECKS = [
     ("External/Historical CSV or Cache Read", r"(GCI_submission|pre info|\.npz|\.pkl|\.npy)"),
@@ -46,21 +50,28 @@ def extract_code(p: Path):
 
 def extract_ipynb_source(p: Path) -> str:
     nb = json.loads(p.read_text(encoding="utf-8"))
-    parts = []
+    return "\n".join("".join(c.get("source", [])) for c in nb.get("cells", []) if c.get("cell_type") == "code")
+
+def extract_ipynb_outputs(p: Path) -> str:
+    nb = json.loads(p.read_text(encoding="utf-8"))
+    out = []
     for c in nb.get("cells", []):
         if c.get("cell_type") == "code":
-            parts.append("".join(c.get("source", [])))
-    return "\n".join(parts)
+            for o in c.get("outputs", []):
+                if "text" in o:
+                    out.append("".join(o["text"]) if isinstance(o["text"], list) else str(o["text"]))
+    return "\n".join(out)
 
 def check_requirements(src: str, req_path: Path):
     if not req_path.exists():
-        return []
+        return ["MISSING requirements.txt"]
     req_pkgs = set()
     for ln in req_path.read_text(encoding="utf-8").splitlines():
         ln = ln.strip()
-        if ln and not ln.startswith("#"):
-            pkg = ln.split("==")[0].lower().replace("-", "_")
-            req_pkgs.add(pkg)
+        if ln and not ln.startswith("#") and not ln.startswith("--"):
+            pkg = re.split(r"[=<>!~\[]", ln)[0].strip().lower().replace("-", "_")
+            if pkg:
+                req_pkgs.add(pkg)
     import_map = {"sklearn": "scikit_learn", "catboost": "catboost", "lightgbm": "lightgbm",
                   "xgboost": "xgboost", "torch": "torch", "scipy": "scipy", "numpy": "numpy", "pandas": "pandas"}
     missing = []
@@ -82,13 +93,15 @@ def _calls_in_nodes(nodes):
         for sub in ast.walk(node):
             if isinstance(sub, ast.Call):
                 if isinstance(sub.func, ast.Name):
-                    calls.append((sub.lineno, sub.func.id))
+                    calls.append((sub.lineno, sub.func.id, sub))
                 elif isinstance(sub.func, ast.Attribute):
-                    calls.append((sub.lineno, sub.func.attr))
+                    calls.append((sub.lineno, sub.func.attr, sub))
     return calls
 
+def _arg_names(call_node):
+    return [ast.unparse(a) for a in call_node.args] + [f"{k.arg}={ast.unparse(k.value)}" for k in call_node.keywords]
+
 def _has_yfit_mean(node):
-    """Returns True if AST subtree contains bare `y_fit.mean()` (not `y_fit[ia].mean()`)."""
     for sub in ast.walk(node):
         if isinstance(sub, ast.Call) and isinstance(sub.func, ast.Attribute) and sub.func.attr == "mean":
             val = sub.func.value
@@ -96,26 +109,31 @@ def _has_yfit_mean(node):
                 return True
     return False
 
-def _has_yfit_ia_mean(node):
-    """Returns True if AST subtree contains `y_fit[ia].mean()`."""
+def _has_yfit_exact_ia_mean(node, ia_var: str):
     for sub in ast.walk(node):
         if isinstance(sub, ast.Call) and isinstance(sub.func, ast.Attribute) and sub.func.attr == "mean":
             val = sub.func.value
             if isinstance(val, ast.Subscript) and isinstance(val.value, ast.Name) and val.value.id == "y_fit":
-                return True
+                if isinstance(val.slice, ast.Name) and val.slice.id == ia_var:
+                    return True
     return False
+
+def _get_inner_ia_var(loop_node):
+    if isinstance(loop_node.target, ast.Tuple) and len(loop_node.target.elts) >= 1:
+        if isinstance(loop_node.target.elts[0], ast.Name):
+            return loop_node.target.elts[0].id
+    return None
 
 def check_v28_semantics(src: str):
     flags = []
     tree = ast.parse(src)
     fn_map = {n.name: n for n in tree.body if isinstance(n, ast.FunctionDef)}
 
-    # 1. Semantic Check: compute_local_te prior isolation
+    # 1. Semantic Check: compute_local_te prior isolation (`y_fit[ia].mean()` strictly matching loop var)
     if "compute_local_te" not in fn_map:
         flags.append("Missing compute_local_te function")
     else:
         te_fn = fn_map["compute_local_te"]
-        # Find top-level loop over `in_splits` or inner loop inside `for kname`
         inner_loops = []
         pre_loop_stmts = []
         for stmt in te_fn.body:
@@ -123,7 +141,6 @@ def check_v28_semantics(src: str):
                 for sub in ast.walk(stmt):
                     if isinstance(sub, ast.For) and isinstance(sub.iter, ast.Name) and sub.iter.id == "in_splits":
                         inner_loops.append(sub)
-                # Check direct children of `for kname` before `for ia, ib in in_splits:`
                 if any(isinstance(sub, ast.For) for sub in stmt.body):
                     for s2 in stmt.body:
                         if isinstance(s2, ast.For) and isinstance(s2.iter, ast.Name) and s2.iter.id == "in_splits":
@@ -137,12 +154,13 @@ def check_v28_semantics(src: str):
         if not inner_loops:
             flags.append("Missing `in_splits` loop inside compute_local_te")
         for lp in inner_loops:
+            ia_var = _get_inner_ia_var(lp)
             if _has_yfit_mean(lp):
                 flags.append(f"Full `y_fit.mean()` used inside `in_splits` loop in compute_local_te (L{lp.lineno})")
-            if not _has_yfit_ia_mean(lp):
-                flags.append(f"Missing fold-local `y_fit[ia].mean()` inside `in_splits` loop (L{lp.lineno})")
+            if not ia_var or not _has_yfit_exact_ia_mean(lp, ia_var):
+                flags.append(f"Missing exact fold-local `y_fit[{ia_var}].mean()` inside `in_splits` loop (L{lp.lineno})")
 
-    # 2. Semantic Check: outer_folds & inner_folds preprocessing placement in main()
+    # 2. Semantic Check: outer_folds & inner_folds preprocessing placement + exact inner arguments
     if "main" not in fn_map:
         flags.append("Missing main() function")
     else:
@@ -158,7 +176,7 @@ def check_v28_semantics(src: str):
         if outer_loop is None:
             flags.append("Missing `for ... in enumerate(outer_folds):` loop in main()")
         else:
-            for lno, fn in _calls_in_nodes(before_outer):
+            for lno, fn, _ in _calls_in_nodes(before_outer):
                 if fn in PREPROC_FUNCS:
                     flags.append(f"Preprocessing `{fn}()` called before outer_folds at L{lno}")
 
@@ -173,45 +191,96 @@ def check_v28_semantics(src: str):
             if inner_loop is None:
                 flags.append("Missing `for ... in enumerate(inner_folds):` loop inside outer_folds")
             else:
-                for lno, fn in _calls_in_nodes(before_inner):
+                for lno, fn, _ in _calls_in_nodes(before_inner):
                     if fn in PREPROC_FUNCS:
-                        flags.append(f"Outer preprocessing `{fn}()` called before inner_folds (shared across ia/ib) at L{lno}")
-                inner_calls = {fn for _, fn in _calls_in_nodes([inner_loop])}
+                        flags.append(f"Outer preprocessing `{fn}()` called before inner_folds at L{lno}")
+                inner_calls = _calls_in_nodes([inner_loop])
+                seen_inner = {}
+                for lno, fn, node in inner_calls:
+                    seen_inner.setdefault(fn, []).append((lno, _arg_names(node)))
                 required_inner = {"fit_category_maps", "build_row_features", "compute_fold_residuals", "compute_local_te", "compute_local_views"}
-                missing_inner = sorted(required_inner - inner_calls)
+                missing_inner = sorted(required_inner - set(seen_inner))
                 if missing_inner:
                     flags.append(f"Missing inside inner_folds loop: {missing_inner}")
+                # Argument-level isolation verification inside inner_folds:
+                for lno, args in seen_inner.get("fit_category_maps", []):
+                    if args != ["df_ia"]:
+                        flags.append(f"fit_category_maps must take `df_ia` inside inner_folds (got {args} at L{lno})")
+                for lno, args in seen_inner.get("compute_fold_residuals", []):
+                    if args[:3] != ["df_ia", "df_ib", "None"]:
+                        flags.append(f"compute_fold_residuals inside inner_folds must pass (df_ia, df_ib, None) (got {args} at L{lno})")
+                for lno, args in seen_inner.get("compute_local_te", []):
+                    if args[:3] != ["df_ia", "df_ib", "y_ia"]:
+                        flags.append(f"compute_local_te inside inner_folds must pass (df_ia, df_ib, y_ia) (got {args} at L{lno})")
+                for lno, args in seen_inner.get("compute_local_views", []):
+                    if args[:5] != ["Xia_res", "Xib_res", "df_ia", "df_ib", "y_ia"]:
+                        flags.append(f"compute_local_views inside inner_folds must pass (Xia_res, Xib_res, df_ia, df_ib, y_ia) (got {args} at L{lno})")
 
     if "s_oof[a]" in src:
         flags.append("Global `s_oof[a]` slicing detected instead of true `inner_oof`")
     return flags
 
-def check_notebook_executed(nb_path: Path):
+def verify_notebook_and_artifacts(nb_path: Path, py_path: Path):
+    flags = []
     nb = json.loads(nb_path.read_text(encoding="utf-8"))
-    unexec = []
-    no_out = []
-    for idx, c in enumerate(nb.get("cells", [])):
-        if c.get("cell_type") == "code":
-            if not isinstance(c.get("execution_count"), int):
-                unexec.append(idx)
-            if len(c.get("outputs", [])) == 0:
-                no_out.append(idx)
-    return unexec, no_out
+    cc = [c for c in nb.get("cells", []) if c.get("cell_type") == "code"]
+    unexec = [i for i, c in enumerate(cc) if not isinstance(c.get("execution_count"), int)]
+    no_out = [i for i, c in enumerate(cc) if len(c.get("outputs", [])) == 0]
+    if unexec or no_out:
+        flags.append(f"Unexecuted/empty code cells: unexec={unexec}, empty_outputs={no_out}")
+
+    # Verify saved output SHA-256 of submission + raw inputs against disk files
+    out_txt = extract_ipynb_outputs(nb_path)
+    sub_path = ROOT / "LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv"
+    if not sub_path.exists():
+        flags.append(f"Missing submission CSV: {sub_path}")
+    else:
+        sub_sha = hashlib.sha256(sub_path.read_bytes()).hexdigest().upper()
+        if sub_sha not in out_txt:
+            flags.append(f"Notebook output does not record current disk submission SHA-256 ({sub_sha})")
+
+    for fname in ("train.csv", "test.csv", "sample_submission.csv"):
+        fpath = ROOT / "inpuy" / fname
+        if fpath.exists():
+            f_sha = hashlib.sha256(fpath.read_bytes()).hexdigest().upper()
+            if f_sha not in out_txt:
+                flags.append(f"Notebook output missing raw input provenance SHA-256 for {fname} ({f_sha[:16]}...)")
+
+    # Verify notebook code matches .py core logic (excluding notebook print wrapper)
+    py_lines = {ln.strip() for ln in py_path.read_text(encoding="utf-8").splitlines() if ln.strip() and not ln.strip().startswith("#")}
+    nb_src = extract_ipynb_source(nb_path)
+    if "main()" not in nb_src:
+        flags.append("Notebook source missing main() invocation")
+    if "SEED_EVAL = 2027" in py_lines and "SEED_EVAL = 2027" not in nb_src:
+        flags.append("Notebook SEED_EVAL mismatch with Python source")
+    return flags
+
+def check_bench_split_isolation(eval_seeds=(2026, 2027)):
+    flags = []
+    for p in sorted((ROOT / "truth").glob("bench_*.py")):
+        tree = ast.parse(p.read_text(encoding="utf-8", errors="ignore"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Constant) and node.value in eval_seeds:
+                flags.append(f"Benchmark {p.name} uses integer literal {node.value} in executable code (L{node.lineno})")
+                break
+    return flags
 
 def main():
-    targets = [
-        Path(r"D:\gci\GCI_v22_pure_champion_master.ipynb"),
-        Path(r"D:\gci\solo_champion_v23_master.py"),
-        Path(r"D:\gci\solo_champion_v27_grandmaster.py"),
-        Path(r"D:\gci\solo_champion_v28_certified.py"),
-        Path(r"D:\gci\solo_champion_v28_certified.ipynb"),
+    required = [
+        ROOT / "GCI_v22_pure_champion_master.ipynb",
+        ROOT / "solo_champion_v23_master.py",
+        ROOT / "solo_champion_v27_grandmaster.py",
+        ROOT / "solo_champion_v28_certified.py",
+        ROOT / "solo_champion_v28_certified.ipynb",
     ]
-    req_path = Path(r"D:\gci\requirements.txt")
+    req_path = ROOT / "requirements.txt"
+    v28_failed = False
 
-    for p in targets:
+    for p in required:
         print(f"\n=== AUDIT SCAN: {p.name} ===")
         if not p.exists():
-            print("  (not found)")
+            print("  [FAIL] Required file missing!")
+            v28_failed = True
             continue
         code_lines = extract_code(p)
         clean = True
@@ -225,17 +294,31 @@ def main():
             missing_req = check_requirements(src, req_path)
             if missing_req:
                 clean = False
+                v28_failed = True
                 print(f"  [FLAG] Missing in requirements.txt: {missing_req}")
             for fl in check_v28_semantics(src):
                 clean = False
-                print(f"  [FLAG] Semantic Nesting/Prior Check: {fl}")
+                v28_failed = True
+                print(f"  [FLAG] Semantic Nesting/Prior/Arg Check: {fl}")
         if p.name == "solo_champion_v28_certified.ipynb":
-            unexec, no_out = check_notebook_executed(p)
-            if unexec or no_out:
+            for fl in verify_notebook_and_artifacts(p, ROOT / "solo_champion_v28_certified.py"):
                 clean = False
-                print(f"  [FLAG] Unexecuted/empty notebook cells: unexec={unexec}, empty_outputs={no_out}")
+                v28_failed = True
+                print(f"  [FLAG] Notebook/Artifact Provenance Check: {fl}")
         if clean:
-            print("  [PASS] ZERO rule, preprocessing, inner/outer nesting, prior, requirement, or execution flags!")
+            print("  [PASS] ZERO rule, preprocessing, inner/outer arg nesting, prior, requirement, or provenance flags!")
+
+    print("\n=== BENCHMARK SPLIT ISOLATION CHECK ===")
+    bench_flags = check_bench_split_isolation((2026, 2027))
+    if bench_flags:
+        v28_failed = True
+        for fl in bench_flags:
+            print(f"  [FLAG] {fl}")
+    else:
+        print("  [PASS] Zero truth/bench_*.py scripts reference SEED_EVAL=2026 or 2027.")
+
+    if v28_failed:
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
