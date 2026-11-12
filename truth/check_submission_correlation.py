@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
 ================================================================================
-GCI WORLD 2026: SUBMISSION CORRELATION & FIDELITY AUDIT ENGINE
+GCI WORLD 2026: SUBMISSION CORRELATION DIAGNOSTIC UTILITY
 ================================================================================
-Verifies correlation and ranking fidelity between generated clean-room submissions
-and historical benchmark submissions (including V22 Champion 0.78239 baseline).
+Diagnostic tool for comparing prediction rankings between model submissions.
 
-Because ROC-AUC is strictly a rank-order metric, Spearman rank correlation
-(rho >= 0.990) guarantees leaderboard concordance without risk of degradation.
+IMPORTANT METHODOLOGICAL NOTE:
+Spearman rank correlation and top-decile overlap quantify similarity in applicant
+risk rankings between two prediction files. However:
+1. High rank correlation indicates concordance in relative ordering, but does
+   NOT guarantee identical test ROC-AUC or identical leaderboard score.
+2. Prediction correlation does NOT prove or evaluate competition rule compliance;
+   compliance is verified strictly through independent code audit and execution checks.
 ================================================================================
 """
 
@@ -35,7 +39,7 @@ def audit_file_correlation(target_path: Path):
         return 1
 
     print("=" * 80)
-    print(f"GCI WORLD 2026: CORRELATION AUDIT FOR {target_path.name}")
+    print(f"GCI WORLD 2026: PREDICTION SIMILARITY DIAGNOSTIC FOR {target_path.name}")
     print("=" * 80)
 
     df_target = pd.read_csv(target_path)
@@ -43,12 +47,17 @@ def audit_file_correlation(target_path: Path):
         print("[FAIL] Invalid schema: Must contain 'SK_ID_CURR' and 'TARGET'")
         return 1
 
+    # Strict integrity checks on target file
+    assert df_target["SK_ID_CURR"].is_unique, "Target file has non-unique SK_ID_CURR"
+    assert np.isfinite(df_target["TARGET"].values).all(), "Target file contains NaN or Inf values"
+    assert (df_target["TARGET"].values >= 0.0).all() and (df_target["TARGET"].values <= 1.0).all(), "TARGET values out of [0, 1] bounds"
+
     print(f"Target file: {target_path.name}")
     print(f"Rows: {len(df_target):,}")
     print(f"TARGET Stats -> Min: {df_target['TARGET'].min():.6f}, Max: {df_target['TARGET'].max():.6f}, "
           f"Mean: {df_target['TARGET'].mean():.6f}, Std: {df_target['TARGET'].std():.6f}")
     print("-" * 80)
-    print(f"{'Benchmark Name':<30} | {'Spearman Rho':<14} | {'Pearson R':<12} | {'Top-10% Overlap':<15} | Status")
+    print(f"{'Benchmark Name':<30} | {'Spearman Rho':<14} | {'Pearson R':<12} | {'Top-10% Overlap':<15} | Concordance")
     print("-" * 80)
 
     for name, bench_path in BENCHMARKS:
@@ -57,18 +66,28 @@ def audit_file_correlation(target_path: Path):
             continue
 
         df_bench = pd.read_csv(bench_path)
-        if len(df_bench) != len(df_target):
-            print(f"{name:<30} | Length mismatch ({len(df_bench)} vs {len(df_target)})")
+        if "SK_ID_CURR" not in df_bench.columns or "TARGET" not in df_bench.columns:
+            print(f"{name:<30} | Invalid schema in benchmark file")
             continue
 
-        if not (df_bench["SK_ID_CURR"].values == df_target["SK_ID_CURR"].values).all():
-            # Align by SK_ID_CURR if order differs
-            merged = pd.merge(df_target, df_bench, on="SK_ID_CURR", suffixes=('_target', '_bench'))
-            y_t = merged["TARGET_target"].values
-            y_b = merged["TARGET_bench"].values
-        else:
+        assert df_bench["SK_ID_CURR"].is_unique, f"Benchmark {name} has non-unique SK_ID_CURR"
+        assert np.isfinite(df_bench["TARGET"].values).all(), f"Benchmark {name} contains non-finite values"
+
+        if len(df_bench) != len(df_target):
+            print(f"{name:<30} | Length mismatch ({len(df_bench):,} vs {len(df_target):,})")
+            continue
+
+        # Strict 1-to-1 ID alignment check
+        if (df_bench["SK_ID_CURR"].values == df_target["SK_ID_CURR"].values).all():
             y_t = df_target["TARGET"].values
             y_b = df_bench["TARGET"].values
+        else:
+            merged = pd.merge(df_target, df_bench, on="SK_ID_CURR", how="inner", suffixes=('_target', '_bench'))
+            if len(merged) != len(df_target):
+                print(f"{name:<30} | Incomplete ID match: only {len(merged):,} of {len(df_target):,} matched")
+                continue
+            y_t = merged["TARGET_target"].values
+            y_b = merged["TARGET_bench"].values
 
         rho, _ = spearmanr(y_t, y_b)
         pr, _ = pearsonr(y_t, y_b)
@@ -79,18 +98,19 @@ def audit_file_correlation(target_path: Path):
         top_b = set(np.argsort(y_b)[-k:])
         overlap = len(top_t & top_b) / k
 
-        status = "HIGH CONCORDANCE" if rho >= 0.95 else ("MODERATE" if rho >= 0.85 else "DIVERGENT")
+        status = "VERY HIGH" if rho >= 0.95 else ("MODERATE" if rho >= 0.85 else "LOW")
         print(f"{name:<30} | {rho:.6f}       | {pr:.6f}     | {overlap*100:6.2f}%         | {status}")
 
     print("-" * 80)
-    print("[INFO] High rank correlation (Spearman rho > 0.95) with V22 confirms that AUC ranking")
-    print("       behavior is preserved while ensuring 100% inductive competition rule clearance.")
-    print("=" * 80)
+    print("[DIAGNOSTIC NOTE] This tool measures ranking similarity between predictions.")
+    print("                  High correlation indicates similar relative applicant risk orderings,")
+    print("                  but does not guarantee identical leaderboard AUC or prove rule compliance.")
+    print("================================================================================")
     return 0
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Audit submission correlation against benchmarks")
-    parser.add_argument("target", nargs="?", default="submission_audit_certified_from_scratch.csv",
+    parser = argparse.ArgumentParser(description="Audit submission prediction similarity against benchmarks")
+    parser.add_argument("target", nargs="?", default="v_22_pure_champion_ensemble_certified_v2.csv",
                         help="Name or path of target CSV to test")
     args = parser.parse_args()
 
