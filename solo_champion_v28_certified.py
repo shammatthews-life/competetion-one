@@ -23,16 +23,18 @@ GCI WORLD 2026: SOLO CHAMPION V28 AUDIT-CERTIFIED CLEAN-ROOM PIPELINE
        `cmaps_in`, `build_row_features`, `compute_fold_residuals`, `compute_local_te`
        (using `prior_inner = y_fit[ia].mean()`), and `compute_local_views` strictly
        on `df_ia` before training all 10 models to predict `df_ib` into `inner_oof`.
-     - Empirical probit CDF curves, automated meta-regularization C selection, and
+     - Empirical probit CDF curves and predeclared L2-regularized (C=0.05) convex
        ensemble weights `w_k` are fitted ONLY on `(inner_oof, y_train[a])`, then
        applied to outer-fold models trained on full `a` to evaluate held-out `b`.
      - Note: `SEED_EVAL=2027` evaluates all 171,202 competition training rows with
        strict outer/inner fold isolation and zero `b`/`test` leakage (architecture
        choices also reflect prior development iterations on the training dataset).
-  5. Deterministic Reproducibility & Citations:
+  5. Best-Effort Deterministic Reproducibility & Citations:
      - Fixed seed (42) across Python, NumPy, PyTorch, LightGBM, XGBoost, CatBoost,
        with `CUBLAS_WORKSPACE_CONFIG=:4096:8`, `cudnn.deterministic=True`, and
-       `torch.use_deterministic_algorithms(True, warn_only=True)`.
+       `torch.use_deterministic_algorithms(True, warn_only=True)` (best-effort
+       CUDA determinism; `warn_only=True` permits fallback if any CUDA kernel
+       lacks a deterministic implementation).
      - Exact dependency versions pinned in requirements.txt (including torch==2.14.1+cu130).
 
 Original Sources & Citations:
@@ -647,7 +649,7 @@ def main():
 
     print("=" * 86, flush=True)
     print("  GCI WORLD 2026: SOLO CHAMPION V28 (SEED_EVAL=2027 TWO-LEVEL OUTER-NESTED CV)", flush=True)
-    print("  100% GPU-Accelerated 10-Model Neural+Tree Zoo | Strict Within-Fold Selection", flush=True)
+    print("  100% GPU-Accelerated 10-Model Neural+Tree Zoo | Predeclared C=0.05 Probit", flush=True)
     print("=" * 86, flush=True)
 
     for fname in ("train.csv", "test.csv", "sample_submission.csv"):
@@ -723,31 +725,16 @@ def main():
             for mn in model_names:
                 inner_oof[mn][ib] = preds_ib[mn]
 
-        # 2. Fit Probit CDFs, Select Meta-Regularization C via Nested Inner-Meta CV, and Fit Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
+        # 2. Fit Probit CDFs and Predeclared L2-Regularized (C=0.05) Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
         pmaps = {mn: fit_probit_map(inner_oof[mn]) for mn in model_names}
         Z_in = np.column_stack([np.interp(inner_oof[mn], *pmaps[mn]) for mn in model_names])
         uniform = np.ones(M) / float(M)
 
-        meta_cv = list(StratifiedKFold(5, shuffle=True, random_state=200 + fi).split(Z_in, y_train[a]))
-        best_c, best_meta_auc = 0.05, -1.0
-        for c_cand in (0.002, 0.005, 0.01, 0.02, 0.05, 0.10, 0.25):
-            oof_meta = np.zeros(len(a))
-            for ma, mb in meta_cv:
-                lr_c = LogisticRegression(C=c_cand, max_iter=500)
-                lr_c.fit(Z_in[ma], y_train[a][ma])
-                wc = np.maximum(lr_c.coef_[0], 0.0)
-                wc = wc / wc.sum() if wc.sum() > 1e-9 else uniform.copy()
-                oof_meta[mb] = Z_in[mb] @ wc
-            c_auc = roc_auc_score(y_train[a], oof_meta)
-            if c_auc > best_meta_auc:
-                best_meta_auc, best_c = c_auc, c_cand
-
-        lr_meta = LogisticRegression(C=best_c, max_iter=500)
+        lr_meta = LogisticRegression(C=0.05, max_iter=500)
         lr_meta.fit(Z_in, y_train[a])
         w_k = np.maximum(lr_meta.coef_[0], 0.0)
         w_k = w_k / w_k.sum() if w_k.sum() > 1e-9 else uniform.copy()
         weights_history.append(w_k)
-        print(f"  [Fold {fi+1} Within-Fold Meta Selection] best_C={best_c} (inner-meta OOF AUC={best_meta_auc:.6f})", flush=True)
 
         # 3. Outer-Fold Preprocessing on Full `a` & Outer Models -> Predict Strictly Untouched `b` and `df_test`
         cmaps = fit_category_maps(df_train.iloc[a])

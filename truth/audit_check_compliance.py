@@ -220,6 +220,8 @@ def check_v28_semantics(src: str):
         flags.append("Global `s_oof[a]` slicing detected instead of true `inner_oof`")
 
     # 3. Consistency, Determinism, Unique-ID & Docstring Hygiene Checks
+    if "meta_cv" in src or re.search(r"StratifiedKFold\([^)]*\)\.split\(\s*Z_in", src):
+        flags.append("Un-nested `meta_cv` cross-validation over `Z_in` detected (use predeclared C=0.05 without contaminated meta-CV)")
     if re.search(r"(?:iterations|n_estimators|epochs)\s*=\s*[^\n]*\bif\s+is_outer\s+else\b", src):
         flags.append("Inner/outer iteration/epoch mismatch (`if is_outer else`) detected in model hyperparameters")
     for req_expr in (
@@ -245,7 +247,7 @@ def verify_notebook_and_artifacts(nb_path: Path, py_path: Path):
     if unexec or no_out:
         flags.append(f"Unexecuted/empty code cells: unexec={unexec}, empty_outputs={no_out}")
 
-    # Verify saved output SHA-256 of submission + raw inputs against disk files
+    # Verify saved output SHA-256 of submission + raw inputs against disk files (fail if missing)
     out_txt = extract_ipynb_outputs(nb_path)
     sub_path = ROOT / "LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv"
     if not sub_path.exists():
@@ -257,18 +259,30 @@ def verify_notebook_and_artifacts(nb_path: Path, py_path: Path):
 
     for fname in ("train.csv", "test.csv", "sample_submission.csv"):
         fpath = ROOT / "inpuy" / fname
-        if fpath.exists():
+        if not fpath.exists():
+            flags.append(f"Missing required raw input file: {fpath}")
+        else:
             f_sha = hashlib.sha256(fpath.read_bytes()).hexdigest().upper()
             if f_sha not in out_txt:
                 flags.append(f"Notebook output missing raw input provenance SHA-256 for {fname} ({f_sha[:16]}...)")
 
-    # Verify notebook code matches .py core logic (excluding notebook print wrapper)
-    py_lines = {ln.strip() for ln in py_path.read_text(encoding="utf-8").splitlines() if ln.strip() and not ln.strip().startswith("#")}
-    nb_src = extract_ipynb_source(nb_path)
-    if "main()" not in nb_src:
-        flags.append("Notebook source missing main() invocation")
-    if "SEED_EVAL = 2027" in py_lines and "SEED_EVAL = 2027" not in nb_src:
-        flags.append("Notebook SEED_EVAL mismatch with Python source")
+    # Full AST & normalized line-by-line equivalence between .py and .ipynb code cells
+    py_norm = [
+        ln.strip() for ln in py_path.read_text(encoding="utf-8").splitlines()
+        if ln.strip() and not ln.strip().startswith("#") and ln.strip() not in ('if __name__ == "__main__":', "main()")
+    ]
+    nb_raw_lines = extract_ipynb_source(nb_path).splitlines()
+    nb_norm = [
+        ln.strip() for ln in nb_raw_lines
+        if ln.strip()
+        and not ln.strip().startswith("#")
+        and not ln.strip().startswith("print('[+] Defined stage:")
+        and not ln.strip().startswith("print(f'Env ready:")
+        and not ln.strip().startswith("f'lgb={lgb.__version__}")
+        and ln.strip() not in ('if __name__ == "__main__":', 'sys.argv = ["solo_champion_v28_certified.py"]', "main()")
+    ]
+    if py_norm != nb_norm:
+        flags.append(f"Full source-equivalence mismatch between {py_path.name} ({len(py_norm)} stmts) and {nb_path.name} ({len(nb_norm)} stmts)")
     return flags
 
 def check_bench_split_isolation(eval_seeds=(2026, 2027)):
@@ -279,6 +293,10 @@ def check_bench_split_isolation(eval_seeds=(2026, 2027)):
             if isinstance(node, ast.Constant) and node.value in eval_seeds:
                 flags.append(f"Benchmark {p.name} uses integer literal {node.value} in executable code (L{node.lineno})")
                 break
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "StratifiedKFold":
+                for kw in node.keywords:
+                    if kw.arg == "random_state" and isinstance(kw.value, ast.Constant) and kw.value.value not in (42, 77, 100, 101, 777):
+                        flags.append(f"Benchmark {p.name} uses unexpected StratifiedKFold random_state={kw.value.value} (L{node.lineno})")
     return flags
 
 def main():
