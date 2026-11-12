@@ -328,6 +328,7 @@ def report_actual_split_intersections():
 def main():
     required = [
         ROOT / "GCI_v22_pure_champion_master.ipynb",
+        ROOT / "v22_champion_audit_certified.py",
         ROOT / "solo_champion_v23_master.py",
         ROOT / "solo_champion_v27_grandmaster.py",
         ROOT / "solo_champion_v28_certified.py",
