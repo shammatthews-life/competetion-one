@@ -631,7 +631,8 @@ def fit_predict_v22_members(Xia_f, Xib_f, Xtest_f, df_fit, df_val, df_test, y_fi
             **{c: df_raw[c].fillna("NA").astype(str).reset_index(drop=True) for c in cb_base_cats},
             **{f"PROD_{k}": k_dict[k].astype(str).reset_index(drop=True) for k in cb_keys}
         })
-        return pd.concat([df_num.drop(columns=CATS, errors="ignore").reset_index(drop=True), v_df.reset_index(drop=True), c_str], axis=1)
+        num_clean = df_num.drop(columns=list(v_df.columns) + CATS, errors="ignore").reset_index(drop=True)
+        return pd.concat([num_clean, v_df.reset_index(drop=True), c_str], axis=1)
 
     cb_fit = _prep_cb(Xia_f, df_fit, k_fit, v_fit)
     cb_val = _prep_cb(Xib_f, df_val, k_val, v_val)
@@ -718,16 +719,16 @@ def main():
         Xtest_row = build_row_features(df_test, cmaps)
 
         # 3. Complete LOO covariate demographic neighbor signals (Zero TARGET, LOO on df_a)
-        f_a = compute_clean_applicant_features(df_a, df_a).reset_index(drop=True)
-        f_b = compute_clean_applicant_features(df_b, df_a).reset_index(drop=True)
-        f_test = compute_clean_applicant_features(df_test, df_a).reset_index(drop=True)
+        f_a = compute_clean_applicant_features(df_a, df_a)
+        f_b = compute_clean_applicant_features(df_b, df_a)
+        f_test = compute_clean_applicant_features(df_test, df_a)
 
         # 4. Demographic learned expectation residuals (strictly out-of-fold for df_a)
         res_a, res_b, res_test = compute_fold_residuals(df_a, df_b, df_test, cmaps, fast=args.fast, seed=SEED)
 
-        Xa_res = pd.concat([Xa_row.reset_index(drop=True), f_a, res_a.reset_index(drop=True)], axis=1)
-        Xb_res = pd.concat([Xb_row.reset_index(drop=True), f_b, res_b.reset_index(drop=True)], axis=1)
-        Xtest_res = pd.concat([Xtest_row.reset_index(drop=True), f_test, res_test.reset_index(drop=True)], axis=1)
+        Xa_res = pd.concat([Xa_row, f_a, res_a], axis=1)
+        Xb_res = pd.concat([Xb_row, f_b, res_b], axis=1)
+        Xtest_res = pd.concat([Xtest_row, f_test, res_test], axis=1)
 
         # 5. Local Bayesian target encodings (7 keys, vocabularies & priors inside inner loop)
         te_a, te_b, te_test, k_a, k_b, k_test = compute_local_te(df_a, df_b, df_test, y_a, n_inner=4, seed=SEED)
@@ -736,9 +737,9 @@ def main():
         v_a, v_b, v_test = compute_local_views(df_a, df_b, df_test, y_a, n_inner=2, seed=SEED)
 
         # Unified feature matrices for tree inductors
-        Xa_f = pd.concat([Xa_res, te_a, v_a], axis=1)
-        Xb_f = pd.concat([Xb_res, te_b, v_b], axis=1)
-        Xtest_f = pd.concat([Xtest_res, te_test, v_test], axis=1)
+        Xa_f = pd.concat([Xa_res, te_a, v_a], axis=1).reset_index(drop=True)
+        Xb_f = pd.concat([Xb_res, te_b, v_b], axis=1).reset_index(drop=True)
+        Xtest_f = pd.concat([Xtest_res, te_test, v_test], axis=1).reset_index(drop=True)
 
         # 7. Fit V22 5-Spec Zoo
         preds_val, preds_test = fit_predict_v22_members(
