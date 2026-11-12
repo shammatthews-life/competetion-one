@@ -2,8 +2,8 @@
 **Document ID:** `GCI-RESEARCH-2026-11-12-V28-GPU-NESTED-2027`  
 **Target:** Solo Champion V28 Clean-Room GPU Architecture (`SEED_EVAL=2027` Two-Level Nested CV with Within-Fold Meta Selection) & Comprehensive Mathematical Autopsy  
 **Authors:** GCI Cognitive Autonomous Research Team  
-**Compliance Standard:** 100% Pure Supervised Inductive / Zero External Data / Zero Target Propagation (`partner_enc` Removed) / Zero Test Pooling / Inner-Fold Local Priors & Preprocessing / Within-Fold Hyperparameter Selection / Identical Inner-Outer Schedules / Deterministic CUDA  
-**Verified Two-Level Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771689`** (`+21.69 bps` over prior V27 `0.769520`; 5-Fold Held-Out Mean `0.771698`, Std `0.001967`; predeclared `C=0.05` Convex Probit)  
+**Compliance Standard:** Clean-Room Supervised Inductive / Zero External Data / Zero Target Propagation (`partner_enc` Removed) / Zero Test Pooling / Inner-Fold Local Priors & Preprocessing / Predeclared `C=0.05` / Identical Inner-Outer Schedules / Best-Effort CUDA Determinism  
+**Verified Two-Level Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771681`** (5-Fold Held-Out Mean `0.771689`, Std `0.001965`; Equal-Weight Probit `0.771677`; predeclared `C=0.05` Convex Probit; historical V27 `0.769520` is non-comparable due to V27 validation leakage)  
 **Historical Reference Synthesis (With `partner_enc`):** `0.778480` *(superseded due to rule/validation audit findings)*
 
 ---
@@ -409,13 +409,13 @@ Following two comprehensive technical and rule-compliance audits of `V22`, `V23`
 5. **CatBoost Double-TE Diagnostic, Inner/Outer Parity & CUDA XGBoost `max_bin=512`:**
    - Increasing CUDA XGBoost histogram resolution (`max_bin=512`) improved 1-split inner-dev AUC by **`+7.52 bps`** (`0.766330` $\to$ `0.767082`).
    - Testing `CB_D6_B254_TE` on full 3-fold `inner_dev` proved feeding `te_a` into CatBoost alongside online `max_ctr=2` dropped AUC by **`-11.17 bps`** (`0.766424` $\to$ `0.765307`); restoring `CB_GPU_D7_Product` (`No-TE`) and unifying `iterations=850` across both inner and outer stages raised CatBoost OOF to **`0.767965`** on `SEED_EVAL=2027`.
-6. **`SEED_EVAL=2027` Execution & Provenance Certification (`task-13651`, `4730.7s`):**
+6. **`SEED_EVAL=2027` Execution & Provenance Certification (`task-13732`, `4544.7s`):**
    - **Verified Hardware & Raw Data SHA-256 Hashes Printed Live:** `Python=3.12.10 | CatBoost=GPU | XGBoost=cuda | PyTorch=2.14.1+cu130 (CUDA=13.0, CUDA:NVIDIA GeForce RTX 4050 Laptop GPU)`; `train.csv` (`B8DD5A...ECF1`), `test.csv` (`DFB7AE...2C65`), `sample_submission.csv` (`6E5AD5...E7DB`).
-   - **Final 5-Fold Outer-Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771689`** (`Equal-Weight: 0.771677`, `5-Fold Mean: 0.771698`, `Std: 0.001967`; predeclared `C=0.05` Convex Probit).
+   - **Final 5-Fold Outer-Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771681`** (`Equal-Weight: 0.771677`, `5-Fold Mean: 0.771689`, `Std: 0.001965`; predeclared `C=0.05` Convex Probit).
    - **Genuine Top-to-Bottom Execution & Semantic AST Verification:** All 7 code cells of [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) executed sequentially (`exec_counts: [1..7]`), passing [`truth/audit_check_compliance.py`](file:///d:/gci/truth/audit_check_compliance.py) (exit code `0`) with full `.py`/`.ipynb` source equivalence, hard input checks, and exact input+output SHA-256 verification.
    - **Archived V22 Reference Caveat:** [`GCI_v22_pure_champion_master.ipynb`](file:///d:/gci/GCI_v22_pure_champion_master.ipynb) remains a legacy pooled-feature archive (`partner_enc` and key collisions removed, Cell 3 `al`/`PL_S` preserved, Cells 6–9 cleared); use **V28** (`solo_champion_v28_certified.py`/`.ipynb`) for submission.
 7. **Verified V28 Submission Artifact:**
-   - File: [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, unique `SK_ID_CURR` verified on `df_test`/`sample_sub`/`sub`, exact ID parity with `sample_submission.csv` | SHA-256: `1CC3C6C43ADE4469FFC6D4083D59FB8CBDEA7ED4A15981ADECFDEF39AE6920D3`).
+   - File: [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, unique `SK_ID_CURR` verified on `df_test`/`sample_sub`/`sub`, exact ID parity with `sample_submission.csv` | SHA-256: `92DEC49BC2ECC302AD80702AD6CDE7D453C3089D97E9E27461DF7A9DB45D9FB9`).
 
 ### 7.3 Permanent Competition Rules & Validation Integrity Checklist (Never Repeat)
 1. **Zero External Data / Historical CSVs:** Read only `train.csv`, `test.csv`, `sample_submission.csv`.

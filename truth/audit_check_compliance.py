@@ -339,7 +339,10 @@ def main():
                 clean = False
                 v28_failed = True
                 print(f"  [FLAG] Notebook/Artifact Provenance Check: {fl}")
-        if clean:
+        if p.name == "solo_champion_v27_grandmaster.py":
+            v27_sem = check_v28_semantics(p.read_text(encoding="utf-8"))
+            print(f"  [HISTORICAL ARCHIVE] Regex-clean for external CSV/partner_enc, NOT clean nested CV ({len(v27_sem)} semantic nesting/global-OOF flags; non-comparable baseline).")
+        elif clean:
             print("  [PASS] ZERO rule, preprocessing, inner/outer arg nesting, prior, requirement, or provenance flags!")
 
     print("\n=== BENCHMARK SPLIT ISOLATION CHECK ===")
@@ -349,7 +352,7 @@ def main():
         for fl in bench_flags:
             print(f"  [FLAG] {fl}")
     else:
-        print("  [PASS] Zero truth/bench_*.py scripts reference SEED_EVAL=2026 or 2027.")
+        print("  [PASS] Zero truth/bench_*.py scripts reference SEED_EVAL=2026/2027 or unexpected StratifiedKFold seeds (static AST check).")
 
     if v28_failed:
         sys.exit(1)

@@ -31,7 +31,7 @@ cells = [
         "source": [
             "# GCI World 2026: Solo Champion V28 Clean-Room GPU Pipeline (`SEED_EVAL=2027` Two-Level Nested CV)\n",
             "\n",
-            "**100% Rule-Compliant Two-Level Outer-Nested Validation:**\n",
+            "**Clean-Room Two-Level Outer-Nested Validation:**\n",
             "- **Zero External Data / Zero Historical CSVs / Zero Precomputed Caches** (`train.csv`, `test.csv`, `sample_submission.csv` only, with live SHA-256 provenance printing)\n",
             "- **Zero Target Propagation (`partner_enc` omitted)** & **Zero Manual Test-Subset Weights**\n",
             "- **Strictly Fold-Local Preprocessing & Predeclared Meta-Learner (Inner & Outer):** Category vocabularies, medians, 13 covariate residual regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency features, 27 Bayesian TE keys (`prior_inner = y_fit[ia].mean()`), scalers, empirical probit CDFs, and predeclared L2-regularized (`C=0.05`) convex `LogisticRegression` probit weights are ALL fitted strictly inside each active training fold (`df_ia` for inner folds, `df_a` for outer folds), with zero held-out `b` or `test` leakage.\n",

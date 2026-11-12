@@ -3,7 +3,7 @@
 ================================================================================
 GCI WORLD 2026: SOLO CHAMPION V28 AUDIT-CERTIFIED CLEAN-ROOM PIPELINE
 ================================================================================
-100% Strictly Compliant with Official GCI Competition Rules & Two-Level Nested CV:
+Clean-Room Supervised Pipeline (Strict Fold-Local Two-Level Nested CV):
   1. ZERO External Data & ZERO Historical CSV/Cache Reads:
      - Ingests ONLY train.csv, test.csv, and sample_submission.csv.
      - Zero reading of prior submissions or precomputed caches.
