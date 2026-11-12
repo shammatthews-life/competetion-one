@@ -330,6 +330,7 @@ def main():
         ROOT / "GCI_v22_pure_champion_master.ipynb",
         ROOT / "v22_champion_audit_certified.py",
         ROOT / "v22_champion_audit_certified_v2.py",
+        ROOT / "v22_champion_audit_certified_v3.py",
         ROOT / "solo_champion_v23_master.py",
         ROOT / "solo_champion_v27_grandmaster.py",
         ROOT / "solo_champion_v28_certified.py",

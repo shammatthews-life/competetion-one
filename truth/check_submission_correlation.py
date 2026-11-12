@@ -29,6 +29,7 @@ BENCHMARKS = [
     ("v22_pure_champion_lb1", ROOT / "LEADERBOARD_SUBMISSION_1_PURE_CHAMPION_V22.csv"),
     ("v22_reproduced", ROOT / "v_22_pure_champion_ensemble_reproduced.csv"),
     ("v22_scratch", ROOT / "v_22_pure_champion_ensemble_scratch.csv"),
+    ("v22_certified_v2", ROOT / "v_22_pure_champion_ensemble_certified_v2.csv"),
     ("v28_certified", ROOT / "LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv"),
     ("v27_grandmaster", ROOT / "LEADERBOARD_SUBMISSION_V27_GRANDMASTER.csv")
 ]
@@ -76,6 +77,9 @@ def audit_file_correlation(target_path: Path):
         if len(df_bench) != len(df_target):
             print(f"{name:<30} | Length mismatch ({len(df_bench):,} vs {len(df_target):,})")
             continue
+
+        # Strict set equality of applicant IDs
+        assert set(df_target["SK_ID_CURR"]) == set(df_bench["SK_ID_CURR"]), f"ID set mismatch between target and benchmark {name}"
 
         # Strict 1-to-1 ID alignment check
         if (df_bench["SK_ID_CURR"].values == df_target["SK_ID_CURR"].values).all():
