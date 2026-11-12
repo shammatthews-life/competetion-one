@@ -15,17 +15,20 @@ Clean-Room Supervised Pipeline (Strict Fold-Local Two-Level Nested CV):
        regressors, aligned 6-view inner-OOF stackers, 29 fold-fit group/frequency
        features, 27 Bayesian target encodings with strict fold-local priors
        `prior_inner = y_fit[ia].mean()`, winsorization bounds, scalers, empirical
-       probit CDF maps, and L2-regularized simplex weights) is fitted STRICTLY
+       probit CDF maps, and L2-regularized logistic meta-learner (C=0.05) with
+       post-hoc nonnegative unit-simplex normalized coefficients) is fitted STRICTLY
        inside each active training partition (`df_ia` for inner folds; `df_a`
        for outer folds), never touching held-out validation `ib`/`b` or `test`.
   4. True Textbook Two-Level Outer-Nested Validation:
      - Inside every outer fold (a, b), each inner split `(ia, ib)` fits its own
        `cmaps_in`, `build_row_features`, `compute_fold_residuals`, `compute_local_te`
-       (using `prior_inner = y_fit[ia].mean()`), and `compute_local_views` strictly
-       on `df_ia` before training all 10 models to predict `df_ib` into `inner_oof`.
-     - Empirical probit CDF curves and predeclared L2-regularized (C=0.05) convex
-       ensemble weights `w_k` are fitted ONLY on `(inner_oof, y_train[a])`, then
-       applied to outer-fold models trained on full `a` to evaluate held-out `b`.
+       (using `prior_inner = y_fit[ia].mean()` and `ia`-only vocabularies), and
+       `compute_local_views` strictly on `df_ia` before training all 10 models to
+       predict `df_ib` into `inner_oof`.
+     - Empirical probit CDF curves and predeclared L2-regularized logistic
+       meta-learner (`C=0.05`) weights (clipped >= 0 and normalized to sum to 1)
+       are fitted ONLY on `(inner_oof, y_train[a])`, then applied to outer-fold
+       models trained on full `a` to evaluate held-out `b`.
      - Note: `SEED_EVAL=2027` evaluates all 171,202 competition training rows with
        strict outer/inner fold isolation and zero `b`/`test` leakage (architecture
        choices also reflect prior development iterations on the training dataset).
@@ -383,23 +386,27 @@ def compute_local_te(df_fit, df_val, y_fit, n_inner=4, seed=SEED, df_te=None):
     d_te = {} if df_te is not None else None
 
     for kname, (s_fit, m0) in kf.items():
+        enc_a = np.empty(len(y_fit), dtype=np.float64)
+        cnt_a = np.empty(len(y_fit), dtype=np.float64)
+        for ia, ib in in_splits:
+            prior_inner = float(y_fit[ia].mean())
+            s_ia = s_fit.iloc[ia]
+            uniq_in = pd.unique(s_ia)
+            cmap_in = {v: i for i, v in enumerate(uniq_in)}
+            unk_in = len(uniq_in); n_cat_in = unk_in + 1
+            cia = s_ia.map(cmap_in).fillna(unk_in).astype(np.int32).values
+            cib = s_fit.iloc[ib].map(cmap_in).fillna(unk_in).astype(np.int32).values
+            cnt = np.bincount(cia, minlength=n_cat_in).astype(float)
+            sm = np.bincount(cia, weights=y_fit[ia], minlength=n_cat_in)
+            mp = (sm + m0 * prior_inner) / (cnt + m0)
+            enc_a[ib] = mp[cib]
+            cnt_a[ib] = cnt[cib]
+
         uniq = pd.unique(s_fit)
         cmap = {v: i for i, v in enumerate(uniq)}
         unk = len(uniq); n_cat = unk + 1
         ca = s_fit.map(cmap).fillna(unk).astype(np.int32).values
         cb = kv[kname][0].map(cmap).fillna(unk).astype(np.int32).values
-
-        enc_a = np.empty(len(y_fit), dtype=np.float64)
-        cnt_a = np.empty(len(y_fit), dtype=np.float64)
-        for ia, ib in in_splits:
-            prior_inner = float(y_fit[ia].mean())
-            cia, cib = ca[ia], ca[ib]
-            cnt = np.bincount(cia, minlength=n_cat).astype(float)
-            sm = np.bincount(cia, weights=y_fit[ia], minlength=n_cat)
-            mp = (sm + m0 * prior_inner) / (cnt + m0)
-            enc_a[ib] = mp[cib]
-            cnt_a[ib] = cnt[cib]
-
         prior_full = float(y_fit.mean())
         cnt_f = np.bincount(ca, minlength=n_cat).astype(float)
         sm_f = np.bincount(ca, weights=y_fit, minlength=n_cat)
@@ -649,7 +656,7 @@ def main():
 
     print("=" * 86, flush=True)
     print("  GCI WORLD 2026: SOLO CHAMPION V28 (SEED_EVAL=2027 TWO-LEVEL OUTER-NESTED CV)", flush=True)
-    print("  100% GPU-Accelerated 10-Model Neural+Tree Zoo | Predeclared C=0.05 Probit", flush=True)
+    print("  10-Model Neural+Tree Zoo (GPU-Accelerated when available, CPU fallback) | Predeclared C=0.05 Probit", flush=True)
     print("=" * 86, flush=True)
 
     for fname in ("train.csv", "test.csv", "sample_submission.csv"):
@@ -725,7 +732,7 @@ def main():
             for mn in model_names:
                 inner_oof[mn][ib] = preds_ib[mn]
 
-        # 2. Fit Probit CDFs and Predeclared L2-Regularized (C=0.05) Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
+        # 2. Fit Probit CDFs and Predeclared L2 Logistic Meta-Learner (C=0.05) with Post-Hoc Nonnegative Simplex Normalization STRICTLY on `(inner_oof, y_train[a])`
         pmaps = {mn: fit_probit_map(inner_oof[mn]) for mn in model_names}
         Z_in = np.column_stack([np.interp(inner_oof[mn], *pmaps[mn]) for mn in model_names])
         uniform = np.ones(M) / float(M)

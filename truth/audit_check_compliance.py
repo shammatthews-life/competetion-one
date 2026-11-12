@@ -151,6 +151,9 @@ def check_v28_semantics(src: str):
         for s in pre_loop_stmts:
             if _has_yfit_mean(s):
                 flags.append(f"Full `y_fit.mean()` computed before inner-fold loop in compute_local_te (L{s.lineno})")
+            for _, fn_name, _ in _calls_in_nodes([s]):
+                if fn_name == "unique":
+                    flags.append(f"Full `pd.unique(s_fit)` vocabulary built before inner-fold loop in compute_local_te (L{s.lineno})")
         if not inner_loops:
             flags.append("Missing `in_splits` loop inside compute_local_te")
         for lp in inner_loops:
@@ -159,6 +162,8 @@ def check_v28_semantics(src: str):
                 flags.append(f"Full `y_fit.mean()` used inside `in_splits` loop in compute_local_te (L{lp.lineno})")
             if not ia_var or not _has_yfit_exact_ia_mean(lp, ia_var):
                 flags.append(f"Missing exact fold-local `y_fit[{ia_var}].mean()` inside `in_splits` loop (L{lp.lineno})")
+            if not any(fn_name == "unique" for _, fn_name, _ in _calls_in_nodes([lp])):
+                flags.append(f"Missing inner-fold `pd.unique` vocabulary construction inside `in_splits` loop (L{lp.lineno})")
 
     # 2. Semantic Check: outer_folds & inner_folds preprocessing placement + exact inner arguments
     if "main" not in fn_map:
@@ -299,6 +304,27 @@ def check_bench_split_isolation(eval_seeds=(2026, 2027)):
                         flags.append(f"Benchmark {p.name} uses unexpected StratifiedKFold random_state={kw.value.value} (L{node.lineno})")
     return flags
 
+def report_actual_split_intersections():
+    """Calculates actual row-index intersections between SEED=42/777 bench splits and SEED_EVAL=2027 folds."""
+    tr_path = ROOT / "inpuy" / "train.csv"
+    if not tr_path.exists():
+        return [f"Missing {tr_path} for actual split-intersection audit"]
+    import pandas as pd
+    from sklearn.model_selection import StratifiedKFold
+    y = pd.read_csv(tr_path, usecols=["TARGET"])["TARGET"].values
+    dev_outer = list(StratifiedKFold(5, shuffle=True, random_state=42).split(y, y))[0][0]
+    _, ib = list(StratifiedKFold(3, shuffle=True, random_state=777).split(dev_outer, y[dev_outer]))[0]
+    dev_set = set(dev_outer.tolist())
+    ib_set = set(dev_outer[ib].tolist())
+    eval_folds = list(StratifiedKFold(5, shuffle=True, random_state=2027).split(y, y))
+    lines = []
+    for fi, (_, b) in enumerate(eval_folds, 1):
+        b_set = set(b.tolist())
+        ov_dev = len(b_set & dev_set)
+        ov_ib = len(b_set & ib_set)
+        lines.append(f"  [INFO] SEED_EVAL=2027 Fold {fi} ({len(b_set):,} rows): dev_outer overlap={ov_dev:,} ({100*ov_dev/len(b_set):.2f}%) | bench_v30 ib overlap={ov_ib:,} ({100*ov_ib/len(b_set):.2f}%)")
+    return lines
+
 def main():
     required = [
         ROOT / "GCI_v22_pure_champion_master.ipynb",
@@ -353,6 +379,8 @@ def main():
             print(f"  [FLAG] {fl}")
     else:
         print("  [PASS] Zero truth/bench_*.py scripts reference SEED_EVAL=2026/2027 or unexpected StratifiedKFold seeds (static AST check).")
+    for line in report_actual_split_intersections():
+        print(line)
 
     if v28_failed:
         sys.exit(1)

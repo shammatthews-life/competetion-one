@@ -1,3 +1,14 @@
+"""
+V30 GPU Ablation Benchmark: TabM + PLR + RankGauss vs V28 Neural Pair.
+Note: Runs on dev_outer (SEED=42 Fold 0 train, n=136,961) which overlaps ~80% with each
+SEED_EVAL=2027 fold (~26-27% via dev_outer[ib]); NOT independent confirmation of V28.
+
+Original Sources & Citations:
+  - TabM: Gorishniy, Y., et al. (2025). TabM: Advancing Tabular Deep Learning with
+    Parameter-Efficient Ensembling. ICLR 2025.
+  - BatchEnsemble: Wen, Y., Tran, D., & Ba, J. (2020). ICLR 2020.
+  - Piecewise Linear Encoding (PLR): Gorishniy, Y., et al. (2022). NeurIPS 35.
+"""
 import time
 import sys
 import numpy as np
