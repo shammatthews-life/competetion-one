@@ -15,13 +15,27 @@ Compliance & Mathematical Governance:
   3. Compliant Replacement:
      Demographic neighbor features ('APP_MATCH_COUNT', 'APP_HAS_MATCH',
      'APP_PEER_EXT2_DIFF', 'APP_PEER_CREDIT_RATIO') are purely covariate-based
-     (ZERO target labels used) and fit strictly inside training partitions.
-  4. Fold-Local Isolation:
-     All category mappings, 16 expectation residuals, Bayesian target encodings,
-     and view stackers are fit strictly inside each active training partition.
-  5. Best-Effort Determinism & Transparent Hardware Logging:
+     (ZERO target labels used) and fit strictly inside training partitions
+     using leave-one-out statistics for training rows.
+  4. Fold-Local Isolation & Out-Of-Fold Residuals:
+     All category mappings, 16 expectation residuals (computed strictly out-of-fold
+     for training rows), 7 Bayesian target encodings, and view stackers are fit
+     strictly inside each active training partition.
+  5. Fixed Convex Rank-Weighted Ensemble:
+     Combines 5 diverse member specifications using fixed convex weights summing to 1.0.
+  6. Best-Effort Determinism & Transparent Hardware Logging:
      Configured with seeds, CuBLAS workspace, deterministic cuDNN, and explicit
      GPU runtime logging with transparent CPU fallback banner.
+  7. Exact Schema & ID Alignment Assertions:
+     Strictly asserts row count, uniqueness, finite values, and exact ID order
+     alignment against sample_submission.csv.
+
+Citations & Provenance:
+  - LightGBM: Ke, G. et al. (2017). "LightGBM: A Highly Efficient Gradient Boosting Decision Tree." NeurIPS 30.
+  - CatBoost: Prokhorenkova, L. et al. (2018). "CatBoost: unbiased boosting with categorical features." NeurIPS 31.
+  - Scikit-learn: Pedregosa, F. et al. (2011). "Scikit-learn: Machine Learning in Python." JMLR 12.
+  - SciPy: Virtanen, P. et al. (2020). "SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python." Nature Methods 17.
+  - Competition Baseline & Materials: Omnicampus / Matsuo-Iwasawa Lab (Home Credit Default Risk).
 ================================================================================
 """
 
@@ -198,14 +212,15 @@ def build_row_features(df, cat_maps):
 
 # ==============================================================================
 # SECTION 3: PURE INDUCTIVE COVARIATE DEMOGRAPHIC NEIGHBOR SIGNALS
-# (REPLACING V22 partner_enc: ZERO TARGET LABELS USED, STRICTLY FOLD-LOCAL)
+# (WITH LEAVE-ONE-OUT PRESERVATION FOR TRAINING ROWS; ZERO TARGET LABELS USED)
 # ==============================================================================
 
 def compute_clean_applicant_features(df_target, df_ref):
     """
     Extracts pure covariate peer signals strictly from df_ref reference distribution.
-    Zero TARGET access: computes demographic neighbor cluster means of continuous
+    Zero TARGET access: computes demographic neighbor cluster statistics of continuous
     covariates (EXT scores, credit, annuity) and relative deviations.
+    Uses leave-one-out adjustments for training rows to prevent self-inclusion bias.
     """
     def _make_key(df_in):
         return (
@@ -227,15 +242,53 @@ def compute_clean_applicant_features(df_target, df_ref):
     ref_annuity_median = df_ref.groupby(ref_keys)["AMT_ANNUITY"].median()
 
     d = {}
-    cnt = target_keys.map(ref_counts).fillna(0).values.astype(np.float32)
-    d["APP_MATCH_COUNT"] = cnt
-    d["APP_HAS_MATCH"] = (cnt > 1).astype(np.float32)
+    is_self = (
+        len(df_target) == len(df_ref) and
+        df_target.index.equals(df_ref.index) and
+        (df_target["SK_ID_CURR"].values == df_ref["SK_ID_CURR"].values).all()
+    )
 
-    # Relative peer deviations
-    ext2_ref = target_keys.map(ref_ext2_mean).values.astype(np.float32)
-    ext3_ref = target_keys.map(ref_ext3_mean).values.astype(np.float32)
-    cr_ref = target_keys.map(ref_credit_median).values.astype(np.float32)
-    an_ref = target_keys.map(ref_annuity_median).values.astype(np.float32)
+    if is_self:
+        # Leave-one-out calculation on training rows (subtracting applicant's own record)
+        cnt = np.maximum(target_keys.map(ref_counts).fillna(0).values.astype(np.float32) - 1.0, 0.0)
+        d["APP_MATCH_COUNT"] = cnt
+        d["APP_HAS_MATCH"] = (cnt >= 1).astype(np.float32)
+
+        ref_sum_ext2 = df_ref.groupby(ref_keys)["EXT_SOURCE_2"].sum()
+        ref_count_ext2 = df_ref.groupby(ref_keys)["EXT_SOURCE_2"].count()
+        tot_cnt_ext2 = target_keys.map(ref_count_ext2).fillna(0).values.astype(np.float32)
+        tot_sum_ext2 = target_keys.map(ref_sum_ext2).fillna(0).values.astype(np.float32)
+
+        e2_val = df_target["EXT_SOURCE_2"].fillna(0).values.astype(np.float32)
+        e2_valid = df_target["EXT_SOURCE_2"].notna().values.astype(np.float32)
+        loo_cnt_ext2 = np.maximum(tot_cnt_ext2 - e2_valid, 0.0)
+        loo_sum_ext2 = tot_sum_ext2 - (e2_val * e2_valid)
+        global_ext2 = float(df_ref["EXT_SOURCE_2"].mean())
+        ext2_ref = np.where(loo_cnt_ext2 > 0, loo_sum_ext2 / np.maximum(loo_cnt_ext2, 1.0), global_ext2)
+
+        ref_sum_ext3 = df_ref.groupby(ref_keys)["EXT_SOURCE_3"].sum()
+        ref_count_ext3 = df_ref.groupby(ref_keys)["EXT_SOURCE_3"].count()
+        tot_cnt_ext3 = target_keys.map(ref_count_ext3).fillna(0).values.astype(np.float32)
+        tot_sum_ext3 = target_keys.map(ref_sum_ext3).fillna(0).values.astype(np.float32)
+
+        e3_val = df_target["EXT_SOURCE_3"].fillna(0).values.astype(np.float32)
+        e3_valid = df_target["EXT_SOURCE_3"].notna().values.astype(np.float32)
+        loo_cnt_ext3 = np.maximum(tot_cnt_ext3 - e3_valid, 0.0)
+        loo_sum_ext3 = tot_sum_ext3 - (e3_val * e3_valid)
+        global_ext3 = float(df_ref["EXT_SOURCE_3"].mean())
+        ext3_ref = np.where(loo_cnt_ext3 > 0, loo_sum_ext3 / np.maximum(loo_cnt_ext3, 1.0), global_ext3)
+
+        cr_ref = target_keys.map(ref_credit_median).fillna(df_ref["AMT_CREDIT"].median()).values.astype(np.float32)
+        an_ref = target_keys.map(ref_annuity_median).fillna(df_ref["AMT_ANNUITY"].median()).values.astype(np.float32)
+    else:
+        cnt = target_keys.map(ref_counts).fillna(0).values.astype(np.float32)
+        d["APP_MATCH_COUNT"] = cnt
+        d["APP_HAS_MATCH"] = (cnt > 1).astype(np.float32)
+
+        ext2_ref = target_keys.map(ref_ext2_mean).fillna(df_ref["EXT_SOURCE_2"].mean()).values.astype(np.float32)
+        ext3_ref = target_keys.map(ref_ext3_mean).fillna(df_ref["EXT_SOURCE_3"].mean()).values.astype(np.float32)
+        cr_ref = target_keys.map(ref_credit_median).fillna(df_ref["AMT_CREDIT"].median()).values.astype(np.float32)
+        an_ref = target_keys.map(ref_annuity_median).fillna(df_ref["AMT_ANNUITY"].median()).values.astype(np.float32)
 
     d["APP_PEER_EXT2_DIFF"] = (df_target["EXT_SOURCE_2"].values - ext2_ref).astype(np.float32)
     d["APP_PEER_EXT3_DIFF"] = (df_target["EXT_SOURCE_3"].values - ext3_ref).astype(np.float32)
@@ -245,13 +298,15 @@ def compute_clean_applicant_features(df_target, df_ref):
     return pd.DataFrame(d, index=df_target.index)
 
 # ==============================================================================
-# SECTION 4: LEARNED DEMOGRAPHIC EXPECTATION RESIDUALS (STRICT FOLD-LOCAL)
+# SECTION 4: LEARNED DEMOGRAPHIC EXPECTATION RESIDUALS (STRICT OUT-OF-FOLD)
 # ==============================================================================
 
 def compute_fold_residuals(df_fit, df_val, df_test=None, cat_maps=None, fast=False, seed=SEED):
     """
     Fits 16 demographic expectation regressors strictly on df_fit.
-    Evaluates on df_fit, df_val (and df_test if provided).
+    Uses internal 3-fold cross-validation inside df_fit to generate strictly
+    out-of-fold residuals for training rows, then fits on all of df_fit to predict
+    validation and test residuals.
     """
     t0 = time.time()
     def _prep_raw(df_in):
@@ -287,6 +342,7 @@ def compute_fold_residuals(df_fit, df_val, df_test=None, cat_maps=None, fast=Fal
 
     out_fit, out_val, out_test = {}, {}, {}
     max_iter = 15 if fast else 75
+    kf_inner = KFold(3, shuffle=True, random_state=seed)
 
     for nm, (yt_fit, yt_val, yt_test, drop_cols) in targets.items():
         Xf = raw_fit.drop(columns=drop_cols)
@@ -294,21 +350,34 @@ def compute_fold_residuals(df_fit, df_val, df_test=None, cat_maps=None, fast=Fal
         Xt = raw_test.drop(columns=drop_cols) if raw_test is not None else None
 
         obs_f = yt_fit.notna().values
-        m = HistGradientBoostingRegressor(
+
+        # 1. Strictly out-of-fold predictions for training rows (df_fit)
+        pred_oof = np.zeros(len(Xf), dtype=np.float32)
+        for tri, tei in kf_inner.split(Xf):
+            obs_tri = obs_f[tri]
+            if obs_tri.sum() > 10:
+                m_sub = HistGradientBoostingRegressor(
+                    max_iter=max_iter, learning_rate=0.1, max_leaf_nodes=31,
+                    min_samples_leaf=100, random_state=seed
+                )
+                m_sub.fit(Xf.iloc[tri][obs_tri], yt_fit.iloc[tri][obs_tri])
+                pred_oof[tei] = m_sub.predict(Xf.iloc[tei])
+
+        # 2. Fit full model on all of df_fit to predict on validation and test
+        m_full = HistGradientBoostingRegressor(
             max_iter=max_iter, learning_rate=0.1, max_leaf_nodes=31,
             min_samples_leaf=100, random_state=seed
         )
-        m.fit(Xf.iloc[obs_f], yt_fit.iloc[obs_f])
+        m_full.fit(Xf.iloc[obs_f], yt_fit.iloc[obs_f])
 
-        pred_f = m.predict(Xf)
-        pred_v = m.predict(Xv)
-        out_fit[f"RP_{nm}"] = pred_f
-        out_fit[f"RR_{nm}"] = np.where(obs_f, yt_fit.values - pred_f, np.nan)
+        pred_v = m_full.predict(Xv)
+        out_fit[f"RP_{nm}"] = pred_oof
+        out_fit[f"RR_{nm}"] = np.where(obs_f, yt_fit.values - pred_oof, np.nan)
         out_val[f"RP_{nm}"] = pred_v
         out_val[f"RR_{nm}"] = np.where(yt_val.notna().values, yt_val.values - pred_v, np.nan)
 
         if Xt is not None:
-            pred_t = m.predict(Xt)
+            pred_t = m_full.predict(Xt)
             out_test[f"RP_{nm}"] = pred_t
             out_test[f"RR_{nm}"] = np.where(yt_test.notna().values, yt_test.values - pred_t, np.nan)
 
@@ -323,7 +392,7 @@ def compute_fold_residuals(df_fit, df_val, df_test=None, cat_maps=None, fast=Fal
 
 def compute_local_te(df_fit, df_val, df_test, y_fit, n_inner=4, seed=SEED):
     """
-    Computes 27 interaction target encodings with Bayesian smoothing.
+    Computes 7 interaction target encodings with Bayesian smoothing (Q3, Q4, CT1, CT2, CT1_GP, GENDER_EDU, INC_EDU).
     Vocabularies and priors are constructed strictly inside each inner fold loop
     guaranteeing zero categorical symbol or label leakage.
     """
@@ -555,6 +624,9 @@ def main():
 
     assert df_test["SK_ID_CURR"].is_unique, "Test SK_ID_CURR must be unique"
     assert sample_sub["SK_ID_CURR"].is_unique, "Sample submission SK_ID_CURR must be unique"
+    assert sample_sub["SK_ID_CURR"].equals(df_test["SK_ID_CURR"]), (
+        "Sample submission IDs do not match test IDs in exact order."
+    )
 
     y_train = df_train["TARGET"].values.astype(np.int32)
     ntr, nte = len(df_train), len(df_test)
@@ -588,19 +660,19 @@ def main():
         Xb_row = build_row_features(df_b, cmaps)
         Xtest_row = build_row_features(df_test, cmaps)
 
-        # 3. Pure covariate demographic neighbor signals (Zero TARGET, fit on df_a)
+        # 3. Pure covariate demographic neighbor signals (Zero TARGET, LOO on df_a)
         f_a = compute_clean_applicant_features(df_a, df_a).reset_index(drop=True)
         f_b = compute_clean_applicant_features(df_b, df_a).reset_index(drop=True)
         f_test = compute_clean_applicant_features(df_test, df_a).reset_index(drop=True)
 
-        # 4. Demographic learned expectation residuals (fit strictly on df_a)
+        # 4. Demographic learned expectation residuals (strictly out-of-fold for df_a)
         res_a, res_b, res_test = compute_fold_residuals(df_a, df_b, df_test, cmaps, seed=SEED)
 
         Xa_res = pd.concat([Xa_row.reset_index(drop=True), f_a, res_a.reset_index(drop=True)], axis=1)
         Xb_res = pd.concat([Xb_row.reset_index(drop=True), f_b, res_b.reset_index(drop=True)], axis=1)
         Xtest_res = pd.concat([Xtest_row.reset_index(drop=True), f_test, res_test.reset_index(drop=True)], axis=1)
 
-        # 5. Local Bayesian target encodings (vocabularies & priors inside inner loop)
+        # 5. Local Bayesian target encodings (7 keys, vocabularies & priors inside inner loop)
         te_a, te_b, te_test, k_a, k_b, k_test = compute_local_te(df_a, df_b, df_test, y_a, n_inner=4, seed=SEED)
 
         # 6. Multi-view meta stackers
@@ -617,7 +689,7 @@ def main():
             k_a, k_b, k_test, v_a, v_b, v_test, fast=False, seed=SEED
         )
 
-        # 8. Projected Nonnegative Simplex Blend
+        # 8. Fixed Convex Rank-Weighted Ensemble
         fold_val_blend = sum(w_specs[m] * rk(preds_val[m]) for m in w_specs)
         fold_test_blend = sum(w_specs[m] * rk(preds_test[m]) for m in w_specs)
 
@@ -628,7 +700,7 @@ def main():
 
         for m in w_specs:
             print(f"  [Model: {m:16s}] Val AUC: {roc_auc_score(y_b, preds_val[m]):.6f}")
-        print(f"  >>> Fold {fi} Convex Simplex AUC: {score_fold:.6f} (Elapsed: {time.time()-f_start:.1f}s)")
+        print(f"  >>> Fold {fi} Fixed Convex Rank Blend AUC: {score_fold:.6f} (Elapsed: {time.time()-f_start:.1f}s)")
 
     # Overall cross-validation metrics
     overall_auc = roc_auc_score(y_train, oof_predictions)
@@ -649,6 +721,9 @@ def main():
 
     assert len(sub) == nte, f"Submission row count mismatch: {len(sub)} vs {nte}"
     assert sub["SK_ID_CURR"].is_unique, "Submission SK_ID_CURR contains duplicates"
+    assert sub["SK_ID_CURR"].equals(df_test["SK_ID_CURR"]), (
+        "Final submission IDs do not match test IDs in exact order."
+    )
     assert not sub["TARGET"].isna().any(), "Submission TARGET contains NaNs"
     assert (sub["TARGET"] >= 0.0).all() and (sub["TARGET"] <= 1.0).all(), "Predictions out of bounds"
 
