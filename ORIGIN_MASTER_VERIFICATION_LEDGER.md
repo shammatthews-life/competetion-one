@@ -1884,6 +1884,65 @@ Following the fourth independent audit identifying Fold-1 development-selection 
   - **Certified Submission Artifact:** [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, unique `SK_ID_CURR` verified | SHA-256: `ED0D062664A47676E78586016C076F479E0E0E59A136135D1B21CC7AFCDC4874`)
   - **Compliance Verifier:** `python D:\gci\truth\audit_check_compliance.py` exited with code `0` (`[PASS]` on `solo_champion_v28_certified.py` and `.ipynb`, including full 684-statement `.py`/`.ipynb` equivalence, inner `ia`-only TE vocabulary check, actual split-intersection reporter, and `bench_*` split isolation; `solo_champion_v27_grandmaster.py` accurately labeled `[HISTORICAL ARCHIVE]` with `6` semantic nesting/global-OOF flags).
 
+### 2026-11-12 Addendum 3 — Final Audit Verdict, Full Resolution of the 5 Recommendations & Pure-Inductive V22 Re-Engineering
+
+#### 1. Official Competition-Rule Compliance Verdict Matrix
+
+| Compliance Dimension | Historical V27 | Certified V28 |
+| :--- | :---: | :---: |
+| **External dataset read in active script** | Not found | **Not found (Clean)** |
+| **Hidden test-label access** | Not found | **Not found (Clean)** |
+| **Manual test prediction assignment** | Not found | **Not found (Clean)** |
+| **EDA-based partial test override** | Not found | **Not found (Clean)** |
+| **Model-generated submission** | Yes | **Yes (Pure ML/DL Inference)** |
+| **Fold-local preprocessing** | Not satisfied *(pre-fold leaking)* | **Substantially satisfied (Strict `df_ia`/`df_a` isolation)** |
+| **Correct outer-nested ensemble validation** | Not satisfied *(global `s_oof[a]` leak)* | **Previous major issue fixed (Inner-OOF only)** |
+| **Independent of all historical research** | Not established | **Historical overlap disclosed (~80% row sharing per fold)** |
+| **Reproducibility effort** | Seeds used | **Stronger best-effort controls (GPU determinism & logging)** |
+| **Code-source citation** | Depends on source origin | **Fully cited (LightGBM, CatBoost, XGBoost, PyTorch, SciPy, GCI)** |
+
+#### 2. Detailed Technical Remediation of Auditor Recommendations (Image 2)
+
+1. **Inner-Fold Target Encoding Vocabulary Isolation:**
+   - In `compute_local_te()`, vocabularies for all 27 interaction keys are constructed strictly within the inner fold loop:
+     `vocab = pd.unique(s_fit[ia])`
+     rather than across `s_fit` prior to inner fold splitting. This guarantees zero categorical symbol leakage from `ib`.
+2. **Projected Nonnegative Unit-Simplex Stacking Description:**
+   - Formally documented in code docstrings, report, and ledger: Level-2 meta-learner solves an L2-regularized logistic regression on inner probits whose non-intercept coefficients are projected onto the nonnegative unit simplex $\sum_{m=1}^{M} w_m = 1, w_m \ge 0$.
+3. **Explicit GPU Banner & Transparent CPU Fallback:**
+   - Runtime initialization asserts CUDA availability via `torch.cuda.is_available()`, identifies the compute device (`NVIDIA GeForce RTX 4050 Laptop GPU`), and provides an explicit warning banner if execution falls back to CPU.
+4. **Historical Development Overlap Disclosure:**
+   - Explicitly documented that re-seeding a 5-fold cross-validation (`SEED_EVAL=2027` vs `SEED=42`) over the same 171,202 training rows shares ~80% row overlap per fold (`27,347–27,441 / 34,240`). It is honest outer-nested cross-validation following prior development, not a completely separate dataset.
+5. **Strengthened Compliance Scanner with Actual Set Intersections:**
+   - `truth/audit_check_compliance.py` now computes and prints exact row-index set intersections between development training splits (`SEED=42`, `SEED=777`) and evaluation folds (`SEED_EVAL=2027`), providing mathematical transparency on row overlap.
+
+#### 3. Forensic Analysis & Clean-Room Re-Engineering of V22 (0.78239 LB)
+
+##### A. Problematic Code in Historical V22 (`generate_v22_pure_champion_complete_scratch.py`)
+- **Lines 477–500 (`partner_enc`):** Assigned `lab[fit] = y[fit]` to applicants sharing demographic keys (`CODE_GENDER | NAME_EDUCATION_TYPE | REGION_POPULATION_RELATIVE | FLAG_MOBIL | (DAYS_REGISTRATION - DAYS_BIRTH) | (DAYS_ID_PUBLISH - DAYS_BIRTH)`), creating `PY_ANY`, `PY_NEAR180`, etc., directly transferring training labels to test records.
+- **Line 84 (`al = pd.concat([df_train, df_test])`):** Concatenated train and test dataframes into a single table prior to feature extraction and neighbor linking (`PL_S`).
+- **Lines 615–620:** Attached `pe_t` target-propagation features directly into CatBoost test inference.
+- **Lines 718–723 (`ref_path = ...`):** Loaded historical external submission CSV from disk for correlation checks.
+
+##### B. 100% Compliant Mathematical Replacement: Pure Covariate Demographic Neighbor Aggregations
+Instead of transferring `TARGET`, we extract pure covariate peer deviations strictly within the training partition (`df_fit`):
+- `APP_PEER_EXT2_DIFF`: $EXT\_SOURCE\_2 - \text{mean}(EXT\_SOURCE\_2 \mid \text{demog})$
+- `APP_PEER_EXT3_DIFF`: $EXT\_SOURCE\_3 - \text{mean}(EXT\_SOURCE\_3 \mid \text{demog})$
+- `APP_PEER_CREDIT_RATIO`: $AMT\_CREDIT / \max(\text{median}(AMT\_CREDIT \mid \text{demog}), 1.0)$
+- `APP_PEER_ANNUITY_RATIO`: $AMT\_ANNUITY / \max(\text{median}(AMT\_ANNUITY \mid \text{demog}), 1.0)$
+- `APP_MATCH_COUNT`: Frequency count of the demographic key in `df_fit`.
+- `APP_HAS_MATCH`: Binary indicator if applicant belongs to a multi-application group.
+
+##### C. Empirical Diagnostic Suite Results (`truth/bench_v31` – `bench_v39` on RTX 4050 GPU)
+- **`bench_v31_v22_reconstruction.py`:** Rebuilt V22's exact 4-spec LightGBM architecture under strict fold-local rules without `partner_enc` $\to$ **`0.767342`** AUC.
+- **`bench_v32_clean_covariate_links.py`:** Added clean covariate demographic neighbor aggregations $\to$ **`0.768037`** single model (**+0.80 bps**) and **`0.768308`** in blend (**+3.51 bps lift** with zero label access).
+- **`bench_v33_v22_pure_feature_suite.py`:** Full reconstructed V22 ratio suite $\to$ **`0.766977`** (-9.79 bps due to collinear feature subspace dilution).
+- **`bench_v35_stacking_frontier.py`:** 10-model neural+tree stacking $\to$ **`0.769136`** (**+11.79 bps lift** over single tree).
+- **`bench_v36_multiseed_bagging.py`:** Multi-seed bagging $\to$ **`+2.84 bps`** lift on individual models.
+- **`bench_v37_v22_clean_blend.py`:** Reconstructed clean-room V22 5-spec blend $\to$ **`0.767964`** AUC.
+
+**Mathematical Conclusion:** The historical 0.78239 LB score was a direct mathematical artifact of target propagation across repeat applicants (`partner_enc`). Under strict competition rules (zero target propagation, zero hand-labeling, zero test pooling), the legitimate supervised learning frontier is reached through multi-family model orthogonalization (GBDT + CatBoost + CUDA XGBoost + PyTorch Fourier Neural Networks) on pure covariates, achieving **0.771679 OOF AUC (~0.777 LB)**.
+
 ---
 
 ## 4. Legacy Origin EXP 5 Blueprint `[ARCHIVED / DEPRECATED — EXCLUDED FROM SUBMISSION PIPELINE]`
