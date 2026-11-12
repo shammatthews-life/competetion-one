@@ -331,6 +331,7 @@ def main():
         ROOT / "v22_champion_audit_certified.py",
         ROOT / "v22_champion_audit_certified_v2.py",
         ROOT / "v22_champion_audit_certified_v3.py",
+        ROOT / "v22_champion_audit_certified_v4_restoration.py",
         ROOT / "solo_champion_v23_master.py",
         ROOT / "solo_champion_v27_grandmaster.py",
         ROOT / "solo_champion_v28_certified.py",
