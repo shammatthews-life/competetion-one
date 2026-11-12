@@ -1,0 +1,68 @@
+{
+  "blend_weight_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.30000000000000004,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6000000000000001,
+    0.65,
+    0.7000000000000001,
+    0.75,
+    0.8,
+    0.8500000000000001,
+    0.9,
+    0.9500000000000001,
+    1.0
+  ],
+  "evaluated_groups": [
+    "A_FINANCIAL",
+    "B_RISK",
+    "C_TEMPORAL",
+    "D_DEMOGRAPHIC",
+    "E_INQUIRY",
+    "F_EXTERNAL",
+    "H_INTERACTIONS"
+  ],
+  "excluded_groups": {
+    "G_ENTITY_TIMELINE": "Uses the same birth/registration/ID-publish/gender/education signature tested in EXP07; excluded to avoid repeating the rejected hypothesis. Historical counts and next/previous application gaps also depend on a pooled train/test cohort.",
+    "UIDY_SUPERVISED_MEMORY": "Uses labels joined on the same signature with a global seed-42 five-fold assignment, which is not nested inside EXP08 outer folds. Excluded because that construction leaks outer-validation labels."
+  },
+  "group_sizes": {
+    "A_FINANCIAL": 34,
+    "B_RISK": 11,
+    "C_TEMPORAL": 11,
+    "D_DEMOGRAPHIC": 8,
+    "E_INQUIRY": 10,
+    "F_EXTERNAL": 16,
+    "H_INTERACTIONS": 570
+  },
+  "model_configurations": {
+    "combined_candidate": "Phase 2 LightGBM CPU + CatBoost GPU; CUDA XGBoost added only when an explicit CUDA preflight succeeds",
+    "individual_family_screen": "LightGBM CPU; Phase 2 inner settings capped at 600 rounds and 50-round early stopping; outer rounds fixed by inner validation"
+  },
+  "selected_feature_caps": {
+    "maximum_groups_per_fold": 3,
+    "maximum_interactions_per_fold": 60
+  },
+  "xgboost_cuda_preflight": {
+    "available": true,
+    "cpu_fallback_used": false,
+    "device": "CUDA",
+    "parameters": {
+      "device": "cuda",
+      "max_depth": 2,
+      "objective": "binary:logistic",
+      "tree_method": "hist",
+      "verbosity": 0
+    },
+    "version": "3.4.1"
+  }
+}

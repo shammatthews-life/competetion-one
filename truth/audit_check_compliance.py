@@ -218,6 +218,22 @@ def check_v28_semantics(src: str):
 
     if "s_oof[a]" in src:
         flags.append("Global `s_oof[a]` slicing detected instead of true `inner_oof`")
+
+    # 3. Consistency, Determinism, Unique-ID & Docstring Hygiene Checks
+    if re.search(r"(?:iterations|n_estimators|epochs)\s*=\s*[^\n]*\bif\s+is_outer\s+else\b", src):
+        flags.append("Inner/outer iteration/epoch mismatch (`if is_outer else`) detected in model hyperparameters")
+    for req_expr in (
+        'df_test["SK_ID_CURR"].is_unique',
+        'sample_sub["SK_ID_CURR"].is_unique',
+        'sub["SK_ID_CURR"].is_unique',
+        "torch.use_deterministic_algorithms",
+    ):
+        if req_expr not in src:
+            flags.append(f"Missing required safety/determinism check: `{req_expr}`")
+    for stale in ("torch==2.15.0", "all 9 models", "9 orthogonal models"):
+        if stale in src:
+            flags.append(f"Stale documentation string detected: `{stale}`")
+
     return flags
 
 def verify_notebook_and_artifacts(nb_path: Path, py_path: Path):

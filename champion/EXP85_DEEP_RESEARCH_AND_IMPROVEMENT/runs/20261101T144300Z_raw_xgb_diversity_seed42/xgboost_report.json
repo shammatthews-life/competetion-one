@@ -1,0 +1,148 @@
+{
+  "experiment_id": "20261101T144300Z_raw_xgb_diversity_seed42",
+  "status": "COMPLETED_SCREEN",
+  "lineage": "INDEPENDENT_RAW_ONLY_XGBOOST",
+  "started_at_utc": "2026-11-01T14:44:06.584934+00:00",
+  "completed_at_utc": "2026-11-01T14:44:37.307659+00:00",
+  "elapsed_seconds": 30.722067900002003,
+  "hypothesis": "An independently trained GPU XGBoost model using Phase 2's rowwise raw application features may provide complementary OOF signal to the frozen LightGBM/CatBoost blend.",
+  "feature_generation": {
+    "source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+    "target_or_id_in_features": false,
+    "rowwise_and_label_free": true,
+    "categorical_encoding": "one-hot encoder fitted on each outer-fit fold only; unseen validation/test categories ignored",
+    "target_encoding_or_historical_prediction_inputs": [],
+    "auxiliary_tables_used": [],
+    "numeric_feature_count": 94,
+    "max_onehot_feature_count": 107,
+    "matrix_feature_count": 201
+  },
+  "model_config": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "tree_method": "hist",
+    "device": "cuda:0",
+    "n_estimators": 1400,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.5,
+    "min_child_weight": 20.0,
+    "reg_lambda": 20.0,
+    "reg_alpha": 0.1,
+    "max_bin": 256,
+    "early_stopping_rounds": 100,
+    "n_jobs": 4
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "xgboost": "3.4.1",
+    "scipy": "1.18.1",
+    "device_by_fold": [
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0"
+    ],
+    "fold_seconds": [
+      5.953847900003893,
+      6.023694700008491,
+      5.136147700017318,
+      5.391411099990364,
+      6.832024100003764
+    ],
+    "process_memory_before": {
+      "available": "true",
+      "peak_working_set_bytes": 528568320,
+      "working_set_bytes": 414711808,
+      "private_bytes": 1123504128
+    },
+    "process_memory_after": {
+      "available": "true",
+      "peak_working_set_bytes": 1121886208,
+      "working_set_bytes": 718422016,
+      "private_bytes": 1733390336
+    }
+  },
+  "validation": {
+    "seed": 42,
+    "same_exact_folds_as_frozen_phase2": true,
+    "phase2_oof_auc": 0.7715614423106346,
+    "xgboost_oof_auc": 0.7613695677117273,
+    "xgboost_delta_vs_phase2": -0.010191874598907358,
+    "fixed_diagnostic_rank_blend": {
+      "weights": {
+        "phase2": 0.8,
+        "xgboost": 0.2
+      },
+      "oof_auc": 0.7716634769720853,
+      "delta_vs_phase2": 0.0001020346614506451,
+      "weight_tuned_on_this_oof": false,
+      "candidate_promotion": false
+    },
+    "prediction_pearson_correlation": 0.9454961450140084,
+    "residual_pearson_correlation": 0.9944997286853986,
+    "squared_error_pearson_correlation": 0.9947962251263431,
+    "per_fold": [
+      {
+        "fold": 1,
+        "phase2_auc": 0.7682728118806064,
+        "xgboost_auc": 0.7592842523889103,
+        "fixed_rank_blend_auc": 0.7686597665986976,
+        "xgboost_delta_vs_phase2": -0.00898855949169608,
+        "blend_delta_vs_phase2": 0.00038695471809124804
+      },
+      {
+        "fold": 2,
+        "phase2_auc": 0.7741273870479004,
+        "xgboost_auc": 0.7620532777118627,
+        "fixed_rank_blend_auc": 0.7740039082562862,
+        "xgboost_delta_vs_phase2": -0.012074109336037697,
+        "blend_delta_vs_phase2": -0.0001234787916142288
+      },
+      {
+        "fold": 3,
+        "phase2_auc": 0.7761637619657933,
+        "xgboost_auc": 0.7655045886154228,
+        "fixed_rank_blend_auc": 0.7761776240882954,
+        "xgboost_delta_vs_phase2": -0.010659173350370477,
+        "blend_delta_vs_phase2": 1.3862122502095175e-05
+      },
+      {
+        "fold": 4,
+        "phase2_auc": 0.7695607652001966,
+        "xgboost_auc": 0.7572415796916181,
+        "fixed_rank_blend_auc": 0.7691148381906396,
+        "xgboost_delta_vs_phase2": -0.012319185508578467,
+        "blend_delta_vs_phase2": -0.00044592700955692344
+      },
+      {
+        "fold": 5,
+        "phase2_auc": 0.7700138646512473,
+        "xgboost_auc": 0.7631100908619601,
+        "fixed_rank_blend_auc": 0.7707185340393958,
+        "xgboost_delta_vs_phase2": -0.006903773789287193,
+        "blend_delta_vs_phase2": 0.0007046693881485044
+      }
+    ]
+  },
+  "integrity": {
+    "candidate_sha256": "39ea94a113cbfb0493cb1fbdf21f20ffee3fdd4f440ef14b8f799bb9f2860ebc",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "unique_ids": true,
+    "matches_raw_test_order": true,
+    "matches_sample_order": true,
+    "probability_min": 0.0019398998701944947,
+    "probability_max": 0.7652561664581299,
+    "gpu_samples": 6,
+    "gpu_max_utilization_percent": 77,
+    "gpu_max_vram_used_mib": 318,
+    "official_competition_score": "NOT_EVALUATED"
+  },
+  "decision": "PROMISING_SCREEN_REQUIRES_INDEPENDENT_SEED"
+}

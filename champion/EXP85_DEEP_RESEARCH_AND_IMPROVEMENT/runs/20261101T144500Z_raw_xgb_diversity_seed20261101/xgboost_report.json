@@ -1,0 +1,143 @@
+{
+  "experiment_id": "20261101T144500Z_raw_xgb_diversity_seed20261101",
+  "status": "COMPLETED_INDEPENDENT_SEED_REPLICATION",
+  "lineage": "INDEPENDENT_RAW_ONLY_XGBOOST",
+  "outer_seed": 20261101,
+  "started_at_utc": "2026-11-01T14:47:01.994968+00:00",
+  "completed_at_utc": "2026-11-01T14:47:32.698248+00:00",
+  "elapsed_seconds": 30.703169800020987,
+  "hypothesis": "Replicate the identical raw-only XGBoost configuration and fixed 80/20 rank-blend diagnostic on the frozen independent Phase 2 folds.",
+  "feature_generation": {
+    "rowwise_and_label_free": true,
+    "target_or_id_in_features": false,
+    "categorical_encoding": "one-hot fitted on each outer-fit fold; unseen categories ignored",
+    "historical_prediction_inputs": [],
+    "auxiliary_tables_used": []
+  },
+  "model_config": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "tree_method": "hist",
+    "device": "cuda:0",
+    "n_estimators": 1400,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.5,
+    "min_child_weight": 20.0,
+    "reg_lambda": 20.0,
+    "reg_alpha": 0.1,
+    "max_bin": 256,
+    "early_stopping_rounds": 100,
+    "n_jobs": 4
+  },
+  "runtime": {
+    "xgboost": "3.4.1",
+    "device_by_fold": [
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0",
+      "cuda:0"
+    ],
+    "fold_seconds": [
+      5.053476200002478,
+      6.442445199994836,
+      7.1076043999928515,
+      5.572118899988709,
+      5.267752300016582
+    ],
+    "process_memory_before": {
+      "available": "true",
+      "peak_working_set_bytes": 530591744,
+      "working_set_bytes": 415404032,
+      "private_bytes": 1123848192
+    },
+    "process_memory_after": {
+      "available": "true",
+      "peak_working_set_bytes": 1125031936,
+      "working_set_bytes": 719486976,
+      "private_bytes": 1669914624
+    }
+  },
+  "validation": {
+    "same_exact_folds_as_frozen_independent_phase2_seed": true,
+    "phase2_oof_auc": 0.7709638203765881,
+    "xgboost_oof_auc": 0.7602661213403125,
+    "xgboost_delta_vs_phase2": -0.010697699036275599,
+    "fixed_diagnostic_rank_blend": {
+      "weights": {
+        "phase2": 0.8,
+        "xgboost": 0.2
+      },
+      "oof_auc": 0.7709889247043996,
+      "delta_vs_phase2": 2.5104327811553695e-05,
+      "weight_unchanged_from_seed42_screen": true,
+      "weight_tuned_on_this_oof": false
+    },
+    "prediction_pearson_correlation": 0.9442218472841403,
+    "residual_pearson_correlation": 0.9943533591960563,
+    "squared_error_pearson_correlation": 0.9947298147075734,
+    "per_fold": [
+      {
+        "fold": 1,
+        "phase2_auc": 0.766081907507225,
+        "xgboost_auc": 0.7548379741769966,
+        "xgboost_delta_vs_phase2": -0.01124393333022844,
+        "fixed_rank_blend_auc": 0.766046983194538,
+        "blend_delta_vs_phase2": -3.4924312687034664e-05
+      },
+      {
+        "fold": 2,
+        "phase2_auc": 0.7730233339469068,
+        "xgboost_auc": 0.7633399206307077,
+        "xgboost_delta_vs_phase2": -0.009683413316199152,
+        "fixed_rank_blend_auc": 0.7732267841142837,
+        "blend_delta_vs_phase2": 0.00020345016737688404
+      },
+      {
+        "fold": 3,
+        "phase2_auc": 0.771754813903649,
+        "xgboost_auc": 0.7608343694292886,
+        "xgboost_delta_vs_phase2": -0.010920444474360358,
+        "fixed_rank_blend_auc": 0.7718921535145238,
+        "blend_delta_vs_phase2": 0.00013733961087480928
+      },
+      {
+        "fold": 4,
+        "phase2_auc": 0.7686946871426998,
+        "xgboost_auc": 0.7576297995817547,
+        "xgboost_delta_vs_phase2": -0.011064887560945147,
+        "fixed_rank_blend_auc": 0.7685628303116205,
+        "blend_delta_vs_phase2": -0.00013185683107930224
+      },
+      {
+        "fold": 5,
+        "phase2_auc": 0.77539333370299,
+        "xgboost_auc": 0.7646496370376787,
+        "xgboost_delta_vs_phase2": -0.010743696665311275,
+        "fixed_rank_blend_auc": 0.7752711895530999,
+        "blend_delta_vs_phase2": -0.00012214414989009104
+      }
+    ],
+    "positive_blend_folds": 2
+  },
+  "integrity": {
+    "candidate_sha256": "0de101afce5a3ed1345f56e28fad73ec09296ae399deab11a47804a321605d38",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "unique_ids": true,
+    "matches_raw_test_order": true,
+    "matches_sample_order": true,
+    "probability_min": 0.0019576256163418293,
+    "probability_max": 0.769520103931427,
+    "gpu_samples": 6,
+    "gpu_max_utilization_percent": 69,
+    "gpu_max_vram_used_mib": 318,
+    "official_competition_score": "NOT_EVALUATED"
+  },
+  "decision": "REPLICATED_POSITIVE_DIAGNOSTIC_ONLY"
+}

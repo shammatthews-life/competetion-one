@@ -1,0 +1,42 @@
+[2026-11-02T07:52:17.901693+00:00] Starting EXP08 on NVIDIA GeForce RTX 4050 Laptop GPU; outer seed=20261101; XGBoost CUDA supported=True
+[2026-11-02T07:53:42.930911+00:00] Fold 1 A_FINANCIAL: inner AUC=0.763702, delta=-0.000832, added=33, combined candidates=20
+[2026-11-02T07:53:58.013694+00:00] Fold 1 B_RISK: inner AUC=0.764699, delta=+0.000165, added=9, combined candidates=9
+[2026-11-02T07:54:11.916456+00:00] Fold 1 C_TEMPORAL: inner AUC=0.762834, delta=-0.001700, added=10, combined candidates=10
+[2026-11-02T07:54:25.087274+00:00] Fold 1 D_DEMOGRAPHIC: inner AUC=0.763558, delta=-0.000977, added=8, combined candidates=6
+[2026-11-02T07:54:38.903733+00:00] Fold 1 E_INQUIRY: inner AUC=0.763568, delta=-0.000966, added=10, combined candidates=9
+[2026-11-02T07:54:53.283213+00:00] Fold 1 F_EXTERNAL: inner AUC=0.765066, delta=+0.000532, added=12, combined candidates=12
+[2026-11-02T07:56:20.011156+00:00] Fold 1 H_INTERACTIONS: inner AUC=0.763083, delta=-0.001451, added=570, combined candidates=60
+[2026-11-02T07:57:39.268054+00:00] Fold 1 complete: groups=['F_EXTERNAL', 'B_RISK'], selected_features=21, candidate_outer_auc=0.765937, blend_weight=0.10
+[2026-11-02T07:58:55.538571+00:00] Fold 2 A_FINANCIAL: inner AUC=0.760637, delta=-0.000025, added=33, combined candidates=20
+[2026-11-02T07:59:07.484403+00:00] Fold 2 B_RISK: inner AUC=0.760168, delta=-0.000493, added=9, combined candidates=9
+[2026-11-02T07:59:18.803625+00:00] Fold 2 C_TEMPORAL: inner AUC=0.760142, delta=-0.000520, added=10, combined candidates=8
+[2026-11-02T07:59:31.217626+00:00] Fold 2 D_DEMOGRAPHIC: inner AUC=0.760335, delta=-0.000326, added=8, combined candidates=7
+[2026-11-02T07:59:43.874966+00:00] Fold 2 E_INQUIRY: inner AUC=0.760356, delta=-0.000306, added=10, combined candidates=9
+[2026-11-02T07:59:56.298302+00:00] Fold 2 F_EXTERNAL: inner AUC=0.759587, delta=-0.001074, added=12, combined candidates=12
+[2026-11-02T08:01:07.500163+00:00] Fold 2 H_INTERACTIONS: inner AUC=0.761062, delta=+0.000400, added=570, combined candidates=60
+[2026-11-02T08:02:41.559049+00:00] Fold 2 complete: groups=['H_INTERACTIONS'], selected_features=60, candidate_outer_auc=0.771766, blend_weight=0.65
+[2026-11-02T08:04:11.353035+00:00] Fold 3 A_FINANCIAL: inner AUC=0.771131, delta=+0.000046, added=33, combined candidates=21
+[2026-11-02T08:04:26.630726+00:00] Fold 3 B_RISK: inner AUC=0.770515, delta=-0.000569, added=9, combined candidates=9
+[2026-11-02T08:04:40.457084+00:00] Fold 3 C_TEMPORAL: inner AUC=0.770976, delta=-0.000109, added=10, combined candidates=9
+[2026-11-02T08:04:54.849154+00:00] Fold 3 D_DEMOGRAPHIC: inner AUC=0.770492, delta=-0.000593, added=8, combined candidates=7
+[2026-11-02T08:05:09.619970+00:00] Fold 3 E_INQUIRY: inner AUC=0.771308, delta=+0.000223, added=10, combined candidates=9
+[2026-11-02T08:05:24.770569+00:00] Fold 3 F_EXTERNAL: inner AUC=0.771230, delta=+0.000145, added=12, combined candidates=12
+[2026-11-02T08:06:36.474338+00:00] Fold 3 H_INTERACTIONS: inner AUC=0.770885, delta=-0.000200, added=570, combined candidates=60
+[2026-11-02T08:08:09.419725+00:00] Fold 3 complete: groups=['E_INQUIRY', 'F_EXTERNAL', 'A_FINANCIAL'], selected_features=42, candidate_outer_auc=0.771958, blend_weight=0.35
+[2026-11-02T08:09:48.759245+00:00] Fold 4 A_FINANCIAL: inner AUC=0.772480, delta=+0.001286, added=33, combined candidates=22
+[2026-11-02T08:10:05.850150+00:00] Fold 4 B_RISK: inner AUC=0.772363, delta=+0.001169, added=9, combined candidates=9
+[2026-11-02T08:10:24.668943+00:00] Fold 4 C_TEMPORAL: inner AUC=0.771049, delta=-0.000145, added=10, combined candidates=10
+[2026-11-02T08:10:41.376139+00:00] Fold 4 D_DEMOGRAPHIC: inner AUC=0.771888, delta=+0.000694, added=8, combined candidates=6
+[2026-11-02T08:10:58.225276+00:00] Fold 4 E_INQUIRY: inner AUC=0.771309, delta=+0.000115, added=10, combined candidates=9
+[2026-11-02T08:11:21.197945+00:00] Fold 4 F_EXTERNAL: inner AUC=0.771386, delta=+0.000192, added=12, combined candidates=12
+[2026-11-02T08:12:33.495359+00:00] Fold 4 H_INTERACTIONS: inner AUC=0.770923, delta=-0.000271, added=570, combined candidates=60
+[2026-11-02T08:14:22.277016+00:00] Fold 4 complete: groups=['A_FINANCIAL', 'B_RISK', 'D_DEMOGRAPHIC'], selected_features=37, candidate_outer_auc=0.768305, blend_weight=0.60
+[2026-11-02T08:15:47.427234+00:00] Fold 5 A_FINANCIAL: inner AUC=0.775397, delta=-0.000707, added=33, combined candidates=18
+[2026-11-02T08:16:00.154054+00:00] Fold 5 B_RISK: inner AUC=0.774826, delta=-0.001278, added=9, combined candidates=7
+[2026-11-02T08:16:12.354867+00:00] Fold 5 C_TEMPORAL: inner AUC=0.776292, delta=+0.000189, added=10, combined candidates=8
+[2026-11-02T08:16:23.858625+00:00] Fold 5 D_DEMOGRAPHIC: inner AUC=0.775625, delta=-0.000479, added=8, combined candidates=6
+[2026-11-02T08:16:35.481246+00:00] Fold 5 E_INQUIRY: inner AUC=0.776723, delta=+0.000620, added=10, combined candidates=9
+[2026-11-02T08:16:49.364610+00:00] Fold 5 F_EXTERNAL: inner AUC=0.777391, delta=+0.001287, added=12, combined candidates=11
+[2026-11-02T08:18:15.831638+00:00] Fold 5 H_INTERACTIONS: inner AUC=0.774522, delta=-0.001582, added=570, combined candidates=60
+[2026-11-02T08:19:55.459377+00:00] Fold 5 complete: groups=['F_EXTERNAL', 'E_INQUIRY', 'C_TEMPORAL'], selected_features=28, candidate_outer_auc=0.773241, blend_weight=0.45
+[2026-11-02T08:19:59.481281+00:00] Completed: decision=REJECTED, nested_blend_auc=0.77054757, Phase2_auc=0.77034958, delta=+0.00019798

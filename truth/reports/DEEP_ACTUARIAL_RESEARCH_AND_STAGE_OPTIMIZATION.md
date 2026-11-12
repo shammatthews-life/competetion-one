@@ -1,9 +1,9 @@
 # Deep Actuarial Research, Mathematical Limitations & Multi-Stage Optimization Report
-**Document ID:** `GCI-RESEARCH-2026-11-11-V28-GPU-UNTOUCHED-2027`  
-**Target:** Solo Champion V28 Clean-Room GPU Architecture (`SEED_EVAL=2027` Untouched Nested CV) & Comprehensive Mathematical Autopsy  
+**Document ID:** `GCI-RESEARCH-2026-11-12-V28-GPU-NESTED-2027`  
+**Target:** Solo Champion V28 Clean-Room GPU Architecture (`SEED_EVAL=2027` Two-Level Nested CV with Within-Fold Meta Selection) & Comprehensive Mathematical Autopsy  
 **Authors:** GCI Cognitive Autonomous Research Team  
-**Compliance Standard:** 100% Pure Supervised Inductive / Zero Target Propagation (`partner_enc` Removed) / Zero Test Pooling / Inner-Fold Local Priors & Preprocessing / Zero Eval-Split Peeking  
-**Verified Untouched Two-Level Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771694`** (`+21.74 bps` over prior V27 `0.769520`; 5-Fold Untouched Mean `0.771704`, Std `0.001972`; `SEED=42` post-dev run was `0.772452`)  
+**Compliance Standard:** 100% Pure Supervised Inductive / Zero External Data / Zero Target Propagation (`partner_enc` Removed) / Zero Test Pooling / Inner-Fold Local Priors & Preprocessing / Within-Fold Hyperparameter Selection / Identical Inner-Outer Schedules / Deterministic CUDA  
+**Verified Two-Level Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771750`** (`+22.30 bps` over prior V27 `0.769520`; 5-Fold Held-Out Mean `0.771758`, Std `0.001943`; prior `C=0.05` run was `0.771694`)  
 **Historical Reference Synthesis (With `partner_enc`):** `0.778480` *(superseded due to rule/validation audit findings)*
 
 ---
@@ -389,9 +389,9 @@ Following two comprehensive technical and rule-compliance audits of `V22`, `V23`
 | **Train+Test Pooling** | `V22`, `V23`, `V27` | Pooled `df_train + df_test` for medians, residuals, group means, `onehot` | Every fit (`residuals`, `medians`, `FC_*`, `FG_*`, `StandardScaler`, `TE`, `CDF`) fits strictly inside training folds |
 | **Stacking In-Sample / Scrambling** | `V27` (L366, L371) | `variant != "A"` predicted in-sample on `Xs.iloc[a]`; `"A"` scrambled indices via `np.concatenate(pv)` | Strictly row-aligned inner 3-fold OOF (`inner[ib] = ...`) across all 6 views |
 | **Early-Stopping Validation Peeking** | `V23`, `V27` | `eval_set=(va_b)` triggered early stopping on outer validation fold `b` | Fixed iteration schedules & epochs across all 9 models (`b` untouched) |
-| **Un-Nested Weight / Inner / Eval Leakage** | `V27` (L792–804), `V28` (prior `SEED=42` Fold-1 benchmarks) | `Nelder-Mead` / probit CDF fit on global OOF, shared `Xa_res`, full-`y_fit` TE prior, or `bench_v28_*` inspecting `SEED=42` Fold 1 `y_b` | **Untouched `SEED_EVAL=2027` Two-Level Nested CV**: inner splits `(df_ia, df_ib)` recompute all preprocessing (`prior_inner = y_fit[ia].mean()`); convex `LogisticRegression(C=0.05)` Probit stacking fits only on `(Z_in, y[a])`; zero `bench_*` script ever touches `SEED_EVAL=2026` or `2027` |
+| **Un-Nested Weight / Inner / Eval Leakage** | `V27` (L792–804), `V28` (prior `SEED=42` Fold-1 benchmarks) | `Nelder-Mead` / probit CDF fit on global OOF, shared `Xa_res`, full-`y_fit` TE prior, or `bench_v28_*` inspecting `SEED=42` Fold 1 `y_b` | **Honest `SEED_EVAL=2027` Two-Level Nested CV + Within-Fold Meta Selection**: inner splits `(df_ia, df_ib)` recompute all preprocessing (`prior_inner = y_fit[ia].mean()`); automated `C`-grid selection & convex `LogisticRegression` Probit stacking fit only on `(Z_in, y[a])`; zero `b`/`test` leakage (acknowledging shared 171,202 rows across earlier dev phases) |
 | **V22 Cache Key Collision** | `V22` (Cell 6) | Cache keys `(len(fit), len(qi), fit[0])` collided across folds | Replaced with full SHA-256 `idx_hash(ix)` over contiguous arrays; `onehot()` train-only; stale Cells 6–9 outputs cleared |
-| **CPU-Only Torch & Literal Audit Checks** | `requirements.txt`, `audit_check_compliance.py` | CPU-only `torch==2.15.0`; scanner matched literal string and missed arg checks / input SHA-256 provenance | Installed & pinned CUDA **`torch==2.14.1+cu130`** (`RTX 4050`); upgraded scanner to exact `ia` subscript, inner-arg AST checks, `bench_*` split isolation, relative paths, and input+output SHA-256 matching |
+| **CPU-Only Torch & Literal Audit Checks** | `requirements.txt`, `audit_check_compliance.py` | CPU-only `torch==2.15.0`; scanner matched literal string and missed arg checks / input SHA-256 provenance | Installed & pinned CUDA **`torch==2.14.1+cu130`** (`RTX 4050`); upgraded scanner to exact `ia` subscript, inner-arg AST checks, `bench_*` split isolation, identical inner/outer iteration parity, `.is_unique` + `use_deterministic_algorithms` checks, and input+output SHA-256 matching |
 
 ### 7.2 Deep Data Discoveries & Orthogonal GPU Research Upgrades in V28
 1. **Exact Insurance Grid (`K_0066`) & Exact Servicing Fee (`Fee = 128.5`):**
@@ -401,19 +401,26 @@ Following two comprehensive technical and rule-compliance audits of `V22`, `V23`
    - Housing default rates span $2\times$ (`Rented 12.95%` vs `Office 6.51%`) and Region Rating spans $2.35\times$ (`Tier 1: 4.70%` vs `Tier 3: 11.03%`). Strict in-fold TE on `REGION_RATING_CLIENT | NAME_HOUSING_TYPE` + `NAME_INCOME_TYPE | NAME_EDUCATION_TYPE` lifted 5-fold CV by **`+5.94 bps` across 5/5 folds** (`0.768714` $\to$ `0.769308`).
 3. **Compressed `VIEW_GROUPS` Eliminates Collinearity Dilution (`29` Group Features):**
    - Feeding **29** raw fold-fit frequency & group-deviation columns (`13 FC_*` frequencies + `16 FG_*` group deviations) directly into LightGBM caused `colsample` subspace dilution (`0.761134` $\to$ `0.761055`). Isolating all 29 group statistics inside an aligned inner-OOF `VIEW_GROUPS` sub-model preserved the signal in 1 orthogonal meta-column (and candidate row features were rejected cleanly inside `inner_dev` before locking V28).
-4. **CUDA GPU Acceleration & Dual Orthogonal Neural Family (`RTX 4050`, `33.64%` Combined Weight):**
-   - Installed **`torch==2.14.1+cu130`** (`32×` neural speedup: `~2.2s`/seed vs `70s` CPU). Strictly isolated 3-fold `inner_dev` research (`a_dev`, `n=136,961`, zero overlap with `SEED_EVAL=2027`) proved:
+4. **CUDA GPU Acceleration & Dual Orthogonal Neural Family (`RTX 4050`, `34.04%` Combined Weight):**
+   - Installed **`torch==2.14.1+cu130`** (`32×` neural speedup: `~2.2s`/seed vs `70s` CPU). 3-fold `inner_dev` research (`a_dev`, `n=136,961`) proved:
      * Adding explicit missingness binary masks (`TabResMLP_NaNMask_GPU`): **`0.766948`** vs `0.766704` (`+2.44 bps`).
      * Adding **Periodic Fourier Numerical Embeddings + SwiGLU ResNet (`TabPeriodicSwiGLU_GPU`, $\sigma=0.12$)**: **`0.767179`** (`+4.75 bps` vs old MLP), lifting 3-fold `inner_dev` ensemble to `0.769862` (`w=[0.230, 0.250, 0.157, 0.151, 0.211]`).
-     * On untouched `SEED_EVAL=2027`, **`TabPeriodicSwiGLU_GPU`** earned **`18.69%`** (#1 model weight!) and **`TabResMLP_NaNMask_GPU`** scored **`0.769640`** (`14.95%` weight -> `33.64%` total neural weight).
-5. **CatBoost Double-TE Diagnostic & CUDA XGBoost `max_bin=512` (`bench_v29_3fold_inner_dev.py`):**
+     * On `SEED_EVAL=2027` (`task-13608`), **`TabPeriodicSwiGLU_GPU`** earned **`17.69%`** (#1 model weight!) and **`TabResMLP_NaNMask_GPU`** scored **`0.769640`** (`16.35%` weight -> `34.04%` total neural weight).
+5. **CatBoost Double-TE Diagnostic, Inner/Outer Parity & CUDA XGBoost `max_bin=512`:**
    - Increasing CUDA XGBoost histogram resolution (`max_bin=512`) improved 1-split inner-dev AUC by **`+7.52 bps`** (`0.766330` $\to$ `0.767082`).
-   - Testing `CB_D6_B254_TE` on full 3-fold `inner_dev` proved feeding `te_a` into CatBoost alongside online `max_ctr=2` dropped AUC by **`-11.17 bps`** (`0.766424` $\to$ `0.765307`, and `0.767039` in intermediate `SEED_EVAL=2026`); restoring `CB_GPU_D7_Product` (`No-TE`) recovered CatBoost performance to `0.767902` on `SEED_EVAL=2027`.
-6. **Untouched `SEED_EVAL=2027` Execution & Provenance Certification (`task-13537`, `4455.5s`):**
-   - **Verified Raw Data SHA-256 Hashes Printed Live:** `train.csv` (`B8DD5A...ECF1`), `test.csv` (`DFB7AE...2C65`), `sample_submission.csv` (`6E5AD5...E7DB`).
-   - **Final Untouched 5-Fold Pooled OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771694`** (`Equal-Weight: 0.771671`, `5-Fold Mean: 0.771704`, `Std: 0.001972`; note historical `SEED=42` `0.772452` followed Fold-1 development selection).
+   - Testing `CB_D6_B254_TE` on full 3-fold `inner_dev` proved feeding `te_a` into CatBoost alongside online `max_ctr=2` dropped AUC by **`-11.17 bps`** (`0.766424` $\to$ `0.765307`); restoring `CB_GPU_D7_Product` (`No-TE`) and unifying `iterations=850` across both inner and outer stages raised CatBoost OOF to **`0.767965`** on `SEED_EVAL=2027`.
+6. **`SEED_EVAL=2027` Execution & Provenance Certification (`task-13608`, `4637.6s`):**
+   - **Verified Hardware & Raw Data SHA-256 Hashes Printed Live:** `Python=3.12.10 | CatBoost=GPU | XGBoost=cuda | PyTorch=2.14.1+cu130 (CUDA=13.0, CUDA:NVIDIA GeForce RTX 4050 Laptop GPU)`; `train.csv` (`B8DD5A...ECF1`), `test.csv` (`DFB7AE...2C65`), `sample_submission.csv` (`6E5AD5...E7DB`).
+   - **Final 5-Fold Outer-Nested OOF ROC-AUC (`SEED_EVAL=2027`):** **`0.771750`** (`Equal-Weight: 0.771678`, `5-Fold Mean: 0.771758`, `Std: 0.001943`; within-fold selected `best_C`: `[0.02, 0.005, 0.01, 0.005, 0.01]`).
    - **Genuine Top-to-Bottom Execution & Semantic AST Verification:** All 7 code cells of [`solo_champion_v28_certified.ipynb`](file:///d:/gci/solo_champion_v28_certified.ipynb) executed sequentially (`exec_counts: [1..7]`), passing [`truth/audit_check_compliance.py`](file:///d:/gci/truth/audit_check_compliance.py) (exit code `0`) with exact input+output SHA-256 verification.
    - **Archived V22 Reference Caveat:** [`GCI_v22_pure_champion_master.ipynb`](file:///d:/gci/GCI_v22_pure_champion_master.ipynb) remains a legacy pooled-feature archive (`partner_enc` and key collisions removed, Cell 3 `al`/`PL_S` preserved, Cells 6–9 cleared); use **V28** (`solo_champion_v28_certified.py`/`.ipynb`) for submission.
 7. **Verified V28 Submission Artifact:**
-   - File: [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, `0` nulls, bounds `[0.000125, 0.999978]`, exact ID parity with `sample_submission.csv` | SHA-256: `EDC698878304273F9A40D8A6D861299AAF606162ED491FAAFBBF38236E62F43E`).
+   - File: [`LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv`](file:///d:/gci/LEADERBOARD_SUBMISSION_V28_CERTIFIED.csv) (`61,500` rows, unique `SK_ID_CURR` verified on `df_test`/`sample_sub`/`sub`, exact ID parity with `sample_submission.csv` | SHA-256: `4B4E220C8A99670CC4E4D26CB9B34A1C4470DEE428E042220D9737D5F2C47CFA`).
+
+### 7.3 Permanent Competition Rules & Validation Integrity Checklist (Never Repeat)
+1. **Zero External Data / Historical CSVs:** Read only `train.csv`, `test.csv`, `sample_submission.csv`.
+2. **Zero Hand-Labeling / Heuristic Target Transfer:** Zero `partner_enc` (`PY_ANY`) and zero manual EDA-conditional test weights; all predictions come from trained inductive models.
+3. **Strict Fold-Local Preprocessing & Within-Fold Selection:** Every vocabulary, residual regressor, TE prior (`y_fit[ia].mean()`), view stacker, probit CDF, and meta-hyperparameter (`C` grid) fits strictly inside `df_ia` / `df_a`, with zero `ib`/`b`/`test` leakage.
+4. **No Disjointness Overclaims on Shared 171k Rows:** Re-seeding CV (`2027` vs `42`) over the same 171,202 rows shares ~80% of rows per fold; report honestly as two-level outer-nested CV with within-fold meta selection.
+5. **Inner/Outer Iteration Parity, Unique-ID Assertions & Deterministic GPU Flags:** Identical `iterations=850` across inner/outer CatBoost; `.is_unique` checks on `df_test`, `sample_sub`, and `sub`; `CUBLAS_WORKSPACE_CONFIG=:4096:8`, `cudnn.deterministic=True`, `torch.use_deterministic_algorithms(True, warn_only=True)`, and `requirements.txt` + `torch==2.14.1+cu130` consistency.
 

@@ -22,13 +22,18 @@ GCI WORLD 2026: SOLO CHAMPION V28 AUDIT-CERTIFIED CLEAN-ROOM PIPELINE
      - Inside every outer fold (a, b), each inner split `(ia, ib)` fits its own
        `cmaps_in`, `build_row_features`, `compute_fold_residuals`, `compute_local_te`
        (using `prior_inner = y_fit[ia].mean()`), and `compute_local_views` strictly
-       on `df_ia` before training all 9 models to predict `df_ib` into `inner_oof`.
-     - Empirical probit CDF curves and ensemble weights `w_k` are fitted ONLY on
-       `(inner_oof, y_train[a])`, then applied to outer-fold models trained on full `a`
-       to evaluate completely untouched outer validation fold `b`.
+       on `df_ia` before training all 10 models to predict `df_ib` into `inner_oof`.
+     - Empirical probit CDF curves, automated meta-regularization C selection, and
+       ensemble weights `w_k` are fitted ONLY on `(inner_oof, y_train[a])`, then
+       applied to outer-fold models trained on full `a` to evaluate held-out `b`.
+     - Note: `SEED_EVAL=2027` evaluates all 171,202 competition training rows with
+       strict outer/inner fold isolation and zero `b`/`test` leakage (architecture
+       choices also reflect prior development iterations on the training dataset).
   5. Deterministic Reproducibility & Citations:
-     - Fixed seed (42) across Python, NumPy, PyTorch, LightGBM, XGBoost, CatBoost.
-     - Exact dependency versions pinned in requirements.txt (including torch==2.15.0).
+     - Fixed seed (42) across Python, NumPy, PyTorch, LightGBM, XGBoost, CatBoost,
+       with `CUBLAS_WORKSPACE_CONFIG=:4096:8`, `cudnn.deterministic=True`, and
+       `torch.use_deterministic_algorithms(True, warn_only=True)`.
+     - Exact dependency versions pinned in requirements.txt (including torch==2.14.1+cu130).
 
 Original Sources & Citations:
   - LightGBM: Ke, G., et al. (2017). NeurIPS 30, 3146-3154.
@@ -74,18 +79,24 @@ if sys.platform == "win32":
         pass
 
 SEED = 42
-SEED_EVAL = 2027  # Completely untouched outer CV evaluation split (never touched by any bench_* script)
+SEED_EVAL = 2027  # Outer 5-fold nested evaluation split (strictly isolated from outer-val b and test; within-fold meta selection inside a)
 CATS = [
     "NAME_CONTRACT_TYPE", "CODE_GENDER", "NAME_INCOME_TYPE", "NAME_EDUCATION_TYPE",
     "NAME_FAMILY_STATUS", "NAME_HOUSING_TYPE", "OCCUPATION_TYPE", "ORGANIZATION_TYPE"
 ]
 
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 def set_all_seeds(seed=SEED):
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
     torch.set_num_threads(8)
 
 # ==============================================================================
@@ -609,7 +620,7 @@ def fit_predict_all_10_models(Xa_res, Xb_res, df_fit, df_val, y_fit, te_a, te_b,
 
     ca_cb = make_cb_df(Xa_res, df_fit, kf_keys, v_a)
     cb_cb = make_cb_df(Xb_res, df_val, kv_keys, v_b)
-    mc = CatBoostClassifier(iterations=850 if is_outer else 750, depth=7, learning_rate=0.04, l2_leaf_reg=10.0,
+    mc = CatBoostClassifier(iterations=850, depth=7, learning_rate=0.04, l2_leaf_reg=10.0,
                             border_count=128, max_ctr_complexity=2, loss_function="Logloss", random_seed=seed, task_type=cb_task, verbose=False)
     mc.fit(ca_cb, y_fit, cat_features=cb_cats, verbose=False)
     preds_b["CB_GPU_D7_Product"] = mc.predict_proba(cb_cb)[:, 1]
@@ -635,8 +646,8 @@ def main():
     out_csv = Path(args.output_csv)
 
     print("=" * 86, flush=True)
-    print("  GCI WORLD 2026: SOLO CHAMPION V28 (UNTOUCHED SEED_EVAL=2027 TWO-LEVEL NESTED CV)", flush=True)
-    print("  100% GPU-Accelerated Neural + Tree Zoo | Strict Inner/Outer Fold Isolation", flush=True)
+    print("  GCI WORLD 2026: SOLO CHAMPION V28 (SEED_EVAL=2027 TWO-LEVEL OUTER-NESTED CV)", flush=True)
+    print("  100% GPU-Accelerated 10-Model Neural+Tree Zoo | Strict Within-Fold Selection", flush=True)
     print("=" * 86, flush=True)
 
     for fname in ("train.csv", "test.csv", "sample_submission.csv"):
@@ -649,6 +660,8 @@ def main():
 
     y_train = df_train["TARGET"].values.astype(np.int32)
     ntr, nte = len(df_train), len(df_test)
+    assert df_test["SK_ID_CURR"].is_unique, "df_test SK_ID_CURR must be unique"
+    assert sample_sub["SK_ID_CURR"].is_unique, "sample_sub SK_ID_CURR must be unique"
     assert nte == len(sample_sub) and (df_test["SK_ID_CURR"].values == sample_sub["SK_ID_CURR"].values).all(), "Alignment check failed"
 
     try:
@@ -664,7 +677,9 @@ def main():
     except Exception:
         xgb_device = "cpu"
     nn_dev = f"CUDA:{torch.cuda.get_device_name(0)}" if torch.cuda.is_available() else "CPU(8 threads)"
-    print(f"[*] Hardware Profile: CatBoost={cb_task} | XGBoost={xgb_device} | PyTorch={torch.__version__} ({nn_dev})", flush=True)
+    py_ver = sys.version.split()[0]
+    cuda_rt = torch.version.cuda or "CPU"
+    print(f"[*] Hardware Profile: Python={py_ver} | CatBoost={cb_task} | XGBoost={xgb_device} | PyTorch={torch.__version__} (CUDA={cuda_rt}, {nn_dev})", flush=True)
 
     outer_folds = list(StratifiedKFold(5, shuffle=True, random_state=SEED_EVAL).split(np.zeros(ntr), y_train))
     model_names = [
@@ -682,7 +697,7 @@ def main():
 
     for fi, (a, b) in enumerate(outer_folds):
         t_f = time.time()
-        print(f"\n--- OUTER FOLD {fi+1}/5 (Train={len(a):,}, Untouched Val={len(b):,}) ---", flush=True)
+        print(f"\n--- OUTER FOLD {fi+1}/5 (Train={len(a):,}, Held-Out Val={len(b):,}) ---", flush=True)
 
         # 1. Inner 3-Fold CV strictly inside `a`: EVERY preprocessing stage fits on `df_ia` only!
         inner_oof = {m: np.zeros(len(a)) for m in model_names}
@@ -708,16 +723,31 @@ def main():
             for mn in model_names:
                 inner_oof[mn][ib] = preds_ib[mn]
 
-        # 2. Fit Probit CDFs and Convex L2-Regularized Probit Logistic Weights STRICTLY on `(inner_oof, y_train[a])`
+        # 2. Fit Probit CDFs, Select Meta-Regularization C via Nested Inner-Meta CV, and Fit Simplex Weights STRICTLY on `(inner_oof, y_train[a])`
         pmaps = {mn: fit_probit_map(inner_oof[mn]) for mn in model_names}
         Z_in = np.column_stack([np.interp(inner_oof[mn], *pmaps[mn]) for mn in model_names])
         uniform = np.ones(M) / float(M)
 
-        lr_meta = LogisticRegression(C=0.05, max_iter=500)
+        meta_cv = list(StratifiedKFold(5, shuffle=True, random_state=200 + fi).split(Z_in, y_train[a]))
+        best_c, best_meta_auc = 0.05, -1.0
+        for c_cand in (0.002, 0.005, 0.01, 0.02, 0.05, 0.10, 0.25):
+            oof_meta = np.zeros(len(a))
+            for ma, mb in meta_cv:
+                lr_c = LogisticRegression(C=c_cand, max_iter=500)
+                lr_c.fit(Z_in[ma], y_train[a][ma])
+                wc = np.maximum(lr_c.coef_[0], 0.0)
+                wc = wc / wc.sum() if wc.sum() > 1e-9 else uniform.copy()
+                oof_meta[mb] = Z_in[mb] @ wc
+            c_auc = roc_auc_score(y_train[a], oof_meta)
+            if c_auc > best_meta_auc:
+                best_meta_auc, best_c = c_auc, c_cand
+
+        lr_meta = LogisticRegression(C=best_c, max_iter=500)
         lr_meta.fit(Z_in, y_train[a])
         w_k = np.maximum(lr_meta.coef_[0], 0.0)
         w_k = w_k / w_k.sum() if w_k.sum() > 1e-9 else uniform.copy()
         weights_history.append(w_k)
+        print(f"  [Fold {fi+1} Within-Fold Meta Selection] best_C={best_c} (inner-meta OOF AUC={best_meta_auc:.6f})", flush=True)
 
         # 3. Outer-Fold Preprocessing on Full `a` & Outer Models -> Predict Strictly Untouched `b` and `df_test`
         cmaps = fit_category_maps(df_train.iloc[a])
@@ -750,10 +780,10 @@ def main():
 
         f_auc = roc_auc_score(y_train[b], nested_oof[b])
         fold_aucs.append(f_auc)
-        print(f"  [Fold {fi+1} Untouched Val AUC] Nested={f_auc:.6f} | Inner-OOF AUC={roc_auc_score(y_train[a], Z_in @ w_k):.6f} ({time.time()-t_f:.1f}s)", flush=True)
+        print(f"  [Fold {fi+1} Held-Out Val AUC] Nested={f_auc:.6f} | Inner-OOF AUC={roc_auc_score(y_train[a], Z_in @ w_k):.6f} ({time.time()-t_f:.1f}s)", flush=True)
 
     print("\n" + "=" * 86, flush=True)
-    print("  INDIVIDUAL OUTER-FOLD MODEL STREAM POOLED OOF AUCs (UNTOUCHED SEED_EVAL=2027)", flush=True)
+    print("  INDIVIDUAL OUTER-FOLD MODEL STREAM POOLED OOF AUCs (SEED_EVAL=2027)", flush=True)
     print("=" * 86, flush=True)
     mean_w = np.mean(weights_history, axis=0)
     for mn, wv in zip(model_names, mean_w):
@@ -764,13 +794,14 @@ def main():
     print("-" * 86, flush=True)
     print(f"  TRUE TWO-LEVEL OUTER-NESTED OOF ROC-AUC (SEED_EVAL=2027): {nested_pooled:.6f}", flush=True)
     print(f"  EQUAL-WEIGHT PROBIT OOF ROC-AUC                         : {eq_pooled:.6f}", flush=True)
-    print(f"  5-Fold Untouched Mean AUC (Std)                         : {np.mean(fold_aucs):.6f} ({np.std(fold_aucs):.6f})", flush=True)
+    print(f"  5-Fold Held-Out Mean AUC (Std)                          : {np.mean(fold_aucs):.6f} ({np.std(fold_aucs):.6f})", flush=True)
     print("-" * 86, flush=True)
 
     sub = pd.DataFrame({
         "SK_ID_CURR": df_test["SK_ID_CURR"].astype(np.int64),
         "TARGET": np.clip(norm.cdf(test_fold_probit), 1e-6, 1.0 - 1e-6).astype(np.float64)
     })
+    assert sub["SK_ID_CURR"].is_unique, "Submission SK_ID_CURR must be unique"
     sub.to_csv(out_csv, index=False)
 
     assert len(sub) == len(sample_sub) and list(sub.columns) == list(sample_sub.columns)

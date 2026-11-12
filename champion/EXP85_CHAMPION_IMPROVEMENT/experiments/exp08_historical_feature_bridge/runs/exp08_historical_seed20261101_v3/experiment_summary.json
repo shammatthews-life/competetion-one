@@ -1,0 +1,5398 @@
+{
+  "advancement_gate": {
+    "decision": "REJECTED",
+    "fold_delta_standard_error": 9.723779210347961e-05,
+    "folds": 5,
+    "mean_delta": 0.0001896469854617555,
+    "minimum_mean_delta_standard_errors": 2.0,
+    "minimum_pooled_auc_delta": 0.001,
+    "minimum_positive_folds": 4,
+    "passed": false,
+    "pooled_auc_delta": 0.00019798495073664046,
+    "positive_folds": 4
+  },
+  "experiment_id": "exp08_historical_seed20261101_v3",
+  "feature_research": {
+    "exact_phase2_name_overlaps": {
+      "DAYS_EMPLOYED_CLEAN": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "EXT_MAX": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "EXT_MEAN": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "EXT_MIN": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "EXT_STD": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "MERTON_PD_20": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      },
+      "MERTON_PD_25": {
+        "exact_duplicate_in_phase2_catboost": false,
+        "exact_duplicate_in_phase2_lgb": true
+      }
+    },
+    "excluded_features": {
+      "APP_ORDER": "groupby(entity key).cumcount() after pooled timeline sort",
+      "DAYS_SINCE_PREV_APP": "within-entity registration-day diff; missing filled -999",
+      "DAYS_TO_NEXT_APP": "within-entity reverse registration-day diff; missing filled -999",
+      "N_APPS_ALL": "count of rows sharing pooled train/test entity key",
+      "UIDY_ANYBAD": "indicator that matching entity labels include a positive target",
+      "UIDY_N": "count of matching entity labels in global seed-42 OOF fold reference",
+      "UIDY_NEAR_D": "absolute day gap to nearest matching entity target",
+      "UIDY_NEAR_Y": "nearest matching entity target in global seed-42 OOF fold reference",
+      "UIDY_SUM": "sum of matching entity labels in global seed-42 OOF fold reference"
+    },
+    "excluded_formula_count": 9,
+    "family_sizes": {
+      "A_FINANCIAL": 34,
+      "B_RISK": 11,
+      "C_TEMPORAL": 11,
+      "D_DEMOGRAPHIC": 8,
+      "E_INQUIRY": 10,
+      "F_EXTERNAL": 16,
+      "H_INTERACTIONS": 570
+    },
+    "formula_parity": "660/660 reconstructed features matched the historical executable on a bounded synthetic fixture; the parity test runs from memory and writes no historical cache files",
+    "full_historical_matrix_hash_parity": "Not independently reproduced: historical cached matrices were unavailable.",
+    "full_raw_missing_and_infinity_counts": {
+      "BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "CLAYTON_COPULA_1_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "CLAYTON_COPULA_4_0": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "CREDIT_PER_MEMBER": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DEPENDENCY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DISPOSABLE_INC": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DSCR_BELOW1": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DSCR_BELOW1_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DTI": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DTI_40": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DTI_46": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "DTI_50": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "EAR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "EMP_STABILITY": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "EMP_VS_REG": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "EXT_CUBE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_DIFF_12": {
+        "infinite": 0,
+        "missing": 161962
+      },
+      "EXT_DIFF_13": {
+        "infinite": 0,
+        "missing": 183622
+      },
+      "EXT_DIFF_23": {
+        "infinite": 0,
+        "missing": 74573
+      },
+      "EXT_MAX": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_MEAN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_MIN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_PROD": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "EXT_SQ": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_STD": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "EXT_WEIGHTED": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "EXT_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_x_DTI": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_x_EAR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_x_LTV": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "EXT_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "FFI": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "FOIR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "FULLY_FINANCED": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "GOODS_CREDIT_DIFF": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "HFVI": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "HOUSING_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "HOUSING_STABILITY": {
+        "infinite": 50,
+        "missing": 0
+      },
+      "ID_CHANGED_RECENTLY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "ID_VS_REG": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "INCOME_PER_MEMBER": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "INQUIRY_BURST": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "INQUIRY_PER_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "INQUIRY_QRT_RATIO": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "INQUIRY_ZERO_FLAG": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "IS_MARRIED": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "IS_RETIRED": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "LIQUIDITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "LTV_100": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "LTV_75": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MARKUP_KEY_2D": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_DD_20": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_DD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_DD_35": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_PD_20": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "MERTON_PD_35": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "OVERSPENDING": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PAYMENT_SHOCK_10": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PAYMENT_SHOCK_20": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_CHANGED_RECENTLY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_CONTACT_SCORE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_STABILITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_VS_ID": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_VS_REG": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "PHONE_WORK_EMP_MATCH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_ANNUITY_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_ANNUITY_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_ANNUITY_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_ANNUITY_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_ANNUITY_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_CREDIT_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_GOODS_PRICE_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_GOODS_PRICE_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_GOODS_PRICE_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_GOODS_PRICE_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_AMT_INCOME_TOTAL_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_BUFFER_MONTHS_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CLAYTON_COPULA_2_5_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CLAYTON_COPULA_2_5_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_CREDIT_TERM_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_CREDIT_TERM_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_BIRTH_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_ID_PUBLISH_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_LAST_PHONE_CHANGE_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DAYS_REGISTRATION_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DSCR_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DSCR_sub_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_DTI_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_EAR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_DTI_sub_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_EAR_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EAR_sub_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_EXT_MEAN_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41587
+      },
+      "P_DIFF_EXT_MEAN_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DSCR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_DTI": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_EAR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_LTV": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_EXT_MEAN_sub_SURPLUS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_DIFF_LTV_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_LTV_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_LTV_sub_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_MERTON_PD_25_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_MERTON_PD_25_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_MERTON_PD_25_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_DIFF_SURPLUS_sub_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_DIFF_SURPLUS_sub_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_ANNUITY_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_ANNUITY_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_ANNUITY_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_ANNUITY_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_ANNUITY_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_CREDIT_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_GOODS_PRICE_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_GOODS_PRICE_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_GOODS_PRICE_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_GOODS_PRICE_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_AMT_INCOME_TOTAL_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_BUFFER_MONTHS_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CLAYTON_COPULA_2_5_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CLAYTON_COPULA_2_5_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_CREDIT_TERM_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_CREDIT_TERM_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_BIRTH_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_BIRTH_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_EMPLOYED_CLEAN_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_ID_PUBLISH_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_LAST_PHONE_CHANGE_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DAYS_REGISTRATION_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DSCR_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DSCR_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_DTI_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_EAR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_DTI_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_EAR_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EAR_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_EXT_MEAN_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41587
+      },
+      "P_PROD_EXT_MEAN_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DSCR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_DTI": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_EAR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_LTV": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_EXT_MEAN_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_PROD_LTV_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_LTV_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_LTV_x_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_MERTON_PD_25_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_MERTON_PD_25_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_MERTON_PD_25_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_PROD_SURPLUS_x_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_PROD_SURPLUS_x_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_ANNUITY_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_ANNUITY_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_ANNUITY_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_ANNUITY_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_ANNUITY_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_CREDIT_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_GOODS_PRICE_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_GOODS_PRICE_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_GOODS_PRICE_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_GOODS_PRICE_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_AMT_INCOME_TOTAL_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_BUFFER_MONTHS_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CLAYTON_COPULA_2_5_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CLAYTON_COPULA_2_5_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_CREDIT_TERM_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_CREDIT_TERM_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_BIRTH_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_BIRTH_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_EMPLOYED_CLEAN_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_ID_PUBLISH_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DAYS_REGISTRATION_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DSCR_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DSCR_div_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_DTI_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_EAR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_DTI_div_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_EAR_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_LTV": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EAR_div_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_EXT_MEAN_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41587
+      },
+      "P_RATIO_EXT_MEAN_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DSCR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_DTI": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_EAR": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_LTV": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_EXT_MEAN_div_SURPLUS": {
+        "infinite": 0,
+        "missing": 160
+      },
+      "P_RATIO_LTV_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_LTV_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_DSCR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_LTV_div_SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_MERTON_PD_25_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_MERTON_PD_25_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_MERTON_PD_25_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_AMT_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_AMT_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_AMT_GOODS_PRICE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_AMT_INCOME_TOTAL": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_BUFFER_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_CLAYTON_COPULA_2_5": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_CREDIT_TERM": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_DAYS_BIRTH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_DAYS_EMPLOYED_CLEAN": {
+        "infinite": 0,
+        "missing": 41463
+      },
+      "P_RATIO_SURPLUS_div_DAYS_ID_PUBLISH": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_DAYS_LAST_PHONE_CHANGE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_DAYS_REGISTRATION": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_DEBT_BURDEN": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "P_RATIO_SURPLUS_div_MERTON_PD_25": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "REGION_POP_INCOME": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "REGION_RATING_ANNUITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "REGION_RATING_CREDIT": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "REG_CHANGED_RECENTLY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "REG_STABILITY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "RESERVE_MONTHS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "SHOCK_BREACH20": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "SOLVENCY": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "SPEND_PRESSURE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "SURPLUS": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "SURPLUS_TO_INC": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "TDSR": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "TERM_KEY_1D": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "TOTAL_INQUIRIES": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "TRUE_COST": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "TRUE_COST_RATIO": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "ZOMBIE": {
+        "infinite": 0,
+        "missing": 0
+      },
+      "Z_SCORE": {
+        "infinite": 0,
+        "missing": 0
+      }
+    },
+    "historical_executable": "D:\\gci\\_gci_push_tmp\\champion\\05_FEATURE_ENGINEERING\\FEATURE_BUILDERS\\build_hasan_600_features.py",
+    "historical_specification_conflict": "The prose specification describes bivariate Clayton and a region-volatility Merton model; the executable implements a trivariate EXT_SOURCE Clayton transform and fixed-parameter disposable-income Merton-like transforms. Executable formulas were followed.",
+    "inventory": {
+      "excluded_features": 9,
+      "inventory_path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\FEATURE_INVENTORY.csv",
+      "phase2_exact_name_overlap_count": 18,
+      "reconstructed_features": 660,
+      "rows": 669,
+      "sha256": "5c3367eb439a496188771d7bb0674704f2c0b79530dfcbc4e7f304857cd8f78b"
+    },
+    "legacy_formula_count": 669,
+    "reconstructed_formula_count": 660
+  },
+  "fold_index_files": [
+    "fold_1_indices.npz",
+    "fold_2_indices.npz",
+    "fold_3_indices.npz",
+    "fold_4_indices.npz",
+    "fold_5_indices.npz"
+  ],
+  "fold_protocol": {
+    "fold_reference": {
+      "exp04": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\sha256_manifest.json"
+      },
+      "exp05": {
+        "folds_verified": 5,
+        "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\fold_indices.npz"
+      },
+      "phase2": {
+        "folds_verified": 5,
+        "manifest": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json"
+      }
+    },
+    "historical_clayton_ranks": "Empirical average ranks fitted on model-fit rows only and applied to inner/outer validation and test rows.",
+    "infinite_feature_policy": "Preserve historical values for audit, record counts, and exclude HOUSING_STABILITY before model input; fail on any other infinite generated feature. No infinity-to-NaN conversion.",
+    "inner_only_blend_weight_selection": true,
+    "inner_only_early_stopping": true,
+    "inner_only_group_and_feature_selection": true,
+    "inner_split": "EXP06 StratifiedShuffleSplit on outer-fit rows; seed=outer seed + fold",
+    "outer_folds": 5,
+    "outer_seed": 20261101,
+    "outer_validation_used_for_selection": false,
+    "phase2_target_encoding_audited": true,
+    "selected_groups_per_fold": {
+      "1": [
+        "F_EXTERNAL",
+        "B_RISK"
+      ],
+      "2": [
+        "H_INTERACTIONS"
+      ],
+      "3": [
+        "E_INQUIRY",
+        "F_EXTERNAL",
+        "A_FINANCIAL"
+      ],
+      "4": [
+        "A_FINANCIAL",
+        "B_RISK",
+        "D_DEMOGRAPHIC"
+      ],
+      "5": [
+        "F_EXTERNAL",
+        "E_INQUIRY",
+        "C_TEMPORAL"
+      ]
+    }
+  },
+  "folds": [
+    {
+      "candidate_catboost_best_iteration": 311,
+      "candidate_lgb_best_iteration": 304,
+      "candidate_xgboost_best_iteration": 317,
+      "candidate_xgboost_included": true,
+      "elapsed_seconds": 321.364315600018,
+      "fold": 1,
+      "folded_families": {
+        "A_FINANCIAL": {
+          "best_iteration": 340,
+          "exact_duplicate_features": [
+            "DAYS_EMPLOYED_CLEAN"
+          ],
+          "inner_auc": 0.7637023403068709,
+          "inner_delta_vs_phase2_lgb": -0.0008317887401182444,
+          "outer_auc": 0.7649005956477444,
+          "selected_features": [
+            "GOODS_CREDIT_DIFF",
+            "LIQUIDITY",
+            "LTV",
+            "DTI",
+            "Z_SCORE",
+            "EAR",
+            "TDSR",
+            "SURPLUS",
+            "CREDIT_TERM",
+            "TRUE_COST",
+            "DEBT_BURDEN",
+            "TRUE_COST_RATIO",
+            "DSCR",
+            "SURPLUS_TO_INC",
+            "ZOMBIE",
+            "RESERVE_MONTHS",
+            "FOIR",
+            "DISPOSABLE_INC",
+            "SOLVENCY",
+            "BUFFER_MONTHS"
+          ],
+          "selected_for_combined": false
+        },
+        "B_RISK": {
+          "best_iteration": 354,
+          "exact_duplicate_features": [
+            "MERTON_PD_20",
+            "MERTON_PD_25"
+          ],
+          "inner_auc": 0.7646988654429033,
+          "inner_delta_vs_phase2_lgb": 0.00016473639591418898,
+          "outer_auc": 0.7656167653160209,
+          "selected_features": [
+            "CLAYTON_COPULA_1_5",
+            "CLAYTON_COPULA_2_5",
+            "CLAYTON_COPULA_4_0",
+            "MERTON_PD_35",
+            "MERTON_DD_35",
+            "MARKUP_KEY_2D",
+            "MERTON_DD_25",
+            "TERM_KEY_1D",
+            "MERTON_DD_20"
+          ],
+          "selected_for_combined": true
+        },
+        "C_TEMPORAL": {
+          "best_iteration": 329,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7628337360223011,
+          "inner_delta_vs_phase2_lgb": -0.0017003930246880516,
+          "outer_auc": 0.7648031098626351,
+          "selected_features": [
+            "EMP_VS_REG",
+            "PHONE_VS_ID",
+            "PHONE_STABILITY",
+            "ID_VS_REG",
+            "PHONE_VS_REG",
+            "EMP_STABILITY",
+            "REG_STABILITY",
+            "ID_CHANGED_RECENTLY",
+            "REG_CHANGED_RECENTLY",
+            "PHONE_CHANGED_RECENTLY"
+          ],
+          "selected_for_combined": false
+        },
+        "D_DEMOGRAPHIC": {
+          "best_iteration": 323,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7635575835649027,
+          "inner_delta_vs_phase2_lgb": -0.0009765454820864772,
+          "outer_auc": 0.7653412730044729,
+          "selected_features": [
+            "SPEND_PRESSURE",
+            "DEPENDENCY",
+            "INCOME_PER_MEMBER",
+            "CREDIT_PER_MEMBER",
+            "IS_MARRIED",
+            "HOUSING_BURDEN"
+          ],
+          "selected_for_combined": false
+        },
+        "E_INQUIRY": {
+          "best_iteration": 348,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7635679563884369,
+          "inner_delta_vs_phase2_lgb": -0.0009661726585522556,
+          "outer_auc": 0.7648200461715848,
+          "selected_features": [
+            "REGION_POP_INCOME",
+            "INQUIRY_PER_CREDIT",
+            "REGION_RATING_CREDIT",
+            "REGION_RATING_ANNUITY",
+            "INQUIRY_QRT_RATIO",
+            "PHONE_WORK_EMP_MATCH",
+            "INQUIRY_BURST",
+            "PHONE_CONTACT_SCORE",
+            "TOTAL_INQUIRIES"
+          ],
+          "selected_for_combined": false
+        },
+        "F_EXTERNAL": {
+          "best_iteration": 336,
+          "exact_duplicate_features": [
+            "EXT_MEAN",
+            "EXT_STD",
+            "EXT_MIN",
+            "EXT_MAX"
+          ],
+          "inner_auc": 0.7650659357304961,
+          "inner_delta_vs_phase2_lgb": 0.0005318066835069413,
+          "outer_auc": 0.7644492116932644,
+          "selected_features": [
+            "EXT_SQ",
+            "EXT_WEIGHTED",
+            "EXT_x_EAR",
+            "EXT_PROD",
+            "EXT_CUBE",
+            "EXT_x_SURPLUS",
+            "EXT_x_DEBT_BURDEN",
+            "EXT_x_LTV",
+            "EXT_x_DTI",
+            "EXT_DIFF_23",
+            "EXT_DIFF_12",
+            "EXT_DIFF_13"
+          ],
+          "selected_for_combined": true
+        },
+        "H_INTERACTIONS": {
+          "best_iteration": 321,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7630833221147257,
+          "inner_delta_vs_phase2_lgb": -0.0014508069322634043,
+          "outer_auc": 0.7630079645593338,
+          "selected_features": [
+            "P_RATIO_EXT_MEAN_div_LTV",
+            "P_DIFF_EXT_MEAN_sub_EAR",
+            "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_EAR",
+            "P_RATIO_EXT_MEAN_div_MERTON_PD_25",
+            "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS",
+            "P_DIFF_EXT_MEAN_sub_LTV",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH",
+            "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_REGISTRATION",
+            "P_PROD_EXT_MEAN_x_DAYS_ID_PUBLISH",
+            "P_RATIO_EXT_MEAN_div_DTI",
+            "P_RATIO_EXT_MEAN_div_DAYS_BIRTH",
+            "P_RATIO_LTV_div_DAYS_BIRTH",
+            "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_AMT_ANNUITY",
+            "P_PROD_DSCR_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_DIFF_EXT_MEAN_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_INCOME_TOTAL",
+            "P_RATIO_EXT_MEAN_div_CREDIT_TERM",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_ANNUITY",
+            "P_PROD_EAR_x_AMT_GOODS_PRICE",
+            "P_PROD_DAYS_BIRTH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_LAST_PHONE_CHANGE_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DEBT_BURDEN",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_REGISTRATION",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_ID_PUBLISH",
+            "P_PROD_DAYS_REGISTRATION_x_DAYS_LAST_PHONE_CHANGE",
+            "P_DIFF_DAYS_ID_PUBLISH_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE",
+            "P_PROD_EXT_MEAN_x_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_INCOME_TOTAL",
+            "P_PROD_EAR_x_CLAYTON_COPULA_2_5",
+            "P_PROD_EXT_MEAN_x_DAYS_REGISTRATION",
+            "P_RATIO_EXT_MEAN_div_AMT_INCOME_TOTAL",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_REGISTRATION",
+            "P_PROD_DAYS_REGISTRATION_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DTI_div_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_BIRTH_x_DAYS_ID_PUBLISH",
+            "P_RATIO_EXT_MEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DSCR_x_BUFFER_MONTHS",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_BUFFER_MONTHS",
+            "P_RATIO_DAYS_REGISTRATION_div_AMT_INCOME_TOTAL",
+            "P_RATIO_EXT_MEAN_div_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_EXT_MEAN_x_DSCR",
+            "P_RATIO_DTI_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_EXT_MEAN_x_AMT_CREDIT",
+            "P_PROD_AMT_INCOME_TOTAL_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_INCOME_TOTAL"
+          ],
+          "selected_for_combined": false
+        }
+      },
+      "historical_blend_outer_auc": 0.7661720716575866,
+      "historical_candidate_outer_auc": 0.7659374115398251,
+      "inner_blend_selection": {
+        "baseline_inner_auc": 0.766052359332225,
+        "candidate_inner_auc": 0.7650478870175464,
+        "candidate_weight": 0.1,
+        "grid": [
+          {
+            "auc": 0.766052359332225,
+            "candidate_weight": 0.0
+          },
+          {
+            "auc": 0.7660642960583846,
+            "candidate_weight": 0.05
+          },
+          {
+            "auc": 0.7660693388464411,
+            "candidate_weight": 0.1
+          },
+          {
+            "auc": 0.7660615831660756,
+            "candidate_weight": 0.15000000000000002
+          },
+          {
+            "auc": 0.7660457207251631,
+            "candidate_weight": 0.2
+          },
+          {
+            "auc": 0.7660337201662435,
+            "candidate_weight": 0.25
+          },
+          {
+            "auc": 0.7660060805810722,
+            "candidate_weight": 0.30000000000000004
+          },
+          {
+            "auc": 0.7659891329832361,
+            "candidate_weight": 0.35000000000000003
+          },
+          {
+            "auc": 0.7659564186936281,
+            "candidate_weight": 0.4
+          },
+          {
+            "auc": 0.7659217255884535,
+            "candidate_weight": 0.45
+          },
+          {
+            "auc": 0.7658779522731389,
+            "candidate_weight": 0.5
+          },
+          {
+            "auc": 0.7658227848101266,
+            "candidate_weight": 0.55
+          },
+          {
+            "auc": 0.7657646491237644,
+            "candidate_weight": 0.6000000000000001
+          },
+          {
+            "auc": 0.7657053006149585,
+            "candidate_weight": 0.65
+          },
+          {
+            "auc": 0.7656212328697607,
+            "candidate_weight": 0.7000000000000001
+          },
+          {
+            "auc": 0.7655350905598561,
+            "candidate_weight": 0.75
+          },
+          {
+            "auc": 0.7654549804457914,
+            "candidate_weight": 0.8
+          },
+          {
+            "auc": 0.7653696679617694,
+            "candidate_weight": 0.8500000000000001
+          },
+          {
+            "auc": 0.7652726102498688,
+            "candidate_weight": 0.9
+          },
+          {
+            "auc": 0.7651675574847518,
+            "candidate_weight": 0.9500000000000001
+          },
+          {
+            "auc": 0.7650478870175464,
+            "candidate_weight": 1.0
+          }
+        ],
+        "inner_auc": 0.7660693388464411,
+        "selection_labels_source": "this outer fold's inner validation only",
+        "selection_rows": 20545
+      },
+      "inner_fit_rows": 116416,
+      "inner_phase2_auc": 0.766052359332225,
+      "inner_validation_rows": 20545,
+      "outer_fit_rows": 136961,
+      "outer_validation_rows": 34241,
+      "phase2_feature_count": 221,
+      "phase2_inner_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79100,
+            "product_key_valid_rows": 67676,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41832,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "782614f5c3454e9cb1ed61c4d74ace4bb2bbf79b24a27e58b8254469b827808f",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13833,
+            "product_key_valid_rows": 11976,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "phase2_outer_auc": 0.7660692239531521,
+      "phase2_outer_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92909,
+            "product_key_valid_rows": 79652,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "009801438ba45a6b331942102a559d514e764ac444004c122721ea40bd86f620",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23190,
+            "product_key_valid_rows": 19905,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "selected_feature_count": 21,
+      "selected_groups": [
+        "F_EXTERNAL",
+        "B_RISK"
+      ]
+    },
+    {
+      "candidate_catboost_best_iteration": 321,
+      "candidate_lgb_best_iteration": 493,
+      "candidate_xgboost_best_iteration": 253,
+      "candidate_xgboost_included": true,
+      "elapsed_seconds": 302.2287597999675,
+      "fold": 2,
+      "folded_families": {
+        "A_FINANCIAL": {
+          "best_iteration": 234,
+          "exact_duplicate_features": [
+            "DAYS_EMPLOYED_CLEAN"
+          ],
+          "inner_auc": 0.7606370035286364,
+          "inner_delta_vs_phase2_lgb": -2.4605100118368917e-05,
+          "outer_auc": 0.7717282113045975,
+          "selected_features": [
+            "GOODS_CREDIT_DIFF",
+            "DTI",
+            "LIQUIDITY",
+            "Z_SCORE",
+            "LTV",
+            "TRUE_COST_RATIO",
+            "EAR",
+            "TDSR",
+            "CREDIT_TERM",
+            "TRUE_COST",
+            "SURPLUS",
+            "DEBT_BURDEN",
+            "DSCR",
+            "SURPLUS_TO_INC",
+            "ZOMBIE",
+            "BUFFER_MONTHS",
+            "DISPOSABLE_INC",
+            "SOLVENCY",
+            "FOIR",
+            "DTI_50"
+          ],
+          "selected_for_combined": false
+        },
+        "B_RISK": {
+          "best_iteration": 269,
+          "exact_duplicate_features": [
+            "MERTON_PD_20",
+            "MERTON_PD_25"
+          ],
+          "inner_auc": 0.7601681973348827,
+          "inner_delta_vs_phase2_lgb": -0.000493411293872037,
+          "outer_auc": 0.7719995682005314,
+          "selected_features": [
+            "CLAYTON_COPULA_1_5",
+            "CLAYTON_COPULA_4_0",
+            "CLAYTON_COPULA_2_5",
+            "MERTON_PD_35",
+            "MERTON_DD_35",
+            "MARKUP_KEY_2D",
+            "TERM_KEY_1D",
+            "MERTON_DD_20",
+            "MERTON_DD_25"
+          ],
+          "selected_for_combined": false
+        },
+        "C_TEMPORAL": {
+          "best_iteration": 242,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7601417560332632,
+          "inner_delta_vs_phase2_lgb": -0.0005198525954915878,
+          "outer_auc": 0.7706409970040609,
+          "selected_features": [
+            "PHONE_VS_ID",
+            "EMP_VS_REG",
+            "PHONE_STABILITY",
+            "PHONE_VS_REG",
+            "ID_VS_REG",
+            "EMP_STABILITY",
+            "REG_STABILITY",
+            "ID_CHANGED_RECENTLY"
+          ],
+          "selected_for_combined": false
+        },
+        "D_DEMOGRAPHIC": {
+          "best_iteration": 288,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.760335339572416,
+          "inner_delta_vs_phase2_lgb": -0.00032626905633881265,
+          "outer_auc": 0.7709645191364838,
+          "selected_features": [
+            "SPEND_PRESSURE",
+            "HOUSING_BURDEN",
+            "CREDIT_PER_MEMBER",
+            "IS_MARRIED",
+            "INCOME_PER_MEMBER",
+            "DEPENDENCY",
+            "OVERSPENDING"
+          ],
+          "selected_for_combined": false
+        },
+        "E_INQUIRY": {
+          "best_iteration": 305,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.760356032764988,
+          "inner_delta_vs_phase2_lgb": -0.0003055758637667827,
+          "outer_auc": 0.7717523176187282,
+          "selected_features": [
+            "REGION_POP_INCOME",
+            "INQUIRY_PER_CREDIT",
+            "REGION_RATING_ANNUITY",
+            "REGION_RATING_CREDIT",
+            "INQUIRY_QRT_RATIO",
+            "INQUIRY_BURST",
+            "PHONE_WORK_EMP_MATCH",
+            "PHONE_CONTACT_SCORE",
+            "TOTAL_INQUIRIES"
+          ],
+          "selected_for_combined": false
+        },
+        "F_EXTERNAL": {
+          "best_iteration": 279,
+          "exact_duplicate_features": [
+            "EXT_MEAN",
+            "EXT_STD",
+            "EXT_MIN",
+            "EXT_MAX"
+          ],
+          "inner_auc": 0.7595874147834849,
+          "inner_delta_vs_phase2_lgb": -0.0010741938452698552,
+          "outer_auc": 0.7710038326511636,
+          "selected_features": [
+            "EXT_SQ",
+            "EXT_WEIGHTED",
+            "EXT_x_EAR",
+            "EXT_CUBE",
+            "EXT_PROD",
+            "EXT_x_LTV",
+            "EXT_x_DEBT_BURDEN",
+            "EXT_x_DTI",
+            "EXT_x_SURPLUS",
+            "EXT_DIFF_23",
+            "EXT_DIFF_12",
+            "EXT_DIFF_13"
+          ],
+          "selected_for_combined": false
+        },
+        "H_INTERACTIONS": {
+          "best_iteration": 233,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7610616929854483,
+          "inner_delta_vs_phase2_lgb": 0.00040008435669358633,
+          "outer_auc": 0.7707193712503363,
+          "selected_features": [
+            "P_RATIO_EXT_MEAN_div_LTV",
+            "P_DIFF_EXT_MEAN_sub_EAR",
+            "P_DIFF_EXT_MEAN_sub_LTV",
+            "P_RATIO_EXT_MEAN_div_MERTON_PD_25",
+            "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DAYS_BIRTH",
+            "P_RATIO_LTV_div_DAYS_BIRTH",
+            "P_DIFF_MERTON_PD_25_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_EAR_x_AMT_GOODS_PRICE",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_BUFFER_MONTHS",
+            "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_AMT_ANNUITY",
+            "P_PROD_EXT_MEAN_x_DAYS_ID_PUBLISH",
+            "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_CREDIT_TERM_div_AMT_ANNUITY",
+            "P_RATIO_EXT_MEAN_div_EAR",
+            "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH",
+            "P_RATIO_DAYS_ID_PUBLISH_div_AMT_ANNUITY",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_INCOME_TOTAL",
+            "P_DIFF_EXT_MEAN_sub_MERTON_PD_25",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_REGISTRATION",
+            "P_RATIO_EXT_MEAN_div_DEBT_BURDEN",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_REGISTRATION",
+            "P_RATIO_EXT_MEAN_div_DTI",
+            "P_PROD_CREDIT_TERM_x_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_CREDIT_TERM",
+            "P_RATIO_DAYS_BIRTH_div_BUFFER_MONTHS",
+            "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_REGISTRATION",
+            "P_PROD_DAYS_ID_PUBLISH_x_DAYS_REGISTRATION",
+            "P_PROD_DAYS_BIRTH_x_MERTON_PD_25",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_DEBT_BURDEN",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_BIRTH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_SURPLUS_div_DAYS_ID_PUBLISH",
+            "P_PROD_EXT_MEAN_x_CREDIT_TERM",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_ANNUITY",
+            "P_DIFF_EAR_sub_LTV",
+            "P_RATIO_EXT_MEAN_div_DAYS_REGISTRATION",
+            "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE",
+            "P_RATIO_SURPLUS_div_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_EXT_MEAN_x_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_ID_PUBLISH",
+            "P_PROD_DSCR_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_ID_PUBLISH_x_AMT_INCOME_TOTAL",
+            "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS",
+            "P_RATIO_DTI_div_DAYS_ID_PUBLISH",
+            "P_RATIO_DAYS_ID_PUBLISH_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_LTV_div_CREDIT_TERM",
+            "P_PROD_DAYS_ID_PUBLISH_x_DAYS_LAST_PHONE_CHANGE",
+            "P_DIFF_EXT_MEAN_sub_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_ID_PUBLISH_div_MERTON_PD_25"
+          ],
+          "selected_for_combined": true
+        }
+      },
+      "historical_blend_outer_auc": 0.7725288672537208,
+      "historical_candidate_outer_auc": 0.7717662321785053,
+      "inner_blend_selection": {
+        "baseline_inner_auc": 0.7619586854023515,
+        "candidate_inner_auc": 0.7626520829901766,
+        "candidate_weight": 0.65,
+        "grid": [
+          {
+            "auc": 0.7619586854023515,
+            "candidate_weight": 0.0
+          },
+          {
+            "auc": 0.7620675641678977,
+            "candidate_weight": 0.05
+          },
+          {
+            "auc": 0.762181312859165,
+            "candidate_weight": 0.1
+          },
+          {
+            "auc": 0.7622961792383027,
+            "candidate_weight": 0.15000000000000002
+          },
+          {
+            "auc": 0.7624012578650898,
+            "candidate_weight": 0.2
+          },
+          {
+            "auc": 0.7624941377271198,
+            "candidate_weight": 0.25
+          },
+          {
+            "auc": 0.7625785710622435,
+            "candidate_weight": 0.30000000000000004
+          },
+          {
+            "auc": 0.76264515332538,
+            "candidate_weight": 0.35000000000000003
+          },
+          {
+            "auc": 0.7627028579534318,
+            "candidate_weight": 0.4
+          },
+          {
+            "auc": 0.7627485873543006,
+            "candidate_weight": 0.45
+          },
+          {
+            "auc": 0.7627841617625183,
+            "candidate_weight": 0.5
+          },
+          {
+            "auc": 0.7628183630113526,
+            "candidate_weight": 0.55
+          },
+          {
+            "auc": 0.7628355115366785,
+            "candidate_weight": 0.6000000000000001
+          },
+          {
+            "auc": 0.7628535542123005,
+            "candidate_weight": 0.65
+          },
+          {
+            "auc": 0.762850744025655,
+            "candidate_weight": 0.7000000000000001
+          },
+          {
+            "auc": 0.7628388965342288,
+            "candidate_weight": 0.75
+          },
+          {
+            "auc": 0.7628235682434348,
+            "candidate_weight": 0.8
+          },
+          {
+            "auc": 0.7627928477939683,
+            "candidate_weight": 0.8500000000000001
+          },
+          {
+            "auc": 0.7627471183930995,
+            "candidate_weight": 0.9
+          },
+          {
+            "auc": 0.7627059236115906,
+            "candidate_weight": 0.9500000000000001
+          },
+          {
+            "auc": 0.7626520829901766,
+            "candidate_weight": 1.0
+          }
+        ],
+        "inner_auc": 0.7628535542123005,
+        "selection_labels_source": "this outer fold's inner validation only",
+        "selection_rows": 20545
+      },
+      "inner_fit_rows": 116416,
+      "inner_phase2_auc": 0.7619586854023515,
+      "inner_validation_rows": 20545,
+      "outer_fit_rows": 136961,
+      "outer_validation_rows": 34241,
+      "phase2_feature_count": 221,
+      "phase2_inner_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116416,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 79034,
+            "product_key_valid_rows": 67685,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 41850,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "c422445d610020846325c2f7d20b978debf68209f4682519e5d9cc8c8fa7c2b2",
+            "count_reference_rows": 116416,
+            "fee_decoded_rows": 13911,
+            "product_key_valid_rows": 11934,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116416,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "phase2_outer_auc": 0.7726370239433841,
+      "phase2_outer_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136961,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 92894,
+            "product_key_valid_rows": 79619,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 41825,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34241,
+            "count_reference_id_sha256": "c6901d555e04c85944437f6132fb1ce7343d8a36ec0f8f28d5b0b83a23e63b47",
+            "count_reference_rows": 136961,
+            "fee_decoded_rows": 23193,
+            "product_key_valid_rows": 19938,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136961,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "selected_feature_count": 60,
+      "selected_groups": [
+        "H_INTERACTIONS"
+      ]
+    },
+    {
+      "candidate_catboost_best_iteration": 371,
+      "candidate_lgb_best_iteration": 333,
+      "candidate_xgboost_best_iteration": 329,
+      "candidate_xgboost_included": true,
+      "elapsed_seconds": 327.7567207000102,
+      "fold": 3,
+      "folded_families": {
+        "A_FINANCIAL": {
+          "best_iteration": 453,
+          "exact_duplicate_features": [
+            "DAYS_EMPLOYED_CLEAN"
+          ],
+          "inner_auc": 0.7711309735255542,
+          "inner_delta_vs_phase2_lgb": 4.61032110622428e-05,
+          "outer_auc": 0.7714692438352405,
+          "selected_features": [
+            "GOODS_CREDIT_DIFF",
+            "LIQUIDITY",
+            "LTV",
+            "DTI",
+            "Z_SCORE",
+            "EAR",
+            "TDSR",
+            "TRUE_COST_RATIO",
+            "SURPLUS",
+            "CREDIT_TERM",
+            "TRUE_COST",
+            "DEBT_BURDEN",
+            "SURPLUS_TO_INC",
+            "RESERVE_MONTHS",
+            "DSCR",
+            "DISPOSABLE_INC",
+            "ZOMBIE",
+            "FOIR",
+            "HFVI",
+            "BUFFER_MONTHS",
+            "SHOCK_BREACH20"
+          ],
+          "selected_for_combined": true
+        },
+        "B_RISK": {
+          "best_iteration": 364,
+          "exact_duplicate_features": [
+            "MERTON_PD_20",
+            "MERTON_PD_25"
+          ],
+          "inner_auc": 0.7705154023024604,
+          "inner_delta_vs_phase2_lgb": -0.0005694680120315043,
+          "outer_auc": 0.7711644725432502,
+          "selected_features": [
+            "CLAYTON_COPULA_1_5",
+            "CLAYTON_COPULA_2_5",
+            "CLAYTON_COPULA_4_0",
+            "MERTON_PD_35",
+            "MERTON_DD_35",
+            "MERTON_DD_25",
+            "TERM_KEY_1D",
+            "MERTON_DD_20",
+            "MARKUP_KEY_2D"
+          ],
+          "selected_for_combined": false
+        },
+        "C_TEMPORAL": {
+          "best_iteration": 313,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.770975652461771,
+          "inner_delta_vs_phase2_lgb": -0.00010921785272088869,
+          "outer_auc": 0.7721862351100575,
+          "selected_features": [
+            "EMP_VS_REG",
+            "PHONE_STABILITY",
+            "PHONE_VS_ID",
+            "ID_VS_REG",
+            "PHONE_VS_REG",
+            "EMP_STABILITY",
+            "REG_STABILITY",
+            "ID_CHANGED_RECENTLY",
+            "REG_CHANGED_RECENTLY"
+          ],
+          "selected_for_combined": false
+        },
+        "D_DEMOGRAPHIC": {
+          "best_iteration": 325,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7704915767247117,
+          "inner_delta_vs_phase2_lgb": -0.0005932935897802194,
+          "outer_auc": 0.7709198279202548,
+          "selected_features": [
+            "SPEND_PRESSURE",
+            "CREDIT_PER_MEMBER",
+            "HOUSING_BURDEN",
+            "INCOME_PER_MEMBER",
+            "DEPENDENCY",
+            "IS_MARRIED",
+            "OVERSPENDING"
+          ],
+          "selected_for_combined": false
+        },
+        "E_INQUIRY": {
+          "best_iteration": 335,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7713078381459084,
+          "inner_delta_vs_phase2_lgb": 0.00022296783141650955,
+          "outer_auc": 0.7715964914531165,
+          "selected_features": [
+            "REGION_POP_INCOME",
+            "INQUIRY_PER_CREDIT",
+            "REGION_RATING_ANNUITY",
+            "REGION_RATING_CREDIT",
+            "INQUIRY_QRT_RATIO",
+            "PHONE_CONTACT_SCORE",
+            "INQUIRY_BURST",
+            "PHONE_WORK_EMP_MATCH",
+            "TOTAL_INQUIRIES"
+          ],
+          "selected_for_combined": true
+        },
+        "F_EXTERNAL": {
+          "best_iteration": 336,
+          "exact_duplicate_features": [
+            "EXT_MEAN",
+            "EXT_STD",
+            "EXT_MIN",
+            "EXT_MAX"
+          ],
+          "inner_auc": 0.771230185593112,
+          "inner_delta_vs_phase2_lgb": 0.00014531527862005067,
+          "outer_auc": 0.7710625583565472,
+          "selected_features": [
+            "EXT_SQ",
+            "EXT_WEIGHTED",
+            "EXT_CUBE",
+            "EXT_x_EAR",
+            "EXT_PROD",
+            "EXT_x_LTV",
+            "EXT_x_DTI",
+            "EXT_x_DEBT_BURDEN",
+            "EXT_x_SURPLUS",
+            "EXT_DIFF_23",
+            "EXT_DIFF_12",
+            "EXT_DIFF_13"
+          ],
+          "selected_for_combined": true
+        },
+        "H_INTERACTIONS": {
+          "best_iteration": 235,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7708850737750318,
+          "inner_delta_vs_phase2_lgb": -0.00019979653946011755,
+          "outer_auc": 0.7698105362797723,
+          "selected_features": [
+            "P_RATIO_EXT_MEAN_div_LTV",
+            "P_DIFF_EXT_MEAN_sub_EAR",
+            "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_EAR",
+            "P_RATIO_EXT_MEAN_div_MERTON_PD_25",
+            "P_DIFF_EXT_MEAN_sub_LTV",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH",
+            "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5",
+            "P_PROD_EAR_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DAYS_BIRTH",
+            "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS",
+            "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_MERTON_PD_25_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_EXT_MEAN_x_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_INCOME_TOTAL",
+            "P_PROD_EAR_x_AMT_GOODS_PRICE",
+            "P_RATIO_EXT_MEAN_div_CREDIT_TERM",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_DEBT_BURDEN",
+            "P_RATIO_EXT_MEAN_div_AMT_INCOME_TOTAL",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_INCOME_TOTAL",
+            "P_RATIO_LTV_div_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DEBT_BURDEN",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_LTV_x_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_AMT_ANNUITY",
+            "P_PROD_DSCR_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DTI",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_ANNUITY",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_BIRTH_div_AMT_INCOME_TOTAL",
+            "P_RATIO_EXT_MEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_EXT_MEAN_div_SURPLUS",
+            "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH",
+            "P_PROD_CREDIT_TERM_x_DAYS_BIRTH",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_REGISTRATION",
+            "P_RATIO_DAYS_REGISTRATION_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_BUFFER_MONTHS",
+            "P_PROD_DAYS_ID_PUBLISH_x_DAYS_REGISTRATION",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_ANNUITY",
+            "P_PROD_DAYS_REGISTRATION_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_INCOME_TOTAL",
+            "P_RATIO_CREDIT_TERM_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_ID_PUBLISH_x_AMT_ANNUITY",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_AMT_ANNUITY",
+            "P_PROD_DSCR_x_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_SURPLUS_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_REGISTRATION",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_REGISTRATION",
+            "P_PROD_EXT_MEAN_x_CREDIT_TERM",
+            "P_PROD_DAYS_LAST_PHONE_CHANGE_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DSCR_x_BUFFER_MONTHS",
+            "P_PROD_EXT_MEAN_x_DAYS_BIRTH"
+          ],
+          "selected_for_combined": false
+        }
+      },
+      "historical_blend_outer_auc": 0.7719085846124647,
+      "historical_candidate_outer_auc": 0.7719576250317473,
+      "inner_blend_selection": {
+        "baseline_inner_auc": 0.7726194737027221,
+        "candidate_inner_auc": 0.7721233654903629,
+        "candidate_weight": 0.35000000000000003,
+        "grid": [
+          {
+            "auc": 0.7726194737027221,
+            "candidate_weight": 0.0
+          },
+          {
+            "auc": 0.7726532412328736,
+            "candidate_weight": 0.05
+          },
+          {
+            "auc": 0.772692689878684,
+            "candidate_weight": 0.1
+          },
+          {
+            "auc": 0.7727162441672017,
+            "candidate_weight": 0.15000000000000002
+          },
+          {
+            "auc": 0.7727295532977057,
+            "candidate_weight": 0.2
+          },
+          {
+            "auc": 0.7727350109987038,
+            "candidate_weight": 0.25
+          },
+          {
+            "auc": 0.7727384260513751,
+            "candidate_weight": 0.30000000000000004
+          },
+          {
+            "auc": 0.7727393835427783,
+            "candidate_weight": 0.35000000000000003
+          },
+          {
+            "auc": 0.7727267765726366,
+            "candidate_weight": 0.4
+          },
+          {
+            "auc": 0.7727191485577913,
+            "candidate_weight": 0.45
+          },
+          {
+            "auc": 0.7727025520401366,
+            "candidate_weight": 0.5
+          },
+          {
+            "auc": 0.7726809127344252,
+            "candidate_weight": 0.55
+          },
+          {
+            "auc": 0.7726416555868953,
+            "candidate_weight": 0.6000000000000001
+          },
+          {
+            "auc": 0.7725971322366482,
+            "candidate_weight": 0.65
+          },
+          {
+            "auc": 0.7725530237993424,
+            "candidate_weight": 0.7000000000000001
+          },
+          {
+            "auc": 0.7725024044204953,
+            "candidate_weight": 0.75
+          },
+          {
+            "auc": 0.7724375503361209,
+            "candidate_weight": 0.8
+          },
+          {
+            "auc": 0.772374292070752,
+            "candidate_weight": 0.8500000000000001
+          },
+          {
+            "auc": 0.7722982353369607,
+            "candidate_weight": 0.9
+          },
+          {
+            "auc": 0.7722216041083275,
+            "candidate_weight": 0.9500000000000001
+          },
+          {
+            "auc": 0.7721233654903629,
+            "candidate_weight": 1.0
+          }
+        ],
+        "inner_auc": 0.7727393835427783,
+        "selection_labels_source": "this outer fold's inner validation only",
+        "selection_rows": 20545
+      },
+      "inner_fit_rows": 116417,
+      "inner_phase2_auc": 0.7726194737027221,
+      "inner_validation_rows": 20545,
+      "outer_fit_rows": 136962,
+      "outer_validation_rows": 34240,
+      "phase2_feature_count": 221,
+      "phase2_inner_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 79094,
+            "product_key_valid_rows": 67765,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41826,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "5ef65579ffe8c5ed6edc4c1f3b29c9632fcf98932a5995c89839547912ef79fa",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13847,
+            "product_key_valid_rows": 11933,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "phase2_outer_auc": 0.7714245942375134,
+      "phase2_outer_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92957,
+            "product_key_valid_rows": 79698,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41836,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "76fb898a328dd4843e4ca7299fad309dbfd582ac2874c336afe35743019037ce",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23176,
+            "product_key_valid_rows": 19859,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "selected_feature_count": 42,
+      "selected_groups": [
+        "E_INQUIRY",
+        "F_EXTERNAL",
+        "A_FINANCIAL"
+      ]
+    },
+    {
+      "candidate_catboost_best_iteration": 506,
+      "candidate_lgb_best_iteration": 376,
+      "candidate_xgboost_best_iteration": 287,
+      "candidate_xgboost_included": true,
+      "elapsed_seconds": 372.7897629000363,
+      "fold": 4,
+      "folded_families": {
+        "A_FINANCIAL": {
+          "best_iteration": 490,
+          "exact_duplicate_features": [
+            "DAYS_EMPLOYED_CLEAN"
+          ],
+          "inner_auc": 0.7724801906199419,
+          "inner_delta_vs_phase2_lgb": 0.001286230118249465,
+          "outer_auc": 0.76698958285632,
+          "selected_features": [
+            "GOODS_CREDIT_DIFF",
+            "LIQUIDITY",
+            "DTI",
+            "LTV",
+            "EAR",
+            "Z_SCORE",
+            "TDSR",
+            "TRUE_COST_RATIO",
+            "CREDIT_TERM",
+            "TRUE_COST",
+            "SURPLUS",
+            "DEBT_BURDEN",
+            "SURPLUS_TO_INC",
+            "DSCR",
+            "RESERVE_MONTHS",
+            "ZOMBIE",
+            "FOIR",
+            "HFVI",
+            "DISPOSABLE_INC",
+            "BUFFER_MONTHS",
+            "SOLVENCY",
+            "DTI_46"
+          ],
+          "selected_for_combined": true
+        },
+        "B_RISK": {
+          "best_iteration": 425,
+          "exact_duplicate_features": [
+            "MERTON_PD_20",
+            "MERTON_PD_25"
+          ],
+          "inner_auc": 0.7723625628010633,
+          "inner_delta_vs_phase2_lgb": 0.00116860229937088,
+          "outer_auc": 0.7678323504789628,
+          "selected_features": [
+            "CLAYTON_COPULA_1_5",
+            "CLAYTON_COPULA_2_5",
+            "CLAYTON_COPULA_4_0",
+            "MERTON_PD_35",
+            "MERTON_DD_35",
+            "TERM_KEY_1D",
+            "MARKUP_KEY_2D",
+            "MERTON_DD_20",
+            "MERTON_DD_25"
+          ],
+          "selected_for_combined": true
+        },
+        "C_TEMPORAL": {
+          "best_iteration": 480,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7710486133066922,
+          "inner_delta_vs_phase2_lgb": -0.00014534719500025606,
+          "outer_auc": 0.7668109327410736,
+          "selected_features": [
+            "PHONE_STABILITY",
+            "EMP_VS_REG",
+            "PHONE_VS_ID",
+            "ID_VS_REG",
+            "PHONE_VS_REG",
+            "EMP_STABILITY",
+            "REG_STABILITY",
+            "REG_CHANGED_RECENTLY",
+            "ID_CHANGED_RECENTLY",
+            "PHONE_CHANGED_RECENTLY"
+          ],
+          "selected_for_combined": false
+        },
+        "D_DEMOGRAPHIC": {
+          "best_iteration": 370,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7718876311069042,
+          "inner_delta_vs_phase2_lgb": 0.0006936706052117492,
+          "outer_auc": 0.7671668019315568,
+          "selected_features": [
+            "SPEND_PRESSURE",
+            "CREDIT_PER_MEMBER",
+            "HOUSING_BURDEN",
+            "DEPENDENCY",
+            "INCOME_PER_MEMBER",
+            "IS_MARRIED"
+          ],
+          "selected_for_combined": true
+        },
+        "E_INQUIRY": {
+          "best_iteration": 340,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7713086360554111,
+          "inner_delta_vs_phase2_lgb": 0.00011467555371869054,
+          "outer_auc": 0.7676859878447346,
+          "selected_features": [
+            "REGION_POP_INCOME",
+            "INQUIRY_PER_CREDIT",
+            "REGION_RATING_CREDIT",
+            "REGION_RATING_ANNUITY",
+            "INQUIRY_QRT_RATIO",
+            "INQUIRY_BURST",
+            "PHONE_WORK_EMP_MATCH",
+            "TOTAL_INQUIRIES",
+            "PHONE_CONTACT_SCORE"
+          ],
+          "selected_for_combined": false
+        },
+        "F_EXTERNAL": {
+          "best_iteration": 487,
+          "exact_duplicate_features": [
+            "EXT_MEAN",
+            "EXT_STD",
+            "EXT_MIN",
+            "EXT_MAX"
+          ],
+          "inner_auc": 0.7713864481901083,
+          "inner_delta_vs_phase2_lgb": 0.0001924876884158433,
+          "outer_auc": 0.7674092224080313,
+          "selected_features": [
+            "EXT_SQ",
+            "EXT_WEIGHTED",
+            "EXT_x_EAR",
+            "EXT_x_LTV",
+            "EXT_PROD",
+            "EXT_x_DTI",
+            "EXT_x_SURPLUS",
+            "EXT_x_DEBT_BURDEN",
+            "EXT_DIFF_23",
+            "EXT_DIFF_12",
+            "EXT_DIFF_13",
+            "EXT_CUBE"
+          ],
+          "selected_for_combined": false
+        },
+        "H_INTERACTIONS": {
+          "best_iteration": 223,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7709229425600269,
+          "inner_delta_vs_phase2_lgb": -0.00027101794166550786,
+          "outer_auc": 0.7654623470729727,
+          "selected_features": [
+            "P_RATIO_EXT_MEAN_div_LTV",
+            "P_RATIO_EXT_MEAN_div_EAR",
+            "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_EXT_MEAN_sub_EAR",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH",
+            "P_RATIO_EXT_MEAN_div_MERTON_PD_25",
+            "P_PROD_DSCR_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_EXT_MEAN_sub_LTV",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5",
+            "P_PROD_EXT_MEAN_x_DAYS_ID_PUBLISH",
+            "P_DIFF_MERTON_PD_25_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_EAR_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_LTV_div_DAYS_BIRTH",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH",
+            "P_RATIO_CREDIT_TERM_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DTI_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5",
+            "P_DIFF_EXT_MEAN_sub_MERTON_PD_25",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_INCOME_TOTAL",
+            "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_DEBT_BURDEN",
+            "P_RATIO_EXT_MEAN_div_AMT_ANNUITY",
+            "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_INCOME_TOTAL",
+            "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_EXT_MEAN_x_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DTI",
+            "P_PROD_EXT_MEAN_x_DSCR",
+            "P_PROD_LTV_x_DAYS_BIRTH",
+            "P_PROD_DAYS_ID_PUBLISH_x_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_EXT_MEAN_div_DAYS_BIRTH",
+            "P_PROD_EXT_MEAN_x_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_AMT_GOODS_PRICE",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_INCOME_TOTAL",
+            "P_RATIO_DAYS_BIRTH_div_BUFFER_MONTHS",
+            "P_RATIO_EXT_MEAN_div_AMT_INCOME_TOTAL",
+            "P_RATIO_CLAYTON_COPULA_2_5_div_BUFFER_MONTHS",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_EXT_MEAN_div_CREDIT_TERM",
+            "P_PROD_EAR_x_AMT_GOODS_PRICE",
+            "P_RATIO_CREDIT_TERM_div_DAYS_REGISTRATION",
+            "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE",
+            "P_PROD_EXT_MEAN_x_CREDIT_TERM",
+            "P_RATIO_EXT_MEAN_div_SURPLUS",
+            "P_RATIO_EXT_MEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_LAST_PHONE_CHANGE_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_ANNUITY",
+            "P_PROD_CREDIT_TERM_x_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_DAYS_REGISTRATION",
+            "P_PROD_DAYS_BIRTH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_SURPLUS_div_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_CREDIT_TERM_x_DAYS_ID_PUBLISH",
+            "P_RATIO_EXT_MEAN_div_DEBT_BURDEN",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_REGISTRATION",
+            "P_DIFF_EXT_MEAN_sub_CLAYTON_COPULA_2_5"
+          ],
+          "selected_for_combined": false
+        }
+      },
+      "historical_blend_outer_auc": 0.7687380608734306,
+      "historical_candidate_outer_auc": 0.768304812073757,
+      "inner_blend_selection": {
+        "baseline_inner_auc": 0.7727624112110243,
+        "candidate_inner_auc": 0.773062552849536,
+        "candidate_weight": 0.6000000000000001,
+        "grid": [
+          {
+            "auc": 0.7727624112110243,
+            "candidate_weight": 0.0
+          },
+          {
+            "auc": 0.7728414202099751,
+            "candidate_weight": 0.05
+          },
+          {
+            "auc": 0.7729169662816848,
+            "candidate_weight": 0.1
+          },
+          {
+            "auc": 0.7729793947211712,
+            "candidate_weight": 0.15000000000000002
+          },
+          {
+            "auc": 0.7730395251812899,
+            "candidate_weight": 0.2
+          },
+          {
+            "auc": 0.7730994003103676,
+            "candidate_weight": 0.25
+          },
+          {
+            "auc": 0.773149700525414,
+            "candidate_weight": 0.30000000000000004
+          },
+          {
+            "auc": 0.7731950537015437,
+            "candidate_weight": 0.35000000000000003
+          },
+          {
+            "auc": 0.7732342789326933,
+            "candidate_weight": 0.4
+          },
+          {
+            "auc": 0.7732657484834773,
+            "candidate_weight": 0.45
+          },
+          {
+            "auc": 0.7732888240262934,
+            "candidate_weight": 0.5
+          },
+          {
+            "auc": 0.7732904517616789,
+            "candidate_weight": 0.55
+          },
+          {
+            "auc": 0.7732940902290109,
+            "candidate_weight": 0.6000000000000001
+          },
+          {
+            "auc": 0.7732843238166984,
+            "candidate_weight": 0.65
+          },
+          {
+            "auc": 0.7732715253482764,
+            "candidate_weight": 0.7000000000000001
+          },
+          {
+            "auc": 0.773256588482387,
+            "candidate_weight": 0.75
+          },
+          {
+            "auc": 0.7732180973279799,
+            "candidate_weight": 0.8
+          },
+          {
+            "auc": 0.7731811700761978,
+            "candidate_weight": 0.8500000000000001
+          },
+          {
+            "auc": 0.7731504665185364,
+            "candidate_weight": 0.9
+          },
+          {
+            "auc": 0.7731127732736318,
+            "candidate_weight": 0.9500000000000001
+          },
+          {
+            "auc": 0.773062552849536,
+            "candidate_weight": 1.0
+          }
+        ],
+        "inner_auc": 0.7732940902290109,
+        "selection_labels_source": "this outer fold's inner validation only",
+        "selection_rows": 20545
+      },
+      "inner_fit_rows": 116417,
+      "inner_phase2_auc": 0.7727624112110243,
+      "inner_validation_rows": 20545,
+      "outer_fit_rows": 136962,
+      "outer_validation_rows": 34240,
+      "phase2_feature_count": 221,
+      "phase2_inner_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78855,
+            "product_key_valid_rows": 67529,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41835,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "a419c9359dfead99809b0b0473595d1d7e9261793ff579b42fd49f5ee67b9fdd",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13955,
+            "product_key_valid_rows": 12014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "phase2_outer_auc": 0.7685362325077484,
+      "phase2_outer_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92826,
+            "product_key_valid_rows": 79543,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41854,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "100402d28d67045785c3d8ea97b6612672bcfa971c4eedb6f3594fa1a530376e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23328,
+            "product_key_valid_rows": 20014,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "selected_feature_count": 37,
+      "selected_groups": [
+        "A_FINANCIAL",
+        "B_RISK",
+        "D_DEMOGRAPHIC"
+      ]
+    },
+    {
+      "candidate_catboost_best_iteration": 430,
+      "candidate_lgb_best_iteration": 265,
+      "candidate_xgboost_best_iteration": 332,
+      "candidate_xgboost_included": true,
+      "elapsed_seconds": 333.11410100001376,
+      "fold": 5,
+      "folded_families": {
+        "A_FINANCIAL": {
+          "best_iteration": 263,
+          "exact_duplicate_features": [
+            "DAYS_EMPLOYED_CLEAN"
+          ],
+          "inner_auc": 0.7753971243469191,
+          "inner_delta_vs_phase2_lgb": -0.0007065648227744248,
+          "outer_auc": 0.7715124106686206,
+          "selected_features": [
+            "GOODS_CREDIT_DIFF",
+            "LIQUIDITY",
+            "DTI",
+            "EAR",
+            "LTV",
+            "TDSR",
+            "Z_SCORE",
+            "TRUE_COST_RATIO",
+            "SURPLUS",
+            "DEBT_BURDEN",
+            "CREDIT_TERM",
+            "TRUE_COST",
+            "DSCR",
+            "SURPLUS_TO_INC",
+            "RESERVE_MONTHS",
+            "FOIR",
+            "ZOMBIE",
+            "SOLVENCY"
+          ],
+          "selected_for_combined": false
+        },
+        "B_RISK": {
+          "best_iteration": 261,
+          "exact_duplicate_features": [
+            "MERTON_PD_20",
+            "MERTON_PD_25"
+          ],
+          "inner_auc": 0.7748255338956105,
+          "inner_delta_vs_phase2_lgb": -0.001278155274083037,
+          "outer_auc": 0.7709217244793038,
+          "selected_features": [
+            "CLAYTON_COPULA_1_5",
+            "CLAYTON_COPULA_4_0",
+            "CLAYTON_COPULA_2_5",
+            "MERTON_DD_35",
+            "MERTON_PD_35",
+            "MARKUP_KEY_2D",
+            "MERTON_DD_25"
+          ],
+          "selected_for_combined": false
+        },
+        "C_TEMPORAL": {
+          "best_iteration": 262,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7762922511433564,
+          "inner_delta_vs_phase2_lgb": 0.00018856197366290406,
+          "outer_auc": 0.7718146417209151,
+          "selected_features": [
+            "PHONE_VS_ID",
+            "EMP_VS_REG",
+            "PHONE_STABILITY",
+            "PHONE_VS_REG",
+            "ID_VS_REG",
+            "EMP_STABILITY",
+            "REG_STABILITY",
+            "REG_CHANGED_RECENTLY"
+          ],
+          "selected_for_combined": true
+        },
+        "D_DEMOGRAPHIC": {
+          "best_iteration": 252,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7756248158025913,
+          "inner_delta_vs_phase2_lgb": -0.00047887336710217276,
+          "outer_auc": 0.7714239907869069,
+          "selected_features": [
+            "SPEND_PRESSURE",
+            "HOUSING_BURDEN",
+            "CREDIT_PER_MEMBER",
+            "INCOME_PER_MEMBER",
+            "IS_MARRIED",
+            "DEPENDENCY"
+          ],
+          "selected_for_combined": false
+        },
+        "E_INQUIRY": {
+          "best_iteration": 229,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7767232658984904,
+          "inner_delta_vs_phase2_lgb": 0.0006195767287968668,
+          "outer_auc": 0.7704062167412508,
+          "selected_features": [
+            "REGION_POP_INCOME",
+            "REGION_RATING_ANNUITY",
+            "INQUIRY_PER_CREDIT",
+            "REGION_RATING_CREDIT",
+            "INQUIRY_QRT_RATIO",
+            "INQUIRY_BURST",
+            "PHONE_WORK_EMP_MATCH",
+            "PHONE_CONTACT_SCORE",
+            "TOTAL_INQUIRIES"
+          ],
+          "selected_for_combined": true
+        },
+        "F_EXTERNAL": {
+          "best_iteration": 275,
+          "exact_duplicate_features": [
+            "EXT_MEAN",
+            "EXT_STD",
+            "EXT_MIN",
+            "EXT_MAX"
+          ],
+          "inner_auc": 0.7773906533646855,
+          "inner_delta_vs_phase2_lgb": 0.0012869641949919686,
+          "outer_auc": 0.7714205769806192,
+          "selected_features": [
+            "EXT_SQ",
+            "EXT_WEIGHTED",
+            "EXT_x_EAR",
+            "EXT_PROD",
+            "EXT_x_DTI",
+            "EXT_x_DEBT_BURDEN",
+            "EXT_x_LTV",
+            "EXT_x_SURPLUS",
+            "EXT_CUBE",
+            "EXT_DIFF_23",
+            "EXT_DIFF_12"
+          ],
+          "selected_for_combined": true
+        },
+        "H_INTERACTIONS": {
+          "best_iteration": 297,
+          "exact_duplicate_features": [],
+          "inner_auc": 0.7745215303751062,
+          "inner_delta_vs_phase2_lgb": -0.0015821587945873405,
+          "outer_auc": 0.7719413031296305,
+          "selected_features": [
+            "P_RATIO_EXT_MEAN_div_LTV",
+            "P_RATIO_EXT_MEAN_div_EAR",
+            "P_PROD_EXT_MEAN_x_CLAYTON_COPULA_2_5",
+            "P_PROD_EAR_x_CLAYTON_COPULA_2_5",
+            "P_DIFF_EXT_MEAN_sub_EAR",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_MERTON_PD_25",
+            "P_RATIO_EXT_MEAN_div_BUFFER_MONTHS",
+            "P_DIFF_EAR_sub_CLAYTON_COPULA_2_5",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_ID_PUBLISH",
+            "P_DIFF_EXT_MEAN_sub_LTV",
+            "P_RATIO_EXT_MEAN_div_DAYS_BIRTH",
+            "P_RATIO_EXT_MEAN_div_DEBT_BURDEN",
+            "P_PROD_DAYS_ID_PUBLISH_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_LTV_div_DAYS_BIRTH",
+            "P_RATIO_DAYS_BIRTH_div_CLAYTON_COPULA_2_5",
+            "P_DIFF_MERTON_PD_25_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_DAYS_BIRTH_x_CLAYTON_COPULA_2_5",
+            "P_PROD_EXT_MEAN_x_DAYS_ID_PUBLISH",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_ID_PUBLISH",
+            "P_PROD_EXT_MEAN_x_DAYS_BIRTH",
+            "P_RATIO_DAYS_REGISTRATION_div_AMT_INCOME_TOTAL",
+            "P_PROD_EXT_MEAN_x_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_DSCR_x_BUFFER_MONTHS",
+            "P_RATIO_SURPLUS_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_CREDIT_TERM_div_DAYS_BIRTH",
+            "P_DIFF_DAYS_BIRTH_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_CREDIT_TERM_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DTI_div_DAYS_EMPLOYED_CLEAN",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_AMT_ANNUITY",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_DAYS_REGISTRATION",
+            "P_RATIO_EXT_MEAN_div_SURPLUS",
+            "P_RATIO_EXT_MEAN_div_AMT_ANNUITY",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DSCR_x_CLAYTON_COPULA_2_5",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_LAST_PHONE_CHANGE",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_INCOME_TOTAL",
+            "P_PROD_AMT_INCOME_TOTAL_x_CLAYTON_COPULA_2_5",
+            "P_PROD_DSCR_x_DAYS_REGISTRATION",
+            "P_RATIO_EXT_MEAN_div_CLAYTON_COPULA_2_5",
+            "P_RATIO_EXT_MEAN_div_DAYS_ID_PUBLISH",
+            "P_RATIO_DAYS_LAST_PHONE_CHANGE_div_AMT_ANNUITY",
+            "P_RATIO_DAYS_ID_PUBLISH_div_AMT_GOODS_PRICE",
+            "P_PROD_EAR_x_AMT_GOODS_PRICE",
+            "P_RATIO_DAYS_EMPLOYED_CLEAN_div_DAYS_REGISTRATION",
+            "P_PROD_DAYS_BIRTH_x_DAYS_EMPLOYED_CLEAN",
+            "P_PROD_SURPLUS_x_DAYS_REGISTRATION",
+            "P_PROD_DAYS_REGISTRATION_x_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_ID_PUBLISH_x_DAYS_REGISTRATION",
+            "P_RATIO_CREDIT_TERM_div_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_REGISTRATION",
+            "P_RATIO_DAYS_ID_PUBLISH_div_DAYS_LAST_PHONE_CHANGE",
+            "P_PROD_DAYS_EMPLOYED_CLEAN_x_AMT_INCOME_TOTAL",
+            "P_RATIO_DAYS_BIRTH_div_DEBT_BURDEN",
+            "P_DIFF_EXT_MEAN_sub_CLAYTON_COPULA_2_5",
+            "P_PROD_DSCR_x_DAYS_ID_PUBLISH",
+            "P_PROD_CREDIT_TERM_x_DAYS_EMPLOYED_CLEAN",
+            "P_DIFF_AMT_CREDIT_sub_AMT_GOODS_PRICE",
+            "P_DIFF_DAYS_EMPLOYED_CLEAN_sub_DAYS_ID_PUBLISH"
+          ],
+          "selected_for_combined": false
+        }
+      },
+      "historical_blend_outer_auc": 0.7735705967783968,
+      "historical_candidate_outer_auc": 0.7732408886084894,
+      "inner_blend_selection": {
+        "baseline_inner_auc": 0.7774432515590993,
+        "candidate_inner_auc": 0.7772368483289572,
+        "candidate_weight": 0.45,
+        "grid": [
+          {
+            "auc": 0.7774432515590993,
+            "candidate_weight": 0.0
+          },
+          {
+            "auc": 0.7775068289882693,
+            "candidate_weight": 0.05
+          },
+          {
+            "auc": 0.7775631933155355,
+            "candidate_weight": 0.1
+          },
+          {
+            "auc": 0.7775897477437833,
+            "candidate_weight": 0.15000000000000002
+          },
+          {
+            "auc": 0.7776360903276964,
+            "candidate_weight": 0.2
+          },
+          {
+            "auc": 0.7776510910263459,
+            "candidate_weight": 0.25
+          },
+          {
+            "auc": 0.7776803902632826,
+            "candidate_weight": 0.30000000000000004
+          },
+          {
+            "auc": 0.77770075291379,
+            "candidate_weight": 0.35000000000000003
+          },
+          {
+            "auc": 0.7777048382104433,
+            "candidate_weight": 0.4
+          },
+          {
+            "auc": 0.7777143492917149,
+            "candidate_weight": 0.45
+          },
+          {
+            "auc": 0.7777013912413921,
+            "candidate_weight": 0.5
+          },
+          {
+            "auc": 0.7776964442024756,
+            "candidate_weight": 0.55
+          },
+          {
+            "auc": 0.7776604106093367,
+            "candidate_weight": 0.6000000000000001
+          },
+          {
+            "auc": 0.777633568933668,
+            "candidate_weight": 0.65
+          },
+          {
+            "auc": 0.7775933223783551,
+            "candidate_weight": 0.7000000000000001
+          },
+          {
+            "auc": 0.7775566504576139,
+            "candidate_weight": 0.75
+          },
+          {
+            "auc": 0.7775128611841091,
+            "candidate_weight": 0.8
+          },
+          {
+            "auc": 0.7774615077285195,
+            "candidate_weight": 0.8500000000000001
+          },
+          {
+            "auc": 0.7773989835398929,
+            "candidate_weight": 0.9
+          },
+          {
+            "auc": 0.7773325655528934,
+            "candidate_weight": 0.9500000000000001
+          },
+          {
+            "auc": 0.7772368483289572,
+            "candidate_weight": 1.0
+          }
+        ],
+        "inner_auc": 0.7777143492917149,
+        "selection_labels_source": "this outer fold's inner validation only",
+        "selection_rows": 20545
+      },
+      "inner_fit_rows": 116417,
+      "inner_phase2_auc": 0.7774432515590993,
+      "inner_validation_rows": 20545,
+      "outer_fit_rows": 136962,
+      "outer_validation_rows": 34240,
+      "phase2_feature_count": 221,
+      "phase2_inner_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 116417,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 78907,
+            "product_key_valid_rows": 67767,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 41803,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 20545,
+            "count_reference_id_sha256": "642772f8de91f396471ddd34fe9b6c12e90328c1b0e3631d06aa40a273399f02",
+            "count_reference_rows": 116417,
+            "fee_decoded_rows": 13922,
+            "product_key_valid_rows": 11949,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 116417,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "phase2_outer_auc": 0.7733028716064927,
+      "phase2_outer_audit": {
+        "frequency": {
+          "fit": {
+            "apply_rows": 136962,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 92889,
+            "product_key_valid_rows": 79716,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "fit_validation_ids_disjoint": true,
+          "test": {
+            "apply_rows": 61500,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 41824,
+            "product_key_valid_rows": 36052,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          },
+          "test_ids_used_in_frequency_reference": false,
+          "validation": {
+            "apply_rows": 34240,
+            "count_reference_id_sha256": "a11c157da8df194e1d3829f6d5597607f70b05acd307b69e6859f9defb1b4c2e",
+            "count_reference_rows": 136962,
+            "fee_decoded_rows": 23222,
+            "product_key_valid_rows": 19841,
+            "reference_contains_validation_or_test_rows": false,
+            "target_used": false
+          }
+        },
+        "target_encoding": {
+          "apply_row_targets_used_by_mapping": false,
+          "fit_rows_encoded_by_inner_oof": 136962,
+          "inner_seed": 7,
+          "inner_splits": 5,
+          "outer_fit_valid_overlap": 0,
+          "test_encoded_from_outer_fit_only": true,
+          "validation_encoded_from_outer_fit_only": true
+        }
+      },
+      "selected_feature_count": 28,
+      "selected_groups": [
+        "F_EXTERNAL",
+        "E_INQUIRY",
+        "C_TEMPORAL"
+      ]
+    }
+  ],
+  "gpu": {
+    "preflight": {
+      "driver_version": "592.82",
+      "free_memory_mib_before_run": 5920,
+      "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "total_memory_mib": 6141,
+      "utilization_percent_before_run": 0
+    },
+    "telemetry": {
+      "maximum_memory_used_mib": 5121,
+      "maximum_utilization_percent": 100,
+      "monitor_errors": [],
+      "sample_count": 1511
+    }
+  },
+  "input_records": {
+    "sample": {
+      "path": "D:\\gci\\inpuy\\sample_submission.csv",
+      "sha256": "6e5ad587b7c0b3d9fa39c90ce03e161ff5ef292193e117a6a02b11075dffe7db",
+      "size_bytes": 676518
+    },
+    "test": {
+      "path": "D:\\gci\\inpuy\\test.csv",
+      "sha256": "dfb7aeb96e5af3d8616acaaba6b23cec8680845cfd525f7c08de15c6d2d42c65",
+      "size_bytes": 15818118
+    },
+    "train": {
+      "path": "D:\\gci\\inpuy\\train.csv",
+      "sha256": "b8dd5a61771d8eb2821972c1b7d3f2f747cc66471f4d34153036d2d9c458ecf1",
+      "size_bytes": 44260698
+    }
+  },
+  "metrics": {
+    "historical_candidate": {
+      "fold_auc": [
+        0.7659374115398251,
+        0.7717662321785053,
+        0.7719576250317473,
+        0.768304812073757,
+        0.7732408886084894
+      ],
+      "fold_delta_vs_phase2": [
+        -0.00013181241332704818,
+        -0.0008707917648788088,
+        0.0005330307942338353,
+        -0.00023142043399138057,
+        -6.198299800330709e-05
+      ],
+      "pooled_delta_vs_phase2": -0.00013305762670590138,
+      "pooled_oof_auc": 0.77021652596752
+    },
+    "historical_families": {
+      "A_FINANCIAL": {
+        "fold_auc": [
+          0.7649005956477444,
+          0.7717282113045975,
+          0.7714692438352405,
+          0.76698958285632,
+          0.7715124106686206
+        ],
+        "fold_delta_vs_phase2": [
+          -0.0011686283054077595,
+          -0.0009088126387866158,
+          4.4649597727097756e-05,
+          -0.0015466496514283667,
+          -0.0017904609378720515
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7692466413230097,
+        "positive_folds_vs_phase2": 1
+      },
+      "B_RISK": {
+        "fold_auc": [
+          0.7656167653160209,
+          0.7719995682005314,
+          0.7711644725432502,
+          0.7678323504789628,
+          0.7709217244793038
+        ],
+        "fold_delta_vs_phase2": [
+          -0.0004524586371312811,
+          -0.0006374557428526773,
+          -0.00026012169426326004,
+          -0.000703882028785574,
+          -0.002381147127188843
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7694361829976882,
+        "positive_folds_vs_phase2": 0
+      },
+      "C_TEMPORAL": {
+        "fold_auc": [
+          0.7648031098626351,
+          0.7706409970040609,
+          0.7721862351100575,
+          0.7668109327410736,
+          0.7718146417209151
+        ],
+        "fold_delta_vs_phase2": [
+          -0.0012661140905170232,
+          -0.0019960269393232144,
+          0.0007616408725440449,
+          -0.0017252997666747927,
+          -0.0014882298855776188
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7691691537896983,
+        "positive_folds_vs_phase2": 1
+      },
+      "D_DEMOGRAPHIC": {
+        "fold_auc": [
+          0.7653412730044729,
+          0.7709645191364838,
+          0.7709198279202548,
+          0.7671668019315568,
+          0.7714239907869069
+        ],
+        "fold_delta_vs_phase2": [
+          -0.000727950948679279,
+          -0.001672504806900288,
+          -0.0005047663172585981,
+          -0.0013694305761915437,
+          -0.0018788808195857598
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7690969185069287,
+        "positive_folds_vs_phase2": 0
+      },
+      "E_INQUIRY": {
+        "fold_auc": [
+          0.7648200461715848,
+          0.7717523176187282,
+          0.7715964914531165,
+          0.7676859878447346,
+          0.7704062167412508
+        ],
+        "fold_delta_vs_phase2": [
+          -0.001249177781567301,
+          -0.0008847063246558706,
+          0.00017189721560306737,
+          -0.000850244663013755,
+          -0.002896654865241932
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7691917270425959,
+        "positive_folds_vs_phase2": 1
+      },
+      "F_EXTERNAL": {
+        "fold_auc": [
+          0.7644492116932644,
+          0.7710038326511636,
+          0.7710625583565472,
+          0.7674092224080313,
+          0.7714205769806192
+        ],
+        "fold_delta_vs_phase2": [
+          -0.0016200122598877265,
+          -0.0016331912922205039,
+          -0.0003620358809661717,
+          -0.0011270100997170518,
+          -0.0018822946258735263
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7690046982832712,
+        "positive_folds_vs_phase2": 0
+      },
+      "H_INTERACTIONS": {
+        "fold_auc": [
+          0.7630079645593338,
+          0.7707193712503363,
+          0.7698105362797723,
+          0.7654623470729727,
+          0.7719413031296305
+        ],
+        "fold_delta_vs_phase2": [
+          -0.003061259393818294,
+          -0.0019176526930477777,
+          -0.0016140579577411662,
+          -0.003073885434775714,
+          -0.001361568476862196
+        ],
+        "outer_models": "LightGBM CPU; iteration counts selected on inner validation",
+        "pooled_oof_auc": 0.7681185685190467,
+        "positive_folds_vs_phase2": 0
+      }
+    },
+    "nested_blend": {
+      "fold_auc": [
+        0.7661720716575866,
+        0.7725288672537208,
+        0.7719085846124647,
+        0.7687380608734306,
+        0.7735705967783968
+      ],
+      "fold_candidate_weights": [
+        0.1,
+        0.65,
+        0.35000000000000003,
+        0.6000000000000001,
+        0.45
+      ],
+      "fold_delta_standard_error": 9.723779210347961e-05,
+      "fold_delta_vs_phase2": [
+        0.00010284770443447222,
+        -0.00010815668966324132,
+        0.00048399037495128194,
+        0.00020182836568216622,
+        0.0002677251719040985
+      ],
+      "mean_candidate_weight": 0.43000000000000005,
+      "mean_fold_delta": 0.0001896469854617555,
+      "pooled_delta_vs_phase2": 0.00019798495073664046,
+      "pooled_oof_auc": 0.7705475685449625,
+      "positive_folds": 4
+    },
+    "previous_experiments": {
+      "EXP04_CatBoost_Lossguide": {
+        "candidate_fold_delta": [
+          0.0010458271348474657,
+          0.0034781860837395095,
+          0.0027976774714899566,
+          0.0038000836417023676,
+          0.0013139648447378915
+        ],
+        "candidate_pooled_auc_delta": 0.002514856358101447,
+        "comparison": "matched outer folds; diagnostic only",
+        "fold_auc": [
+          0.7651262445227391,
+          0.7690506811699813,
+          0.7691109071409747,
+          0.7649379772317282,
+          0.7722566319336589
+        ],
+        "pooled_oof_auc": 0.7680327121868611
+      },
+      "EXP05_Residual_MLP": {
+        "candidate_fold_delta": [
+          0.00666676796652188,
+          0.004282070762258061,
+          0.004559638299292623,
+          0.003370748650247779,
+          0.004876277453209621
+        ],
+        "candidate_pooled_auc_delta": 0.006820260760794561,
+        "comparison": "matched outer folds; diagnostic only",
+        "fold_auc": [
+          0.7595053036910647,
+          0.7682467964914628,
+          0.7673489463131721,
+          0.7653673122231828,
+          0.7686943193251872
+        ],
+        "pooled_oof_auc": 0.763727307784168
+      },
+      "EXP06_FT_Transformer": {
+        "candidate_fold_delta": [
+          0.004922793648931556,
+          0.004776192751238306,
+          0.00484878309415071,
+          0.005963379352821541,
+          0.004302510869467313
+        ],
+        "candidate_pooled_auc_delta": 0.006525232039401807,
+        "comparison": "matched outer folds; diagnostic only",
+        "fold_auc": [
+          0.761249278008655,
+          0.7677526745024825,
+          0.767059801518314,
+          0.762774681520609,
+          0.7692680859089295
+        ],
+        "pooled_oof_auc": 0.7640223365055607
+      }
+    },
+    "strict_phase2_matched": {
+      "fold_auc": [
+        0.7660692239531521,
+        0.7726370239433841,
+        0.7714245942375134,
+        0.7685362325077484,
+        0.7733028716064927
+      ],
+      "pooled_oof_auc": 0.7703495835942259
+    }
+  },
+  "models": {
+    "catboost_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "catboost_gpu_preflight": {
+      "available": true,
+      "device": "CUDA:0",
+      "iterations": 2,
+      "task_type": "GPU"
+    },
+    "combined_blend": "fixed equal-weight average of candidate LightGBM/CatBoost and CUDA XGBoost when supported; candidate/reference mixing weight selected only on inner validation",
+    "combined_candidate_models": "Phase 2 LightGBM CPU + CatBoost GPU; CUDA XGBoost added only when an explicit CUDA preflight succeeds",
+    "family_screen_and_outer_family_models": "LightGBM CPU; Phase 2 inner settings capped at 600 rounds and 50-round early stopping; outer rounds fixed by inner validation",
+    "lightgbm_device": "CPU; installed LightGBM build is CPU-only",
+    "phase2_cat_lgb_blend": "fixed 50:50",
+    "xgboost_configuration": {
+      "alpha": 0.0,
+      "colsample_bytree": 0.85,
+      "device": "cuda",
+      "eta": 0.04,
+      "eval_metric": "auc",
+      "lambda": 4.0,
+      "max_bin": 256,
+      "max_depth": 5,
+      "min_child_weight": 20,
+      "nthread": 8,
+      "objective": "binary:logistic",
+      "subsample": 0.85,
+      "tree_method": "hist",
+      "verbosity": 0
+    },
+    "xgboost_cuda_models_included": true,
+    "xgboost_gpu_preflight": {
+      "available": true,
+      "cpu_fallback_used": false,
+      "device": "CUDA",
+      "parameters": {
+        "device": "cuda",
+        "max_depth": 2,
+        "objective": "binary:logistic",
+        "tree_method": "hist",
+        "verbosity": 0
+      },
+      "version": "3.4.1"
+    }
+  },
+  "outer_seed": 20261101,
+  "prediction_diagnostics": {
+    "candidate_error_correlation_vs_phase2": 0.9992114494888373,
+    "candidate_test_vs_phase2_pearson": 0.9976254431181116,
+    "candidate_vs_phase2_pearson": 0.9922514604363161,
+    "candidate_vs_phase2_spearman": 0.9934914918926268,
+    "family_complementarity_vs_phase2": {
+      "A_FINANCIAL": {
+        "pearson_vs_phase2": 0.9886550852811979,
+        "pooled_auc_delta_vs_phase2": -0.0011029422712162118,
+        "residual_correlation_vs_phase2": 0.9988233106885306,
+        "spearman_vs_phase2": 0.9903753740418985
+      },
+      "B_RISK": {
+        "pearson_vs_phase2": 0.9887674661849641,
+        "pooled_auc_delta_vs_phase2": -0.0009134005965376613,
+        "residual_correlation_vs_phase2": 0.9988411611414241,
+        "spearman_vs_phase2": 0.9904848742203977
+      },
+      "C_TEMPORAL": {
+        "pearson_vs_phase2": 0.9890416921157694,
+        "pooled_auc_delta_vs_phase2": -0.001180429804527594,
+        "residual_correlation_vs_phase2": 0.9988730185064875,
+        "spearman_vs_phase2": 0.9911990053206436
+      },
+      "D_DEMOGRAPHIC": {
+        "pearson_vs_phase2": 0.9894997177404768,
+        "pooled_auc_delta_vs_phase2": -0.0012526650872971556,
+        "residual_correlation_vs_phase2": 0.9989222850257777,
+        "spearman_vs_phase2": 0.9915573125532819
+      },
+      "E_INQUIRY": {
+        "pearson_vs_phase2": 0.98901636393353,
+        "pooled_auc_delta_vs_phase2": -0.001157856551630032,
+        "residual_correlation_vs_phase2": 0.9988717537393534,
+        "spearman_vs_phase2": 0.9913236716618004
+      },
+      "F_EXTERNAL": {
+        "pearson_vs_phase2": 0.9889422099364564,
+        "pooled_auc_delta_vs_phase2": -0.0013448853109546688,
+        "residual_correlation_vs_phase2": 0.9988607902338713,
+        "spearman_vs_phase2": 0.9907400742068422
+      },
+      "H_INTERACTIONS": {
+        "pearson_vs_phase2": 0.9818771804689713,
+        "pooled_auc_delta_vs_phase2": -0.002231015075179199,
+        "residual_correlation_vs_phase2": 0.9981541779971992,
+        "spearman_vs_phase2": 0.9848412507936892
+      }
+    },
+    "family_pairwise_pearson": {
+      "A_FINANCIAL": {
+        "A_FINANCIAL": 1.0,
+        "B_RISK": 0.9900427610837483,
+        "C_TEMPORAL": 0.9903605813005174,
+        "D_DEMOGRAPHIC": 0.9905138519326055,
+        "E_INQUIRY": 0.9899504078561141,
+        "F_EXTERNAL": 0.9900136509292591,
+        "H_INTERACTIONS": 0.9813758466369223
+      },
+      "B_RISK": {
+        "A_FINANCIAL": 0.9900427610837483,
+        "B_RISK": 1.0,
+        "C_TEMPORAL": 0.9904181691159688,
+        "D_DEMOGRAPHIC": 0.9908858410482515,
+        "E_INQUIRY": 0.9903277995420118,
+        "F_EXTERNAL": 0.9900653039761609,
+        "H_INTERACTIONS": 0.9826657036877443
+      },
+      "C_TEMPORAL": {
+        "A_FINANCIAL": 0.9903605813005175,
+        "B_RISK": 0.9904181691159688,
+        "C_TEMPORAL": 1.0,
+        "D_DEMOGRAPHIC": 0.9911602437297538,
+        "E_INQUIRY": 0.9929642064308313,
+        "F_EXTERNAL": 0.9904071583807688,
+        "H_INTERACTIONS": 0.9822105737401634
+      },
+      "D_DEMOGRAPHIC": {
+        "A_FINANCIAL": 0.9905138519326057,
+        "B_RISK": 0.9908858410482515,
+        "C_TEMPORAL": 0.9911602437297538,
+        "D_DEMOGRAPHIC": 1.0,
+        "E_INQUIRY": 0.9911848579249432,
+        "F_EXTERNAL": 0.9907556430984835,
+        "H_INTERACTIONS": 0.9822725600248224
+      },
+      "E_INQUIRY": {
+        "A_FINANCIAL": 0.9899504078561141,
+        "B_RISK": 0.9903277995420117,
+        "C_TEMPORAL": 0.9929642064308313,
+        "D_DEMOGRAPHIC": 0.9911848579249432,
+        "E_INQUIRY": 0.9999999999999999,
+        "F_EXTERNAL": 0.9901522611821549,
+        "H_INTERACTIONS": 0.9819110320760202
+      },
+      "F_EXTERNAL": {
+        "A_FINANCIAL": 0.9900136509292591,
+        "B_RISK": 0.9900653039761609,
+        "C_TEMPORAL": 0.9904071583807689,
+        "D_DEMOGRAPHIC": 0.9907556430984835,
+        "E_INQUIRY": 0.9901522611821549,
+        "F_EXTERNAL": 1.0,
+        "H_INTERACTIONS": 0.9819080089204613
+      },
+      "H_INTERACTIONS": {
+        "A_FINANCIAL": 0.9813758466369223,
+        "B_RISK": 0.9826657036877444,
+        "C_TEMPORAL": 0.9822105737401633,
+        "D_DEMOGRAPHIC": 0.9822725600248225,
+        "E_INQUIRY": 0.9819110320760202,
+        "F_EXTERNAL": 0.9819080089204612,
+        "H_INTERACTIONS": 1.0
+      }
+    }
+  },
+  "reference_records": {
+    "exp04_oof": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp04_catboost_lossguide\\runs\\exp04_lossguide_strict_seed20261101\\oof_catboost_lossguide.npy",
+      "sha256": "71b9b985781d6592d947ebfcfed899564c04c8039e8aff3911a0fe90368803b3",
+      "size_bytes": 684936
+    },
+    "exp05_oof": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp05_tabular_neural\\runs\\exp05_cuda_seed20261101_v1\\oof_tabular_neural.npy",
+      "sha256": "07b4d241eb94005a71cb0bd1a8a427a0971821ecb0bf823474efad2f1cd07e8d",
+      "size_bytes": 684936
+    },
+    "exp06_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\sha256_manifest.json",
+      "sha256": "cbeb53d6275d1f18b488401ef481339892f60f38cca80577c9d12377b59e2937",
+      "size_bytes": 15678
+    },
+    "exp06_summary": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\experiment_summary.json",
+      "sha256": "f8275c6bf090f6e4bf175fb55e0f04af1a0f49cbeff143029f6c9870ef67c895",
+      "size_bytes": 45256
+    },
+    "oof_ft_transformer.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_ft_transformer.npy",
+      "sha256": "f5c2cf5df01522091693aace2c954d8b28190a2a43f6ba8803e0e435bf99fe78",
+      "size_bytes": 684936
+    },
+    "oof_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\oof_phase2_strict_matched.npy",
+      "sha256": "82383096c1ea2b029c133fd07ba0e63a8ae10a8de25d4f3cd123cf4b73ace6cf",
+      "size_bytes": 684936
+    },
+    "phase2_manifest": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\second_seed\\main\\sha256_manifest.json",
+      "sha256": "eee5c1262dec25a01c51f9af115cf7e10fbedd6e944100803f5630847258094c",
+      "size_bytes": 5918
+    },
+    "test_phase2_strict_matched.npy": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\runs\\exp06_ft_transformer_seed20261101_v5\\test_phase2_strict_matched.npy",
+      "sha256": "85d1326690f6d24e24d17741cb6e27850c162951c593b7df8df543608dce52a1",
+      "size_bytes": 246128
+    }
+  },
+  "runtime_seconds": 1670.4022875000373,
+  "source_records": {
+    "exp06_protocol_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py",
+      "sha256": "b221cffa50bcdbcd187884a9be18a5a0b0779ed551af62aa42c5d3728af52c5f",
+      "size_bytes": 66048
+    },
+    "exp07_protocol_helpers": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\run_exp07.py",
+      "sha256": "26d630099129e0565cc092913f70394661c016ab0e5ae4b255bd4aac880cd557",
+      "size_bytes": 66288
+    },
+    "exp08_feature_tests": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\tests\\test_exp08_historical_features.py",
+      "sha256": "733fcb9256e5aa67f86235b53290ee3bc5f3be7027dc2ec10385ff49fe9a3563",
+      "size_bytes": 9846
+    },
+    "exp08_independent_verifier": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\verify_exp08.py",
+      "sha256": "5ab205c8c96ea08221d9e5dc0bb65501e587b4424ebb7aa930c5d26408fb4d98",
+      "size_bytes": 10683
+    },
+    "exp08_parity_report": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\FEATURE_PARITY.md",
+      "sha256": "3891acacda2bcbed7757f65189d2aca604e1fc8f2ccaf78c431a4d80a94313e2",
+      "size_bytes": 2758
+    },
+    "exp08_readme": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\README.md",
+      "sha256": "4eb88ec358d01ede8987de3a66e3b487390a1d7121e918ef7a1147cd04e3e70c",
+      "size_bytes": 2749
+    },
+    "exp08_runner": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\run_exp08.py",
+      "sha256": "a76fd981594623a5d9940f6a86ca5147c88818af09145d3a34535af19e2af188",
+      "size_bytes": 90721
+    },
+    "historical_architecture": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\HISTORICAL_ARCHITECTURE.md",
+      "sha256": "8e2c1de6b4e3ccdb746cbdbf6d62d7ecebb5ff0a92a5da19c98c1a1fc82f957b",
+      "size_bytes": 4119
+    },
+    "historical_executable": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\05_FEATURE_ENGINEERING\\FEATURE_BUILDERS\\build_hasan_600_features.py",
+      "sha256": "cafd70abd8da3cb6d544c26b668ed61f329cd89ef98ff61cec3983ffc1c08341",
+      "size_bytes": 17482
+    },
+    "historical_feature_lineage": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_DEEP_RESEARCH_AND_IMPROVEMENT\\FEATURE_LINEAGE.md",
+      "sha256": "70224d317805ef460216520199044166562ffb4be245e562e3ddc56e28c6969a",
+      "size_bytes": 3774
+    },
+    "historical_feature_reconstruction": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\historical_features.py",
+      "sha256": "081b373183f3860194acbd2fe8a72e903ca4899c84835440b121aa2299d7d18f",
+      "size_bytes": 26511
+    },
+    "historical_mathematical_specification": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\05_FEATURE_ENGINEERING\\FEATURES_669\\FEATURES_669_MATHEMATICAL_SPECIFICATION.md",
+      "sha256": "918570247384a8eb409cbae49aec72ab94c16d87b06cb4638e1a762717fc0e62",
+      "size_bytes": 1089
+    },
+    "historical_matrix_parity_audit": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\05_FEATURE_ENGINEERING\\FEATURE_VALIDATION\\FEATURE_MATRIX_PARITY_AUDIT.md",
+      "sha256": "36800bb5818f68f1c8d824b746009eed9d3ad69b4878e51649ba75daed05e715",
+      "size_bytes": 1249
+    },
+    "phase2_fold_local_pipeline": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\experiments\\phase_04_final_validation_gate\\run_final_gate.py",
+      "sha256": "be8f705bf55f3ddd3ae16bcc09176901b88566081fd1bb1c89c01b7657bd404d",
+      "size_bytes": 41730
+    },
+    "phase2_raw_feature_builder": {
+      "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+      "sha256": "c49aab451d1500e1bd7e0d618a764efeb1815c172f74e1bc5174e38a793ff3fe",
+      "size_bytes": 39902
+    }
+  },
+  "status": "COMPLETED",
+  "submission": {
+    "columns": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "ordered_ids_match_sample": true,
+    "path": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\runs\\exp08_historical_seed20261101_v3\\submission_exp08_nested_blend.csv",
+    "rows": 61500,
+    "sha256": "3c488eaa5cdc828cee3a475ed6c9bcf04f255ccd74a5ef1a047b03ca680a54ac",
+    "unique_ids": 61500
+  },
+  "training_seconds": 1661.5670621999889
+}

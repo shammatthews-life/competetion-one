@@ -1,0 +1,234 @@
+{
+  "experiment_id": "20261101T145000Z_epoly_interactions_seed42",
+  "status": "COMPLETED_SCREEN",
+  "experiment_family": "E_POLY_FINANCIAL_AND_EXT_SOURCE_INTERACTIONS",
+  "outer_seed": 42,
+  "started_at_utc": "2026-11-01T14:52:21.175399+00:00",
+  "completed_at_utc": "2026-11-01T14:57:05.218043+00:00",
+  "elapsed_seconds": 284.04247749998467,
+  "hypothesis": "Five pre-specified rowwise interactions between EXT_SOURCE mean, repayment ratios, credit/income, and age may expose monotone risk interactions more efficiently than tree splits alone.",
+  "feature_definition": {
+    "columns": [
+      "P_EXTMEAN_PAY",
+      "P_EXTMEAN_CTI",
+      "P_EXTMEAN_PAY_AGE",
+      "P_CREDIT_GOODS_INC",
+      "P_EXTMEAN_ANN_INC"
+    ],
+    "source": "raw application covariates only",
+    "rowwise_and_label_free": true,
+    "target_or_id_used": false,
+    "outer_fit_or_validation_statistics": false
+  },
+  "model": {
+    "models": [
+      "LightGBM CPU",
+      "CatBoost GPU"
+    ],
+    "configuration_source": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\SOURCE\\project\\source\\run_independent_baseline.py",
+    "nested_target_encoding": "unchanged Phase 2 implementation",
+    "outer_seed": 42
+  },
+  "validation": {
+    "reference_oof": "D:\\gci\\_gci_push_tmp\\champion\\EXP85_PHASE2_FROZEN_RELEASE\\EVIDENCE\\original_runs\\phase_02\\oof_50_50_blend.npy",
+    "same_exact_folds_as_phase2": true,
+    "phase2_oof_auc": 0.7715614423106346,
+    "epoly_oof_auc": 0.7712424144660609,
+    "full_oof_auc_delta": -0.000319027844573716,
+    "mean_paired_fold_delta": -0.00031927419538970716,
+    "paired_fold_delta_standard_error": 0.00029089942896759187,
+    "positive_folds": 2,
+    "predeclared_screen_gate": {
+      "mean_delta_at_least": 0.0002,
+      "positive_folds_at_least": 4,
+      "mean_delta_more_than_two_standard_errors": true
+    },
+    "screen_gate_passed": false,
+    "per_fold": [
+      {
+        "fold": 1,
+        "phase2_auc": 0.7682728118806064,
+        "epoly_auc": 0.7686456980258068,
+        "paired_auc_delta": 0.00037288614520047947,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 2,
+        "phase2_auc": 0.7741273870479004,
+        "epoly_auc": 0.7732126569869131,
+        "paired_auc_delta": -0.000914730060987301,
+        "fit_rows": 136961,
+        "valid_rows": 34241
+      },
+      {
+        "fold": 3,
+        "phase2_auc": 0.7761637619657933,
+        "epoly_auc": 0.7763235844221192,
+        "paired_auc_delta": 0.00015982245632595315,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 4,
+        "phase2_auc": 0.7695607652001966,
+        "epoly_auc": 0.7684721920305349,
+        "paired_auc_delta": -0.0010885731696617107,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      },
+      {
+        "fold": 5,
+        "phase2_auc": 0.7700138646512473,
+        "epoly_auc": 0.7698880883034214,
+        "paired_auc_delta": -0.0001257763478259566,
+        "fit_rows": 136962,
+        "valid_rows": 34240
+      }
+    ]
+  },
+  "runtime": {
+    "device_by_model_fold": {
+      "lightgbm": [
+        {
+          "fold": 1,
+          "device": "CPU",
+          "best_iteration": 466,
+          "auc": 0.767235105208788
+        },
+        {
+          "fold": 2,
+          "device": "CPU",
+          "best_iteration": 420,
+          "auc": 0.7717940153374987
+        },
+        {
+          "fold": 3,
+          "device": "CPU",
+          "best_iteration": 449,
+          "auc": 0.7750607864416579
+        },
+        {
+          "fold": 4,
+          "device": "CPU",
+          "best_iteration": 410,
+          "auc": 0.7664949487621009
+        },
+        {
+          "fold": 5,
+          "device": "CPU",
+          "best_iteration": 471,
+          "auc": 0.7683609674630467
+        }
+      ],
+      "catboost": [
+        {
+          "fold": 1,
+          "device": "GPU:0",
+          "best_iteration": 432,
+          "auc": 0.7675262465088906
+        },
+        {
+          "fold": 2,
+          "device": "GPU:0",
+          "best_iteration": 460,
+          "auc": 0.7721350886590708
+        },
+        {
+          "fold": 3,
+          "device": "GPU:0",
+          "best_iteration": 519,
+          "auc": 0.7749467400241913
+        },
+        {
+          "fold": 4,
+          "device": "GPU:0",
+          "best_iteration": 375,
+          "auc": 0.768062368608688
+        },
+        {
+          "fold": 5,
+          "device": "GPU:0",
+          "best_iteration": 446,
+          "auc": 0.7688153140453508
+        }
+      ]
+    },
+    "fold_seconds": [
+      {
+        "fold": 1,
+        "fit_rows": 136961,
+        "valid_rows": 34241,
+        "nested_encoding_rows": 136961,
+        "fit_valid_indices_disjoint": true,
+        "seconds": 54.90070850000484
+      },
+      {
+        "fold": 2,
+        "fit_rows": 136961,
+        "valid_rows": 34241,
+        "nested_encoding_rows": 136961,
+        "fit_valid_indices_disjoint": true,
+        "seconds": 57.147454299993115
+      },
+      {
+        "fold": 3,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "nested_encoding_rows": 136962,
+        "fit_valid_indices_disjoint": true,
+        "seconds": 59.16607860001386
+      },
+      {
+        "fold": 4,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "nested_encoding_rows": 136962,
+        "fit_valid_indices_disjoint": true,
+        "seconds": 51.49057040002663
+      },
+      {
+        "fold": 5,
+        "fit_rows": 136962,
+        "valid_rows": 34240,
+        "nested_encoding_rows": 136962,
+        "fit_valid_indices_disjoint": true,
+        "seconds": 58.22632220000378
+      }
+    ],
+    "process_memory_before": {
+      "process_memory": {
+        "available": "true",
+        "peak_working_set_bytes": 169955328,
+        "working_set_bytes": 169955328,
+        "private_bytes": 873005056
+      }
+    },
+    "process_memory_after": {
+      "process_memory": {
+        "available": "true",
+        "peak_working_set_bytes": 1625341952,
+        "working_set_bytes": 516689920,
+        "private_bytes": 1531117568
+      }
+    },
+    "gpu_samples": 56,
+    "gpu_max_utilization_percent": 44,
+    "gpu_max_vram_used_mib": 5036
+  },
+  "integrity": {
+    "candidate_sha256": "6f2290bbff346d14997df9134c748c81c6f7bab41ee2f783d05e978dd4caae81",
+    "candidate_rows": 61500,
+    "candidate_schema": [
+      "SK_ID_CURR",
+      "TARGET"
+    ],
+    "unique_ids": true,
+    "matches_raw_test_order": true,
+    "matches_sample_order": true,
+    "probability_min": 0.003343677,
+    "probability_max": 0.7383428514,
+    "official_competition_score": "NOT_EVALUATED"
+  },
+  "decision": "REJECT_ON_SCREENING"
+}

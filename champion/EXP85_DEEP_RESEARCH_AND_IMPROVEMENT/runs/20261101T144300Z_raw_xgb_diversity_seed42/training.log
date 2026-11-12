@@ -1,0 +1,44 @@
+[0]	validation_0-auc:0.70821
+[100]	validation_0-auc:0.75069
+[200]	validation_0-auc:0.75537
+[300]	validation_0-auc:0.75773
+[400]	validation_0-auc:0.75879
+[500]	validation_0-auc:0.75917
+[600]	validation_0-auc:0.75892
+[627]	validation_0-auc:0.75871
+[xgboost] fold 1/5 device=cuda:0 auc=0.75928425 best_iteration=527 seconds=6.0
+[0]	validation_0-auc:0.70756
+[100]	validation_0-auc:0.75244
+[200]	validation_0-auc:0.75812
+[300]	validation_0-auc:0.76049
+[400]	validation_0-auc:0.76162
+[500]	validation_0-auc:0.76186
+[600]	validation_0-auc:0.76182
+[671]	validation_0-auc:0.76159
+[xgboost] fold 2/5 device=cuda:0 auc=0.76205328 best_iteration=571 seconds=6.0
+[0]	validation_0-auc:0.71706
+[100]	validation_0-auc:0.75849
+[200]	validation_0-auc:0.76299
+[300]	validation_0-auc:0.76457
+[400]	validation_0-auc:0.76544
+[500]	validation_0-auc:0.76538
+[511]	validation_0-auc:0.76533
+[xgboost] fold 3/5 device=cuda:0 auc=0.76550459 best_iteration=411 seconds=5.1
+[0]	validation_0-auc:0.71159
+[100]	validation_0-auc:0.74976
+[200]	validation_0-auc:0.75509
+[300]	validation_0-auc:0.75624
+[400]	validation_0-auc:0.75679
+[500]	validation_0-auc:0.75700
+[575]	validation_0-auc:0.75651
+[xgboost] fold 4/5 device=cuda:0 auc=0.75724158 best_iteration=475 seconds=5.4
+[0]	validation_0-auc:0.70694
+[100]	validation_0-auc:0.75232
+[200]	validation_0-auc:0.75810
+[300]	validation_0-auc:0.76078
+[400]	validation_0-auc:0.76204
+[500]	validation_0-auc:0.76264
+[600]	validation_0-auc:0.76270
+[700]	validation_0-auc:0.76291
+[772]	validation_0-auc:0.76291
+[xgboost] fold 5/5 device=cuda:0 auc=0.76311009 best_iteration=672 seconds=6.8

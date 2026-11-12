@@ -1,0 +1,7 @@
+{
+  "error": "No module named 'torch'",
+  "error_type": "ModuleNotFoundError",
+  "experiment_id": "exp08_historical_seed20261101_v2",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp08_historical_feature_bridge\\run_exp08.py\", line 1167, in run_experiment\n    runtime = helper.load_exp06_runtime()\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp07_gbdt_feature_ensemble\\run_exp07.py\", line 494, in load_exp06_runtime\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"D:\\gci\\_gci_push_tmp\\champion\\EXP85_CHAMPION_IMPROVEMENT\\experiments\\exp06_ft_transformer\\run_experiment.py\", line 28, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n"
+}

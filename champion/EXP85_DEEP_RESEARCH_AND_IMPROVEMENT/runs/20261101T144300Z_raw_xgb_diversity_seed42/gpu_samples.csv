@@ -1,0 +1,7 @@
+timestamp,name,driver_version,memory.total,memory.used,utilization.gpu,utilization.memory
+2026/11/01 20:14:07.071, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 133, 0, 0
+2026/11/01 20:14:12.130, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 318, 68, 9
+2026/11/01 20:14:17.200, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 316, 60, 8
+2026/11/01 20:14:22.268, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 316, 64, 8
+2026/11/01 20:14:27.337, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 316, 59, 6
+2026/11/01 20:14:32.395, NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141, 316, 77, 8

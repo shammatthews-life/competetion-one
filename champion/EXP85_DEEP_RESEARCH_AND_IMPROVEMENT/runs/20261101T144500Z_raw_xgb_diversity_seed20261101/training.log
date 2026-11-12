@@ -1,0 +1,44 @@
+[0]	validation_0-auc:0.70964
+[100]	validation_0-auc:0.74785
+[200]	validation_0-auc:0.75278
+[300]	validation_0-auc:0.75451
+[400]	validation_0-auc:0.75453
+[480]	validation_0-auc:0.75473
+[xgboost] independent seed 20261101 fold 1/5 device=cuda:0 auc=0.75483797 best_iteration=380 seconds=5.1
+[0]	validation_0-auc:0.70925
+[100]	validation_0-auc:0.75472
+[200]	validation_0-auc:0.75994
+[300]	validation_0-auc:0.76183
+[400]	validation_0-auc:0.76252
+[500]	validation_0-auc:0.76272
+[600]	validation_0-auc:0.76295
+[700]	validation_0-auc:0.76316
+[753]	validation_0-auc:0.76279
+[xgboost] independent seed 20261101 fold 2/5 device=cuda:0 auc=0.76333992 best_iteration=653 seconds=6.4
+[0]	validation_0-auc:0.70114
+[100]	validation_0-auc:0.75291
+[200]	validation_0-auc:0.75672
+[300]	validation_0-auc:0.75871
+[400]	validation_0-auc:0.75985
+[500]	validation_0-auc:0.76019
+[600]	validation_0-auc:0.76062
+[700]	validation_0-auc:0.76070
+[800]	validation_0-auc:0.76056
+[866]	validation_0-auc:0.76017
+[xgboost] independent seed 20261101 fold 3/5 device=cuda:0 auc=0.76083437 best_iteration=766 seconds=7.1
+[0]	validation_0-auc:0.69312
+[100]	validation_0-auc:0.74949
+[200]	validation_0-auc:0.75466
+[300]	validation_0-auc:0.75650
+[400]	validation_0-auc:0.75725
+[500]	validation_0-auc:0.75739
+[577]	validation_0-auc:0.75734
+[xgboost] independent seed 20261101 fold 4/5 device=cuda:0 auc=0.75762980 best_iteration=477 seconds=5.6
+[0]	validation_0-auc:0.71669
+[100]	validation_0-auc:0.75616
+[200]	validation_0-auc:0.76151
+[300]	validation_0-auc:0.76340
+[400]	validation_0-auc:0.76419
+[500]	validation_0-auc:0.76449
+[564]	validation_0-auc:0.76435
+[xgboost] independent seed 20261101 fold 5/5 device=cuda:0 auc=0.76464964 best_iteration=464 seconds=5.3
