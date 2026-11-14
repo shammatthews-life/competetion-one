@@ -26,6 +26,7 @@
 | **Certified V18** | `d:/gci/v_22_pure_champion_ensemble_certified_v18.csv` | `d:/gci/v22_champion_audit_certified_v18_probit_regime_master.py` | — | 0.77339 | Probit-Regime Master ($E_{\text{seg}}$ + 8 Regimes) | `2F1DAD32207C0F31...` |
 | **Certified V19** | `d:/gci/v_22_pure_champion_ensemble_certified_v19.csv` | `d:/gci/v22_champion_audit_certified_v19_probit_grand_ensemble.py` | **0.77791** | 0.77339 | Probit Grand Ensemble (0.72 V17 + 0.28 V18) | `DA72D4FD59856149...` |
 | **Certified V20** | `d:/gci/v_22_pure_champion_ensemble_certified_v20.csv` | `d:/gci/v22_champion_audit_certified_v20_multi_seed_gpu_solvency_master.py` | **0.77791** | **0.77341** | Multi-Seed GPU Solvency Master | `F4DAF55B3AC55D08...` |
+| **Certified V22** | d:/gci/v_22_pure_champion_ensemble_certified_v22.csv | d:/gci/v22_champion_audit_certified_v22_pinnacle_grand_ensemble.py | — | **0.77341** | **Pinnacle Grand Ensemble (0.565 V11 + 0.115 V18 + 0.320 V20)** | 822E0D87AD8C019B... |
 | **Certified V21** | `d:/gci/v_22_pure_champion_ensemble_certified_v21.csv` | `d:/gci/v22_champion_audit_certified_v21_apex_grand_champion.py` | **0.77794** | **0.77341** | **Apex Grand Champion (0.85 V19 + 0.15 V20)** | `88A40B01C09B717C...` |
 
 ---
